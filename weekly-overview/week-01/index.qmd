@@ -1,0 +1,94 @@
+---
+title: Week 1 Guide
+subtitle: Core tools and notebook workflow
+format:
+  html:
+    toc: true
+---
+
+## Week 1 focus
+
+You are coming into this course with Python experience from Structured Programming Logic. That course focused on writing and running Python programs in a more traditional editor-and-console workflow.
+
+In this course, you will still write Python, but the workspace will look different. We will use Jupyter notebooks as the main place to practice and show your work. A notebook combines explanation text, code, and output in one document, which makes it easier to follow examples, retry steps, and keep your work organized.
+
+Week 1 is where you learn that workflow and get your course setup working. You will also be introduced to the tool ecosystem used throughout the textbook: pandas and NumPy for working with data, and matplotlib for basic plotting. Chapter 1 introduces this ecosystem and why it exists. Chapter 2 introduces notebooks and the interactive workflow.
+
+This week is also a chance to get comfortable navigating the textbook and looking up unfamiliar terms. Do not be a passive learner. In an AI-driven environment, it is easy to copy an answer without understanding it, and it is also easy to get a confident answer that is wrong. Your job is to read, test, and confirm.
+
+Section 1.6 in the textbook is especially useful this week. It explains how to navigate the book, how to read the code examples, and the import conventions used throughout (for example, numpy as np and pandas as pd). Treat 1.6 as your guide for how to read and use the book effectively.
+
+One note before you start comparing your output to the book: the book often shows examples in an interactive In/Out style. Your notebook output may look similar but not identical, and that is fine. Focus on whether your code produces the correct result, not whether the formatting matches perfectly.
+
+## Course focus and expectations
+
+This course is focused on the Python tools used to work with data. You will learn how to load data, inspect it, clean it, reshape it, summarize it, and visualize it. The emphasis is on building practical skill with the core libraries and the day-to-day workflow used in data work.
+
+This course is not a statistics class. We are not spending the semester on statistical theory, inference, or formal methodology. When we use analytical ideas, it will be to support a tool we are learning and to help you interpret what your code produced. Think of this course as learning how to do the work in Python; your statistics elective covers more of the theory behind the methods.
+
+## Core tools we will be using
+
+The course uses a small set of tools repeatedly. You do not need to master them in Week 1. You do need to recognize the names and understand what each tool is used for.
+
+| Tool | What it is used for in this course | When you will notice it |
+|------------------------|------------------------|------------------------|
+| NumPy | Working with numbers and arrays efficiently. It also supports many operations that pandas relies on. | When you see `import numpy as np`, or when we work with numeric operations and arrays. |
+| pandas | Working with tables (DataFrames): loading data, cleaning it, reshaping it, combining it, and summarizing it. | Most weeks, because it is the main tool for manipulating data in this course. |
+| matplotlib | Creating plots so you can see patterns and communicate results. | When we move into visualization, and whenever we need a chart to understand data. |
+| Jupyter notebooks | A workspace that keeps explanations, code, and output together. This is how you will practice and show your work. | Every week, since most work will be done and submitted in notebooks. |
+
+## Jupyter notebooks
+
+In Structured Programming Logic, you typically wrote Python in a file and ran the whole program from start to finish. Each run started fresh.
+
+A Jupyter notebook is different. A notebook is a single document that mixes:
+
+-   text (explanations and notes)
+-   code (Python)
+-   output (tables, printed results, charts)
+
+Instead of running one program from top to bottom every time, a notebook is built from cells. You run the notebook one cell at a time, in the order you choose.
+
+This is powerful for learning and working with data because you can try something, see the result immediately, adjust it, and continue. The textbook discusses this interactive workflow and how notebooks fit into it.
+
+The most important new idea is that the notebook runs in a live Python session. That session keeps everything you have already created (variables, imported libraries, data you loaded). If you run cells out of order, you can end up in a confusing state where your notebook depends on something you ran earlier but forgot to rerun.
+
+Because of that, this course uses one consistent habit:
+
+**Restart Kernel and Run All**
+
+That is how you confirm your notebook works from a clean start and in the correct order.
+
+Notebooks are a great learning tool, but they can also make it easy to skip real understanding. If you only change a few lines and press run, you can end up with working output without knowing why it works. Your goal in this class is not just to produce output, but to understand what your code is doing. When you use examples from the book, from a class notebook, or from AI, your job is to test small changes and confirm you still understand the result.
+
+Using notebooks does not mean you are not writing code. You will still write Python in this course, but you will write it in smaller pieces and run it as you go. Many examples in the book are meant to be typed, run, and modified so you can see how changes affect the result. Chapter 2 discusses this interactive workflow and how to work effectively in notebooks.
+
+## Week 1 tasks
+
+Complete the following this week:
+
+1.  Read Chapters 1 and 2 in the textbook in full. Work through the examples and exercises as you read.
+2.  Follow the guided setup videos to get your course environment setup.
+3.  Follow the Week 1 assignment instructions.
+4.  Complete the D2L quiz on Chapters 1 and 2.
+
+## Chapter overview for Week 1
+
+### Chapter 1: Preliminaries
+
+Chapter 1 sets the direction for the book and the course. It explains what the book is focused on, the kinds of structured data you will work with, and the core Python libraries used throughout. It also explains the conventions used in the book (especially import conventions) and how to read the code examples.
+
+### Chapter 2: Python Language Basics, IPython, and Jupyter Notebooks
+
+Chapter 2 introduces the interactive workflow used in the book. It explains what notebooks are, how running code interactively differs from running a script, and how tools like tab completion and built-in help make it easier to explore unfamiliar code and data as you work.
+
+## Knowledge goals for Week 1
+
+By the end of Week 1, you should be able to explain:
+
+-   What the book means by working with data in Python (the focus of the course)
+-   The difference between NumPy and pandas at a high level
+-   What a Jupyter notebook is, and how it differs from running a Python script
+-   What a kernel is in the context of notebooks
+-   What an environment is and why we use one for this course
+-   What the book’s import conventions mean (for example, np and pd)

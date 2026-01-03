@@ -1,0 +1,168 @@
+---
+title: Week 1 Assignments
+subtitle: Course Workflow, Miniconda, IPython, and JupyterLab
+format:
+  html:
+    toc: true
+---
+
+**Submission location:** **All items are submitted in D2L** (Week 1 dropboxes). **Reading:** Chapter 1 and Chapter 2 (complete).
+
+## Part 1: Reading
+
+Read **all of Chapter 1** and **all of Chapter 2**.
+
+Pay special attention to:
+
+-   **Chapter 1.3** Essential Python Libraries
+-   **Chapter 1.4** Installation and Setup
+-   **Chapter 1.6** Navigating This Book (import conventions, how to read examples)
+-   **Chapter 2.1–2.2** Interpreter + IPython/Jupyter workflow (tab completion, `?` help)
+
+## Part 2: Setup
+
+Submit the following screenshots (each as a separate file):
+
+1.  **Git installed** Screenshot name: `lastname_git-version.png` Show the output of:
+
+-   `git --version`
+
+2.  **Course folders created** Screenshot name: `lastname_course-folders.png` Show File Explorer displaying:
+
+-   `C:\cmsc-1217\course-work\`
+-   `C:\cmsc-1217\book\`
+-   `C:\cmsc-1217\data\`
+
+3.  **Book files cloned** Screenshot name: `lastname_book-clone.png` Show either:
+
+-   the successful `git clone` output, **or**
+-   File Explorer showing: `C:\cmsc-1217\book\pydata-book\`
+
+4.  **Conda environment exists** Screenshot name: `lastname_conda-env-list.png` Show the output of:
+
+-   `conda info --envs`
+
+5.  **Core packages installed** Screenshot name: `lastname_pandas-version.png` Show the output of:
+
+-   `python -c "import pandas as pd; print(pd.__version__)"`
+
+(We will keep a consistent pandas version for compatibility with course/book notebooks.)
+
+## Part 3: JupyterLab practice
+
+#### A) Launch JupyterLab in the correct folder
+
+From Anaconda Prompt:
+
+1.  `conda activate pydata-book`
+2.  `cd C:\cmsc-1217\course-work`
+3.  `jupyter lab`
+
+#### B) Create a `Week01` folder in `cmsc-1217` and then create and run a notebook
+
+Create: `week01-notebook-practice.ipynb` in `course-work\week01`.
+
+Run these cells:
+
+``` python
+import sys
+sys.executable
+```
+
+``` python
+import numpy as np
+import pandas as pd
+import matplotlib
+```
+
+``` python
+message = "Notebooks run Python too"
+message
+```
+
+``` python
+x = 10
+x + 5
+```
+
+Then use JupyterLab to:
+
+-   Restart the kernel
+-   Run all cells
+
+Finally, do:
+
+-   **Tab completion**: type `np.random.` and use completion
+-   **Help/introspection**:
+
+``` python
+np.random.standard_normal?
+```
+
+These behaviors are part of the Chapter 2 IPython/Jupyter workflow.
+
+#### Required screenshots
+
+6.  **JupyterLab opened in course-work** Screenshot name: `lastname_jupyterlab-course-work.png` Show the JupyterLab file browser open in `C:\cmsc-1217\course-work\week01`.
+
+7.  **sys.executable output** Screenshot name: `lastname_sys-executable.png`
+
+8.  **Introspection output (`?`)** Screenshot name: `lastname_ipython-help.png`
+
+## Part 4: IPython in a terminal
+
+Open a new Anaconda Prompt tab/window:
+
+1.  `conda activate pydata-book`
+2.  `ipython`
+
+Run at least one small example that produces an `In [ ]` and an `Out [ ]` (for example, assign a variable and then evaluate it).
+
+9.  **IPython running** Screenshot name: `lastname_ipython-prompt.png` Show the IPython prompt and at least one `In [ ]` / `Out [ ]` interaction.
+
+## Part 5: D2L quiz
+
+Complete the **D2L Chapter 1 and Chapter 2 quiz**.
+
+## Part 6: Video reflection
+
+### Video Submission Instructions
+
+Record a short video of yourself explaining your understanding of the Week 1 workflow. Focus on explaining concepts clearly and using correct terminology rather than reading text from the screen.
+
+In your video, address:
+
+-   What feels different from running `.py` scripts in an editor
+-   What the kernel is (in your own words)
+-   Why “restart the kernel” and “run all” are useful habits
+
+**Requirements**
+
+-   Clear video and audio quality
+-   Introduce yourself at the beginning (name)
+-   Name your video file: `lastname_Week01Reflection`
+-   Upload your video to **Kaltura**
+-   **Do not** embed the video in the Dropbox submission
+-   Paste the **share link** into the D2L assignment text submission box
+-   Make sure the link text includes `lastname_Week01Reflection`in the link name. This will appear if you copy the link.
+
+## D2L submission checklist
+
+Submit the following items to the Week 1 D2L dropboxes.
+
+### Screenshot files (upload as separate files, not a zip)
+
+1.  `lastname_git-version.png`
+2.  `lastname_course-folders.png`
+3.  `lastname_book-clone.png`
+4.  `lastname_conda-env-list.png`
+5.  `lastname_pandas-version.png`
+6.  `lastname_jupyterlab-course-work.png`
+7.  `lastname_sys-executable.png`
+8.  `lastname_ipython-help.png`
+9.  `lastname_ipython-prompt.png`
+
+### Video submission (link only)
+
+-   Video filename: `lastname_Week01Reflection`
+-   Submit: Paste the share link into the D2L text submission box (do not embed the video in the Dropbox).

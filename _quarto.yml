@@ -1,0 +1,87 @@
+project:
+  type: website
+  render:
+    - "**/*.qmd"
+    - "!shared/templates/**"
+    - "!d2l/**"
+
+
+website:
+  title: "CMSC 1217 : Introduction to Data Analytics"
+  reader-mode: false
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home      
+
+  sidebar:
+    style: "docked"
+    search: true
+
+    # optional
+    # logo: shared/assets/course-badge.png
+    # logo-alt: "Course badge"
+    # logo-href: index.qmd
+
+    tools:
+      - icon: github
+        href: https://github.com
+        aria-label: GitHub
+      - icon: chat-dots
+        href: https://discord.gg
+        aria-label: Discord
+      - icon: person-circle
+        href: https://sctcc.learn.minnstate.edu/d2l/login
+        aria-label: D2L
+    
+    
+    
+    
+    contents:
+      - section: "Course information"
+        contents:
+          - href: course/syllabus.qmd
+            text: Syllabus
+          - href: course/schedule.qmd
+            text: Schedule
+          - href: shared/policies/office-hours.qmd
+            text: Office Hours
+          - href: shared/policies/homework-coursework.qmd
+            text: Assignment Policies
+          - href: shared/policies/general-policies.qmd
+            text: General Policies
+
+
+      - section: "Weekly Overview"
+        contents:
+          - href: weekly-overview/week-01/index.qmd
+            text: Week 1
+          #- href: weekly-overview/week-02/
+            #text: Week 2
+
+      - section: "Weekly Assignments"
+        contents:
+          - href: assignments/week-01/index.qmd
+            text: Week 1
+           
+      
+      
+      - section: "Guides"
+        contents:
+          - href: shared/guides/setup/miniconda.qmd
+            text: Miniconda Setup
+
+
+format:
+  html:
+    toc: false
+    theme: 
+      light: cosmo
+      dark: darkly
+    css:
+      - shared/assets/course.css
+      - styles.css
+
+
+
+

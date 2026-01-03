@@ -1,0 +1,13 @@
+.venv/
+_site/
+.quarto/
+*_cache/
+.ipynb_checkpoints/
+d2l/uploads/
+d2l/downloads/
+shared/**
+!shared/.keep
+.DS_Store
+
+/.quarto/
+**/*.quarto_ipynb

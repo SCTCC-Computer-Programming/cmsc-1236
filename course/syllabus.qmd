@@ -1,0 +1,158 @@
+---
+title: "CMSC 1217 – Introduction to Data Analytics"
+subtitle: "Syllabus"
+title-block-banner: false
+
+format:
+  html:
+    toc: false
+
+  pdf:
+    toc: false
+    title-block-style: none
+    pdf-engine: lualatex
+    papersize: letter
+    fontsize: 11pt
+    geometry: margin=1in
+    mainfont: "Helvetica Neue"
+    linestretch: 1.08
+    include-in-header:
+      text: |
+        \usepackage{parskip}     % space between paragraphs, no indent
+        \usepackage{titlesec}    % control heading sizes/styles
+
+        % Heading sizes/styles (covers deeper headings too)
+        \titleformat{\section}{\Large\bfseries\sffamily}{}{0pt}{}
+        \titleformat{\subsection}{\large\bfseries\sffamily}{}{0pt}{}
+        \titleformat{\subsubsection}{\normalsize\bfseries\sffamily}{}{0pt}{}
+        \titleformat{\paragraph}{\normalsize\bfseries\sffamily}{}{0pt}{}
+
+        % Spacing around headings
+        \titlespacing*{\section}{0pt}{1.2em}{0.5em}
+        \titlespacing*{\subsection}{0pt}{0.9em}{0.4em}
+        \titlespacing*{\subsubsection}{0pt}{0.7em}{0.3em}
+        \titlespacing*{\paragraph}{0pt}{0.5em}{0.2em}
+
+  docx:
+    toc: false
+---
+
+{{< include ../shared/templates/syllabus/header.qmd >}}
+
+#### Prerequisites:
+
+CMSC 1203 - Structured Programming Logic
+
+## Course Description
+
+This course introduces data analytics using Python to extract and communicate insights from datasets.
+
+Students acquire foundational skills in data manipulation, including transformation and cleansing, alongside techniques for visualizing data distributions and managing file-based data input/output, preparing them for machine learning applications in subsequent semesters. The course focuses on technical concepts such as trend identification through graphical analysis, data structuring for computational efficiency, and processing real-world datasets for artificial intelligence applications. Through programming exercises and a capstone project analyzing a representative dataset, students develop practical Python programming competencies essential for advanced coursework in machine learning.
+
+### Course Philosophy
+
+This course follows a **tools-first** approach to “data analytics.” Our focus is on the Python programming skills and the data library ecosystem (especially **pandas** and related tools) used to manipulate, process, clean, and summarize real datasets. We will cover analytical concepts only as needed to motivate a tool or technique, but this course is **not** focused on statistical methodology (hypothesis testing, inference, or model theory), which is addressed in other courses.
+
+***This online class requires extensive use of your webcam***
+
+## Course Outcomes
+
+#### Upon completion of this course the student will:
+
+-   Identify fundamental concepts of data analytics and their role in preparing data for machine learning applications.
+
+-   Explain how Python programming streamlines data analysis processes for real-world datasets.
+
+-   Manipulate datasets in Python, including filtering, sorting, and handling missing values.
+
+-   Compare Python data visualization techniques to represent data trends effectively.
+
+-   Assess the quality of a dataset's preparation in Python, identifying areas for improvement in data cleaning and transformation for machine learning readiness.
+
+-   Design a data analytics project in Python to extract insights from a real-world dataset.
+
+## Course Content
+
+1.  Introduction to Data Analytics with Python
+
+2.  Python Libraries for Data Manipulation (Pandas)
+
+3.  Data Cleaning and Preparation in Python
+
+4.  Data Visualization with Matplotlib and Seaborn
+
+5.  Working with File-Based Data (CSV, JSON)
+
+6.  Capstone Data Analytics Project
+
+## Required Materials
+
+Python for Data Analyis, 3rd Edition : Wes McKinney
+
+Computer running current OS that supports Microsoft Office
+
+Webcam Required
+
+***\*\*\* STUDENTS ARE REQUIRED TO HAVE THEIR MATERIALS AT THE START OF THE COURSE\*\*\****
+
+## Methods of Instruction
+
+Student Presentation Problem Solving Internet
+
+Creative Projects Assigned Reading
+
+Project Critiques Labs Lecture
+
+Film/Slides/Videos Demonstrations
+
+## Grading/Evaluation
+
+Tests, textbook problems, individual projects, video assignments, and performance will be graded. Grades will be updated in D2L and you are responsible for verifying that your grades are correct. Academic Progress reports will only be sent out to students earning a grade of a “D” or lower. Course Grades will be per the following criteria:
+
+A = 100 – 90%
+
+B = 89 – 80%
+
+C = 79 – 70%
+
+D = 69 – 60 %
+
+F = Below 60 %
+
+Grades are weighted as follows:
+
+-   Labs - 45%
+-   Video Activities – 40%
+-   D2L Quizzes/Tests – 15%
+
+Some assignments will be based off a pass/fail criterion. Grading Rubrics will be assigned to most course activities. Some assignments are automatically graded. Activities may be assigned but not be graded, these are for self-review to prepare you for graded activities. ‘Proof’ files will be provided to you on occasion to help you identify any issues with your assignment. It is expected that you review these when you receive your rubric feedback. Extra credit assignments or additional assignments are not offered in this course.
+
+{{< include ../shared/templates/syllabus/course-policies.qmd >}}
+
+{{< include ../shared/templates/syllabus/accomodations.qmd >}}
+
+{{< include ../shared/templates/syllabus/diversity.qmd >}}
+
+## Course Calendar
+
+See News and Content page on D2L. The Instructor may make adjustments or changes. Notification will be given in class prior to change.
+
+| Week | Dates | Topics | Deliverable | Reading |
+|---:|---|---|---|---|
+| 1 | Jan 12, 2026–Jan 18, 2026 | Onboarding + Jupyter basics | Practice Notebook 1 (completion) | Ch. 2 (Jupyter/IPython) + Ch. 1 overview |
+| 2 | Jan 19, 2026–Jan 25, 2026 | Python refresh for data work (functions, files, pathlib) | Practice Notebook 2 (completion) | Ch. 3 (Built-in Python for data work) |
+| 3 | Jan 26, 2026–Feb 01, 2026 | NumPy essentials (arrays, vectorization, boolean masks) | Practice Notebook 3 (completion) | Ch. 4 (NumPy basics) |
+| 4 | Feb 02, 2026–Feb 08, 2026 | pandas foundations I (Series/DataFrame, indexing, filtering) | Skill Check 1 (autograded notebook) | Ch. 5 (pandas intro) |
+| 5 | Feb 09, 2026–Feb 15, 2026 | pandas foundations II (sorting, basic summaries, missingness intro) | Practice Notebook 5 (completion) | Ch. 5 (pandas continued) |
+| 6 | Feb 16, 2026–Feb 22, 2026 | Data I/O (CSV, Excel/JSON basics, parsing dates, dtypes) | Practice Notebook 6 (completion) | Ch. 6 (Data loading/storage) |
+| 7 | Feb 23, 2026–Mar 01, 2026 | Cleaning I (missing data, types, duplicates, string cleanup) | Reflection 1 (graded) | Ch. 7 (Data cleaning/prep) |
+| 8 | Mar 02, 2026–Mar 08, 2026 | Cleaning II (validation rules, outliers as data-quality topic) | Practice Notebook 8 (completion) | Ch. 7 (Data cleaning/prep) |
+| 9 | Mar 09, 2026–Mar 15, 2026 | Spring Break (no due dates) | — | — |
+| 10 | Mar 16, 2026–Mar 22, 2026 | Wrangling I (merge/join, concat; keys & pitfalls) | Skill Check 2 (autograded notebook) | Ch. 8 (Wrangling: join/reshape) |
+| 11 | Mar 23, 2026–Mar 29, 2026 | Wrangling II (reshape: pivot/melt; tidy layouts) | Practice Notebook 11 (completion) | Ch. 8 (Wrangling: reshape) |
+| 12 | Mar 30, 2026–Apr 05, 2026 | Groupby + aggregation (report tables, transform vs agg) | Reflection 2 (graded) | Ch. 10 (Aggregation & groupby) |
+| 13 | Apr 06, 2026–Apr 12, 2026 | Visualization I (plot selection, labeling, communication) | Practice Notebook 13 (completion) | Ch. 9 (Visualization) |
+| 14 | Apr 13, 2026–Apr 19, 2026 | Visualization II (+ optional time series basics) | Skill Check 3 (autograded notebook) | Ch. 9 (Visualization) + optional Ch. 11 (Time series) |
+| 15 | Apr 20, 2026–Apr 26, 2026 | Project setup week (topic + dataset approval + plan) | Reflection 3 / Project Proposal (graded) | Ch. 13 (Examples) for inspiration (optional) |
+| 16 | Apr 27, 2026–May 03, 2026 | Final project work time (milestone: cleaned dataset + initial EDA) | — (work week) | Ch. 13 (Examples) (optional) |
+| 17 | May 04, 2026–May 10, 2026 | Final project work time (milestone: visuals + narrative + polish) | — (work week) | Ch. 13 (Examples) (optional) |

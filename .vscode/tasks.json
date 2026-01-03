@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Site: Start clean (sync + hard clean + preview)",
+      "type": "shell",
+      "command": "rsync -a --delete \"/Volumes/Anger/work/courses/shared/\" \"${workspaceFolder}/shared/\" && rm -rf \"${workspaceFolder}/_site\" \"${workspaceFolder}/.quarto\" && quarto preview",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Site: Refresh (sync + preview)",
+      "type": "shell",
+      "command": "rsync -a --delete \"/Volumes/Anger/work/courses/shared/\" \"${workspaceFolder}/shared/\" && quarto preview",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Site: Publish to GitHub (sync + hard clean + render + publish)",
+      "type": "shell",
+      "command": "rsync -a --delete \"/Volumes/Anger/work/courses/shared/\" \"${workspaceFolder}/shared/\" && rm -rf \"${workspaceFolder}/_site\" \"${workspaceFolder}/.quarto\" && quarto render && quarto publish gh-pages --no-prompt",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ]
+}
+

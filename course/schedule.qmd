@@ -1,0 +1,77 @@
+---
+title: "CMSC 1217 Course Schedule"
+format:
+  html:
+    toc: true
+---
+
+## Course rhythm
+
+- **Weekly module opens:** Monday 8:00 AM
+
+- **Assignments due:** Sunday 11:30 PM
+
+- **Work cadence:**
+
+  - **Mon–Thu:** work through reading + practice notebook
+
+  - **Sun:** graded items due (when assigned)
+
+- **Spring break:** **Mar 9–13, 2026** 
+
+- **Final project block:** **Apr 27–May 10, 2026**
+
+- **Final project due:** **May 11, 2026**
+
+
+## Assessment intent
+
+- **Practice Notebooks (completion):** guided work with built-in self-check cells
+
+- **Skill Checks (autograded notebooks):** short, testable tasks (functions / named outputs)
+
+- **Reflections (graded):** brief, rubric-based video explanations of choices, debugging, and interpretation
+
+- **Final Project (graded):** notebook report + deliverables (Video Based)
+
+
+## Weekly schedule
+
+| Week | Dates | Topics | Deliverable | Reading |
+|---:|---|---|---|---|
+| 1 | Jan 12, 2026–Jan 18, 2026 | Onboarding + Jupyter basics | Practice Notebook 1 (completion) | Ch. 2 (Jupyter/IPython) + Ch. 1 overview |
+| 2 | Jan 19, 2026–Jan 25, 2026 | Python refresh for data work (functions, files, pathlib) | Practice Notebook 2 (completion) | Ch. 3 (Built-in Python for data work) |
+| 3 | Jan 26, 2026–Feb 01, 2026 | NumPy essentials (arrays, vectorization, boolean masks) | Practice Notebook 3 (completion) | Ch. 4 (NumPy basics) |
+| 4 | Feb 02, 2026–Feb 08, 2026 | pandas foundations I (Series/DataFrame, indexing, filtering) | Skill Check 1 (autograded notebook) | Ch. 5 (pandas intro) |
+| 5 | Feb 09, 2026–Feb 15, 2026 | pandas foundations II (sorting, basic summaries, missingness intro) | Practice Notebook 5 (completion) | Ch. 5 (pandas continued) |
+| 6 | Feb 16, 2026–Feb 22, 2026 | Data I/O (CSV, Excel/JSON basics, parsing dates, dtypes) | Practice Notebook 6 (completion) | Ch. 6 (Data loading/storage) |
+| 7 | Feb 23, 2026–Mar 01, 2026 | Cleaning I (missing data, types, duplicates, string cleanup) | Reflection 1 (graded) | Ch. 7 (Data cleaning/prep) |
+| 8 | Mar 02, 2026–Mar 08, 2026 | Cleaning II (validation rules, outliers as data-quality topic) | Practice Notebook 8 (completion) | Ch. 7 (Data cleaning/prep) |
+| 9 | Mar 09, 2026–Mar 15, 2026 | Spring Break (no due dates) | — | — |
+| 10 | Mar 16, 2026–Mar 22, 2026 | Wrangling I (merge/join, concat; keys & pitfalls) | Skill Check 2 (autograded notebook) | Ch. 8 (Wrangling: join/reshape) |
+| 11 | Mar 23, 2026–Mar 29, 2026 | Wrangling II (reshape: pivot/melt; tidy layouts) | Practice Notebook 11 (completion) | Ch. 8 (Wrangling: reshape) |
+| 12 | Mar 30, 2026–Apr 05, 2026 | Groupby + aggregation (report tables, transform vs agg) | Reflection 2 (graded) | Ch. 10 (Aggregation & groupby) |
+| 13 | Apr 06, 2026–Apr 12, 2026 | Visualization I (plot selection, labeling, communication) | Practice Notebook 13 (completion) | Ch. 9 (Visualization) |
+| 14 | Apr 13, 2026–Apr 19, 2026 | Visualization II (+ optional time series basics) | Skill Check 3 (autograded notebook) | Ch. 9 (Visualization) + optional Ch. 11 (Time series) |
+| 15 | Apr 20, 2026–Apr 26, 2026 | Project setup week (topic + dataset approval + plan) | Reflection 3 / Project Proposal (graded) | Ch. 13 (Examples) for inspiration (optional) |
+| 16 | Apr 27, 2026–May 03, 2026 | Final project work time (milestone: cleaned dataset + initial EDA) | — (work week) | Ch. 13 (Examples) (optional) |
+| 17 | May 04, 2026–May 10, 2026 | Final project work time (milestone: visuals + narrative + polish) | — (work week) | Ch. 13 (Examples) (optional) |
+
+## Final project (Apr 27–May 11)
+
+**Deliverable (May 11, 2026):** a single notebook-based report that demonstrates an end-to-end workflow.
+
+
+Minimum components:
+
+- Load one real dataset (CSV/JSON/Excel)
+
+- Cleaning + preparation steps (with brief justification)
+
+- Wrangling/aggregation (at least one `merge` or `groupby` style task)
+
+- **2–4** clear visualizations with labels
+
+- Short written narrative: what you did, what you found, limitations/next steps
+
+- Export at least one output artifact (cleaned CSV and/or saved figures)
