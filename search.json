@@ -1,0 +1,517 @@
+[
+  {
+    "objectID": "weekly-overview/week-02/index.html",
+    "href": "weekly-overview/week-02/index.html",
+    "title": "Week 2",
+    "section": "",
+    "text": "This page will be published before Week 2 begins."
+  },
+  {
+    "objectID": "shared/policies/office-hours.html",
+    "href": "shared/policies/office-hours.html",
+    "title": "Office Hours",
+    "section": "",
+    "text": "Mondays - 3:00–4:00 PM and 6:00–7:00 PM\nPersistent Zoom link: Join Zoom meeting",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Office Hours"
+    ]
+  },
+  {
+    "objectID": "shared/policies/office-hours.html#no-office-hours",
+    "href": "shared/policies/office-hours.html#no-office-hours",
+    "title": "Office Hours",
+    "section": "No office hours",
+    "text": "No office hours\nOffice hours are not held on:\nJan 19 — Martin Luther King — No Classes — College Closed\nFeb 16 — President’s Day — No Classes — College Closed\nMar 9–13 — Spring Break — No Classes\nMay 11–15 — Final Exams",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Office Hours"
+    ]
+  },
+  {
+    "objectID": "shared/policies/general-policies.html",
+    "href": "shared/policies/general-policies.html",
+    "title": "General Course Policies",
+    "section": "",
+    "text": "Academic integrity\n\nStudents must maintain academic integrity (no cheating, plagiarism, unauthorized materials, falsification, etc.).\nViolations follow SCTCC Academic Integrity Policy/Procedure and may be recorded; disciplinary action may apply.\nAcademic integrity violations result in a grade reduction.\n\n\n\nProfessional conduct and behavior (online + communication)\n\nOnline discussions must be civil, respectful, and relevant.\nDisruptive behavior on any course communication platform is not tolerated; may result in grade penalties and/or removal per the Code of Student Conduct.\nRespect for differing viewpoints is required; maintain professional language and conduct.\nIf disruptive behavior causes a student to miss an assignment, they receive no credit for that assignment.\nIf sanctioned for disruptive behavior, students waive the right to a warning on a second occurrence.\nSubstance policy for online sessions: inebriation/being under the influence, displaying alcohol, or drug paraphernalia results in removal from the session and/or course; no smoking during online school activites.\n\n\n\nStudent privacy / third-party communication\n\nCourse progress is discussed only with the student, not parents/guardians/third parties, unless an Information Release is on file.\nIf a third party contacts the instructor, the instructor will defer communication to the student.\nStudents may not invite third parties to attend any online activity (office hours, group meetings).\nRequests to release progress information to a third party should go through the Dean’s office.\n\n\n\nAttendance / participation (online definition + consequences)\n\nAttendance is expected and monitored; students are responsible for tracking absences.\nAttendance is determined by D2L logins and weekly assignment submissions.\nNot logging in and/or not submitting work for a week counts as an absence (including weeks without due assignments unless it’s a scheduled holiday/break).\nStudents must log in and complete an activity by 11:30 PM on the first Wednesday of week 1 or they may be dropped.\nMissing two consecutive weeks → dropped.\nMissing two total weeks → one-letter-grade reduction (10% of total points).\nMissing three total weeks → an additional one-letter-grade reduction.\nAdditional absences beyond three → additional letter-grade reduction per occurrence.\nAttendance is handled per class (one class doesn’t cover another).\n\n\n\nTechnology and platform expectations\n\nStudents are responsible for having required computer/technology for the course.\nStudents are responsible for learning and using D2L (primary channel for schedules, grades, and announcements).\n\n\n\nEmail communication\n\nEmail is the primary method to contact the instructor; students must use their college email account.\nEmails must include a subject line with course name and section/class time.\nStudents are expected to check email daily and read instructor messages/attachments.\nOn nights homework is due, only administrative email items will be answered; technical homework questions will not be addressed.\nResponse time: by end of next business day; Friday emails answered Monday.",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "General Policies"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/environment-setup-guide-vscode.html",
+    "href": "shared/guides/setup/environment-setup-guide-vscode.html",
+    "title": "Week 1 — VSCode Setup and First Notebook (Windows)",
+    "section": "",
+    "text": "What you’re doing\nYou are going to open a Jupyter notebook in VS Code and run it successfully using the course Python environment.\n\n\n1) Open the course folder in VS Code\n\nOpen VS Code\nGo to File → Open Folder…\nOpen your course work folder (example: C:\\cmsc-1217\\)\n\n\n\n2) Install the extensions (if you don’t already have them)\nIn VS Code, install:\n\nPython (Microsoft)\nJupyter (Microsoft)\n\n\n\n3) Create the course Python environment and select it in VS Code (one-time)\n\n3A) Create the course environment folder\n\nCreate a folder on your C: drive named:\n\nC:\\cmsc-1217-env\\\n\n\n\n\n3B) Create the virtual environment (.venv)\n\nOpen Command Prompt (Windows search → type “Command Prompt”)\nRun:\n\ncd C:\\cmsc-1217-env\npython -m venv .venv\n\n\n3C) Activate the environment\nIn the same Command Prompt window, run:\nC:\\cmsc-1217-env\\.venv\\Scripts\\activate.bat\nYou should see (.venv) appear at the start of the line.\n\n\n3D) Install the notebook packages (first-time setup)\nStill in the activated environment, run:\npython -m pip install --upgrade pip\npython -m pip install numpy pandas matplotlib jupyter\n\n\n3E) Select the environment in VS Code (Interpreter)\n\nIn VS Code, press Ctrl + Shift + P\nType Python: Select Interpreter\nChoose the interpreter that looks like:\n\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nIf you don’t see it:\n\nchoose Enter interpreter path…\npaste: C:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis is the environment we will use all semester.\n\n\n\n4) Open the notebook\n\nIn the Explorer panel, click the notebook file (.ipynb) your instructor provided.\n\n\n\n5) Select the notebook kernel (first time only)\nThe first time you run a notebook, VS Code may ask you to pick a kernel.\nChoose the kernel that matches the course environment path:\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis can feel repetitive the first time. That’s normal. Once selected, it usually stays set for that folder.\n\n\n6) Select the kernel, then run a quick test\n\nIn the top-right of the notebook, click Select Kernel.\nChoose the kernel that points to the course environment:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n(It may also show up as “Python 3.x (.venv)”—the key is that it points to cmsc-1217-env\\.venv.)\nClick + Code.\nIn the code block that appears, paste:\n\nprint(\"Notebook is running\")\n\nRun it by clicking the Run (▶) icon on the code block, or press Shift + Enter.\nYou should see Notebook is running appear underneath.\n\n\n\n7) Quick confirmation (your instructor may ask for this)\nRun this in a cell:\nimport sys\nsys.executable\nIt should show something like:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\n\nIf something goes wrong\n\nIf you see ModuleNotFoundError (missing package), you are almost always using the wrong interpreter/kernel.\n\nRe-do Step 3 and Step 5 and pick the one that points to cmsc-1217-env\\.venv."
+  },
+  {
+    "objectID": "course/syllabus.html",
+    "href": "course/syllabus.html",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "",
+    "text": "Instructor(s): Joseph Silman Office: Online\nE-mail: jsilman@sctcc.edu (PRIMARY COMMUNICATION METHOD) Phone: (320)308-6595\nOffice Hours: See Attached Course Schedule in D2L.\nCredits: 3 (Lecture 2; Lab 1)",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-description",
+    "href": "course/syllabus.html#course-description",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Course Description",
+    "text": "Course Description\nThis course introduces data analytics using Python to extract and communicate insights from datasets.\nStudents acquire foundational skills in data manipulation, including transformation and cleansing, alongside techniques for visualizing data distributions and managing file-based data input/output, preparing them for machine learning applications in subsequent semesters. The course focuses on technical concepts such as trend identification through graphical analysis, data structuring for computational efficiency, and processing real-world datasets for artificial intelligence applications. Through programming exercises and a capstone project analyzing a representative dataset, students develop practical Python programming competencies essential for advanced coursework in machine learning.\n\nCourse Philosophy\nThis course follows a tools-first approach to “data analytics.” Our focus is on the Python programming skills and the data library ecosystem (especially pandas and related tools) used to manipulate, process, clean, and summarize real datasets. We will cover analytical concepts only as needed to motivate a tool or technique, but this course is not focused on statistical methodology (hypothesis testing, inference, or model theory), which is addressed in other courses.\nThis online class requires extensive use of your webcam",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-outcomes",
+    "href": "course/syllabus.html#course-outcomes",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Course Outcomes",
+    "text": "Course Outcomes\n\nUpon completion of this course the student will:\n\nIdentify fundamental concepts of data analytics and their role in preparing data for machine learning applications.\nExplain how Python programming streamlines data analysis processes for real-world datasets.\nManipulate datasets in Python, including filtering, sorting, and handling missing values.\nCompare Python data visualization techniques to represent data trends effectively.\nAssess the quality of a dataset’s preparation in Python, identifying areas for improvement in data cleaning and transformation for machine learning readiness.\nDesign a data analytics project in Python to extract insights from a real-world dataset.",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-content",
+    "href": "course/syllabus.html#course-content",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Course Content",
+    "text": "Course Content\n\nIntroduction to Data Analytics with Python\nPython Libraries for Data Manipulation (Pandas)\nData Cleaning and Preparation in Python\nData Visualization with Matplotlib and Seaborn\nWorking with File-Based Data (CSV, JSON)\nCapstone Data Analytics Project",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#required-materials",
+    "href": "course/syllabus.html#required-materials",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Required Materials",
+    "text": "Required Materials\nPython for Data Analyis, 3rd Edition : Wes McKinney\nComputer running current OS that supports Microsoft Office\nWebcam Required\n*** STUDENTS ARE REQUIRED TO HAVE THEIR MATERIALS AT THE START OF THE COURSE***",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#methods-of-instruction",
+    "href": "course/syllabus.html#methods-of-instruction",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Methods of Instruction",
+    "text": "Methods of Instruction\nStudent Presentation Problem Solving Internet\nCreative Projects Assigned Reading\nProject Critiques Labs Lecture\nFilm/Slides/Videos Demonstrations",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#gradingevaluation",
+    "href": "course/syllabus.html#gradingevaluation",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Grading/Evaluation",
+    "text": "Grading/Evaluation\nTests, textbook problems, individual projects, video assignments, and performance will be graded. Grades will be updated in D2L and you are responsible for verifying that your grades are correct. Academic Progress reports will only be sent out to students earning a grade of a “D” or lower. Course Grades will be per the following criteria:\nA = 100 – 90%\nB = 89 – 80%\nC = 79 – 70%\nD = 69 – 60 %\nF = Below 60 %\nGrades are weighted as follows:\n\nLabs - 45%\nVideo Activities – 40%\nD2L Quizzes/Tests – 15%\n\nSome assignments will be based off a pass/fail criterion. Grading Rubrics will be assigned to most course activities. Some assignments are automatically graded. Activities may be assigned but not be graded, these are for self-review to prepare you for graded activities. ‘Proof’ files will be provided to you on occasion to help you identify any issues with your assignment. It is expected that you review these when you receive your rubric feedback. Extra credit assignments or additional assignments are not offered in this course.",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-policiespractices",
+    "href": "course/syllabus.html#course-policiespractices",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Course Policies/Practices",
+    "text": "Course Policies/Practices\n\nAcademic Integrity\nAcademic integrity is highly valued at St. Cloud Technical & Community College and throughout higher education. Maintaining academic integrity is the responsibility of every member of the college community: faculty, staff, administrators and students. Academic integrity requires students to refrain from engaging in or tolerating acts including, but not limited to, submitting false academic records, cheating, plagiarizing, altering, forging, or misusing a college academic record; acquiring or using test materials without faculty permission; acting alone or in cooperation with another to falsify records or to obtain dishonest grades, honors, or awards.\nAny violation of the St. Cloud Technical & Community College’s Academic Integrity Policy S3.28 is considered a disciplinary offense and will be subject to the policies of this instructor, entrance into the Academic Integrity Database, and possible disciplinary action as outlined in the Academic Integrity Procedure S3.28.1. Students accused of academic dishonesty may appeal the decision. Students may review the Academic Integrity process and access the Academic Integrity Appeal Form at https://www.sctcc.edu/academic-integrity.\nClass policy for Academic Integrity Violations will result in a reduction of your grade.\nhttp://sctcc.edu/sites/default/files/policies/S3.24%20Complaint%20Grievance.pdf\n\n\nClassroom Behavior\nAttendance is a necessary part of this course. Refer to the attendance policy outlined later in the syllabus\nOnline discussions should be civilized and respectful to everyone and relevant to the topic we are discussing.\nDisruptive behavior on any communication platform will not be tolerated.\nYou are expected to do your own work unless otherwise directed. Cheating, plagiarism, and any other form of academic dishonesty will not be tolerated. Please refer to the Code of Student Conduct and Academic Integrity policy for details.\nAny indication of inebriation or being under the influence, and/or displaying of alcohol or use of paraphernalia that could be associated with drug usage during assignments/course activities will result in removal from the session and/or course. No smoking during any online sessions. My policy is to remove you from the course and leave it to you to file a grievance to return.\nMeaningful and constructive dialogue is encouraged, but this also requires a degree of mutual respect, willingness to listen, and tolerance of opposing points of view. Respect for individual differences and alternative viewpoints will always be expected in this course. One’s words and use of language should be temperate and within acceptable bounds of civility and decency.\nDisruptive behaviors, including excessive talking about off topic items, arriving late to the start of meetings or returning late from breaks, sleeping, reading, or watching media, or game playing is not permitted and will result in a grade penalty.\nExtreme disruptive behavior, fighting (verbally), using repetitive profanity, personal or physical threats or insults, and angry outbursts, will result in your removal from the course in accordance with policies and procedures outlined in the SCTCC’s Code of Student Conduct.\nIf a student’s disruptive behavior causes them to miss an assignment, they will not receive credit for that assignment. If a student has been sanctioned due to disruptive behavior, they waive the right to a warning on a second occurrence.\n\n\nData Privacy and Student Course Progress\nStudents are encouraged to take ownership over their academic progress and communicate with faculty directly for any questions or concerns regarding their coursework. I am reachable at my listed contact information and office hours on this syllabus and happy to discuss your progress with you.\nPer the College’s Student Data Practices policy, I am unable to share information about a student’s course progress to anyone other than the student, including third parties such as parents/guardians, unless a current Information Release is on file with the Records and Registration Office. Faculty are often unable to confirm if an Information Release is on file, so it is always preferred that the student speak with the faculty one-on-one.\nBecause of the items outlined above, should a third party contact me directly with a question or concern about your progress, I will defer my response to you and not the third party. Students shall also not invite third parties to attend class meetings (online), as this causes a disruption to the learning environment.\nIf a student would like their course progress information released to a third party, they may do so by contacting the Dean’s office to make a request for specific information to be shared with the third party.\n\n\nComputer Requirements\nA Computer meeting the program requirements and able to run multiple instances of Windows or Linux OS concurrently (using virtualization) is required for this class.\nComputer requirements are outlined here:\nhttps://www.sctcc.edu/degrees-programs/computer-programming\n\n\nD2L\nA fundamental understanding of D2L is required for this course as it is the primary method to communicate course schedules, grade information, and class news. It is the student’s responsibility to learn to navigate and find information on D2L. SCTCC does offer information sessions on this tool.\n\n\nAttendance/Participation:\nAttendance is expected and monitored. You are responsible for monitoring your attendance and your absence count.\nAttendance will be determined by up to two contributing factors, logging into your D2L Brightspace course, and submission of weekly assignments. Failure to log into class and/or submit assignments for a week will result in an absence. Failure to log into class during a week where an assignment is not due and is not a scheduled holiday/spring break week will result in an absence. I will check logins and assignment submission for the previous week every Monday.\nYou must log into your online class and complete an activity by 11:30 PM on the first Wednesday of the first week of class. Failure to log in will result in being dropped from the course.\nMissing two consecutive weeks of class will result in being dropped from the course.\nMissing two total weeks of class (non-consecutive and any combination of unexcused/excused) will result in a reduction of one letter grade (10% of total points). Missing three total weeks of class will result in an additional reduction of a letter grade. Any absence over three will result in a further reduction of a letter grade for each occurrence. Classes I teach are considered independent of each other with respect to attendance. You may meet attendance requirements in one of my classes but fail attendance requirements in another class.\n\n\nTesting:\nD2L tests are electronic quizzes. These may be scheduled ahead of time or given without warning. If a D2L test is password protected, sharing passwords with another student will constitute an integrity violation.\nTests are not restricted to a specific day for this course but must be completed by the assignment due date as scheduled. You may have multiple attempts at an Online D2L quiz. Time for each question is normally 45 seconds per question. If multiple attempts are allowed, you must score greater than 60% on your first attempt to be allowed a second attempt and you must score greater than an 80% on your second attempt to be allowed a third attempt (if there is a third attempt). If you exceed the time limit on the quiz, the grading engine will mark the test as a 0 and will not allow any further work on your quiz. Always be aware of the time remaining on your quiz. You may not leave a quiz once you start it.\nNote on auto generated D2L Tests: You may not be able to backtrack through the questions on a D2L quiz. The Next Page and Submit Button are close to each other on the test page. It is possible to Submit a quiz inadvertently if you are not paying attention so ensure that you are reading the popup messages.\nTests and quizzes cannot be made up.\n\n\nSchedule\nSubject to change based on instructor and class needs.\n\n\nAssignments/Projects\nAll assignments must be turned in by the due date. Due dates will be announced during class and posted on D2L . Late assignments will not be accepted. A late assignment is any assignment that is not in the dropbox by the due/end date. Sometimes assignments will consist of two parts, a video submission, and a file submission. Missing either portion of the assignment will make the assignment ineligible for grading. Video assignments that cannot be accessed by the instructor at the time of grading will also not be accepted. All projects and assignments should be archived and kept. Any group work assigned is also ineligible for makeup so make sure that you are a responsible, considerate groupmate.\nTypes of assignments you may encounter in this course:\nWeekly practice assignments – are based on the week’s topics. You will normally receive 5 – 7 days to complete these types of assignment.\nProjects – are longer assignments that are bigger in scope than a practice assignment and usually have a timeline with concrete checkpoints. These assignments may be done in a group setting or individually depending on the project.\nVideo Assignments – are assignments in which you will use your webcam and record your desktop to complete a specific activity. Some video assignments are group-based activities. Ensure that you review the assignment and the assignment rubric for specific instructions.\n\n\nDress\nStudents are expected to dress in a manner that is considerate of their classmates and the instructor for any online video assignments.",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#standards-for-materials-submitted",
+    "href": "course/syllabus.html#standards-for-materials-submitted",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Standards for Materials Submitted",
+    "text": "Standards for Materials Submitted\nSpecific standards for submitting assignments will be outlined by the instructor in the assignment instructions. Any assignment that does not follow these standards will not be accepted or subject to a significant grade penalty, this includes not submitting files in the correct file format and/or misnaming the file. If you have a question on a file submission, please ensure that you contact the instructor before the due date.\n\nStudent Email\nStudents will be expected to use email as the primary method of communication with the instructor. Students must use their college email account for all email communication with the instructor. Assignments will not be accepted via email. All students must abide by the following requirements:\n\nIf the subject line is missing, your email will not be accepted. The subject line MUST have your course name and course section/class time.\nStudents will check their email at least once per day.\nStudents will read all emails and attachments sent by the instructor.\nAny attachments submitted via email must pertain to the course.\n\nEmail communication is encouraged, however only administrative items will be answered on the night homework is due. An example of an administrative item is informing me of the birth of a child. Technical questions regarding homework will not be addressed. The purpose behind this policy is to limit procrastination.\nExpect email to be answered by the end of the next business day. Email sent on Friday will be answered the following Monday.",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#student-responsibilitiescontributions",
+    "href": "course/syllabus.html#student-responsibilitiescontributions",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Student Responsibilities/Contributions",
+    "text": "Student Responsibilities/Contributions\n\nAttendance and participation is crucial to succeed in this class.\nEvery student will be required to produce projects based on professional standard for the industry.\nEvery student is expected to turn in all work as assigned.\nEvery student is expected to work cooperatively with classmates and the instructor.",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#statement-of-accomodations",
+    "href": "course/syllabus.html#statement-of-accomodations",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Statement of Accomodations",
+    "text": "Statement of Accomodations\nSt. Cloud Technical & Community College is committed to supporting students with disabilities in obtaining, understanding, and advocating for equitable and inclusive access in all aspects of their education and campus life. It is the role of Accessibility Services to provide and/or arrange reasonable accommodations to qualified students who have a disability (or have acquired a disability) during any point of their tenure at SCTCC. Accommodations are established through collaboration between students, Accessibility Services, faculty, and staff to empower students to pursue their academic goals free from barriers while upholding the integrity of the academic experience.\nDisabilities take on several forms including but not limited to mental health, cognitive, learning, behavioral, chronic health/systemic, and physical.\nIf you have a disability (or think you may have a disability) contact Accessibility Services at 320-308-5064 or acc@sctcc.edu to establish an accommodation plan.\nIt is the responsibility of the student requesting accommodations to provide their instructor with their accommodation plan via email. It is encouraged that students with approved accommodations connect with their instructor as soon as they are able in order to proactively discuss how reasonable accommodation will be implemented in class and/or to address any concerns regarding emergency procedures. Students may submit their plan to faculty at any time during the semester, but accommodations cannot be retroactively applied.\nMore information and guidelines are available at www.sctcc.edu/accessibility.\nThis syllabus is available in alternate formats upon request by contacting Accessibility Services at 320-308-5757, 1-800-222-1009, or acc@sctcc.edu. TTY users may call MN Relay Service at 711 to contact the college. Discrimination against individuals on the grounds of disability is prohibited.",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#statement-of-diversity",
+    "href": "course/syllabus.html#statement-of-diversity",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Statement of Diversity",
+    "text": "Statement of Diversity\nThe entire class will benefit from the wealth of diversity brought by each individual, so students are asked to extend every courtesy and respect that they, in turn, would expect from the class.\nThis college is committed to creating a positive, supportive environment that welcomes diversity of opinions and ideas for students. There will be no tolerance of race discrimination/harassment, sexual discrimination/harassment, or discrimination/harassment based on age, disability, color, creed, national origin, religion, sexual orientation, marital status, status with regard to public assistance, or membership in a local commission.",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-calendar",
+    "href": "course/syllabus.html#course-calendar",
+    "title": "CMSC 1217 – Introduction to Data Analytics",
+    "section": "Course Calendar",
+    "text": "Course Calendar\nSee News and Content page on D2L. The Instructor may make adjustments or changes. Notification will be given in class prior to change.\n\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nDeliverable\nReading\n\n\n\n\n1\nJan 12, 2026–Jan 18, 2026\nOnboarding + Jupyter basics\nPractice Notebook 1 (completion)\nCh. 2 (Jupyter/IPython) + Ch. 1 overview\n\n\n2\nJan 19, 2026–Jan 25, 2026\nPython refresh for data work (functions, files, pathlib)\nPractice Notebook 2 (completion)\nCh. 3 (Built-in Python for data work)\n\n\n3\nJan 26, 2026–Feb 01, 2026\nNumPy essentials (arrays, vectorization, boolean masks)\nPractice Notebook 3 (completion)\nCh. 4 (NumPy basics)\n\n\n4\nFeb 02, 2026–Feb 08, 2026\npandas foundations I (Series/DataFrame, indexing, filtering)\nSkill Check 1 (autograded notebook)\nCh. 5 (pandas intro)\n\n\n5\nFeb 09, 2026–Feb 15, 2026\npandas foundations II (sorting, basic summaries, missingness intro)\nPractice Notebook 5 (completion)\nCh. 5 (pandas continued)\n\n\n6\nFeb 16, 2026–Feb 22, 2026\nData I/O (CSV, Excel/JSON basics, parsing dates, dtypes)\nPractice Notebook 6 (completion)\nCh. 6 (Data loading/storage)\n\n\n7\nFeb 23, 2026–Mar 01, 2026\nCleaning I (missing data, types, duplicates, string cleanup)\nReflection 1 (graded)\nCh. 7 (Data cleaning/prep)\n\n\n8\nMar 02, 2026–Mar 08, 2026\nCleaning II (validation rules, outliers as data-quality topic)\nPractice Notebook 8 (completion)\nCh. 7 (Data cleaning/prep)\n\n\n9\nMar 09, 2026–Mar 15, 2026\nSpring Break (no due dates)\n—\n—\n\n\n10\nMar 16, 2026–Mar 22, 2026\nWrangling I (merge/join, concat; keys & pitfalls)\nSkill Check 2 (autograded notebook)\nCh. 8 (Wrangling: join/reshape)\n\n\n11\nMar 23, 2026–Mar 29, 2026\nWrangling II (reshape: pivot/melt; tidy layouts)\nPractice Notebook 11 (completion)\nCh. 8 (Wrangling: reshape)\n\n\n12\nMar 30, 2026–Apr 05, 2026\nGroupby + aggregation (report tables, transform vs agg)\nReflection 2 (graded)\nCh. 10 (Aggregation & groupby)\n\n\n13\nApr 06, 2026–Apr 12, 2026\nVisualization I (plot selection, labeling, communication)\nPractice Notebook 13 (completion)\nCh. 9 (Visualization)\n\n\n14\nApr 13, 2026–Apr 19, 2026\nVisualization II (+ optional time series basics)\nSkill Check 3 (autograded notebook)\nCh. 9 (Visualization) + optional Ch. 11 (Time series)\n\n\n15\nApr 20, 2026–Apr 26, 2026\nProject setup week (topic + dataset approval + plan)\nReflection 3 / Project Proposal (graded)\nCh. 13 (Examples) for inspiration (optional)\n\n\n16\nApr 27, 2026–May 03, 2026\nFinal project work time (milestone: cleaned dataset + initial EDA)\n— (work week)\nCh. 13 (Examples) (optional)\n\n\n17\nMay 04, 2026–May 10, 2026\nFinal project work time (milestone: visuals + narrative + polish)\n— (work week)\nCh. 13 (Examples) (optional)",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "assignments/week-02/index.html",
+    "href": "assignments/week-02/index.html",
+    "title": "Week 2",
+    "section": "",
+    "text": "This page will be published before Week 2 begins."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "assignments/week-01/index.html",
+    "href": "assignments/week-01/index.html",
+    "title": "Week 1 Assignments",
+    "section": "",
+    "text": "Submission location: All items are submitted in D2L (Week 1 dropboxes). Reading: Chapter 1 and Chapter 2 (complete).",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#part-1-reading",
+    "href": "assignments/week-01/index.html#part-1-reading",
+    "title": "Week 1 Assignments",
+    "section": "Part 1: Reading",
+    "text": "Part 1: Reading\nRead all of Chapter 1 and all of Chapter 2.\nPay special attention to:\n\nChapter 1.3 Essential Python Libraries\nChapter 1.4 Installation and Setup\nChapter 1.6 Navigating This Book (import conventions, how to read examples)\nChapter 2.1–2.2 Interpreter + IPython/Jupyter workflow (tab completion, ? help)",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#part-2-setup",
+    "href": "assignments/week-01/index.html#part-2-setup",
+    "title": "Week 1 Assignments",
+    "section": "Part 2: Setup",
+    "text": "Part 2: Setup\nSubmit the following screenshots (each as a separate file):\n\nGit installed Screenshot name: lastname_git-version.png Show the output of:\n\n\ngit --version\n\n\nCourse folders created Screenshot name: lastname_course-folders.png Show File Explorer displaying:\n\n\nC:\\cmsc-1217\\course-work\\\nC:\\cmsc-1217\\book\\\nC:\\cmsc-1217\\data\\\n\n\nBook files cloned Screenshot name: lastname_book-clone.png Show either:\n\n\nthe successful git clone output, or\nFile Explorer showing: C:\\cmsc-1217\\book\\pydata-book\\\n\n\nConda environment exists Screenshot name: lastname_conda-env-list.png Show the output of:\n\n\nconda info --envs\n\n\nCore packages installed Screenshot name: lastname_pandas-version.png Show the output of:\n\n\npython -c \"import pandas as pd; print(pd.__version__)\"\n\n(We will keep a consistent pandas version for compatibility with course/book notebooks.)",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#part-3-jupyterlab-practice",
+    "href": "assignments/week-01/index.html#part-3-jupyterlab-practice",
+    "title": "Week 1 Assignments",
+    "section": "Part 3: JupyterLab practice",
+    "text": "Part 3: JupyterLab practice\n\nA) Launch JupyterLab in the correct folder\nFrom Anaconda Prompt:\n\nconda activate pydata-book\ncd C:\\cmsc-1217\\course-work\njupyter lab\n\n\n\nB) Create a Week01 folder in cmsc-1217 and then create and run a notebook\nCreate: week01-notebook-practice.ipynb in course-work\\week01.\nRun these cells:\nimport sys\nsys.executable\nimport numpy as np\nimport pandas as pd\nimport matplotlib\nmessage = \"Notebooks run Python too\"\nmessage\nx = 10\nx + 5\nThen use JupyterLab to:\n\nRestart the kernel\nRun all cells\n\nFinally, do:\n\nTab completion: type np.random. and use completion\nHelp/introspection:\n\nnp.random.standard_normal?\nThese behaviors are part of the Chapter 2 IPython/Jupyter workflow.\n\n\nRequired screenshots\n\nJupyterLab opened in course-work Screenshot name: lastname_jupyterlab-course-work.png Show the JupyterLab file browser open in C:\\cmsc-1217\\course-work\\week01.\nsys.executable output Screenshot name: lastname_sys-executable.png\nIntrospection output (?) Screenshot name: lastname_ipython-help.png",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#part-4-ipython-in-a-terminal",
+    "href": "assignments/week-01/index.html#part-4-ipython-in-a-terminal",
+    "title": "Week 1 Assignments",
+    "section": "Part 4: IPython in a terminal",
+    "text": "Part 4: IPython in a terminal\nOpen a new Anaconda Prompt tab/window:\n\nconda activate pydata-book\nipython\n\nRun at least one small example that produces an In [ ] and an Out [ ] (for example, assign a variable and then evaluate it).\n\nIPython running Screenshot name: lastname_ipython-prompt.png Show the IPython prompt and at least one In [ ] / Out [ ] interaction.",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#part-5-d2l-quiz",
+    "href": "assignments/week-01/index.html#part-5-d2l-quiz",
+    "title": "Week 1 Assignments",
+    "section": "Part 5: D2L quiz",
+    "text": "Part 5: D2L quiz\nComplete the D2L Chapter 1 and Chapter 2 quiz.",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#part-6-video-reflection",
+    "href": "assignments/week-01/index.html#part-6-video-reflection",
+    "title": "Week 1 Assignments",
+    "section": "Part 6: Video reflection",
+    "text": "Part 6: Video reflection\n\nVideo Submission Instructions\nRecord a short video of yourself explaining your understanding of the Week 1 workflow. Focus on explaining concepts clearly and using correct terminology rather than reading text from the screen.\nIn your video, address:\n\nWhat feels different from running .py scripts in an editor\nWhat the kernel is (in your own words)\nWhy “restart the kernel” and “run all” are useful habits\n\nRequirements\n\nClear video and audio quality\nIntroduce yourself at the beginning (name)\nName your video file: lastname_Week01Reflection\nUpload your video to Kaltura\nDo not embed the video in the Dropbox submission\nPaste the share link into the D2L assignment text submission box\nMake sure the link text includes lastname_Week01Reflectionin the link name. This will appear if you copy the link.",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#d2l-submission-checklist",
+    "href": "assignments/week-01/index.html#d2l-submission-checklist",
+    "title": "Week 1 Assignments",
+    "section": "D2L submission checklist",
+    "text": "D2L submission checklist\nSubmit the following items to the Week 1 D2L dropboxes.\n\nScreenshot files (upload as separate files, not a zip)\n\nlastname_git-version.png\nlastname_course-folders.png\nlastname_book-clone.png\nlastname_conda-env-list.png\nlastname_pandas-version.png\nlastname_jupyterlab-course-work.png\nlastname_sys-executable.png\nlastname_ipython-help.png\nlastname_ipython-prompt.png\n\n\n\nVideo submission (link only)\n\nVideo filename: lastname_Week01Reflection\nSubmit: Paste the share link into the D2L text submission box (do not embed the video in the Dropbox).",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html",
+    "href": "course/schedule.html",
+    "title": "CMSC 1217 Course Schedule",
+    "section": "",
+    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#course-rhythm",
+    "href": "course/schedule.html#course-rhythm",
+    "title": "CMSC 1217 Course Schedule",
+    "section": "",
+    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#assessment-intent",
+    "href": "course/schedule.html#assessment-intent",
+    "title": "CMSC 1217 Course Schedule",
+    "section": "Assessment intent",
+    "text": "Assessment intent\n\nPractice Notebooks (completion): guided work with built-in self-check cells\nSkill Checks (autograded notebooks): short, testable tasks (functions / named outputs)\nReflections (graded): brief, rubric-based video explanations of choices, debugging, and interpretation\nFinal Project (graded): notebook report + deliverables (Video Based)",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#weekly-schedule",
+    "href": "course/schedule.html#weekly-schedule",
+    "title": "CMSC 1217 Course Schedule",
+    "section": "Weekly schedule",
+    "text": "Weekly schedule\n\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nDeliverable\nReading\n\n\n\n\n1\nJan 12, 2026–Jan 18, 2026\nOnboarding + Jupyter basics\nPractice Notebook 1 (completion)\nCh. 2 (Jupyter/IPython) + Ch. 1 overview\n\n\n2\nJan 19, 2026–Jan 25, 2026\nPython refresh for data work (functions, files, pathlib)\nPractice Notebook 2 (completion)\nCh. 3 (Built-in Python for data work)\n\n\n3\nJan 26, 2026–Feb 01, 2026\nNumPy essentials (arrays, vectorization, boolean masks)\nPractice Notebook 3 (completion)\nCh. 4 (NumPy basics)\n\n\n4\nFeb 02, 2026–Feb 08, 2026\npandas foundations I (Series/DataFrame, indexing, filtering)\nSkill Check 1 (autograded notebook)\nCh. 5 (pandas intro)\n\n\n5\nFeb 09, 2026–Feb 15, 2026\npandas foundations II (sorting, basic summaries, missingness intro)\nPractice Notebook 5 (completion)\nCh. 5 (pandas continued)\n\n\n6\nFeb 16, 2026–Feb 22, 2026\nData I/O (CSV, Excel/JSON basics, parsing dates, dtypes)\nPractice Notebook 6 (completion)\nCh. 6 (Data loading/storage)\n\n\n7\nFeb 23, 2026–Mar 01, 2026\nCleaning I (missing data, types, duplicates, string cleanup)\nReflection 1 (graded)\nCh. 7 (Data cleaning/prep)\n\n\n8\nMar 02, 2026–Mar 08, 2026\nCleaning II (validation rules, outliers as data-quality topic)\nPractice Notebook 8 (completion)\nCh. 7 (Data cleaning/prep)\n\n\n9\nMar 09, 2026–Mar 15, 2026\nSpring Break (no due dates)\n—\n—\n\n\n10\nMar 16, 2026–Mar 22, 2026\nWrangling I (merge/join, concat; keys & pitfalls)\nSkill Check 2 (autograded notebook)\nCh. 8 (Wrangling: join/reshape)\n\n\n11\nMar 23, 2026–Mar 29, 2026\nWrangling II (reshape: pivot/melt; tidy layouts)\nPractice Notebook 11 (completion)\nCh. 8 (Wrangling: reshape)\n\n\n12\nMar 30, 2026–Apr 05, 2026\nGroupby + aggregation (report tables, transform vs agg)\nReflection 2 (graded)\nCh. 10 (Aggregation & groupby)\n\n\n13\nApr 06, 2026–Apr 12, 2026\nVisualization I (plot selection, labeling, communication)\nPractice Notebook 13 (completion)\nCh. 9 (Visualization)\n\n\n14\nApr 13, 2026–Apr 19, 2026\nVisualization II (+ optional time series basics)\nSkill Check 3 (autograded notebook)\nCh. 9 (Visualization) + optional Ch. 11 (Time series)\n\n\n15\nApr 20, 2026–Apr 26, 2026\nProject setup week (topic + dataset approval + plan)\nReflection 3 / Project Proposal (graded)\nCh. 13 (Examples) for inspiration (optional)\n\n\n16\nApr 27, 2026–May 03, 2026\nFinal project work time (milestone: cleaned dataset + initial EDA)\n— (work week)\nCh. 13 (Examples) (optional)\n\n\n17\nMay 04, 2026–May 10, 2026\nFinal project work time (milestone: visuals + narrative + polish)\n— (work week)\nCh. 13 (Examples) (optional)",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#final-project-apr-27may-11",
+    "href": "course/schedule.html#final-project-apr-27may-11",
+    "title": "CMSC 1217 Course Schedule",
+    "section": "Final project (Apr 27–May 11)",
+    "text": "Final project (Apr 27–May 11)\nDeliverable (May 11, 2026): a single notebook-based report that demonstrates an end-to-end workflow.\nMinimum components:\n\nLoad one real dataset (CSV/JSON/Excel)\nCleaning + preparation steps (with brief justification)\nWrangling/aggregation (at least one merge or groupby style task)\n2–4 clear visualizations with labels\nShort written narrative: what you did, what you found, limitations/next steps\nExport at least one output artifact (cleaned CSV and/or saved figures)",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Use this site as your course handbook. It stays up to date all semester.\n\nUse the left sidebar to find weekly materials and guides.\nD2L is the starting point for announcements, grades, and submissions.\nCourse information (syllabus, schedule, policies, office hours) is maintained here.\n\n\nCourse workflow\n\nCheck D2L for announcements, deadlines, and any updates.\nRead the Weekly Overview on this site (Week 1, Week 2, …) and follow the links provided.\nComplete the work (assignments) and submit in D2L.\n\n\n\nSupport\n\nOffice hours: see the Office Hours page.\nZoom: Office Zoom Link\n\nHow to get help:\n\nUse Discord/email for course questions.\nAdd troubleshooting policy.\n\n\n\n\nInstructor contact\n\nInstructor: Joseph Silman\n\nEmail: jsilman@sctcc.edu\nPhone Number: (320) 308 - 6595\n\n\n\nQuick links\n\nSyllabus\nSchedule"
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html",
+    "href": "shared/guides/setup/miniconda.html",
+    "title": "Week 1 — Miniconda Setup and First Notebook (Windows)",
+    "section": "",
+    "text": "What you know from Structured: you installed Python from python.org, and VS Code used that Python.\nWhat’s different here: instead of installing Python directly, we install Miniconda, which is an environment manager. Think of Miniconda as a tool that can install Python + data libraries into a self-contained folder so this course has a consistent setup.\n\nDownload and install Miniconda (64-bit).\nDuring install, do not add Miniconda to PATH.\n\nWhy not add to PATH: you might already have a python.org install. We don’t want Miniconda to “take over” the python command everywhere on your machine. Instead, we’ll use the Miniconda/Anaconda Prompt when we want the course setup.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#optional-ipython",
+    "href": "shared/guides/setup/miniconda.html#optional-ipython",
+    "title": "Week 1 — Miniconda Setup and First Notebook (Windows)",
+    "section": "Optional: IPython",
+    "text": "Optional: IPython\nConnection to what you know: this is like running Python in a terminal, but more helpful for exploration (history, tab completion, quick testing).\n\nOpen an Anaconda tab (not PowerShell)\nIf you’re using Windows Terminal:\n\nClick the small dropdown arrow next to the plus (˅) (Do not just click the + — that usually opens PowerShell.)\nClick Anaconda Prompt (miniconda3) (or “Anaconda PowerShell Prompt (miniconda3)” — either works, but the Prompt is simplest)\n\nYou should see a prompt like:\n(base) C:\\Users\\yourname&gt;\n\n\nActivate the course environment and start IPython\nRun:\nconda activate pydata-book\nipython\nYou should then see:\nIn [1]:\n\n\nExit IPython\nRun:\nexit()\n\n\nOptional: JupyterLab (modern web interface)\n\nActivate the course environment:\n\nconda activate pydata-book\n\nInstall JupyterLab (inside the environment):\n\nconda install -c conda-forge jupyterlab\n\nStart JupyterLab from your course-work folder:\n\ncd C:\\cmsc-1217\\course-work\njupyter lab\nA browser tab will open and the file browser will start in:\nC:\\cmsc-1217\\course-work\\\nImportant: keep the terminal window open while you use JupyterLab (it’s running the server).",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/policies/homework-coursework.html",
+    "href": "shared/policies/homework-coursework.html",
+    "title": "Homework / Coursework policies",
+    "section": "",
+    "text": "Due dates and late work\n\nAll assignments must be submitted by the due date/time in D2L.\nLate work is not accepted. (“Late” = not in the dropbox by the due/end date.)\nSome assignments have multiple required components (video + file); missing any required component makes the assignment ineligible for grading.\nVideo work must be accessible at grading time or it is not accepted.\nStudents should archive/keep their submitted work.\nGroup work (if assigned) is not eligible for makeup.\n\n\n\nSubmission standards\n\nAssignment-specific submission standards will be provided in instructions.\nWork may be rejected or heavily penalized for not following standards, including:\n\nincorrect file format\nincorrect file naming\nnot following submission instructions\n\nStudents should contact the instructor before the due date with submission questions.\nAssignments will not be accepted via email.\n\n\n\nTests / quizzes (D2L)\n\nQuizzes/tests may be scheduled or unannounced; must be completed by the due date.\nPassword-protected test passwords may not be shared (integrity violation).\nMultiple attempts may be allowed, with thresholds:\n\nmust score &gt;60% on attempt 1 to unlock attempt 2\nmust score &gt;80% on attempt 2 to unlock attempt 3 (if offered)\n\nTime limits apply; exceeding the time limit may result in a 0 and block further work.\nStudents may not leave a quiz once started.\nAuto-generated quizzes may prevent backtracking; students are responsible for careful navigation/submission.\nNo make-up tests/quizzes.\n\n\n\nGrading practices (coursework-related)\n\nGrades are posted in D2L; students are responsible for verifying accuracy.\nSome activities may be assigned but not graded (self-review practice).\nRubrics are used for most activities; some items are auto-graded.\n“Proof” files may be provided; students are expected to review feedback/proof files.\nNo extra credit / no additional assignments offered.\nSome assignments may be pass/fail.\n\n\n\nVideo related coursework expectations\n\nSome assignments require webcam-based video submission (and possibly desktop recording).\nStudent must be visable in any video assignment or the assignment will not be graded.\nStudent must introduce themselves by name, assignment, and course at the start of any video submission - “Hello my name is [name], this is the [assignment] for [class]”\nStudents must dress appropriately/considerately for online video assignments.",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Assignment Policies"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-01/index.html",
+    "href": "weekly-overview/week-01/index.html",
+    "title": "Week 1 Guide",
+    "section": "",
+    "text": "You are coming into this course with Python experience from Structured Programming Logic. That course focused on writing and running Python programs in a more traditional editor-and-console workflow.\nIn this course, you will still write Python, but the workspace will look different. We will use Jupyter notebooks as the main place to practice and show your work. A notebook combines explanation text, code, and output in one document, which makes it easier to follow examples, retry steps, and keep your work organized.\nWeek 1 is where you learn that workflow and get your course setup working. You will also be introduced to the tool ecosystem used throughout the textbook: pandas and NumPy for working with data, and matplotlib for basic plotting. Chapter 1 introduces this ecosystem and why it exists. Chapter 2 introduces notebooks and the interactive workflow.\nThis week is also a chance to get comfortable navigating the textbook and looking up unfamiliar terms. Do not be a passive learner. In an AI-driven environment, it is easy to copy an answer without understanding it, and it is also easy to get a confident answer that is wrong. Your job is to read, test, and confirm.\nSection 1.6 in the textbook is especially useful this week. It explains how to navigate the book, how to read the code examples, and the import conventions used throughout (for example, numpy as np and pandas as pd). Treat 1.6 as your guide for how to read and use the book effectively.\nOne note before you start comparing your output to the book: the book often shows examples in an interactive In/Out style. Your notebook output may look similar but not identical, and that is fine. Focus on whether your code produces the correct result, not whether the formatting matches perfectly.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-01/index.html#week-1-focus",
+    "href": "weekly-overview/week-01/index.html#week-1-focus",
+    "title": "Week 1 Guide",
+    "section": "",
+    "text": "You are coming into this course with Python experience from Structured Programming Logic. That course focused on writing and running Python programs in a more traditional editor-and-console workflow.\nIn this course, you will still write Python, but the workspace will look different. We will use Jupyter notebooks as the main place to practice and show your work. A notebook combines explanation text, code, and output in one document, which makes it easier to follow examples, retry steps, and keep your work organized.\nWeek 1 is where you learn that workflow and get your course setup working. You will also be introduced to the tool ecosystem used throughout the textbook: pandas and NumPy for working with data, and matplotlib for basic plotting. Chapter 1 introduces this ecosystem and why it exists. Chapter 2 introduces notebooks and the interactive workflow.\nThis week is also a chance to get comfortable navigating the textbook and looking up unfamiliar terms. Do not be a passive learner. In an AI-driven environment, it is easy to copy an answer without understanding it, and it is also easy to get a confident answer that is wrong. Your job is to read, test, and confirm.\nSection 1.6 in the textbook is especially useful this week. It explains how to navigate the book, how to read the code examples, and the import conventions used throughout (for example, numpy as np and pandas as pd). Treat 1.6 as your guide for how to read and use the book effectively.\nOne note before you start comparing your output to the book: the book often shows examples in an interactive In/Out style. Your notebook output may look similar but not identical, and that is fine. Focus on whether your code produces the correct result, not whether the formatting matches perfectly.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-01/index.html#course-focus-and-expectations",
+    "href": "weekly-overview/week-01/index.html#course-focus-and-expectations",
+    "title": "Week 1 Guide",
+    "section": "Course focus and expectations",
+    "text": "Course focus and expectations\nThis course is focused on the Python tools used to work with data. You will learn how to load data, inspect it, clean it, reshape it, summarize it, and visualize it. The emphasis is on building practical skill with the core libraries and the day-to-day workflow used in data work.\nThis course is not a statistics class. We are not spending the semester on statistical theory, inference, or formal methodology. When we use analytical ideas, it will be to support a tool we are learning and to help you interpret what your code produced. Think of this course as learning how to do the work in Python; your statistics elective covers more of the theory behind the methods.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-01/index.html#core-tools-we-will-be-using",
+    "href": "weekly-overview/week-01/index.html#core-tools-we-will-be-using",
+    "title": "Week 1 Guide",
+    "section": "Core tools we will be using",
+    "text": "Core tools we will be using\nThe course uses a small set of tools repeatedly. You do not need to master them in Week 1. You do need to recognize the names and understand what each tool is used for.\n\n\n\n\n\n\n\n\nTool\nWhat it is used for in this course\nWhen you will notice it\n\n\n\n\nNumPy\nWorking with numbers and arrays efficiently. It also supports many operations that pandas relies on.\nWhen you see import numpy as np, or when we work with numeric operations and arrays.\n\n\npandas\nWorking with tables (DataFrames): loading data, cleaning it, reshaping it, combining it, and summarizing it.\nMost weeks, because it is the main tool for manipulating data in this course.\n\n\nmatplotlib\nCreating plots so you can see patterns and communicate results.\nWhen we move into visualization, and whenever we need a chart to understand data.\n\n\nJupyter notebooks\nA workspace that keeps explanations, code, and output together. This is how you will practice and show your work.\nEvery week, since most work will be done and submitted in notebooks.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-01/index.html#jupyter-notebooks",
+    "href": "weekly-overview/week-01/index.html#jupyter-notebooks",
+    "title": "Week 1 Guide",
+    "section": "Jupyter notebooks",
+    "text": "Jupyter notebooks\nIn Structured Programming Logic, you typically wrote Python in a file and ran the whole program from start to finish. Each run started fresh.\nA Jupyter notebook is different. A notebook is a single document that mixes:\n\ntext (explanations and notes)\ncode (Python)\noutput (tables, printed results, charts)\n\nInstead of running one program from top to bottom every time, a notebook is built from cells. You run the notebook one cell at a time, in the order you choose.\nThis is powerful for learning and working with data because you can try something, see the result immediately, adjust it, and continue. The textbook discusses this interactive workflow and how notebooks fit into it.\nThe most important new idea is that the notebook runs in a live Python session. That session keeps everything you have already created (variables, imported libraries, data you loaded). If you run cells out of order, you can end up in a confusing state where your notebook depends on something you ran earlier but forgot to rerun.\nBecause of that, this course uses one consistent habit:\nRestart Kernel and Run All\nThat is how you confirm your notebook works from a clean start and in the correct order.\nNotebooks are a great learning tool, but they can also make it easy to skip real understanding. If you only change a few lines and press run, you can end up with working output without knowing why it works. Your goal in this class is not just to produce output, but to understand what your code is doing. When you use examples from the book, from a class notebook, or from AI, your job is to test small changes and confirm you still understand the result.\nUsing notebooks does not mean you are not writing code. You will still write Python in this course, but you will write it in smaller pieces and run it as you go. Many examples in the book are meant to be typed, run, and modified so you can see how changes affect the result. Chapter 2 discusses this interactive workflow and how to work effectively in notebooks.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-01/index.html#week-1-tasks",
+    "href": "weekly-overview/week-01/index.html#week-1-tasks",
+    "title": "Week 1 Guide",
+    "section": "Week 1 tasks",
+    "text": "Week 1 tasks\nComplete the following this week:\n\nRead Chapters 1 and 2 in the textbook in full. Work through the examples and exercises as you read.\nFollow the guided setup videos to get your course environment setup.\nFollow the Week 1 assignment instructions.\nComplete the D2L quiz on Chapters 1 and 2.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-01/index.html#chapter-overview-for-week-1",
+    "href": "weekly-overview/week-01/index.html#chapter-overview-for-week-1",
+    "title": "Week 1 Guide",
+    "section": "Chapter overview for Week 1",
+    "text": "Chapter overview for Week 1\n\nChapter 1: Preliminaries\nChapter 1 sets the direction for the book and the course. It explains what the book is focused on, the kinds of structured data you will work with, and the core Python libraries used throughout. It also explains the conventions used in the book (especially import conventions) and how to read the code examples.\n\n\nChapter 2: Python Language Basics, IPython, and Jupyter Notebooks\nChapter 2 introduces the interactive workflow used in the book. It explains what notebooks are, how running code interactively differs from running a script, and how tools like tab completion and built-in help make it easier to explore unfamiliar code and data as you work.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-01/index.html#knowledge-goals-for-week-1",
+    "href": "weekly-overview/week-01/index.html#knowledge-goals-for-week-1",
+    "title": "Week 1 Guide",
+    "section": "Knowledge goals for Week 1",
+    "text": "Knowledge goals for Week 1\nBy the end of Week 1, you should be able to explain:\n\nWhat the book means by working with data in Python (the focus of the course)\nThe difference between NumPy and pandas at a high level\nWhat a Jupyter notebook is, and how it differs from running a Python script\nWhat a kernel is in the context of notebooks\nWhat an environment is and why we use one for this course\nWhat the book’s import conventions mean (for example, np and pd)",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 1"
+    ]
+  }
+]
