@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 1 — VSCode Setup and First Notebook (Windows) – CMSC 1217 : Introduction to Data Analytics</title>
+<title>CMSC 1236 – Advanced Programming in Python – CMSC 1217 : Introduction to Data Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,66 +20,31 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-feb0c0ed7aac57d66ec8dce0f6a48183.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-feb0c0ed7aac57d66ec8dce0f6a48183.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,8 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../../shared/assets/course.css">
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../shared/assets/course.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -282,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">CMSC 1217 : Introduction to Data Analytics</span>
     </a>
   </div>
@@ -293,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -308,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 1 — VSCode Setup and First Notebook (Windows)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">CMSC 1236 – Advanced Programming in Python</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -344,31 +309,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course/schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course/schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../shared/policies/office-hours.html" class="sidebar-item-text sidebar-link">
+  <a href="../../shared/policies/office-hours.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Office Hours</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../shared/policies/homework-coursework.html" class="sidebar-item-text sidebar-link">
+  <a href="../../shared/policies/homework-coursework.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment Policies</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../shared/policies/general-policies.html" class="sidebar-item-text sidebar-link">
+  <a href="../../shared/policies/general-policies.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">General Policies</span></a>
   </div>
 </li>
@@ -385,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../weekly-overview/week-01/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weekly-overview/week-01/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
   </div>
 </li>
@@ -402,7 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../assignments/week-01/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../assignments/week-01/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
   </div>
 </li>
@@ -419,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../shared/guides/setup/miniconda.html" class="sidebar-item-text sidebar-link">
+  <a href="../../shared/guides/setup/miniconda.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Miniconda Setup</span></a>
   </div>
 </li>
@@ -435,17 +400,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-youre-doing" id="toc-what-youre-doing" class="nav-link active" data-scroll-target="#what-youre-doing">What you’re doing</a></li>
-  <li><a href="#open-the-course-folder-in-vs-code" id="toc-open-the-course-folder-in-vs-code" class="nav-link" data-scroll-target="#open-the-course-folder-in-vs-code">1) Open the course folder in VS Code</a></li>
-  <li><a href="#install-the-extensions-if-you-dont-already-have-them" id="toc-install-the-extensions-if-you-dont-already-have-them" class="nav-link" data-scroll-target="#install-the-extensions-if-you-dont-already-have-them">2) Install the extensions (if you don’t already have them)</a></li>
-  <li><a href="#create-the-course-python-environment-and-select-it-in-vs-code-one-time" id="toc-create-the-course-python-environment-and-select-it-in-vs-code-one-time" class="nav-link" data-scroll-target="#create-the-course-python-environment-and-select-it-in-vs-code-one-time">3) Create the course Python environment and select it in VS Code (one-time)</a></li>
-  <li><a href="#open-the-notebook" id="toc-open-the-notebook" class="nav-link" data-scroll-target="#open-the-notebook">4) Open the notebook</a></li>
-  <li><a href="#select-the-notebook-kernel-first-time-only" id="toc-select-the-notebook-kernel-first-time-only" class="nav-link" data-scroll-target="#select-the-notebook-kernel-first-time-only">5) Select the notebook kernel (first time only)</a></li>
-  <li><a href="#select-the-kernel-then-run-a-quick-test" id="toc-select-the-kernel-then-run-a-quick-test" class="nav-link" data-scroll-target="#select-the-kernel-then-run-a-quick-test">6) Select the kernel, then run a quick test</a></li>
-  <li><a href="#quick-confirmation-your-instructor-may-ask-for-this" id="toc-quick-confirmation-your-instructor-may-ask-for-this" class="nav-link" data-scroll-target="#quick-confirmation-your-instructor-may-ask-for-this">7) Quick confirmation (your instructor may ask for this)</a></li>
-  <li><a href="#if-something-goes-wrong" id="toc-if-something-goes-wrong" class="nav-link" data-scroll-target="#if-something-goes-wrong">If something goes wrong</a></li>
+  <li><a href="#assignment-virtual-pet-simulator" id="toc-assignment-virtual-pet-simulator" class="nav-link active" data-scroll-target="#assignment-virtual-pet-simulator">Assignment: Virtual Pet Simulator</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#pet-class" id="toc-pet-class" class="nav-link" data-scroll-target="#pet-class"><strong>Pet Class</strong></a></li>
+  <li><a href="#method-implementations" id="toc-method-implementations" class="nav-link" data-scroll-target="#method-implementations"><strong>Method Implementations:</strong></a>
+  <ul class="collapse">
+  <li><a href="#feed-method" id="toc-feed-method" class="nav-link" data-scroll-target="#feed-method"><code>feed</code> Method:</a></li>
+  <li><a href="#play-method" id="toc-play-method" class="nav-link" data-scroll-target="#play-method"><code>play</code> Method:</a></li>
+  <li><a href="#rest-method" id="toc-rest-method" class="nav-link" data-scroll-target="#rest-method"><code>rest</code> Method:</a></li>
+  <li><a href="#customize-method" id="toc-customize-method" class="nav-link" data-scroll-target="#customize-method"><code>customize</code> Method:</a></li>
+  <li><a href="#status-method" id="toc-status-method" class="nav-link" data-scroll-target="#status-method"><code>status</code> Method:</a></li>
+  <li><a href="#is_happy-method" id="toc-is_happy-method" class="nav-link" data-scroll-target="#is_happy-method"><code>is_happy</code> Method:</a></li>
+  <li><a href="#main-function-instructions-for-virtual-pet-simulator" id="toc-main-function-instructions-for-virtual-pet-simulator" class="nav-link" data-scroll-target="#main-function-instructions-for-virtual-pet-simulator">Main Function Instructions for Virtual Pet Simulator</a></li>
+  <li><a href="#data-persistence" id="toc-data-persistence" class="nav-link" data-scroll-target="#data-persistence"><strong>Data Persistence:</strong></a></li>
+  <li><a href="#updated-sample-output" id="toc-updated-sample-output" class="nav-link" data-scroll-target="#updated-sample-output">Updated Sample Output</a></li>
+  <li><a href="#uml" id="toc-uml" class="nav-link" data-scroll-target="#uml">UML</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Week-1--and-2-Assignment.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -453,8 +427,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 1 — VSCode Setup and First Notebook (Windows)</h1>
-<p class="subtitle lead">Core tools and notebook workflow</p>
+<h1 class="title">CMSC 1236 – Advanced Programming in Python</h1>
+<p class="subtitle lead">Week 1–2 Assignment</p>
 </div>
 
 
@@ -471,125 +445,405 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-youre-doing" class="level3">
-<h3 class="anchored" data-anchor-id="what-youre-doing">What you’re doing</h3>
-<p>You are going to open a Jupyter notebook in VS Code and run it successfully using the course Python environment.</p>
+<section id="assignment-virtual-pet-simulator" class="level1">
+<h1>Assignment: Virtual Pet Simulator</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console.</p>
 </section>
-<section id="open-the-course-folder-in-vs-code" class="level3">
-<h3 class="anchored" data-anchor-id="open-the-course-folder-in-vs-code">1) Open the course folder in VS Code</h3>
+<section id="pet-class" class="level2">
+<h2 class="anchored" data-anchor-id="pet-class"><strong>Pet Class</strong></h2>
+<p>The <code>Pet</code> class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (<code>if</code> statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.</p>
 <ol type="1">
-<li>Open <strong>VS Code</strong></li>
-<li>Go to <strong>File → Open Folder…</strong></li>
-<li>Open your course work folder (example: <code>C:\cmsc-1217\</code>)</li>
-</ol>
-</section>
-<section id="install-the-extensions-if-you-dont-already-have-them" class="level3">
-<h3 class="anchored" data-anchor-id="install-the-extensions-if-you-dont-already-have-them">2) Install the extensions (if you don’t already have them)</h3>
-<p>In VS Code, install:</p>
+<li><p><strong>Implementing the <code>Pet</code> Class:</strong></p>
 <ul>
-<li><strong>Python</strong> (Microsoft)</li>
-<li><strong>Jupyter</strong> (Microsoft)</li>
-</ul>
-</section>
-<section id="create-the-course-python-environment-and-select-it-in-vs-code-one-time" class="level3">
-<h3 class="anchored" data-anchor-id="create-the-course-python-environment-and-select-it-in-vs-code-one-time">3) Create the course Python environment and select it in VS Code (one-time)</h3>
-<section id="a-create-the-course-environment-folder" class="level4">
-<h4 class="anchored" data-anchor-id="a-create-the-course-environment-folder">3A) Create the course environment folder</h4>
-<ol type="1">
-<li><p>Create a folder on your C: drive named:</p>
+<li><p>Follow the provided UML diagram to create the <code>Pet</code> class with the attributes <code>name</code>, <code>hunger</code>, <code>happiness</code>, <code>energy</code>, <code>color</code>, and <code>type</code>.</p></li>
+<li><p>Initialize these attributes in the <code>__init__</code> method. <code>name</code>, <code>color</code>, and <code>type</code> will be strings provided when a new pet is created, and <code>hunger</code>, <code>happiness</code>, and <code>energy</code> should start with random values between 0 and 10.</p></li>
+</ul></li>
+<li><p><strong>Using Conditional Statements in Class Methods:</strong></p>
 <ul>
-<li><code>C:\cmsc-1217-env\</code></li>
+<li>In methods like <code>feed</code>, <code>play</code>, and <code>rest</code>, you will use <code>if</code> statements to check the state of the pet and decide what action to take.</li>
 </ul></li>
 </ol>
 </section>
-<section id="b-create-the-virtual-environment-.venv" class="level4">
-<h4 class="anchored" data-anchor-id="b-create-the-virtual-environment-.venv">3B) Create the virtual environment (.venv)</h4>
+<section id="method-implementations" class="level2">
+<h2 class="anchored" data-anchor-id="method-implementations"><strong>Method Implementations:</strong></h2>
+<section id="feed-method" class="level3">
+<h3 class="anchored" data-anchor-id="feed-method"><code>feed</code> Method:</h3>
+<section id="objective" class="level4">
+<h4 class="anchored" data-anchor-id="objective">Objective</h4>
+<p>The <code>feed</code> method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.</p>
+</section>
+<section id="method-behavior-and-logic" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic">Method Behavior and Logic</h4>
 <ol type="1">
-<li>Open <strong>Command Prompt</strong> (Windows search → type “Command Prompt”)</li>
-<li>Run:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1217-env</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>python <span class="at">-m</span> venv .venv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="c-activate-the-environment" class="level4">
-<h4 class="anchored" data-anchor-id="c-activate-the-environment">3C) Activate the environment</h4>
-<p>In the same Command Prompt window, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>C:\cmsc-1217-env\.venv\Scripts\activate.bat</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see <code>(.venv)</code> appear at the start of the line.</p>
-</section>
-<section id="d-install-the-notebook-packages-first-time-setup" class="level4">
-<h4 class="anchored" data-anchor-id="d-install-the-notebook-packages-first-time-setup">3D) Install the notebook packages (first-time setup)</h4>
-<p>Still in the activated environment, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>python <span class="at">-m</span> pip install -<span class="at">-upgrade</span> pip</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>python <span class="at">-m</span> pip install numpy pandas matplotlib jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="e-select-the-environment-in-vs-code-interpreter" class="level4">
-<h4 class="anchored" data-anchor-id="e-select-the-environment-in-vs-code-interpreter">3E) Select the environment in VS Code (Interpreter)</h4>
-<ol type="1">
-<li>In VS Code, press <strong>Ctrl + Shift + P</strong></li>
-<li>Type <strong>Python: Select Interpreter</strong></li>
-<li>Choose the interpreter that looks like:</li>
-</ol>
+<li><strong>Reducing Hunger and Increasing Happiness</strong>:
 <ul>
-<li><code>C:\cmsc-1217-env\.venv\Scripts\python.exe</code></li>
-</ul>
-<p>If you don’t see it:</p>
-<ul>
-<li>choose <strong>Enter interpreter path…</strong></li>
-<li>paste: <code>C:\cmsc-1217-env\.venv\Scripts\python.exe</code></li>
-</ul>
-<p>This is the environment we will use all semester.</p>
-</section>
-</section>
-<section id="open-the-notebook" class="level3">
-<h3 class="anchored" data-anchor-id="open-the-notebook">4) Open the notebook</h3>
-<ul>
-<li>In the Explorer panel, click the notebook file (<code>.ipynb</code>) your instructor provided.</li>
-</ul>
-</section>
-<section id="select-the-notebook-kernel-first-time-only" class="level3">
-<h3 class="anchored" data-anchor-id="select-the-notebook-kernel-first-time-only">5) Select the notebook kernel (first time only)</h3>
-<p>The first time you run a notebook, VS Code may ask you to pick a <strong>kernel</strong>.</p>
-<p>Choose the kernel that matches the course environment path:</p>
-<ul>
-<li><code>C:\cmsc-1217-env\.venv\Scripts\python.exe</code></li>
-</ul>
-<p>This can feel repetitive the first time. That’s normal. Once selected, it usually stays set for that folder.</p>
-</section>
-<section id="select-the-kernel-then-run-a-quick-test" class="level3">
-<h3 class="anchored" data-anchor-id="select-the-kernel-then-run-a-quick-test">6) Select the kernel, then run a quick test</h3>
-<ol type="1">
-<li><p>In the top-right of the notebook, click <strong>Select Kernel</strong>.</p></li>
-<li><p>Choose the kernel that points to the course environment:</p>
-<p><code>C:\cmsc-1217-env\.venv\Scripts\python.exe</code></p>
-<p>(It may also show up as “Python 3.x (.venv)”—the key is that it points to <code>cmsc-1217-env\.venv</code>.)</p></li>
-<li><p>Click <strong>+ Code</strong>.</p></li>
-<li><p>In the code block that appears, paste:</p></li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Notebook is running"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="5" type="1">
-<li>Run it by clicking the <strong>Run (▶)</strong> icon on the code block, or press <strong>Shift + Enter</strong>.</li>
-<li>You should see <code>Notebook is running</code> appear underneath.</li>
-</ol>
-</section>
-<section id="quick-confirmation-your-instructor-may-ask-for-this" class="level3">
-<h3 class="anchored" data-anchor-id="quick-confirmation-your-instructor-may-ask-for-this">7) Quick confirmation (your instructor may ask for this)</h3>
-<p>Run this in a cell:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sys.executable</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>It should show something like:</p>
-<p><code>C:\cmsc-1217-env\.venv\Scripts\python.exe</code></p>
-</section>
-<section id="if-something-goes-wrong" class="level3">
-<h3 class="anchored" data-anchor-id="if-something-goes-wrong">If something goes wrong</h3>
-<ul>
-<li><p>If you see <code>ModuleNotFoundError</code> (missing package), you are almost always using the wrong interpreter/kernel.</p>
-<ul>
-<li>Re-do <strong>Step 3</strong> and <strong>Step 5</strong> and pick the one that points to <code>cmsc-1217-env\.venv</code>.</li>
+<li>When the <code>feed</code> method is called, first check the pet’s current hunger level (<code>self.hunger</code>).</li>
+<li>If <code>self.hunger</code> is greater than 0, it indicates that the pet is hungry. In this case, reduce <code>self.hunger</code> by 1 to represent feeding the pet. Ensure <code>self.hunger</code> does not go below 0.</li>
+<li>After feeding, increase <code>self.happiness</code> by 1. However, ensure that <code>self.happiness</code> does not exceed 10.</li>
 </ul></li>
+<li><strong>Managing Happiness When Not Hungry</strong>:
+<ul>
+<li>If <code>self.hunger</code> is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce <code>self.happiness</code> by 1, since overfeeding will cause discomfort.</li>
+</ul></li>
+<li><strong>Returning Feedback</strong>:
+<ul>
+<li>Return a feedback string that reflects the pet’s reaction to being fed.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="play-method" class="level3">
+<h3 class="anchored" data-anchor-id="play-method"><code>play</code> Method:</h3>
+<section id="objective-1" class="level4">
+<h4 class="anchored" data-anchor-id="objective-1">Objective</h4>
+<p>The <code>play</code> method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.</p>
+</section>
+<section id="method-behavior-and-logic-1" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic-1">Method Behavior and Logic</h4>
+<ol type="1">
+<li><strong>Handling Sadness</strong>:
+<ul>
+<li>Before initiating play, check if the pet’s happiness level (<code>self.happiness</code>) is at 0.</li>
+<li>If <code>self.happiness</code> is 0, it indicates that the pet is too sad to engage in play.</li>
+</ul></li>
+<li><strong>Handling Tiredness</strong>:
+<ul>
+<li>Check the pet’s energy level (<code>self.energy</code>).</li>
+<li>If <code>self.energy</code> is 0, it means the pet is too tired to play.</li>
+</ul></li>
+<li><strong>Playing with the Pet</strong>:
+<ul>
+<li>If the pet is neither too sad nor too tired (i.e., <code>self.happiness</code> is above 0 and <code>self.energy</code> is above 0), proceed to play with the pet.</li>
+<li>Increase <code>self.happiness</code> by 1 to represent the positive effect of playing. However, ensure that <code>self.happiness</code> does not exceed 10.</li>
+<li>Decrease <code>self.energy</code> by 1 to account for the energy expended during play. However, it’s important to ensure that <code>self.energy</code> does not fall below 0.</li>
+</ul></li>
+<li><strong>Returning Feedback</strong>:
+<ul>
+<li>Return a feedback string that reflects the pet’s reaction to playing.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="rest-method" class="level3">
+<h3 class="anchored" data-anchor-id="rest-method"><code>rest</code> Method:</h3>
+<section id="objective-2" class="level4">
+<h4 class="anchored" data-anchor-id="objective-2">Objective</h4>
+<p>The <code>rest</code> method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.</p>
+</section>
+<section id="method-behavior-and-logic-2" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic-2">Method Behavior and Logic</h4>
+<ol type="1">
+<li><strong>Increasing Energy</strong>:
+<ul>
+<li>Check the pet’s current energy level (<code>self.energy</code>).</li>
+<li>If <code>self.energy</code> is less than 10, it indicates the pet could benefit from rest. Increase <code>self.energy</code> by 1 to represent the energy regained from resting. However, ensure that <code>self.energy</code> does not exceed 10.</li>
+</ul></li>
+<li><strong>Managing Happiness When Energy is at Maximum</strong>:
+<ul>
+<li>If <code>self.energy</code> is already at 10 (meaning the pet is fully rested), resting will affect its happiness.</li>
+<li>If <code>self.energy</code> is already at 10 and <code>self.happiness</code> is greater than 0, reduce <code>self.happiness</code> it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent <code>self.happiness</code> from going below 0.</li>
+</ul></li>
+<li><strong>Returning Feedback</strong>:
+<ul>
+<li>Return a feedback string that reflects the pet’s reaction to resting.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="customize-method" class="level3">
+<h3 class="anchored" data-anchor-id="customize-method"><code>customize</code> Method:</h3>
+<section id="objective-3" class="level4">
+<h4 class="anchored" data-anchor-id="objective-3">Objective</h4>
+<p>The <code>customize</code> method allows the user to change the pet’s appearance by setting new values for the <code>color</code> and <code>type</code> attributes.</p>
+</section>
+<section id="method-behavior-and-logic-3" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic-3">Method Behavior and Logic</h4>
+<ol type="1">
+<li><strong>Setting New Attributes</strong>:
+<ul>
+<li>The method takes two parameters, <code>color</code> and <code>pet_type</code>, and assigns them to the pet’s <code>color</code> and <code>type</code> attributes.</li>
+<li>This allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="status-method" class="level3">
+<h3 class="anchored" data-anchor-id="status-method"><code>status</code> Method:</h3>
+<section id="objective-4" class="level4">
+<h4 class="anchored" data-anchor-id="objective-4">Objective</h4>
+<p>The <code>status</code> method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.</p>
+</section>
+<section id="method-behavior-and-logic-4" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic-4">Method Behavior and Logic</h4>
+<ol type="1">
+<li><strong>Creating a Status Summary</strong>:
+<ul>
+<li>The method compiles a string that summarizes the animal’s current status.</li>
+<li>This summary includes the animal’s name and its current hunger, happiness, energy, color, and type.</li>
+</ul></li>
+<li><strong>String Formatting</strong>:
+<ul>
+<li>Create a readable and well-formatted summary.</li>
+<li>Each attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.</li>
+</ul></li>
+<li><strong>Returning the Summary</strong>:
+<ul>
+<li>The method returns the formatted string.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="is_happy-method" class="level3">
+<h3 class="anchored" data-anchor-id="is_happy-method"><code>is_happy</code> Method:</h3>
+<section id="objective-5" class="level4">
+<h4 class="anchored" data-anchor-id="objective-5">Objective</h4>
+<p>The <code>is_happy</code> method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.</p>
+</section>
+<section id="method-behavior-and-logic-5" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic-5">Method Behavior and Logic</h4>
+<ol type="1">
+<li><strong>Evaluating Happiness</strong>:
+<ul>
+<li>The method assesses whether the animal’s happiness level (<code>self.happiness</code>) is below or above 5.</li>
+<li>If <code>self.happiness</code> is above 5 the animal is considered to be happy.</li>
+</ul></li>
+<li><strong>Returning a Boolean Result</strong>:
+<ul>
+<li>The method returns <code>True</code> if the animal’s happiness is above 5, indicating that the animal is happy.</li>
+<li>It returns <code>False</code> if the happiness level is 5 or lower, indicating that the animal is not happy.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="main-function-instructions-for-virtual-pet-simulator" class="level3">
+<h3 class="anchored" data-anchor-id="main-function-instructions-for-virtual-pet-simulator">Main Function Instructions for Virtual Pet Simulator</h3>
+<section id="overview-1" class="level4">
+<h4 class="anchored" data-anchor-id="overview-1">Overview</h4>
+<p>Your <code>main()</code> function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.</p>
+</section>
+<section id="menu-system" class="level4">
+<h4 class="anchored" data-anchor-id="menu-system">1. Menu System:</h4>
+<ul>
+<li>Implement a menu system that displays a list of possible actions the user can perform. These actions include:
+<ul>
+<li>Feeding the pet</li>
+<li>Playing with the pet</li>
+<li>Letting the pet rest</li>
+<li>Checking the pet’s status</li>
+<li>Customizing the pet’s appearance</li>
+<li>Saving the pet’s state and exiting the program</li>
+</ul></li>
+<li>Use an input prompt to allow the user to select an action and then call the corresponding method from the <code>Pet</code> class.</li>
 </ul>
+</section>
+<section id="handling-invalid-input" class="level4">
+<h4 class="anchored" data-anchor-id="handling-invalid-input">2. Handling Invalid Input:</h4>
+<ul>
+<li>Ensure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).</li>
+<li>Display an error message if the user inputs an invalid option and show the menu again for a valid selection.</li>
+</ul>
+</section>
+</section>
+<section id="data-persistence" class="level3">
+<h3 class="anchored" data-anchor-id="data-persistence"><strong>Data Persistence:</strong></h3>
+<ul>
+<li>Use pickling to save and load the pet’s state. Implement a <code>save_pet</code> and a <code>load_pet</code> function in the <code>main()</code> for this purpose.</li>
+<li>Ensure the program can handle situations where no saved data exists.</li>
+</ul>
+<p>### Sample Output</p>
+</section>
+<section id="updated-sample-output" class="level3">
+<h3 class="anchored" data-anchor-id="updated-sample-output">Updated Sample Output</h3>
+<pre><code>Welcome to the Virtual Pet Simulator!
+
+In this program, you will create and take care of a virtual pet.
+You can feed, play with, and let your pet rest to maintain its health and happiness.
+You can also customize your pet's appearance and save its state to continue later.
+Use the menu to interact with your pet and make sure it stays happy and healthy!
+
+Let's get started!
+
+What is your pet's name? Joe
+Choose a color for your pet (e.g., red, blue, green): Blue
+Choose a type for your pet (e.g., dog, cat, bird): Dog
+
+Here is the current status of your pet:
+
+Joe's Status:
+Color: Blue
+Type: Dog
+Hunger: 8
+Happiness: 1
+Energy: 10
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 9
+Invalid choice. Please enter a number between 1 and 6.
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 4
+
+Joe's Status:
+Color: Blue
+Type: Dog
+Hunger: 8
+Happiness: 1
+Energy: 10
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 3
+Joe is rested and seems a bit bored.
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 1
+You fed Joe. Joe seems happier after eating!
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 4
+
+Joe's Status:
+Color: Blue
+Type: Dog
+Hunger: 7
+Happiness: 2
+Energy: 10
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 5
+Choose a color for your pet: Green
+Choose a type for your pet: Dog
+Joe is now a Green Dog!
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 6
+Pet state saved. Goodbye!
+</code></pre>
+<section id="scenario-starting-the-program-with-a-file-created" class="level4">
+<h4 class="anchored" data-anchor-id="scenario-starting-the-program-with-a-file-created">Scenario: Starting the Program with a File Created</h4>
+<pre><code>Welcome to the Virtual Pet Simulator!
+
+In this program, you will create and take care of a virtual pet.
+You can feed, play with, and let your pet rest to maintain its health and happiness.
+You can also customize your pet's appearance and save its state to continue later.
+Use the menu to interact with your pet and make sure it stays happy and healthy!
+
+Let's get started!
 
 
+Here is the current status of your pet:
+
+Joe's Status:
+Color: Green
+Type: Dog
+Hunger: 7
+Happiness: 2
+Energy: 10
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 2
+Playing with Joe was fun!
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 4
+Joe's Status:
+Color: Green
+Type: Dog
+Hunger: 7
+Happiness: 3
+Energy: 9
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 6
+Pet state saved. Goodbye!
+</code></pre>
+</section>
+</section>
+<section id="uml" class="level3">
+<h3 class="anchored" data-anchor-id="uml">UML</h3>
+<pre><code>  +---------------------+
+  |        Pet          |
+  +---------------------+
+  | - name: str         |
+  | - hunger: int       |
+  | - happiness: int    |
+  | - energy: int       |
+  | - color: str        |
+  | - type: str         |
+  +---------------------+
+  | + __init__(name, color, pet_type) |
+  | + feed()            |
+  | + play()            |
+  | + rest()            |
+  | + customize(color, pet_type) |
+  | + status(): str     |
+  | + is_happy(): bool  |
+  +---------------------+</code></pre>
+
+
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

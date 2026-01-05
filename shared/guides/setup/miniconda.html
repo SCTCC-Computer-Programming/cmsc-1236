@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 1 — Miniconda Setup and First Notebook (Windows) – CMSC 1217 : Introduction to Data Analytics</title>
+<title>Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab – CMSC 1217 : Introduction to Data Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -435,24 +435,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#install-miniconda" id="toc-install-miniconda" class="nav-link active" data-scroll-target="#install-miniconda">1) Install Miniconda</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#install-miniconda" id="toc-install-miniconda" class="nav-link" data-scroll-target="#install-miniconda">1) Install Miniconda</a></li>
   <li><a href="#open-the-conda-terminal" id="toc-open-the-conda-terminal" class="nav-link" data-scroll-target="#open-the-conda-terminal">2) Open the conda terminal</a></li>
-  <li><a href="#tell-conda-where-to-download-packages-from-channels" id="toc-tell-conda-where-to-download-packages-from-channels" class="nav-link" data-scroll-target="#tell-conda-where-to-download-packages-from-channels">3) Tell conda where to download packages from (channels)</a></li>
-  <li><a href="#create-the-course-environment-your-course-specific-python-install" id="toc-create-the-course-environment-your-course-specific-python-install" class="nav-link" data-scroll-target="#create-the-course-environment-your-course-specific-python-install">4) Create the course environment (your course-specific Python install)</a></li>
-  <li><a href="#activate-the-environment-switch-into-the-course-python-machine" id="toc-activate-the-environment-switch-into-the-course-python-machine" class="nav-link" data-scroll-target="#activate-the-environment-switch-into-the-course-python-machine">5) Activate the environment (switch into the course “Python machine”)</a></li>
-  <li><a href="#install-the-core-course-packages-inside-the-environment" id="toc-install-the-core-course-packages-inside-the-environment" class="nav-link" data-scroll-target="#install-the-core-course-packages-inside-the-environment">6) Install the core course packages (inside the environment)</a></li>
-  <li><a href="#create-the-course-folder-structure-so-jupyter-stays-organized" id="toc-create-the-course-folder-structure-so-jupyter-stays-organized" class="nav-link" data-scroll-target="#create-the-course-folder-structure-so-jupyter-stays-organized">7) Create the course folder structure (so Jupyter stays organized)</a></li>
-  <li><a href="#a-install-git-only-if-you-dont-already-have-it" id="toc-a-install-git-only-if-you-dont-already-have-it" class="nav-link" data-scroll-target="#a-install-git-only-if-you-dont-already-have-it">7A) Install Git (only if you don’t already have it)</a></li>
-  <li><a href="#b-download-the-book-files-into-your-book-folder-clone-the-repository" id="toc-b-download-the-book-files-into-your-book-folder-clone-the-repository" class="nav-link" data-scroll-target="#b-download-the-book-files-into-your-book-folder-clone-the-repository">7B) Download the book files into your <code>book</code> folder (clone the repository)</a></li>
-  <li><a href="#start-jupyter-notebook-in-the-correct-folder-so-you-land-in-course-work" id="toc-start-jupyter-notebook-in-the-correct-folder-so-you-land-in-course-work" class="nav-link" data-scroll-target="#start-jupyter-notebook-in-the-correct-folder-so-you-land-in-course-work">8) Start Jupyter Notebook in the correct folder (so you land in <code>course-work</code>)</a></li>
-  <li><a href="#create-your-first-notebook-and-run-a-quick-confirmation" id="toc-create-your-first-notebook-and-run-a-quick-confirmation" class="nav-link" data-scroll-target="#create-your-first-notebook-and-run-a-quick-confirmation">9) Create your first notebook and run a quick confirmation</a></li>
-  <li><a href="#stop-jupyter-when-youre-finished" id="toc-stop-jupyter-when-youre-finished" class="nav-link" data-scroll-target="#stop-jupyter-when-youre-finished">10) Stop Jupyter when you’re finished</a></li>
-  <li><a href="#optional-ipython" id="toc-optional-ipython" class="nav-link" data-scroll-target="#optional-ipython">Optional: IPython</a>
+  <li><a href="#configure-conda-package-channels" id="toc-configure-conda-package-channels" class="nav-link" data-scroll-target="#configure-conda-package-channels">3) Configure conda package channels</a></li>
+  <li><a href="#create-the-course-environment" id="toc-create-the-course-environment" class="nav-link" data-scroll-target="#create-the-course-environment">4) Create the course environment</a></li>
+  <li><a href="#activate-the-environment-choose-your-course" id="toc-activate-the-environment-choose-your-course" class="nav-link" data-scroll-target="#activate-the-environment-choose-your-course">5) Activate the environment (choose <strong>your</strong> course)</a>
   <ul class="collapse">
-  <li><a href="#open-an-anaconda-tab-not-powershell" id="toc-open-an-anaconda-tab-not-powershell" class="nav-link" data-scroll-target="#open-an-anaconda-tab-not-powershell">Open an Anaconda tab (not PowerShell)</a></li>
-  <li><a href="#activate-the-course-environment-and-start-ipython" id="toc-activate-the-course-environment-and-start-ipython" class="nav-link" data-scroll-target="#activate-the-course-environment-and-start-ipython">Activate the course environment and start IPython</a></li>
-  <li><a href="#exit-ipython" id="toc-exit-ipython" class="nav-link" data-scroll-target="#exit-ipython">Exit IPython</a></li>
-  <li><a href="#optional-jupyterlab-modern-web-interface" id="toc-optional-jupyterlab-modern-web-interface" class="nav-link" data-scroll-target="#optional-jupyterlab-modern-web-interface">Optional: JupyterLab (modern web interface)</a></li>
+  <li><a href="#if-you-are-in-cmsc-1217-introduction-to-data-analytics" id="toc-if-you-are-in-cmsc-1217-introduction-to-data-analytics" class="nav-link" data-scroll-target="#if-you-are-in-cmsc-1217-introduction-to-data-analytics">If you are in <strong>CMSC-1217 Introduction to Data Analytics</strong></a></li>
+  <li><a href="#if-you-are-in-cmsc-2208-introduction-to-machine-learning" id="toc-if-you-are-in-cmsc-2208-introduction-to-machine-learning" class="nav-link" data-scroll-target="#if-you-are-in-cmsc-2208-introduction-to-machine-learning">If you are in <strong>CMSC-2208 Introduction to Machine Learning</strong></a></li>
+  </ul></li>
+  <li><a href="#install-packages-inside-the-active-environment" id="toc-install-packages-inside-the-active-environment" class="nav-link" data-scroll-target="#install-packages-inside-the-active-environment">6) Install packages (inside the active environment)</a>
+  <ul class="collapse">
+  <li><a href="#a-cmsc-1217-packages" id="toc-a-cmsc-1217-packages" class="nav-link" data-scroll-target="#a-cmsc-1217-packages">A) CMSC-1217 packages</a></li>
+  <li><a href="#b-cmsc-2208-packages-required" id="toc-b-cmsc-2208-packages-required" class="nav-link" data-scroll-target="#b-cmsc-2208-packages-required">B) CMSC-2208 packages (required)</a></li>
+  </ul></li>
+  <li><a href="#verify-your-installation-imports-version-confirmation" id="toc-verify-your-installation-imports-version-confirmation" class="nav-link" data-scroll-target="#verify-your-installation-imports-version-confirmation">7) Verify your installation (imports + version confirmation)</a>
+  <ul class="collapse">
+  <li><a href="#cmsc-2208-only" id="toc-cmsc-2208-only" class="nav-link" data-scroll-target="#cmsc-2208-only">CMSC-2208 only</a></li>
+  </ul></li>
+  <li><a href="#create-the-course-folder-structure-choose-your-course" id="toc-create-the-course-folder-structure-choose-your-course" class="nav-link" data-scroll-target="#create-the-course-folder-structure-choose-your-course">8) Create the course folder structure (choose <strong>your</strong> course)</a>
+  <ul class="collapse">
+  <li><a href="#if-you-are-in-cmsc-1217-introduction-to-data-analytics-1" id="toc-if-you-are-in-cmsc-1217-introduction-to-data-analytics-1" class="nav-link" data-scroll-target="#if-you-are-in-cmsc-1217-introduction-to-data-analytics-1">If you are in <strong>CMSC-1217 Introduction to Data Analytics</strong></a></li>
+  <li><a href="#if-you-are-in-cmsc-2208-introduction-to-machine-learning-1" id="toc-if-you-are-in-cmsc-2208-introduction-to-machine-learning-1" class="nav-link" data-scroll-target="#if-you-are-in-cmsc-2208-introduction-to-machine-learning-1">If you are in <strong>CMSC-2208 Introduction to Machine Learning</strong></a></li>
+  <li><a href="#what-these-folders-are-for-both-courses" id="toc-what-these-folders-are-for-both-courses" class="nav-link" data-scroll-target="#what-these-folders-are-for-both-courses">What these folders are for (both courses)</a></li>
+  </ul></li>
+  <li><a href="#install-git-if-needed" id="toc-install-git-if-needed" class="nav-link" data-scroll-target="#install-git-if-needed">9) Install Git (if needed)</a></li>
+  <li><a href="#download-the-book-companion-files-choose-your-course" id="toc-download-the-book-companion-files-choose-your-course" class="nav-link" data-scroll-target="#download-the-book-companion-files-choose-your-course">10) Download the book companion files (choose <strong>your</strong> course)</a>
+  <ul class="collapse">
+  <li><a href="#if-you-are-in-cmsc-1217-introduction-to-data-analytics-2" id="toc-if-you-are-in-cmsc-1217-introduction-to-data-analytics-2" class="nav-link" data-scroll-target="#if-you-are-in-cmsc-1217-introduction-to-data-analytics-2">If you are in <strong>CMSC-1217 Introduction to Data Analytics</strong></a></li>
+  <li><a href="#if-you-are-in-cmsc-2208-introduction-to-machine-learning-2" id="toc-if-you-are-in-cmsc-2208-introduction-to-machine-learning-2" class="nav-link" data-scroll-target="#if-you-are-in-cmsc-2208-introduction-to-machine-learning-2">If you are in <strong>CMSC-2208 Introduction to Machine Learning</strong></a></li>
+  </ul></li>
+  <li><a href="#start-jupyter-notebook-in-the-correct-folder-choose-yourcourse" id="toc-start-jupyter-notebook-in-the-correct-folder-choose-yourcourse" class="nav-link" data-scroll-target="#start-jupyter-notebook-in-the-correct-folder-choose-yourcourse">11) Start Jupyter Notebook in the correct folder (choose <strong>your</strong>course)</a>
+  <ul class="collapse">
+  <li><a href="#if-you-are-in-cmsc-1217-introduction-to-data-analytics-3" id="toc-if-you-are-in-cmsc-1217-introduction-to-data-analytics-3" class="nav-link" data-scroll-target="#if-you-are-in-cmsc-1217-introduction-to-data-analytics-3">If you are in <strong>CMSC-1217 Introduction to Data Analytics</strong></a></li>
+  <li><a href="#if-you-are-in-cmsc-2208-introduction-to-machine-learning-3" id="toc-if-you-are-in-cmsc-2208-introduction-to-machine-learning-3" class="nav-link" data-scroll-target="#if-you-are-in-cmsc-2208-introduction-to-machine-learning-3">If you are in <strong>CMSC-2208 Introduction to Machine Learning</strong></a></li>
+  <li><a href="#accessing-the-book-folder-when-needed" id="toc-accessing-the-book-folder-when-needed" class="nav-link" data-scroll-target="#accessing-the-book-folder-when-needed">Accessing the <code>book</code> folder (when needed)</a></li>
+  </ul></li>
+  <li><a href="#create-your-first-notebook-and-confirm-the-environment" id="toc-create-your-first-notebook-and-confirm-the-environment" class="nav-link" data-scroll-target="#create-your-first-notebook-and-confirm-the-environment">12) Create your first notebook and confirm the environment</a></li>
+  <li><a href="#stop-jupyterlab-when-finished" id="toc-stop-jupyterlab-when-finished" class="nav-link" data-scroll-target="#stop-jupyterlab-when-finished">13) Stop JupyterLab when finished</a></li>
+  <li><a href="#optional-cmsc-1217-ipython-in-the-terminal" id="toc-optional-cmsc-1217-ipython-in-the-terminal" class="nav-link" data-scroll-target="#optional-cmsc-1217-ipython-in-the-terminal">Optional (CMSC-1217): IPython in the terminal</a></li>
+  <li><a href="#common-issues-and-solutions" id="toc-common-issues-and-solutions" class="nav-link" data-scroll-target="#common-issues-and-solutions">Common issues and solutions</a>
+  <ul class="collapse">
+  <li><a href="#issue-imports-fail-inside-a-notebook" id="toc-issue-imports-fail-inside-a-notebook" class="nav-link" data-scroll-target="#issue-imports-fail-inside-a-notebook">Issue: Imports fail inside a notebook</a></li>
+  <li><a href="#issue-jupyterlab-opens-in-the-wrong-folder" id="toc-issue-jupyterlab-opens-in-the-wrong-folder" class="nav-link" data-scroll-target="#issue-jupyterlab-opens-in-the-wrong-folder">Issue: JupyterLab opens in the wrong folder</a></li>
+  <li><a href="#issue-you-forgot-to-activate-the-environment" id="toc-issue-you-forgot-to-activate-the-environment" class="nav-link" data-scroll-target="#issue-you-forgot-to-activate-the-environment">Issue: You forgot to activate the environment</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -463,8 +490,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../shared/guides/setup/miniconda.html">Guides</a></li><li class="breadcrumb-item"><a href="../../../shared/guides/setup/miniconda.html">Miniconda Setup</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Week 1 — Miniconda Setup and First Notebook (Windows)</h1>
-<p class="subtitle lead">Core tools and notebook workflow</p>
+<h1 class="title">Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab</h1>
+<p class="subtitle lead">One setup workflow used in <strong>two courses</strong></p>
 </div>
 
 
@@ -481,276 +508,370 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="install-miniconda" class="level3">
-<h3 class="anchored" data-anchor-id="install-miniconda">1) Install Miniconda</h3>
-<p><strong>What you know from Structured:</strong> you installed Python from <strong>python.org</strong>, and VS Code used that Python.</p>
-<p><strong>What’s different here:</strong> instead of installing Python directly, we install <strong>Miniconda</strong>, which is an environment manager. Think of Miniconda as a <strong>tool that can install Python + data libraries into a self-contained folder</strong> so this course has a consistent setup.</p>
+<p>You will use the <strong>same core setup</strong> in both of these courses:</p>
+<ul>
+<li><strong>CMSC-1217 Introduction to Data Analytics</strong></li>
+<li><strong>CMSC-2208 Introduction to Machine Learning</strong></li>
+</ul>
+<p>The difference between the courses is <strong>which environment/packages</strong> you install and which tools are emphasized. This page includes small callouts to help you follow the right parts at the right time.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In these courses, you will work inside a <strong>conda environment</strong>. An environment is an isolated Python installation (Python + packages) stored in a folder on your computer. This helps everyone use consistent tools and reduces setup conflicts.</p>
+<p>You will use the following tools:</p>
+<ul>
+<li><strong>Miniconda</strong> Miniconda is a small installer that provides <strong>Conda</strong>, a system for managing Python installations and packages. Miniconda does not include many data-science packages by default; instead, it gives you a controlled way to install exactly what a course requires.</li>
+<li><strong>Conda (the environment manager)</strong> Conda is software that can create, activate, and manage environments. It can also install packages (libraries) in a way that keeps them consistent and reduces compatibility problems, especially for scientific packages.</li>
+<li><strong>Conda environment</strong> A conda environment is a self-contained folder that contains:
 <ol type="1">
-<li>Download and install <strong>Miniconda (64-bit)</strong>.</li>
-<li>During install, <strong>do not add Miniconda to PATH</strong>.</li>
-</ol>
-<p><strong>Why not add to PATH:</strong> you might already have a python.org install. We don’t want Miniconda to “take over” the <code>python</code> command everywhere on your machine. Instead, we’ll use the Miniconda/Anaconda Prompt when we want the course setup.</p>
-<hr>
+<li>a specific version of Python, and</li>
+<li>a specific set of installed packages. Each environment is separate from other environments on your computer. This means one course can use one set of packages (and versions) without affecting another course or your personal Python installation.</li>
+</ol></li>
+<li><strong>JupyterLab (notebook workspace)</strong> JupyterLab is a browser-based programming environment used for data analysis and machine learning. It allows you to write code in <strong>cells</strong>, run those cells, and view output (tables, plots, printed results) directly below the code. JupyterLab is used in both courses because it supports step-by-step work and makes it easier to review results.</li>
+<li><strong>IPython (interactive Python terminal — CMSC-1217 only)</strong> IPython is an enhanced interactive Python terminal. It provides features that support exploratory work, such as command history, tab completion, and built-in help. In CMSC-1217, IPython is used to practice interactive exploration and reinforce core Python concepts in a terminal-based workflow.</li>
+</ul>
+<p><strong>How these pieces fit together</strong></p>
+<p>Miniconda installs Conda, and Conda is the tool you use to create a course environment. When you <em>activate</em> that environment, your terminal temporarily switches so that the <code>python</code> command (and tools like <code>jupyter</code>) run from the environment’s folder. You then start Jupyter (JupyterLab or Jupyter Notebook), and the notebook runs Python from the active environment, using the packages installed there. This sequence—install Miniconda → create environment → activate environment → start Jupyter → run notebooks—is the standard workflow you will use throughout the course.</p>
+<blockquote class="blockquote">
+<p><strong>Important:</strong> During Miniconda installation, do <strong>not</strong> add Miniconda to PATH. We will use the Miniconda/Anaconda Prompt when working for these courses.</p>
+</blockquote>
 </section>
-<section id="open-the-conda-terminal" class="level3">
-<h3 class="anchored" data-anchor-id="open-the-conda-terminal">2) Open the conda terminal</h3>
-<p>In the Start menu, open <strong>Anaconda Prompt</strong> (or <strong>Miniconda Prompt</strong>).</p>
+<section id="install-miniconda" class="level2">
+<h2 class="anchored" data-anchor-id="install-miniconda">1) Install Miniconda</h2>
+<ol type="1">
+<li>Download and install Miniconda (64-bit) for Windows. https://www.anaconda.com/download</li>
+<li>During installation, do not add Miniconda to PATH.</li>
+</ol>
+<p><strong>Why not add to PATH:</strong> Many of you already have a Python installation from python.org. Not adding Miniconda to PATH prevents Miniconda from changing which <code>python</code> runs in non-course terminals.</p>
+<p>Miniconda is a lightweight installer that provides:</p>
+<ul>
+<li>Conda (a package and environment manager), and</li>
+<li>a basic Python installation and its dependencies.</li>
+</ul>
+<p>Miniconda is intentionally minimal: it does <em>not</em> install a large collection of data-science packages by default. Instead, you install only the packages required for the course.</p>
+<p><strong>Relationship to Anaconda</strong></p>
+<p>Miniconda and Anaconda are closely related:</p>
+<ul>
+<li>Anaconda Distribution is a larger installer that comes with hundreds of packages pre-installed, plus optional tools like Anaconda Navigator.</li>
+<li>Miniconda is a smaller installer that includes only conda, Python, and a small core set of packages, and then you add what you need.</li>
+</ul>
+<p>For these courses, Miniconda is a good fit because it helps us keep your course environment clean, consistent, and easier to troubleshoot.</p>
+<p><strong>Why Miniconda/Conda is common in data analysis and machine learning</strong></p>
+<p>Data analysis and machine learning often rely on libraries that include compiled components. Conda is widely used in these areas because it can install many scientific packages as prebuilt binaries, which reduces installation difficulties (especially on Windows).</p>
+<p>Conda also supports creating separate environments so different projects can use different versions of Python/packages without interfering with each other.</p>
+</section>
+<section id="open-the-conda-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="open-the-conda-terminal">2) Open the conda terminal</h2>
+<p>Open <strong>Anaconda Command Prompt</strong> from the Start menu.</p>
 <p>You should see something like:</p>
 <p><code>(base) C:\Users\yourname&gt;</code></p>
-<p><strong>What <code>(base)</code> means:</strong> you’re in conda’s default environment. It’s not “the class environment” yet—it’s just the starting point that lets you create one.</p>
-<hr>
+<p><strong>Why we use this terminal</strong></p>
+<p>Anaconda/Miniconda Prompt is a terminal that is already configured to recognize conda commands such as <code>conda create</code>and <code>conda activate</code>. Using this prompt reduces setup errors because it starts with the correct conda settings.</p>
+<p><strong>What <code>(base)</code> means</strong></p>
+<p><code>(base)</code> indicates that you are currently in conda’s <strong>default environment</strong>. This environment exists mainly so that conda can run and manage other environments. In this course, you will usually <strong>not</strong> do your work in <code>(base)</code>. Instead, you will create and activate a course environment (for example, <code>pydata-book</code> or <code>cmsc-2208</code>) and work there.</p>
+<p><strong>How to interpret the prompt</strong></p>
+<p>The name in parentheses is your current environment:</p>
+<ul>
+<li><code>(base)</code> means you are in the default conda environment</li>
+<li><code>(pydata-book)</code> or <code>(cmsc-2208)</code> means you are in the course environment</li>
+</ul>
+<p>A quick habit that prevents many problems: <strong>before running course commands, look at the parentheses and confirm you are in the correct environment.</strong></p>
 </section>
-<section id="tell-conda-where-to-download-packages-from-channels" class="level3">
-<h3 class="anchored" data-anchor-id="tell-conda-where-to-download-packages-from-channels">3) Tell conda where to download packages from (channels)</h3>
+<section id="configure-conda-package-channels" class="level2">
+<h2 class="anchored" data-anchor-id="configure-conda-package-channels">3) Configure conda package channels</h2>
+<p>Run the following <strong>two commands</strong>, <strong>one at a time</strong>, pressing <strong>Enter after each</strong>.</p>
+<p>First, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>conda config -<span class="at">-add</span> channels conda<span class="at">-forge</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>conda config -<span class="at">-set</span> channel_priority strict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Conda downloads packages from sources called <strong>channels</strong>. A channel is a repository that hosts packaged software (similar in purpose to an “app store,” but for programming libraries). When you install a package with conda, conda searches the configured channels to find a compatible version of that package and its dependencies.</p>
+<p>We use <strong>conda-forge</strong> because it is a widely used community-maintained channel that provides current, well-tested builds of many scientific and data-analysis libraries (for example, NumPy, pandas, matplotlib, and scikit-learn). Using a consistent channel helps ensure that most students receive the same package builds and reduces platform-specific installation problems.</p>
+<p>Setting <strong>strict</strong> channel priority means conda will prefer packages from the highest-priority channel (in this case, conda-forge) rather than mixing packages from multiple channels. This matters because mixing package sources can sometimes lead to version conflicts or dependency mismatches. Strict priority reduces those problems by keeping package selection consistent.</p>
+</section>
+<section id="create-the-course-environment" class="level2">
+<h2 class="anchored" data-anchor-id="create-the-course-environment">4) Create the course environment</h2>
+<p>You will create one conda environment for the course you are taking currently.</p>
+<p><strong>What an environment is:</strong></p>
+<p>In programming, an environment is the set of software used to run your code, such as:</p>
+<ul>
+<li>the language runtime (for us, Python),</li>
+<li>installed libraries/packages,</li>
+<li>and related tools (such as Jupyter).</li>
+</ul>
+<p>Many languages and toolchains support environments (for example, Python can use virtual environments, and other ecosystems have their own dependency managers). The goal is the same: keep project dependencies organized and consistent.</p>
+<p><strong>What a conda environment is:</strong></p>
+<p>In this course we use a <strong>conda environment</strong>, which is a self-contained folder on your computer that includes:</p>
+<ul>
+<li>a specific version of <strong>Python</strong>, and</li>
+<li>a specific set of installed <strong>packages</strong>.</li>
+</ul>
+<p>We use conda because it provides a consistent way to install scientific and data-analysis libraries (especially on Windows) and makes it straightforward to reproduce the same setup across different computers.</p>
+<p>Do <strong>not</strong> create both environments.</p>
+<p><strong>If you are in CMSC-1217 Introduction to Data Analytics</strong></p>
+<p>Run this command (then press Enter):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>conda create <span class="at">-n</span> pydata<span class="at">-book</span> python=3.11</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If prompted, type <code>y</code>.</p>
+<p>This creates an environment named <code>pydata-book</code>. The name is just a label for this course’s Python setup.</p>
+<p><strong>If you are in CMSC-2208 Introduction to Machine Learning</strong></p>
+<p>Run this command (then press Enter):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>conda create <span class="at">-n</span> cmsc<span class="at">-2208</span> python=3.11</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If prompted, type <code>y</code>.</p>
+<p>This creates an environment named <code>cmsc-2208</code>. The name is just a label for this course’s Python setup.</p>
+</section>
+<section id="activate-the-environment-choose-your-course" class="level2">
+<h2 class="anchored" data-anchor-id="activate-the-environment-choose-your-course">5) Activate the environment (choose <strong>your</strong> course)</h2>
+<p>Before installing packages or starting JupyterLab, you must <strong>activate</strong> your course environment.</p>
+<p>What “activate” means: It tells the terminal to use the Python and packages inside your course environment. When the environment is active, commands like <code>python</code> and <code>jupyter</code> will run from the correct course setup.</p>
+<p>You will activate <strong>one</strong> environment: the one for the course you are taking now.</p>
+<section id="if-you-are-in-cmsc-1217-introduction-to-data-analytics" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-are-in-cmsc-1217-introduction-to-data-analytics">If you are in <strong>CMSC-1217 Introduction to Data Analytics</strong></h3>
 <p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>conda config -<span class="at">-add</span> channels conda<span class="at">-forge</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>conda config -<span class="at">-set</span> channel_priority strict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Connection to what you know:</strong> in Structured, you used <code>pip install ...</code> to download packages.</p>
-<p><strong>Here’s the conda equivalent idea:</strong> conda downloads packages from “channels,” which are like package stores/repositories. We point conda to <strong>conda-forge</strong> because it’s widely used and tends to work well for scientific/data packages.</p>
-<hr>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>conda activate pydata<span class="at">-book</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="create-the-course-environment-your-course-specific-python-install" class="level3">
-<h3 class="anchored" data-anchor-id="create-the-course-environment-your-course-specific-python-install">4) Create the course environment (your course-specific Python install)</h3>
+<section id="if-you-are-in-cmsc-2208-introduction-to-machine-learning" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-are-in-cmsc-2208-introduction-to-machine-learning">If you are in <strong>CMSC-2208 Introduction to Machine Learning</strong></h3>
 <p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>conda create <span class="at">-n</span> pydata<span class="at">-book</span> python=3.11</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If it asks to proceed, type <code>y</code>.</p>
-<section id="what-this-does-important" class="level4">
-<h4 class="anchored" data-anchor-id="what-this-does-important">What this does (important)</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>conda activate cmsc<span class="at">-2208</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>After you activate, your prompt will begin with the environment name, for example:</p>
 <ul>
-<li>It creates a <strong>new conda environment</strong> named <code>pydata-book</code>.</li>
-<li>Inside that environment, conda installs its <strong>own copy of Python 3.10</strong> plus the supporting pieces Python needs to run. ([Wes McKinney][1])</li>
+<li><code>(pydata-book) ...</code></li>
+<li><code>(cmsc-2208) ...</code></li>
 </ul>
-</section>
-<section id="where-this-lives-on-windows-so-you-can-see-it" class="level4">
-<h4 class="anchored" data-anchor-id="where-this-lives-on-windows-so-you-can-see-it">Where this lives on Windows (so you can “see” it)</h4>
-<p>Miniconda installs into a folder on your machine (commonly something like):</p>
-<ul>
-<li><code>C:\Users\&lt;yourname&gt;\miniconda3\</code></li>
-</ul>
-<p>When you create an environment, it typically appears under:</p>
-<ul>
-<li><code>C:\Users\&lt;yourname&gt;\miniconda3\envs\pydata-book\</code></li>
-</ul>
-<p>That’s why later, when you run <code>sys.executable</code> in Jupyter, you see a path pointing into <code>miniconda3\envs\pydata-book\...</code></p>
-</section>
-<section id="about-the-name-pydata-book" class="level4">
-<h4 class="anchored" data-anchor-id="about-the-name-pydata-book">About the name <code>pydata-book</code></h4>
-<p><code>pydata-book</code> is <strong>just a name</strong> for the environment—like naming a folder. It doesn’t “link” to the book in any technical way.</p>
-<p>The book uses <code>pydata-book</code> as a convenient, descriptive name, so we keep it to match the book’s instructions and screenshots. You <em>could</em> name it <code>cmsc-1217</code>, but then your commands would differ from the book. ([Wes McKinney][1])</p>
-</section>
-<section id="why-python-3.11-when-newer-versions-exist" class="level4">
-<h4 class="anchored" data-anchor-id="why-python-3.11-when-newer-versions-exist">Why Python 3.11 (when newer versions exist)</h4>
-<ul>
-<li>The book explicitly creates the environment with <strong>Python 3.10</strong>.</li>
-<li>Python <strong>3.11.0</strong> was released <strong>Oct 4, 2021</strong>.</li>
-<li>Newer versions do exist (for example Python <strong>3.14</strong> is a released series).</li>
-</ul>
-<p>Could we use a newer version? <strong>Probably</strong>, but using the same version as the book is the “maximum compatibility” choice for Week 1 because:</p>
-<ul>
-<li>you reduce the chance of version-specific differences,</li>
-<li>and you avoid “my output looks different than the book” issues while students are still learning the workflow.</li>
-</ul>
-<p>If later you decide to update, it’s a single change to the command (<code>python=3.12</code>)—but the conservative choice is to follow the text first and only change once you’ve tested it.</p>
-</section>
-<section id="note-the-tos-prompt-you-hit" class="level4">
-<h4 class="anchored" data-anchor-id="note-the-tos-prompt-you-hit">Note: the ToS prompt you hit</h4>
-<p>On some installs, conda may block downloads until you accept Terms of Service for certain channels. That’s what you saw. It’s enforced through Anaconda’s ToS tooling/plugin and can appear during <code>conda create</code> or <code>conda install</code>.</p>
-<p>If the ToS message appears, follow the prompt it prints (it tells you exactly what command(s) to run), then re-run the <code>conda create ...</code> command.</p>
+<p><strong>Rule:</strong> Before you do course work, confirm that the prompt shows your course environment name.</p>
 <hr>
 </section>
 </section>
-<section id="activate-the-environment-switch-into-the-course-python-machine" class="level3">
-<h3 class="anchored" data-anchor-id="activate-the-environment-switch-into-the-course-python-machine">5) Activate the environment (switch into the course “Python machine”)</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>conda activate pydata<span class="at">-book</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should now see:</p>
-<p><code>(pydata-book) ...</code></p>
-<section id="think-of-this-like-a-virtual-machine-but-lighter" class="level4">
-<h4 class="anchored" data-anchor-id="think-of-this-like-a-virtual-machine-but-lighter">Think of this like a virtual machine (but lighter)</h4>
-<p>In a virtual machine, you “switch into” a separate computer with its own software installed.</p>
-<p>A conda environment is similar in spirit, but much smaller:</p>
+<section id="install-packages-inside-the-active-environment" class="level2">
+<h2 class="anchored" data-anchor-id="install-packages-inside-the-active-environment">6) Install packages (inside the active environment)</h2>
+<section id="a-cmsc-1217-packages" class="level3">
+<h3 class="anchored" data-anchor-id="a-cmsc-1217-packages">A) CMSC-1217 packages</h3>
+<p>With <code>(pydata-book)</code> active, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>conda install <span class="at">-c</span> conda<span class="at">-forge</span> numpy pandas=2.0.3 matplotlib jupyterlab notebook ipykernel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This installs:</p>
 <ul>
-<li>you’re switching into a <strong>separate Python installation</strong> with its <strong>own packages</strong></li>
-<li>it lives in a folder on your computer (not a whole virtual computer)</li>
+<li><strong>numpy</strong>: arrays and numerical computing</li>
+<li><strong>pandas</strong>: data tables (DataFrames)</li>
+<li><strong>matplotlib</strong>: plotting</li>
+<li><strong>jupyterlab</strong>: notebook interface</li>
+<li><strong>ipykernel</strong>: the component that allows this environment to run notebooks as a Jupyter kernel</li>
 </ul>
+<blockquote class="blockquote">
+<p><strong>CMSC-1217 only:</strong> You will also use <strong>IPython</strong> in this course. IPython will work once the environment is active.</p>
+</blockquote>
 </section>
-<section id="why-this-matters" class="level4">
-<h4 class="anchored" data-anchor-id="why-this-matters">Why this matters</h4>
-<p>When the environment is activated, commands like these run <em>from the environment</em>:</p>
-<ul>
-<li><code>python</code></li>
-<li><code>jupyter</code></li>
-<li><code>ipython</code></li>
-</ul>
-<p>That means you’re using <strong>the course Python + the course-installed tools</strong>, not whatever else might be installed on your machine.</p>
-</section>
-<section id="what-happens-if-you-forget-to-activate-it" class="level4">
-<h4 class="anchored" data-anchor-id="what-happens-if-you-forget-to-activate-it">What happens if you forget to activate it</h4>
-<p>If you open a terminal and run <code>jupyter</code> <strong>without</strong> activating <code>pydata-book</code>, one of two things usually happens:</p>
-<ul>
-<li><p><strong><code>jupyter</code> is not recognized</strong> This is common because Jupyter was installed <em>inside</em> the <code>pydata-book</code> environment, so Windows won’t see it unless that environment is active.</p></li>
-<li><p><strong>OR it runs a different Jupyter</strong> (less common, but possible) If you happened to install Jupyter somewhere else previously, you might accidentally run the wrong one.</p></li>
-</ul>
-<p>Either way, the result is the same: you’re not using the course setup.</p>
-</section>
-<section id="what-about-python-will-it-still-work" class="level4">
-<h4 class="anchored" data-anchor-id="what-about-python-will-it-still-work">What about <code>python</code> — will it still work?</h4>
-<p>Usually, yes.</p>
-<p>Because you installed Python in Structured (python.org), the <code>python</code> command may still work even when you are <em>not</em> in a conda environment.</p>
-<p>But that Python (from Structured) will <strong>not</strong> automatically have the packages we installed into <code>pydata-book</code> (pandas, matplotlib, jupyter, etc.). That’s why the environment matters.</p>
-<p><strong>Bottom line rule:</strong> Before you run anything for this course, do:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>conda activate pydata<span class="at">-book</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>and confirm you see <code>(pydata-book)</code> in the prompt.</p>
-<hr>
+<section id="b-cmsc-2208-packages-required" class="level3">
+<h3 class="anchored" data-anchor-id="b-cmsc-2208-packages-required">B) CMSC-2208 packages (required)</h3>
+<p>With <code>(cmsc-2208)</code> active, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>conda install <span class="at">-c</span> conda<span class="at">-forge</span> numpy pandas matplotlib jupyterlab ipykernel scikit<span class="at">-learn</span> scipy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This installs the data stack plus the machine learning libraries used in CMSC-2208.</p>
 </section>
 </section>
-<section id="install-the-core-course-packages-inside-the-environment" class="level3">
-<h3 class="anchored" data-anchor-id="install-the-core-course-packages-inside-the-environment">6) Install the core course packages (inside the environment)</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>conda install pandas=2.0.3 jupyter matplotlib</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Connection to what you know:</strong> this is the conda version of <code>pip install ...</code>, but it’s often smoother for data libraries.</p>
-<p><strong>What you’re installing:</strong></p>
-<ul>
-<li><strong>pandas</strong> = working with tables (DataFrames)</li>
-<li><strong>matplotlib</strong> = plotting</li>
-<li><strong>jupyter</strong> = notebooks (the main workspace for this course)</li>
-</ul>
-<hr>
-</section>
-<section id="create-the-course-folder-structure-so-jupyter-stays-organized" class="level3">
-<h3 class="anchored" data-anchor-id="create-the-course-folder-structure-so-jupyter-stays-organized">7) Create the course folder structure (so Jupyter stays organized)</h3>
-<p>Run these commands:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-1217</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-1217\course-work</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-1217\book</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-1217\data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="what-these-folders-are-for" class="level4">
-<h4 class="anchored" data-anchor-id="what-these-folders-are-for">What these folders are for</h4>
-<ul>
-<li><p><code>C:\cmsc-1217\course-work\</code> This is your <strong>workspace</strong> for this class: your weekly notebooks, practice files, and anything you will submit.</p></li>
-<li><p><code>C:\cmsc-1217\book\</code> This is where the <strong>pydata-book examples</strong> will live. These are reference notebooks from the textbook’s companion materials. You generally won’t edit these directly unless instructed.</p></li>
-<li><p><code>C:\cmsc-1217\data\</code> This is where datasets go (CSV files, etc.) so your notebooks can load data from a consistent location.</p></li>
-</ul>
-</section>
-<section id="why-this-step-exists" class="level4">
-<h4 class="anchored" data-anchor-id="why-this-step-exists">Why this step exists</h4>
-<p>Jupyter shows you files based on the folder you launch it from. If you start Jupyter from your user folder (<code>C:\Users\...</code>), you’ll see everything on your computer and it gets messy fast.</p>
-<p>By creating a dedicated course folder, you keep everything for CMSC-1217 in one place, and you can always find your work again.</p>
-<p><strong>In the next step, we will launch Jupyter from <code>C:\cmsc-1217\course-work\</code> so that’s the first folder you see when the browser opens.</strong></p>
-</section>
-</section>
-<section id="a-install-git-only-if-you-dont-already-have-it" class="level3">
-<h3 class="anchored" data-anchor-id="a-install-git-only-if-you-dont-already-have-it">7A) Install Git (only if you don’t already have it)</h3>
-<p>You should already have Git from <strong>Structured Programming Logic</strong>. This step is only for students who do <strong>not</strong> have Git installed.</p>
+<section id="verify-your-installation-imports-version-confirmation" class="level2">
+<h2 class="anchored" data-anchor-id="verify-your-installation-imports-version-confirmation">7) Verify your installation (imports + version confirmation)</h2>
+<p>Run this command in the <strong>active</strong> environment:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>python <span class="at">-c</span> <span class="st">"import sys; import numpy as np; import pandas as pd; import matplotlib; print('python', sys.version.split()[0]); print('numpy', np.__version__); print('pandas', pd.__version__); print('matplotlib', matplotlib.__version__)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>What this step is doing (and why it can take a moment):</strong></p>
+<p>This command does two things:</p>
 <ol type="1">
-<li>Open <strong>Command Prompt</strong> and check:</li>
+<li><strong>Imports the core libraries</strong> (<code>numpy</code>, <code>pandas</code>, <code>matplotlib</code>). Importing is the real verification step. It confirms the packages are installed correctly <em>in this environment</em> and that Python can load them without errors.</li>
+<li><strong>Prints version numbers</strong> after the imports succeed. This helps confirm you are using the expected tool versions for the course.</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>git -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li><p>If you see a version number, you’re done.</p></li>
-<li><p>If you get an error like <code>'git' is not recognized</code>, install <strong>Git for Windows</strong> (use the ARM64 installer if available on your machine; x64 also works). After installing, open a new Command Prompt and run:</p></li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>git -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
+<p>Because these libraries are large and include compiled components, the <strong>first successful import</strong> in a new environment may take longer than you expect. That is normal.</p>
+<section id="cmsc-2208-only" class="level3">
+<h3 class="anchored" data-anchor-id="cmsc-2208-only">CMSC-2208 only</h3>
+<p>For CMSC-2208, also verify:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>python <span class="at">-c</span> <span class="st">"import sklearn, scipy; print('sklearn', sklearn.__version__); print('scipy', scipy.__version__)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This confirms that the machine learning libraries required for the course can be imported correctly in the CMSC-2208 environment.</p>
 </section>
-<section id="b-download-the-book-files-into-your-book-folder-clone-the-repository" class="level3">
-<h3 class="anchored" data-anchor-id="b-download-the-book-files-into-your-book-folder-clone-the-repository">7B) Download the book files into your <code>book</code> folder (clone the repository)</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1217\book</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>git clone <span class="at">-b</span> 3rd<span class="at">-edition</span> https:/<span class="at">/github</span>.com<span class="at">/wesm/pydata-book</span>.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This will create the folder:</p>
-<p><code>C:\cmsc-1217\book\pydata-book\</code></p>
-<p>These are the textbook’s companion notebooks and files. We keep them in the <code>book</code> folder so they stay separate from your own work in <code>course-work</code>.</p>
-<hr>
 </section>
-<section id="start-jupyter-notebook-in-the-correct-folder-so-you-land-in-course-work" class="level3">
-<h3 class="anchored" data-anchor-id="start-jupyter-notebook-in-the-correct-folder-so-you-land-in-course-work">8) Start Jupyter Notebook in the correct folder (so you land in <code>course-work</code>)</h3>
-<p>Before launching Jupyter, move into your course work folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1217\course-work</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then start Jupyter:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>jupyter notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A browser tab will open showing the contents of <code>C:\cmsc-1217\course-work\</code>.</p>
-<section id="connection-to-what-you-know" class="level4">
-<h4 class="anchored" data-anchor-id="connection-to-what-you-know">Connection to what you know</h4>
+<section id="create-the-course-folder-structure-choose-your-course" class="level2">
+<h2 class="anchored" data-anchor-id="create-the-course-folder-structure-choose-your-course">8) Create the course folder structure (choose <strong>your</strong> course)</h2>
+<p>You will create a small folder structure on your <strong>C: drive</strong> so your files stay organized and easy to find.</p>
+<p>Run the commands for <strong>your course only</strong>. Run them <strong>one at a time</strong>, pressing <strong>Enter after each</strong> command.</p>
+<section id="if-you-are-in-cmsc-1217-introduction-to-data-analytics-1" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-are-in-cmsc-1217-introduction-to-data-analytics-1">If you are in <strong>CMSC-1217 Introduction to Data Analytics</strong></h3>
+<p>Run the following four commands:</p>
+<p>First:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-1217</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-1217\course-work</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-1217\book</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Finally:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-1217\data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="if-you-are-in-cmsc-2208-introduction-to-machine-learning-1" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-are-in-cmsc-2208-introduction-to-machine-learning-1">If you are in <strong>CMSC-2208 Introduction to Machine Learning</strong></h3>
+<p>Run the following four commands:</p>
+<p>First:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-2208</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-2208\course-work</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-2208\book</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Finally:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-2208\data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="what-these-folders-are-for-both-courses" class="level3">
+<h3 class="anchored" data-anchor-id="what-these-folders-are-for-both-courses">What these folders are for (both courses)</h3>
 <ul>
-<li>In Structured, your “workspace” was <strong>VS Code + terminal output</strong>.</li>
-<li>In this course, your “workspace” is the <strong>Jupyter web interface</strong>, where your instructions, code, and output appear together.</li>
+<li><code>course-work</code>: your weekly work and submissions</li>
+<li><code>book</code>: companion notebooks (reference materials)</li>
+<li><code>data</code>: datasets used in course work</li>
 </ul>
-</section>
-<section id="important" class="level4">
-<h4 class="anchored" data-anchor-id="important">Important</h4>
-<p>Leave the terminal window open while you use Jupyter. That terminal is running the Jupyter server. If you close it, Jupyter will stop.</p>
+<p><strong>Note:</strong> If you see a message like “A subdirectory or file already exists,” that usually means you already created the folder. That is fine—continue to the next command.</p>
 <hr>
 </section>
 </section>
-<section id="create-your-first-notebook-and-run-a-quick-confirmation" class="level3">
-<h3 class="anchored" data-anchor-id="create-your-first-notebook-and-run-a-quick-confirmation">9) Create your first notebook and run a quick confirmation</h3>
-<p>In the browser:</p>
-<ol type="1">
-<li>Click <strong>New → Python 3 (ipykernel)</strong></li>
-<li>In the first box, type:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sys.executable</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
-<li>Run it with <strong>Shift + Enter</strong></li>
-</ol>
-<p><strong>What you’re checking:</strong> you are running Python from the course environment. You should see something like:</p>
-<p><code>...\miniconda3\envs\pydata-book\python.exe</code></p>
-<hr>
+<section id="install-git-if-needed" class="level2">
+<h2 class="anchored" data-anchor-id="install-git-if-needed">9) Install Git (if needed)</h2>
+<p>Check:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>git -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If Git is not installed, install <strong>Git for Windows</strong>, then re-check <code>git --version</code>.</p>
 </section>
-<section id="stop-jupyter-when-youre-finished" class="level3">
-<h3 class="anchored" data-anchor-id="stop-jupyter-when-youre-finished">10) Stop Jupyter when you’re finished</h3>
-<p>Go back to the terminal running Jupyter and press:</p>
+<section id="download-the-book-companion-files-choose-your-course" class="level2">
+<h2 class="anchored" data-anchor-id="download-the-book-companion-files-choose-your-course">10) Download the book companion files (choose <strong>your</strong> course)</h2>
+<p>Each course uses a GitHub repository that contains companion files (notebooks, datasets, and examples). You will download the repository into your course <code>book</code> folder.</p>
+<p>Run the commands for <strong>your course only</strong>. Run them <strong>one at a time</strong>, pressing <strong>Enter after each</strong> command.</p>
+<section id="if-you-are-in-cmsc-1217-introduction-to-data-analytics-2" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-are-in-cmsc-1217-introduction-to-data-analytics-2">If you are in <strong>CMSC-1217 Introduction to Data Analytics</strong></h3>
+<p>First, move into your <code>book</code> folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1217\book</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then, clone the companion repository:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>git clone <span class="at">-b</span> 3rd<span class="at">-edition</span> https:/<span class="at">/github</span>.com<span class="at">/wesm/pydata-book</span>.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This creates the folder:</p>
+<pre><code>C:\cmsc-1217\book\pydata-book\</code></pre>
+</section>
+<section id="if-you-are-in-cmsc-2208-introduction-to-machine-learning-2" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-are-in-cmsc-2208-introduction-to-machine-learning-2">If you are in <strong>CMSC-2208 Introduction to Machine Learning</strong></h3>
+<p>First, move into your <code>book</code> folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-2208\book</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then, clone the companion repository:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>git clone https:/<span class="at">/github</span>.com<span class="at">/amueller/introduction_to_ml_with_python</span>.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This creates the folder:</p>
+<pre><code>C:\cmsc-2208\book\introduction_to_ml_with_python\</code></pre>
+<p><strong>Note:</strong> If you see a message that the folder already exists, that usually means you already cloned the repository. That is fine—do not clone it again.</p>
+</section>
+</section>
+<section id="start-jupyter-notebook-in-the-correct-folder-choose-yourcourse" class="level2">
+<h2 class="anchored" data-anchor-id="start-jupyter-notebook-in-the-correct-folder-choose-yourcourse">11) Start Jupyter Notebook in the correct folder (choose <strong>your</strong>course)</h2>
+<p>You will start the <strong>Jupyter Notebook (Classic)</strong> server from your <code>course-work</code> folder. This ensures that when the browser opens, you immediately see the files you are expected to edit and submit.</p>
+<p>Run the commands for <strong>your course only</strong>. Run them <strong>one at a time</strong>, pressing <strong>Enter after each</strong> command.</p>
+<section id="if-you-are-in-cmsc-1217-introduction-to-data-analytics-3" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-are-in-cmsc-1217-introduction-to-data-analytics-3">If you are in <strong>CMSC-1217 Introduction to Data Analytics</strong></h3>
+<p><strong>First, confirm you are in the correct course environment.</strong> Conda environments are activated <strong>per terminal window</strong>. That means:</p>
 <ul>
-<li><strong>Ctrl + C</strong>, then type <code>y</code> if it asks to shut down</li>
+<li>If you are using the <strong>same</strong> Anaconda/Miniconda Prompt window as earlier steps, your environment may already be active.</li>
+<li>If you opened a <strong>new</strong> terminal window (or restarted your computer), you must activate the environment again.</li>
+</ul>
+<p>Run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>conda activate pydata<span class="at">-book</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Check:</strong> your prompt should begin with <code>(pydata-book)</code>.</p>
+<p>Next, move into your course work folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1217\course-work</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then start Jupyter Notebook (Classic):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>jupyter notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="if-you-are-in-cmsc-2208-introduction-to-machine-learning-3" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-are-in-cmsc-2208-introduction-to-machine-learning-3">If you are in <strong>CMSC-2208 Introduction to Machine Learning</strong></h3>
+<p><strong>First, confirm you are in the correct course environment.</strong> Conda environments are activated <strong>per terminal window</strong>. That means:</p>
+<ul>
+<li>If you are using the <strong>same</strong> Anaconda/Miniconda Prompt window as earlier steps, your environment may already be active.</li>
+<li>If you opened a <strong>new</strong> terminal window (or restarted your computer), you must activate the environment again.</li>
+</ul>
+<p>Run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>conda activate cmsc<span class="at">-2208</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Check:</strong> your prompt should begin with <code>(pydata-book)</code>.</p>
+<p>Next, move into your course work folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-2208\course-work</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then start Jupyter Notebook (Classic):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>jupyter notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A browser tab will open showing the contents of your <code>course-work</code> folder.</p>
+<p><strong>Important:</strong> Leave the terminal window open while you use Jupyter Notebook. That terminal is running the notebook server. If you close it, Jupyter will stop.</p>
+</section>
+<section id="accessing-the-book-folder-when-needed" class="level3">
+<h3 class="anchored" data-anchor-id="accessing-the-book-folder-when-needed">Accessing the <code>book</code> folder (when needed)</h3>
+<p>The course keeps <code>course-work</code> (your work) and <code>book</code> (reference materials) separate on purpose. When you need to view a book notebook:</p>
+<p>Start a second Jupyter Notebook server in the <code>book</code> folder.</p>
+<ul>
+<li>Open a second Anaconda/Miniconda Prompt window</li>
+<li>Activate the same environment</li>
+<li><code>cd</code> into the <code>book</code> folder</li>
+<li>Run <code>jupyter notebook</code></li>
+</ul>
+<p>For CMSC-1217 (run each command seperately):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>conda activate pydata<span class="at">-book</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1217\book</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>jupyter notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For CMSC-2208 (run each command seperately):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>conda activate cmsc<span class="at">-2208</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-2208\book</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>jupyter notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This opens a second browser tab rooted in the <code>book</code> folder.</p>
+</section>
+</section>
+<section id="create-your-first-notebook-and-confirm-the-environment" class="level2">
+<h2 class="anchored" data-anchor-id="create-your-first-notebook-and-confirm-the-environment">12) Create your first notebook and confirm the environment</h2>
+<ol type="1">
+<li>In your browser, go to the <strong>file list page</strong> (the page that shows folders/files).
+<ul>
+<li>If you are currently inside a notebook, click <strong>File → Open…</strong> to return to the file list.</li>
+</ul></li>
+<li>Click <strong>New</strong> (top-right), then select <strong>Python 3 (ipykernel)</strong>.</li>
+<li>In the first cell, run:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>sys.executable</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="1">
+<li>Confirm the path includes your course environment:</li>
+</ol>
+<ul>
+<li><strong>CMSC-1217:</strong> <code>\\envs\\pydata-book\\</code></li>
+<li><strong>CMSC-2208:</strong> <code>\\envs\\cmsc-2208\\</code></li>
+</ul>
+<p><strong>Why this matters:</strong> The kernel name shown in menus can vary, but <code>sys.executable</code> reliably confirms the notebook is using the correct environment.</p>
+</section>
+<section id="stop-jupyterlab-when-finished" class="level2">
+<h2 class="anchored" data-anchor-id="stop-jupyterlab-when-finished">13) Stop JupyterLab when finished</h2>
+<p>Go back to the terminal that started JupyterLab and press:</p>
+<ul>
+<li><strong>Ctrl + C</strong>, then type <code>y</code> if prompted.</li>
 </ul>
 <hr>
 </section>
-<section id="optional-ipython" class="level2">
-<h2 class="anchored" data-anchor-id="optional-ipython">Optional: IPython</h2>
-<p><strong>Connection to what you know:</strong> this is like running Python in a terminal, but more helpful for exploration (history, tab completion, quick testing).</p>
-<section id="open-an-anaconda-tab-not-powershell" class="level3">
-<h3 class="anchored" data-anchor-id="open-an-anaconda-tab-not-powershell">Open an Anaconda tab (not PowerShell)</h3>
-<p>If you’re using <strong>Windows Terminal</strong>:</p>
+<section id="optional-cmsc-1217-ipython-in-the-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="optional-cmsc-1217-ipython-in-the-terminal">Optional (CMSC-1217): IPython in the terminal</h2>
+<blockquote class="blockquote">
+<p><strong>CMSC-1217 only:</strong> You will use IPython for interactive exploration.</p>
+</blockquote>
+<p>In Anaconda/Miniconda Prompt:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>conda activate pydata<span class="at">-book</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>IPythone</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see an <code>In [1]:</code> prompt.</p>
+<p>To exit:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>exit()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="common-issues-and-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="common-issues-and-solutions">Common issues and solutions</h2>
+<section id="issue-imports-fail-inside-a-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="issue-imports-fail-inside-a-notebook">Issue: Imports fail inside a notebook</h3>
+<p>Most common cause: the wrong environment/kernel is active.</p>
+<p><strong>Solution</strong></p>
 <ol type="1">
-<li>Click the <strong>small dropdown arrow</strong> next to the plus (<strong>˅</strong>) <em>(Do not just click the + — that usually opens PowerShell.)</em></li>
-<li>Click <strong>Anaconda Prompt (miniconda3)</strong> <em>(or “Anaconda PowerShell Prompt (miniconda3)” — either works, but the Prompt is simplest)</em></li>
+<li>In the notebook, run <code>sys.executable</code> to confirm the environment path.</li>
+<li>If it is incorrect, switch the notebook kernel to the correct one:
+<ul>
+<li><strong>Kernel → Change Kernel</strong> (select the environment for your course)</li>
+</ul></li>
 </ol>
-<p>You should see a prompt like:</p>
-<p><code>(base) C:\Users\yourname&gt;</code></p>
 </section>
-<section id="activate-the-course-environment-and-start-ipython" class="level3">
-<h3 class="anchored" data-anchor-id="activate-the-course-environment-and-start-ipython">Activate the course environment and start IPython</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>conda activate pydata<span class="at">-book</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ipython</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should then see:</p>
-<p><code>In [1]:</code></p>
+<section id="issue-jupyterlab-opens-in-the-wrong-folder" class="level3">
+<h3 class="anchored" data-anchor-id="issue-jupyterlab-opens-in-the-wrong-folder">Issue: JupyterLab opens in the wrong folder</h3>
+<p><strong>Solution:</strong> <code>cd</code> into the correct <code>course-work</code> folder before starting JupyterLab.</p>
 </section>
-<section id="exit-ipython" class="level3">
-<h3 class="anchored" data-anchor-id="exit-ipython">Exit IPython</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>exit()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="optional-jupyterlab-modern-web-interface" class="level3">
-<h3 class="anchored" data-anchor-id="optional-jupyterlab-modern-web-interface">Optional: JupyterLab (modern web interface)</h3>
-<ol type="1">
-<li>Activate the course environment:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>conda activate pydata<span class="at">-book</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li>Install JupyterLab (inside the environment):</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>conda install <span class="at">-c</span> conda<span class="at">-forge</span> jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
-<li>Start JupyterLab <strong>from your course-work folder</strong>:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1217\course-work</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>jupyter lab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A browser tab will open and the file browser will start in:</p>
-<p><code>C:\cmsc-1217\course-work\</code></p>
-<p><strong>Important:</strong> keep the terminal window open while you use JupyterLab (it’s running the server).</p>
+<section id="issue-you-forgot-to-activate-the-environment" class="level3">
+<h3 class="anchored" data-anchor-id="issue-you-forgot-to-activate-the-environment">Issue: You forgot to activate the environment</h3>
+<p><strong>Solution:</strong> close JupyterLab (Ctrl+C), then re-run the launch commands in Section 11.</p>
 
 
 </section>
@@ -843,7 +964,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/SCTCC-Computer-Programming\.github\.io\/cmsc-1236\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

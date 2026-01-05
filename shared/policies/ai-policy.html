@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 1 — VSCode Setup and First Notebook (Windows) – CMSC 1217 : Introduction to Data Analytics</title>
+<title>Using AI as a Learning Tool – CMSC 1217 : Introduction to Data Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,66 +20,31 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-feb0c0ed7aac57d66ec8dce0f6a48183.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-feb0c0ed7aac57d66ec8dce0f6a48183.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,8 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../../shared/assets/course.css">
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../shared/assets/course.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -282,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">CMSC 1217 : Introduction to Data Analytics</span>
     </a>
   </div>
@@ -293,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -308,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 1 — VSCode Setup and First Notebook (Windows)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Using AI as a Learning Tool</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -344,31 +309,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course/schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course/schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../shared/policies/office-hours.html" class="sidebar-item-text sidebar-link">
+  <a href="../../shared/policies/office-hours.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Office Hours</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../shared/policies/homework-coursework.html" class="sidebar-item-text sidebar-link">
+  <a href="../../shared/policies/homework-coursework.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment Policies</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../shared/policies/general-policies.html" class="sidebar-item-text sidebar-link">
+  <a href="../../shared/policies/general-policies.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">General Policies</span></a>
   </div>
 </li>
@@ -385,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../weekly-overview/week-01/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weekly-overview/week-01/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
   </div>
 </li>
@@ -402,7 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../assignments/week-01/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../assignments/week-01/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
   </div>
 </li>
@@ -419,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../shared/guides/setup/miniconda.html" class="sidebar-item-text sidebar-link">
+  <a href="../../shared/guides/setup/miniconda.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Miniconda Setup</span></a>
   </div>
 </li>
@@ -435,15 +400,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-youre-doing" id="toc-what-youre-doing" class="nav-link active" data-scroll-target="#what-youre-doing">What you’re doing</a></li>
-  <li><a href="#open-the-course-folder-in-vs-code" id="toc-open-the-course-folder-in-vs-code" class="nav-link" data-scroll-target="#open-the-course-folder-in-vs-code">1) Open the course folder in VS Code</a></li>
-  <li><a href="#install-the-extensions-if-you-dont-already-have-them" id="toc-install-the-extensions-if-you-dont-already-have-them" class="nav-link" data-scroll-target="#install-the-extensions-if-you-dont-already-have-them">2) Install the extensions (if you don’t already have them)</a></li>
-  <li><a href="#create-the-course-python-environment-and-select-it-in-vs-code-one-time" id="toc-create-the-course-python-environment-and-select-it-in-vs-code-one-time" class="nav-link" data-scroll-target="#create-the-course-python-environment-and-select-it-in-vs-code-one-time">3) Create the course Python environment and select it in VS Code (one-time)</a></li>
-  <li><a href="#open-the-notebook" id="toc-open-the-notebook" class="nav-link" data-scroll-target="#open-the-notebook">4) Open the notebook</a></li>
-  <li><a href="#select-the-notebook-kernel-first-time-only" id="toc-select-the-notebook-kernel-first-time-only" class="nav-link" data-scroll-target="#select-the-notebook-kernel-first-time-only">5) Select the notebook kernel (first time only)</a></li>
-  <li><a href="#select-the-kernel-then-run-a-quick-test" id="toc-select-the-kernel-then-run-a-quick-test" class="nav-link" data-scroll-target="#select-the-kernel-then-run-a-quick-test">6) Select the kernel, then run a quick test</a></li>
-  <li><a href="#quick-confirmation-your-instructor-may-ask-for-this" id="toc-quick-confirmation-your-instructor-may-ask-for-this" class="nav-link" data-scroll-target="#quick-confirmation-your-instructor-may-ask-for-this">7) Quick confirmation (your instructor may ask for this)</a></li>
-  <li><a href="#if-something-goes-wrong" id="toc-if-something-goes-wrong" class="nav-link" data-scroll-target="#if-something-goes-wrong">If something goes wrong</a></li>
+  <li><a href="#purpose-of-this-policy" id="toc-purpose-of-this-policy" class="nav-link active" data-scroll-target="#purpose-of-this-policy">Purpose of this policy</a></li>
+  <li><a href="#ai-as-a-learning-tool" id="toc-ai-as-a-learning-tool" class="nav-link" data-scroll-target="#ai-as-a-learning-tool">AI as a learning tool</a></li>
+  <li><a href="#ai-as-a-crutch" id="toc-ai-as-a-crutch" class="nav-link" data-scroll-target="#ai-as-a-crutch">AI as a crutch</a></li>
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why this matters</a></li>
+  <li><a href="#expectations-for-submitted-work" id="toc-expectations-for-submitted-work" class="nav-link" data-scroll-target="#expectations-for-submitted-work">Expectations for submitted work</a></li>
   </ul>
 </nav>
     </div>
@@ -453,8 +414,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 1 — VSCode Setup and First Notebook (Windows)</h1>
-<p class="subtitle lead">Core tools and notebook workflow</p>
+<h1 class="title">Using AI as a Learning Tool</h1>
+<p class="subtitle lead">Expectations, boundaries, and examples</p>
 </div>
 
 
@@ -471,123 +432,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-youre-doing" class="level3">
-<h3 class="anchored" data-anchor-id="what-youre-doing">What you’re doing</h3>
-<p>You are going to open a Jupyter notebook in VS Code and run it successfully using the course Python environment.</p>
+<section id="purpose-of-this-policy" class="level3">
+<h3 class="anchored" data-anchor-id="purpose-of-this-policy">Purpose of this policy</h3>
+<p>Tools that use artificial intelligence are now widely available, and many of you already use them when learning technical material. This course allows the use of AI tools as a learning aid, similar to a tutor or reference source. At the same time, this course requires that submitted work reflect your own understanding and decision-making.</p>
+<p>This page explains how AI tools may be used productively in this course, and where their use becomes inappropriate.</p>
 </section>
-<section id="open-the-course-folder-in-vs-code" class="level3">
-<h3 class="anchored" data-anchor-id="open-the-course-folder-in-vs-code">1) Open the course folder in VS Code</h3>
-<ol type="1">
-<li>Open <strong>VS Code</strong></li>
-<li>Go to <strong>File → Open Folder…</strong></li>
-<li>Open your course work folder (example: <code>C:\cmsc-1217\</code>)</li>
-</ol>
-</section>
-<section id="install-the-extensions-if-you-dont-already-have-them" class="level3">
-<h3 class="anchored" data-anchor-id="install-the-extensions-if-you-dont-already-have-them">2) Install the extensions (if you don’t already have them)</h3>
-<p>In VS Code, install:</p>
+<section id="ai-as-a-learning-tool" class="level3">
+<h3 class="anchored" data-anchor-id="ai-as-a-learning-tool">AI as a learning tool</h3>
+<p>Using AI as a learning tool means using it to <strong>clarify ideas, terminology, or examples</strong> that you do not yet understand.</p>
 <ul>
-<li><strong>Python</strong> (Microsoft)</li>
-<li><strong>Jupyter</strong> (Microsoft)</li>
+<li><p><strong>Ideas</strong> An idea is a concept or principle discussed in the course materials, such as how a process works, why a particular approach is used, or what a tool is designed to do. Clarifying an idea means using AI to help you understand the purpose or reasoning behind something you have already encountered in class, rather than asking for a final answer.</p></li>
+<li><p><strong>Terminology</strong> Terminology refers to the specific words and phrases used in technical subjects. These terms often have precise meanings that differ from everyday usage. Using AI appropriately includes asking for explanations of unfamiliar terms so you can understand how they are used in context, especially when reading textbooks, documentation, or assignment instructions.</p></li>
+<li><p><strong>Examples</strong> Examples are demonstrations that show how an idea or concept is applied in practice. Using AI to clarify examples means asking for help understanding why an example works, what each part is doing, or how it relates to the underlying concept. It does not mean copying an example and submitting it as your own work.</p></li>
 </ul>
+<p>In all cases, using AI as a learning tool should help you build understanding, not replace the effort of reading, experimenting, or reasoning through a problem yourself.</p>
 </section>
-<section id="create-the-course-python-environment-and-select-it-in-vs-code-one-time" class="level3">
-<h3 class="anchored" data-anchor-id="create-the-course-python-environment-and-select-it-in-vs-code-one-time">3) Create the course Python environment and select it in VS Code (one-time)</h3>
-<section id="a-create-the-course-environment-folder" class="level4">
-<h4 class="anchored" data-anchor-id="a-create-the-course-environment-folder">3A) Create the course environment folder</h4>
-<ol type="1">
-<li><p>Create a folder on your C: drive named:</p>
+<section id="ai-as-a-crutch" class="level3">
+<h3 class="anchored" data-anchor-id="ai-as-a-crutch">AI as a crutch</h3>
+<p>AI tools can support learning, but they can also be used in ways that reduce learning. This policy uses the term “crutch” to describe situations where the tool is doing the thinking and decision-making that the student is expected to practice.</p>
+<p>Using AI as a crutch means relying on it to produce work or reasoning that you do not understand well enough to explain and defend. The issue is not that the tool was used; the issue is that the tool replaced the learning process.</p>
+<p>Inappropriate uses include:</p>
 <ul>
-<li><code>C:\cmsc-1217-env\</code></li>
-</ul></li>
-</ol>
-</section>
-<section id="b-create-the-virtual-environment-.venv" class="level4">
-<h4 class="anchored" data-anchor-id="b-create-the-virtual-environment-.venv">3B) Create the virtual environment (.venv)</h4>
-<ol type="1">
-<li>Open <strong>Command Prompt</strong> (Windows search → type “Command Prompt”)</li>
-<li>Run:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1217-env</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>python <span class="at">-m</span> venv .venv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="c-activate-the-environment" class="level4">
-<h4 class="anchored" data-anchor-id="c-activate-the-environment">3C) Activate the environment</h4>
-<p>In the same Command Prompt window, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>C:\cmsc-1217-env\.venv\Scripts\activate.bat</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see <code>(.venv)</code> appear at the start of the line.</p>
-</section>
-<section id="d-install-the-notebook-packages-first-time-setup" class="level4">
-<h4 class="anchored" data-anchor-id="d-install-the-notebook-packages-first-time-setup">3D) Install the notebook packages (first-time setup)</h4>
-<p>Still in the activated environment, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>python <span class="at">-m</span> pip install -<span class="at">-upgrade</span> pip</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>python <span class="at">-m</span> pip install numpy pandas matplotlib jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="e-select-the-environment-in-vs-code-interpreter" class="level4">
-<h4 class="anchored" data-anchor-id="e-select-the-environment-in-vs-code-interpreter">3E) Select the environment in VS Code (Interpreter)</h4>
-<ol type="1">
-<li>In VS Code, press <strong>Ctrl + Shift + P</strong></li>
-<li>Type <strong>Python: Select Interpreter</strong></li>
-<li>Choose the interpreter that looks like:</li>
-</ol>
-<ul>
-<li><code>C:\cmsc-1217-env\.venv\Scripts\python.exe</code></li>
+<li><p>Asking AI to complete an assignment or lab task for you Example: “Write the solution for this assignment.”</p></li>
+<li><p>Submitting AI-generated code, answers, or explanations that you cannot explain in your own words Example: Copying an explanation of why a solution works without being able to describe the steps yourself.</p></li>
+<li><p>Treating AI output as authoritative without verification Example: Accepting an answer that conflicts with course materials, documentation, or results you can reproduce.</p></li>
+<li><p>Using AI to bypass the learning objective Example: Asking for the final answer when the point of the activity is to practice reasoning, debugging, designing, or interpreting results.</p></li>
+<li><p>Using AI to write or script reflections that are meant to describe your own understanding Example: Asking AI to generate a script or talking points for a reflection video instead of explaining the ideas in your own words.</p></li>
 </ul>
-<p>If you don’t see it:</p>
+<p>In these cases, AI is being used to avoid the intended learning work rather than to support it.</p>
+</section>
+<section id="why-this-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-matters">Why this matters</h3>
+<p>AI can produce output that appears correct even when it contains errors or is based on incorrect assumptions. Because of that, it is important to treat AI output as a starting point for learning, not as an authority.</p>
+<p>This course emphasizes:</p>
 <ul>
-<li>choose <strong>Enter interpreter path…</strong></li>
-<li>paste: <code>C:\cmsc-1217-env\.venv\Scripts\python.exe</code></li>
+<li>verifying results,</li>
+<li>understanding workflows,</li>
+<li>and explaining decisions clearly.</li>
 </ul>
-<p>This is the environment we will use all semester.</p>
+<p>If you rely on AI answers without testing them or understanding them, you are likely to miss errors and build misunderstandings. Those gaps tend to surface later in the course when tasks require independent problem solving, accurate interpretation, and clear explanations in graded work.</p>
 </section>
-</section>
-<section id="open-the-notebook" class="level3">
-<h3 class="anchored" data-anchor-id="open-the-notebook">4) Open the notebook</h3>
+<section id="expectations-for-submitted-work" class="level3">
+<h3 class="anchored" data-anchor-id="expectations-for-submitted-work">Expectations for submitted work</h3>
+<p>All submitted work must reflect your own understanding.</p>
+<p>This means:</p>
 <ul>
-<li>In the Explorer panel, click the notebook file (<code>.ipynb</code>) your instructor provided.</li>
+<li>You should be able to explain any code you submit.</li>
+<li>You should be able to describe why you made particular choices (model, metric, preprocessing).</li>
+<li>In reflections, your explanations should sound like you, not like a generic answer generator.</li>
 </ul>
-</section>
-<section id="select-the-notebook-kernel-first-time-only" class="level3">
-<h3 class="anchored" data-anchor-id="select-the-notebook-kernel-first-time-only">5) Select the notebook kernel (first time only)</h3>
-<p>The first time you run a notebook, VS Code may ask you to pick a <strong>kernel</strong>.</p>
-<p>Choose the kernel that matches the course environment path:</p>
+<p>You are not required to disclose routine AI use for clarification or studying. However, if your work suggests that you do not understand what you submitted, that will be treated the same way as any other lack of understanding, regardless of the source.</p>
+<p>If you use an AI tool, ask yourself:</p>
 <ul>
-<li><code>C:\cmsc-1217-env\.venv\Scripts\python.exe</code></li>
+<li>Could I explain this answer to another student without looking it up?</li>
+<li>Did I test or verify what the tool suggested?</li>
+<li>Did the tool help me understand, or did it just give me something to submit?</li>
 </ul>
-<p>This can feel repetitive the first time. That’s normal. Once selected, it usually stays set for that folder.</p>
-</section>
-<section id="select-the-kernel-then-run-a-quick-test" class="level3">
-<h3 class="anchored" data-anchor-id="select-the-kernel-then-run-a-quick-test">6) Select the kernel, then run a quick test</h3>
-<ol type="1">
-<li><p>In the top-right of the notebook, click <strong>Select Kernel</strong>.</p></li>
-<li><p>Choose the kernel that points to the course environment:</p>
-<p><code>C:\cmsc-1217-env\.venv\Scripts\python.exe</code></p>
-<p>(It may also show up as “Python 3.x (.venv)”—the key is that it points to <code>cmsc-1217-env\.venv</code>.)</p></li>
-<li><p>Click <strong>+ Code</strong>.</p></li>
-<li><p>In the code block that appears, paste:</p></li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Notebook is running"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="5" type="1">
-<li>Run it by clicking the <strong>Run (▶)</strong> icon on the code block, or press <strong>Shift + Enter</strong>.</li>
-<li>You should see <code>Notebook is running</code> appear underneath.</li>
-</ol>
-</section>
-<section id="quick-confirmation-your-instructor-may-ask-for-this" class="level3">
-<h3 class="anchored" data-anchor-id="quick-confirmation-your-instructor-may-ask-for-this">7) Quick confirmation (your instructor may ask for this)</h3>
-<p>Run this in a cell:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sys.executable</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>It should show something like:</p>
-<p><code>C:\cmsc-1217-env\.venv\Scripts\python.exe</code></p>
-</section>
-<section id="if-something-goes-wrong" class="level3">
-<h3 class="anchored" data-anchor-id="if-something-goes-wrong">If something goes wrong</h3>
-<ul>
-<li><p>If you see <code>ModuleNotFoundError</code> (missing package), you are almost always using the wrong interpreter/kernel.</p>
-<ul>
-<li>Re-do <strong>Step 3</strong> and <strong>Step 5</strong> and pick the one that points to <code>cmsc-1217-env\.venv</code>.</li>
-</ul></li>
-</ul>
+<p>If the tool helped you understand, you are using it appropriately. If it replaced your thinking, you are not.</p>
 
 
 </section>

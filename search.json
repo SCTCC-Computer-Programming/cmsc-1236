@@ -35,7 +35,7 @@
     "href": "shared/policies/general-policies.html",
     "title": "General Course Policies",
     "section": "",
-    "text": "Academic integrity\n\nStudents must maintain academic integrity (no cheating, plagiarism, unauthorized materials, falsification, etc.).\nViolations follow SCTCC Academic Integrity Policy/Procedure and may be recorded; disciplinary action may apply.\nAcademic integrity violations result in a grade reduction.\n\n\n\nProfessional conduct and behavior (online + communication)\n\nOnline discussions must be civil, respectful, and relevant.\nDisruptive behavior on any course communication platform is not tolerated; may result in grade penalties and/or removal per the Code of Student Conduct.\nRespect for differing viewpoints is required; maintain professional language and conduct.\nIf disruptive behavior causes a student to miss an assignment, they receive no credit for that assignment.\nIf sanctioned for disruptive behavior, students waive the right to a warning on a second occurrence.\nSubstance policy for online sessions: inebriation/being under the influence, displaying alcohol, or drug paraphernalia results in removal from the session and/or course; no smoking during online school activites.\n\n\n\nStudent privacy / third-party communication\n\nCourse progress is discussed only with the student, not parents/guardians/third parties, unless an Information Release is on file.\nIf a third party contacts the instructor, the instructor will defer communication to the student.\nStudents may not invite third parties to attend any online activity (office hours, group meetings).\nRequests to release progress information to a third party should go through the Dean’s office.\n\n\n\nAttendance / participation (online definition + consequences)\n\nAttendance is expected and monitored; students are responsible for tracking absences.\nAttendance is determined by D2L logins and weekly assignment submissions.\nNot logging in and/or not submitting work for a week counts as an absence (including weeks without due assignments unless it’s a scheduled holiday/break).\nStudents must log in and complete an activity by 11:30 PM on the first Wednesday of week 1 or they may be dropped.\nMissing two consecutive weeks → dropped.\nMissing two total weeks → one-letter-grade reduction (10% of total points).\nMissing three total weeks → an additional one-letter-grade reduction.\nAdditional absences beyond three → additional letter-grade reduction per occurrence.\nAttendance is handled per class (one class doesn’t cover another).\n\n\n\nTechnology and platform expectations\n\nStudents are responsible for having required computer/technology for the course.\nStudents are responsible for learning and using D2L (primary channel for schedules, grades, and announcements).\n\n\n\nEmail communication\n\nEmail is the primary method to contact the instructor; students must use their college email account.\nEmails must include a subject line with course name and section/class time.\nStudents are expected to check email daily and read instructor messages/attachments.\nOn nights homework is due, only administrative email items will be answered; technical homework questions will not be addressed.\nResponse time: by end of next business day; Friday emails answered Monday.",
+    "text": "Academic integrity\n\nStudents must maintain academic integrity (no cheating, plagiarism, unauthorized materials, falsification, etc.).\nViolations follow SCTCC Academic Integrity Policy/Procedure and may be recorded; disciplinary action may apply.\nAcademic integrity violations result in a grade reduction.\n\n\n\nProfessional conduct and behavior\n\nOnline discussions must be civil, respectful, and relevant.\nDisruptive behavior on any course communication platform is not tolerated; may result in grade penalties and/or removal per the Code of Student Conduct.\nRespect for differing viewpoints is required; maintain professional language and conduct.\nIf disruptive behavior causes a student to miss an assignment, they receive no credit for that assignment.\nIf sanctioned for disruptive behavior, students waive the right to a warning on a second occurrence.\nSubstance policy for online sessions: inebriation/being under the influence, displaying alcohol, or drug paraphernalia results in removal from the session and/or course; no smoking during online school activites.\n\n\n\nStudent privacy / third-party communication\n\nCourse progress is discussed only with the student, not parents/guardians/third parties, unless an Information Release is on file.\nIf a third party contacts the instructor, the instructor will defer communication to the student.\nStudents may not invite third parties to attend any online activity (office hours, group meetings).\nRequests to release progress information to a third party should go through the Dean’s office.\n\n\n\nAttendance / participation\n\nAttendance is expected and monitored; students are responsible for tracking absences.\nAttendance is determined by D2L logins and weekly assignment submissions.\nNot logging in and/or not submitting work for a week counts as an absence (including weeks without due assignments unless it’s a scheduled holiday/break).\nStudents must log in and complete an activity by 11:30 PM on the first Wednesday of week 1 or they may be dropped.\nMissing two consecutive weeks → dropped.\nMissing two total weeks → one-letter-grade reduction (10% of total points).\nMissing three total weeks → an additional one-letter-grade reduction.\nAdditional absences beyond three → additional letter-grade reduction per occurrence.\nAttendance is handled per class (one class doesn’t cover another).\n\n\n\nTechnology and platform expectations\n\nStudents are responsible for having required computer/technology for the course.\nStudents are responsible for learning and using D2L (primary channel for schedules, grades, and announcements).\n\n\n\nEmail communication\n\nEmail is the primary method to contact the instructor; students must use their college email account.\nEmails must include a subject line with course name and section/class time.\nStudents are expected to check email daily and read instructor messages/attachments.\nOn nights homework is due, only administrative email items will be answered; technical homework questions will not be addressed.\nResponse time: by end of next business day; Friday emails answered Monday.",
     "crumbs": [
       "Home",
       "Course information",
@@ -43,11 +43,365 @@
     ]
   },
   {
-    "objectID": "shared/guides/setup/environment-setup-guide-vscode.html",
-    "href": "shared/guides/setup/environment-setup-guide-vscode.html",
-    "title": "Week 1 — VSCode Setup and First Notebook (Windows)",
+    "objectID": "shared/guides/setup/miniconda.html",
+    "href": "shared/guides/setup/miniconda.html",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
     "section": "",
-    "text": "What you’re doing\nYou are going to open a Jupyter notebook in VS Code and run it successfully using the course Python environment.\n\n\n1) Open the course folder in VS Code\n\nOpen VS Code\nGo to File → Open Folder…\nOpen your course work folder (example: C:\\cmsc-1217\\)\n\n\n\n2) Install the extensions (if you don’t already have them)\nIn VS Code, install:\n\nPython (Microsoft)\nJupyter (Microsoft)\n\n\n\n3) Create the course Python environment and select it in VS Code (one-time)\n\n3A) Create the course environment folder\n\nCreate a folder on your C: drive named:\n\nC:\\cmsc-1217-env\\\n\n\n\n\n3B) Create the virtual environment (.venv)\n\nOpen Command Prompt (Windows search → type “Command Prompt”)\nRun:\n\ncd C:\\cmsc-1217-env\npython -m venv .venv\n\n\n3C) Activate the environment\nIn the same Command Prompt window, run:\nC:\\cmsc-1217-env\\.venv\\Scripts\\activate.bat\nYou should see (.venv) appear at the start of the line.\n\n\n3D) Install the notebook packages (first-time setup)\nStill in the activated environment, run:\npython -m pip install --upgrade pip\npython -m pip install numpy pandas matplotlib jupyter\n\n\n3E) Select the environment in VS Code (Interpreter)\n\nIn VS Code, press Ctrl + Shift + P\nType Python: Select Interpreter\nChoose the interpreter that looks like:\n\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nIf you don’t see it:\n\nchoose Enter interpreter path…\npaste: C:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis is the environment we will use all semester.\n\n\n\n4) Open the notebook\n\nIn the Explorer panel, click the notebook file (.ipynb) your instructor provided.\n\n\n\n5) Select the notebook kernel (first time only)\nThe first time you run a notebook, VS Code may ask you to pick a kernel.\nChoose the kernel that matches the course environment path:\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis can feel repetitive the first time. That’s normal. Once selected, it usually stays set for that folder.\n\n\n6) Select the kernel, then run a quick test\n\nIn the top-right of the notebook, click Select Kernel.\nChoose the kernel that points to the course environment:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n(It may also show up as “Python 3.x (.venv)”—the key is that it points to cmsc-1217-env\\.venv.)\nClick + Code.\nIn the code block that appears, paste:\n\nprint(\"Notebook is running\")\n\nRun it by clicking the Run (▶) icon on the code block, or press Shift + Enter.\nYou should see Notebook is running appear underneath.\n\n\n\n7) Quick confirmation (your instructor may ask for this)\nRun this in a cell:\nimport sys\nsys.executable\nIt should show something like:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\n\nIf something goes wrong\n\nIf you see ModuleNotFoundError (missing package), you are almost always using the wrong interpreter/kernel.\n\nRe-do Step 3 and Step 5 and pick the one that points to cmsc-1217-env\\.venv."
+    "text": "You will use the same core setup in both of these courses:\nThe difference between the courses is which environment/packages you install and which tools are emphasized. This page includes small callouts to help you follow the right parts at the right time.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#overview",
+    "href": "shared/guides/setup/miniconda.html#overview",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "Overview",
+    "text": "Overview\nIn these courses, you will work inside a conda environment. An environment is an isolated Python installation (Python + packages) stored in a folder on your computer. This helps everyone use consistent tools and reduces setup conflicts.\nYou will use the following tools:\n\nMiniconda Miniconda is a small installer that provides Conda, a system for managing Python installations and packages. Miniconda does not include many data-science packages by default; instead, it gives you a controlled way to install exactly what a course requires.\nConda (the environment manager) Conda is software that can create, activate, and manage environments. It can also install packages (libraries) in a way that keeps them consistent and reduces compatibility problems, especially for scientific packages.\nConda environment A conda environment is a self-contained folder that contains:\n\na specific version of Python, and\na specific set of installed packages. Each environment is separate from other environments on your computer. This means one course can use one set of packages (and versions) without affecting another course or your personal Python installation.\n\nJupyterLab (notebook workspace) JupyterLab is a browser-based programming environment used for data analysis and machine learning. It allows you to write code in cells, run those cells, and view output (tables, plots, printed results) directly below the code. JupyterLab is used in both courses because it supports step-by-step work and makes it easier to review results.\nIPython (interactive Python terminal — CMSC-1217 only) IPython is an enhanced interactive Python terminal. It provides features that support exploratory work, such as command history, tab completion, and built-in help. In CMSC-1217, IPython is used to practice interactive exploration and reinforce core Python concepts in a terminal-based workflow.\n\nHow these pieces fit together\nMiniconda installs Conda, and Conda is the tool you use to create a course environment. When you activate that environment, your terminal temporarily switches so that the python command (and tools like jupyter) run from the environment’s folder. You then start Jupyter (JupyterLab or Jupyter Notebook), and the notebook runs Python from the active environment, using the packages installed there. This sequence—install Miniconda → create environment → activate environment → start Jupyter → run notebooks—is the standard workflow you will use throughout the course.\n\nImportant: During Miniconda installation, do not add Miniconda to PATH. We will use the Miniconda/Anaconda Prompt when working for these courses.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#install-miniconda",
+    "href": "shared/guides/setup/miniconda.html#install-miniconda",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "1) Install Miniconda",
+    "text": "1) Install Miniconda\n\nDownload and install Miniconda (64-bit) for Windows. https://www.anaconda.com/download\nDuring installation, do not add Miniconda to PATH.\n\nWhy not add to PATH: Many of you already have a Python installation from python.org. Not adding Miniconda to PATH prevents Miniconda from changing which python runs in non-course terminals.\nMiniconda is a lightweight installer that provides:\n\nConda (a package and environment manager), and\na basic Python installation and its dependencies.\n\nMiniconda is intentionally minimal: it does not install a large collection of data-science packages by default. Instead, you install only the packages required for the course.\nRelationship to Anaconda\nMiniconda and Anaconda are closely related:\n\nAnaconda Distribution is a larger installer that comes with hundreds of packages pre-installed, plus optional tools like Anaconda Navigator.\nMiniconda is a smaller installer that includes only conda, Python, and a small core set of packages, and then you add what you need.\n\nFor these courses, Miniconda is a good fit because it helps us keep your course environment clean, consistent, and easier to troubleshoot.\nWhy Miniconda/Conda is common in data analysis and machine learning\nData analysis and machine learning often rely on libraries that include compiled components. Conda is widely used in these areas because it can install many scientific packages as prebuilt binaries, which reduces installation difficulties (especially on Windows).\nConda also supports creating separate environments so different projects can use different versions of Python/packages without interfering with each other.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#open-the-conda-terminal",
+    "href": "shared/guides/setup/miniconda.html#open-the-conda-terminal",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "2) Open the conda terminal",
+    "text": "2) Open the conda terminal\nOpen Anaconda Command Prompt from the Start menu.\nYou should see something like:\n(base) C:\\Users\\yourname&gt;\nWhy we use this terminal\nAnaconda/Miniconda Prompt is a terminal that is already configured to recognize conda commands such as conda createand conda activate. Using this prompt reduces setup errors because it starts with the correct conda settings.\nWhat (base) means\n(base) indicates that you are currently in conda’s default environment. This environment exists mainly so that conda can run and manage other environments. In this course, you will usually not do your work in (base). Instead, you will create and activate a course environment (for example, pydata-book or cmsc-2208) and work there.\nHow to interpret the prompt\nThe name in parentheses is your current environment:\n\n(base) means you are in the default conda environment\n(pydata-book) or (cmsc-2208) means you are in the course environment\n\nA quick habit that prevents many problems: before running course commands, look at the parentheses and confirm you are in the correct environment.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#configure-conda-package-channels",
+    "href": "shared/guides/setup/miniconda.html#configure-conda-package-channels",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "3) Configure conda package channels",
+    "text": "3) Configure conda package channels\nRun the following two commands, one at a time, pressing Enter after each.\nFirst, run:\nconda config --add channels conda-forge\nThen, run:\nconda config --set channel_priority strict\nConda downloads packages from sources called channels. A channel is a repository that hosts packaged software (similar in purpose to an “app store,” but for programming libraries). When you install a package with conda, conda searches the configured channels to find a compatible version of that package and its dependencies.\nWe use conda-forge because it is a widely used community-maintained channel that provides current, well-tested builds of many scientific and data-analysis libraries (for example, NumPy, pandas, matplotlib, and scikit-learn). Using a consistent channel helps ensure that most students receive the same package builds and reduces platform-specific installation problems.\nSetting strict channel priority means conda will prefer packages from the highest-priority channel (in this case, conda-forge) rather than mixing packages from multiple channels. This matters because mixing package sources can sometimes lead to version conflicts or dependency mismatches. Strict priority reduces those problems by keeping package selection consistent.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#create-the-course-environment",
+    "href": "shared/guides/setup/miniconda.html#create-the-course-environment",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "4) Create the course environment",
+    "text": "4) Create the course environment\nYou will create one conda environment for the course you are taking currently.\nWhat an environment is:\nIn programming, an environment is the set of software used to run your code, such as:\n\nthe language runtime (for us, Python),\ninstalled libraries/packages,\nand related tools (such as Jupyter).\n\nMany languages and toolchains support environments (for example, Python can use virtual environments, and other ecosystems have their own dependency managers). The goal is the same: keep project dependencies organized and consistent.\nWhat a conda environment is:\nIn this course we use a conda environment, which is a self-contained folder on your computer that includes:\n\na specific version of Python, and\na specific set of installed packages.\n\nWe use conda because it provides a consistent way to install scientific and data-analysis libraries (especially on Windows) and makes it straightforward to reproduce the same setup across different computers.\nDo not create both environments.\nIf you are in CMSC-1217 Introduction to Data Analytics\nRun this command (then press Enter):\nconda create -n pydata-book python=3.11\nIf prompted, type y.\nThis creates an environment named pydata-book. The name is just a label for this course’s Python setup.\nIf you are in CMSC-2208 Introduction to Machine Learning\nRun this command (then press Enter):\nconda create -n cmsc-2208 python=3.11\nIf prompted, type y.\nThis creates an environment named cmsc-2208. The name is just a label for this course’s Python setup.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#activate-the-environment-choose-your-course",
+    "href": "shared/guides/setup/miniconda.html#activate-the-environment-choose-your-course",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "5) Activate the environment (choose your course)",
+    "text": "5) Activate the environment (choose your course)\nBefore installing packages or starting JupyterLab, you must activate your course environment.\nWhat “activate” means: It tells the terminal to use the Python and packages inside your course environment. When the environment is active, commands like python and jupyter will run from the correct course setup.\nYou will activate one environment: the one for the course you are taking now.\n\nIf you are in CMSC-1217 Introduction to Data Analytics\nRun:\nconda activate pydata-book\n\n\nIf you are in CMSC-2208 Introduction to Machine Learning\nRun:\nconda activate cmsc-2208\nAfter you activate, your prompt will begin with the environment name, for example:\n\n(pydata-book) ...\n(cmsc-2208) ...\n\nRule: Before you do course work, confirm that the prompt shows your course environment name.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#install-packages-inside-the-active-environment",
+    "href": "shared/guides/setup/miniconda.html#install-packages-inside-the-active-environment",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "6) Install packages (inside the active environment)",
+    "text": "6) Install packages (inside the active environment)\n\nA) CMSC-1217 packages\nWith (pydata-book) active, run:\nconda install -c conda-forge numpy pandas=2.0.3 matplotlib jupyterlab notebook ipykernel\nThis installs:\n\nnumpy: arrays and numerical computing\npandas: data tables (DataFrames)\nmatplotlib: plotting\njupyterlab: notebook interface\nipykernel: the component that allows this environment to run notebooks as a Jupyter kernel\n\n\nCMSC-1217 only: You will also use IPython in this course. IPython will work once the environment is active.\n\n\n\nB) CMSC-2208 packages (required)\nWith (cmsc-2208) active, run:\nconda install -c conda-forge numpy pandas matplotlib jupyterlab ipykernel scikit-learn scipy\nThis installs the data stack plus the machine learning libraries used in CMSC-2208.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#verify-your-installation-imports-version-confirmation",
+    "href": "shared/guides/setup/miniconda.html#verify-your-installation-imports-version-confirmation",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "7) Verify your installation (imports + version confirmation)",
+    "text": "7) Verify your installation (imports + version confirmation)\nRun this command in the active environment:\npython -c \"import sys; import numpy as np; import pandas as pd; import matplotlib; print('python', sys.version.split()[0]); print('numpy', np.__version__); print('pandas', pd.__version__); print('matplotlib', matplotlib.__version__)\"\nWhat this step is doing (and why it can take a moment):\nThis command does two things:\n\nImports the core libraries (numpy, pandas, matplotlib). Importing is the real verification step. It confirms the packages are installed correctly in this environment and that Python can load them without errors.\nPrints version numbers after the imports succeed. This helps confirm you are using the expected tool versions for the course.\n\nBecause these libraries are large and include compiled components, the first successful import in a new environment may take longer than you expect. That is normal.\n\nCMSC-2208 only\nFor CMSC-2208, also verify:\npython -c \"import sklearn, scipy; print('sklearn', sklearn.__version__); print('scipy', scipy.__version__)\"\nThis confirms that the machine learning libraries required for the course can be imported correctly in the CMSC-2208 environment.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#create-the-course-folder-structure-choose-your-course",
+    "href": "shared/guides/setup/miniconda.html#create-the-course-folder-structure-choose-your-course",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "8) Create the course folder structure (choose your course)",
+    "text": "8) Create the course folder structure (choose your course)\nYou will create a small folder structure on your C: drive so your files stay organized and easy to find.\nRun the commands for your course only. Run them one at a time, pressing Enter after each command.\n\nIf you are in CMSC-1217 Introduction to Data Analytics\nRun the following four commands:\nFirst:\nmkdir C:\\cmsc-1217\nThen:\nmkdir C:\\cmsc-1217\\course-work\nThen:\nmkdir C:\\cmsc-1217\\book\nFinally:\nmkdir C:\\cmsc-1217\\data\n\n\nIf you are in CMSC-2208 Introduction to Machine Learning\nRun the following four commands:\nFirst:\nmkdir C:\\cmsc-2208\nThen:\nmkdir C:\\cmsc-2208\\course-work\nThen:\nmkdir C:\\cmsc-2208\\book\nFinally:\nmkdir C:\\cmsc-2208\\data\n\n\nWhat these folders are for (both courses)\n\ncourse-work: your weekly work and submissions\nbook: companion notebooks (reference materials)\ndata: datasets used in course work\n\nNote: If you see a message like “A subdirectory or file already exists,” that usually means you already created the folder. That is fine—continue to the next command.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#install-git-if-needed",
+    "href": "shared/guides/setup/miniconda.html#install-git-if-needed",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "9) Install Git (if needed)",
+    "text": "9) Install Git (if needed)\nCheck:\ngit --version\nIf Git is not installed, install Git for Windows, then re-check git --version.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#download-the-book-companion-files-choose-your-course",
+    "href": "shared/guides/setup/miniconda.html#download-the-book-companion-files-choose-your-course",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "10) Download the book companion files (choose your course)",
+    "text": "10) Download the book companion files (choose your course)\nEach course uses a GitHub repository that contains companion files (notebooks, datasets, and examples). You will download the repository into your course book folder.\nRun the commands for your course only. Run them one at a time, pressing Enter after each command.\n\nIf you are in CMSC-1217 Introduction to Data Analytics\nFirst, move into your book folder:\ncd C:\\cmsc-1217\\book\nThen, clone the companion repository:\ngit clone -b 3rd-edition https://github.com/wesm/pydata-book.git\nThis creates the folder:\nC:\\cmsc-1217\\book\\pydata-book\\\n\n\nIf you are in CMSC-2208 Introduction to Machine Learning\nFirst, move into your book folder:\ncd C:\\cmsc-2208\\book\nThen, clone the companion repository:\ngit clone https://github.com/amueller/introduction_to_ml_with_python.git\nThis creates the folder:\nC:\\cmsc-2208\\book\\introduction_to_ml_with_python\\\nNote: If you see a message that the folder already exists, that usually means you already cloned the repository. That is fine—do not clone it again.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#start-jupyter-notebook-in-the-correct-folder-choose-yourcourse",
+    "href": "shared/guides/setup/miniconda.html#start-jupyter-notebook-in-the-correct-folder-choose-yourcourse",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "11) Start Jupyter Notebook in the correct folder (choose yourcourse)",
+    "text": "11) Start Jupyter Notebook in the correct folder (choose yourcourse)\nYou will start the Jupyter Notebook (Classic) server from your course-work folder. This ensures that when the browser opens, you immediately see the files you are expected to edit and submit.\nRun the commands for your course only. Run them one at a time, pressing Enter after each command.\n\nIf you are in CMSC-1217 Introduction to Data Analytics\nFirst, confirm you are in the correct course environment. Conda environments are activated per terminal window. That means:\n\nIf you are using the same Anaconda/Miniconda Prompt window as earlier steps, your environment may already be active.\nIf you opened a new terminal window (or restarted your computer), you must activate the environment again.\n\nRun:\nconda activate pydata-book\nCheck: your prompt should begin with (pydata-book).\nNext, move into your course work folder:\ncd C:\\cmsc-1217\\course-work\nThen start Jupyter Notebook (Classic):\njupyter notebook\n\n\nIf you are in CMSC-2208 Introduction to Machine Learning\nFirst, confirm you are in the correct course environment. Conda environments are activated per terminal window. That means:\n\nIf you are using the same Anaconda/Miniconda Prompt window as earlier steps, your environment may already be active.\nIf you opened a new terminal window (or restarted your computer), you must activate the environment again.\n\nRun:\nconda activate cmsc-2208\nCheck: your prompt should begin with (pydata-book).\nNext, move into your course work folder:\ncd C:\\cmsc-2208\\course-work\nThen start Jupyter Notebook (Classic):\njupyter notebook\nA browser tab will open showing the contents of your course-work folder.\nImportant: Leave the terminal window open while you use Jupyter Notebook. That terminal is running the notebook server. If you close it, Jupyter will stop.\n\n\nAccessing the book folder (when needed)\nThe course keeps course-work (your work) and book (reference materials) separate on purpose. When you need to view a book notebook:\nStart a second Jupyter Notebook server in the book folder.\n\nOpen a second Anaconda/Miniconda Prompt window\nActivate the same environment\ncd into the book folder\nRun jupyter notebook\n\nFor CMSC-1217 (run each command seperately):\nconda activate pydata-book\ncd C:\\cmsc-1217\\book\njupyter notebook\nFor CMSC-2208 (run each command seperately):\nconda activate cmsc-2208\ncd C:\\cmsc-2208\\book\njupyter notebook\nThis opens a second browser tab rooted in the book folder.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#create-your-first-notebook-and-confirm-the-environment",
+    "href": "shared/guides/setup/miniconda.html#create-your-first-notebook-and-confirm-the-environment",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "12) Create your first notebook and confirm the environment",
+    "text": "12) Create your first notebook and confirm the environment\n\nIn your browser, go to the file list page (the page that shows folders/files).\n\nIf you are currently inside a notebook, click File → Open… to return to the file list.\n\nClick New (top-right), then select Python 3 (ipykernel).\nIn the first cell, run:\n\nimport sys\nsys.executable\n\nConfirm the path includes your course environment:\n\n\nCMSC-1217: \\\\envs\\\\pydata-book\\\\\nCMSC-2208: \\\\envs\\\\cmsc-2208\\\\\n\nWhy this matters: The kernel name shown in menus can vary, but sys.executable reliably confirms the notebook is using the correct environment.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#stop-jupyterlab-when-finished",
+    "href": "shared/guides/setup/miniconda.html#stop-jupyterlab-when-finished",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "13) Stop JupyterLab when finished",
+    "text": "13) Stop JupyterLab when finished\nGo back to the terminal that started JupyterLab and press:\n\nCtrl + C, then type y if prompted.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#optional-cmsc-1217-ipython-in-the-terminal",
+    "href": "shared/guides/setup/miniconda.html#optional-cmsc-1217-ipython-in-the-terminal",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "Optional (CMSC-1217): IPython in the terminal",
+    "text": "Optional (CMSC-1217): IPython in the terminal\n\nCMSC-1217 only: You will use IPython for interactive exploration.\n\nIn Anaconda/Miniconda Prompt:\nconda activate pydata-book\nIPythone\nYou should see an In [1]: prompt.\nTo exit:\nexit()",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "shared/guides/setup/miniconda.html#common-issues-and-solutions",
+    "href": "shared/guides/setup/miniconda.html#common-issues-and-solutions",
+    "title": "Shared Setup (Windows) — Miniconda, Course Environments, IPython, and JupyterLab",
+    "section": "Common issues and solutions",
+    "text": "Common issues and solutions\n\nIssue: Imports fail inside a notebook\nMost common cause: the wrong environment/kernel is active.\nSolution\n\nIn the notebook, run sys.executable to confirm the environment path.\nIf it is incorrect, switch the notebook kernel to the correct one:\n\nKernel → Change Kernel (select the environment for your course)\n\n\n\n\nIssue: JupyterLab opens in the wrong folder\nSolution: cd into the correct course-work folder before starting JupyterLab.\n\n\nIssue: You forgot to activate the environment\nSolution: close JupyterLab (Ctrl+C), then re-run the launch commands in Section 11.",
+    "crumbs": [
+      "Home",
+      "Guides",
+      "Miniconda Setup"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Use this site as your course handbook. It stays up to date all semester.\n\nUse the left sidebar to find weekly materials and guides.\nD2L is the starting point for announcements, grades, and submissions.\nCourse information (syllabus, schedule, policies, office hours) is maintained here.\n\n\nCourse workflow\n\nCheck D2L for announcements, deadlines, and any updates.\nRead the Weekly Overview on this site (Week 1, Week 2, …) and follow the links provided.\nComplete the work (assignments) and submit in D2L.\n\n\n\nSupport\n\nOffice hours: see the Office Hours page.\nZoom: Office Zoom Link\n\nHow to get help:\n\nUse Discord/email for course questions.\nAdd troubleshooting policy.\n\n\n\n\nInstructor contact\n\nInstructor: Joseph Silman\n\nEmail: jsilman@sctcc.edu\nPhone Number: (320) 308 - 6595\n\n\n\nQuick links\n\nSyllabus\nSchedule"
+  },
+  {
+    "objectID": "course/schedule.html",
+    "href": "course/schedule.html",
+    "title": "CMSC 1217 Course Schedule",
+    "section": "",
+    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#course-rhythm",
+    "href": "course/schedule.html#course-rhythm",
+    "title": "CMSC 1217 Course Schedule",
+    "section": "",
+    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#assessment-intent",
+    "href": "course/schedule.html#assessment-intent",
+    "title": "CMSC 1217 Course Schedule",
+    "section": "Assessment intent",
+    "text": "Assessment intent\n\nPractice Notebooks (completion): guided work with built-in self-check cells\nSkill Checks (autograded notebooks): short, testable tasks (functions / named outputs)\nReflections (graded): brief, rubric-based video explanations of choices, debugging, and interpretation\nFinal Project (graded): notebook report + deliverables (Video Based)",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#weekly-schedule",
+    "href": "course/schedule.html#weekly-schedule",
+    "title": "CMSC 1217 Course Schedule",
+    "section": "Weekly schedule",
+    "text": "Weekly schedule\n\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nDeliverable\nReading\n\n\n\n\n1\nJan 12, 2026–Jan 18, 2026\nOnboarding + Jupyter basics\nPractice Notebook 1 (completion)\nCh. 2 (Jupyter/IPython) + Ch. 1 overview\n\n\n2\nJan 19, 2026–Jan 25, 2026\nPython refresh for data work (functions, files, pathlib)\nPractice Notebook 2 (completion)\nCh. 3 (Built-in Python for data work)\n\n\n3\nJan 26, 2026–Feb 01, 2026\nNumPy essentials (arrays, vectorization, boolean masks)\nPractice Notebook 3 (completion)\nCh. 4 (NumPy basics)\n\n\n4\nFeb 02, 2026–Feb 08, 2026\npandas foundations I (Series/DataFrame, indexing, filtering)\nSkill Check 1 (autograded notebook)\nCh. 5 (pandas intro)\n\n\n5\nFeb 09, 2026–Feb 15, 2026\npandas foundations II (sorting, basic summaries, missingness intro)\nPractice Notebook 5 (completion)\nCh. 5 (pandas continued)\n\n\n6\nFeb 16, 2026–Feb 22, 2026\nData I/O (CSV, Excel/JSON basics, parsing dates, dtypes)\nPractice Notebook 6 (completion)\nCh. 6 (Data loading/storage)\n\n\n7\nFeb 23, 2026–Mar 01, 2026\nCleaning I (missing data, types, duplicates, string cleanup)\nReflection 1 (graded)\nCh. 7 (Data cleaning/prep)\n\n\n8\nMar 02, 2026–Mar 08, 2026\nCleaning II (validation rules, outliers as data-quality topic)\nPractice Notebook 8 (completion)\nCh. 7 (Data cleaning/prep)\n\n\n9\nMar 09, 2026–Mar 15, 2026\nSpring Break (no due dates)\n—\n—\n\n\n10\nMar 16, 2026–Mar 22, 2026\nWrangling I (merge/join, concat; keys & pitfalls)\nSkill Check 2 (autograded notebook)\nCh. 8 (Wrangling: join/reshape)\n\n\n11\nMar 23, 2026–Mar 29, 2026\nWrangling II (reshape: pivot/melt; tidy layouts)\nPractice Notebook 11 (completion)\nCh. 8 (Wrangling: reshape)\n\n\n12\nMar 30, 2026–Apr 05, 2026\nGroupby + aggregation (report tables, transform vs agg)\nReflection 2 (graded)\nCh. 10 (Aggregation & groupby)\n\n\n13\nApr 06, 2026–Apr 12, 2026\nVisualization I (plot selection, labeling, communication)\nPractice Notebook 13 (completion)\nCh. 9 (Visualization)\n\n\n14\nApr 13, 2026–Apr 19, 2026\nVisualization II (+ optional time series basics)\nSkill Check 3 (autograded notebook)\nCh. 9 (Visualization) + optional Ch. 11 (Time series)\n\n\n15\nApr 20, 2026–Apr 26, 2026\nProject setup week (topic + dataset approval + plan)\nReflection 3 / Project Proposal (graded)\nCh. 13 (Examples) for inspiration (optional)\n\n\n16\nApr 27, 2026–May 03, 2026\nFinal project work time (milestone: cleaned dataset + initial EDA)\n— (work week)\nCh. 13 (Examples) (optional)\n\n\n17\nMay 04, 2026–May 10, 2026\nFinal project work time (milestone: visuals + narrative + polish)\n— (work week)\nCh. 13 (Examples) (optional)",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#final-project-apr-27may-11",
+    "href": "course/schedule.html#final-project-apr-27may-11",
+    "title": "CMSC 1217 Course Schedule",
+    "section": "Final project (Apr 27–May 11)",
+    "text": "Final project (Apr 27–May 11)\nDeliverable (May 11, 2026): a single notebook-based report that demonstrates an end-to-end workflow.\nMinimum components:\n\nLoad one real dataset (CSV/JSON/Excel)\nCleaning + preparation steps (with brief justification)\nWrangling/aggregation (at least one merge or groupby style task)\n2–4 clear visualizations with labels\nShort written narrative: what you did, what you found, limitations/next steps\nExport at least one output artifact (cleaned CSV and/or saved figures)",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html",
+    "href": "assignments/week-01/index.html",
+    "title": "Week 1 Assignment",
+    "section": "",
+    "text": "Note\n\n\n\nWeek 1–2 Project Open the here:\nWeek 1–2 Assignment\nDownload as PDF:\nWeek 1–2 Assignment (PDF)",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#assignment",
+    "href": "assignments/week-01/index.html#assignment",
+    "title": "Week 1 Assignment",
+    "section": "",
+    "text": "Note\n\n\n\nWeek 1–2 Project Open the here:\nWeek 1–2 Assignment\nDownload as PDF:\nWeek 1–2 Assignment (PDF)",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#what-to-work-on-this-week",
+    "href": "assignments/week-01/index.html#what-to-work-on-this-week",
+    "title": "Week 1 Assignment",
+    "section": "What to work on this week",
+    "text": "What to work on this week\nFocus on: - Getting your Pet class started - Setting up your file structure - Beginning the menu loop (you can finish saving/loading in Week 2)",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#submission",
+    "href": "assignments/week-01/index.html#submission",
+    "title": "Week 1 Assignment",
+    "section": "Submission",
+    "text": "Submission\nThis is a two-week assignment. Submit everything during Week 2.",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "assignments/week-01/Week-1- and-2-Assignment.html",
+    "href": "assignments/week-01/Week-1- and-2-Assignment.html",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console.\n\n\n\nThe Pet class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (if statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.\n\nImplementing the Pet Class:\n\nFollow the provided UML diagram to create the Pet class with the attributes name, hunger, happiness, energy, color, and type.\nInitialize these attributes in the __init__ method. name, color, and type will be strings provided when a new pet is created, and hunger, happiness, and energy should start with random values between 0 and 10.\n\nUsing Conditional Statements in Class Methods:\n\nIn methods like feed, play, and rest, you will use if statements to check the state of the pet and decide what action to take.\n\n\n\n\n\n\n\n\n\nThe feed method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.\n\n\n\n\nReducing Hunger and Increasing Happiness:\n\nWhen the feed method is called, first check the pet’s current hunger level (self.hunger).\nIf self.hunger is greater than 0, it indicates that the pet is hungry. In this case, reduce self.hunger by 1 to represent feeding the pet. Ensure self.hunger does not go below 0.\nAfter feeding, increase self.happiness by 1. However, ensure that self.happiness does not exceed 10.\n\nManaging Happiness When Not Hungry:\n\nIf self.hunger is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce self.happiness by 1, since overfeeding will cause discomfort.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to being fed.\n\n\n\n\n\n\n\n\nThe play method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.\n\n\n\n\nHandling Sadness:\n\nBefore initiating play, check if the pet’s happiness level (self.happiness) is at 0.\nIf self.happiness is 0, it indicates that the pet is too sad to engage in play.\n\nHandling Tiredness:\n\nCheck the pet’s energy level (self.energy).\nIf self.energy is 0, it means the pet is too tired to play.\n\nPlaying with the Pet:\n\nIf the pet is neither too sad nor too tired (i.e., self.happiness is above 0 and self.energy is above 0), proceed to play with the pet.\nIncrease self.happiness by 1 to represent the positive effect of playing. However, ensure that self.happiness does not exceed 10.\nDecrease self.energy by 1 to account for the energy expended during play. However, it’s important to ensure that self.energy does not fall below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to playing.\n\n\n\n\n\n\n\n\nThe rest method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.\n\n\n\n\nIncreasing Energy:\n\nCheck the pet’s current energy level (self.energy).\nIf self.energy is less than 10, it indicates the pet could benefit from rest. Increase self.energy by 1 to represent the energy regained from resting. However, ensure that self.energy does not exceed 10.\n\nManaging Happiness When Energy is at Maximum:\n\nIf self.energy is already at 10 (meaning the pet is fully rested), resting will affect its happiness.\nIf self.energy is already at 10 and self.happiness is greater than 0, reduce self.happiness it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent self.happiness from going below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to resting.\n\n\n\n\n\n\n\n\nThe customize method allows the user to change the pet’s appearance by setting new values for the color and type attributes.\n\n\n\n\nSetting New Attributes:\n\nThe method takes two parameters, color and pet_type, and assigns them to the pet’s color and type attributes.\nThis allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.\n\n\n\n\n\n\n\n\nThe status method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.\n\n\n\n\nCreating a Status Summary:\n\nThe method compiles a string that summarizes the animal’s current status.\nThis summary includes the animal’s name and its current hunger, happiness, energy, color, and type.\n\nString Formatting:\n\nCreate a readable and well-formatted summary.\nEach attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.\n\nReturning the Summary:\n\nThe method returns the formatted string.\n\n\n\n\n\n\n\n\nThe is_happy method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.\n\n\n\n\nEvaluating Happiness:\n\nThe method assesses whether the animal’s happiness level (self.happiness) is below or above 5.\nIf self.happiness is above 5 the animal is considered to be happy.\n\nReturning a Boolean Result:\n\nThe method returns True if the animal’s happiness is above 5, indicating that the animal is happy.\nIt returns False if the happiness level is 5 or lower, indicating that the animal is not happy.\n\n\n\n\n\n\n\n\nYour main() function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.\n\n\n\n\nImplement a menu system that displays a list of possible actions the user can perform. These actions include:\n\nFeeding the pet\nPlaying with the pet\nLetting the pet rest\nChecking the pet’s status\nCustomizing the pet’s appearance\nSaving the pet’s state and exiting the program\n\nUse an input prompt to allow the user to select an action and then call the corresponding method from the Pet class.\n\n\n\n\n\nEnsure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).\nDisplay an error message if the user inputs an invalid option and show the menu again for a valid selection.\n\n\n\n\n\n\nUse pickling to save and load the pet’s state. Implement a save_pet and a load_pet function in the main() for this purpose.\nEnsure the program can handle situations where no saved data exists.\n\n### Sample Output\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\nWhat is your pet's name? Joe\nChoose a color for your pet (e.g., red, blue, green): Blue\nChoose a type for your pet (e.g., dog, cat, bird): Dog\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 9\nInvalid choice. Please enter a number between 1 and 6.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 3\nJoe is rested and seems a bit bored.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 1\nYou fed Joe. Joe seems happier after eating!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 5\nChoose a color for your pet: Green\nChoose a type for your pet: Dog\nJoe is now a Green Dog!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 2\nPlaying with Joe was fun!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 3\nEnergy: 9\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n\n\n\n  +---------------------+\n  |        Pet          |\n  +---------------------+\n  | - name: str         |\n  | - hunger: int       |\n  | - happiness: int    |\n  | - energy: int       |\n  | - color: str        |\n  | - type: str         |\n  +---------------------+\n  | + __init__(name, color, pet_type) |\n  | + feed()            |\n  | + play()            |\n  | + rest()            |\n  | + customize(color, pet_type) |\n  | + status(): str     |\n  | + is_happy(): bool  |\n  +---------------------+"
+  },
+  {
+    "objectID": "assignments/week-01/Week-1- and-2-Assignment.html#overview",
+    "href": "assignments/week-01/Week-1- and-2-Assignment.html#overview",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console."
+  },
+  {
+    "objectID": "assignments/week-01/Week-1- and-2-Assignment.html#pet-class",
+    "href": "assignments/week-01/Week-1- and-2-Assignment.html#pet-class",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "The Pet class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (if statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.\n\nImplementing the Pet Class:\n\nFollow the provided UML diagram to create the Pet class with the attributes name, hunger, happiness, energy, color, and type.\nInitialize these attributes in the __init__ method. name, color, and type will be strings provided when a new pet is created, and hunger, happiness, and energy should start with random values between 0 and 10.\n\nUsing Conditional Statements in Class Methods:\n\nIn methods like feed, play, and rest, you will use if statements to check the state of the pet and decide what action to take."
+  },
+  {
+    "objectID": "assignments/week-01/Week-1- and-2-Assignment.html#method-implementations",
+    "href": "assignments/week-01/Week-1- and-2-Assignment.html#method-implementations",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "The feed method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.\n\n\n\n\nReducing Hunger and Increasing Happiness:\n\nWhen the feed method is called, first check the pet’s current hunger level (self.hunger).\nIf self.hunger is greater than 0, it indicates that the pet is hungry. In this case, reduce self.hunger by 1 to represent feeding the pet. Ensure self.hunger does not go below 0.\nAfter feeding, increase self.happiness by 1. However, ensure that self.happiness does not exceed 10.\n\nManaging Happiness When Not Hungry:\n\nIf self.hunger is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce self.happiness by 1, since overfeeding will cause discomfort.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to being fed.\n\n\n\n\n\n\n\n\nThe play method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.\n\n\n\n\nHandling Sadness:\n\nBefore initiating play, check if the pet’s happiness level (self.happiness) is at 0.\nIf self.happiness is 0, it indicates that the pet is too sad to engage in play.\n\nHandling Tiredness:\n\nCheck the pet’s energy level (self.energy).\nIf self.energy is 0, it means the pet is too tired to play.\n\nPlaying with the Pet:\n\nIf the pet is neither too sad nor too tired (i.e., self.happiness is above 0 and self.energy is above 0), proceed to play with the pet.\nIncrease self.happiness by 1 to represent the positive effect of playing. However, ensure that self.happiness does not exceed 10.\nDecrease self.energy by 1 to account for the energy expended during play. However, it’s important to ensure that self.energy does not fall below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to playing.\n\n\n\n\n\n\n\n\nThe rest method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.\n\n\n\n\nIncreasing Energy:\n\nCheck the pet’s current energy level (self.energy).\nIf self.energy is less than 10, it indicates the pet could benefit from rest. Increase self.energy by 1 to represent the energy regained from resting. However, ensure that self.energy does not exceed 10.\n\nManaging Happiness When Energy is at Maximum:\n\nIf self.energy is already at 10 (meaning the pet is fully rested), resting will affect its happiness.\nIf self.energy is already at 10 and self.happiness is greater than 0, reduce self.happiness it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent self.happiness from going below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to resting.\n\n\n\n\n\n\n\n\nThe customize method allows the user to change the pet’s appearance by setting new values for the color and type attributes.\n\n\n\n\nSetting New Attributes:\n\nThe method takes two parameters, color and pet_type, and assigns them to the pet’s color and type attributes.\nThis allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.\n\n\n\n\n\n\n\n\nThe status method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.\n\n\n\n\nCreating a Status Summary:\n\nThe method compiles a string that summarizes the animal’s current status.\nThis summary includes the animal’s name and its current hunger, happiness, energy, color, and type.\n\nString Formatting:\n\nCreate a readable and well-formatted summary.\nEach attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.\n\nReturning the Summary:\n\nThe method returns the formatted string.\n\n\n\n\n\n\n\n\nThe is_happy method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.\n\n\n\n\nEvaluating Happiness:\n\nThe method assesses whether the animal’s happiness level (self.happiness) is below or above 5.\nIf self.happiness is above 5 the animal is considered to be happy.\n\nReturning a Boolean Result:\n\nThe method returns True if the animal’s happiness is above 5, indicating that the animal is happy.\nIt returns False if the happiness level is 5 or lower, indicating that the animal is not happy.\n\n\n\n\n\n\n\n\nYour main() function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.\n\n\n\n\nImplement a menu system that displays a list of possible actions the user can perform. These actions include:\n\nFeeding the pet\nPlaying with the pet\nLetting the pet rest\nChecking the pet’s status\nCustomizing the pet’s appearance\nSaving the pet’s state and exiting the program\n\nUse an input prompt to allow the user to select an action and then call the corresponding method from the Pet class.\n\n\n\n\n\nEnsure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).\nDisplay an error message if the user inputs an invalid option and show the menu again for a valid selection.\n\n\n\n\n\n\nUse pickling to save and load the pet’s state. Implement a save_pet and a load_pet function in the main() for this purpose.\nEnsure the program can handle situations where no saved data exists.\n\n### Sample Output\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\nWhat is your pet's name? Joe\nChoose a color for your pet (e.g., red, blue, green): Blue\nChoose a type for your pet (e.g., dog, cat, bird): Dog\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 9\nInvalid choice. Please enter a number between 1 and 6.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 3\nJoe is rested and seems a bit bored.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 1\nYou fed Joe. Joe seems happier after eating!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 5\nChoose a color for your pet: Green\nChoose a type for your pet: Dog\nJoe is now a Green Dog!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 2\nPlaying with Joe was fun!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 3\nEnergy: 9\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n\n\n\n  +---------------------+\n  |        Pet          |\n  +---------------------+\n  | - name: str         |\n  | - hunger: int       |\n  | - happiness: int    |\n  | - energy: int       |\n  | - color: str        |\n  | - type: str         |\n  +---------------------+\n  | + __init__(name, color, pet_type) |\n  | + feed()            |\n  | + play()            |\n  | + rest()            |\n  | + customize(color, pet_type) |\n  | + status(): str     |\n  | + is_happy(): bool  |\n  +---------------------+"
+  },
+  {
+    "objectID": "assignments/week-02/index.html",
+    "href": "assignments/week-02/index.html",
+    "title": "Week 2",
+    "section": "",
+    "text": "This page will be published before Week 2 begins."
   },
   {
     "objectID": "course/syllabus.html",
@@ -206,205 +560,18 @@
     ]
   },
   {
-    "objectID": "assignments/week-02/index.html",
-    "href": "assignments/week-02/index.html",
-    "title": "Week 2",
+    "objectID": "shared/guides/setup/environment-setup-guide-vscode.html",
+    "href": "shared/guides/setup/environment-setup-guide-vscode.html",
+    "title": "Week 1 — VSCode Setup and First Notebook (Windows)",
     "section": "",
-    "text": "This page will be published before Week 2 begins."
+    "text": "What you’re doing\nYou are going to open a Jupyter notebook in VS Code and run it successfully using the course Python environment.\n\n\n1) Open the course folder in VS Code\n\nOpen VS Code\nGo to File → Open Folder…\nOpen your course work folder (example: C:\\cmsc-1217\\)\n\n\n\n2) Install the extensions (if you don’t already have them)\nIn VS Code, install:\n\nPython (Microsoft)\nJupyter (Microsoft)\n\n\n\n3) Create the course Python environment and select it in VS Code (one-time)\n\n3A) Create the course environment folder\n\nCreate a folder on your C: drive named:\n\nC:\\cmsc-1217-env\\\n\n\n\n\n3B) Create the virtual environment (.venv)\n\nOpen Command Prompt (Windows search → type “Command Prompt”)\nRun:\n\ncd C:\\cmsc-1217-env\npython -m venv .venv\n\n\n3C) Activate the environment\nIn the same Command Prompt window, run:\nC:\\cmsc-1217-env\\.venv\\Scripts\\activate.bat\nYou should see (.venv) appear at the start of the line.\n\n\n3D) Install the notebook packages (first-time setup)\nStill in the activated environment, run:\npython -m pip install --upgrade pip\npython -m pip install numpy pandas matplotlib jupyter\n\n\n3E) Select the environment in VS Code (Interpreter)\n\nIn VS Code, press Ctrl + Shift + P\nType Python: Select Interpreter\nChoose the interpreter that looks like:\n\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nIf you don’t see it:\n\nchoose Enter interpreter path…\npaste: C:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis is the environment we will use all semester.\n\n\n\n4) Open the notebook\n\nIn the Explorer panel, click the notebook file (.ipynb) your instructor provided.\n\n\n\n5) Select the notebook kernel (first time only)\nThe first time you run a notebook, VS Code may ask you to pick a kernel.\nChoose the kernel that matches the course environment path:\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis can feel repetitive the first time. That’s normal. Once selected, it usually stays set for that folder.\n\n\n6) Select the kernel, then run a quick test\n\nIn the top-right of the notebook, click Select Kernel.\nChoose the kernel that points to the course environment:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n(It may also show up as “Python 3.x (.venv)”—the key is that it points to cmsc-1217-env\\.venv.)\nClick + Code.\nIn the code block that appears, paste:\n\nprint(\"Notebook is running\")\n\nRun it by clicking the Run (▶) icon on the code block, or press Shift + Enter.\nYou should see Notebook is running appear underneath.\n\n\n\n7) Quick confirmation (your instructor may ask for this)\nRun this in a cell:\nimport sys\nsys.executable\nIt should show something like:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\n\nIf something goes wrong\n\nIf you see ModuleNotFoundError (missing package), you are almost always using the wrong interpreter/kernel.\n\nRe-do Step 3 and Step 5 and pick the one that points to cmsc-1217-env\\.venv."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "shared/policies/ai-policy.html",
+    "href": "shared/policies/ai-policy.html",
+    "title": "Using AI as a Learning Tool",
     "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "assignments/week-01/index.html",
-    "href": "assignments/week-01/index.html",
-    "title": "Week 1 Assignments",
-    "section": "",
-    "text": "Submission location: All items are submitted in D2L (Week 1 dropboxes). Reading: Chapter 1 and Chapter 2 (complete).",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#part-1-reading",
-    "href": "assignments/week-01/index.html#part-1-reading",
-    "title": "Week 1 Assignments",
-    "section": "Part 1: Reading",
-    "text": "Part 1: Reading\nRead all of Chapter 1 and all of Chapter 2.\nPay special attention to:\n\nChapter 1.3 Essential Python Libraries\nChapter 1.4 Installation and Setup\nChapter 1.6 Navigating This Book (import conventions, how to read examples)\nChapter 2.1–2.2 Interpreter + IPython/Jupyter workflow (tab completion, ? help)",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#part-2-setup",
-    "href": "assignments/week-01/index.html#part-2-setup",
-    "title": "Week 1 Assignments",
-    "section": "Part 2: Setup",
-    "text": "Part 2: Setup\nSubmit the following screenshots (each as a separate file):\n\nGit installed Screenshot name: lastname_git-version.png Show the output of:\n\n\ngit --version\n\n\nCourse folders created Screenshot name: lastname_course-folders.png Show File Explorer displaying:\n\n\nC:\\cmsc-1217\\course-work\\\nC:\\cmsc-1217\\book\\\nC:\\cmsc-1217\\data\\\n\n\nBook files cloned Screenshot name: lastname_book-clone.png Show either:\n\n\nthe successful git clone output, or\nFile Explorer showing: C:\\cmsc-1217\\book\\pydata-book\\\n\n\nConda environment exists Screenshot name: lastname_conda-env-list.png Show the output of:\n\n\nconda info --envs\n\n\nCore packages installed Screenshot name: lastname_pandas-version.png Show the output of:\n\n\npython -c \"import pandas as pd; print(pd.__version__)\"\n\n(We will keep a consistent pandas version for compatibility with course/book notebooks.)",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#part-3-jupyterlab-practice",
-    "href": "assignments/week-01/index.html#part-3-jupyterlab-practice",
-    "title": "Week 1 Assignments",
-    "section": "Part 3: JupyterLab practice",
-    "text": "Part 3: JupyterLab practice\n\nA) Launch JupyterLab in the correct folder\nFrom Anaconda Prompt:\n\nconda activate pydata-book\ncd C:\\cmsc-1217\\course-work\njupyter lab\n\n\n\nB) Create a Week01 folder in cmsc-1217 and then create and run a notebook\nCreate: week01-notebook-practice.ipynb in course-work\\week01.\nRun these cells:\nimport sys\nsys.executable\nimport numpy as np\nimport pandas as pd\nimport matplotlib\nmessage = \"Notebooks run Python too\"\nmessage\nx = 10\nx + 5\nThen use JupyterLab to:\n\nRestart the kernel\nRun all cells\n\nFinally, do:\n\nTab completion: type np.random. and use completion\nHelp/introspection:\n\nnp.random.standard_normal?\nThese behaviors are part of the Chapter 2 IPython/Jupyter workflow.\n\n\nRequired screenshots\n\nJupyterLab opened in course-work Screenshot name: lastname_jupyterlab-course-work.png Show the JupyterLab file browser open in C:\\cmsc-1217\\course-work\\week01.\nsys.executable output Screenshot name: lastname_sys-executable.png\nIntrospection output (?) Screenshot name: lastname_ipython-help.png",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#part-4-ipython-in-a-terminal",
-    "href": "assignments/week-01/index.html#part-4-ipython-in-a-terminal",
-    "title": "Week 1 Assignments",
-    "section": "Part 4: IPython in a terminal",
-    "text": "Part 4: IPython in a terminal\nOpen a new Anaconda Prompt tab/window:\n\nconda activate pydata-book\nipython\n\nRun at least one small example that produces an In [ ] and an Out [ ] (for example, assign a variable and then evaluate it).\n\nIPython running Screenshot name: lastname_ipython-prompt.png Show the IPython prompt and at least one In [ ] / Out [ ] interaction.",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#part-5-d2l-quiz",
-    "href": "assignments/week-01/index.html#part-5-d2l-quiz",
-    "title": "Week 1 Assignments",
-    "section": "Part 5: D2L quiz",
-    "text": "Part 5: D2L quiz\nComplete the D2L Chapter 1 and Chapter 2 quiz.",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#part-6-video-reflection",
-    "href": "assignments/week-01/index.html#part-6-video-reflection",
-    "title": "Week 1 Assignments",
-    "section": "Part 6: Video reflection",
-    "text": "Part 6: Video reflection\n\nVideo Submission Instructions\nRecord a short video of yourself explaining your understanding of the Week 1 workflow. Focus on explaining concepts clearly and using correct terminology rather than reading text from the screen.\nIn your video, address:\n\nWhat feels different from running .py scripts in an editor\nWhat the kernel is (in your own words)\nWhy “restart the kernel” and “run all” are useful habits\n\nRequirements\n\nClear video and audio quality\nIntroduce yourself at the beginning (name)\nName your video file: lastname_Week01Reflection\nUpload your video to Kaltura\nDo not embed the video in the Dropbox submission\nPaste the share link into the D2L assignment text submission box\nMake sure the link text includes lastname_Week01Reflectionin the link name. This will appear if you copy the link.",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#d2l-submission-checklist",
-    "href": "assignments/week-01/index.html#d2l-submission-checklist",
-    "title": "Week 1 Assignments",
-    "section": "D2L submission checklist",
-    "text": "D2L submission checklist\nSubmit the following items to the Week 1 D2L dropboxes.\n\nScreenshot files (upload as separate files, not a zip)\n\nlastname_git-version.png\nlastname_course-folders.png\nlastname_book-clone.png\nlastname_conda-env-list.png\nlastname_pandas-version.png\nlastname_jupyterlab-course-work.png\nlastname_sys-executable.png\nlastname_ipython-help.png\nlastname_ipython-prompt.png\n\n\n\nVideo submission (link only)\n\nVideo filename: lastname_Week01Reflection\nSubmit: Paste the share link into the D2L text submission box (do not embed the video in the Dropbox).",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "course/schedule.html",
-    "href": "course/schedule.html",
-    "title": "CMSC 1217 Course Schedule",
-    "section": "",
-    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
-    "crumbs": [
-      "Home",
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "course/schedule.html#course-rhythm",
-    "href": "course/schedule.html#course-rhythm",
-    "title": "CMSC 1217 Course Schedule",
-    "section": "",
-    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
-    "crumbs": [
-      "Home",
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "course/schedule.html#assessment-intent",
-    "href": "course/schedule.html#assessment-intent",
-    "title": "CMSC 1217 Course Schedule",
-    "section": "Assessment intent",
-    "text": "Assessment intent\n\nPractice Notebooks (completion): guided work with built-in self-check cells\nSkill Checks (autograded notebooks): short, testable tasks (functions / named outputs)\nReflections (graded): brief, rubric-based video explanations of choices, debugging, and interpretation\nFinal Project (graded): notebook report + deliverables (Video Based)",
-    "crumbs": [
-      "Home",
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "course/schedule.html#weekly-schedule",
-    "href": "course/schedule.html#weekly-schedule",
-    "title": "CMSC 1217 Course Schedule",
-    "section": "Weekly schedule",
-    "text": "Weekly schedule\n\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nDeliverable\nReading\n\n\n\n\n1\nJan 12, 2026–Jan 18, 2026\nOnboarding + Jupyter basics\nPractice Notebook 1 (completion)\nCh. 2 (Jupyter/IPython) + Ch. 1 overview\n\n\n2\nJan 19, 2026–Jan 25, 2026\nPython refresh for data work (functions, files, pathlib)\nPractice Notebook 2 (completion)\nCh. 3 (Built-in Python for data work)\n\n\n3\nJan 26, 2026–Feb 01, 2026\nNumPy essentials (arrays, vectorization, boolean masks)\nPractice Notebook 3 (completion)\nCh. 4 (NumPy basics)\n\n\n4\nFeb 02, 2026–Feb 08, 2026\npandas foundations I (Series/DataFrame, indexing, filtering)\nSkill Check 1 (autograded notebook)\nCh. 5 (pandas intro)\n\n\n5\nFeb 09, 2026–Feb 15, 2026\npandas foundations II (sorting, basic summaries, missingness intro)\nPractice Notebook 5 (completion)\nCh. 5 (pandas continued)\n\n\n6\nFeb 16, 2026–Feb 22, 2026\nData I/O (CSV, Excel/JSON basics, parsing dates, dtypes)\nPractice Notebook 6 (completion)\nCh. 6 (Data loading/storage)\n\n\n7\nFeb 23, 2026–Mar 01, 2026\nCleaning I (missing data, types, duplicates, string cleanup)\nReflection 1 (graded)\nCh. 7 (Data cleaning/prep)\n\n\n8\nMar 02, 2026–Mar 08, 2026\nCleaning II (validation rules, outliers as data-quality topic)\nPractice Notebook 8 (completion)\nCh. 7 (Data cleaning/prep)\n\n\n9\nMar 09, 2026–Mar 15, 2026\nSpring Break (no due dates)\n—\n—\n\n\n10\nMar 16, 2026–Mar 22, 2026\nWrangling I (merge/join, concat; keys & pitfalls)\nSkill Check 2 (autograded notebook)\nCh. 8 (Wrangling: join/reshape)\n\n\n11\nMar 23, 2026–Mar 29, 2026\nWrangling II (reshape: pivot/melt; tidy layouts)\nPractice Notebook 11 (completion)\nCh. 8 (Wrangling: reshape)\n\n\n12\nMar 30, 2026–Apr 05, 2026\nGroupby + aggregation (report tables, transform vs agg)\nReflection 2 (graded)\nCh. 10 (Aggregation & groupby)\n\n\n13\nApr 06, 2026–Apr 12, 2026\nVisualization I (plot selection, labeling, communication)\nPractice Notebook 13 (completion)\nCh. 9 (Visualization)\n\n\n14\nApr 13, 2026–Apr 19, 2026\nVisualization II (+ optional time series basics)\nSkill Check 3 (autograded notebook)\nCh. 9 (Visualization) + optional Ch. 11 (Time series)\n\n\n15\nApr 20, 2026–Apr 26, 2026\nProject setup week (topic + dataset approval + plan)\nReflection 3 / Project Proposal (graded)\nCh. 13 (Examples) for inspiration (optional)\n\n\n16\nApr 27, 2026–May 03, 2026\nFinal project work time (milestone: cleaned dataset + initial EDA)\n— (work week)\nCh. 13 (Examples) (optional)\n\n\n17\nMay 04, 2026–May 10, 2026\nFinal project work time (milestone: visuals + narrative + polish)\n— (work week)\nCh. 13 (Examples) (optional)",
-    "crumbs": [
-      "Home",
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "course/schedule.html#final-project-apr-27may-11",
-    "href": "course/schedule.html#final-project-apr-27may-11",
-    "title": "CMSC 1217 Course Schedule",
-    "section": "Final project (Apr 27–May 11)",
-    "text": "Final project (Apr 27–May 11)\nDeliverable (May 11, 2026): a single notebook-based report that demonstrates an end-to-end workflow.\nMinimum components:\n\nLoad one real dataset (CSV/JSON/Excel)\nCleaning + preparation steps (with brief justification)\nWrangling/aggregation (at least one merge or groupby style task)\n2–4 clear visualizations with labels\nShort written narrative: what you did, what you found, limitations/next steps\nExport at least one output artifact (cleaned CSV and/or saved figures)",
-    "crumbs": [
-      "Home",
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "Use this site as your course handbook. It stays up to date all semester.\n\nUse the left sidebar to find weekly materials and guides.\nD2L is the starting point for announcements, grades, and submissions.\nCourse information (syllabus, schedule, policies, office hours) is maintained here.\n\n\nCourse workflow\n\nCheck D2L for announcements, deadlines, and any updates.\nRead the Weekly Overview on this site (Week 1, Week 2, …) and follow the links provided.\nComplete the work (assignments) and submit in D2L.\n\n\n\nSupport\n\nOffice hours: see the Office Hours page.\nZoom: Office Zoom Link\n\nHow to get help:\n\nUse Discord/email for course questions.\nAdd troubleshooting policy.\n\n\n\n\nInstructor contact\n\nInstructor: Joseph Silman\n\nEmail: jsilman@sctcc.edu\nPhone Number: (320) 308 - 6595\n\n\n\nQuick links\n\nSyllabus\nSchedule"
-  },
-  {
-    "objectID": "shared/guides/setup/miniconda.html",
-    "href": "shared/guides/setup/miniconda.html",
-    "title": "Week 1 — Miniconda Setup and First Notebook (Windows)",
-    "section": "",
-    "text": "What you know from Structured: you installed Python from python.org, and VS Code used that Python.\nWhat’s different here: instead of installing Python directly, we install Miniconda, which is an environment manager. Think of Miniconda as a tool that can install Python + data libraries into a self-contained folder so this course has a consistent setup.\n\nDownload and install Miniconda (64-bit).\nDuring install, do not add Miniconda to PATH.\n\nWhy not add to PATH: you might already have a python.org install. We don’t want Miniconda to “take over” the python command everywhere on your machine. Instead, we’ll use the Miniconda/Anaconda Prompt when we want the course setup.",
-    "crumbs": [
-      "Home",
-      "Guides",
-      "Miniconda Setup"
-    ]
-  },
-  {
-    "objectID": "shared/guides/setup/miniconda.html#optional-ipython",
-    "href": "shared/guides/setup/miniconda.html#optional-ipython",
-    "title": "Week 1 — Miniconda Setup and First Notebook (Windows)",
-    "section": "Optional: IPython",
-    "text": "Optional: IPython\nConnection to what you know: this is like running Python in a terminal, but more helpful for exploration (history, tab completion, quick testing).\n\nOpen an Anaconda tab (not PowerShell)\nIf you’re using Windows Terminal:\n\nClick the small dropdown arrow next to the plus (˅) (Do not just click the + — that usually opens PowerShell.)\nClick Anaconda Prompt (miniconda3) (or “Anaconda PowerShell Prompt (miniconda3)” — either works, but the Prompt is simplest)\n\nYou should see a prompt like:\n(base) C:\\Users\\yourname&gt;\n\n\nActivate the course environment and start IPython\nRun:\nconda activate pydata-book\nipython\nYou should then see:\nIn [1]:\n\n\nExit IPython\nRun:\nexit()\n\n\nOptional: JupyterLab (modern web interface)\n\nActivate the course environment:\n\nconda activate pydata-book\n\nInstall JupyterLab (inside the environment):\n\nconda install -c conda-forge jupyterlab\n\nStart JupyterLab from your course-work folder:\n\ncd C:\\cmsc-1217\\course-work\njupyter lab\nA browser tab will open and the file browser will start in:\nC:\\cmsc-1217\\course-work\\\nImportant: keep the terminal window open while you use JupyterLab (it’s running the server).",
-    "crumbs": [
-      "Home",
-      "Guides",
-      "Miniconda Setup"
-    ]
+    "text": "Purpose of this policy\nTools that use artificial intelligence are now widely available, and many of you already use them when learning technical material. This course allows the use of AI tools as a learning aid, similar to a tutor or reference source. At the same time, this course requires that submitted work reflect your own understanding and decision-making.\nThis page explains how AI tools may be used productively in this course, and where their use becomes inappropriate.\n\n\nAI as a learning tool\nUsing AI as a learning tool means using it to clarify ideas, terminology, or examples that you do not yet understand.\n\nIdeas An idea is a concept or principle discussed in the course materials, such as how a process works, why a particular approach is used, or what a tool is designed to do. Clarifying an idea means using AI to help you understand the purpose or reasoning behind something you have already encountered in class, rather than asking for a final answer.\nTerminology Terminology refers to the specific words and phrases used in technical subjects. These terms often have precise meanings that differ from everyday usage. Using AI appropriately includes asking for explanations of unfamiliar terms so you can understand how they are used in context, especially when reading textbooks, documentation, or assignment instructions.\nExamples Examples are demonstrations that show how an idea or concept is applied in practice. Using AI to clarify examples means asking for help understanding why an example works, what each part is doing, or how it relates to the underlying concept. It does not mean copying an example and submitting it as your own work.\n\nIn all cases, using AI as a learning tool should help you build understanding, not replace the effort of reading, experimenting, or reasoning through a problem yourself.\n\n\nAI as a crutch\nAI tools can support learning, but they can also be used in ways that reduce learning. This policy uses the term “crutch” to describe situations where the tool is doing the thinking and decision-making that the student is expected to practice.\nUsing AI as a crutch means relying on it to produce work or reasoning that you do not understand well enough to explain and defend. The issue is not that the tool was used; the issue is that the tool replaced the learning process.\nInappropriate uses include:\n\nAsking AI to complete an assignment or lab task for you Example: “Write the solution for this assignment.”\nSubmitting AI-generated code, answers, or explanations that you cannot explain in your own words Example: Copying an explanation of why a solution works without being able to describe the steps yourself.\nTreating AI output as authoritative without verification Example: Accepting an answer that conflicts with course materials, documentation, or results you can reproduce.\nUsing AI to bypass the learning objective Example: Asking for the final answer when the point of the activity is to practice reasoning, debugging, designing, or interpreting results.\nUsing AI to write or script reflections that are meant to describe your own understanding Example: Asking AI to generate a script or talking points for a reflection video instead of explaining the ideas in your own words.\n\nIn these cases, AI is being used to avoid the intended learning work rather than to support it.\n\n\nWhy this matters\nAI can produce output that appears correct even when it contains errors or is based on incorrect assumptions. Because of that, it is important to treat AI output as a starting point for learning, not as an authority.\nThis course emphasizes:\n\nverifying results,\nunderstanding workflows,\nand explaining decisions clearly.\n\nIf you rely on AI answers without testing them or understanding them, you are likely to miss errors and build misunderstandings. Those gaps tend to surface later in the course when tasks require independent problem solving, accurate interpretation, and clear explanations in graded work.\n\n\nExpectations for submitted work\nAll submitted work must reflect your own understanding.\nThis means:\n\nYou should be able to explain any code you submit.\nYou should be able to describe why you made particular choices (model, metric, preprocessing).\nIn reflections, your explanations should sound like you, not like a generic answer generator.\n\nYou are not required to disclose routine AI use for clarification or studying. However, if your work suggests that you do not understand what you submitted, that will be treated the same way as any other lack of understanding, regardless of the source.\nIf you use an AI tool, ask yourself:\n\nCould I explain this answer to another student without looking it up?\nDid I test or verify what the tool suggested?\nDid the tool help me understand, or did it just give me something to submit?\n\nIf the tool helped you understand, you are using it appropriately. If it replaced your thinking, you are not."
   },
   {
     "objectID": "shared/policies/homework-coursework.html",
