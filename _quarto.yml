@@ -7,7 +7,7 @@ project:
 
 
 website:
-  title: "CMSC 1217 : Introduction to Data Analytics"
+  title: "CMSC 1236 : Advanced Python Programming"
   reader-mode: false
   navbar:
     left:
@@ -33,9 +33,6 @@ website:
       - icon: person-circle
         href: https://sctcc.learn.minnstate.edu/d2l/login
         aria-label: D2L
-    
-    
-    
     
     contents:
       - section: "Course information"
@@ -68,8 +65,7 @@ website:
       
       - section: "Guides"
         contents:
-          - href: shared/guides/setup/miniconda.qmd
-            text: Miniconda Setup
+          
 
 
 format:

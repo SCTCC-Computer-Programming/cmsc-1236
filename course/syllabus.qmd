@@ -1,5 +1,5 @@
 ---
-title: "CMSC 1217 – Introduction to Data Analytics"
+title: "CMSC 1236 – Advanced Python Programming"
 subtitle: "Syllabus"
 title-block-banner: false
 
@@ -45,13 +45,7 @@ CMSC 1203 - Structured Programming Logic
 
 ## Course Description
 
-This course introduces data analytics using Python to extract and communicate insights from datasets.
-
-Students acquire foundational skills in data manipulation, including transformation and cleansing, alongside techniques for visualizing data distributions and managing file-based data input/output, preparing them for machine learning applications in subsequent semesters. The course focuses on technical concepts such as trend identification through graphical analysis, data structuring for computational efficiency, and processing real-world datasets for artificial intelligence applications. Through programming exercises and a capstone project analyzing a representative dataset, students develop practical Python programming competencies essential for advanced coursework in machine learning.
-
-### Course Philosophy
-
-This course follows a **tools-first** approach to “data analytics.” Our focus is on the Python programming skills and the data library ecosystem (especially **pandas** and related tools) used to manipulate, process, clean, and summarize real datasets. We will cover analytical concepts only as needed to motivate a tool or technique, but this course is **not** focused on statistical methodology (hypothesis testing, inference, or model theory), which is addressed in other courses.
+This course builds on the foundational Python skills from CMSC1203 Structured Programming Logic, introducing students to advanced Python techniques for developing robust standalone applications. The course guides students through advanced object-oriented programming (OOP), functional programming, array-based numerical computing, project structuring, unit testing, and debugging. Through hands-on practical programming exercises, students create functional Python applications, gaining skills for technical roles in programming, system design, and related fields. This course emphasizes a programming-focused approach, ensuring students develop advanced, real-world Python programming expertise applicable to modern technology applications.
 
 ***This online class requires extensive use of your webcam***
 
@@ -59,35 +53,43 @@ This course follows a **tools-first** approach to “data analytics.” Our focu
 
 #### Upon completion of this course the student will:
 
--   Identify fundamental concepts of data analytics and their role in preparing data for machine learning applications.
+-   Identify advanced object-oriented programming constructs, including multiple inheritance and abstract base classes used in software design.
 
--   Explain how Python programming streamlines data analysis processes for real-world datasets.
+-   Explain the role of lambdas, generators, and decorators in optimizing Python code efficiency.
 
--   Manipulate datasets in Python, including filtering, sorting, and handling missing values.
+-   Implement array-based numerical computations, including matrix operations, within a Python program.
 
--   Compare Python data visualization techniques to represent data trends effectively.
+-   Compare dependency management and package structuring techniques for organizing modular software projects.
 
--   Assess the quality of a dataset's preparation in Python, identifying areas for improvement in data cleaning and transformation for machine learning readiness.
+-   Assess the impact of unit testing and debugging techniques on software reliability.
 
--   Design a data analytics project in Python to extract insights from a real-world dataset.
+-   Integrate advanced error-handling and exception management strategies into Python programs.
+
+-   Optimize Python code to meet specific performance requirements for computational tasks.
+
+-   Design a standalone Python application to address a real-world programming challenge.
 
 ## Course Content
 
-1.  Introduction to Data Analytics with Python
+1.  Advanced Classes and Object-Oriented Programming Foundations
 
-2.  Python Libraries for Data Manipulation (Pandas)
+2.  Advanced Object-Oriented Programming Concepts
 
-3.  Data Cleaning and Preparation in Python
+3.  Functional Programming in Python
 
-4.  Data Visualization with Matplotlib and Seaborn
+4.  Numerical Computing with NumPy
 
-5.  Working with File-Based Data (CSV, JSON)
+5.  Python Project Structuring and Build Tools
 
-6.  Capstone Data Analytics Project
+6.  Unit Testing and Debugging
+
+7.  Capstone Standalone Python Project
 
 ## Required Materials
 
-Python for Data Analyis, 3rd Edition : Wes McKinney
+Learning Python, 6th Edition : Mark Lutz
+
+Fluent Python: Clear, Concise, and Effective Programming, 2nd Edition : Luciano Ramalho
 
 Computer running current OS that supports Microsoft Office
 
