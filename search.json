@@ -209,7 +209,7 @@
     "href": "course/schedule.html#weekly-schedule",
     "title": "CMSC 1236 Course Schedule",
     "section": "Weekly schedule",
-    "text": "Weekly schedule\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nReading\n\n\n\n\n1\nJan 12, 2026–Jan 18, 2026\nCourse environment + workflow (venv, Git, VS Code, run/submit). Start Virtual Pet v1 (menu loop skeleton, I/O patterns)\nLearning Python 6e Ch. 1–4 (review/reference)\n\n\n2\nJan 19, 2026–Jan 25, 2026\nFinish Virtual Pet v1 (Pet class + conditionals + validation/invalid input + pickle save/load)\nLearning Python 6e Ch. 5–7 (review/reference)\n\n\n3\nJan 26, 2026–Feb 01, 2026\n“Pythonic objects” mindset: data model, __repr__/__str__, making objects console-friendly\nFluent Python Ch. 1 (The Python Data Model)\n\n\n4\nFeb 02, 2026–Feb 08, 2026\nSequences as app state: list/tuple patterns, unpacking, slicing; practical container thinking\nFluent Python Ch. 2 (An Array of Sequences) (selected sections as needed)\n\n\n5\nFeb 09, 2026–Feb 15, 2026\nDictionaries/sets for state + menus: mapping commands to actions; clean updates; defaults/missing keys\nFluent Python Ch. 3 (Dictionaries and Sets)\n\n\n6\nFeb 16, 2026–Feb 22, 2026\nType hints (light/practical): clearer interfaces for larger CLI apps; “hint what matters”\nFluent Python Ch. 8 (Type Hints in Functions) (selected sections)\n\n\n7\nFeb 23, 2026–Mar 01, 2026\nFunctions as design tool: command dispatch tables; refactor repetition; improve structure (Virtual Pet v2)\nFluent Python Ch. 7 (Functions as First-Class Objects)\n\n\n8\nMar 02, 2026–Mar 08, 2026\nDecorators/closures (optional depth): command registration or keep dict dispatch; focus on readable design\nFluent Python Ch. 9 (Decorators and Closures) (targeted)\n\n\n9\nMar 09, 2026–Mar 15, 2026\nSpring Break (no due dates)\n—\n\n\n10\nMar 16, 2026–Mar 22, 2026\nReliability week: safe persistence + pathlib conventions + friendly failures; context managers (with) (Virtual Pet v3)\nFluent Python Ch. 18 (with / context managers focus)\n\n\n11\nMar 23, 2026–Mar 29, 2026\nArchitecture week: interfaces/protocols/ABCs as design contracts; clean boundaries (UI vs logic vs storage)\nFluent Python Ch. 13 (Interfaces, Protocols, and ABCs)\n\n\n12\nMar 30, 2026–Apr 05, 2026\nExtension strategy: inheritance vs composition; mixins carefully; “how to grow without breaking”\nFluent Python Ch. 14 (Inheritance: For Better or for Worse)\n\n\n13\nApr 06, 2026–Apr 12, 2026\nRicher objects: special methods for nicer domain models (custom containers/logs/history); polish without overengineering\nFluent Python Ch. 12 (Special Methods for Sequences) (selected)\n\n\n14\nApr 13, 2026–Apr 19, 2026\nFinal project proposal week: scope, constraints, milestones, repo plan, feature choices; link plan to course techniques\nTargeted review of Fluent Python Ch. 7, 13, 18 (as needed for proposal)\n\n\n15\nApr 20, 2026–Apr 26, 2026\nIterators/generators for logs + reporting; clean “event stream” thinking for CLI apps\nFluent Python Ch. 17 (Iterators, Generators, and Classic Coroutines) (selected)\n\n\n16\nApr 27, 2026–May 03, 2026\nFinal project build week (student-chosen standalone CLI app)\nTargeted reading as needed\n\n\n17\nMay 04, 2026–May 10, 2026\nFinal polish: edge cases, reliability, run instructions, demo readiness\nTargeted review as needed",
+    "text": "Weekly schedule\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nReading\n\n\n\n\n1\nJan 12, 2026–Jan 18, 2026\nCourse environment + workflow (venv, Git, VS Code, run/submit). Start Virtual Pet v1 (menu loop skeleton, I/O patterns)\nLearning Python 6e Ch. 1–7 (finish by end of Week 2)\n\n\n2\nJan 19, 2026–Jan 25, 2026\nFinish Virtual Pet v1 (Pet class + conditionals + validation/invalid input + pickle save/load)\n\n\n\n3\nJan 26, 2026–Feb 01, 2026\nCore containers for CLI apps (lists/dicts/tuples) + file/persistence concepts to support the pet project\nLearning Python 6e Ch. 8–9\n\n\n4\nFeb 02, 2026–Feb 08, 2026\nStatements + assignment mechanics (unpacking, multiple assignment), practical output/formatting habits\nLearning Python 6e Ch. 10–11\n\n\n5\nFeb 09, 2026–Feb 15, 2026\nControl flow upgrade: if + match + truthiness for clean CLI logic\nLearning Python 6e Ch. 12\n\n\n6\nFeb 16, 2026–Feb 22, 2026\nLoop patterns used in real programs (validation loops, enumerate, zip, loop-else)\nLearning Python 6e Ch. 13\n\n\n7\nFeb 23, 2026–Mar 01, 2026\nIteration & comprehensions as “muscle memory” tools (readability + correctness)\nLearning Python 6e Ch. 14\n\n\n8\nMar 02, 2026–Mar 08, 2026\nFunctions as structure: boundaries, scope model, and argument patterns (foundation for refactoring)\nLearning Python 6e Ch. 16–18\n\n\n9\nMar 09, 2026–Mar 15, 2026\nSpring Break (no due dates)\n—\n\n\n10\nMar 16, 2026–Mar 22, 2026\nFunction “level-up”: advanced function topics + comprehensions/generators as programming habits\nLearning Python 6e Ch. 19–20\n\n\n11\nMar 23, 2026–Mar 29, 2026\nReal-program organization + reliability: modules/packages/__main__ + exceptions/context managers (selected)\nLearning Python 6e Ch. 22–25 + 33–36 (selected)\n\n\n12\nMar 30, 2026–Apr 05, 2026\nPivot to Fluent Python: data model mindset, why “dunder methods” matter\nFluent Python 2e Ch. 1\n\n\n13\nApr 06, 2026–Apr 12, 2026\nFunctions as objects for cleaner architecture (dispatch tables, callbacks, command systems)\nFluent Python 2e Ch. 7\n\n\n14\nApr 13, 2026–Apr 19, 2026\nFinal project proposal week: scope, constraints, milestones, repo plan, feature choices\nTargeted review of FP Ch. 1 & 7 + LP modules/exceptions (as needed)\n\n\n15\nApr 20, 2026–Apr 26, 2026\nIterators/generators for logs + reporting; “event stream” thinking for CLI apps\nFluent Python 2e Ch. 17\n\n\n16\nApr 27, 2026–May 03, 2026\nFinal project build week (student-chosen standalone CLI app)\nTargeted reading as needed\n\n\n17\nMay 04, 2026–May 10, 2026\nFinal polish: edge cases, reliability, run instructions, demo readiness\nTargeted review as needed",
     "crumbs": [
       "Home",
       "Course information",
@@ -338,7 +338,7 @@
     "href": "assignments/week-01/index.html",
     "title": "Week 1 Assignment",
     "section": "",
-    "text": "Week 1–2 Project\nOpen here:\nWeek 1–2 Assignment\nEnvironment Setup",
+    "text": "This is a two-week project.\n\nWeek 1–2 Assignment\nEnvironment Setup",
     "crumbs": [
       "Home",
       "Weekly Assignments",
@@ -350,7 +350,7 @@
     "href": "assignments/week-01/index.html#assignment",
     "title": "Week 1 Assignment",
     "section": "",
-    "text": "Week 1–2 Project\nOpen here:\nWeek 1–2 Assignment\nEnvironment Setup",
+    "text": "This is a two-week project.\n\nWeek 1–2 Assignment\nEnvironment Setup",
     "crumbs": [
       "Home",
       "Weekly Assignments",
@@ -362,7 +362,19 @@
     "href": "assignments/week-01/index.html#what-to-work-on-this-week",
     "title": "Week 1 Assignment",
     "section": "What to work on this week",
-    "text": "What to work on this week\nFocus on: - Getting your Pet class started - Setting up your file structure - Beginning the menu loop (you can finish saving/loading in Week 2)",
+    "text": "What to work on this week\nFocus on completing the Week 1 portion of the project:\n\nSet up your course environment and confirm you can run .py files using the correct interpreter.\nInitialize a Git repository and commit your initial working setup.\nBegin Virtual Pet v1 by implementing the menu loop skeleton and basic input/output patterns.\nAdd input validation for menu selection so invalid input does not terminate the program.",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#reading-purpose-and-use",
+    "href": "assignments/week-01/index.html#reading-purpose-and-use",
+    "title": "Week 1 Assignment",
+    "section": "Reading (purpose and use)",
+    "text": "Reading (purpose and use)\nRead Learning Python 6e, Chapters 1–7 by the end of Week 2. The purpose of this reading is review and reference: you are expected to recognize core language features (types, expressions, statements, control flow, and program structure) from Structured Programming Logic and to be able to look up details as you implement the Virtual Pet project. You do not need to memorize the chapters; you should be able to locate and apply relevant examples when you encounter unfamiliar syntax or behavior.",
     "crumbs": [
       "Home",
       "Weekly Assignments",
@@ -374,7 +386,7 @@
     "href": "assignments/week-01/index.html#submission",
     "title": "Week 1 Assignment",
     "section": "Submission",
-    "text": "Submission\nThis is a two-week assignment. Submit everything during Week 2.",
+    "text": "Submission\nSubmit the complete project during Week 2.",
     "crumbs": [
       "Home",
       "Weekly Assignments",
@@ -537,7 +549,7 @@
     "href": "course/syllabus.html#course-calendar",
     "title": "CMSC 1236 – Advanced Python Programming",
     "section": "Course Calendar",
-    "text": "Course Calendar\nSee News and Content page on D2L. The Instructor may make adjustments or changes. Notification will be given in class prior to change.\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nReading\n\n\n\n\n1\nJan 12, 2026–Jan 18, 2026\nCourse environment + workflow (venv, Git, VS Code, run/submit). Start Virtual Pet v1 (menu loop skeleton, I/O patterns)\nLearning Python 6e Ch. 1–4 (review/reference)\n\n\n2\nJan 19, 2026–Jan 25, 2026\nFinish Virtual Pet v1 (Pet class + conditionals + validation/invalid input + pickle save/load)\nLearning Python 6e Ch. 5–7 (review/reference)\n\n\n3\nJan 26, 2026–Feb 01, 2026\n“Pythonic objects” mindset: data model, __repr__/__str__, making objects console-friendly\nFluent Python Ch. 1 (The Python Data Model)\n\n\n4\nFeb 02, 2026–Feb 08, 2026\nSequences as app state: list/tuple patterns, unpacking, slicing; practical container thinking\nFluent Python Ch. 2 (An Array of Sequences) (selected sections as needed)\n\n\n5\nFeb 09, 2026–Feb 15, 2026\nDictionaries/sets for state + menus: mapping commands to actions; clean updates; defaults/missing keys\nFluent Python Ch. 3 (Dictionaries and Sets)\n\n\n6\nFeb 16, 2026–Feb 22, 2026\nType hints (light/practical): clearer interfaces for larger CLI apps; “hint what matters”\nFluent Python Ch. 8 (Type Hints in Functions) (selected sections)\n\n\n7\nFeb 23, 2026–Mar 01, 2026\nFunctions as design tool: command dispatch tables; refactor repetition; improve structure (Virtual Pet v2)\nFluent Python Ch. 7 (Functions as First-Class Objects)\n\n\n8\nMar 02, 2026–Mar 08, 2026\nDecorators/closures (optional depth): command registration or keep dict dispatch; focus on readable design\nFluent Python Ch. 9 (Decorators and Closures) (targeted)\n\n\n9\nMar 09, 2026–Mar 15, 2026\nSpring Break (no due dates)\n—\n\n\n10\nMar 16, 2026–Mar 22, 2026\nReliability week: safe persistence + pathlib conventions + friendly failures; context managers (with) (Virtual Pet v3)\nFluent Python Ch. 18 (with / context managers focus)\n\n\n11\nMar 23, 2026–Mar 29, 2026\nArchitecture week: interfaces/protocols/ABCs as design contracts; clean boundaries (UI vs logic vs storage)\nFluent Python Ch. 13 (Interfaces, Protocols, and ABCs)\n\n\n12\nMar 30, 2026–Apr 05, 2026\nExtension strategy: inheritance vs composition; mixins carefully; “how to grow without breaking”\nFluent Python Ch. 14 (Inheritance: For Better or for Worse)\n\n\n13\nApr 06, 2026–Apr 12, 2026\nRicher objects: special methods for nicer domain models (custom containers/logs/history); polish without overengineering\nFluent Python Ch. 12 (Special Methods for Sequences) (selected)\n\n\n14\nApr 13, 2026–Apr 19, 2026\nFinal project proposal week: scope, constraints, milestones, repo plan, feature choices; link plan to course techniques\n\n\n\n15\nApr 20, 2026–Apr 26, 2026\nIterators/generators for logs + reporting; clean “event stream” thinking for CLI apps\nFluent Python Ch. 17 (Iterators, Generators, and Classic Coroutines) (selected)\n\n\n16\nApr 27, 2026–May 03, 2026\nFinal project build week (student-chosen standalone CLI app)\nTargeted reading as needed\n\n\n17\nMay 04, 2026–May 10, 2026\nFinal polish: edge cases, reliability, run instructions, demo readiness\nTargeted review as needed",
+    "text": "Course Calendar\nSee News and Content page on D2L. The Instructor may make adjustments or changes. Notification will be given in class prior to change.\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nReading\n\n\n\n\n1\nJan 12, 2026–Jan 18, 2026\nCourse environment + workflow (venv, Git, VS Code, run/submit). Start Virtual Pet v1 (menu loop skeleton, I/O patterns)\nLearning Python 6e Ch. 1–7 (2-week reading block begins)\n\n\n2\nJan 19, 2026–Jan 25, 2026\nFinish Virtual Pet v1 (Pet class + conditionals + validation/invalid input + pickle save/load)\nLearning Python 6e Ch. 1–7 (finish by end of Week 2)\n\n\n3\nJan 26, 2026–Feb 01, 2026\nCore containers for CLI apps (lists/dicts/tuples) + file/persistence concepts to support the pet project\nLearning Python 6e Ch. 8–9\n\n\n4\nFeb 02, 2026–Feb 08, 2026\nStatements + assignment mechanics (unpacking, multiple assignment), practical output/formatting habits\nLearning Python 6e Ch. 10–11\n\n\n5\nFeb 09, 2026–Feb 15, 2026\nControl flow upgrade: if + match + truthiness for clean CLI logic\nLearning Python 6e Ch. 12\n\n\n6\nFeb 16, 2026–Feb 22, 2026\nLoop patterns used in real programs (validation loops, enumerate, zip, loop-else)\nLearning Python 6e Ch. 13\n\n\n7\nFeb 23, 2026–Mar 01, 2026\nIteration & comprehensions as “muscle memory” tools (readability + correctness)\nLearning Python 6e Ch. 14\n\n\n8\nMar 02, 2026–Mar 08, 2026\nFunctions as structure: boundaries, scope model, and argument patterns (foundation for refactoring)\nLearning Python 6e Ch. 16–18\n\n\n9\nMar 09, 2026–Mar 15, 2026\nSpring Break (no due dates)\n—\n\n\n10\nMar 16, 2026–Mar 22, 2026\nFunction “level-up”: advanced function topics + comprehensions/generators as programming habits\nLearning Python 6e Ch. 19–20\n\n\n11\nMar 23, 2026–Mar 29, 2026\nReal-program organization + reliability: modules/packages/__main__ + exceptions/context managers (selected)\nLearning Python 6e Ch. 22–25 + 33–36 (selected)\n\n\n12\nMar 30, 2026–Apr 05, 2026\nPivot to Fluent Python: data model mindset, why “dunder methods” matter\nFluent Python 2e Ch. 1\n\n\n13\nApr 06, 2026–Apr 12, 2026\nFunctions as objects for cleaner architecture (dispatch tables, callbacks, command systems)\nFluent Python 2e Ch. 7\n\n\n14\nApr 13, 2026–Apr 19, 2026\nFinal project proposal week: scope, constraints, milestones, repo plan, feature choices\nTargeted review of FP Ch. 1 & 7 + LP modules/exceptions (as needed)\n\n\n15\nApr 20, 2026–Apr 26, 2026\nIterators/generators for logs + reporting; “event stream” thinking for CLI apps\nFluent Python 2e Ch. 17\n\n\n16\nApr 27, 2026–May 03, 2026\nFinal project build week (student-chosen standalone CLI app)\nTargeted reading as needed\n\n\n17\nMay 04, 2026–May 10, 2026\nFinal polish: edge cases, reliability, run instructions, demo readiness\nTargeted review as needed",
     "crumbs": [
       "Home",
       "Course information",
@@ -575,7 +587,7 @@
     "href": "weekly-overview/week-01/index.html",
     "title": "Week 1 Guide",
     "section": "",
-    "text": "You are coming into this course with Python experience from Structured Programming Logic. That course focused on writing and running Python programs in a more traditional editor-and-console workflow.\nIn this course, you will still write Python, but the workspace will look different. We will use Jupyter notebooks as the main place to practice and show your work. A notebook combines explanation text, code, and output in one document, which makes it easier to follow examples, retry steps, and keep your work organized.\nWeek 1 is where you learn that workflow and get your course setup working. You will also be introduced to the tool ecosystem used throughout the textbook: pandas and NumPy for working with data, and matplotlib for basic plotting. Chapter 1 introduces this ecosystem and why it exists. Chapter 2 introduces notebooks and the interactive workflow.\nThis week is also a chance to get comfortable navigating the textbook and looking up unfamiliar terms. Do not be a passive learner. In an AI-driven environment, it is easy to copy an answer without understanding it, and it is also easy to get a confident answer that is wrong. Your job is to read, test, and confirm.\nSection 1.6 in the textbook is especially useful this week. It explains how to navigate the book, how to read the code examples, and the import conventions used throughout (for example, numpy as np and pandas as pd). Treat 1.6 as your guide for how to read and use the book effectively.\nOne note before you start comparing your output to the book: the book often shows examples in an interactive In/Out style. Your notebook output may look similar but not identical, and that is fine. Focus on whether your code produces the correct result, not whether the formatting matches perfectly.",
+    "text": "The focus of Week 1 is to establish your course development environment and confirm that you can run, test, and manage Python programs using the standard workflow for this course. You will also begin the first project (Virtual Pet v1) by building the menu loop skeleton and practicing basic input/output patterns.\nWeek 1 is a preparation week. There is no graded submission this week, but the work you complete here is required to be successful in Week 2.",
     "crumbs": [
       "Home",
       "Weekly Overview",
@@ -587,7 +599,7 @@
     "href": "weekly-overview/week-01/index.html#week-1-focus",
     "title": "Week 1 Guide",
     "section": "",
-    "text": "You are coming into this course with Python experience from Structured Programming Logic. That course focused on writing and running Python programs in a more traditional editor-and-console workflow.\nIn this course, you will still write Python, but the workspace will look different. We will use Jupyter notebooks as the main place to practice and show your work. A notebook combines explanation text, code, and output in one document, which makes it easier to follow examples, retry steps, and keep your work organized.\nWeek 1 is where you learn that workflow and get your course setup working. You will also be introduced to the tool ecosystem used throughout the textbook: pandas and NumPy for working with data, and matplotlib for basic plotting. Chapter 1 introduces this ecosystem and why it exists. Chapter 2 introduces notebooks and the interactive workflow.\nThis week is also a chance to get comfortable navigating the textbook and looking up unfamiliar terms. Do not be a passive learner. In an AI-driven environment, it is easy to copy an answer without understanding it, and it is also easy to get a confident answer that is wrong. Your job is to read, test, and confirm.\nSection 1.6 in the textbook is especially useful this week. It explains how to navigate the book, how to read the code examples, and the import conventions used throughout (for example, numpy as np and pandas as pd). Treat 1.6 as your guide for how to read and use the book effectively.\nOne note before you start comparing your output to the book: the book often shows examples in an interactive In/Out style. Your notebook output may look similar but not identical, and that is fine. Focus on whether your code produces the correct result, not whether the formatting matches perfectly.",
+    "text": "The focus of Week 1 is to establish your course development environment and confirm that you can run, test, and manage Python programs using the standard workflow for this course. You will also begin the first project (Virtual Pet v1) by building the menu loop skeleton and practicing basic input/output patterns.\nWeek 1 is a preparation week. There is no graded submission this week, but the work you complete here is required to be successful in Week 2.",
     "crumbs": [
       "Home",
       "Weekly Overview",
@@ -595,11 +607,11 @@
     ]
   },
   {
-    "objectID": "weekly-overview/week-01/index.html#course-focus-and-expectations",
-    "href": "weekly-overview/week-01/index.html#course-focus-and-expectations",
+    "objectID": "weekly-overview/week-01/index.html#course-workflow-expectations",
+    "href": "weekly-overview/week-01/index.html#course-workflow-expectations",
     "title": "Week 1 Guide",
-    "section": "Course focus and expectations",
-    "text": "Course focus and expectations\nThis course is focused on the Python tools used to work with data. You will learn how to load data, inspect it, clean it, reshape it, summarize it, and visualize it. The emphasis is on building practical skill with the core libraries and the day-to-day workflow used in data work.\nThis course is not a statistics class. We are not spending the semester on statistical theory, inference, or formal methodology. When we use analytical ideas, it will be to support a tool we are learning and to help you interpret what your code produced. Think of this course as learning how to do the work in Python; your statistics elective covers more of the theory behind the methods.",
+    "section": "Course workflow expectations",
+    "text": "Course workflow expectations\nIn this course, you will primarily work in a file-and-terminal workflow:\n\nYou will write Python in .py files (notebooks are not the default workspace for this course).\nYou will run programs from the terminal (and/or the VS Code run tools that invoke the same interpreter).\nYou will use a project virtual environment to keep Python settings consistent.\nYou will use Git to track changes and document progress.\n\nBefore you begin project work, verify that VS Code is using the Python interpreter from your project virtual environment. If you use the wrong interpreter, you may see behavior that does not match your intended setup.",
     "crumbs": [
       "Home",
       "Weekly Overview",
@@ -611,7 +623,7 @@
     "href": "weekly-overview/week-01/index.html#core-tools-we-will-be-using",
     "title": "Week 1 Guide",
     "section": "Core tools we will be using",
-    "text": "Core tools we will be using\nThe course uses a small set of tools repeatedly. You do not need to master them in Week 1. You do need to recognize the names and understand what each tool is used for.\n\n\n\n\n\n\n\n\nTool\nWhat it is used for in this course\nWhen you will notice it\n\n\n\n\nNumPy\nWorking with numbers and arrays efficiently. It also supports many operations that pandas relies on.\nWhen you see import numpy as np, or when we work with numeric operations and arrays.\n\n\npandas\nWorking with tables (DataFrames): loading data, cleaning it, reshaping it, combining it, and summarizing it.\nMost weeks, because it is the main tool for manipulating data in this course.\n\n\nmatplotlib\nCreating plots so you can see patterns and communicate results.\nWhen we move into visualization, and whenever we need a chart to understand data.\n\n\nJupyter notebooks\nA workspace that keeps explanations, code, and output together. This is how you will practice and show your work.\nEvery week, since most work will be done and submitted in notebooks.",
+    "text": "Core tools we will be using\n\n\n\n\n\n\n\n\nTool\nWhat it is used for in this course\nWhen you will notice it\n\n\n\n\nPython 3\nWriting and running programs using the standard library and core language features\nEvery week\n\n\nVS Code\nEditing, running, and debugging Python programs\nEvery week\n\n\nTerminal (Command Line)\nRunning programs, navigating folders, and using Git\nEvery week\n\n\nvenv\nCreating an isolated Python environment per project\nThroughout the semester\n\n\nGit\nTracking work history and managing incremental changes\nThroughout the semester",
     "crumbs": [
       "Home",
       "Weekly Overview",
@@ -619,11 +631,23 @@
     ]
   },
   {
-    "objectID": "weekly-overview/week-01/index.html#jupyter-notebooks",
-    "href": "weekly-overview/week-01/index.html#jupyter-notebooks",
+    "objectID": "weekly-overview/week-01/index.html#week-1-project-work-virtual-pet-v1-kickoff",
+    "href": "weekly-overview/week-01/index.html#week-1-project-work-virtual-pet-v1-kickoff",
     "title": "Week 1 Guide",
-    "section": "Jupyter notebooks",
-    "text": "Jupyter notebooks\nIn Structured Programming Logic, you typically wrote Python in a file and ran the whole program from start to finish. Each run started fresh.\nA Jupyter notebook is different. A notebook is a single document that mixes:\n\ntext (explanations and notes)\ncode (Python)\noutput (tables, printed results, charts)\n\nInstead of running one program from top to bottom every time, a notebook is built from cells. You run the notebook one cell at a time, in the order you choose.\nThis is powerful for learning and working with data because you can try something, see the result immediately, adjust it, and continue. The textbook discusses this interactive workflow and how notebooks fit into it.\nThe most important new idea is that the notebook runs in a live Python session. That session keeps everything you have already created (variables, imported libraries, data you loaded). If you run cells out of order, you can end up in a confusing state where your notebook depends on something you ran earlier but forgot to rerun.\nBecause of that, this course uses one consistent habit:\nRestart Kernel and Run All\nThat is how you confirm your notebook works from a clean start and in the correct order.\nNotebooks are a great learning tool, but they can also make it easy to skip real understanding. If you only change a few lines and press run, you can end up with working output without knowing why it works. Your goal in this class is not just to produce output, but to understand what your code is doing. When you use examples from the book, from a class notebook, or from AI, your job is to test small changes and confirm you still understand the result.\nUsing notebooks does not mean you are not writing code. You will still write Python in this course, but you will write it in smaller pieces and run it as you go. Many examples in the book are meant to be typed, run, and modified so you can see how changes affect the result. Chapter 2 discusses this interactive workflow and how to work effectively in notebooks.",
+    "section": "Week 1 project work: Virtual Pet v1 kickoff",
+    "text": "Week 1 project work: Virtual Pet v1 kickoff\nVirtual Pet v1 is introduced in Week 1 and developed further in Week 2. In Week 1, the goal is to build the foundation of a menu-driven command-line program:\n\na clear, repeatable menu display\na loop that continues until the user chooses to quit\nmenu options that execute distinct code paths\nbasic program state tracked in variables (Week 2 will extend and improve the design)\n\nYour Week 1 implementation should include input validation for the menu choice (type and range). This prevents common input mistakes from terminating the program.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-01/index.html#reading-for-week-1-learning-python-6th-edition",
+    "href": "weekly-overview/week-01/index.html#reading-for-week-1-learning-python-6th-edition",
+    "title": "Week 1 Guide",
+    "section": "Reading for Week 1 (Learning Python, 6th Edition)",
+    "text": "Reading for Week 1 (Learning Python, 6th Edition)\nRead Chapters 1–7. This reading is intended as review and reference for the language features you will use immediately: expressions, basic types, control flow, loops, and program structure.",
     "crumbs": [
       "Home",
       "Weekly Overview",
@@ -635,19 +659,7 @@
     "href": "weekly-overview/week-01/index.html#week-1-tasks",
     "title": "Week 1 Guide",
     "section": "Week 1 tasks",
-    "text": "Week 1 tasks\nComplete the following this week:\n\nRead Chapters 1 and 2 in the textbook in full. Work through the examples and exercises as you read.\nFollow the guided setup videos to get your course environment setup.\nFollow the Week 1 assignment instructions.\nComplete the D2L quiz on Chapters 1 and 2.",
-    "crumbs": [
-      "Home",
-      "Weekly Overview",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weekly-overview/week-01/index.html#chapter-overview-for-week-1",
-    "href": "weekly-overview/week-01/index.html#chapter-overview-for-week-1",
-    "title": "Week 1 Guide",
-    "section": "Chapter overview for Week 1",
-    "text": "Chapter overview for Week 1\n\nChapter 1: Preliminaries\nChapter 1 sets the direction for the book and the course. It explains what the book is focused on, the kinds of structured data you will work with, and the core Python libraries used throughout. It also explains the conventions used in the book (especially import conventions) and how to read the code examples.\n\n\nChapter 2: Python Language Basics, IPython, and Jupyter Notebooks\nChapter 2 introduces the interactive workflow used in the book. It explains what notebooks are, how running code interactively differs from running a script, and how tools like tab completion and built-in help make it easier to explore unfamiliar code and data as you work.",
+    "text": "Week 1 tasks\nComplete the following tasks during Week 1:\n\nEnvironment setup\n\nCreate your course/project folder structure.\nCreate a virtual environment for your project.\nConfigure VS Code to use the project venv interpreter.\nConfirm you can run a .py file from the terminal.\n\nGit workflow\n\nInitialize a Git repository for your work. (You can choose how to manage the repository)\n\nVirtual Pet v1 kickoff\n\nCreate the menu loop skeleton.\nImplement several menu actions (simple behavior is acceptable at this stage).\nAdd menu input validation so the program continues running when input is invalid.\n\nReading\n\nLearning Python 6e Chapters 1–7. (Review)",
     "crumbs": [
       "Home",
       "Weekly Overview",
@@ -659,7 +671,7 @@
     "href": "weekly-overview/week-01/index.html#knowledge-goals-for-week-1",
     "title": "Week 1 Guide",
     "section": "Knowledge goals for Week 1",
-    "text": "Knowledge goals for Week 1\nBy the end of Week 1, you should be able to explain:\n\nWhat the book means by working with data in Python (the focus of the course)\nThe difference between NumPy and pandas at a high level\nWhat a Jupyter notebook is, and how it differs from running a Python script\nWhat a kernel is in the context of notebooks\nWhat an environment is and why we use one for this course\nWhat the book’s import conventions mean (for example, np and pd)",
+    "text": "Knowledge goals for Week 1\nBy the end of Week 1, you should be able to:\n\ndescribe what a virtual environment is and why the course uses it\nselect and verify the correct Python interpreter in VS Code\nrun a Python script from the terminal and interpret basic error messages\nuse Git to track work at a basic level (status, add, commit)\nimplement a menu-driven loop with input validation using while, if/elif/else, and input()",
     "crumbs": [
       "Home",
       "Weekly Overview",

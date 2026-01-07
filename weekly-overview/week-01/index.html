@@ -388,15 +388,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#week-1-focus" id="toc-week-1-focus" class="nav-link active" data-scroll-target="#week-1-focus">Week 1 focus</a></li>
-  <li><a href="#course-focus-and-expectations" id="toc-course-focus-and-expectations" class="nav-link" data-scroll-target="#course-focus-and-expectations">Course focus and expectations</a></li>
+  <li><a href="#course-workflow-expectations" id="toc-course-workflow-expectations" class="nav-link" data-scroll-target="#course-workflow-expectations">Course workflow expectations</a></li>
   <li><a href="#core-tools-we-will-be-using" id="toc-core-tools-we-will-be-using" class="nav-link" data-scroll-target="#core-tools-we-will-be-using">Core tools we will be using</a></li>
-  <li><a href="#jupyter-notebooks" id="toc-jupyter-notebooks" class="nav-link" data-scroll-target="#jupyter-notebooks">Jupyter notebooks</a></li>
+  <li><a href="#week-1-project-work-virtual-pet-v1-kickoff" id="toc-week-1-project-work-virtual-pet-v1-kickoff" class="nav-link" data-scroll-target="#week-1-project-work-virtual-pet-v1-kickoff">Week 1 project work: Virtual Pet v1 kickoff</a></li>
+  <li><a href="#reading-for-week-1-learning-python-6th-edition" id="toc-reading-for-week-1-learning-python-6th-edition" class="nav-link" data-scroll-target="#reading-for-week-1-learning-python-6th-edition">Reading for Week 1 (Learning Python, 6th Edition)</a></li>
   <li><a href="#week-1-tasks" id="toc-week-1-tasks" class="nav-link" data-scroll-target="#week-1-tasks">Week 1 tasks</a></li>
-  <li><a href="#chapter-overview-for-week-1" id="toc-chapter-overview-for-week-1" class="nav-link" data-scroll-target="#chapter-overview-for-week-1">Chapter overview for Week 1</a>
-  <ul class="collapse">
-  <li><a href="#chapter-1-preliminaries" id="toc-chapter-1-preliminaries" class="nav-link" data-scroll-target="#chapter-1-preliminaries">Chapter 1: Preliminaries</a></li>
-  <li><a href="#chapter-2-python-language-basics-ipython-and-jupyter-notebooks" id="toc-chapter-2-python-language-basics-ipython-and-jupyter-notebooks" class="nav-link" data-scroll-target="#chapter-2-python-language-basics-ipython-and-jupyter-notebooks">Chapter 2: Python Language Basics, IPython, and Jupyter Notebooks</a></li>
-  </ul></li>
   <li><a href="#knowledge-goals-for-week-1" id="toc-knowledge-goals-for-week-1" class="nav-link" data-scroll-target="#knowledge-goals-for-week-1">Knowledge goals for Week 1</a></li>
   </ul>
 </nav>
@@ -408,7 +404,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weekly-overview/week-01/index.html">Weekly Overview</a></li><li class="breadcrumb-item"><a href="../../weekly-overview/week-01/index.html">Week 1</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Week 1 Guide</h1>
-<p class="subtitle lead">Core tools and notebook workflow</p>
+<p class="subtitle lead">Course environment and workflow (VS Code, venv, Git)</p>
 </div>
 
 
@@ -427,26 +423,27 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="week-1-focus" class="level2">
 <h2 class="anchored" data-anchor-id="week-1-focus">Week 1 focus</h2>
-<p>You are coming into this course with Python experience from Structured Programming Logic. That course focused on writing and running Python programs in a more traditional editor-and-console workflow.</p>
-<p>In this course, you will still write Python, but the workspace will look different. We will use Jupyter notebooks as the main place to practice and show your work. A notebook combines explanation text, code, and output in one document, which makes it easier to follow examples, retry steps, and keep your work organized.</p>
-<p>Week 1 is where you learn that workflow and get your course setup working. You will also be introduced to the tool ecosystem used throughout the textbook: pandas and NumPy for working with data, and matplotlib for basic plotting. Chapter 1 introduces this ecosystem and why it exists. Chapter 2 introduces notebooks and the interactive workflow.</p>
-<p>This week is also a chance to get comfortable navigating the textbook and looking up unfamiliar terms. Do not be a passive learner. In an AI-driven environment, it is easy to copy an answer without understanding it, and it is also easy to get a confident answer that is wrong. Your job is to read, test, and confirm.</p>
-<p>Section 1.6 in the textbook is especially useful this week. It explains how to navigate the book, how to read the code examples, and the import conventions used throughout (for example, numpy as np and pandas as pd). Treat 1.6 as your guide for how to read and use the book effectively.</p>
-<p>One note before you start comparing your output to the book: the book often shows examples in an interactive In/Out style. Your notebook output may look similar but not identical, and that is fine. Focus on whether your code produces the correct result, not whether the formatting matches perfectly.</p>
+<p>The focus of Week 1 is to establish your course development environment and confirm that you can run, test, and manage Python programs using the standard workflow for this course. You will also begin the first project (Virtual Pet v1) by building the menu loop skeleton and practicing basic input/output patterns.</p>
+<p>Week 1 is a preparation week. There is no graded submission this week, but the work you complete here is required to be successful in Week 2.</p>
 </section>
-<section id="course-focus-and-expectations" class="level2">
-<h2 class="anchored" data-anchor-id="course-focus-and-expectations">Course focus and expectations</h2>
-<p>This course is focused on the Python tools used to work with data. You will learn how to load data, inspect it, clean it, reshape it, summarize it, and visualize it. The emphasis is on building practical skill with the core libraries and the day-to-day workflow used in data work.</p>
-<p>This course is not a statistics class. We are not spending the semester on statistical theory, inference, or formal methodology. When we use analytical ideas, it will be to support a tool we are learning and to help you interpret what your code produced. Think of this course as learning how to do the work in Python; your statistics elective covers more of the theory behind the methods.</p>
+<section id="course-workflow-expectations" class="level2">
+<h2 class="anchored" data-anchor-id="course-workflow-expectations">Course workflow expectations</h2>
+<p>In this course, you will primarily work in a file-and-terminal workflow:</p>
+<ul>
+<li>You will write Python in <code>.py</code> files (notebooks are not the default workspace for this course).</li>
+<li>You will run programs from the terminal (and/or the VS Code run tools that invoke the same interpreter).</li>
+<li>You will use a project virtual environment to keep Python settings consistent.</li>
+<li>You will use Git to track changes and document progress.</li>
+</ul>
+<p>Before you begin project work, verify that VS Code is using the Python interpreter from your project virtual environment. If you use the wrong interpreter, you may see behavior that does not match your intended setup.</p>
 </section>
 <section id="core-tools-we-will-be-using" class="level2">
 <h2 class="anchored" data-anchor-id="core-tools-we-will-be-using">Core tools we will be using</h2>
-<p>The course uses a small set of tools repeatedly. You do not need to master them in Week 1. You do need to recognize the names and understand what each tool is used for.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 8%">
+<col style="width: 52%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -457,77 +454,84 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>NumPy</td>
-<td>Working with numbers and arrays efficiently. It also supports many operations that pandas relies on.</td>
-<td>When you see <code>import numpy as np</code>, or when we work with numeric operations and arrays.</td>
+<td>Python 3</td>
+<td>Writing and running programs using the standard library and core language features</td>
+<td>Every week</td>
 </tr>
 <tr class="even">
-<td>pandas</td>
-<td>Working with tables (DataFrames): loading data, cleaning it, reshaping it, combining it, and summarizing it.</td>
-<td>Most weeks, because it is the main tool for manipulating data in this course.</td>
+<td>VS Code</td>
+<td>Editing, running, and debugging Python programs</td>
+<td>Every week</td>
 </tr>
 <tr class="odd">
-<td>matplotlib</td>
-<td>Creating plots so you can see patterns and communicate results.</td>
-<td>When we move into visualization, and whenever we need a chart to understand data.</td>
+<td>Terminal (Command Line)</td>
+<td>Running programs, navigating folders, and using Git</td>
+<td>Every week</td>
 </tr>
 <tr class="even">
-<td>Jupyter notebooks</td>
-<td>A workspace that keeps explanations, code, and output together. This is how you will practice and show your work.</td>
-<td>Every week, since most work will be done and submitted in notebooks.</td>
+<td>venv</td>
+<td>Creating an isolated Python environment per project</td>
+<td>Throughout the semester</td>
+</tr>
+<tr class="odd">
+<td>Git</td>
+<td>Tracking work history and managing incremental changes</td>
+<td>Throughout the semester</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="jupyter-notebooks" class="level2">
-<h2 class="anchored" data-anchor-id="jupyter-notebooks">Jupyter notebooks</h2>
-<p>In Structured Programming Logic, you typically wrote Python in a file and ran the whole program from start to finish. Each run started fresh.</p>
-<p>A Jupyter notebook is different. A notebook is a single document that mixes:</p>
+<section id="week-1-project-work-virtual-pet-v1-kickoff" class="level2">
+<h2 class="anchored" data-anchor-id="week-1-project-work-virtual-pet-v1-kickoff">Week 1 project work: Virtual Pet v1 kickoff</h2>
+<p>Virtual Pet v1 is introduced in Week 1 and developed further in Week 2. In Week 1, the goal is to build the foundation of a menu-driven command-line program:</p>
 <ul>
-<li>text (explanations and notes)</li>
-<li>code (Python)</li>
-<li>output (tables, printed results, charts)</li>
+<li>a clear, repeatable menu display</li>
+<li>a loop that continues until the user chooses to quit</li>
+<li>menu options that execute distinct code paths</li>
+<li>basic program state tracked in variables (Week 2 will extend and improve the design)</li>
 </ul>
-<p>Instead of running one program from top to bottom every time, a notebook is built from cells. You run the notebook one cell at a time, in the order you choose.</p>
-<p>This is powerful for learning and working with data because you can try something, see the result immediately, adjust it, and continue. The textbook discusses this interactive workflow and how notebooks fit into it.</p>
-<p>The most important new idea is that the notebook runs in a live Python session. That session keeps everything you have already created (variables, imported libraries, data you loaded). If you run cells out of order, you can end up in a confusing state where your notebook depends on something you ran earlier but forgot to rerun.</p>
-<p>Because of that, this course uses one consistent habit:</p>
-<p><strong>Restart Kernel and Run All</strong></p>
-<p>That is how you confirm your notebook works from a clean start and in the correct order.</p>
-<p>Notebooks are a great learning tool, but they can also make it easy to skip real understanding. If you only change a few lines and press run, you can end up with working output without knowing why it works. Your goal in this class is not just to produce output, but to understand what your code is doing. When you use examples from the book, from a class notebook, or from AI, your job is to test small changes and confirm you still understand the result.</p>
-<p>Using notebooks does not mean you are not writing code. You will still write Python in this course, but you will write it in smaller pieces and run it as you go. Many examples in the book are meant to be typed, run, and modified so you can see how changes affect the result. Chapter 2 discusses this interactive workflow and how to work effectively in notebooks.</p>
+<p>Your Week 1 implementation should include input validation for the menu choice (type and range). This prevents common input mistakes from terminating the program.</p>
+</section>
+<section id="reading-for-week-1-learning-python-6th-edition" class="level2">
+<h2 class="anchored" data-anchor-id="reading-for-week-1-learning-python-6th-edition">Reading for Week 1 (Learning Python, 6th Edition)</h2>
+<p>Read <strong>Chapters 1–7</strong>. This reading is intended as review and reference for the language features you will use immediately: expressions, basic types, control flow, loops, and program structure.</p>
 </section>
 <section id="week-1-tasks" class="level2">
 <h2 class="anchored" data-anchor-id="week-1-tasks">Week 1 tasks</h2>
-<p>Complete the following this week:</p>
+<p>Complete the following tasks during Week 1:</p>
 <ol type="1">
-<li>Read Chapters 1 and 2 in the textbook in full. Work through the examples and exercises as you read.</li>
-<li>Follow the guided setup videos to get your course environment setup.</li>
-<li>Follow the Week 1 assignment instructions.</li>
-<li>Complete the D2L quiz on Chapters 1 and 2.</li>
+<li><strong>Environment setup</strong>
+<ul>
+<li>Create your course/project folder structure.</li>
+<li>Create a virtual environment for your project.</li>
+<li>Configure VS Code to use the project venv interpreter.</li>
+<li>Confirm you can run a <code>.py</code> file from the terminal.</li>
+</ul></li>
+<li><strong>Git workflow</strong>
+<ul>
+<li>Initialize a Git repository for your work. (You can choose how to manage the repository)</li>
+</ul></li>
+<li><strong>Virtual Pet v1 kickoff</strong>
+<ul>
+<li>Create the menu loop skeleton.</li>
+<li>Implement several menu actions (simple behavior is acceptable at this stage).</li>
+<li>Add menu input validation so the program continues running when input is invalid.</li>
+</ul></li>
+<li><strong>Reading</strong>
+<ul>
+<li>Learning Python 6e Chapters 1–7. (Review)</li>
+</ul></li>
 </ol>
-</section>
-<section id="chapter-overview-for-week-1" class="level2">
-<h2 class="anchored" data-anchor-id="chapter-overview-for-week-1">Chapter overview for Week 1</h2>
-<section id="chapter-1-preliminaries" class="level3">
-<h3 class="anchored" data-anchor-id="chapter-1-preliminaries">Chapter 1: Preliminaries</h3>
-<p>Chapter 1 sets the direction for the book and the course. It explains what the book is focused on, the kinds of structured data you will work with, and the core Python libraries used throughout. It also explains the conventions used in the book (especially import conventions) and how to read the code examples.</p>
-</section>
-<section id="chapter-2-python-language-basics-ipython-and-jupyter-notebooks" class="level3">
-<h3 class="anchored" data-anchor-id="chapter-2-python-language-basics-ipython-and-jupyter-notebooks">Chapter 2: Python Language Basics, IPython, and Jupyter Notebooks</h3>
-<p>Chapter 2 introduces the interactive workflow used in the book. It explains what notebooks are, how running code interactively differs from running a script, and how tools like tab completion and built-in help make it easier to explore unfamiliar code and data as you work.</p>
-</section>
 </section>
 <section id="knowledge-goals-for-week-1" class="level2">
 <h2 class="anchored" data-anchor-id="knowledge-goals-for-week-1">Knowledge goals for Week 1</h2>
-<p>By the end of Week 1, you should be able to explain:</p>
+<p>By the end of Week 1, you should be able to:</p>
 <ul>
-<li>What the book means by working with data in Python (the focus of the course)</li>
-<li>The difference between NumPy and pandas at a high level</li>
-<li>What a Jupyter notebook is, and how it differs from running a Python script</li>
-<li>What a kernel is in the context of notebooks</li>
-<li>What an environment is and why we use one for this course</li>
-<li>What the book’s import conventions mean (for example, np and pd)</li>
+<li>describe what a virtual environment is and why the course uses it</li>
+<li>select and verify the correct Python interpreter in VS Code</li>
+<li>run a Python script from the terminal and interpret basic error messages</li>
+<li>use Git to track work at a basic level (status, add, commit)</li>
+<li>implement a menu-driven loop with input validation using <code>while</code>, <code>if/elif/else</code>, and <code>input()</code></li>
 </ul>
 
 
