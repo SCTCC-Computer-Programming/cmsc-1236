@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CMSC 1236 – Advanced Programming in Python – CMSC 1217 : Introduction to Data Analytics</title>
+<title>CMSC 1236 – Python Environment Setup (Windows) – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -248,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">CMSC 1217 : Introduction to Data Analytics</span>
+    <span class="navbar-title">CMSC 1236 : Advanced Python Programming</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -273,7 +308,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">CMSC 1236 – Advanced Programming in Python</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">CMSC 1236 – Python Environment Setup (Windows)</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -374,21 +409,8 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Guides</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../shared/guides/setup/miniconda.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Miniconda Setup</span></a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Guides</span></span>
   </li>
     </ul>
     </div>
@@ -400,26 +422,38 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#assignment-virtual-pet-simulator" id="toc-assignment-virtual-pet-simulator" class="nav-link active" data-scroll-target="#assignment-virtual-pet-simulator">Assignment: Virtual Pet Simulator</a>
+  <li><a href="#what-you-will-do" id="toc-what-you-will-do" class="nav-link active" data-scroll-target="#what-you-will-do">What you will do</a></li>
+  <li><a href="#required-tools" id="toc-required-tools" class="nav-link" data-scroll-target="#required-tools">Required tools</a></li>
+  <li><a href="#step-1-verify-vs-code-and-git" id="toc-step-1-verify-vs-code-and-git" class="nav-link" data-scroll-target="#step-1-verify-vs-code-and-git">Step 1 — Verify VS Code and Git</a></li>
+  <li><a href="#verify-vs-code" id="toc-verify-vs-code" class="nav-link" data-scroll-target="#verify-vs-code">Verify VS Code</a></li>
+  <li><a href="#step-2-create-your-course-folder-on-the-root-drive" id="toc-step-2-create-your-course-folder-on-the-root-drive" class="nav-link" data-scroll-target="#step-2-create-your-course-folder-on-the-root-drive">Step 2 — Create your course folder on the root drive</a>
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#pet-class" id="toc-pet-class" class="nav-link" data-scroll-target="#pet-class"><strong>Pet Class</strong></a></li>
-  <li><a href="#method-implementations" id="toc-method-implementations" class="nav-link" data-scroll-target="#method-implementations"><strong>Method Implementations:</strong></a>
+  <li><a href="#verify-the-folder-structure" id="toc-verify-the-folder-structure" class="nav-link" data-scroll-target="#verify-the-folder-structure">Verify the folder structure</a></li>
+  </ul></li>
+  <li><a href="#step-3-create-the-cmsc-1236-python-environment" id="toc-step-3-create-the-cmsc-1236-python-environment" class="nav-link" data-scroll-target="#step-3-create-the-cmsc-1236-python-environment">Step 3 — Create the CMSC 1236 Python environment</a>
   <ul class="collapse">
-  <li><a href="#feed-method" id="toc-feed-method" class="nav-link" data-scroll-target="#feed-method"><code>feed</code> Method:</a></li>
-  <li><a href="#play-method" id="toc-play-method" class="nav-link" data-scroll-target="#play-method"><code>play</code> Method:</a></li>
-  <li><a href="#rest-method" id="toc-rest-method" class="nav-link" data-scroll-target="#rest-method"><code>rest</code> Method:</a></li>
-  <li><a href="#customize-method" id="toc-customize-method" class="nav-link" data-scroll-target="#customize-method"><code>customize</code> Method:</a></li>
-  <li><a href="#status-method" id="toc-status-method" class="nav-link" data-scroll-target="#status-method"><code>status</code> Method:</a></li>
-  <li><a href="#is_happy-method" id="toc-is_happy-method" class="nav-link" data-scroll-target="#is_happy-method"><code>is_happy</code> Method:</a></li>
-  <li><a href="#main-function-instructions-for-virtual-pet-simulator" id="toc-main-function-instructions-for-virtual-pet-simulator" class="nav-link" data-scroll-target="#main-function-instructions-for-virtual-pet-simulator">Main Function Instructions for Virtual Pet Simulator</a></li>
-  <li><a href="#data-persistence" id="toc-data-persistence" class="nav-link" data-scroll-target="#data-persistence"><strong>Data Persistence:</strong></a></li>
-  <li><a href="#updated-sample-output" id="toc-updated-sample-output" class="nav-link" data-scroll-target="#updated-sample-output">Updated Sample Output</a></li>
-  <li><a href="#uml" id="toc-uml" class="nav-link" data-scroll-target="#uml">UML</a></li>
+  <li><a href="#create-the-environment-command-prompt" id="toc-create-the-environment-command-prompt" class="nav-link" data-scroll-target="#create-the-environment-command-prompt">Create the environment (Command Prompt)</a></li>
+  <li><a href="#activate-the-environment-command-prompt" id="toc-activate-the-environment-command-prompt" class="nav-link" data-scroll-target="#activate-the-environment-command-prompt">Activate the environment (Command Prompt)</a></li>
+  <li><a href="#verify-the-environment-is-working" id="toc-verify-the-environment-is-working" class="nav-link" data-scroll-target="#verify-the-environment-is-working">Verify the environment is working</a></li>
+  <li><a href="#deactivate-the-environment" id="toc-deactivate-the-environment" class="nav-link" data-scroll-target="#deactivate-the-environment">Deactivate the environment</a></li>
   </ul></li>
+  <li><a href="#step-4-initialize-git-in-your-course-folder" id="toc-step-4-initialize-git-in-your-course-folder" class="nav-link" data-scroll-target="#step-4-initialize-git-in-your-course-folder">Step 4 — Initialize Git in your course folder</a>
+  <ul class="collapse">
+  <li><a href="#initialize-the-repository" id="toc-initialize-the-repository" class="nav-link" data-scroll-target="#initialize-the-repository">Initialize the repository</a></li>
+  <li><a href="#create-a-.gitignore-file" id="toc-create-a-.gitignore-file" class="nav-link" data-scroll-target="#create-a-.gitignore-file">Create a <code>.gitignore</code> file</a></li>
   </ul></li>
+  <li><a href="#step-5-set-vs-code-to-use-the-cmsc-1236-environment" id="toc-step-5-set-vs-code-to-use-the-cmsc-1236-environment" class="nav-link" data-scroll-target="#step-5-set-vs-code-to-use-the-cmsc-1236-environment">Step 5 — Set VS Code to use the CMSC 1236 environment</a></li>
+  <li><a href="#step-6-test-python-from-the-vs-code-terminal" id="toc-step-6-test-python-from-the-vs-code-terminal" class="nav-link" data-scroll-target="#step-6-test-python-from-the-vs-code-terminal">Step 6 — Test Python from the VS Code terminal</a></li>
+  <li><a href="#step-7-import-the-book-example-code" id="toc-step-7-import-the-book-example-code" class="nav-link" data-scroll-target="#step-7-import-the-book-example-code">Step 7 — Import the book example code</a>
+  <ul class="collapse">
+  <li><a href="#create-a-place-to-store-the-book-code" id="toc-create-a-place-to-store-the-book-code" class="nav-link" data-scroll-target="#create-a-place-to-store-the-book-code">Create a place to store the book code</a></li>
+  <li><a href="#fluent-python-2nd-edition-clone-the-official-github-repo" id="toc-fluent-python-2nd-edition-clone-the-official-github-repo" class="nav-link" data-scroll-target="#fluent-python-2nd-edition-clone-the-official-github-repo">Fluent Python (2nd Edition) — clone the official GitHub repo</a></li>
+  <li><a href="#learning-python-6th-edition-download-the-official-examples-zip" id="toc-learning-python-6th-edition-download-the-official-examples-zip" class="nav-link" data-scroll-target="#learning-python-6th-edition-download-the-official-examples-zip">Learning Python (6th Edition) — download the official examples ZIP</a></li>
+  <li><a href="#unzip-it" id="toc-unzip-it" class="nav-link" data-scroll-target="#unzip-it">Unzip it</a></li>
+  </ul></li>
+  <li><a href="#you-are-done" id="toc-you-are-done" class="nav-link" data-scroll-target="#you-are-done">You are done</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Week-1--and-2-Assignment.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -427,8 +461,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CMSC 1236 – Advanced Programming in Python</h1>
-<p class="subtitle lead">Week 1–2 Assignment</p>
+<h1 class="title">CMSC 1236 – Python Environment Setup (Windows)</h1>
 </div>
 
 
@@ -445,405 +478,310 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="assignment-virtual-pet-simulator" class="level1">
-<h1>Assignment: Virtual Pet Simulator</h1>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console.</p>
-</section>
-<section id="pet-class" class="level2">
-<h2 class="anchored" data-anchor-id="pet-class"><strong>Pet Class</strong></h2>
-<p>The <code>Pet</code> class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (<code>if</code> statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.</p>
+<p>For CMSC 1236, we will create a separate Python environment so nothing conflicts with your other classes.</p>
+<section id="what-you-will-do" class="level3">
+<h3 class="anchored" data-anchor-id="what-you-will-do">What you will do</h3>
 <ol type="1">
-<li><p><strong>Implementing the <code>Pet</code> Class:</strong></p>
-<ul>
-<li><p>Follow the provided UML diagram to create the <code>Pet</code> class with the attributes <code>name</code>, <code>hunger</code>, <code>happiness</code>, <code>energy</code>, <code>color</code>, and <code>type</code>.</p></li>
-<li><p>Initialize these attributes in the <code>__init__</code> method. <code>name</code>, <code>color</code>, and <code>type</code> will be strings provided when a new pet is created, and <code>hunger</code>, <code>happiness</code>, and <code>energy</code> should start with random values between 0 and 10.</p></li>
-</ul></li>
-<li><p><strong>Using Conditional Statements in Class Methods:</strong></p>
-<ul>
-<li>In methods like <code>feed</code>, <code>play</code>, and <code>rest</code>, you will use <code>if</code> statements to check the state of the pet and decide what action to take.</li>
-</ul></li>
+<li>Verify required tools are installed (VS Code + Git)</li>
+<li>Create a course folder on your <strong>C:&nbsp;drive</strong></li>
+<li>Create and activate a <strong>CMSC 1236 Python environment</strong></li>
+<li>“Git” your course folder (initialize a repository)</li>
+<li>Open the folder in VS Code and verify VS Code is using the course environment</li>
+<li>Run a short test program from the VS Code terminal</li>
 </ol>
 </section>
-<section id="method-implementations" class="level2">
-<h2 class="anchored" data-anchor-id="method-implementations"><strong>Method Implementations:</strong></h2>
-<section id="feed-method" class="level3">
-<h3 class="anchored" data-anchor-id="feed-method"><code>feed</code> Method:</h3>
-<section id="objective" class="level4">
-<h4 class="anchored" data-anchor-id="objective">Objective</h4>
-<p>The <code>feed</code> method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.</p>
-</section>
-<section id="method-behavior-and-logic" class="level4">
-<h4 class="anchored" data-anchor-id="method-behavior-and-logic">Method Behavior and Logic</h4>
-<ol type="1">
-<li><strong>Reducing Hunger and Increasing Happiness</strong>:
+<section id="required-tools" class="level3">
+<h3 class="anchored" data-anchor-id="required-tools">Required tools</h3>
 <ul>
-<li>When the <code>feed</code> method is called, first check the pet’s current hunger level (<code>self.hunger</code>).</li>
-<li>If <code>self.hunger</code> is greater than 0, it indicates that the pet is hungry. In this case, reduce <code>self.hunger</code> by 1 to represent feeding the pet. Ensure <code>self.hunger</code> does not go below 0.</li>
-<li>After feeding, increase <code>self.happiness</code> by 1. However, ensure that <code>self.happiness</code> does not exceed 10.</li>
-</ul></li>
-<li><strong>Managing Happiness When Not Hungry</strong>:
-<ul>
-<li>If <code>self.hunger</code> is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce <code>self.happiness</code> by 1, since overfeeding will cause discomfort.</li>
-</ul></li>
-<li><strong>Returning Feedback</strong>:
-<ul>
-<li>Return a feedback string that reflects the pet’s reaction to being fed.</li>
-</ul></li>
-</ol>
-</section>
-</section>
-<section id="play-method" class="level3">
-<h3 class="anchored" data-anchor-id="play-method"><code>play</code> Method:</h3>
-<section id="objective-1" class="level4">
-<h4 class="anchored" data-anchor-id="objective-1">Objective</h4>
-<p>The <code>play</code> method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.</p>
-</section>
-<section id="method-behavior-and-logic-1" class="level4">
-<h4 class="anchored" data-anchor-id="method-behavior-and-logic-1">Method Behavior and Logic</h4>
-<ol type="1">
-<li><strong>Handling Sadness</strong>:
-<ul>
-<li>Before initiating play, check if the pet’s happiness level (<code>self.happiness</code>) is at 0.</li>
-<li>If <code>self.happiness</code> is 0, it indicates that the pet is too sad to engage in play.</li>
-</ul></li>
-<li><strong>Handling Tiredness</strong>:
-<ul>
-<li>Check the pet’s energy level (<code>self.energy</code>).</li>
-<li>If <code>self.energy</code> is 0, it means the pet is too tired to play.</li>
-</ul></li>
-<li><strong>Playing with the Pet</strong>:
-<ul>
-<li>If the pet is neither too sad nor too tired (i.e., <code>self.happiness</code> is above 0 and <code>self.energy</code> is above 0), proceed to play with the pet.</li>
-<li>Increase <code>self.happiness</code> by 1 to represent the positive effect of playing. However, ensure that <code>self.happiness</code> does not exceed 10.</li>
-<li>Decrease <code>self.energy</code> by 1 to account for the energy expended during play. However, it’s important to ensure that <code>self.energy</code> does not fall below 0.</li>
-</ul></li>
-<li><strong>Returning Feedback</strong>:
-<ul>
-<li>Return a feedback string that reflects the pet’s reaction to playing.</li>
-</ul></li>
-</ol>
-</section>
-</section>
-<section id="rest-method" class="level3">
-<h3 class="anchored" data-anchor-id="rest-method"><code>rest</code> Method:</h3>
-<section id="objective-2" class="level4">
-<h4 class="anchored" data-anchor-id="objective-2">Objective</h4>
-<p>The <code>rest</code> method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.</p>
-</section>
-<section id="method-behavior-and-logic-2" class="level4">
-<h4 class="anchored" data-anchor-id="method-behavior-and-logic-2">Method Behavior and Logic</h4>
-<ol type="1">
-<li><strong>Increasing Energy</strong>:
-<ul>
-<li>Check the pet’s current energy level (<code>self.energy</code>).</li>
-<li>If <code>self.energy</code> is less than 10, it indicates the pet could benefit from rest. Increase <code>self.energy</code> by 1 to represent the energy regained from resting. However, ensure that <code>self.energy</code> does not exceed 10.</li>
-</ul></li>
-<li><strong>Managing Happiness When Energy is at Maximum</strong>:
-<ul>
-<li>If <code>self.energy</code> is already at 10 (meaning the pet is fully rested), resting will affect its happiness.</li>
-<li>If <code>self.energy</code> is already at 10 and <code>self.happiness</code> is greater than 0, reduce <code>self.happiness</code> it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent <code>self.happiness</code> from going below 0.</li>
-</ul></li>
-<li><strong>Returning Feedback</strong>:
-<ul>
-<li>Return a feedback string that reflects the pet’s reaction to resting.</li>
-</ul></li>
-</ol>
-</section>
-</section>
-<section id="customize-method" class="level3">
-<h3 class="anchored" data-anchor-id="customize-method"><code>customize</code> Method:</h3>
-<section id="objective-3" class="level4">
-<h4 class="anchored" data-anchor-id="objective-3">Objective</h4>
-<p>The <code>customize</code> method allows the user to change the pet’s appearance by setting new values for the <code>color</code> and <code>type</code> attributes.</p>
-</section>
-<section id="method-behavior-and-logic-3" class="level4">
-<h4 class="anchored" data-anchor-id="method-behavior-and-logic-3">Method Behavior and Logic</h4>
-<ol type="1">
-<li><strong>Setting New Attributes</strong>:
-<ul>
-<li>The method takes two parameters, <code>color</code> and <code>pet_type</code>, and assigns them to the pet’s <code>color</code> and <code>type</code> attributes.</li>
-<li>This allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.</li>
-</ul></li>
-</ol>
-</section>
-</section>
-<section id="status-method" class="level3">
-<h3 class="anchored" data-anchor-id="status-method"><code>status</code> Method:</h3>
-<section id="objective-4" class="level4">
-<h4 class="anchored" data-anchor-id="objective-4">Objective</h4>
-<p>The <code>status</code> method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.</p>
-</section>
-<section id="method-behavior-and-logic-4" class="level4">
-<h4 class="anchored" data-anchor-id="method-behavior-and-logic-4">Method Behavior and Logic</h4>
-<ol type="1">
-<li><strong>Creating a Status Summary</strong>:
-<ul>
-<li>The method compiles a string that summarizes the animal’s current status.</li>
-<li>This summary includes the animal’s name and its current hunger, happiness, energy, color, and type.</li>
-</ul></li>
-<li><strong>String Formatting</strong>:
-<ul>
-<li>Create a readable and well-formatted summary.</li>
-<li>Each attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.</li>
-</ul></li>
-<li><strong>Returning the Summary</strong>:
-<ul>
-<li>The method returns the formatted string.</li>
-</ul></li>
-</ol>
-</section>
-</section>
-<section id="is_happy-method" class="level3">
-<h3 class="anchored" data-anchor-id="is_happy-method"><code>is_happy</code> Method:</h3>
-<section id="objective-5" class="level4">
-<h4 class="anchored" data-anchor-id="objective-5">Objective</h4>
-<p>The <code>is_happy</code> method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.</p>
-</section>
-<section id="method-behavior-and-logic-5" class="level4">
-<h4 class="anchored" data-anchor-id="method-behavior-and-logic-5">Method Behavior and Logic</h4>
-<ol type="1">
-<li><strong>Evaluating Happiness</strong>:
-<ul>
-<li>The method assesses whether the animal’s happiness level (<code>self.happiness</code>) is below or above 5.</li>
-<li>If <code>self.happiness</code> is above 5 the animal is considered to be happy.</li>
-</ul></li>
-<li><strong>Returning a Boolean Result</strong>:
-<ul>
-<li>The method returns <code>True</code> if the animal’s happiness is above 5, indicating that the animal is happy.</li>
-<li>It returns <code>False</code> if the happiness level is 5 or lower, indicating that the animal is not happy.</li>
-</ul></li>
-</ol>
-</section>
-</section>
-<section id="main-function-instructions-for-virtual-pet-simulator" class="level3">
-<h3 class="anchored" data-anchor-id="main-function-instructions-for-virtual-pet-simulator">Main Function Instructions for Virtual Pet Simulator</h3>
-<section id="overview-1" class="level4">
-<h4 class="anchored" data-anchor-id="overview-1">Overview</h4>
-<p>Your <code>main()</code> function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.</p>
-</section>
-<section id="menu-system" class="level4">
-<h4 class="anchored" data-anchor-id="menu-system">1. Menu System:</h4>
-<ul>
-<li>Implement a menu system that displays a list of possible actions the user can perform. These actions include:
-<ul>
-<li>Feeding the pet</li>
-<li>Playing with the pet</li>
-<li>Letting the pet rest</li>
-<li>Checking the pet’s status</li>
-<li>Customizing the pet’s appearance</li>
-<li>Saving the pet’s state and exiting the program</li>
-</ul></li>
-<li>Use an input prompt to allow the user to select an action and then call the corresponding method from the <code>Pet</code> class.</li>
+<li>VS Code</li>
+<li>Git</li>
 </ul>
 </section>
-<section id="handling-invalid-input" class="level4">
-<h4 class="anchored" data-anchor-id="handling-invalid-input">2. Handling Invalid Input:</h4>
+<section id="step-1-verify-vs-code-and-git" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-verify-vs-code-and-git">Step 1 — Verify VS Code and Git</h3>
+<section id="verify-git" class="level4">
+<h4 class="anchored" data-anchor-id="verify-git">Verify Git</h4>
+<p>Open a <strong>CMD Prompt</strong> window and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see a version number (example: <code>git version 2.xx.x</code>).</p>
+</section>
+</section>
+<section id="verify-vs-code" class="level3">
+<h3 class="anchored" data-anchor-id="verify-vs-code">Verify VS Code</h3>
+<p>Open <strong>CMD Prompt</strong> and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>code <span class="op">--</span>version</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see a version number (example: <code>1.107.1 994fd12f8d3a5aa16f17d42c041e5809167e845a</code>)</p>
+</section>
+<section id="step-2-create-your-course-folder-on-the-root-drive" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-create-your-course-folder-on-the-root-drive">Step 2 — Create your course folder on the root drive</h2>
+<p>Your CMSC 1236 directory must be created on the root of the <code>C:</code> drive:</p>
 <ul>
-<li>Ensure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).</li>
-<li>Display an error message if the user inputs an invalid option and show the menu again for a valid selection.</li>
+<li><code>C:\cmsc-1236</code></li>
+</ul>
+<p>Inside it, create these folders:</p>
+<ul>
+<li><code>assignments</code></li>
+<li><code>notes</code></li>
+<li><code>projects</code></li>
+</ul>
+<p>Creating the course folder on the root drive helps avoid common Windows problems:</p>
+<ul>
+<li><strong>Short, predictable paths</strong> (fewer issues with tools that don’t like long file paths).</li>
+<li><strong>Avoids OneDrive syncing</strong> (Desktop/Documents are often synced; syncing can lock files and break builds/tools).</li>
+<li><strong>Makes Git + terminals simpler</strong> (easy to navigate, fewer permission surprises).</li>
+<li><strong>Keeps course work separate</strong> from other software setups (so you don’t accidentally mix files/tools between courses).</li>
+</ul>
+<section id="cmd-commands-command-prompt" class="level4">
+<h4 class="anchored" data-anchor-id="cmd-commands-command-prompt">CMD commands (Command Prompt)</h4>
+<ol type="1">
+<li><p>Open <strong>Command Prompt (cmd)</strong>.</p></li>
+<li><p>Go to the root of the C: drive:</p></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span><span class="sc">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Create the course folder:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> cmsc<span class="at">-1236</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="1">
+<li>Move into the course folder:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> \cmsc-1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="5" type="1">
+<li>Create the three required subfolders:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> assignments</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> notes</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> projects</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="verify-the-folder-structure" class="level3">
+<h3 class="anchored" data-anchor-id="verify-the-folder-structure">Verify the folder structure</h3>
+<p>Run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Your folder structure should look like similar to the following:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode makefile code-with-copy"><code class="sourceCode makefile"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">C:</span><span class="dt">\cmsc-1236</span><span class="ch">\</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dt">  assignments</span><span class="ch">\</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dt">  notes</span><span class="ch">\</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="dt">  projects</span><span class="ch">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="step-3-create-the-cmsc-1236-python-environment" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-create-the-cmsc-1236-python-environment">Step 3 — Create the CMSC 1236 Python environment</h2>
+<p>We will create a dedicated environment named:</p>
+<ul>
+<li><code>cmsc1236</code></li>
+</ul>
+<p>This environment is <strong>separate from any miniconda environments</strong> you may be using in other courses, so nothing conflicts.</p>
+<p>A dedicated environment ensures that we:</p>
+<ul>
+<li>Keep CMSC 1236 packages separate from other classes/tools</li>
+<li>Ensure the course runs on a consistent Python version</li>
+</ul>
+<section id="create-the-environment-command-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-environment-command-prompt">Create the environment (Command Prompt)</h3>
+<ol type="1">
+<li>Open <strong>Command Prompt (cmd)</strong><br>
+</li>
+<li>Go to your course folder (if not already there):</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> \cmsc-1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Create the environment folder using Python’s built-in venv tool:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>py <span class="at">-m</span> venv cmsc1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="activate-the-environment-command-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="activate-the-environment-command-prompt">Activate the environment (Command Prompt)</h3>
+<p>Run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cmsc1236\Scripts\activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>When it activates, your prompt will look like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span>cmsc1236) C:\cmsc-1236<span class="kw">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="verify-the-environment-is-working" class="level3">
+<h3 class="anchored" data-anchor-id="verify-the-environment-is-working">Verify the environment is working</h3>
+<p>Run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>python -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see a Python version printed:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Python 3.xx.x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="deactivate-the-environment" class="level3">
+<h3 class="anchored" data-anchor-id="deactivate-the-environment">Deactivate the environment</h3>
+<p>When you are finished:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="step-4-initialize-git-in-your-course-folder" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-initialize-git-in-your-course-folder">Step 4 — Initialize Git in your course folder</h2>
+<p>We use Git to track your work over time and to make submitting or backing up your work easier.<br>
+This step creates a <code>.git</code> folder that stores your work history.</p>
+<section id="initialize-the-repository" class="level3">
+<h3 class="anchored" data-anchor-id="initialize-the-repository">Initialize the repository</h3>
+<p>Open <strong>Command Prompt (cmd)</strong> and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1236</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>git init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="create-a-.gitignore-file" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-.gitignore-file">Create a <code>.gitignore</code> file</h3>
+<p>Git does <strong>not</strong> create a <code>.gitignore</code> automatically. You will create it so that you don’t accidentally commit:</p>
+<ul>
+<li>Python cache files</li>
+<li>editor settings</li>
+<li>temporary files</li>
+</ul>
+<p>In <code>C:\cmsc-1236</code>, create a file named:</p>
+<p><code>.gitignore</code></p>
+<p>Paste the following into it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a># Python cache</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>__pycache__/</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>*.pyc</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a># Environment / OS clutter</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>.DS_Store</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>Thumbs.db</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a># VS Code</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>.vscode/</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a># Local environment folder (if you create it inside the course folder<span class="kw">)</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>cmsc1236/</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>.venv/</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a># Common local files</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>*.log</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>*.tmp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="step-5-set-vs-code-to-use-the-cmsc-1236-environment" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-set-vs-code-to-use-the-cmsc-1236-environment">Step 5 — Set VS Code to use the CMSC 1236 environment</h2>
+<p>In this step, you will tell VS Code which Python interpreter to use for <strong>this course</strong> so that:</p>
+<ul>
+<li>Run/Debug uses the correct Python</li>
+<li>The integrated terminal runs the correct Python</li>
+<li>Your assignments behave consistently across machines</li>
+</ul>
+<blockquote class="blockquote">
+<p>Note: This environment is <strong>separate from the Miniconda environments</strong> you may be using in other courses, so nothing conflicts.</p>
+</blockquote>
+<ol type="1">
+<li>Open your course folder in VS Code</li>
+</ol>
+<ul>
+<li>VS Code stores interpreter settings <em>per folder/project</em></li>
+<li>Opening the correct folder ensures the interpreter you select is tied to CMSC 1236 only</li>
+</ul>
+<ol start="2" type="1">
+<li>Select the correct Python interpreter</li>
+</ol>
+<ol type="a">
+<li>Select View → Command Palette or Press: <code>Ctrl + Shift + P</code><br>
+</li>
+<li>Type: <code>Python: Select Interpreter</code></li>
+<li>Choose the interpreter that points to the course environment:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>C:\cmsc-1236\.venv\Scripts\python.exe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you do not see it:</p>
+<ul>
+<li>Choose <strong>Enter interpreter path…</strong></li>
+<li>Then browse to: <code>C:\cmsc-1236\.venv\Scripts\python.exe</code></li>
+</ul>
+<ol start="3" type="1">
+<li>Verify in the VS Code Terminal (Command Prompt)</li>
+</ol>
+<ol type="a">
+<li>In VS Code, open a CMD Prompt terminal:
+<ul>
+<li><strong>Terminal → New Terminal</strong></li>
+</ul></li>
+<li>Confirm you are in the course folder. If not, run:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="a">
+<li>Activate the course environment:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>.venv\Scripts\activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="a">
+<li>Verify that Python is coming from the course environment:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>where python</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Expected output includes a path like:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>C:\cmsc-1236\.venv\Scripts\python.exe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="5" type="1">
+<li>Confirm the Python version:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>python -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>If <code>where python</code> does NOT point into <code>C:\cmsc-1236\.venv\...</code>, you are not using the course environment</li>
+<li>Fixing it here prevents “it works on my machine” problems later</li>
 </ul>
 </section>
-</section>
-<section id="data-persistence" class="level3">
-<h3 class="anchored" data-anchor-id="data-persistence"><strong>Data Persistence:</strong></h3>
+<section id="step-6-test-python-from-the-vs-code-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-test-python-from-the-vs-code-terminal">Step 6 — Test Python from the VS Code terminal</h2>
+<p>Create a new file here:</p>
 <ul>
-<li>Use pickling to save and load the pet’s state. Implement a <code>save_pet</code> and a <code>load_pet</code> function in the <code>main()</code> for this purpose.</li>
-<li>Ensure the program can handle situations where no saved data exists.</li>
+<li><code>C:\cmsc-1236\projects\week-01\test_env.py</code></li>
 </ul>
-<p>### Sample Output</p>
+<p>Paste this code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python version:"</span>, sys.version)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python executable:"</span>, sys.executable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Run it in the VS Code terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cd</span> C<span class="op">:</span>\cmsc-1236\projects\week-01\</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>python test_env<span class="op">.</span><span class="fu">py</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see:</p>
+<ul>
+<li>A Python <strong>3.xx.x</strong> version output</li>
+<li>A path showing it is running from the <code>cmsc1236</code> environment</li>
+</ul>
 </section>
-<section id="updated-sample-output" class="level3">
-<h3 class="anchored" data-anchor-id="updated-sample-output">Updated Sample Output</h3>
-<pre><code>Welcome to the Virtual Pet Simulator!
-
-In this program, you will create and take care of a virtual pet.
-You can feed, play with, and let your pet rest to maintain its health and happiness.
-You can also customize your pet's appearance and save its state to continue later.
-Use the menu to interact with your pet and make sure it stays happy and healthy!
-
-Let's get started!
-
-What is your pet's name? Joe
-Choose a color for your pet (e.g., red, blue, green): Blue
-Choose a type for your pet (e.g., dog, cat, bird): Dog
-
-Here is the current status of your pet:
-
-Joe's Status:
-Color: Blue
-Type: Dog
-Hunger: 8
-Happiness: 1
-Energy: 10
-
-What would you like to do with your pet?
-1: Feed
-2: Play
-3: Rest
-4: Check Status
-5: Customize Pet
-6: Save and Exit
-Enter your choice: 9
-Invalid choice. Please enter a number between 1 and 6.
-
-What would you like to do with your pet?
-1: Feed
-2: Play
-3: Rest
-4: Check Status
-5: Customize Pet
-6: Save and Exit
-Enter your choice: 4
-
-Joe's Status:
-Color: Blue
-Type: Dog
-Hunger: 8
-Happiness: 1
-Energy: 10
-
-What would you like to do with your pet?
-1: Feed
-2: Play
-3: Rest
-4: Check Status
-5: Customize Pet
-6: Save and Exit
-Enter your choice: 3
-Joe is rested and seems a bit bored.
-
-What would you like to do with your pet?
-1: Feed
-2: Play
-3: Rest
-4: Check Status
-5: Customize Pet
-6: Save and Exit
-Enter your choice: 1
-You fed Joe. Joe seems happier after eating!
-
-What would you like to do with your pet?
-1: Feed
-2: Play
-3: Rest
-4: Check Status
-5: Customize Pet
-6: Save and Exit
-Enter your choice: 4
-
-Joe's Status:
-Color: Blue
-Type: Dog
-Hunger: 7
-Happiness: 2
-Energy: 10
-
-What would you like to do with your pet?
-1: Feed
-2: Play
-3: Rest
-4: Check Status
-5: Customize Pet
-6: Save and Exit
-Enter your choice: 5
-Choose a color for your pet: Green
-Choose a type for your pet: Dog
-Joe is now a Green Dog!
-
-What would you like to do with your pet?
-1: Feed
-2: Play
-3: Rest
-4: Check Status
-5: Customize Pet
-6: Save and Exit
-Enter your choice: 6
-Pet state saved. Goodbye!
-</code></pre>
-<section id="scenario-starting-the-program-with-a-file-created" class="level4">
-<h4 class="anchored" data-anchor-id="scenario-starting-the-program-with-a-file-created">Scenario: Starting the Program with a File Created</h4>
-<pre><code>Welcome to the Virtual Pet Simulator!
-
-In this program, you will create and take care of a virtual pet.
-You can feed, play with, and let your pet rest to maintain its health and happiness.
-You can also customize your pet's appearance and save its state to continue later.
-Use the menu to interact with your pet and make sure it stays happy and healthy!
-
-Let's get started!
-
-
-Here is the current status of your pet:
-
-Joe's Status:
-Color: Green
-Type: Dog
-Hunger: 7
-Happiness: 2
-Energy: 10
-
-What would you like to do with your pet?
-1: Feed
-2: Play
-3: Rest
-4: Check Status
-5: Customize Pet
-6: Save and Exit
-Enter your choice: 2
-Playing with Joe was fun!
-
-What would you like to do with your pet?
-1: Feed
-2: Play
-3: Rest
-4: Check Status
-5: Customize Pet
-6: Save and Exit
-Enter your choice: 4
-Joe's Status:
-Color: Green
-Type: Dog
-Hunger: 7
-Happiness: 3
-Energy: 9
-
-What would you like to do with your pet?
-1: Feed
-2: Play
-3: Rest
-4: Check Status
-5: Customize Pet
-6: Save and Exit
-Enter your choice: 6
-Pet state saved. Goodbye!
-</code></pre>
+<section id="step-7-import-the-book-example-code" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-import-the-book-example-code">Step 7 — Import the book example code</h2>
+<p>You’ll keep the books’ example code in your course folder so you can quickly reference working examples while reading and while completing assignments.</p>
+<section id="create-a-place-to-store-the-book-code" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-place-to-store-the-book-code">Create a place to store the book code</h3>
+<p>Open <strong>Command Prompt (cmd)</strong> and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1236</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> book</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> book</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>After this step, you’ll have:</p>
+<p><code>C:\cmsc-1236\book\</code> (this is where both books’ code will live)</p>
+<hr>
+</section>
+<section id="fluent-python-2nd-edition-clone-the-official-github-repo" class="level3">
+<h3 class="anchored" data-anchor-id="fluent-python-2nd-edition-clone-the-official-github-repo">Fluent Python (2nd Edition) — clone the official GitHub repo</h3>
+<p>In the same cmd window (you should still be in <code>C:\cmsc-1236\book</code>), run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>git clone https:/<span class="at">/github</span>.com<span class="at">/fluentpython/example-code-2e</span>.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This creates:</p>
+<p><code>C:\cmsc-1236\book\fluent-python-2e\</code></p>
+</section>
+<section id="learning-python-6th-edition-download-the-official-examples-zip" class="level3">
+<h3 class="anchored" data-anchor-id="learning-python-6th-edition-download-the-official-examples-zip">Learning Python (6th Edition) — download the official examples ZIP</h3>
+<p>Learning Python’s official examples are provided as a ZIP download from the book’s site (not a GitHub repo).</p>
+<ol type="1">
+<li>Open this page in your browser: https://learning-python.com/LP6E-code.html</li>
+<li>Click <strong>LP6E.zip ⇦ Fetch and unzip</strong> and download it.</li>
+</ol>
+</section>
+<section id="unzip-it" class="level3">
+<h3 class="anchored" data-anchor-id="unzip-it">Unzip it</h3>
+<ul>
+<li>Right-click the ZIP → <strong>Extract All…</strong></li>
+<li>Extract into: <code>C:\cmsc-1236\book\</code></li>
+</ul>
+<p>After unzipping, you should see an <code>LP6E\</code> folder in <code>C:\cmsc-1236\book\</code>.</p>
 </section>
 </section>
-<section id="uml" class="level3">
-<h3 class="anchored" data-anchor-id="uml">UML</h3>
-<pre><code>  +---------------------+
-  |        Pet          |
-  +---------------------+
-  | - name: str         |
-  | - hunger: int       |
-  | - happiness: int    |
-  | - energy: int       |
-  | - color: str        |
-  | - type: str         |
-  +---------------------+
-  | + __init__(name, color, pet_type) |
-  | + feed()            |
-  | + play()            |
-  | + rest()            |
-  | + customize(color, pet_type) |
-  | + status(): str     |
-  | + is_happy(): bool  |
-  +---------------------+</code></pre>
+<section id="you-are-done" class="level2">
+<h2 class="anchored" data-anchor-id="you-are-done">You are done</h2>
+<p>At this point:</p>
+<ul>
+<li>Your course folder exists at <code>C:\cmsc-1236</code></li>
+<li>Git is initialized</li>
+<li>Your <code>cmsc1236</code> Python environment is created and working</li>
+<li>VS Code is configured to use the course environment</li>
+<li>You can now work normally in VS Code and run programs from the terminal</li>
+</ul>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 2 – CMSC 1236 : Advanced Python Programming</title>
+<title>CMSC 1236 – Advanced Programming in Python – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -273,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 2</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">CMSC 1236 – Advanced Programming in Python</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -382,14 +382,43 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#virtual-pet-simulator" id="toc-virtual-pet-simulator" class="nav-link active" data-scroll-target="#virtual-pet-simulator">Virtual Pet Simulator</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#pet-class" id="toc-pet-class" class="nav-link" data-scroll-target="#pet-class">Pet Class</a></li>
+  <li><a href="#method-implementations" id="toc-method-implementations" class="nav-link" data-scroll-target="#method-implementations"><strong>Method Implementations:</strong></a>
+  <ul class="collapse">
+  <li><a href="#feed-method" id="toc-feed-method" class="nav-link" data-scroll-target="#feed-method"><code>feed</code> Method:</a></li>
+  <li><a href="#play-method" id="toc-play-method" class="nav-link" data-scroll-target="#play-method"><code>play</code> Method:</a></li>
+  <li><a href="#rest-method" id="toc-rest-method" class="nav-link" data-scroll-target="#rest-method"><code>rest</code> Method:</a></li>
+  <li><a href="#customize-method" id="toc-customize-method" class="nav-link" data-scroll-target="#customize-method"><code>customize</code> Method:</a></li>
+  <li><a href="#status-method" id="toc-status-method" class="nav-link" data-scroll-target="#status-method"><code>status</code> Method:</a></li>
+  <li><a href="#is_happy-method" id="toc-is_happy-method" class="nav-link" data-scroll-target="#is_happy-method"><code>is_happy</code> Method:</a></li>
+  <li><a href="#main-function" id="toc-main-function" class="nav-link" data-scroll-target="#main-function">Main Function</a></li>
+  <li><a href="#data-persistence" id="toc-data-persistence" class="nav-link" data-scroll-target="#data-persistence">Data Persistence</a></li>
+  </ul></li>
+  <li><a href="#sample-output" id="toc-sample-output" class="nav-link" data-scroll-target="#sample-output">Sample Output</a></li>
+  <li><a href="#starting-the-program-with-a-file-created" id="toc-starting-the-program-with-a-file-created" class="nav-link" data-scroll-target="#starting-the-program-with-a-file-created">Starting the Program with a File Created</a>
+  <ul class="collapse">
+  <li><a href="#uml" id="toc-uml" class="nav-link" data-scroll-target="#uml">UML</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Week-1-and-2-Assignment.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 2</h1>
+<h1 class="title">CMSC 1236 – Advanced Programming in Python</h1>
+<p class="subtitle lead">Week 1–2 Assignment</p>
 </div>
 
 
@@ -406,9 +435,406 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page will be published before Week 2 begins.</p>
+<section id="virtual-pet-simulator" class="level1">
+<h1>Virtual Pet Simulator</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console.</p>
+</section>
+<section id="pet-class" class="level2">
+<h2 class="anchored" data-anchor-id="pet-class">Pet Class</h2>
+<p>The <code>Pet</code> class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (<code>if</code> statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.</p>
+<ol type="1">
+<li><p><strong>Implementing the <code>Pet</code> Class:</strong></p>
+<ul>
+<li><p>Follow the provided UML diagram to create the <code>Pet</code> class with the attributes <code>name</code>, <code>hunger</code>, <code>happiness</code>, <code>energy</code>, <code>color</code>, and <code>type</code>.</p></li>
+<li><p>Initialize these attributes in the <code>__init__</code> method. <code>name</code>, <code>color</code>, and <code>type</code> will be strings provided when a new pet is created, and <code>hunger</code>, <code>happiness</code>, and <code>energy</code> should start with random values between 0 and 10.</p></li>
+</ul></li>
+<li><p><strong>Using Conditional Statements in Class Methods:</strong></p>
+<ul>
+<li>In methods like <code>feed</code>, <code>play</code>, and <code>rest</code>, you will use <code>if</code> statements to check the state of the pet and decide what action to take.</li>
+</ul></li>
+</ol>
+</section>
+<section id="method-implementations" class="level2">
+<h2 class="anchored" data-anchor-id="method-implementations"><strong>Method Implementations:</strong></h2>
+<section id="feed-method" class="level3">
+<h3 class="anchored" data-anchor-id="feed-method"><code>feed</code> Method:</h3>
+<section id="objective" class="level4">
+<h4 class="anchored" data-anchor-id="objective">Objective</h4>
+<p>The <code>feed</code> method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.</p>
+</section>
+<section id="method-behavior-and-logic" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic">Method Behavior and Logic</h4>
+<ol type="1">
+<li><strong>Reducing Hunger and Increasing Happiness</strong>:
+<ul>
+<li>When the <code>feed</code> method is called, first check the pet’s current hunger level (<code>self.hunger</code>).</li>
+<li>If <code>self.hunger</code> is greater than 0, it indicates that the pet is hungry. In this case, reduce <code>self.hunger</code> by 1 to represent feeding the pet. Ensure <code>self.hunger</code> does not go below 0.</li>
+<li>After feeding, increase <code>self.happiness</code> by 1. However, ensure that <code>self.happiness</code> does not exceed 10.</li>
+</ul></li>
+<li><strong>Managing Happiness When Not Hungry</strong>:
+<ul>
+<li>If <code>self.hunger</code> is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce <code>self.happiness</code> by 1, since overfeeding will cause discomfort.</li>
+</ul></li>
+<li><strong>Returning Feedback</strong>:
+<ul>
+<li>Return a feedback string that reflects the pet’s reaction to being fed.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="play-method" class="level3">
+<h3 class="anchored" data-anchor-id="play-method"><code>play</code> Method:</h3>
+<section id="objective-1" class="level4">
+<h4 class="anchored" data-anchor-id="objective-1">Objective</h4>
+<p>The <code>play</code> method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.</p>
+</section>
+<section id="method-behavior-and-logic-1" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic-1">Method Behavior and Logic</h4>
+<ol type="1">
+<li><strong>Handling Sadness</strong>:
+<ul>
+<li>Before initiating play, check if the pet’s happiness level (<code>self.happiness</code>) is at 0.</li>
+<li>If <code>self.happiness</code> is 0, it indicates that the pet is too sad to engage in play.</li>
+</ul></li>
+<li><strong>Handling Tiredness</strong>:
+<ul>
+<li>Check the pet’s energy level (<code>self.energy</code>).</li>
+<li>If <code>self.energy</code> is 0, it means the pet is too tired to play.</li>
+</ul></li>
+<li><strong>Playing with the Pet</strong>:
+<ul>
+<li>If the pet is neither too sad nor too tired (i.e., <code>self.happiness</code> is above 0 and <code>self.energy</code> is above 0), proceed to play with the pet.</li>
+<li>Increase <code>self.happiness</code> by 1 to represent the positive effect of playing. However, ensure that <code>self.happiness</code> does not exceed 10.</li>
+<li>Decrease <code>self.energy</code> by 1 to account for the energy expended during play. However, it’s important to ensure that <code>self.energy</code> does not fall below 0.</li>
+</ul></li>
+<li><strong>Returning Feedback</strong>:
+<ul>
+<li>Return a feedback string that reflects the pet’s reaction to playing.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="rest-method" class="level3">
+<h3 class="anchored" data-anchor-id="rest-method"><code>rest</code> Method:</h3>
+<section id="objective-2" class="level4">
+<h4 class="anchored" data-anchor-id="objective-2">Objective</h4>
+<p>The <code>rest</code> method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.</p>
+</section>
+<section id="method-behavior-and-logic-2" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic-2">Method Behavior and Logic</h4>
+<ol type="1">
+<li><strong>Increasing Energy</strong>:
+<ul>
+<li>Check the pet’s current energy level (<code>self.energy</code>).</li>
+<li>If <code>self.energy</code> is less than 10, it indicates the pet could benefit from rest. Increase <code>self.energy</code> by 1 to represent the energy regained from resting. However, ensure that <code>self.energy</code> does not exceed 10.</li>
+</ul></li>
+<li><strong>Managing Happiness When Energy is at Maximum</strong>:
+<ul>
+<li>If <code>self.energy</code> is already at 10 (meaning the pet is fully rested), resting will affect its happiness.</li>
+<li>If <code>self.energy</code> is already at 10 and <code>self.happiness</code> is greater than 0, reduce <code>self.happiness</code> it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent <code>self.happiness</code> from going below 0.</li>
+</ul></li>
+<li><strong>Returning Feedback</strong>:
+<ul>
+<li>Return a feedback string that reflects the pet’s reaction to resting.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="customize-method" class="level3">
+<h3 class="anchored" data-anchor-id="customize-method"><code>customize</code> Method:</h3>
+<section id="objective-3" class="level4">
+<h4 class="anchored" data-anchor-id="objective-3">Objective</h4>
+<p>The <code>customize</code> method allows the user to change the pet’s appearance by setting new values for the <code>color</code> and <code>type</code> attributes.</p>
+</section>
+<section id="method-behavior-and-logic-3" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic-3">Method Behavior and Logic</h4>
+<ol type="1">
+<li><strong>Setting New Attributes</strong>:
+<ul>
+<li>The method takes two parameters, <code>color</code> and <code>pet_type</code>, and assigns them to the pet’s <code>color</code> and <code>type</code> attributes.</li>
+<li>This allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="status-method" class="level3">
+<h3 class="anchored" data-anchor-id="status-method"><code>status</code> Method:</h3>
+<section id="objective-4" class="level4">
+<h4 class="anchored" data-anchor-id="objective-4">Objective</h4>
+<p>The <code>status</code> method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.</p>
+</section>
+<section id="method-behavior-and-logic-4" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic-4">Method Behavior and Logic</h4>
+<ol type="1">
+<li><strong>Creating a Status Summary</strong>:
+<ul>
+<li>The method compiles a string that summarizes the animal’s current status.</li>
+<li>This summary includes the animal’s name and its current hunger, happiness, energy, color, and type.</li>
+</ul></li>
+<li><strong>String Formatting</strong>:
+<ul>
+<li>Create a readable and well-formatted summary.</li>
+<li>Each attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.</li>
+</ul></li>
+<li><strong>Returning the Summary</strong>:
+<ul>
+<li>The method returns the formatted string.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="is_happy-method" class="level3">
+<h3 class="anchored" data-anchor-id="is_happy-method"><code>is_happy</code> Method:</h3>
+<section id="objective-5" class="level4">
+<h4 class="anchored" data-anchor-id="objective-5">Objective</h4>
+<p>The <code>is_happy</code> method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.</p>
+</section>
+<section id="method-behavior-and-logic-5" class="level4">
+<h4 class="anchored" data-anchor-id="method-behavior-and-logic-5">Method Behavior and Logic</h4>
+<ol type="1">
+<li><strong>Evaluating Happiness</strong>:
+<ul>
+<li>The method assesses whether the animal’s happiness level (<code>self.happiness</code>) is below or above 5.</li>
+<li>If <code>self.happiness</code> is above 5 the animal is considered to be happy.</li>
+</ul></li>
+<li><strong>Returning a Boolean Result</strong>:
+<ul>
+<li>The method returns <code>True</code> if the animal’s happiness is above 5, indicating that the animal is happy.</li>
+<li>It returns <code>False</code> if the happiness level is 5 or lower, indicating that the animal is not happy.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="main-function" class="level3">
+<h3 class="anchored" data-anchor-id="main-function">Main Function</h3>
+<section id="overview-1" class="level4">
+<h4 class="anchored" data-anchor-id="overview-1">Overview</h4>
+<p>Your <code>main()</code> function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.</p>
+</section>
+<section id="menu-system" class="level4">
+<h4 class="anchored" data-anchor-id="menu-system">1. Menu System:</h4>
+<ul>
+<li>Implement a menu system that displays a list of possible actions the user can perform. These actions include:
+<ul>
+<li>Feeding the pet</li>
+<li>Playing with the pet</li>
+<li>Letting the pet rest</li>
+<li>Checking the pet’s status</li>
+<li>Customizing the pet’s appearance</li>
+<li>Saving the pet’s state and exiting the program</li>
+</ul></li>
+<li>Use an input prompt to allow the user to select an action and then call the corresponding method from the <code>Pet</code> class.</li>
+</ul>
+</section>
+<section id="handling-invalid-input" class="level4">
+<h4 class="anchored" data-anchor-id="handling-invalid-input">2. Handling Invalid Input:</h4>
+<ul>
+<li>Ensure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).</li>
+<li>Display an error message if the user inputs an invalid option and show the menu again for a valid selection.</li>
+</ul>
+</section>
+</section>
+<section id="data-persistence" class="level3">
+<h3 class="anchored" data-anchor-id="data-persistence">Data Persistence</h3>
+<ul>
+<li>Use pickling to save and load the pet’s state. Implement a <code>save_pet</code> and a <code>load_pet</code> function in the <code>main()</code> for this purpose.</li>
+<li>Ensure the program can handle situations where no saved data exists.</li>
+</ul>
+</section>
+</section>
+<section id="sample-output" class="level2">
+<h2 class="anchored" data-anchor-id="sample-output">Sample Output</h2>
+<pre class="text"><code>Welcome to the Virtual Pet Simulator!
+
+In this program, you will create and take care of a virtual pet.
+You can feed, play with, and let your pet rest to maintain its health and happiness.
+You can also customize your pet's appearance and save its state to continue later.
+Use the menu to interact with your pet and make sure it stays happy and healthy!
+
+Let's get started!
+
+What is your pet's name? Joe
+Choose a color for your pet (e.g., red, blue, green): Blue
+Choose a type for your pet (e.g., dog, cat, bird): Dog
+
+Here is the current status of your pet:
+
+Joe's Status:
+Color: Blue
+Type: Dog
+Hunger: 8
+Happiness: 1
+Energy: 10
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 9
+Invalid choice. Please enter a number between 1 and 6.
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 4
+
+Joe's Status:
+Color: Blue
+Type: Dog
+Hunger: 8
+Happiness: 1
+Energy: 10
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 3
+Joe is rested and seems a bit bored.
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 1
+You fed Joe. Joe seems happier after eating!
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 4
+
+Joe's Status:
+Color: Blue
+Type: Dog
+Hunger: 7
+Happiness: 2
+Energy: 10
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 5
+Choose a color for your pet: Green
+Choose a type for your pet: Dog
+Joe is now a Green Dog!
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 6
+Pet state saved. Goodbye!</code></pre>
+</section>
+<section id="starting-the-program-with-a-file-created" class="level2">
+<h2 class="anchored" data-anchor-id="starting-the-program-with-a-file-created">Starting the Program with a File Created</h2>
+<pre class="text"><code>Welcome to the Virtual Pet Simulator!
+
+In this program, you will create and take care of a virtual pet.
+You can feed, play with, and let your pet rest to maintain its health and happiness.
+You can also customize your pet's appearance and save its state to continue later.
+Use the menu to interact with your pet and make sure it stays happy and healthy!
+
+Let's get started!
 
 
+Here is the current status of your pet:
+
+Joe's Status:
+Color: Green
+Type: Dog
+Hunger: 7
+Happiness: 2
+Energy: 10
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 2
+Playing with Joe was fun!
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 4
+Joe's Status:
+Color: Green
+Type: Dog
+Hunger: 7
+Happiness: 3
+Energy: 9
+
+What would you like to do with your pet?
+1: Feed
+2: Play
+3: Rest
+4: Check Status
+5: Customize Pet
+6: Save and Exit
+Enter your choice: 6
+Pet state saved. Goodbye!
+</code></pre>
+<section id="uml" class="level3">
+<h3 class="anchored" data-anchor-id="uml">UML</h3>
+<pre class="text"><code>  +---------------------+
+  |        Pet          |
+  +---------------------+
+  | - name: str         |
+  | - hunger: int       |
+  | - happiness: int    |
+  | - energy: int       |
+  | - color: str        |
+  | - type: str         |
+  +---------------------+
+  | + __init__(name, color, pet_type) |
+  | + feed()            |
+  | + play()            |
+  | + rest()            |
+  | + customize(color, pet_type) |
+  | + status(): str     |
+  | + is_happy(): bool  |
+  +---------------------+
+
+</code></pre>
+
+
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
