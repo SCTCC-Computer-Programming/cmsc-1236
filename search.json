@@ -326,7 +326,7 @@
     "href": "assignments/week-01/index.html",
     "title": "Week 1 Assignment",
     "section": "",
-    "text": "This is a two-week project.\n\nWeek 1–2 Assignment\nEnvironment Setup",
+    "text": "Complete the Environment Setup:\n\nEnvironment Setup\n\nWeek 1 and 2 Python Review Project\n\nVirtual Pet Project",
     "crumbs": [
       "Home",
       "Weekly Assignments",
@@ -338,7 +338,7 @@
     "href": "assignments/week-01/index.html#assignment",
     "title": "Week 1 Assignment",
     "section": "",
-    "text": "This is a two-week project.\n\nWeek 1–2 Assignment\nEnvironment Setup",
+    "text": "Complete the Environment Setup:\n\nEnvironment Setup\n\nWeek 1 and 2 Python Review Project\n\nVirtual Pet Project",
     "crumbs": [
       "Home",
       "Weekly Assignments",
@@ -350,7 +350,7 @@
     "href": "assignments/week-01/index.html#what-to-work-on-this-week",
     "title": "Week 1 Assignment",
     "section": "What to work on this week",
-    "text": "What to work on this week\nFocus on completing the Week 1 portion of the project:\n\nSet up your course environment and confirm you can run .py files using the correct interpreter.\nInitialize a Git repository and commit your initial working setup.\nBegin Virtual Pet v1 by implementing the menu loop skeleton and basic input/output patterns.\nAdd input validation for menu selection so invalid input does not terminate the program.",
+    "text": "What to work on this week\n\nSet up your course environment and confirm you can run .py files using the correct interpreter.\nInitialize a Git repository and commit your initial working setup.\nBegin Virtual Pet v1 by implementing the menu loop skeleton and basic input/output patterns.\nAdd input validation for menu selection so invalid input does not terminate the program.",
     "crumbs": [
       "Home",
       "Weekly Assignments",
@@ -363,6 +363,18 @@
     "title": "Week 1 Assignment",
     "section": "Reading (purpose and use)",
     "text": "Reading (purpose and use)\nRead Learning Python 6e, Chapters 1–7 by the end of Week 2. The purpose of this reading is review and reference: you are expected to recognize core language features (types, expressions, statements, control flow, and program structure) from Structured Programming Logic and to be able to look up details as you implement the Virtual Pet project. You do not need to memorize the chapters; you should be able to locate and apply relevant examples when you encounter unfamiliar syntax or behavior.",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#complete-course-agreement-quiz-by-wednesday-1130pm",
+    "href": "assignments/week-01/index.html#complete-course-agreement-quiz-by-wednesday-1130pm",
+    "title": "Week 1 Assignment",
+    "section": "Complete Course Agreement Quiz by Wednesday 11:30PM",
+    "text": "Complete Course Agreement Quiz by Wednesday 11:30PM\nThis needs to be done to avoid beign dropped from the course.",
     "crumbs": [
       "Home",
       "Weekly Assignments",
