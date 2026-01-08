@@ -27,7 +27,7 @@ For CMSC 1236, we will create a separate Python environment so nothing conflicts
 
 Open a **CMD Prompt** window and run:
 
-``` powershell
+```bat
 git --version
 ```
 
@@ -37,7 +37,7 @@ You should see a version number (example: `git version 2.xx.x`).
 
 Open **CMD Prompt** and run:
 
-``` powershell
+```bat
 code --version
 ```
 
@@ -175,25 +175,25 @@ deactivate
 
 ## Step 4 — Initialize Git in your course folder
 
-We use Git to track your work over time and to make submitting or backing up your work easier.  
+We use Git to track your work over time and to make submitting or backing up your work easier.\
 This step creates a `.git` folder that stores your work history.
 
 ### Initialize the repository
 
 Open **Command Prompt (cmd)** and run:
 
-```bat
+``` bat
 cd C:\cmsc-1236
 git init
-````
+```
 
 ### Create a `.gitignore` file
 
 Git does **not** create a `.gitignore` automatically. You will create it so that you don’t accidentally commit:
 
-* Python cache files
-* editor settings
-* temporary files
+-   Python cache files
+-   editor settings
+-   temporary files
 
 In `C:\cmsc-1236`, create a file named:
 
@@ -201,7 +201,7 @@ In `C:\cmsc-1236`, create a file named:
 
 Paste the following into it:
 
-```bat
+``` bat
 # Python cache
 __pycache__/
 *.pyc
@@ -213,9 +213,8 @@ Thumbs.db
 # VS Code
 .vscode/
 
-# Local environment folder (if you create it inside the course folder)
+# Local environment folder 
 cmsc1236/
-.venv/
 
 # Common local files
 *.log
@@ -226,77 +225,84 @@ cmsc1236/
 
 In this step, you will tell VS Code which Python interpreter to use for **this course** so that:
 
-- Run/Debug uses the correct Python
-- The integrated terminal runs the correct Python
-- Your assignments behave consistently across machines
+-   Run/Debug uses the correct Python
+-   The integrated terminal runs the correct Python
+-   Your assignments behave consistently across machines
 
 > Note: This environment is **separate from the Miniconda environments** you may be using in other courses, so nothing conflicts.
 
-1. Open your course folder in VS Code
+1.  Open your course folder in VS Code
 
-- VS Code stores interpreter settings *per folder/project*
-- Opening the correct folder ensures the interpreter you select is tied to CMSC 1236 only
+-   VS Code stores interpreter settings *per folder/project*
+-   Opening the correct folder ensures the interpreter you select is tied to CMSC 1236 only
 
-2. Select the correct Python interpreter
+2.  Select the correct Python interpreter
 
-a) Select View → Command Palette or Press: `Ctrl + Shift + P`  
-b) Type: `Python: Select Interpreter`
-c) Choose the interpreter that points to the course environment:
+<!-- -->
 
-```bat
-C:\cmsc-1236\.venv\Scripts\python.exe
+a)  Select View → Command Palette or Press: `Ctrl + Shift + P`\
+b)  Type: `Python: Select Interpreter`
+c)  Choose the interpreter that points to the course environment:
+
+``` bat
+C:\cmsc-1236\cmsc1236\Scripts\python.exe
 ```
 
 If you do not see it:
 
-- Choose **Enter interpreter path…**
-- Then browse to: `C:\cmsc-1236\.venv\Scripts\python.exe`
+-   Choose **Enter interpreter path…**
+-   Then browse to: `C:\cmsc-1236\cmsc1236\Scripts\python.exe`
 
-3. Verify in the VS Code Terminal (Command Prompt)
+3.  Verify in the VS Code Terminal (Command Prompt)
 
-a) In VS Code, open a CMD Prompt terminal:
-   - **Terminal → New Terminal**
+<!-- -->
 
-b) Confirm you are in the course folder. If not, run:
+a)  In VS Code, open a CMD Prompt terminal:
+    -   **Terminal → New Terminal**
+b)  Confirm you are in the course folder. If not, run:
 
-```bat
+``` bat
 cd C:\cmsc-1236
 ```
 
-d) Activate the course environment:
+c)  Activate the course environment:
 
-
-```bat
-.venv\Scripts\activate
+``` bat
+cmsc1236\Scripts\activate
 ```
 
-d) Verify that Python is coming from the course environment:
+d)  Verify that Python is coming from the course environment:
 
-```bat
+``` bat
 where python
 ```
 
 Expected output includes a path like:
 
-```bat
-C:\cmsc-1236\.venv\Scripts\python.exe
+``` bat
+C:\cmsc-1236\cmsc1236\Scripts\python.exe
 ```
 
-5) Confirm the Python version:
+e)  Confirm the Python version:
 
-```bat
+``` bat
 python --version
 ```
 
-- If `where python` does NOT point into `C:\cmsc-1236\.venv\...`, you are not using the course environment
-- Fixing it here prevents “it works on my machine” problems later
-
+-   If `where python` does NOT point into `C:\cmsc-1236\cmsc1236\...`, you are not using the course environment
+-   Fixing it here prevents “it works on my machine” problems later
 
 ## Step 6 — Test Python from the VS Code terminal
 
-Create a new file here:
+Create a new folder:
 
--   `C:\cmsc-1236\projects\week-01\test_env.py`
+``` bat
+mkdir C:\cmsc-1236\projects\week-01
+```
+
+Create a new python file called:
+
+-   `test_env.py`
 
 Paste this code:
 
@@ -309,7 +315,7 @@ print("Python executable:", sys.executable)
 
 Run it in the VS Code terminal:
 
-``` powershell
+```bat
 cd C:\cmsc-1236\projects\week-01\
 python test_env.py
 ```
@@ -327,7 +333,7 @@ You’ll keep the books’ example code in your course folder so you can quickly
 
 Open **Command Prompt (cmd)** and run:
 
-```bat
+``` bat
 cd C:\cmsc-1236
 mkdir book
 cd book
@@ -337,13 +343,13 @@ After this step, you’ll have:
 
 `C:\cmsc-1236\book\` (this is where both books’ code will live)
 
----
+------------------------------------------------------------------------
 
 ### Fluent Python (2nd Edition) — clone the official GitHub repo
 
 In the same cmd window (you should still be in `C:\cmsc-1236\book`), run:
 
-```bat
+``` bat
 git clone https://github.com/fluentpython/example-code-2e.git
 ```
 
@@ -353,17 +359,17 @@ This creates:
 
 ### Learning Python (6th Edition) — download the official examples ZIP
 
-Learning Python’s official examples are provided as a ZIP download from the book’s site (not a GitHub repo). 
+Learning Python’s official examples are provided as a ZIP download from the book’s site (not a GitHub repo).
 
-1. Open this page in your browser: https://learning-python.com/LP6E-code.html
-2. Click **LP6E.zip ⇦ Fetch and unzip** and download it.
+1.  Open this page in your browser: https://learning-python.com/LP6E-code.html
+2.  Click **LP6E.zip ⇦ Fetch and unzip** and download it.
 
 ### Unzip it
 
-* Right-click the ZIP → **Extract All…**
-* Extract into: `C:\cmsc-1236\book\`
+-   Right-click the ZIP → **Extract All…**
+-   Extract into: `C:\cmsc-1236\book\`
 
-After unzipping, you should see an `LP6E\` folder in `C:\cmsc-1236\book\`. 
+After unzipping, you should see an `LP6E\` folder in `C:\cmsc-1236\book\`.
 
 ## You are done
 
@@ -374,4 +380,3 @@ At this point:
 -   Your `cmsc1236` Python environment is created and working
 -   VS Code is configured to use the course environment
 -   You can now work normally in VS Code and run programs from the terminal
-

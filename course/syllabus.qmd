@@ -139,22 +139,22 @@ Some assignments will be based off a pass/fail criterion. Grading Rubrics will b
 
 See News and Content page on D2L. The Instructor may make adjustments or changes. Notification will be given in class prior to change.
 
-| Week | Dates | Topics | Deliverable | Reading |
-|---:|---|---|---|---|
-| 1 | Jan 12, 2026–Jan 18, 2026 | Onboarding + Jupyter basics | Practice Notebook 1 (completion) | Ch. 2 (Jupyter/IPython) + Ch. 1 overview |
-| 2 | Jan 19, 2026–Jan 25, 2026 | Python refresh for data work (functions, files, pathlib) | Practice Notebook 2 (completion) | Ch. 3 (Built-in Python for data work) |
-| 3 | Jan 26, 2026–Feb 01, 2026 | NumPy essentials (arrays, vectorization, boolean masks) | Practice Notebook 3 (completion) | Ch. 4 (NumPy basics) |
-| 4 | Feb 02, 2026–Feb 08, 2026 | pandas foundations I (Series/DataFrame, indexing, filtering) | Skill Check 1 (autograded notebook) | Ch. 5 (pandas intro) |
-| 5 | Feb 09, 2026–Feb 15, 2026 | pandas foundations II (sorting, basic summaries, missingness intro) | Practice Notebook 5 (completion) | Ch. 5 (pandas continued) |
-| 6 | Feb 16, 2026–Feb 22, 2026 | Data I/O (CSV, Excel/JSON basics, parsing dates, dtypes) | Practice Notebook 6 (completion) | Ch. 6 (Data loading/storage) |
-| 7 | Feb 23, 2026–Mar 01, 2026 | Cleaning I (missing data, types, duplicates, string cleanup) | Reflection 1 (graded) | Ch. 7 (Data cleaning/prep) |
-| 8 | Mar 02, 2026–Mar 08, 2026 | Cleaning II (validation rules, outliers as data-quality topic) | Practice Notebook 8 (completion) | Ch. 7 (Data cleaning/prep) |
-| 9 | Mar 09, 2026–Mar 15, 2026 | Spring Break (no due dates) | — | — |
-| 10 | Mar 16, 2026–Mar 22, 2026 | Wrangling I (merge/join, concat; keys & pitfalls) | Skill Check 2 (autograded notebook) | Ch. 8 (Wrangling: join/reshape) |
-| 11 | Mar 23, 2026–Mar 29, 2026 | Wrangling II (reshape: pivot/melt; tidy layouts) | Practice Notebook 11 (completion) | Ch. 8 (Wrangling: reshape) |
-| 12 | Mar 30, 2026–Apr 05, 2026 | Groupby + aggregation (report tables, transform vs agg) | Reflection 2 (graded) | Ch. 10 (Aggregation & groupby) |
-| 13 | Apr 06, 2026–Apr 12, 2026 | Visualization I (plot selection, labeling, communication) | Practice Notebook 13 (completion) | Ch. 9 (Visualization) |
-| 14 | Apr 13, 2026–Apr 19, 2026 | Visualization II (+ optional time series basics) | Skill Check 3 (autograded notebook) | Ch. 9 (Visualization) + optional Ch. 11 (Time series) |
-| 15 | Apr 20, 2026–Apr 26, 2026 | Project setup week (topic + dataset approval + plan) | Reflection 3 / Project Proposal (graded) | Ch. 13 (Examples) for inspiration (optional) |
-| 16 | Apr 27, 2026–May 03, 2026 | Final project work time (milestone: cleaned dataset + initial EDA) | — (work week) | Ch. 13 (Examples) (optional) |
-| 17 | May 04, 2026–May 10, 2026 | Final project work time (milestone: visuals + narrative + polish) | — (work week) | Ch. 13 (Examples) (optional) |
+| Week | Dates                     | Topics                                                                                                                      | Reading                                                                 |
+| ---: | ------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+|    1 | Jan 12, 2026–Jan 18, 2026 | Course environment + workflow (venv, Git, VS Code, run/submit). Start **Virtual Pet v1** (menu loop skeleton, I/O patterns) | **Learning Python 6e Ch. 1–7** *(2-week reading block begins)*          |
+|    2 | Jan 19, 2026–Jan 25, 2026 | Finish **Virtual Pet v1** (Pet class + conditionals + validation/invalid input + pickle save/load)                          | **Learning Python 6e Ch. 1–7** *(finish by end of Week 2)*              |
+|    3 | Jan 26, 2026–Feb 01, 2026 | Core containers for CLI apps (lists/dicts/tuples) + file/persistence concepts to support the pet project                    | **Learning Python 6e** Ch. **8–9**                                      |
+|    4 | Feb 02, 2026–Feb 08, 2026 | Statements + assignment mechanics (unpacking, multiple assignment), practical output/formatting habits                      | **Learning Python 6e** Ch. **10–11**                                    |
+|    5 | Feb 09, 2026–Feb 15, 2026 | Control flow upgrade: **`if` + `match`** + truthiness for clean CLI logic                                                   | **Learning Python 6e** Ch. **12**                                       |
+|    6 | Feb 16, 2026–Feb 22, 2026 | Loop patterns used in real programs (validation loops, `enumerate`, `zip`, loop-`else`)                                     | **Learning Python 6e** Ch. **13**                                       |
+|    7 | Feb 23, 2026–Mar 01, 2026 | Iteration & comprehensions as “muscle memory” tools (readability + correctness)                                             | **Learning Python 6e** Ch. **14**                                       |
+|    8 | Mar 02, 2026–Mar 08, 2026 | Functions as structure: boundaries, scope model, and argument patterns (foundation for refactoring)                         | **Learning Python 6e** Ch. **16–18**                                    |
+|    9 | Mar 09, 2026–Mar 15, 2026 | Spring Break (no due dates)                                                                                                 | —                                                                       |
+|   10 | Mar 16, 2026–Mar 22, 2026 | Function “level-up”: advanced function topics + comprehensions/generators as programming habits                             | **Learning Python 6e** Ch. **19–20**                                    |
+|   11 | Mar 23, 2026–Mar 29, 2026 | Real-program organization + reliability: modules/packages/`__main__` + exceptions/context managers (selected)               | **Learning Python 6e** Ch. **22–25** + **33–36** *(selected)*           |
+|   12 | Mar 30, 2026–Apr 05, 2026 | Pivot to Fluent Python: data model mindset, why “dunder methods” matter                                                     | **Fluent Python 2e** Ch. **1**                                          |
+|   13 | Apr 06, 2026–Apr 12, 2026 | Functions as objects for cleaner architecture (dispatch tables, callbacks, command systems)                                 | **Fluent Python 2e** Ch. **7**                                          |
+|   14 | Apr 13, 2026–Apr 19, 2026 | Final project proposal week: scope, constraints, milestones, repo plan, feature choices                                     | Targeted review of **FP Ch. 1 & 7** + LP modules/exceptions (as needed) |
+|   15 | Apr 20, 2026–Apr 26, 2026 | Iterators/generators for logs + reporting; “event stream” thinking for CLI apps                                             | **Fluent Python 2e** Ch. **17**                                         |
+|   16 | Apr 27, 2026–May 03, 2026 | Final project build week (student-chosen standalone CLI app)                                                                | Targeted reading as needed                                              |
+|   17 | May 04, 2026–May 10, 2026 | Final polish: edge cases, reliability, run instructions, demo readiness                                                     | Targeted review as needed                                               |

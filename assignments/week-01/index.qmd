@@ -7,21 +7,24 @@ format:
 
 ## Assignment
 
-**Week 1–2 Project**
+This is a two-week project.
 
-Open here:  
-[Week 1–2 Assignment](week-1-and-2-assignment.html)
-
-
-[Environment Setup](environment-setup.html)
+- [Week 1–2 Assignment](week-1-and-2-assignment.html)
+- [Environment Setup](environment-setup.html)
 
 ## What to work on this week
 
-Focus on:
-- Getting your `Pet` class started
-- Setting up your file structure
-- Beginning the menu loop (you can finish saving/loading in Week 2)
+Focus on completing the Week 1 portion of the project:
+
+- Set up your course environment and confirm you can run `.py` files using the correct interpreter.
+- Initialize a Git repository and commit your initial working setup.
+- Begin **Virtual Pet v1** by implementing the menu loop skeleton and basic input/output patterns.
+- Add input validation for menu selection so invalid input does not terminate the program.
+
+## Reading (purpose and use)
+
+Read **Learning Python 6e, Chapters 1–7** by the end of Week 2. The purpose of this reading is review and reference: you are expected to recognize core language features (types, expressions, statements, control flow, and program structure) from Structured Programming Logic and to be able to look up details as you implement the Virtual Pet project. You do not need to memorize the chapters; you should be able to locate and apply relevant examples when you encounter unfamiliar syntax or behavior.
 
 ## Submission
 
-This is a two-week assignment. Submit everything during **Week 2**.
+Submit the complete project during Week 2.
