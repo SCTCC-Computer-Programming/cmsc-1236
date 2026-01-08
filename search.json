@@ -193,18 +193,6 @@
     ]
   },
   {
-    "objectID": "course/schedule.html#assessment-intent",
-    "href": "course/schedule.html#assessment-intent",
-    "title": "CMSC 1236 Course Schedule",
-    "section": "Assessment intent",
-    "text": "Assessment intent\n\nPractice Notebooks (completion): guided work with built-in self-check cells\nSkill Checks (autograded notebooks): short, testable tasks (functions / named outputs)\nReflections (graded): brief, rubric-based video explanations of choices, debugging, and interpretation\nFinal Project (graded): notebook report + deliverables (Video Based)",
-    "crumbs": [
-      "Home",
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
     "objectID": "course/schedule.html#weekly-schedule",
     "href": "course/schedule.html#weekly-schedule",
     "title": "CMSC 1236 Course Schedule",
