@@ -291,10 +291,9 @@ ul.task-list li input[type="checkbox"] {
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
-        <div class="sidebar-tools-collapse tools-wide">
-    <a href="https://github.com" title="" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
-    <a href="https://discord.gg" title="" class="quarto-navigation-tool px-1" aria-label="Discord"><i class="bi bi-chat-dots"></i></a>
-    <a href="https://sctcc.learn.minnstate.edu/d2l/login" title="" class="quarto-navigation-tool px-1" aria-label="D2L"><i class="bi bi-person-circle"></i></a>
+        <div class="sidebar-tools-collapse">
+    <a href="https://discord.gg/az8cmeqJdc" title="" class="quarto-navigation-tool px-1" aria-label="Discord"><i class="bi bi-chat-dots"></i></a>
+    <a href="https://sctcc.learn.minnstate.edu/d2l/login" title="" class="quarto-navigation-tool px-1" aria-label="D2L"><i class="bi bi-book-half"></i></a>
 </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
@@ -395,7 +394,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#assignment" id="toc-assignment" class="nav-link active" data-scroll-target="#assignment">Assignment</a></li>
   <li><a href="#what-to-work-on-this-week" id="toc-what-to-work-on-this-week" class="nav-link" data-scroll-target="#what-to-work-on-this-week">What to work on this week</a></li>
-  <li><a href="#reading-purpose-and-use" id="toc-reading-purpose-and-use" class="nav-link" data-scroll-target="#reading-purpose-and-use">Reading (purpose and use)</a></li>
+  <li><a href="#reading" id="toc-reading" class="nav-link" data-scroll-target="#reading">Reading</a></li>
   <li><a href="#complete-course-agreement-quiz-by-wednesday-1130pm" id="toc-complete-course-agreement-quiz-by-wednesday-1130pm" class="nav-link" data-scroll-target="#complete-course-agreement-quiz-by-wednesday-1130pm">Complete Course Agreement Quiz by Wednesday 11:30PM</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   </ul>
@@ -416,6 +415,12 @@ ul.task-list li input[type="checkbox"] {
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 11, 2026</p>
+    </div>
+  </div>
     
   </div>
   
@@ -444,8 +449,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Add input validation for menu selection so invalid input does not terminate the program.</li>
 </ul>
 </section>
-<section id="reading-purpose-and-use" class="level2">
-<h2 class="anchored" data-anchor-id="reading-purpose-and-use">Reading (purpose and use)</h2>
+<section id="reading" class="level2">
+<h2 class="anchored" data-anchor-id="reading">Reading</h2>
 <p>Read <strong>Learning Python 6e, Chapters 1–7</strong> by the end of Week 2. The purpose of this reading is review and reference: you are expected to recognize core language features (types, expressions, statements, control flow, and program structure) from Structured Programming Logic and to be able to look up details as you implement the Virtual Pet project. You do not need to memorize the chapters; you should be able to locate and apply relevant examples when you encounter unfamiliar syntax or behavior.</p>
 </section>
 <section id="complete-course-agreement-quiz-by-wednesday-1130pm" class="level2">
@@ -874,6 +879,19 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.querySelectorAll('[aria-label]');
+    for (var i = 0; i < elements.length; i++) {
+      var ariaLabel = elements[i].getAttribute('aria-label');
+      elements[i].setAttribute('data-bs-title', ariaLabel);
+      elements[i].setAttribute('data-bs-toggle', 'tooltip');
+      elements[i].setAttribute('data-bs-placement', 'bottom');  // Change to 'top' if you prefer above the icon
+    }
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+  });
+</script>
 
 
 

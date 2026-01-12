@@ -162,243 +162,11 @@
     "text": "Common issues and solutions\n\nIssue: Imports fail inside a notebook\nMost common cause: the wrong environment/kernel is active.\nSolution\n\nIn the notebook, run sys.executable to confirm the environment path.\nIf it is incorrect, switch the notebook kernel to the correct one:\n\nKernel → Change Kernel (select the environment for your course)\n\n\n\n\nIssue: JupyterLab opens in the wrong folder\nSolution: cd into the correct course-work folder before starting JupyterLab.\n\n\nIssue: You forgot to activate the environment\nSolution: close JupyterLab (Ctrl+C), then re-run the launch commands in Section 11."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "shared/guides/setup/environment-setup-guide-vscode.html",
+    "href": "shared/guides/setup/environment-setup-guide-vscode.html",
+    "title": "Week 1 — VSCode Setup and First Notebook (Windows)",
     "section": "",
-    "text": "Use this site as your course handbook. It stays up to date all semester.\n\nUse the left sidebar to find weekly materials and guides.\nD2L is the starting point for announcements, grades, and submissions.\nCourse information (syllabus, schedule, policies, office hours) is maintained here.\n\n\nCourse workflow\n\nCheck D2L for announcements, deadlines, and any updates.\nRead the Weekly Overview on this site (Week 1, Week 2, …) and follow the links provided.\nComplete the work (assignments) and submit in D2L.\n\n\n\nSupport\n\nOffice hours: see the Office Hours page.\nZoom: Office Zoom Link\n\nHow to get help:\n\nUse Discord/email for course questions.\nAdd troubleshooting policy.\n\n\n\n\nInstructor contact\n\nInstructor: Joseph Silman\n\nEmail: jsilman@sctcc.edu\nPhone Number: (320) 308 - 6595\n\n\n\nQuick links\n\nSyllabus\nSchedule"
-  },
-  {
-    "objectID": "course/schedule.html",
-    "href": "course/schedule.html",
-    "title": "CMSC 1236 Course Schedule",
-    "section": "",
-    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
-    "crumbs": [
-      "Home",
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "course/schedule.html#course-rhythm",
-    "href": "course/schedule.html#course-rhythm",
-    "title": "CMSC 1236 Course Schedule",
-    "section": "",
-    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
-    "crumbs": [
-      "Home",
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "course/schedule.html#weekly-schedule",
-    "href": "course/schedule.html#weekly-schedule",
-    "title": "CMSC 1236 Course Schedule",
-    "section": "Weekly schedule",
-    "text": "Weekly schedule\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nReading\n\n\n\n\n1\nJan 12, 2026–Jan 18, 2026\nCourse environment + workflow (venv, Git, VS Code, run/submit). Start Virtual Pet v1 (menu loop skeleton, I/O patterns)\nLearning Python 6e Ch. 1–7 (finish by end of Week 2)\n\n\n2\nJan 19, 2026–Jan 25, 2026\nFinish Virtual Pet v1 (Pet class + conditionals + validation/invalid input + pickle save/load)\n\n\n\n3\nJan 26, 2026–Feb 01, 2026\nCore containers for CLI apps (lists/dicts/tuples) + file/persistence concepts to support the pet project\nLearning Python 6e Ch. 8–9\n\n\n4\nFeb 02, 2026–Feb 08, 2026\nStatements + assignment mechanics (unpacking, multiple assignment), practical output/formatting habits\nLearning Python 6e Ch. 10–11\n\n\n5\nFeb 09, 2026–Feb 15, 2026\nControl flow upgrade: if + match + truthiness for clean CLI logic\nLearning Python 6e Ch. 12\n\n\n6\nFeb 16, 2026–Feb 22, 2026\nLoop patterns used in real programs (validation loops, enumerate, zip, loop-else)\nLearning Python 6e Ch. 13\n\n\n7\nFeb 23, 2026–Mar 01, 2026\nIteration & comprehensions as “muscle memory” tools (readability + correctness)\nLearning Python 6e Ch. 14\n\n\n8\nMar 02, 2026–Mar 08, 2026\nFunctions as structure: boundaries, scope model, and argument patterns (foundation for refactoring)\nLearning Python 6e Ch. 16–18\n\n\n9\nMar 09, 2026–Mar 15, 2026\nSpring Break (no due dates)\n—\n\n\n10\nMar 16, 2026–Mar 22, 2026\nFunction “level-up”: advanced function topics + comprehensions/generators as programming habits\nLearning Python 6e Ch. 19–20\n\n\n11\nMar 23, 2026–Mar 29, 2026\nReal-program organization + reliability: modules/packages/__main__ + exceptions/context managers (selected)\nLearning Python 6e Ch. 22–25 + 33–36 (selected)\n\n\n12\nMar 30, 2026–Apr 05, 2026\nPivot to Fluent Python: data model mindset, why “dunder methods” matter\nFluent Python 2e Ch. 1\n\n\n13\nApr 06, 2026–Apr 12, 2026\nFunctions as objects for cleaner architecture (dispatch tables, callbacks, command systems)\nFluent Python 2e Ch. 7\n\n\n14\nApr 13, 2026–Apr 19, 2026\nFinal project proposal week: scope, constraints, milestones, repo plan, feature choices\nTargeted review of FP Ch. 1 & 7 + LP modules/exceptions (as needed)\n\n\n15\nApr 20, 2026–Apr 26, 2026\nIterators/generators for logs + reporting; “event stream” thinking for CLI apps\nFluent Python 2e Ch. 17\n\n\n16\nApr 27, 2026–May 03, 2026\nFinal project build week (student-chosen standalone CLI app)\nTargeted reading as needed\n\n\n17\nMay 04, 2026–May 10, 2026\nFinal polish: edge cases, reliability, run instructions, demo readiness\nTargeted review as needed",
-    "crumbs": [
-      "Home",
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "course/schedule.html#final-project-apr-27may-11",
-    "href": "course/schedule.html#final-project-apr-27may-11",
-    "title": "CMSC 1236 Course Schedule",
-    "section": "Final project (Apr 27–May 11)",
-    "text": "Final project (Apr 27–May 11)\nDeliverable (May 11, 2026):",
-    "crumbs": [
-      "Home",
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html",
-    "href": "assignments/week-01/week-1-and-2-assignment.html",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console.\n\n\n\nThe Pet class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (if statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.\n\nImplementing the Pet Class:\n\nFollow the provided UML diagram to create the Pet class with the attributes name, hunger, happiness, energy, color, and type.\nInitialize these attributes in the __init__ method. name, color, and type will be strings provided when a new pet is created, and hunger, happiness, and energy should start with random values between 0 and 10.\n\nUsing Conditional Statements in Class Methods:\n\nIn methods like feed, play, and rest, you will use if statements to check the state of the pet and decide what action to take.\n\n\n\n\n\n\n\n\n\nThe feed method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.\n\n\n\n\nReducing Hunger and Increasing Happiness:\n\nWhen the feed method is called, first check the pet’s current hunger level (self.hunger).\nIf self.hunger is greater than 0, it indicates that the pet is hungry. In this case, reduce self.hunger by 1 to represent feeding the pet. Ensure self.hunger does not go below 0.\nAfter feeding, increase self.happiness by 1. However, ensure that self.happiness does not exceed 10.\n\nManaging Happiness When Not Hungry:\n\nIf self.hunger is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce self.happiness by 1, since overfeeding will cause discomfort.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to being fed.\n\n\n\n\n\n\n\n\nThe play method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.\n\n\n\n\nHandling Sadness:\n\nBefore initiating play, check if the pet’s happiness level (self.happiness) is at 0.\nIf self.happiness is 0, it indicates that the pet is too sad to engage in play.\n\nHandling Tiredness:\n\nCheck the pet’s energy level (self.energy).\nIf self.energy is 0, it means the pet is too tired to play.\n\nPlaying with the Pet:\n\nIf the pet is neither too sad nor too tired (i.e., self.happiness is above 0 and self.energy is above 0), proceed to play with the pet.\nIncrease self.happiness by 1 to represent the positive effect of playing. However, ensure that self.happiness does not exceed 10.\nDecrease self.energy by 1 to account for the energy expended during play. However, it’s important to ensure that self.energy does not fall below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to playing.\n\n\n\n\n\n\n\n\nThe rest method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.\n\n\n\n\nIncreasing Energy:\n\nCheck the pet’s current energy level (self.energy).\nIf self.energy is less than 10, it indicates the pet could benefit from rest. Increase self.energy by 1 to represent the energy regained from resting. However, ensure that self.energy does not exceed 10.\n\nManaging Happiness When Energy is at Maximum:\n\nIf self.energy is already at 10 (meaning the pet is fully rested), resting will affect its happiness.\nIf self.energy is already at 10 and self.happiness is greater than 0, reduce self.happiness it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent self.happiness from going below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to resting.\n\n\n\n\n\n\n\n\nThe customize method allows the user to change the pet’s appearance by setting new values for the color and type attributes.\n\n\n\n\nSetting New Attributes:\n\nThe method takes two parameters, color and pet_type, and assigns them to the pet’s color and type attributes.\nThis allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.\n\n\n\n\n\n\n\n\nThe status method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.\n\n\n\n\nCreating a Status Summary:\n\nThe method compiles a string that summarizes the animal’s current status.\nThis summary includes the animal’s name and its current hunger, happiness, energy, color, and type.\n\nString Formatting:\n\nCreate a readable and well-formatted summary.\nEach attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.\n\nReturning the Summary:\n\nThe method returns the formatted string.\n\n\n\n\n\n\n\n\nThe is_happy method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.\n\n\n\n\nEvaluating Happiness:\n\nThe method assesses whether the animal’s happiness level (self.happiness) is below or above 5.\nIf self.happiness is above 5 the animal is considered to be happy.\n\nReturning a Boolean Result:\n\nThe method returns True if the animal’s happiness is above 5, indicating that the animal is happy.\nIt returns False if the happiness level is 5 or lower, indicating that the animal is not happy.\n\n\n\n\n\n\n\n\nYour main() function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.\n\n\n\n\nImplement a menu system that displays a list of possible actions the user can perform. These actions include:\n\nFeeding the pet\nPlaying with the pet\nLetting the pet rest\nChecking the pet’s status\nCustomizing the pet’s appearance\nSaving the pet’s state and exiting the program\n\nUse an input prompt to allow the user to select an action and then call the corresponding method from the Pet class.\n\n\n\n\n\nEnsure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).\nDisplay an error message if the user inputs an invalid option and show the menu again for a valid selection.\n\n\n\n\n\n\nUse pickling to save and load the pet’s state. Implement a save_pet and a load_pet function in the main() for this purpose.\nEnsure the program can handle situations where no saved data exists.\n\n\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\nWhat is your pet's name? Joe\nChoose a color for your pet (e.g., red, blue, green): Blue\nChoose a type for your pet (e.g., dog, cat, bird): Dog\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 9\nInvalid choice. Please enter a number between 1 and 6.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 3\nJoe is rested and seems a bit bored.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 1\nYou fed Joe. Joe seems happier after eating!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 5\nChoose a color for your pet: Green\nChoose a type for your pet: Dog\nJoe is now a Green Dog!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 2\nPlaying with Joe was fun!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 3\nEnergy: 9\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n\n  +---------------------+\n  |        Pet          |\n  +---------------------+\n  | - name: str         |\n  | - hunger: int       |\n  | - happiness: int    |\n  | - energy: int       |\n  | - color: str        |\n  | - type: str         |\n  +---------------------+\n  | + __init__(name, color, pet_type) |\n  | + feed()            |\n  | + play()            |\n  | + rest()            |\n  | + customize(color, pet_type) |\n  | + status(): str     |\n  | + is_happy(): bool  |\n  +---------------------+"
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html#overview",
-    "href": "assignments/week-01/week-1-and-2-assignment.html#overview",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console."
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html#pet-class",
-    "href": "assignments/week-01/week-1-and-2-assignment.html#pet-class",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "The Pet class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (if statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.\n\nImplementing the Pet Class:\n\nFollow the provided UML diagram to create the Pet class with the attributes name, hunger, happiness, energy, color, and type.\nInitialize these attributes in the __init__ method. name, color, and type will be strings provided when a new pet is created, and hunger, happiness, and energy should start with random values between 0 and 10.\n\nUsing Conditional Statements in Class Methods:\n\nIn methods like feed, play, and rest, you will use if statements to check the state of the pet and decide what action to take."
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html#method-implementations",
-    "href": "assignments/week-01/week-1-and-2-assignment.html#method-implementations",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "The feed method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.\n\n\n\n\nReducing Hunger and Increasing Happiness:\n\nWhen the feed method is called, first check the pet’s current hunger level (self.hunger).\nIf self.hunger is greater than 0, it indicates that the pet is hungry. In this case, reduce self.hunger by 1 to represent feeding the pet. Ensure self.hunger does not go below 0.\nAfter feeding, increase self.happiness by 1. However, ensure that self.happiness does not exceed 10.\n\nManaging Happiness When Not Hungry:\n\nIf self.hunger is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce self.happiness by 1, since overfeeding will cause discomfort.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to being fed.\n\n\n\n\n\n\n\n\nThe play method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.\n\n\n\n\nHandling Sadness:\n\nBefore initiating play, check if the pet’s happiness level (self.happiness) is at 0.\nIf self.happiness is 0, it indicates that the pet is too sad to engage in play.\n\nHandling Tiredness:\n\nCheck the pet’s energy level (self.energy).\nIf self.energy is 0, it means the pet is too tired to play.\n\nPlaying with the Pet:\n\nIf the pet is neither too sad nor too tired (i.e., self.happiness is above 0 and self.energy is above 0), proceed to play with the pet.\nIncrease self.happiness by 1 to represent the positive effect of playing. However, ensure that self.happiness does not exceed 10.\nDecrease self.energy by 1 to account for the energy expended during play. However, it’s important to ensure that self.energy does not fall below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to playing.\n\n\n\n\n\n\n\n\nThe rest method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.\n\n\n\n\nIncreasing Energy:\n\nCheck the pet’s current energy level (self.energy).\nIf self.energy is less than 10, it indicates the pet could benefit from rest. Increase self.energy by 1 to represent the energy regained from resting. However, ensure that self.energy does not exceed 10.\n\nManaging Happiness When Energy is at Maximum:\n\nIf self.energy is already at 10 (meaning the pet is fully rested), resting will affect its happiness.\nIf self.energy is already at 10 and self.happiness is greater than 0, reduce self.happiness it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent self.happiness from going below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to resting.\n\n\n\n\n\n\n\n\nThe customize method allows the user to change the pet’s appearance by setting new values for the color and type attributes.\n\n\n\n\nSetting New Attributes:\n\nThe method takes two parameters, color and pet_type, and assigns them to the pet’s color and type attributes.\nThis allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.\n\n\n\n\n\n\n\n\nThe status method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.\n\n\n\n\nCreating a Status Summary:\n\nThe method compiles a string that summarizes the animal’s current status.\nThis summary includes the animal’s name and its current hunger, happiness, energy, color, and type.\n\nString Formatting:\n\nCreate a readable and well-formatted summary.\nEach attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.\n\nReturning the Summary:\n\nThe method returns the formatted string.\n\n\n\n\n\n\n\n\nThe is_happy method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.\n\n\n\n\nEvaluating Happiness:\n\nThe method assesses whether the animal’s happiness level (self.happiness) is below or above 5.\nIf self.happiness is above 5 the animal is considered to be happy.\n\nReturning a Boolean Result:\n\nThe method returns True if the animal’s happiness is above 5, indicating that the animal is happy.\nIt returns False if the happiness level is 5 or lower, indicating that the animal is not happy.\n\n\n\n\n\n\n\n\nYour main() function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.\n\n\n\n\nImplement a menu system that displays a list of possible actions the user can perform. These actions include:\n\nFeeding the pet\nPlaying with the pet\nLetting the pet rest\nChecking the pet’s status\nCustomizing the pet’s appearance\nSaving the pet’s state and exiting the program\n\nUse an input prompt to allow the user to select an action and then call the corresponding method from the Pet class.\n\n\n\n\n\nEnsure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).\nDisplay an error message if the user inputs an invalid option and show the menu again for a valid selection.\n\n\n\n\n\n\nUse pickling to save and load the pet’s state. Implement a save_pet and a load_pet function in the main() for this purpose.\nEnsure the program can handle situations where no saved data exists."
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html#sample-output",
-    "href": "assignments/week-01/week-1-and-2-assignment.html#sample-output",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "Welcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\nWhat is your pet's name? Joe\nChoose a color for your pet (e.g., red, blue, green): Blue\nChoose a type for your pet (e.g., dog, cat, bird): Dog\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 9\nInvalid choice. Please enter a number between 1 and 6.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 3\nJoe is rested and seems a bit bored.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 1\nYou fed Joe. Joe seems happier after eating!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 5\nChoose a color for your pet: Green\nChoose a type for your pet: Dog\nJoe is now a Green Dog!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!"
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html#starting-the-program-with-a-file-created",
-    "href": "assignments/week-01/week-1-and-2-assignment.html#starting-the-program-with-a-file-created",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "Welcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 2\nPlaying with Joe was fun!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 3\nEnergy: 9\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n\n  +---------------------+\n  |        Pet          |\n  +---------------------+\n  | - name: str         |\n  | - hunger: int       |\n  | - happiness: int    |\n  | - energy: int       |\n  | - color: str        |\n  | - type: str         |\n  +---------------------+\n  | + __init__(name, color, pet_type) |\n  | + feed()            |\n  | + play()            |\n  | + rest()            |\n  | + customize(color, pet_type) |\n  | + status(): str     |\n  | + is_happy(): bool  |\n  +---------------------+"
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html",
-    "href": "assignments/week-01/environment-setup.html",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "",
-    "text": "For CMSC 1236, we will create a separate Python environment so nothing conflicts with your other classes."
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html#step-2-create-your-course-folder-on-the-root-drive",
-    "href": "assignments/week-01/environment-setup.html#step-2-create-your-course-folder-on-the-root-drive",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 2 — Create your course folder on the root drive",
-    "text": "Step 2 — Create your course folder on the root drive\nYour CMSC 1236 directory must be created on the root of the C: drive:\n\nC:\\cmsc-1236\n\nInside it, create these folders:\n\nassignments\nnotes\nprojects\n\nCreating the course folder on the root drive helps avoid common Windows problems:\n\nShort, predictable paths (fewer issues with tools that don’t like long file paths).\nAvoids OneDrive syncing (Desktop/Documents are often synced; syncing can lock files and break builds/tools).\nMakes Git + terminals simpler (easy to navigate, fewer permission surprises).\nKeeps course work separate from other software setups (so you don’t accidentally mix files/tools between courses).\n\n\nCMD commands (Command Prompt)\n\nOpen Command Prompt (cmd).\nGo to the root of the C: drive:\n\ncd\\\n\nCreate the course folder:\n\nmkdir cmsc-1236\n\nMove into the course folder:\n\ncd \\cmsc-1236\n\nCreate the three required subfolders:\n\nmkdir assignments\nmkdir notes\nmkdir projects\n\n\nVerify the folder structure\nRun:\ndir\nYour folder structure should look like similar to the following:\nC:\\cmsc-1236\\\n  assignments\\\n  notes\\\n  projects\\"
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html#step-3-create-the-cmsc-1236-python-environment",
-    "href": "assignments/week-01/environment-setup.html#step-3-create-the-cmsc-1236-python-environment",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 3 — Create the CMSC 1236 Python environment",
-    "text": "Step 3 — Create the CMSC 1236 Python environment\nWe will create a dedicated environment named:\n\ncmsc1236\n\nThis environment is separate from any miniconda environments you may be using in other courses, so nothing conflicts.\nA dedicated environment ensures that we:\n\nKeep CMSC 1236 packages separate from other classes/tools\nEnsure the course runs on a consistent Python version\n\n\nCreate the environment (Command Prompt)\n\nOpen Command Prompt (cmd)\n\nGo to your course folder (if not already there):\n\ncd \\cmsc-1236\n\nCreate the environment folder using Python’s built-in venv tool:\n\npy -m venv cmsc1236\n\n\nActivate the environment (Command Prompt)\nRun:\ncmsc1236\\Scripts\\activate\nWhen it activates, your prompt will look like this:\n(cmsc1236) C:\\cmsc-1236&gt;\n\n\nVerify the environment is working\nRun:\npython --version\nYou should see a Python version printed:\nPython 3.xx.x\n\n\nDeactivate the environment\nWhen you are finished:\ndeactivate"
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html#step-4-initialize-git-in-your-course-folder",
-    "href": "assignments/week-01/environment-setup.html#step-4-initialize-git-in-your-course-folder",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 4 — Initialize Git in your course folder",
-    "text": "Step 4 — Initialize Git in your course folder\nWe use Git to track your work over time and to make submitting or backing up your work easier.\nThis step creates a .git folder that stores your work history.\n\nInitialize the repository\nOpen Command Prompt (cmd) and run:\ncd C:\\cmsc-1236\ngit init\n\n\nCreate a .gitignore file\nGit does not create a .gitignore automatically. You will create it so that you don’t accidentally commit:\n\nPython cache files\neditor settings\ntemporary files\n\nIn C:\\cmsc-1236, create a file named:\n.gitignore\nPaste the following into it:\n# Python cache\n__pycache__/\n*.pyc\n\n# Environment / OS clutter\n.DS_Store\nThumbs.db\n\n# VS Code\n.vscode/\n\n# Local environment folder \ncmsc1236/\n\n# Common local files\n*.log\n*.tmp"
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html#step-5-set-vs-code-to-use-the-cmsc-1236-environment",
-    "href": "assignments/week-01/environment-setup.html#step-5-set-vs-code-to-use-the-cmsc-1236-environment",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 5 — Set VS Code to use the CMSC 1236 environment",
-    "text": "Step 5 — Set VS Code to use the CMSC 1236 environment\nIn this step, you will tell VS Code which Python interpreter to use for this course so that:\n\nRun/Debug uses the correct Python\nThe integrated terminal runs the correct Python\nYour assignments behave consistently across machines\n\n\nNote: This environment is separate from the Miniconda environments you may be using in other courses, so nothing conflicts.\n\n\nOpen your course folder in VS Code\n\n\nVS Code stores interpreter settings per folder/project\nOpening the correct folder ensures the interpreter you select is tied to CMSC 1236 only\n\n\nSelect the correct Python interpreter\n\n\n\nSelect View → Command Palette or Press: Ctrl + Shift + P\n\nType: Python: Select Interpreter\nChoose the interpreter that points to the course environment:\n\nC:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\nIf you do not see it:\n\nChoose Enter interpreter path…\nThen browse to: C:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\n\n\nVerify in the VS Code Terminal (Command Prompt)\n\n\n\nIn VS Code, open a CMD Prompt terminal:\n\nTerminal → New Terminal\n\nConfirm you are in the course folder. If not, run:\n\ncd C:\\cmsc-1236\n\nActivate the course environment:\n\ncmsc1236\\Scripts\\activate\n\nVerify that Python is coming from the course environment:\n\nwhere python\nExpected output includes a path like:\nC:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\n\nConfirm the Python version:\n\npython --version\n\nIf where python does NOT point into C:\\cmsc-1236\\cmsc1236\\..., you are not using the course environment\nFixing it here prevents “it works on my machine” problems later"
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html#step-6-test-python-from-the-vs-code-terminal",
-    "href": "assignments/week-01/environment-setup.html#step-6-test-python-from-the-vs-code-terminal",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 6 — Test Python from the VS Code terminal",
-    "text": "Step 6 — Test Python from the VS Code terminal\nCreate a new folder:\nmkdir C:\\cmsc-1236\\projects\\week-01\nCreate a new python file called:\n\ntest_env.py\n\nPaste this code:\nimport sys\n\nprint(\"Python version:\", sys.version)\nprint(\"Python executable:\", sys.executable)\nRun it in the VS Code terminal:\ncd C:\\cmsc-1236\\projects\\week-01\\\npython test_env.py\nYou should see:\n\nA Python 3.xx.x version output\nA path showing it is running from the cmsc1236 environment"
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html#step-7-import-the-book-example-code",
-    "href": "assignments/week-01/environment-setup.html#step-7-import-the-book-example-code",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 7 — Import the book example code",
-    "text": "Step 7 — Import the book example code\nYou’ll keep the books’ example code in your course folder so you can quickly reference working examples while reading and while completing assignments.\n\nCreate a place to store the book code\nOpen Command Prompt (cmd) and run:\ncd C:\\cmsc-1236\nmkdir book\ncd book\nAfter this step, you’ll have:\nC:\\cmsc-1236\\book\\ (this is where both books’ code will live)\n\n\n\nFluent Python (2nd Edition) — clone the official GitHub repo\nIn the same cmd window (you should still be in C:\\cmsc-1236\\book), run:\ngit clone https://github.com/fluentpython/example-code-2e.git\nThis creates:\nC:\\cmsc-1236\\book\\fluent-python-2e\\\n\n\nLearning Python (6th Edition) — download the official examples ZIP\nLearning Python’s official examples are provided as a ZIP download from the book’s site (not a GitHub repo).\n\nOpen this page in your browser: https://learning-python.com/LP6E-code.html\nClick LP6E.zip ⇦ Fetch and unzip and download it.\n\n\n\nUnzip it\n\nRight-click the ZIP → Extract All…\nExtract into: C:\\cmsc-1236\\book\\\n\nAfter unzipping, you should see an LP6E\\ folder in C:\\cmsc-1236\\book\\."
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html#you-are-done",
-    "href": "assignments/week-01/environment-setup.html#you-are-done",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "You are done",
-    "text": "You are done\nAt this point:\n\nYour course folder exists at C:\\cmsc-1236\nGit is initialized\nYour cmsc1236 Python environment is created and working\nVS Code is configured to use the course environment\nYou can now work normally in VS Code and run programs from the terminal"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "assignments/week-01/index.html",
-    "href": "assignments/week-01/index.html",
-    "title": "Week 1 Assignment",
-    "section": "",
-    "text": "Complete the Environment Setup:\n\nEnvironment Setup\n\nWeek 1 and 2 Python Review Project\n\nVirtual Pet Project",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#assignment",
-    "href": "assignments/week-01/index.html#assignment",
-    "title": "Week 1 Assignment",
-    "section": "",
-    "text": "Complete the Environment Setup:\n\nEnvironment Setup\n\nWeek 1 and 2 Python Review Project\n\nVirtual Pet Project",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#what-to-work-on-this-week",
-    "href": "assignments/week-01/index.html#what-to-work-on-this-week",
-    "title": "Week 1 Assignment",
-    "section": "What to work on this week",
-    "text": "What to work on this week\n\nSet up your course environment and confirm you can run .py files using the correct interpreter.\nInitialize a Git repository and commit your initial working setup.\nBegin Virtual Pet v1 by implementing the menu loop skeleton and basic input/output patterns.\nAdd input validation for menu selection so invalid input does not terminate the program.",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#reading-purpose-and-use",
-    "href": "assignments/week-01/index.html#reading-purpose-and-use",
-    "title": "Week 1 Assignment",
-    "section": "Reading (purpose and use)",
-    "text": "Reading (purpose and use)\nRead Learning Python 6e, Chapters 1–7 by the end of Week 2. The purpose of this reading is review and reference: you are expected to recognize core language features (types, expressions, statements, control flow, and program structure) from Structured Programming Logic and to be able to look up details as you implement the Virtual Pet project. You do not need to memorize the chapters; you should be able to locate and apply relevant examples when you encounter unfamiliar syntax or behavior.",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#complete-course-agreement-quiz-by-wednesday-1130pm",
-    "href": "assignments/week-01/index.html#complete-course-agreement-quiz-by-wednesday-1130pm",
-    "title": "Week 1 Assignment",
-    "section": "Complete Course Agreement Quiz by Wednesday 11:30PM",
-    "text": "Complete Course Agreement Quiz by Wednesday 11:30PM\nThis needs to be done to avoid beign dropped from the course.",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-01/index.html#submission",
-    "href": "assignments/week-01/index.html#submission",
-    "title": "Week 1 Assignment",
-    "section": "Submission",
-    "text": "Submission\nSubmit the complete project during Week 2.",
-    "crumbs": [
-      "Home",
-      "Weekly Assignments",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "assignments/week-02/index.html",
-    "href": "assignments/week-02/index.html",
-    "title": "Week 2",
-    "section": "",
-    "text": "This page will be published before Week 2 begins."
+    "text": "What you’re doing\nYou are going to open a Jupyter notebook in VS Code and run it successfully using the course Python environment.\n\n\n1) Open the course folder in VS Code\n\nOpen VS Code\nGo to File → Open Folder…\nOpen your course work folder (example: C:\\cmsc-1217\\)\n\n\n\n2) Install the extensions (if you don’t already have them)\nIn VS Code, install:\n\nPython (Microsoft)\nJupyter (Microsoft)\n\n\n\n3) Create the course Python environment and select it in VS Code (one-time)\n\n3A) Create the course environment folder\n\nCreate a folder on your C: drive named:\n\nC:\\cmsc-1217-env\\\n\n\n\n\n3B) Create the virtual environment (.venv)\n\nOpen Command Prompt (Windows search → type “Command Prompt”)\nRun:\n\ncd C:\\cmsc-1217-env\npython -m venv .venv\n\n\n3C) Activate the environment\nIn the same Command Prompt window, run:\nC:\\cmsc-1217-env\\.venv\\Scripts\\activate.bat\nYou should see (.venv) appear at the start of the line.\n\n\n3D) Install the notebook packages (first-time setup)\nStill in the activated environment, run:\npython -m pip install --upgrade pip\npython -m pip install numpy pandas matplotlib jupyter\n\n\n3E) Select the environment in VS Code (Interpreter)\n\nIn VS Code, press Ctrl + Shift + P\nType Python: Select Interpreter\nChoose the interpreter that looks like:\n\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nIf you don’t see it:\n\nchoose Enter interpreter path…\npaste: C:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis is the environment we will use all semester.\n\n\n\n4) Open the notebook\n\nIn the Explorer panel, click the notebook file (.ipynb) your instructor provided.\n\n\n\n5) Select the notebook kernel (first time only)\nThe first time you run a notebook, VS Code may ask you to pick a kernel.\nChoose the kernel that matches the course environment path:\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis can feel repetitive the first time. That’s normal. Once selected, it usually stays set for that folder.\n\n\n6) Select the kernel, then run a quick test\n\nIn the top-right of the notebook, click Select Kernel.\nChoose the kernel that points to the course environment:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n(It may also show up as “Python 3.x (.venv)”—the key is that it points to cmsc-1217-env\\.venv.)\nClick + Code.\nIn the code block that appears, paste:\n\nprint(\"Notebook is running\")\n\nRun it by clicking the Run (▶) icon on the code block, or press Shift + Enter.\nYou should see Notebook is running appear underneath.\n\n\n\n7) Quick confirmation (your instructor may ask for this)\nRun this in a cell:\nimport sys\nsys.executable\nIt should show something like:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\n\nIf something goes wrong\n\nIf you see ModuleNotFoundError (missing package), you are almost always using the wrong interpreter/kernel.\n\nRe-do Step 3 and Step 5 and pick the one that points to cmsc-1217-env\\.venv."
   },
   {
     "objectID": "course/syllabus.html",
@@ -557,11 +325,264 @@
     ]
   },
   {
-    "objectID": "shared/guides/setup/environment-setup-guide-vscode.html",
-    "href": "shared/guides/setup/environment-setup-guide-vscode.html",
-    "title": "Week 1 — VSCode Setup and First Notebook (Windows)",
+    "objectID": "assignments/week-02/index.html",
+    "href": "assignments/week-02/index.html",
+    "title": "Week 2",
     "section": "",
-    "text": "What you’re doing\nYou are going to open a Jupyter notebook in VS Code and run it successfully using the course Python environment.\n\n\n1) Open the course folder in VS Code\n\nOpen VS Code\nGo to File → Open Folder…\nOpen your course work folder (example: C:\\cmsc-1217\\)\n\n\n\n2) Install the extensions (if you don’t already have them)\nIn VS Code, install:\n\nPython (Microsoft)\nJupyter (Microsoft)\n\n\n\n3) Create the course Python environment and select it in VS Code (one-time)\n\n3A) Create the course environment folder\n\nCreate a folder on your C: drive named:\n\nC:\\cmsc-1217-env\\\n\n\n\n\n3B) Create the virtual environment (.venv)\n\nOpen Command Prompt (Windows search → type “Command Prompt”)\nRun:\n\ncd C:\\cmsc-1217-env\npython -m venv .venv\n\n\n3C) Activate the environment\nIn the same Command Prompt window, run:\nC:\\cmsc-1217-env\\.venv\\Scripts\\activate.bat\nYou should see (.venv) appear at the start of the line.\n\n\n3D) Install the notebook packages (first-time setup)\nStill in the activated environment, run:\npython -m pip install --upgrade pip\npython -m pip install numpy pandas matplotlib jupyter\n\n\n3E) Select the environment in VS Code (Interpreter)\n\nIn VS Code, press Ctrl + Shift + P\nType Python: Select Interpreter\nChoose the interpreter that looks like:\n\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nIf you don’t see it:\n\nchoose Enter interpreter path…\npaste: C:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis is the environment we will use all semester.\n\n\n\n4) Open the notebook\n\nIn the Explorer panel, click the notebook file (.ipynb) your instructor provided.\n\n\n\n5) Select the notebook kernel (first time only)\nThe first time you run a notebook, VS Code may ask you to pick a kernel.\nChoose the kernel that matches the course environment path:\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis can feel repetitive the first time. That’s normal. Once selected, it usually stays set for that folder.\n\n\n6) Select the kernel, then run a quick test\n\nIn the top-right of the notebook, click Select Kernel.\nChoose the kernel that points to the course environment:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n(It may also show up as “Python 3.x (.venv)”—the key is that it points to cmsc-1217-env\\.venv.)\nClick + Code.\nIn the code block that appears, paste:\n\nprint(\"Notebook is running\")\n\nRun it by clicking the Run (▶) icon on the code block, or press Shift + Enter.\nYou should see Notebook is running appear underneath.\n\n\n\n7) Quick confirmation (your instructor may ask for this)\nRun this in a cell:\nimport sys\nsys.executable\nIt should show something like:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\n\nIf something goes wrong\n\nIf you see ModuleNotFoundError (missing package), you are almost always using the wrong interpreter/kernel.\n\nRe-do Step 3 and Step 5 and pick the one that points to cmsc-1217-env\\.venv."
+    "text": "This page will be published before Week 2 begins."
+  },
+  {
+    "objectID": "assignments/week-01/index.html",
+    "href": "assignments/week-01/index.html",
+    "title": "Week 1 Assignment",
+    "section": "",
+    "text": "Complete the Environment Setup:\n\nEnvironment Setup\n\nWeek 1 and 2 Python Review Project\n\nVirtual Pet Project",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#assignment",
+    "href": "assignments/week-01/index.html#assignment",
+    "title": "Week 1 Assignment",
+    "section": "",
+    "text": "Complete the Environment Setup:\n\nEnvironment Setup\n\nWeek 1 and 2 Python Review Project\n\nVirtual Pet Project",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#what-to-work-on-this-week",
+    "href": "assignments/week-01/index.html#what-to-work-on-this-week",
+    "title": "Week 1 Assignment",
+    "section": "What to work on this week",
+    "text": "What to work on this week\n\nSet up your course environment and confirm you can run .py files using the correct interpreter.\nInitialize a Git repository and commit your initial working setup.\nBegin Virtual Pet v1 by implementing the menu loop skeleton and basic input/output patterns.\nAdd input validation for menu selection so invalid input does not terminate the program.",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#reading",
+    "href": "assignments/week-01/index.html#reading",
+    "title": "Week 1 Assignment",
+    "section": "Reading",
+    "text": "Reading\nRead Learning Python 6e, Chapters 1–7 by the end of Week 2. The purpose of this reading is review and reference: you are expected to recognize core language features (types, expressions, statements, control flow, and program structure) from Structured Programming Logic and to be able to look up details as you implement the Virtual Pet project. You do not need to memorize the chapters; you should be able to locate and apply relevant examples when you encounter unfamiliar syntax or behavior.",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#complete-course-agreement-quiz-by-wednesday-1130pm",
+    "href": "assignments/week-01/index.html#complete-course-agreement-quiz-by-wednesday-1130pm",
+    "title": "Week 1 Assignment",
+    "section": "Complete Course Agreement Quiz by Wednesday 11:30PM",
+    "text": "Complete Course Agreement Quiz by Wednesday 11:30PM\nThis needs to be done to avoid beign dropped from the course.",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "assignments/week-01/index.html#submission",
+    "href": "assignments/week-01/index.html#submission",
+    "title": "Week 1 Assignment",
+    "section": "Submission",
+    "text": "Submission\nSubmit the complete project during Week 2.",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html",
+    "href": "assignments/week-01/environment-setup.html",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "",
+    "text": "For CMSC 1236, we will create a separate Python environment so nothing conflicts with your other classes."
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-2-create-your-course-folder-on-the-root-drive",
+    "href": "assignments/week-01/environment-setup.html#step-2-create-your-course-folder-on-the-root-drive",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 2 — Create your course folder on the root drive",
+    "text": "Step 2 — Create your course folder on the root drive\nYour CMSC 1236 directory must be created on the root of the C: drive:\n\nC:\\cmsc-1236\n\nInside it, create these folders:\n\nassignments\nnotes\nprojects\n\nCreating the course folder on the root drive helps avoid common Windows problems:\n\nShort, predictable paths (fewer issues with tools that don’t like long file paths).\nAvoids OneDrive syncing (Desktop/Documents are often synced; syncing can lock files and break builds/tools).\nMakes Git + terminals simpler (easy to navigate, fewer permission surprises).\nKeeps course work separate from other software setups (so you don’t accidentally mix files/tools between courses).\n\n\nCMD commands (Command Prompt)\n\nOpen Command Prompt (cmd).\nGo to the root of the C: drive:\n\ncd\\\n\nCreate the course folder:\n\nmkdir cmsc-1236\n\nMove into the course folder:\n\ncd \\cmsc-1236\n\nCreate the three required subfolders:\n\nmkdir assignments\nmkdir notes\nmkdir projects\n\n\nVerify the folder structure\nRun:\ndir\nYour folder structure should look like similar to the following:\nC:\\cmsc-1236\\\n  assignments\\\n  notes\\\n  projects\\"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-3-create-the-cmsc-1236-python-environment",
+    "href": "assignments/week-01/environment-setup.html#step-3-create-the-cmsc-1236-python-environment",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 3 — Create the CMSC 1236 Python environment",
+    "text": "Step 3 — Create the CMSC 1236 Python environment\nWe will create a dedicated environment named:\n\ncmsc1236\n\nThis environment is separate from any miniconda environments you may be using in other courses, so nothing conflicts.\nA dedicated environment ensures that we:\n\nKeep CMSC 1236 packages separate from other classes/tools\nEnsure the course runs on a consistent Python version\n\n\nCreate the environment (Command Prompt)\n\nOpen Command Prompt (cmd)\n\nGo to your course folder (if not already there):\n\ncd \\cmsc-1236\n\nCreate the environment folder using Python’s built-in venv tool:\n\npy -m venv cmsc1236\n\n\nActivate the environment (Command Prompt)\nRun:\ncmsc1236\\Scripts\\activate\nWhen it activates, your prompt will look like this:\n(cmsc1236) C:\\cmsc-1236&gt;\n\n\nVerify the environment is working\nRun:\npython --version\nYou should see a Python version printed:\nPython 3.xx.x\n\n\nDeactivate the environment\nWhen you are finished:\ndeactivate"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-4-initialize-git-in-your-course-folder",
+    "href": "assignments/week-01/environment-setup.html#step-4-initialize-git-in-your-course-folder",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 4 — Initialize Git in your course folder",
+    "text": "Step 4 — Initialize Git in your course folder\nWe use Git to track your work over time and to make submitting or backing up your work easier.\nThis step creates a .git folder that stores your work history.\n\nInitialize the repository\nOpen Command Prompt (cmd) and run:\ncd C:\\cmsc-1236\ngit init\n\n\nCreate a .gitignore file\nGit does not create a .gitignore automatically. You will create it so that you don’t accidentally commit:\n\nPython cache files\neditor settings\ntemporary files\n\nIn C:\\cmsc-1236, create a file named:\n.gitignore\nPaste the following into it:\n# Python cache\n__pycache__/\n*.pyc\n\n# Environment / OS clutter\n.DS_Store\nThumbs.db\n\n# VS Code\n.vscode/\n\n# Local environment folder \ncmsc1236/\n\n# Common local files\n*.log\n*.tmp"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-5-set-vs-code-to-use-the-cmsc-1236-environment",
+    "href": "assignments/week-01/environment-setup.html#step-5-set-vs-code-to-use-the-cmsc-1236-environment",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 5 — Set VS Code to use the CMSC 1236 environment",
+    "text": "Step 5 — Set VS Code to use the CMSC 1236 environment\nIn this step, you will tell VS Code which Python interpreter to use for this course so that:\n\nRun/Debug uses the correct Python\nThe integrated terminal runs the correct Python\nYour assignments behave consistently across machines\n\n\nNote: This environment is separate from the Miniconda environments you may be using in other courses, so nothing conflicts.\n\n\nOpen your course folder in VS Code\n\n\nVS Code stores interpreter settings per folder/project\nOpening the correct folder ensures the interpreter you select is tied to CMSC 1236 only\n\n\nSelect the correct Python interpreter\n\n\n\nSelect View → Command Palette or Press: Ctrl + Shift + P\n\nType: Python: Select Interpreter\nChoose the interpreter that points to the course environment:\n\nC:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\nIf you do not see it:\n\nChoose Enter interpreter path…\nThen browse to: C:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\n\n\nVerify in the VS Code Terminal (Command Prompt)\n\n\n\nIn VS Code, open a CMD Prompt terminal:\n\nTerminal → New Terminal\n\nConfirm you are in the course folder. If not, run:\n\ncd C:\\cmsc-1236\n\nActivate the course environment:\n\ncmsc1236\\Scripts\\activate\n\nVerify that Python is coming from the course environment:\n\nwhere python\nExpected output includes a path like:\nC:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\n\nConfirm the Python version:\n\npython --version\n\nIf where python does NOT point into C:\\cmsc-1236\\cmsc1236\\..., you are not using the course environment\nFixing it here prevents “it works on my machine” problems later"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-6-test-python-from-the-vs-code-terminal",
+    "href": "assignments/week-01/environment-setup.html#step-6-test-python-from-the-vs-code-terminal",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 6 — Test Python from the VS Code terminal",
+    "text": "Step 6 — Test Python from the VS Code terminal\nCreate a new folder:\nmkdir C:\\cmsc-1236\\projects\\week-01\nCreate a new python file called:\n\ntest_env.py\n\nPaste this code:\nimport sys\n\nprint(\"Python version:\", sys.version)\nprint(\"Python executable:\", sys.executable)\nRun it in the VS Code terminal:\ncd C:\\cmsc-1236\\projects\\week-01\\\npython test_env.py\nYou should see:\n\nA Python 3.xx.x version output\nA path showing it is running from the cmsc1236 environment"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-7-import-the-book-example-code",
+    "href": "assignments/week-01/environment-setup.html#step-7-import-the-book-example-code",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 7 — Import the book example code",
+    "text": "Step 7 — Import the book example code\nYou’ll keep the books’ example code in your course folder so you can quickly reference working examples while reading and while completing assignments.\n\nCreate a place to store the book code\nOpen Command Prompt (cmd) and run:\ncd C:\\cmsc-1236\nmkdir book\ncd book\nAfter this step, you’ll have:\nC:\\cmsc-1236\\book\\ (this is where both books’ code will live)\n\n\n\nFluent Python (2nd Edition) — clone the official GitHub repo\nIn the same cmd window (you should still be in C:\\cmsc-1236\\book), run:\ngit clone https://github.com/fluentpython/example-code-2e.git\nThis creates:\nC:\\cmsc-1236\\book\\fluent-python-2e\\\n\n\nLearning Python (6th Edition) — download the official examples ZIP\nLearning Python’s official examples are provided as a ZIP download from the book’s site (not a GitHub repo).\n\nOpen this page in your browser: https://learning-python.com/LP6E-code.html\nClick LP6E.zip ⇦ Fetch and unzip and download it.\n\n\n\nUnzip it\n\nRight-click the ZIP → Extract All…\nExtract into: C:\\cmsc-1236\\book\\\n\nAfter unzipping, you should see an LP6E\\ folder in C:\\cmsc-1236\\book\\."
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#you-are-done",
+    "href": "assignments/week-01/environment-setup.html#you-are-done",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "You are done",
+    "text": "You are done\nAt this point:\n\nYour course folder exists at C:\\cmsc-1236\nGit is initialized\nYour cmsc1236 Python environment is created and working\nVS Code is configured to use the course environment\nYou can now work normally in VS Code and run programs from the terminal"
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html",
+    "href": "assignments/week-01/week-1-and-2-assignment.html",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console.\n\n\n\nThe Pet class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (if statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.\n\nImplementing the Pet Class:\n\nFollow the provided UML diagram to create the Pet class with the attributes name, hunger, happiness, energy, color, and type.\nInitialize these attributes in the __init__ method. name, color, and type will be strings provided when a new pet is created, and hunger, happiness, and energy should start with random values between 0 and 10.\n\nUsing Conditional Statements in Class Methods:\n\nIn methods like feed, play, and rest, you will use if statements to check the state of the pet and decide what action to take.\n\n\n\n\n\n\n\n\n\nThe feed method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.\n\n\n\n\nReducing Hunger and Increasing Happiness:\n\nWhen the feed method is called, first check the pet’s current hunger level (self.hunger).\nIf self.hunger is greater than 0, it indicates that the pet is hungry. In this case, reduce self.hunger by 1 to represent feeding the pet. Ensure self.hunger does not go below 0.\nAfter feeding, increase self.happiness by 1. However, ensure that self.happiness does not exceed 10.\n\nManaging Happiness When Not Hungry:\n\nIf self.hunger is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce self.happiness by 1, since overfeeding will cause discomfort.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to being fed.\n\n\n\n\n\n\n\n\nThe play method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.\n\n\n\n\nHandling Sadness:\n\nBefore initiating play, check if the pet’s happiness level (self.happiness) is at 0.\nIf self.happiness is 0, it indicates that the pet is too sad to engage in play.\n\nHandling Tiredness:\n\nCheck the pet’s energy level (self.energy).\nIf self.energy is 0, it means the pet is too tired to play.\n\nPlaying with the Pet:\n\nIf the pet is neither too sad nor too tired (i.e., self.happiness is above 0 and self.energy is above 0), proceed to play with the pet.\nIncrease self.happiness by 1 to represent the positive effect of playing. However, ensure that self.happiness does not exceed 10.\nDecrease self.energy by 1 to account for the energy expended during play. However, it’s important to ensure that self.energy does not fall below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to playing.\n\n\n\n\n\n\n\n\nThe rest method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.\n\n\n\n\nIncreasing Energy:\n\nCheck the pet’s current energy level (self.energy).\nIf self.energy is less than 10, it indicates the pet could benefit from rest. Increase self.energy by 1 to represent the energy regained from resting. However, ensure that self.energy does not exceed 10.\n\nManaging Happiness When Energy is at Maximum:\n\nIf self.energy is already at 10 (meaning the pet is fully rested), resting will affect its happiness.\nIf self.energy is already at 10 and self.happiness is greater than 0, reduce self.happiness it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent self.happiness from going below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to resting.\n\n\n\n\n\n\n\n\nThe customize method allows the user to change the pet’s appearance by setting new values for the color and type attributes.\n\n\n\n\nSetting New Attributes:\n\nThe method takes two parameters, color and pet_type, and assigns them to the pet’s color and type attributes.\nThis allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.\n\n\n\n\n\n\n\n\nThe status method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.\n\n\n\n\nCreating a Status Summary:\n\nThe method compiles a string that summarizes the animal’s current status.\nThis summary includes the animal’s name and its current hunger, happiness, energy, color, and type.\n\nString Formatting:\n\nCreate a readable and well-formatted summary.\nEach attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.\n\nReturning the Summary:\n\nThe method returns the formatted string.\n\n\n\n\n\n\n\n\nThe is_happy method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.\n\n\n\n\nEvaluating Happiness:\n\nThe method assesses whether the animal’s happiness level (self.happiness) is below or above 5.\nIf self.happiness is above 5 the animal is considered to be happy.\n\nReturning a Boolean Result:\n\nThe method returns True if the animal’s happiness is above 5, indicating that the animal is happy.\nIt returns False if the happiness level is 5 or lower, indicating that the animal is not happy.\n\n\n\n\n\n\n\n\nYour main() function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.\n\n\n\n\nImplement a menu system that displays a list of possible actions the user can perform. These actions include:\n\nFeeding the pet\nPlaying with the pet\nLetting the pet rest\nChecking the pet’s status\nCustomizing the pet’s appearance\nSaving the pet’s state and exiting the program\n\nUse an input prompt to allow the user to select an action and then call the corresponding method from the Pet class.\n\n\n\n\n\nEnsure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).\nDisplay an error message if the user inputs an invalid option and show the menu again for a valid selection.\n\n\n\n\n\n\nUse pickling to save and load the pet’s state. Implement a save_pet and a load_pet function in the main() for this purpose.\nEnsure the program can handle situations where no saved data exists.\n\n\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\nWhat is your pet's name? Joe\nChoose a color for your pet (e.g., red, blue, green): Blue\nChoose a type for your pet (e.g., dog, cat, bird): Dog\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 9\nInvalid choice. Please enter a number between 1 and 6.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 3\nJoe is rested and seems a bit bored.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 1\nYou fed Joe. Joe seems happier after eating!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 5\nChoose a color for your pet: Green\nChoose a type for your pet: Dog\nJoe is now a Green Dog!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 2\nPlaying with Joe was fun!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 3\nEnergy: 9\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n  +---------------------+\n  |        Pet          |\n  +---------------------+\n  | - name: str         |\n  | - hunger: int       |\n  | - happiness: int    |\n  | - energy: int       |\n  | - color: str        |\n  | - type: str         |\n  +---------------------+\n  | + __init__(name, color, pet_type) |\n  | + feed()            |\n  | + play()            |\n  | + rest()            |\n  | + customize(color, pet_type) |\n  | + status(): str     |\n  | + is_happy(): bool  |\n  +---------------------+"
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html#overview",
+    "href": "assignments/week-01/week-1-and-2-assignment.html#overview",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console."
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html#pet-class",
+    "href": "assignments/week-01/week-1-and-2-assignment.html#pet-class",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "The Pet class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (if statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.\n\nImplementing the Pet Class:\n\nFollow the provided UML diagram to create the Pet class with the attributes name, hunger, happiness, energy, color, and type.\nInitialize these attributes in the __init__ method. name, color, and type will be strings provided when a new pet is created, and hunger, happiness, and energy should start with random values between 0 and 10.\n\nUsing Conditional Statements in Class Methods:\n\nIn methods like feed, play, and rest, you will use if statements to check the state of the pet and decide what action to take."
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html#method-implementations",
+    "href": "assignments/week-01/week-1-and-2-assignment.html#method-implementations",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "The feed method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.\n\n\n\n\nReducing Hunger and Increasing Happiness:\n\nWhen the feed method is called, first check the pet’s current hunger level (self.hunger).\nIf self.hunger is greater than 0, it indicates that the pet is hungry. In this case, reduce self.hunger by 1 to represent feeding the pet. Ensure self.hunger does not go below 0.\nAfter feeding, increase self.happiness by 1. However, ensure that self.happiness does not exceed 10.\n\nManaging Happiness When Not Hungry:\n\nIf self.hunger is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce self.happiness by 1, since overfeeding will cause discomfort.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to being fed.\n\n\n\n\n\n\n\n\nThe play method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.\n\n\n\n\nHandling Sadness:\n\nBefore initiating play, check if the pet’s happiness level (self.happiness) is at 0.\nIf self.happiness is 0, it indicates that the pet is too sad to engage in play.\n\nHandling Tiredness:\n\nCheck the pet’s energy level (self.energy).\nIf self.energy is 0, it means the pet is too tired to play.\n\nPlaying with the Pet:\n\nIf the pet is neither too sad nor too tired (i.e., self.happiness is above 0 and self.energy is above 0), proceed to play with the pet.\nIncrease self.happiness by 1 to represent the positive effect of playing. However, ensure that self.happiness does not exceed 10.\nDecrease self.energy by 1 to account for the energy expended during play. However, it’s important to ensure that self.energy does not fall below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to playing.\n\n\n\n\n\n\n\n\nThe rest method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.\n\n\n\n\nIncreasing Energy:\n\nCheck the pet’s current energy level (self.energy).\nIf self.energy is less than 10, it indicates the pet could benefit from rest. Increase self.energy by 1 to represent the energy regained from resting. However, ensure that self.energy does not exceed 10.\n\nManaging Happiness When Energy is at Maximum:\n\nIf self.energy is already at 10 (meaning the pet is fully rested), resting will affect its happiness.\nIf self.energy is already at 10 and self.happiness is greater than 0, reduce self.happiness it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent self.happiness from going below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to resting.\n\n\n\n\n\n\n\n\nThe customize method allows the user to change the pet’s appearance by setting new values for the color and type attributes.\n\n\n\n\nSetting New Attributes:\n\nThe method takes two parameters, color and pet_type, and assigns them to the pet’s color and type attributes.\nThis allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.\n\n\n\n\n\n\n\n\nThe status method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.\n\n\n\n\nCreating a Status Summary:\n\nThe method compiles a string that summarizes the animal’s current status.\nThis summary includes the animal’s name and its current hunger, happiness, energy, color, and type.\n\nString Formatting:\n\nCreate a readable and well-formatted summary.\nEach attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.\n\nReturning the Summary:\n\nThe method returns the formatted string.\n\n\n\n\n\n\n\n\nThe is_happy method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.\n\n\n\n\nEvaluating Happiness:\n\nThe method assesses whether the animal’s happiness level (self.happiness) is below or above 5.\nIf self.happiness is above 5 the animal is considered to be happy.\n\nReturning a Boolean Result:\n\nThe method returns True if the animal’s happiness is above 5, indicating that the animal is happy.\nIt returns False if the happiness level is 5 or lower, indicating that the animal is not happy.\n\n\n\n\n\n\n\n\nYour main() function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.\n\n\n\n\nImplement a menu system that displays a list of possible actions the user can perform. These actions include:\n\nFeeding the pet\nPlaying with the pet\nLetting the pet rest\nChecking the pet’s status\nCustomizing the pet’s appearance\nSaving the pet’s state and exiting the program\n\nUse an input prompt to allow the user to select an action and then call the corresponding method from the Pet class.\n\n\n\n\n\nEnsure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).\nDisplay an error message if the user inputs an invalid option and show the menu again for a valid selection.\n\n\n\n\n\n\nUse pickling to save and load the pet’s state. Implement a save_pet and a load_pet function in the main() for this purpose.\nEnsure the program can handle situations where no saved data exists."
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html#sample-output",
+    "href": "assignments/week-01/week-1-and-2-assignment.html#sample-output",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "Welcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\nWhat is your pet's name? Joe\nChoose a color for your pet (e.g., red, blue, green): Blue\nChoose a type for your pet (e.g., dog, cat, bird): Dog\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 9\nInvalid choice. Please enter a number between 1 and 6.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 3\nJoe is rested and seems a bit bored.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 1\nYou fed Joe. Joe seems happier after eating!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 5\nChoose a color for your pet: Green\nChoose a type for your pet: Dog\nJoe is now a Green Dog!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!"
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html#starting-the-program-with-a-file-created",
+    "href": "assignments/week-01/week-1-and-2-assignment.html#starting-the-program-with-a-file-created",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "Welcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 2\nPlaying with Joe was fun!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 3\nEnergy: 9\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n  +---------------------+\n  |        Pet          |\n  +---------------------+\n  | - name: str         |\n  | - hunger: int       |\n  | - happiness: int    |\n  | - energy: int       |\n  | - color: str        |\n  | - type: str         |\n  +---------------------+\n  | + __init__(name, color, pet_type) |\n  | + feed()            |\n  | + play()            |\n  | + rest()            |\n  | + customize(color, pet_type) |\n  | + status(): str     |\n  | + is_happy(): bool  |\n  +---------------------+"
+  },
+  {
+    "objectID": "course/schedule.html",
+    "href": "course/schedule.html",
+    "title": "CMSC 1236 Course Schedule",
+    "section": "",
+    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#course-rhythm",
+    "href": "course/schedule.html#course-rhythm",
+    "title": "CMSC 1236 Course Schedule",
+    "section": "",
+    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#weekly-schedule",
+    "href": "course/schedule.html#weekly-schedule",
+    "title": "CMSC 1236 Course Schedule",
+    "section": "Weekly schedule",
+    "text": "Weekly schedule\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nReading\n\n\n\n\n1\nJan 12, 2026–Jan 18, 2026\nCourse environment + workflow (venv, Git, VS Code, run/submit). Start Virtual Pet v1 (menu loop skeleton, I/O patterns)\nLearning Python 6e Ch. 1–7 (finish by end of Week 2)\n\n\n2\nJan 19, 2026–Jan 25, 2026\nFinish Virtual Pet v1 (Pet class + conditionals + validation/invalid input + pickle save/load)\n\n\n\n3\nJan 26, 2026–Feb 01, 2026\nCore containers for CLI apps (lists/dicts/tuples) + file/persistence concepts to support the pet project\nLearning Python 6e Ch. 8–9\n\n\n4\nFeb 02, 2026–Feb 08, 2026\nStatements + assignment mechanics (unpacking, multiple assignment), practical output/formatting habits\nLearning Python 6e Ch. 10–11\n\n\n5\nFeb 09, 2026–Feb 15, 2026\nControl flow upgrade: if + match + truthiness for clean CLI logic\nLearning Python 6e Ch. 12\n\n\n6\nFeb 16, 2026–Feb 22, 2026\nLoop patterns used in real programs (validation loops, enumerate, zip, loop-else)\nLearning Python 6e Ch. 13\n\n\n7\nFeb 23, 2026–Mar 01, 2026\nIteration & comprehensions as “muscle memory” tools (readability + correctness)\nLearning Python 6e Ch. 14\n\n\n8\nMar 02, 2026–Mar 08, 2026\nFunctions as structure: boundaries, scope model, and argument patterns (foundation for refactoring)\nLearning Python 6e Ch. 16–18\n\n\n9\nMar 09, 2026–Mar 15, 2026\nSpring Break (no due dates)\n—\n\n\n10\nMar 16, 2026–Mar 22, 2026\nFunction “level-up”: advanced function topics + comprehensions/generators as programming habits\nLearning Python 6e Ch. 19–20\n\n\n11\nMar 23, 2026–Mar 29, 2026\nReal-program organization + reliability: modules/packages/__main__ + exceptions/context managers (selected)\nLearning Python 6e Ch. 22–25 + 33–36 (selected)\n\n\n12\nMar 30, 2026–Apr 05, 2026\nPivot to Fluent Python: data model mindset, why “dunder methods” matter\nFluent Python 2e Ch. 1\n\n\n13\nApr 06, 2026–Apr 12, 2026\nFunctions as objects for cleaner architecture (dispatch tables, callbacks, command systems)\nFluent Python 2e Ch. 7\n\n\n14\nApr 13, 2026–Apr 19, 2026\nFinal project proposal week: scope, constraints, milestones, repo plan, feature choices\nTargeted review of FP Ch. 1 & 7 + LP modules/exceptions (as needed)\n\n\n15\nApr 20, 2026–Apr 26, 2026\nIterators/generators for logs + reporting; “event stream” thinking for CLI apps\nFluent Python 2e Ch. 17\n\n\n16\nApr 27, 2026–May 03, 2026\nFinal project build week (student-chosen standalone CLI app)\nTargeted reading as needed\n\n\n17\nMay 04, 2026–May 10, 2026\nFinal polish: edge cases, reliability, run instructions, demo readiness\nTargeted review as needed",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#final-project-apr-27may-11",
+    "href": "course/schedule.html#final-project-apr-27may-11",
+    "title": "CMSC 1236 Course Schedule",
+    "section": "Final project (Apr 27–May 11)",
+    "text": "Final project (Apr 27–May 11)\nDeliverable (May 11, 2026):",
+    "crumbs": [
+      "Home",
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Use this site as your course handbook. It stays up to date all semester.\n\nUse the left sidebar to find weekly materials and guides.\nD2L is the starting point for announcements, grades, and submissions.\nCourse information (syllabus, schedule, policies, office hours) is maintained here.\n\n\nCourse workflow\n\nCheck D2L for announcements, deadlines, and any updates.\nRead the Weekly Overview on this site (Week 1, Week 2, …) and follow the links provided.\nComplete the work (assignments) and submit in D2L.\n\n\n\nSupport\n\nOffice hours: see the Office Hours page.\nZoom: Office Zoom Link\n\nHow to get help:\n\nUse Discord/email for course questions.\nAdd troubleshooting policy.\n\n\n\n\nInstructor contact\n\nInstructor: Joseph Silman\n\nEmail: jsilman@sctcc.edu\nPhone Number: (320) 308 - 6595\n\n\n\nQuick links\n\nSyllabus\nSchedule"
+  },
+  {
+    "objectID": "shared/guides/setup/jupyter-learning-links.html",
+    "href": "shared/guides/setup/jupyter-learning-links.html",
+    "title": "Jupyter Notebooks & JupyterLab Learning Resources",
+    "section": "",
+    "text": "Jupyter Notebook Tutorial: Introduction, Setup, and Walkthrough\nby Corey Schafer (2016, ~30 min) — Comprehensive beginner overview of installation, navigation, cells, kernels, and Markdown.\n\nJupyter Notebooks Tutorial | How to use them & tips and tricks!\nby AssemblyAI (2022, ~18 min) — Practical guide to common settings, basic operations, cell management, indicators, keyboard shortcuts, and useful tips for data science workflows.\n\nJupyter Notebook Complete Beginner Guide - From Jupyter to JupyterLab, Google Colab and Kaggle!\nby Rob Mulla (2022, ~25 min) — Covers classic Notebooks, transition to JupyterLab, and cloud-based alternatives.\n\nGetting Started with Jupyter Notebooks in VS Code\nby Visual Studio Code (2024, ~6 min) — Official guide to creating, running, and debugging Jupyter Notebooks directly in VS Code, including environment setup, code execution, Markdown support, variable exploration, and data visualization."
+  },
+  {
+    "objectID": "shared/guides/setup/jupyter-learning-links.html#introduction-to-jupyter-notebooks",
+    "href": "shared/guides/setup/jupyter-learning-links.html#introduction-to-jupyter-notebooks",
+    "title": "Jupyter Notebooks & JupyterLab Learning Resources",
+    "section": "",
+    "text": "Jupyter Notebook Tutorial: Introduction, Setup, and Walkthrough\nby Corey Schafer (2016, ~30 min) — Comprehensive beginner overview of installation, navigation, cells, kernels, and Markdown.\n\nJupyter Notebooks Tutorial | How to use them & tips and tricks!\nby AssemblyAI (2022, ~18 min) — Practical guide to common settings, basic operations, cell management, indicators, keyboard shortcuts, and useful tips for data science workflows.\n\nJupyter Notebook Complete Beginner Guide - From Jupyter to JupyterLab, Google Colab and Kaggle!\nby Rob Mulla (2022, ~25 min) — Covers classic Notebooks, transition to JupyterLab, and cloud-based alternatives.\n\nGetting Started with Jupyter Notebooks in VS Code\nby Visual Studio Code (2024, ~6 min) — Official guide to creating, running, and debugging Jupyter Notebooks directly in VS Code, including environment setup, code execution, Markdown support, variable exploration, and data visualization."
+  },
+  {
+    "objectID": "shared/guides/setup/jupyter-learning-links.html#recent-developments-in-the-jupyter-ecosystem",
+    "href": "shared/guides/setup/jupyter-learning-links.html#recent-developments-in-the-jupyter-ecosystem",
+    "title": "Jupyter Notebooks & JupyterLab Learning Resources",
+    "section": "Recent Developments in the Jupyter Ecosystem",
+    "text": "Recent Developments in the Jupyter Ecosystem\nJupyter Frontends & JupyterLite updates | Jupyter Open Studio Day 2025\n(2025, ~30 min) — Overview of current features and updates from the official Jupyter community.\n\nAdditional resources and interactive examples are available on the official Jupyter website."
   },
   {
     "objectID": "shared/policies/ai-policy.html",

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Using AI as a Learning Tool – CMSC 1236 : Advanced Python Programming</title>
+<title>Jupyter Notebooks &amp; JupyterLab Learning Resources – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,28 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-feb0c0ed7aac57d66ec8dce0f6a48183.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,180 +70,18 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../shared/assets/course.css">
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../shared/assets/course.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">CMSC 1236 : Advanced Python Programming</span>
     </a>
   </div>
@@ -258,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -273,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../course/syllabus.html">Course information</a></li><li class="breadcrumb-item"><a href="../../shared/policies/ai-policy.html">AI Policy</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Jupyter Notebooks &amp; JupyterLab Learning Resources</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -308,37 +142,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course/syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course/schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course/schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../shared/policies/office-hours.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../shared/policies/office-hours.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Office Hours</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../shared/policies/homework-coursework.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../shared/policies/homework-coursework.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment Policies</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../shared/policies/general-policies.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../shared/policies/general-policies.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">General Policies</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../shared/policies/ai-policy.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../shared/policies/ai-policy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Policy</span></a>
   </div>
 </li>
@@ -355,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weekly-overview/week-01/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../weekly-overview/week-01/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
   </div>
 </li>
@@ -372,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../assignments/week-01/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../assignments/week-01/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
   </div>
 </li>
@@ -391,23 +225,18 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#purpose-of-this-policy" id="toc-purpose-of-this-policy" class="nav-link active" data-scroll-target="#purpose-of-this-policy">Purpose of this policy</a></li>
-  <li><a href="#ai-as-a-learning-tool" id="toc-ai-as-a-learning-tool" class="nav-link" data-scroll-target="#ai-as-a-learning-tool">AI as a learning tool</a></li>
-  <li><a href="#ai-as-a-crutch" id="toc-ai-as-a-crutch" class="nav-link" data-scroll-target="#ai-as-a-crutch">AI as a crutch</a></li>
-  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why this matters</a></li>
-  <li><a href="#expectations-for-submitted-work" id="toc-expectations-for-submitted-work" class="nav-link" data-scroll-target="#expectations-for-submitted-work">Expectations for submitted work</a></li>
+  <ul class="collapse">
+  <li><a href="#introduction-to-jupyter-notebooks" id="toc-introduction-to-jupyter-notebooks" class="nav-link active" data-scroll-target="#introduction-to-jupyter-notebooks">Introduction to Jupyter Notebooks</a></li>
+  <li><a href="#recent-developments-in-the-jupyter-ecosystem" id="toc-recent-developments-in-the-jupyter-ecosystem" class="nav-link" data-scroll-target="#recent-developments-in-the-jupyter-ecosystem">Recent Developments in the Jupyter Ecosystem</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../course/syllabus.html">Course information</a></li><li class="breadcrumb-item"><a href="../../shared/policies/ai-policy.html">AI Policy</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Using AI as a Learning Tool</h1>
-<p class="subtitle lead">Expectations, boundaries, and examples</p>
+<h1 class="title">Jupyter Notebooks &amp; JupyterLab Learning Resources</h1>
 </div>
 
 
@@ -419,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 4, 2026</p>
+      <p class="date-modified">January 11, 2026</p>
     </div>
   </div>
     
@@ -430,63 +259,27 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="purpose-of-this-policy" class="level3">
-<h3 class="anchored" data-anchor-id="purpose-of-this-policy">Purpose of this policy</h3>
-<p>Tools that use artificial intelligence are now widely available, and many of you already use them when learning technical material. This course allows the use of AI tools as a learning aid, similar to a tutor or reference source. At the same time, this course requires that submitted work reflect your own understanding and decision-making.</p>
-<p>This page explains how AI tools may be used productively in this course, and where their use becomes inappropriate.</p>
+<section id="introduction-to-jupyter-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-jupyter-notebooks">Introduction to Jupyter Notebooks</h2>
+<p><strong>Jupyter Notebook Tutorial: Introduction, Setup, and Walkthrough</strong><br>
+<em>by Corey Schafer</em> (2016, ~30 min) — Comprehensive beginner overview of installation, navigation, cells, kernels, and Markdown.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/HW29067qVWk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Jupyter Notebooks Tutorial | How to use them &amp; tips and tricks!</strong><br>
+<em>by AssemblyAI</em> (2022, ~18 min) — Practical guide to common settings, basic operations, cell management, indicators, keyboard shortcuts, and useful tips for data science workflows.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/LW2Rye_l8L0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Jupyter Notebook Complete Beginner Guide - From Jupyter to JupyterLab, Google Colab and Kaggle!</strong><br>
+<em>by Rob Mulla</em> (2022, ~25 min) — Covers classic Notebooks, transition to JupyterLab, and cloud-based alternatives.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/5pf0_bpNbkw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Getting Started with Jupyter Notebooks in VS Code</strong><br>
+<em>by Visual Studio Code</em> (2024, ~6 min) — Official guide to creating, running, and debugging Jupyter Notebooks directly in VS Code, including environment setup, code execution, Markdown support, variable exploration, and data visualization.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/suAkMeWJ1yE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="ai-as-a-learning-tool" class="level3">
-<h3 class="anchored" data-anchor-id="ai-as-a-learning-tool">AI as a learning tool</h3>
-<p>Using AI as a learning tool means using it to <strong>clarify ideas, terminology, or examples</strong> that you do not yet understand.</p>
-<ul>
-<li><p><strong>Ideas</strong> An idea is a concept or principle discussed in the course materials, such as how a process works, why a particular approach is used, or what a tool is designed to do. Clarifying an idea means using AI to help you understand the purpose or reasoning behind something you have already encountered in class, rather than asking for a final answer.</p></li>
-<li><p><strong>Terminology</strong> Terminology refers to the specific words and phrases used in technical subjects. These terms often have precise meanings that differ from everyday usage. Using AI appropriately includes asking for explanations of unfamiliar terms so you can understand how they are used in context, especially when reading textbooks, documentation, or assignment instructions.</p></li>
-<li><p><strong>Examples</strong> Examples are demonstrations that show how an idea or concept is applied in practice. Using AI to clarify examples means asking for help understanding why an example works, what each part is doing, or how it relates to the underlying concept. It does not mean copying an example and submitting it as your own work.</p></li>
-</ul>
-<p>In all cases, using AI as a learning tool should help you build understanding, not replace the effort of reading, experimenting, or reasoning through a problem yourself.</p>
-</section>
-<section id="ai-as-a-crutch" class="level3">
-<h3 class="anchored" data-anchor-id="ai-as-a-crutch">AI as a crutch</h3>
-<p>AI tools can support learning, but they can also be used in ways that reduce learning. This policy uses the term “crutch” to describe situations where the tool is doing the thinking and decision-making that the student is expected to practice.</p>
-<p>Using AI as a crutch means relying on it to produce work or reasoning that you do not understand well enough to explain and defend. The issue is not that the tool was used; the issue is that the tool replaced the learning process.</p>
-<p>Inappropriate uses include:</p>
-<ul>
-<li><p>Asking AI to complete an assignment or lab task for you Example: “Write the solution for this assignment.”</p></li>
-<li><p>Submitting AI-generated code, answers, or explanations that you cannot explain in your own words Example: Copying an explanation of why a solution works without being able to describe the steps yourself.</p></li>
-<li><p>Treating AI output as authoritative without verification Example: Accepting an answer that conflicts with course materials, documentation, or results you can reproduce.</p></li>
-<li><p>Using AI to bypass the learning objective Example: Asking for the final answer when the point of the activity is to practice reasoning, debugging, designing, or interpreting results.</p></li>
-<li><p>Using AI to write or script reflections that are meant to describe your own understanding Example: Asking AI to generate a script or talking points for a reflection video instead of explaining the ideas in your own words.</p></li>
-</ul>
-<p>In these cases, AI is being used to avoid the intended learning work rather than to support it.</p>
-</section>
-<section id="why-this-matters" class="level3">
-<h3 class="anchored" data-anchor-id="why-this-matters">Why this matters</h3>
-<p>AI can produce output that appears correct even when it contains errors or is based on incorrect assumptions. Because of that, it is important to treat AI output as a starting point for learning, not as an authority.</p>
-<p>This course emphasizes:</p>
-<ul>
-<li>verifying results,</li>
-<li>understanding workflows,</li>
-<li>and explaining decisions clearly.</li>
-</ul>
-<p>If you rely on AI answers without testing them or understanding them, you are likely to miss errors and build misunderstandings. Those gaps tend to surface later in the course when tasks require independent problem solving, accurate interpretation, and clear explanations in graded work.</p>
-</section>
-<section id="expectations-for-submitted-work" class="level3">
-<h3 class="anchored" data-anchor-id="expectations-for-submitted-work">Expectations for submitted work</h3>
-<p>All submitted work must reflect your own understanding.</p>
-<p>This means:</p>
-<ul>
-<li>You should be able to explain any code you submit.</li>
-<li>You should be able to describe why you made particular choices (model, metric, preprocessing).</li>
-<li>In reflections, your explanations should sound like you, not like a generic answer generator.</li>
-</ul>
-<p>You are not required to disclose routine AI use for clarification or studying. However, if your work suggests that you do not understand what you submitted, that will be treated the same way as any other lack of understanding, regardless of the source.</p>
-<p>If you use an AI tool, ask yourself:</p>
-<ul>
-<li>Could I explain this answer to another student without looking it up?</li>
-<li>Did I test or verify what the tool suggested?</li>
-<li>Did the tool help me understand, or did it just give me something to submit?</li>
-</ul>
-<p>If the tool helped you understand, you are using it appropriately. If it replaced your thinking, you are not.</p>
+<section id="recent-developments-in-the-jupyter-ecosystem" class="level2">
+<h2 class="anchored" data-anchor-id="recent-developments-in-the-jupyter-ecosystem">Recent Developments in the Jupyter Ecosystem</h2>
+<p><strong>Jupyter Frontends &amp; JupyterLite updates | Jupyter Open Studio Day 2025</strong><br>
+(2025, ~30 min) — Overview of current features and updates from the official Jupyter community.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/7kS_xfKEOmM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Additional resources and interactive examples are available on the <a href="https://jupyter.org/">official Jupyter website</a>.</p>
 
 
 </section>
@@ -494,19 +287,6 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {

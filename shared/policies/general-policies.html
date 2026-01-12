@@ -291,10 +291,9 @@ ul.task-list li input[type="checkbox"] {
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
-        <div class="sidebar-tools-collapse tools-wide">
-    <a href="https://github.com" title="" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
-    <a href="https://discord.gg" title="" class="quarto-navigation-tool px-1" aria-label="Discord"><i class="bi bi-chat-dots"></i></a>
-    <a href="https://sctcc.learn.minnstate.edu/d2l/login" title="" class="quarto-navigation-tool px-1" aria-label="D2L"><i class="bi bi-person-circle"></i></a>
+        <div class="sidebar-tools-collapse">
+    <a href="https://discord.gg/az8cmeqJdc" title="" class="quarto-navigation-tool px-1" aria-label="Discord"><i class="bi bi-chat-dots"></i></a>
+    <a href="https://sctcc.learn.minnstate.edu/d2l/login" title="" class="quarto-navigation-tool px-1" aria-label="D2L"><i class="bi bi-book-half"></i></a>
 </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
@@ -404,6 +403,12 @@ ul.task-list li input[type="checkbox"] {
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 4, 2026</p>
+    </div>
+  </div>
     
   </div>
   
@@ -889,6 +894,19 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.querySelectorAll('[aria-label]');
+    for (var i = 0; i < elements.length; i++) {
+      var ariaLabel = elements[i].getAttribute('aria-label');
+      elements[i].setAttribute('data-bs-title', ariaLabel);
+      elements[i].setAttribute('data-bs-toggle', 'tooltip');
+      elements[i].setAttribute('data-bs-placement', 'bottom');  // Change to 'top' if you prefer above the icon
+    }
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+  });
+</script>
 
 
 
