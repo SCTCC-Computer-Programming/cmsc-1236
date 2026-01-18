@@ -21,7 +21,21 @@
       "command": "rsync -a --delete \"/Volumes/Anger/work/courses/shared/\" \"${workspaceFolder}/shared/\" && rm -rf \"${workspaceFolder}/_site\" \"${workspaceFolder}/.quarto\" && quarto render && quarto publish gh-pages --no-prompt",
       "options": { "cwd": "${workspaceFolder}" },
       "problemMatcher": []
-    }
+    },
+    {
+      "label": "1217: Preview current QMD",
+      "type": "shell",
+      "command": "FILE=\"${file}\"; case \"$FILE\" in *.qmd) VENV_PY=\"/Volumes/Anger/work/courses/cmsc-2208/.venv/bin/python\"; export QUARTO_PYTHON=\"$VENV_PY\"; rsync -a --delete \"/Volumes/Anger/work/courses/shared/\" \"/Volumes/Anger/work/courses/cmsc-1217/shared/\" && quarto preview \"$FILE\" ;; *) echo \"Active file is not .qmd: $FILE\" ;; esac",
+      "options": { "cwd": "/Volumes/Anger/work/courses/cmsc-1217" },
+      "problemMatcher": []
+    },
+    {
+      "label": "1236: Render active QMD to notebook (no outputs)",
+      "type": "shell",
+      "command": "FILE='${file}'; case \"$FILE\" in *.qmd) VENV_PY='/Volumes/Anger/work/courses/cmsc-1236/.venv/bin/python'; export QUARTO_PYTHON=\"$VENV_PY\"; rsync -a --delete '/Volumes/Anger/work/courses/shared/' '/Volumes/Anger/work/courses/cmsc-1236/shared/' && OUT=\"$(basename \"$FILE\" .qmd).ipynb\" && cd \"$(dirname \"$FILE\")\" && quarto render \"$(basename \"$FILE\")\" --to ipynb --no-execute --output-dir . --output \"$OUT\" ;; *) echo \"Active file is not .qmd: $FILE\" ;; esac",
+      "options": { "cwd": "/Volumes/Anger/work/courses/cmsc-1236" },
+      "problemMatcher": []
+    } 
   ]
 }
 

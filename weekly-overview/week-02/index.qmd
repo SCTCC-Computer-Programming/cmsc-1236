@@ -1,5 +1,60 @@
 ---
-title: "Week 2"
+title: Week 2 Guide
+subtitle: Virtual Pet v1 completion and submission
+format:
+  html:
+    toc: true
 ---
 
-This page will be published before Week 2 begins.
+## Week 2 focus
+
+The focus of Week 2 is to complete **Virtual Pet v1** and submit a working, well-explained program. You will finish the `Pet` class requirements, complete the full menu behavior, and add data persistence using pickling so the program can save and reload the pet’s state.
+
+Week 2 includes a graded submission. Your goal is both correctness (meeting the requirements) and clear explanation of your design choices.
+
+## Week 2 project work: Virtual Pet v1 (final)
+
+By the end of Week 2, your program should support the full assignment workflow:
+
+- create a new pet (name, color, type) when no saved file exists
+- repeatedly display a menu until the user chooses to save and exit
+- handle invalid menu input without crashing (this must be demonstrated)
+- implement the required `Pet` class methods and behaviors
+- save the pet state and load it on the next run (pickling)
+
+## Reading (Learning Python, 6th Edition)
+
+Continue working through **Chapters 1–7**. This reading supports the language features used in the project (control flow, loops, functions, and basic class structure). Finish the reading by the end of Week 2.
+
+## Week 2 tasks
+
+Complete the following tasks during Week 2:
+
+1. **Finish the `Pet` class**
+   - Implement the required attributes and method behaviors.
+   - Use conditionals in `feed`, `play`, and `rest` to reflect the pet’s state.
+   - Ensure values remain within the expected bounds (0–10).
+
+2. **Complete the menu-driven program**
+   - Make each menu option call the correct method and report feedback to the user.
+   - Implement input validation so invalid choices display an error and the program continues.
+
+3. **Add data persistence (pickling)**
+   - Implement `save_pet` and `load_pet` in `main()`.
+   - Save the pet state when the user selects **Save and Exit**.
+   - Load an existing saved pet automatically when the program starts.
+   - Handle the “no saved file exists yet” case cleanly.
+
+4. **Prepare submission deliverables**
+   - Confirm the program runs from a clean start.
+   - Record the required video explanation and include the required demonstrations.
+   - Submit the required files to the Week 2 D2L dropbox.
+
+## Knowledge goals for Week 2
+
+By the end of Week 2, you should be able to:
+
+- implement a class that models state and behavior using methods and conditionals
+- build a reliable menu loop with input validation for a CLI program
+- save and load program state using pickling
+- explain your program structure and design choices clearly in a short walkthrough

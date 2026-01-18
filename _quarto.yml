@@ -24,13 +24,10 @@ website:
     # logo-href: index.qmd
 
     tools:
-      - icon: github
-        href: https://github.com
-        aria-label: GitHub
       - icon: chat-dots
-        href: https://discord.gg
+        href: https://discord.gg/az8cmeqJdc
         aria-label: Discord
-      - icon: person-circle
+      - icon: book-half
         href: https://sctcc.learn.minnstate.edu/d2l/login
         aria-label: D2L
     
@@ -47,19 +44,23 @@ website:
             text: Assignment Policies
           - href: shared/policies/general-policies.qmd
             text: General Policies
+          - href: shared/policies/ai-policy.qmd
+            text: AI Policy
 
 
       - section: "Weekly Overview"
         contents:
           - href: weekly-overview/week-01/index.qmd
             text: Week 1
-          #- href: weekly-overview/week-02/
-            #text: Week 2
+          - href: weekly-overview/week-02/index.qmd
+            text: Week 2
 
       - section: "Weekly Assignments"
         contents:
           - href: assignments/week-01/index.qmd
             text: Week 1
+          - href: assignments/week-02/index.qmd
+            text: Week 2
            
       
       
@@ -71,12 +72,28 @@ website:
 format:
   html:
     toc: false
-    theme: 
+    date-modified: last-modified
+    theme:
       light: cosmo
       dark: darkly
     css:
       - shared/assets/course.css
       - styles.css
+    include-after-body:
+      text: |
+        <script type="text/javascript">
+          document.addEventListener("DOMContentLoaded", function() {
+            var elements = document.querySelectorAll('[aria-label]');
+            for (var i = 0; i < elements.length; i++) {
+              var ariaLabel = elements[i].getAttribute('aria-label');
+              elements[i].setAttribute('data-bs-title', ariaLabel);
+              elements[i].setAttribute('data-bs-toggle', 'tooltip');
+              elements[i].setAttribute('data-bs-placement', 'bottom');  // Change to 'top' if you prefer above the icon
+            }
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+          });
+        </script>
 
 
 

@@ -1,5 +1,107 @@
 ---
-title: "Week 2"
+title: Virtual Pet Submission Deliverables
+subtitle: Code + Video Explanation (Week 1–2 Project)
+format:
+  html:
+    toc: true
 ---
 
-This page will be published before Week 2 begins.
+**Submission location:** **All items are submitted in D2L** (Week 2 dropbox).  
+
+## Part 1: Code submission
+
+Submit your Python source files to the Week 2 Dropbox.
+
+### Required files
+
+Upload the following files:
+
+1. **Main program**  
+   Filename: `lastname_main.py`  
+
+2. **Pet class**  
+   Filename: `lastname_pet.py`  
+   Contains:
+   - the `Pet` class and required methods
+   - class attributes and logic that control pet behavior
+
+### Implementation requirements (read carefully)
+
+Your code will be reviewed for adherence to the assignment’s required functions, method names, and behaviors. The code submission and video explanation are evaluated as a single submission: the video supports your assessment, but it does not replace the implementation requirements. Missing required features or incorrect function/method names will affect the overall score, even if the explanation is strong.
+
+- You must implement the required `Pet` methods using the names specified in the assignment (`feed`, `play`, `rest`, `customize`, `status`, `is_happy`).
+- Your `main()` workflow must include the required persistence functions named `save_pet` and `load_pet`.
+- Names matter: method/function names, parameters, and expected behaviors must match the assignment instructions so your work can be evaluated consistently.
+
+This assignment is intended to assess core Python fundamentals. Use basic Python only.
+
+### AI-generated content
+
+You may use AI tools for support, but you remain responsible for the final submission.
+
+## Part 2: Video explanation
+
+### Video Submission Instructions
+
+Record a video of yourself explaining your code and design choices. The focus is your understanding of how the program works and why you implemented it the way you did. Use the rubric as a guide for what to cover.
+
+**Requirements**
+- Clear video and audio quality
+- Introduce yourself, the assignment, and course at the beginning of the video
+
+### What to include in the video
+
+Your video must include:
+
+1. **Program demonstration**
+
+   * Start the program and create a new pet (name, color, type).
+   * Show the menu loop running and responding to user input.
+   * Demonstrate invalid input handling (enter an invalid choice and show the program displays an error and continues).
+   * Demonstrate each menu action at least once:
+
+     * Feed
+     * Play
+     * Rest
+     * Check Status
+     * Customize Pet
+     * Save and Exit (confirm a save message is shown)
+
+2. **Persistence demonstration (pickling)**
+
+   * Show saving the pet’s state using **Save and Exit**.
+   * Restart the program and demonstrate loading the saved pet state (program continues with the existing pet rather than creating a new one).
+   * Briefly explain where the data is stored and what gets saved.
+
+3. **Code walkthrough**
+
+   * Explain the `Pet` class attributes and why they represent the pet’s state (`name`, `hunger`, `happiness`, `energy`, `color`, `type`).
+   * Explain the logic in `feed`, `play`, and `rest`.
+   * Explain how the menu maps user choices to method calls.
+   * Explain how invalid input is handled (type and/or range).
+
+4. **Lessons Learned (required for credit)**
+   Discuss this at the end:
+   - What was most difficult
+   - What you changed after testing
+   - What you would improve next time
+
+## Part 3: Design guide requirement
+
+Ensure you follow the Design Guide:
+- [Design Guide (CMSC 1203)](../cmsc-1203-design-guide.pdf){target="_blank"}
+
+## D2L submission checklist (Week 2 dropbox)
+
+Submit the following items:
+
+### Python files (upload)
+
+1. `lastname_main.py`
+2. `lastname_pet.py`
+
+### Video submission
+
+- Upload the video using to Kaltura Mediaspace
+- Name your video file link: `lastname_Pet_video`
+- Link to the Kaltura video in the Assignment Dropbox
