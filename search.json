@@ -2,9 +2,74 @@
   {
     "objectID": "weekly-overview/week-02/index.html",
     "href": "weekly-overview/week-02/index.html",
-    "title": "Week 2",
+    "title": "Week 2 Guide",
     "section": "",
-    "text": "This page will be published before Week 2 begins."
+    "text": "The focus of Week 2 is to complete Virtual Pet v1 and submit a working, well-explained program. You will finish the Pet class requirements, complete the full menu behavior, and add data persistence using pickling so the program can save and reload the pet’s state.\nWeek 2 includes a graded submission. Your goal is both correctness (meeting the requirements) and clear explanation of your design choices.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-02/index.html#week-2-focus",
+    "href": "weekly-overview/week-02/index.html#week-2-focus",
+    "title": "Week 2 Guide",
+    "section": "",
+    "text": "The focus of Week 2 is to complete Virtual Pet v1 and submit a working, well-explained program. You will finish the Pet class requirements, complete the full menu behavior, and add data persistence using pickling so the program can save and reload the pet’s state.\nWeek 2 includes a graded submission. Your goal is both correctness (meeting the requirements) and clear explanation of your design choices.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-02/index.html#week-2-project-work-virtual-pet-v1-final",
+    "href": "weekly-overview/week-02/index.html#week-2-project-work-virtual-pet-v1-final",
+    "title": "Week 2 Guide",
+    "section": "Week 2 project work: Virtual Pet v1 (final)",
+    "text": "Week 2 project work: Virtual Pet v1 (final)\nBy the end of Week 2, your program should support the full assignment workflow:\n\ncreate a new pet (name, color, type) when no saved file exists\nrepeatedly display a menu until the user chooses to save and exit\nhandle invalid menu input without crashing (this must be demonstrated)\nimplement the required Pet class methods and behaviors\nsave the pet state and load it on the next run (pickling)",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-02/index.html#reading-learning-python-6th-edition",
+    "href": "weekly-overview/week-02/index.html#reading-learning-python-6th-edition",
+    "title": "Week 2 Guide",
+    "section": "Reading (Learning Python, 6th Edition)",
+    "text": "Reading (Learning Python, 6th Edition)\nContinue working through Chapters 1–7. This reading supports the language features used in the project (control flow, loops, functions, and basic class structure). Finish the reading by the end of Week 2.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-02/index.html#week-2-tasks",
+    "href": "weekly-overview/week-02/index.html#week-2-tasks",
+    "title": "Week 2 Guide",
+    "section": "Week 2 tasks",
+    "text": "Week 2 tasks\nComplete the following tasks during Week 2:\n\nFinish the Pet class\n\nImplement the required attributes and method behaviors.\nUse conditionals in feed, play, and rest to reflect the pet’s state.\nEnsure values remain within the expected bounds (0–10).\n\nComplete the menu-driven program\n\nMake each menu option call the correct method and report feedback to the user.\nImplement input validation so invalid choices display an error and the program continues.\n\nAdd data persistence (pickling)\n\nImplement save_pet and load_pet in main().\nSave the pet state when the user selects Save and Exit.\nLoad an existing saved pet automatically when the program starts.\nHandle the “no saved file exists yet” case cleanly.\n\nPrepare submission deliverables\n\nConfirm the program runs from a clean start.\nRecord the required video explanation and include the required demonstrations.\nSubmit the required files to the Week 2 D2L dropbox.",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weekly-overview/week-02/index.html#knowledge-goals-for-week-2",
+    "href": "weekly-overview/week-02/index.html#knowledge-goals-for-week-2",
+    "title": "Week 2 Guide",
+    "section": "Knowledge goals for Week 2",
+    "text": "Knowledge goals for Week 2\nBy the end of Week 2, you should be able to:\n\nimplement a class that models state and behavior using methods and conditionals\nbuild a reliable menu loop with input validation for a CLI program\nsave and load program state using pickling\nexplain your program structure and design choices clearly in a short walkthrough",
+    "crumbs": [
+      "Home",
+      "Weekly Overview",
+      "Week 2"
+    ]
   },
   {
     "objectID": "shared/policies/office-hours.html",
@@ -169,6 +234,90 @@
     "text": "What you’re doing\nYou are going to open a Jupyter notebook in VS Code and run it successfully using the course Python environment.\n\n\n1) Open the course folder in VS Code\n\nOpen VS Code\nGo to File → Open Folder…\nOpen your course work folder (example: C:\\cmsc-1217\\)\n\n\n\n2) Install the extensions (if you don’t already have them)\nIn VS Code, install:\n\nPython (Microsoft)\nJupyter (Microsoft)\n\n\n\n3) Create the course Python environment and select it in VS Code (one-time)\n\n3A) Create the course environment folder\n\nCreate a folder on your C: drive named:\n\nC:\\cmsc-1217-env\\\n\n\n\n\n3B) Create the virtual environment (.venv)\n\nOpen Command Prompt (Windows search → type “Command Prompt”)\nRun:\n\ncd C:\\cmsc-1217-env\npython -m venv .venv\n\n\n3C) Activate the environment\nIn the same Command Prompt window, run:\nC:\\cmsc-1217-env\\.venv\\Scripts\\activate.bat\nYou should see (.venv) appear at the start of the line.\n\n\n3D) Install the notebook packages (first-time setup)\nStill in the activated environment, run:\npython -m pip install --upgrade pip\npython -m pip install numpy pandas matplotlib jupyter\n\n\n3E) Select the environment in VS Code (Interpreter)\n\nIn VS Code, press Ctrl + Shift + P\nType Python: Select Interpreter\nChoose the interpreter that looks like:\n\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nIf you don’t see it:\n\nchoose Enter interpreter path…\npaste: C:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis is the environment we will use all semester.\n\n\n\n4) Open the notebook\n\nIn the Explorer panel, click the notebook file (.ipynb) your instructor provided.\n\n\n\n5) Select the notebook kernel (first time only)\nThe first time you run a notebook, VS Code may ask you to pick a kernel.\nChoose the kernel that matches the course environment path:\n\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\nThis can feel repetitive the first time. That’s normal. Once selected, it usually stays set for that folder.\n\n\n6) Select the kernel, then run a quick test\n\nIn the top-right of the notebook, click Select Kernel.\nChoose the kernel that points to the course environment:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n(It may also show up as “Python 3.x (.venv)”—the key is that it points to cmsc-1217-env\\.venv.)\nClick + Code.\nIn the code block that appears, paste:\n\nprint(\"Notebook is running\")\n\nRun it by clicking the Run (▶) icon on the code block, or press Shift + Enter.\nYou should see Notebook is running appear underneath.\n\n\n\n7) Quick confirmation (your instructor may ask for this)\nRun this in a cell:\nimport sys\nsys.executable\nIt should show something like:\nC:\\cmsc-1217-env\\.venv\\Scripts\\python.exe\n\n\nIf something goes wrong\n\nIf you see ModuleNotFoundError (missing package), you are almost always using the wrong interpreter/kernel.\n\nRe-do Step 3 and Step 5 and pick the one that points to cmsc-1217-env\\.venv."
   },
   {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "",
+    "text": "These are optional “extra help” videos for Week 2.\nWatch them when the reading feels abstract, when you want a second explanation of the same idea, or when you want a deeper (more advanced) take on a topic.\nA good strategy is:\n- Watch one short video first (to get the basic idea)\n- Then come back to the demo and re-run the relevant section\n- If you want more depth, watch one “long-form” talk (PyCon / conference style)"
+  },
+  {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#how-to-use-these-videos",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#how-to-use-these-videos",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "",
+    "text": "These are optional “extra help” videos for Week 2.\nWatch them when the reading feels abstract, when you want a second explanation of the same idea, or when you want a deeper (more advanced) take on a topic.\nA good strategy is:\n- Watch one short video first (to get the basic idea)\n- Then come back to the demo and re-run the relevant section\n- If you want more depth, watch one “long-form” talk (PyCon / conference style)"
+  },
+  {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#exceptions-and-safe-processing-tryexcept",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#exceptions-and-safe-processing-tryexcept",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "Exceptions and safe processing (try/except)",
+    "text": "Exceptions and safe processing (try/except)\nTry / Except | Python (Tutorial) by Socratica — A focused explanation of what try and except actually do, and why this pattern is useful when you want to keep processing after one failure."
+  },
+  {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#parsing-turning-one-line-into-fields-you-can-work-with",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#parsing-turning-one-line-into-fields-you-can-work-with",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "Parsing: turning one line into fields you can work with",
+    "text": "Parsing: turning one line into fields you can work with"
+  },
+  {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#list-comprehensions-compact-build-a-new-list-loops",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#list-comprehensions-compact-build-a-new-list-loops",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "List comprehensions (compact “build a new list” loops)",
+    "text": "List comprehensions (compact “build a new list” loops)\nLearn Python LIST COMPREHENSIONS in 10 minutes!\nby Bro Code — Quick overview of list comprehension syntax, comparing them to regular for loops with many clear examples.\n\nList Comprehensions | Python (Tutorial) by Socratica — A clean “what it is and why it works” explanation, including the mental model for how the loop happens inside the brackets."
+  },
+  {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#sorting-ranking-and-the-key-idea",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#sorting-ranking-and-the-key-idea",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "Sorting, ranking, and the key= idea",
+    "text": "Sorting, ranking, and the key= idea\nPython sorted() Function – key Parameter Explained\nby Real Python — Focuses on using the key= argument to sort lists of tuples, objects, and custom data structures."
+  },
+  {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#lambda-a-small-function-used-inline",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#lambda-a-small-function-used-inline",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "Lambda (a small function used inline)",
+    "text": "Lambda (a small function used inline)\nLearn Python LAMBDA in 6 minutes!\nby Bro Code — Introduces lambda functions as short, anonymous functions and shows common use cases like sorting and mapping.\n\nPython Lambda Functions – Anonymous Functions Explained\nby Tech With Tim — Covers lambda syntax and how they are used inline with sorted(), map(), filter(), and more."
+  },
+  {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#generators-and-iteration-yield-streaming-one-row-at-a-time",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#generators-and-iteration-yield-streaming-one-row-at-a-time",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "Generators and iteration (yield, streaming one row at a time)",
+    "text": "Generators and iteration (yield, streaming one row at a time)\nPython Generators Explained – yield Keyword Tutorial\nby Tech With Tim — Shows what generators are, how yield works, and why they save memory when processing large data.\n\nUnderstanding Generators and yield in Python\nby Corey Schafer — Clear explanation of generators, the yield keyword, and converting functions into memory-efficient generators.\n\n\nOptional long-form (advanced, but very good)\nPython Generators: The Final Frontier\nby David Beazley (PyCon) — Deep, advanced exploration of generators, coroutines, and how they power Python’s iteration system."
+  },
+  {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#exceptions-handling-bad-rows-without-crashing",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#exceptions-handling-bad-rows-without-crashing",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "Exceptions: handling bad rows without crashing",
+    "text": "Exceptions: handling bad rows without crashing"
+  },
+  {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#list-comprehensions-building-lists-from-other-sequences",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#list-comprehensions-building-lists-from-other-sequences",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "List comprehensions (building lists from other sequences)",
+    "text": "List comprehensions (building lists from other sequences)\nPython Tutorial: List Comprehensions by Corey Schafer — A deeper walkthrough showing common patterns and how comprehensions relate to the equivalent loop form."
+  },
+  {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#sorting-ranking-and-key-with-lambda",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#sorting-ranking-and-key-with-lambda",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "Sorting, ranking, and key= with lambda",
+    "text": "Sorting, ranking, and key= with lambda\nPython Tutorial: Lambda Functions by Corey Schafer — Explains what a lambda is, when it’s useful, and how it connects to patterns like sorted(..., key=...) and max(..., key=...)."
+  },
+  {
+    "objectID": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#generators-and-streaming-processing-one-row-at-a-time",
+    "href": "shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html#generators-and-streaming-processing-one-row-at-a-time",
+    "title": "Week 2: Chapter 3 Learning Videos (Files, Parsing, Comprehensions, Lambda, Generators)",
+    "section": "Generators and streaming (processing one row at a time)",
+    "text": "Generators and streaming (processing one row at a time)\nPython Tutorial: Generators by Corey Schafer — A practical explanation of yield, how generator functions behave differently from normal functions, and what changes when you iterate over a generator."
+  },
+  {
     "objectID": "course/syllabus.html",
     "href": "course/syllabus.html",
     "title": "CMSC 1236 – Advanced Python Programming",
@@ -325,11 +474,186 @@
     ]
   },
   {
-    "objectID": "assignments/week-02/index.html",
-    "href": "assignments/week-02/index.html",
-    "title": "Week 2",
+    "objectID": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html",
+    "href": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html",
+    "title": "CMSC 1236 — Week 3 Instructor Demo",
     "section": "",
-    "text": "This page will be published before Week 2 begins."
+    "text": "This demo is a structured walkthrough of key content from Learning Python (6e), Chapters 8–9. It focuses on Python’s built-in collection objects—especially lists and dictionaries—and on foundational file usage patterns. Each example is intended to be read and executed to make the behavior of these types explicit.\n\n\nIntroductory coverage of lists, dictionaries, and sets typically emphasizes correct usage: create a collection, loop over it, and produce correct output. Chapters 8–9 extend that foundation by emphasizing the runtime model needed to use collection objects reliably in larger programs:\n\nCollection objects store references to other objects.\nMutation (in-place change) and rebinding (name reassignment) have different effects.\nNested structures require careful thinking about copies (shallow vs deep).\nDictionaries behave as mappings with key-based access and controlled update patterns.\nFile I/O should follow predictable patterns to avoid failures (open/operate/close via with and basic error handling).\n\n\n\n\nAfter completing this demo, you should be able to:\n\nDistinguish identity from equality (is vs ==).\nDistinguish rebinding from in-place mutation and predict the consequences of aliasing.\nApply core behaviors of sequence types (lists/tuples), the mapping type (dict), and set types (set/frozenset).\nCopy nested collection objects correctly (shallow vs deep).\nRead and write a small text file using with.\nApply a basic load-or-default approach for file-based data."
+  },
+  {
+    "objectID": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#learning-python-6e-ch.-89-collections-sequences-mappings-sets-file-basics",
+    "href": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#learning-python-6e-ch.-89-collections-sequences-mappings-sets-file-basics",
+    "title": "CMSC 1236 — Week 3 Instructor Demo",
+    "section": "",
+    "text": "This demo is a structured walkthrough of key content from Learning Python (6e), Chapters 8–9. It focuses on Python’s built-in collection objects—especially lists and dictionaries—and on foundational file usage patterns. Each example is intended to be read and executed to make the behavior of these types explicit.\n\n\nIntroductory coverage of lists, dictionaries, and sets typically emphasizes correct usage: create a collection, loop over it, and produce correct output. Chapters 8–9 extend that foundation by emphasizing the runtime model needed to use collection objects reliably in larger programs:\n\nCollection objects store references to other objects.\nMutation (in-place change) and rebinding (name reassignment) have different effects.\nNested structures require careful thinking about copies (shallow vs deep).\nDictionaries behave as mappings with key-based access and controlled update patterns.\nFile I/O should follow predictable patterns to avoid failures (open/operate/close via with and basic error handling).\n\n\n\n\nAfter completing this demo, you should be able to:\n\nDistinguish identity from equality (is vs ==).\nDistinguish rebinding from in-place mutation and predict the consequences of aliasing.\nApply core behaviors of sequence types (lists/tuples), the mapping type (dict), and set types (set/frozenset).\nCopy nested collection objects correctly (shallow vs deep).\nRead and write a small text file using with.\nApply a basic load-or-default approach for file-based data."
+  },
+  {
+    "objectID": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#names-objects-and-references",
+    "href": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#names-objects-and-references",
+    "title": "CMSC 1236 — Week 3 Instructor Demo",
+    "section": "1) Names, objects, and references",
+    "text": "1) Names, objects, and references\nIn Python, a variable is a name that refers to an object. An object is a value stored in memory (for example, a list, a dictionary, an integer, or a string). When a name refers to an object, the name is said to be bound to that object.\nThis model is a basic part of programming in Python. It explains how changes to lists and dictionaries propagate through a program, how objects behave when passed into functions, and why copying and nesting can produce unexpected results if references are not understood.\nPython’s built-in collection objects (lists, dictionaries, sets, and tuples) store references (links) to objects rather than copying them. As a result, the same object can be reached through more than one name.\nTwo operations are used throughout Python programs, and they are easy to confuse because both can occur after an assignment statement. The difference is what changes:\n\nrebinding changes which object a name refers to; the original object is unchanged\nmutation changes the contents of an existing object; any name that refers to that object will observe the change\n\nBecause Python programs frequently reuse objects through multiple names (intentionally or unintentionally), it is important to distinguish “same object” from “same value.” Two comparison operators are used for that purpose:\n\nis tests identity: whether two names refer to the same object in memory\n== tests equality: whether two objects have the same value\n\nThe following two examples establish the difference between identity and equality for collection objects.\nThis first example shows what it means for two names to refer to the same object. The output will confirm that a is b is true (same object) and a == b is also true (same contents).\na = [1, 2, 3]\nb = a\nt\nprint(\"a =\", a)\nprint(\"b =\", b)\nprint(\"a is b =\", a is b)\nprint(\"a == b =\", a == b)\nExplanation:\n\na = [1, 2, 3] creates a list object containing the integers 1, 2, and 3, and assigns the name a to refer to that list.\nb = a assigns the name b to refer to the same list object as a. No new list is created.\nprint(\"a =\", a) prints the label a = followed by the current value of a (the list object that a refers to).\nprint(\"b =\", b) prints the label b = followed by the current value of b (the same list object, since b refers to the same object as a).\nprint(\"a is b =\", a is b) prints the label a is b = followed by the result of the identity test a is b. This is True here because a and b refer to the same object in memory.\nprint(\"a == b =\", a == b) prints the label a == b = followed by the result of the equality test a == b. This is True here because the two values have the same contents (and in this case they are the same list object).\n\nIn the textbook and in interactive Python sessions (the shell or a notebook), it is common to write a single line that groups several values together so they are displayed at once (like is shown below). This does not change what Python computes; it only changes how the results are shown. Compared to labeled print statements, this style is less explicit, but it is more concise for quick demonstrations.\na = [1, 2, 3]\nb = a\n\n(a, b, a is b, a == b)\nIn this version, the expression (a, b, a is b, a == b) groups four results into a single tuple so they can be displayed together in one output. A tuple is a built-in Python sequence type that groups multiple values into a single object. It is created by writing values separated by commas; parentheses are often used for readability, but the commas are what matter.\nExplanation:\n\na = [1, 2, 3] creates a list object containing the integers 1, 2, and 3, and assigns the name a to refer to that list.\nb = a assigns the name b to refer to the same list object as a. No new list is created.\n(a, b, a is b, a == b) creates a tuple containing four values and displays it:\n\na is the list object that a refers to.\nb is the list object that b refers to (the same list as a).\na is b is a Boolean value that reports whether a and b refer to the same object in memory (identity). In this case it is True.\na == b is a Boolean value that reports whether the two values have the same contents (equality). In this case it is True because both names refer to the same list with the same contents.\n\n\nThis second example shows that two different objects can still be equal in value. The output will confirm that x is y is false (different objects) while x == y is true (same contents).\nx = [1, 2]\ny = [1, 2]\nx, y, (x is y), (x == y)\nExplanation:\n\nx = [1, 2] creates a list object containing the integers 1 and 2, and assigns the name x to refer to that list.\ny = [1, 2] creates a second list object containing the integers 1 and 2, and assigns the name y to refer to that second list. Even though the contents match, this is a different object in memory from the one referenced by x.\nx, y, (x is y), (x == y) groups four values into a single tuple so they can be displayed together in one result in an interactive environment:\n\nx is the first list object (the one referenced by x).\ny is the second list object (the one referenced by y).\nx is y is a Boolean value that reports whether x and y refer to the same object in memory (identity). This is False because two separate list objects were created.\nx == y is a Boolean value that reports whether the two lists have the same contents (equality). This is True because both lists contain the values 1 and 2 in the same order."
+  },
+  {
+    "objectID": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#rebinding-vs-in-place-mutation-lists",
+    "href": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#rebinding-vs-in-place-mutation-lists",
+    "title": "CMSC 1236 — Week 3 Instructor Demo",
+    "section": "2) Rebinding vs in-place mutation (lists)",
+    "text": "2) Rebinding vs in-place mutation (lists)\nTwo operations can look similar but behave differently for lists:\n\nnums = nums + [...] creates a new list (rebinding)\nnums += [...] changes the existing list in place (mutation)\n\nThis matters whenever more than one name refers to the same list object.\nnums = [10, 20, 30]\nalias = nums\n\nnums = nums + [40]\nnums, alias, (nums is alias)\nnums = [10, 20, 30]\nalias = nums\n\nnums += [40]\nnums, alias, (nums is alias)"
+  },
+  {
+    "objectID": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#lists-sequence-type-slice-assignment-and-nested-list-construction",
+    "href": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#lists-sequence-type-slice-assignment-and-nested-list-construction",
+    "title": "CMSC 1236 — Week 3 Instructor Demo",
+    "section": "3) Lists (sequence type): slice assignment and nested list construction",
+    "text": "3) Lists (sequence type): slice assignment and nested list construction\n\n3a) Slice assignment (in-place change)\nSlice assignment replaces a region of a list in place.\ndata = [0, 1, 2, 3, 4, 5]\ndata[2:5] = [\"a\", \"b\"]\ndata\n\n\n3b) Nested lists and repeated references\nUsing [inner] * n repeats references to the same inner object. If the inner object is mutable (such as a list), mutating one “row” mutates them all.\nrow = [0, 0]\ngrid_bad = [row] * 3\ngrid_bad[0][0] = 99\ngrid_bad\nA correct construction creates independent inner lists:\ngrid_ok = [[0, 0] for _ in range(3)]\ngrid_ok[0][0] = 99\ngrid_ok"
+  },
+  {
+    "objectID": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#dictionaries-mapping-type-insertion-order-safe-access-and-controlled-updates",
+    "href": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#dictionaries-mapping-type-insertion-order-safe-access-and-controlled-updates",
+    "title": "CMSC 1236 — Week 3 Instructor Demo",
+    "section": "4) Dictionaries (mapping type): insertion order, safe access, and controlled updates",
+    "text": "4) Dictionaries (mapping type): insertion order, safe access, and controlled updates\n\n4a) Insertion order\nDictionaries preserve insertion order. Iteration follows the order keys were added; this does not imply keys are automatically sorted.\nd = {\"b\": 2, \"a\": 1, \"c\": 3}\nlist(d.keys())\n\n\n4b) Safe access and membership\nUse membership tests and .get() when a key may be absent.\nconfig = {\"mode\": \"test\"}\n(\"mode\" in config), (\"timeout\" in config)\nconfig.get(\"mode\"), config.get(\"timeout\", 30)\n\n\n4c) Controlled updates (copy + update)\nA common pattern is to create a copy and then apply updates.\nbase = {\"host\": \"localhost\", \"port\": 8000}\noverride = {\"port\": 9000}\n\nmerged = base.copy()\nmerged.update(override)\n\nbase, override, merged\n\n\n4d) Dictionary key views for comparisons\nDictionary keys() views support set operations such as intersection and difference.\na = {\"x\": 1, \"y\": 2, \"z\": 3}\nb = {\"y\": 20, \"z\": 30, \"w\": 40}\n\na.keys() & b.keys(), a.keys() - b.keys()"
+  },
+  {
+    "objectID": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#set-types-uniqueness-and-hashability",
+    "href": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#set-types-uniqueness-and-hashability",
+    "title": "CMSC 1236 — Week 3 Instructor Demo",
+    "section": "5) Set types: uniqueness and hashability",
+    "text": "5) Set types: uniqueness and hashability\nA set is an unordered collection of unique elements. Elements must be hashable (typically immutable).\nSets are used for:\n\nmembership tests (in),\nde-duplication,\ncomparisons (union/intersection/difference).\n\nitems = [\"apple\", \"apple\", \"pear\", \"banana\", \"banana\"]\nset(items)\ntry:\n    bad = {[1, 2], [3, 4]}   # lists are not hashable\nexcept TypeError as e:\n    e\nfrozenset is an immutable set type.\nfs = frozenset({1, 2, 3})\nfs, (2 in fs)"
+  },
+  {
+    "objectID": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#tuples-sequence-type-immutable-record-style-grouping",
+    "href": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#tuples-sequence-type-immutable-record-style-grouping",
+    "title": "CMSC 1236 — Week 3 Instructor Demo",
+    "section": "6) Tuples (sequence type, immutable): record-style grouping",
+    "text": "6) Tuples (sequence type, immutable): record-style grouping\nTuples are immutable sequences. They are appropriate when the “shape” of the data is fixed and the values should not be mutated after creation.\nrecord = (\"Ada\", \"Lovelace\", 1815)\nrecord[0], record[-1]\ntry:\n    record[0] = \"ADA\"\nexcept TypeError as e:\n    e"
+  },
+  {
+    "objectID": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#copying-nested-collection-objects-shallow-vs-deep",
+    "href": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#copying-nested-collection-objects-shallow-vs-deep",
+    "title": "CMSC 1236 — Week 3 Instructor Demo",
+    "section": "7) Copying nested collection objects (shallow vs deep)",
+    "text": "7) Copying nested collection objects (shallow vs deep)\nWhen data is nested, copying requires precision:\n\nShallow copy: copies the outer collection; inner objects remain shared\nDeep copy: recursively copies nested objects\n\nA shallow copy of a nested list shares inner lists:\nnested = [[1, 2], [3, 4]]\nshallow = nested[:]          # shallow copy\n\nshallow[0].append(999)\nnested, shallow\nA deep copy creates independent nested objects:\nimport copy\n\nnested = [[1, 2], [3, 4]]\ndeep = copy.deepcopy(nested)\n\ndeep[0].append(999)\nnested, deep"
+  },
+  {
+    "objectID": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#file-objects-predictable-readwrite-patterns",
+    "href": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#file-objects-predictable-readwrite-patterns",
+    "title": "CMSC 1236 — Week 3 Instructor Demo",
+    "section": "8) File objects: predictable read/write patterns",
+    "text": "8) File objects: predictable read/write patterns\n\n8a) Writing and reading a text file\nUse with to ensure the file is closed automatically.\nfrom pathlib import Path\n\ndemo_path = Path(\"demo_text.txt\")\ndemo_path\nlines = [\"first line\\n\", \"second line\\n\", \"third line\\n\"]\n\nwith demo_path.open(\"w\", encoding=\"utf-8\") as f:\n    f.writelines(lines)\n\ndemo_path.read_text(encoding=\"utf-8\")\nwith demo_path.open(\"r\", encoding=\"utf-8\") as f:\n    data = f.read()\n\ndata\n\n\n8b) Load-or-default (basic reliability pattern)\nA baseline pattern for file-based data is:\n\nattempt to load,\nif the file is missing or invalid, use a default value,\nsave later when appropriate.\n\nimport json\nimport datetime\nfrom pathlib import Path\n\nstate_path = Path(\"demo_state.json\")\ndefault_state = {\"version\": 1, \"notes\": []}\n\ndef load_or_default(path: Path, default: dict) -&gt; dict:\n    try:\n        with path.open(\"r\", encoding=\"utf-8\") as f:\n            return json.load(f)\n    except FileNotFoundError:\n        return default\n    except json.JSONDecodeError:\n        return default\n\ndef save_state(path: Path, state: dict) -&gt; None:\n    with path.open(\"w\", encoding=\"utf-8\") as f:\n        json.dump(state, f, indent=2)\n\nstate = load_or_default(state_path, default_state)\nstate[\"notes\"].append(\"demo note at \" + datetime.datetime.utcnow().isoformat() + \"Z\")\nsave_state(state_path, state)\n\nstate_path.read_text(encoding=\"utf-8\")"
+  },
+  {
+    "objectID": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#summary-of-key-points",
+    "href": "assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html#summary-of-key-points",
+    "title": "CMSC 1236 — Week 3 Instructor Demo",
+    "section": "Summary of key points",
+    "text": "Summary of key points\n\nNames refer to objects; collection objects store references to other objects.\nis tests identity; == tests value equality.\nRebinding and mutation produce different effects.\nLists and dictionaries are mutable; tuples are immutable.\nSet types enforce uniqueness and require hashable elements.\nShallow copies share nested objects; deep copies replicate nested objects.\nFile work should follow predictable patterns using with, with basic handling for missing or invalid files."
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html",
+    "href": "assignments/week-01/week-1-and-2-assignment.html",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console.\n\n\n\nThe Pet class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (if statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.\n\nImplementing the Pet Class:\n\nFollow the provided UML diagram to create the Pet class with the attributes name, hunger, happiness, energy, color, and type.\nInitialize these attributes in the __init__ method. name, color, and type will be strings provided when a new pet is created, and hunger, happiness, and energy should start with random values between 0 and 10.\n\nUsing Conditional Statements in Class Methods:\n\nIn methods like feed, play, and rest, you will use if statements to check the state of the pet and decide what action to take.\n\n\n\n\n\n\n\n\n\nThe feed method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.\n\n\n\n\nReducing Hunger and Increasing Happiness:\n\nWhen the feed method is called, first check the pet’s current hunger level (self.hunger).\nIf self.hunger is greater than 0, it indicates that the pet is hungry. In this case, reduce self.hunger by 1 to represent feeding the pet. Ensure self.hunger does not go below 0.\nAfter feeding, increase self.happiness by 1. However, ensure that self.happiness does not exceed 10.\n\nManaging Happiness When Not Hungry:\n\nIf self.hunger is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce self.happiness by 1, since overfeeding will cause discomfort.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to being fed.\n\n\n\n\n\n\n\n\nThe play method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.\n\n\n\n\nHandling Sadness:\n\nBefore initiating play, check if the pet’s happiness level (self.happiness) is at 0.\nIf self.happiness is 0, it indicates that the pet is too sad to engage in play.\n\nHandling Tiredness:\n\nCheck the pet’s energy level (self.energy).\nIf self.energy is 0, it means the pet is too tired to play.\n\nPlaying with the Pet:\n\nIf the pet is neither too sad nor too tired (i.e., self.happiness is above 0 and self.energy is above 0), proceed to play with the pet.\nIncrease self.happiness by 1 to represent the positive effect of playing. However, ensure that self.happiness does not exceed 10.\nDecrease self.energy by 1 to account for the energy expended during play. However, it’s important to ensure that self.energy does not fall below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to playing.\n\n\n\n\n\n\n\n\nThe rest method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.\n\n\n\n\nIncreasing Energy:\n\nCheck the pet’s current energy level (self.energy).\nIf self.energy is less than 10, it indicates the pet could benefit from rest. Increase self.energy by 1 to represent the energy regained from resting. However, ensure that self.energy does not exceed 10.\n\nManaging Happiness When Energy is at Maximum:\n\nIf self.energy is already at 10 (meaning the pet is fully rested), resting will affect its happiness.\nIf self.energy is already at 10 and self.happiness is greater than 0, reduce self.happiness it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent self.happiness from going below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to resting.\n\n\n\n\n\n\n\n\nThe customize method allows the user to change the pet’s appearance by setting new values for the color and type attributes.\n\n\n\n\nSetting New Attributes:\n\nThe method takes two parameters, color and pet_type, and assigns them to the pet’s color and type attributes.\nThis allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.\n\n\n\n\n\n\n\n\nThe status method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.\n\n\n\n\nCreating a Status Summary:\n\nThe method compiles a string that summarizes the animal’s current status.\nThis summary includes the animal’s name and its current hunger, happiness, energy, color, and type.\n\nString Formatting:\n\nCreate a readable and well-formatted summary.\nEach attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.\n\nReturning the Summary:\n\nThe method returns the formatted string.\n\n\n\n\n\n\n\n\nThe is_happy method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.\n\n\n\n\nEvaluating Happiness:\n\nThe method assesses whether the animal’s happiness level (self.happiness) is below or above 5.\nIf self.happiness is above 5 the animal is considered to be happy.\n\nReturning a Boolean Result:\n\nThe method returns True if the animal’s happiness is above 5, indicating that the animal is happy.\nIt returns False if the happiness level is 5 or lower, indicating that the animal is not happy.\n\n\n\n\n\n\n\n\nYour main() function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.\n\n\n\n\nImplement a menu system that displays a list of possible actions the user can perform. These actions include:\n\nFeeding the pet\nPlaying with the pet\nLetting the pet rest\nChecking the pet’s status\nCustomizing the pet’s appearance\nSaving the pet’s state and exiting the program\n\nUse an input prompt to allow the user to select an action and then call the corresponding method from the Pet class.\n\n\n\n\n\nEnsure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).\nDisplay an error message if the user inputs an invalid option and show the menu again for a valid selection.\n\n\n\n\n\n\nUse pickling to save and load the pet’s state. Implement a save_pet and a load_pet function in the main() for this purpose.\nEnsure the program can handle situations where no saved data exists.\n\n\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\nWhat is your pet's name? Joe\nChoose a color for your pet (e.g., red, blue, green): Blue\nChoose a type for your pet (e.g., dog, cat, bird): Dog\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 9\nInvalid choice. Please enter a number between 1 and 6.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 3\nJoe is rested and seems a bit bored.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 1\nYou fed Joe. Joe seems happier after eating!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 5\nChoose a color for your pet: Green\nChoose a type for your pet: Dog\nJoe is now a Green Dog!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 2\nPlaying with Joe was fun!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 3\nEnergy: 9\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n  +---------------------+\n  |        Pet          |\n  +---------------------+\n  | - name: str         |\n  | - hunger: int       |\n  | - happiness: int    |\n  | - energy: int       |\n  | - color: str        |\n  | - type: str         |\n  +---------------------+\n  | + __init__(name, color, pet_type) |\n  | + feed()            |\n  | + play()            |\n  | + rest()            |\n  | + customize(color, pet_type) |\n  | + status(): str     |\n  | + is_happy(): bool  |\n  +---------------------+"
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html#overview",
+    "href": "assignments/week-01/week-1-and-2-assignment.html#overview",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console."
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html#pet-class",
+    "href": "assignments/week-01/week-1-and-2-assignment.html#pet-class",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "The Pet class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (if statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.\n\nImplementing the Pet Class:\n\nFollow the provided UML diagram to create the Pet class with the attributes name, hunger, happiness, energy, color, and type.\nInitialize these attributes in the __init__ method. name, color, and type will be strings provided when a new pet is created, and hunger, happiness, and energy should start with random values between 0 and 10.\n\nUsing Conditional Statements in Class Methods:\n\nIn methods like feed, play, and rest, you will use if statements to check the state of the pet and decide what action to take."
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html#method-implementations",
+    "href": "assignments/week-01/week-1-and-2-assignment.html#method-implementations",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "The feed method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.\n\n\n\n\nReducing Hunger and Increasing Happiness:\n\nWhen the feed method is called, first check the pet’s current hunger level (self.hunger).\nIf self.hunger is greater than 0, it indicates that the pet is hungry. In this case, reduce self.hunger by 1 to represent feeding the pet. Ensure self.hunger does not go below 0.\nAfter feeding, increase self.happiness by 1. However, ensure that self.happiness does not exceed 10.\n\nManaging Happiness When Not Hungry:\n\nIf self.hunger is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce self.happiness by 1, since overfeeding will cause discomfort.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to being fed.\n\n\n\n\n\n\n\n\nThe play method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.\n\n\n\n\nHandling Sadness:\n\nBefore initiating play, check if the pet’s happiness level (self.happiness) is at 0.\nIf self.happiness is 0, it indicates that the pet is too sad to engage in play.\n\nHandling Tiredness:\n\nCheck the pet’s energy level (self.energy).\nIf self.energy is 0, it means the pet is too tired to play.\n\nPlaying with the Pet:\n\nIf the pet is neither too sad nor too tired (i.e., self.happiness is above 0 and self.energy is above 0), proceed to play with the pet.\nIncrease self.happiness by 1 to represent the positive effect of playing. However, ensure that self.happiness does not exceed 10.\nDecrease self.energy by 1 to account for the energy expended during play. However, it’s important to ensure that self.energy does not fall below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to playing.\n\n\n\n\n\n\n\n\nThe rest method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.\n\n\n\n\nIncreasing Energy:\n\nCheck the pet’s current energy level (self.energy).\nIf self.energy is less than 10, it indicates the pet could benefit from rest. Increase self.energy by 1 to represent the energy regained from resting. However, ensure that self.energy does not exceed 10.\n\nManaging Happiness When Energy is at Maximum:\n\nIf self.energy is already at 10 (meaning the pet is fully rested), resting will affect its happiness.\nIf self.energy is already at 10 and self.happiness is greater than 0, reduce self.happiness it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent self.happiness from going below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to resting.\n\n\n\n\n\n\n\n\nThe customize method allows the user to change the pet’s appearance by setting new values for the color and type attributes.\n\n\n\n\nSetting New Attributes:\n\nThe method takes two parameters, color and pet_type, and assigns them to the pet’s color and type attributes.\nThis allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.\n\n\n\n\n\n\n\n\nThe status method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.\n\n\n\n\nCreating a Status Summary:\n\nThe method compiles a string that summarizes the animal’s current status.\nThis summary includes the animal’s name and its current hunger, happiness, energy, color, and type.\n\nString Formatting:\n\nCreate a readable and well-formatted summary.\nEach attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.\n\nReturning the Summary:\n\nThe method returns the formatted string.\n\n\n\n\n\n\n\n\nThe is_happy method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.\n\n\n\n\nEvaluating Happiness:\n\nThe method assesses whether the animal’s happiness level (self.happiness) is below or above 5.\nIf self.happiness is above 5 the animal is considered to be happy.\n\nReturning a Boolean Result:\n\nThe method returns True if the animal’s happiness is above 5, indicating that the animal is happy.\nIt returns False if the happiness level is 5 or lower, indicating that the animal is not happy.\n\n\n\n\n\n\n\n\nYour main() function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.\n\n\n\n\nImplement a menu system that displays a list of possible actions the user can perform. These actions include:\n\nFeeding the pet\nPlaying with the pet\nLetting the pet rest\nChecking the pet’s status\nCustomizing the pet’s appearance\nSaving the pet’s state and exiting the program\n\nUse an input prompt to allow the user to select an action and then call the corresponding method from the Pet class.\n\n\n\n\n\nEnsure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).\nDisplay an error message if the user inputs an invalid option and show the menu again for a valid selection.\n\n\n\n\n\n\nUse pickling to save and load the pet’s state. Implement a save_pet and a load_pet function in the main() for this purpose.\nEnsure the program can handle situations where no saved data exists."
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html#sample-output",
+    "href": "assignments/week-01/week-1-and-2-assignment.html#sample-output",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "Welcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\nWhat is your pet's name? Joe\nChoose a color for your pet (e.g., red, blue, green): Blue\nChoose a type for your pet (e.g., dog, cat, bird): Dog\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 9\nInvalid choice. Please enter a number between 1 and 6.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 3\nJoe is rested and seems a bit bored.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 1\nYou fed Joe. Joe seems happier after eating!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 5\nChoose a color for your pet: Green\nChoose a type for your pet: Dog\nJoe is now a Green Dog!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!"
+  },
+  {
+    "objectID": "assignments/week-01/week-1-and-2-assignment.html#starting-the-program-with-a-file-created",
+    "href": "assignments/week-01/week-1-and-2-assignment.html#starting-the-program-with-a-file-created",
+    "title": "CMSC 1236 – Advanced Programming in Python",
+    "section": "",
+    "text": "Welcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 2\nPlaying with Joe was fun!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 3\nEnergy: 9\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n  +---------------------+\n  |        Pet          |\n  +---------------------+\n  | - name: str         |\n  | - hunger: int       |\n  | - happiness: int    |\n  | - energy: int       |\n  | - color: str        |\n  | - type: str         |\n  +---------------------+\n  | + __init__(name, color, pet_type) |\n  | + feed()            |\n  | + play()            |\n  | + rest()            |\n  | + customize(color, pet_type) |\n  | + status(): str     |\n  | + is_happy(): bool  |\n  +---------------------+"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html",
+    "href": "assignments/week-01/environment-setup.html",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "",
+    "text": "For CMSC 1236, we will create a separate Python environment so nothing conflicts with your other classes."
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-2-create-your-course-folder-on-the-root-drive",
+    "href": "assignments/week-01/environment-setup.html#step-2-create-your-course-folder-on-the-root-drive",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 2 — Create your course folder on the root drive",
+    "text": "Step 2 — Create your course folder on the root drive\nYour CMSC 1236 directory must be created on the root of the C: drive:\n\nC:\\cmsc-1236\n\nInside it, create these folders:\n\nassignments\nnotes\nprojects\n\nCreating the course folder on the root drive helps avoid common Windows problems:\n\nShort, predictable paths (fewer issues with tools that don’t like long file paths).\nAvoids OneDrive syncing (Desktop/Documents are often synced; syncing can lock files and break builds/tools).\nMakes Git + terminals simpler (easy to navigate, fewer permission surprises).\nKeeps course work separate from other software setups (so you don’t accidentally mix files/tools between courses).\n\n\nCMD commands (Command Prompt)\n\nOpen Command Prompt (cmd).\nGo to the root of the C: drive:\n\ncd\\\n\nCreate the course folder:\n\nmkdir cmsc-1236\n\nMove into the course folder:\n\ncd \\cmsc-1236\n\nCreate the three required subfolders:\n\nmkdir assignments\nmkdir notes\nmkdir projects\n\n\nVerify the folder structure\nRun:\ndir\nYour folder structure should look like similar to the following:\nC:\\cmsc-1236\\\n  assignments\\\n  notes\\\n  projects\\"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-3-create-the-cmsc-1236-python-environment",
+    "href": "assignments/week-01/environment-setup.html#step-3-create-the-cmsc-1236-python-environment",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 3 — Create the CMSC 1236 Python environment",
+    "text": "Step 3 — Create the CMSC 1236 Python environment\nWe will create a dedicated environment named:\n\ncmsc1236\n\nThis environment is separate from any miniconda environments you may be using in other courses, so nothing conflicts.\nA dedicated environment ensures that we:\n\nKeep CMSC 1236 packages separate from other classes/tools\nEnsure the course runs on a consistent Python version\n\n\nCreate the environment (Command Prompt)\n\nOpen Command Prompt (cmd)\n\nGo to your course folder (if not already there):\n\ncd \\cmsc-1236\n\nCreate the environment folder using Python’s built-in venv tool:\n\npy -m venv cmsc1236\n\n\nActivate the environment (Command Prompt)\nRun:\ncmsc1236\\Scripts\\activate\nWhen it activates, your prompt will look like this:\n(cmsc1236) C:\\cmsc-1236&gt;\n\n\nVerify the environment is working\nRun:\npython --version\nYou should see a Python version printed:\nPython 3.xx.x\n\n\nDeactivate the environment\nWhen you are finished:\ndeactivate"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-4-initialize-git-in-your-course-folder",
+    "href": "assignments/week-01/environment-setup.html#step-4-initialize-git-in-your-course-folder",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 4 — Initialize Git in your course folder",
+    "text": "Step 4 — Initialize Git in your course folder\nWe use Git to track your work over time and to make submitting or backing up your work easier.\nThis step creates a .git folder that stores your work history.\n\nInitialize the repository\nOpen Command Prompt (cmd) and run:\ncd C:\\cmsc-1236\ngit init\n\n\nCreate a .gitignore file\nGit does not create a .gitignore automatically. You will create it so that you don’t accidentally commit:\n\nPython cache files\neditor settings\ntemporary files\n\nIn C:\\cmsc-1236, create a file named:\n.gitignore\nPaste the following into it:\n# Python cache\n__pycache__/\n*.pyc\n\n# Environment / OS clutter\n.DS_Store\nThumbs.db\n\n# VS Code\n.vscode/\n\n# Local environment folder \ncmsc1236/\n\n# Common local files\n*.log\n*.tmp"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-5-set-vs-code-to-use-the-cmsc-1236-environment",
+    "href": "assignments/week-01/environment-setup.html#step-5-set-vs-code-to-use-the-cmsc-1236-environment",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 5 — Set VS Code to use the CMSC 1236 environment",
+    "text": "Step 5 — Set VS Code to use the CMSC 1236 environment\nIn this step, you will tell VS Code which Python interpreter to use for this course so that:\n\nRun/Debug uses the correct Python\nThe integrated terminal runs the correct Python\nYour assignments behave consistently across machines\n\n\nNote: This environment is separate from the Miniconda environments you may be using in other courses, so nothing conflicts.\n\n\nOpen your course folder in VS Code\n\n\nVS Code stores interpreter settings per folder/project\nOpening the correct folder ensures the interpreter you select is tied to CMSC 1236 only\n\n\nSelect the correct Python interpreter\n\n\n\nSelect View → Command Palette or Press: Ctrl + Shift + P\n\nType: Python: Select Interpreter\nChoose the interpreter that points to the course environment:\n\nC:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\nIf you do not see it:\n\nChoose Enter interpreter path…\nThen browse to: C:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\n\n\nVerify in the VS Code Terminal (Command Prompt)\n\n\n\nIn VS Code, open a CMD Prompt terminal:\n\nTerminal → New Terminal\n\nConfirm you are in the course folder. If not, run:\n\ncd C:\\cmsc-1236\n\nActivate the course environment:\n\ncmsc1236\\Scripts\\activate\n\nVerify that Python is coming from the course environment:\n\nwhere python\nExpected output includes a path like:\nC:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\n\nConfirm the Python version:\n\npython --version\n\nIf where python does NOT point into C:\\cmsc-1236\\cmsc1236\\..., you are not using the course environment\nFixing it here prevents “it works on my machine” problems later"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-6-test-python-from-the-vs-code-terminal",
+    "href": "assignments/week-01/environment-setup.html#step-6-test-python-from-the-vs-code-terminal",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 6 — Test Python from the VS Code terminal",
+    "text": "Step 6 — Test Python from the VS Code terminal\nCreate a new folder:\nmkdir C:\\cmsc-1236\\projects\\week-01\nCreate a new python file called:\n\ntest_env.py\n\nPaste this code:\nimport sys\n\nprint(\"Python version:\", sys.version)\nprint(\"Python executable:\", sys.executable)\nRun it in the VS Code terminal:\ncd C:\\cmsc-1236\\projects\\week-01\\\npython test_env.py\nYou should see:\n\nA Python 3.xx.x version output\nA path showing it is running from the cmsc1236 environment"
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#step-7-import-the-book-example-code",
+    "href": "assignments/week-01/environment-setup.html#step-7-import-the-book-example-code",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "Step 7 — Import the book example code",
+    "text": "Step 7 — Import the book example code\nYou’ll keep the books’ example code in your course folder so you can quickly reference working examples while reading and while completing assignments.\n\nCreate a place to store the book code\nOpen Command Prompt (cmd) and run:\ncd C:\\cmsc-1236\nmkdir book\ncd book\nAfter this step, you’ll have:\nC:\\cmsc-1236\\book\\ (this is where both books’ code will live)\n\n\n\nFluent Python (2nd Edition) — clone the official GitHub repo\nIn the same cmd window (you should still be in C:\\cmsc-1236\\book), run:\ngit clone https://github.com/fluentpython/example-code-2e.git\nThis creates:\nC:\\cmsc-1236\\book\\fluent-python-2e\\\n\n\nLearning Python (6th Edition) — download the official examples ZIP\nLearning Python’s official examples are provided as a ZIP download from the book’s site (not a GitHub repo).\n\nOpen this page in your browser: https://learning-python.com/LP6E-code.html\nClick LP6E.zip ⇦ Fetch and unzip and download it.\n\n\n\nUnzip it\n\nRight-click the ZIP → Extract All…\nExtract into: C:\\cmsc-1236\\book\\\n\nAfter unzipping, you should see an LP6E\\ folder in C:\\cmsc-1236\\book\\."
+  },
+  {
+    "objectID": "assignments/week-01/environment-setup.html#you-are-done",
+    "href": "assignments/week-01/environment-setup.html#you-are-done",
+    "title": "CMSC 1236 – Python Environment Setup (Windows)",
+    "section": "You are done",
+    "text": "You are done\nAt this point:\n\nYour course folder exists at C:\\cmsc-1236\nGit is initialized\nYour cmsc1236 Python environment is created and working\nVS Code is configured to use the course environment\nYou can now work normally in VS Code and run programs from the terminal"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   },
   {
     "objectID": "assignments/week-01/index.html",
@@ -404,116 +728,71 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "assignments/week-02/index.html",
+    "href": "assignments/week-02/index.html",
+    "title": "Virtual Pet Submission Deliverables",
     "section": "",
-    "text": "About this site"
+    "text": "Submission location: All items are submitted in D2L (Week 2 dropbox).",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 2"
+    ]
   },
   {
-    "objectID": "assignments/week-01/environment-setup.html",
-    "href": "assignments/week-01/environment-setup.html",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "",
-    "text": "For CMSC 1236, we will create a separate Python environment so nothing conflicts with your other classes."
+    "objectID": "assignments/week-02/index.html#part-1-code-submission",
+    "href": "assignments/week-02/index.html#part-1-code-submission",
+    "title": "Virtual Pet Submission Deliverables",
+    "section": "Part 1: Code submission",
+    "text": "Part 1: Code submission\nSubmit your Python source files to the Week 2 Dropbox.\n\nRequired files\nUpload the following files:\n\nMain program\nFilename: lastname_main.py\nPet class\nFilename: lastname_pet.py\nContains:\n\nthe Pet class and required methods\nclass attributes and logic that control pet behavior\n\n\n\n\nImplementation requirements (read carefully)\nYour code will be reviewed for adherence to the assignment’s required functions, method names, and behaviors. The code submission and video explanation are evaluated as a single submission: the video supports your assessment, but it does not replace the implementation requirements. Missing required features or incorrect function/method names will affect the overall score, even if the explanation is strong.\n\nYou must implement the required Pet methods using the names specified in the assignment (feed, play, rest, customize, status, is_happy).\nYour main() workflow must include the required persistence functions named save_pet and load_pet.\nNames matter: method/function names, parameters, and expected behaviors must match the assignment instructions so your work can be evaluated consistently.\n\nThis assignment is intended to assess core Python fundamentals. Use basic Python only.\n\n\nAI-generated content\nYou may use AI tools for support, but you remain responsible for the final submission.",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 2"
+    ]
   },
   {
-    "objectID": "assignments/week-01/environment-setup.html#step-2-create-your-course-folder-on-the-root-drive",
-    "href": "assignments/week-01/environment-setup.html#step-2-create-your-course-folder-on-the-root-drive",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 2 — Create your course folder on the root drive",
-    "text": "Step 2 — Create your course folder on the root drive\nYour CMSC 1236 directory must be created on the root of the C: drive:\n\nC:\\cmsc-1236\n\nInside it, create these folders:\n\nassignments\nnotes\nprojects\n\nCreating the course folder on the root drive helps avoid common Windows problems:\n\nShort, predictable paths (fewer issues with tools that don’t like long file paths).\nAvoids OneDrive syncing (Desktop/Documents are often synced; syncing can lock files and break builds/tools).\nMakes Git + terminals simpler (easy to navigate, fewer permission surprises).\nKeeps course work separate from other software setups (so you don’t accidentally mix files/tools between courses).\n\n\nCMD commands (Command Prompt)\n\nOpen Command Prompt (cmd).\nGo to the root of the C: drive:\n\ncd\\\n\nCreate the course folder:\n\nmkdir cmsc-1236\n\nMove into the course folder:\n\ncd \\cmsc-1236\n\nCreate the three required subfolders:\n\nmkdir assignments\nmkdir notes\nmkdir projects\n\n\nVerify the folder structure\nRun:\ndir\nYour folder structure should look like similar to the following:\nC:\\cmsc-1236\\\n  assignments\\\n  notes\\\n  projects\\"
+    "objectID": "assignments/week-02/index.html#part-2-video-explanation",
+    "href": "assignments/week-02/index.html#part-2-video-explanation",
+    "title": "Virtual Pet Submission Deliverables",
+    "section": "Part 2: Video explanation",
+    "text": "Part 2: Video explanation\n\nVideo Submission Instructions\nRecord a video of yourself explaining your code and design choices. The focus is your understanding of how the program works and why you implemented it the way you did. Use the rubric as a guide for what to cover.\nRequirements - Clear video and audio quality - Introduce yourself, the assignment, and course at the beginning of the video\n\n\nWhat to include in the video\nYour video must include:\n\nProgram demonstration\n\nStart the program and create a new pet (name, color, type).\nShow the menu loop running and responding to user input.\nDemonstrate invalid input handling (enter an invalid choice and show the program displays an error and continues).\nDemonstrate each menu action at least once:\n\nFeed\nPlay\nRest\nCheck Status\nCustomize Pet\nSave and Exit (confirm a save message is shown)\n\n\nPersistence demonstration (pickling)\n\nShow saving the pet’s state using Save and Exit.\nRestart the program and demonstrate loading the saved pet state (program continues with the existing pet rather than creating a new one).\nBriefly explain where the data is stored and what gets saved.\n\nCode walkthrough\n\nExplain the Pet class attributes and why they represent the pet’s state (name, hunger, happiness, energy, color, type).\nExplain the logic in feed, play, and rest.\nExplain how the menu maps user choices to method calls.\nExplain how invalid input is handled (type and/or range).\n\nLessons Learned (required for credit) Discuss this at the end:\n\nWhat was most difficult\nWhat you changed after testing\nWhat you would improve next time",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 2"
+    ]
   },
   {
-    "objectID": "assignments/week-01/environment-setup.html#step-3-create-the-cmsc-1236-python-environment",
-    "href": "assignments/week-01/environment-setup.html#step-3-create-the-cmsc-1236-python-environment",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 3 — Create the CMSC 1236 Python environment",
-    "text": "Step 3 — Create the CMSC 1236 Python environment\nWe will create a dedicated environment named:\n\ncmsc1236\n\nThis environment is separate from any miniconda environments you may be using in other courses, so nothing conflicts.\nA dedicated environment ensures that we:\n\nKeep CMSC 1236 packages separate from other classes/tools\nEnsure the course runs on a consistent Python version\n\n\nCreate the environment (Command Prompt)\n\nOpen Command Prompt (cmd)\n\nGo to your course folder (if not already there):\n\ncd \\cmsc-1236\n\nCreate the environment folder using Python’s built-in venv tool:\n\npy -m venv cmsc1236\n\n\nActivate the environment (Command Prompt)\nRun:\ncmsc1236\\Scripts\\activate\nWhen it activates, your prompt will look like this:\n(cmsc1236) C:\\cmsc-1236&gt;\n\n\nVerify the environment is working\nRun:\npython --version\nYou should see a Python version printed:\nPython 3.xx.x\n\n\nDeactivate the environment\nWhen you are finished:\ndeactivate"
+    "objectID": "assignments/week-02/index.html#part-3-design-guide-requirement",
+    "href": "assignments/week-02/index.html#part-3-design-guide-requirement",
+    "title": "Virtual Pet Submission Deliverables",
+    "section": "Part 3: Design guide requirement",
+    "text": "Part 3: Design guide requirement\nEnsure you follow the Design Guide: - Design Guide (CMSC 1203)",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 2"
+    ]
   },
   {
-    "objectID": "assignments/week-01/environment-setup.html#step-4-initialize-git-in-your-course-folder",
-    "href": "assignments/week-01/environment-setup.html#step-4-initialize-git-in-your-course-folder",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 4 — Initialize Git in your course folder",
-    "text": "Step 4 — Initialize Git in your course folder\nWe use Git to track your work over time and to make submitting or backing up your work easier.\nThis step creates a .git folder that stores your work history.\n\nInitialize the repository\nOpen Command Prompt (cmd) and run:\ncd C:\\cmsc-1236\ngit init\n\n\nCreate a .gitignore file\nGit does not create a .gitignore automatically. You will create it so that you don’t accidentally commit:\n\nPython cache files\neditor settings\ntemporary files\n\nIn C:\\cmsc-1236, create a file named:\n.gitignore\nPaste the following into it:\n# Python cache\n__pycache__/\n*.pyc\n\n# Environment / OS clutter\n.DS_Store\nThumbs.db\n\n# VS Code\n.vscode/\n\n# Local environment folder \ncmsc1236/\n\n# Common local files\n*.log\n*.tmp"
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html#step-5-set-vs-code-to-use-the-cmsc-1236-environment",
-    "href": "assignments/week-01/environment-setup.html#step-5-set-vs-code-to-use-the-cmsc-1236-environment",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 5 — Set VS Code to use the CMSC 1236 environment",
-    "text": "Step 5 — Set VS Code to use the CMSC 1236 environment\nIn this step, you will tell VS Code which Python interpreter to use for this course so that:\n\nRun/Debug uses the correct Python\nThe integrated terminal runs the correct Python\nYour assignments behave consistently across machines\n\n\nNote: This environment is separate from the Miniconda environments you may be using in other courses, so nothing conflicts.\n\n\nOpen your course folder in VS Code\n\n\nVS Code stores interpreter settings per folder/project\nOpening the correct folder ensures the interpreter you select is tied to CMSC 1236 only\n\n\nSelect the correct Python interpreter\n\n\n\nSelect View → Command Palette or Press: Ctrl + Shift + P\n\nType: Python: Select Interpreter\nChoose the interpreter that points to the course environment:\n\nC:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\nIf you do not see it:\n\nChoose Enter interpreter path…\nThen browse to: C:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\n\n\nVerify in the VS Code Terminal (Command Prompt)\n\n\n\nIn VS Code, open a CMD Prompt terminal:\n\nTerminal → New Terminal\n\nConfirm you are in the course folder. If not, run:\n\ncd C:\\cmsc-1236\n\nActivate the course environment:\n\ncmsc1236\\Scripts\\activate\n\nVerify that Python is coming from the course environment:\n\nwhere python\nExpected output includes a path like:\nC:\\cmsc-1236\\cmsc1236\\Scripts\\python.exe\n\nConfirm the Python version:\n\npython --version\n\nIf where python does NOT point into C:\\cmsc-1236\\cmsc1236\\..., you are not using the course environment\nFixing it here prevents “it works on my machine” problems later"
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html#step-6-test-python-from-the-vs-code-terminal",
-    "href": "assignments/week-01/environment-setup.html#step-6-test-python-from-the-vs-code-terminal",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 6 — Test Python from the VS Code terminal",
-    "text": "Step 6 — Test Python from the VS Code terminal\nCreate a new folder:\nmkdir C:\\cmsc-1236\\projects\\week-01\nCreate a new python file called:\n\ntest_env.py\n\nPaste this code:\nimport sys\n\nprint(\"Python version:\", sys.version)\nprint(\"Python executable:\", sys.executable)\nRun it in the VS Code terminal:\ncd C:\\cmsc-1236\\projects\\week-01\\\npython test_env.py\nYou should see:\n\nA Python 3.xx.x version output\nA path showing it is running from the cmsc1236 environment"
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html#step-7-import-the-book-example-code",
-    "href": "assignments/week-01/environment-setup.html#step-7-import-the-book-example-code",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "Step 7 — Import the book example code",
-    "text": "Step 7 — Import the book example code\nYou’ll keep the books’ example code in your course folder so you can quickly reference working examples while reading and while completing assignments.\n\nCreate a place to store the book code\nOpen Command Prompt (cmd) and run:\ncd C:\\cmsc-1236\nmkdir book\ncd book\nAfter this step, you’ll have:\nC:\\cmsc-1236\\book\\ (this is where both books’ code will live)\n\n\n\nFluent Python (2nd Edition) — clone the official GitHub repo\nIn the same cmd window (you should still be in C:\\cmsc-1236\\book), run:\ngit clone https://github.com/fluentpython/example-code-2e.git\nThis creates:\nC:\\cmsc-1236\\book\\fluent-python-2e\\\n\n\nLearning Python (6th Edition) — download the official examples ZIP\nLearning Python’s official examples are provided as a ZIP download from the book’s site (not a GitHub repo).\n\nOpen this page in your browser: https://learning-python.com/LP6E-code.html\nClick LP6E.zip ⇦ Fetch and unzip and download it.\n\n\n\nUnzip it\n\nRight-click the ZIP → Extract All…\nExtract into: C:\\cmsc-1236\\book\\\n\nAfter unzipping, you should see an LP6E\\ folder in C:\\cmsc-1236\\book\\."
-  },
-  {
-    "objectID": "assignments/week-01/environment-setup.html#you-are-done",
-    "href": "assignments/week-01/environment-setup.html#you-are-done",
-    "title": "CMSC 1236 – Python Environment Setup (Windows)",
-    "section": "You are done",
-    "text": "You are done\nAt this point:\n\nYour course folder exists at C:\\cmsc-1236\nGit is initialized\nYour cmsc1236 Python environment is created and working\nVS Code is configured to use the course environment\nYou can now work normally in VS Code and run programs from the terminal"
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html",
-    "href": "assignments/week-01/week-1-and-2-assignment.html",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console.\n\n\n\nThe Pet class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (if statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.\n\nImplementing the Pet Class:\n\nFollow the provided UML diagram to create the Pet class with the attributes name, hunger, happiness, energy, color, and type.\nInitialize these attributes in the __init__ method. name, color, and type will be strings provided when a new pet is created, and hunger, happiness, and energy should start with random values between 0 and 10.\n\nUsing Conditional Statements in Class Methods:\n\nIn methods like feed, play, and rest, you will use if statements to check the state of the pet and decide what action to take.\n\n\n\n\n\n\n\n\n\nThe feed method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.\n\n\n\n\nReducing Hunger and Increasing Happiness:\n\nWhen the feed method is called, first check the pet’s current hunger level (self.hunger).\nIf self.hunger is greater than 0, it indicates that the pet is hungry. In this case, reduce self.hunger by 1 to represent feeding the pet. Ensure self.hunger does not go below 0.\nAfter feeding, increase self.happiness by 1. However, ensure that self.happiness does not exceed 10.\n\nManaging Happiness When Not Hungry:\n\nIf self.hunger is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce self.happiness by 1, since overfeeding will cause discomfort.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to being fed.\n\n\n\n\n\n\n\n\nThe play method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.\n\n\n\n\nHandling Sadness:\n\nBefore initiating play, check if the pet’s happiness level (self.happiness) is at 0.\nIf self.happiness is 0, it indicates that the pet is too sad to engage in play.\n\nHandling Tiredness:\n\nCheck the pet’s energy level (self.energy).\nIf self.energy is 0, it means the pet is too tired to play.\n\nPlaying with the Pet:\n\nIf the pet is neither too sad nor too tired (i.e., self.happiness is above 0 and self.energy is above 0), proceed to play with the pet.\nIncrease self.happiness by 1 to represent the positive effect of playing. However, ensure that self.happiness does not exceed 10.\nDecrease self.energy by 1 to account for the energy expended during play. However, it’s important to ensure that self.energy does not fall below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to playing.\n\n\n\n\n\n\n\n\nThe rest method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.\n\n\n\n\nIncreasing Energy:\n\nCheck the pet’s current energy level (self.energy).\nIf self.energy is less than 10, it indicates the pet could benefit from rest. Increase self.energy by 1 to represent the energy regained from resting. However, ensure that self.energy does not exceed 10.\n\nManaging Happiness When Energy is at Maximum:\n\nIf self.energy is already at 10 (meaning the pet is fully rested), resting will affect its happiness.\nIf self.energy is already at 10 and self.happiness is greater than 0, reduce self.happiness it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent self.happiness from going below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to resting.\n\n\n\n\n\n\n\n\nThe customize method allows the user to change the pet’s appearance by setting new values for the color and type attributes.\n\n\n\n\nSetting New Attributes:\n\nThe method takes two parameters, color and pet_type, and assigns them to the pet’s color and type attributes.\nThis allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.\n\n\n\n\n\n\n\n\nThe status method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.\n\n\n\n\nCreating a Status Summary:\n\nThe method compiles a string that summarizes the animal’s current status.\nThis summary includes the animal’s name and its current hunger, happiness, energy, color, and type.\n\nString Formatting:\n\nCreate a readable and well-formatted summary.\nEach attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.\n\nReturning the Summary:\n\nThe method returns the formatted string.\n\n\n\n\n\n\n\n\nThe is_happy method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.\n\n\n\n\nEvaluating Happiness:\n\nThe method assesses whether the animal’s happiness level (self.happiness) is below or above 5.\nIf self.happiness is above 5 the animal is considered to be happy.\n\nReturning a Boolean Result:\n\nThe method returns True if the animal’s happiness is above 5, indicating that the animal is happy.\nIt returns False if the happiness level is 5 or lower, indicating that the animal is not happy.\n\n\n\n\n\n\n\n\nYour main() function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.\n\n\n\n\nImplement a menu system that displays a list of possible actions the user can perform. These actions include:\n\nFeeding the pet\nPlaying with the pet\nLetting the pet rest\nChecking the pet’s status\nCustomizing the pet’s appearance\nSaving the pet’s state and exiting the program\n\nUse an input prompt to allow the user to select an action and then call the corresponding method from the Pet class.\n\n\n\n\n\nEnsure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).\nDisplay an error message if the user inputs an invalid option and show the menu again for a valid selection.\n\n\n\n\n\n\nUse pickling to save and load the pet’s state. Implement a save_pet and a load_pet function in the main() for this purpose.\nEnsure the program can handle situations where no saved data exists.\n\n\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\nWhat is your pet's name? Joe\nChoose a color for your pet (e.g., red, blue, green): Blue\nChoose a type for your pet (e.g., dog, cat, bird): Dog\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 9\nInvalid choice. Please enter a number between 1 and 6.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 3\nJoe is rested and seems a bit bored.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 1\nYou fed Joe. Joe seems happier after eating!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 5\nChoose a color for your pet: Green\nChoose a type for your pet: Dog\nJoe is now a Green Dog!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n\nWelcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 2\nPlaying with Joe was fun!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 3\nEnergy: 9\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n  +---------------------+\n  |        Pet          |\n  +---------------------+\n  | - name: str         |\n  | - hunger: int       |\n  | - happiness: int    |\n  | - energy: int       |\n  | - color: str        |\n  | - type: str         |\n  +---------------------+\n  | + __init__(name, color, pet_type) |\n  | + feed()            |\n  | + play()            |\n  | + rest()            |\n  | + customize(color, pet_type) |\n  | + status(): str     |\n  | + is_happy(): bool  |\n  +---------------------+"
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html#overview",
-    "href": "assignments/week-01/week-1-and-2-assignment.html#overview",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "Develop a Python program to simulate a virtual pet. This project will allow you to apply and demonstrate your understanding of Python basics, object-oriented programming, file handling using pickling, and user interaction through the console."
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html#pet-class",
-    "href": "assignments/week-01/week-1-and-2-assignment.html#pet-class",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "The Pet class is a core component of your Virtual Pet Simulator. It will model the behavior and state of your virtual pet. You will need to use conditional statements (if statements) in the methods of this class to simulate different scenarios based on the pet’s attributes.\n\nImplementing the Pet Class:\n\nFollow the provided UML diagram to create the Pet class with the attributes name, hunger, happiness, energy, color, and type.\nInitialize these attributes in the __init__ method. name, color, and type will be strings provided when a new pet is created, and hunger, happiness, and energy should start with random values between 0 and 10.\n\nUsing Conditional Statements in Class Methods:\n\nIn methods like feed, play, and rest, you will use if statements to check the state of the pet and decide what action to take."
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html#method-implementations",
-    "href": "assignments/week-01/week-1-and-2-assignment.html#method-implementations",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "The feed method is designed to simulate feeding the pet. Feeding the pet has implications on its hunger and happiness levels.\n\n\n\n\nReducing Hunger and Increasing Happiness:\n\nWhen the feed method is called, first check the pet’s current hunger level (self.hunger).\nIf self.hunger is greater than 0, it indicates that the pet is hungry. In this case, reduce self.hunger by 1 to represent feeding the pet. Ensure self.hunger does not go below 0.\nAfter feeding, increase self.happiness by 1. However, ensure that self.happiness does not exceed 10.\n\nManaging Happiness When Not Hungry:\n\nIf self.hunger is already at 0 (meaning the pet is not hungry), feeding the pet doesn’t reduce hunger will affect its happiness. Reduce self.happiness by 1, since overfeeding will cause discomfort.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to being fed.\n\n\n\n\n\n\n\n\nThe play method simulates the interaction of playing with the pet. This activity affects the pet’s happiness and energy levels.\n\n\n\n\nHandling Sadness:\n\nBefore initiating play, check if the pet’s happiness level (self.happiness) is at 0.\nIf self.happiness is 0, it indicates that the pet is too sad to engage in play.\n\nHandling Tiredness:\n\nCheck the pet’s energy level (self.energy).\nIf self.energy is 0, it means the pet is too tired to play.\n\nPlaying with the Pet:\n\nIf the pet is neither too sad nor too tired (i.e., self.happiness is above 0 and self.energy is above 0), proceed to play with the pet.\nIncrease self.happiness by 1 to represent the positive effect of playing. However, ensure that self.happiness does not exceed 10.\nDecrease self.energy by 1 to account for the energy expended during play. However, it’s important to ensure that self.energy does not fall below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to playing.\n\n\n\n\n\n\n\n\nThe rest method is designed to simulate the pet resting, which affects its energy and happiness levels. Resting is essential for the pet to regain energy, but it might also affect its happiness if it becomes bored or inactive.\n\n\n\n\nIncreasing Energy:\n\nCheck the pet’s current energy level (self.energy).\nIf self.energy is less than 10, it indicates the pet could benefit from rest. Increase self.energy by 1 to represent the energy regained from resting. However, ensure that self.energy does not exceed 10.\n\nManaging Happiness When Energy is at Maximum:\n\nIf self.energy is already at 10 (meaning the pet is fully rested), resting will affect its happiness.\nIf self.energy is already at 10 and self.happiness is greater than 0, reduce self.happiness it by 1 to represent a slight decrease in happiness due to inactivity or boredom. Be sure to prevent self.happiness from going below 0.\n\nReturning Feedback:\n\nReturn a feedback string that reflects the pet’s reaction to resting.\n\n\n\n\n\n\n\n\nThe customize method allows the user to change the pet’s appearance by setting new values for the color and type attributes.\n\n\n\n\nSetting New Attributes:\n\nThe method takes two parameters, color and pet_type, and assigns them to the pet’s color and type attributes.\nThis allows the user to update the pet’s appearance during the simulation. Display the changed output to the user.\n\n\n\n\n\n\n\n\nThe status method provides a summary of the current state of the animal, including its hunger, happiness, energy, color, and type. This method is crucial for understanding the animal’s overall well-being at any given moment.\n\n\n\n\nCreating a Status Summary:\n\nThe method compiles a string that summarizes the animal’s current status.\nThis summary includes the animal’s name and its current hunger, happiness, energy, color, and type.\n\nString Formatting:\n\nCreate a readable and well-formatted summary.\nEach attribute (hunger, happiness, energy, color, type) should be on a separate line for clarity.\n\nReturning the Summary:\n\nThe method returns the formatted string.\n\n\n\n\n\n\n\n\nThe is_happy method is designed to evaluate the animal’s happiness level and determine if the animal is currently happy. This method provides a boolean result based on the happiness attribute.\n\n\n\n\nEvaluating Happiness:\n\nThe method assesses whether the animal’s happiness level (self.happiness) is below or above 5.\nIf self.happiness is above 5 the animal is considered to be happy.\n\nReturning a Boolean Result:\n\nThe method returns True if the animal’s happiness is above 5, indicating that the animal is happy.\nIt returns False if the happiness level is 5 or lower, indicating that the animal is not happy.\n\n\n\n\n\n\n\n\nYour main() function serves as the interaction hub between the user and their virtual pet. It will manage user inputs through a menu system and trigger appropriate actions based on the user’s choices.\n\n\n\n\nImplement a menu system that displays a list of possible actions the user can perform. These actions include:\n\nFeeding the pet\nPlaying with the pet\nLetting the pet rest\nChecking the pet’s status\nCustomizing the pet’s appearance\nSaving the pet’s state and exiting the program\n\nUse an input prompt to allow the user to select an action and then call the corresponding method from the Pet class.\n\n\n\n\n\nEnsure that the program gracefully handles invalid menu choices. (This needs to be demonstrated in submission video).\nDisplay an error message if the user inputs an invalid option and show the menu again for a valid selection.\n\n\n\n\n\n\nUse pickling to save and load the pet’s state. Implement a save_pet and a load_pet function in the main() for this purpose.\nEnsure the program can handle situations where no saved data exists."
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html#sample-output",
-    "href": "assignments/week-01/week-1-and-2-assignment.html#sample-output",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "Welcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\nWhat is your pet's name? Joe\nChoose a color for your pet (e.g., red, blue, green): Blue\nChoose a type for your pet (e.g., dog, cat, bird): Dog\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 9\nInvalid choice. Please enter a number between 1 and 6.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 8\nHappiness: 1\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 3\nJoe is rested and seems a bit bored.\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 1\nYou fed Joe. Joe seems happier after eating!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\n\nJoe's Status:\nColor: Blue\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 5\nChoose a color for your pet: Green\nChoose a type for your pet: Dog\nJoe is now a Green Dog!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!"
-  },
-  {
-    "objectID": "assignments/week-01/week-1-and-2-assignment.html#starting-the-program-with-a-file-created",
-    "href": "assignments/week-01/week-1-and-2-assignment.html#starting-the-program-with-a-file-created",
-    "title": "CMSC 1236 – Advanced Programming in Python",
-    "section": "",
-    "text": "Welcome to the Virtual Pet Simulator!\n\nIn this program, you will create and take care of a virtual pet.\nYou can feed, play with, and let your pet rest to maintain its health and happiness.\nYou can also customize your pet's appearance and save its state to continue later.\nUse the menu to interact with your pet and make sure it stays happy and healthy!\n\nLet's get started!\n\n\nHere is the current status of your pet:\n\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 2\nEnergy: 10\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 2\nPlaying with Joe was fun!\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 4\nJoe's Status:\nColor: Green\nType: Dog\nHunger: 7\nHappiness: 3\nEnergy: 9\n\nWhat would you like to do with your pet?\n1: Feed\n2: Play\n3: Rest\n4: Check Status\n5: Customize Pet\n6: Save and Exit\nEnter your choice: 6\nPet state saved. Goodbye!\n\n\n  +---------------------+\n  |        Pet          |\n  +---------------------+\n  | - name: str         |\n  | - hunger: int       |\n  | - happiness: int    |\n  | - energy: int       |\n  | - color: str        |\n  | - type: str         |\n  +---------------------+\n  | + __init__(name, color, pet_type) |\n  | + feed()            |\n  | + play()            |\n  | + rest()            |\n  | + customize(color, pet_type) |\n  | + status(): str     |\n  | + is_happy(): bool  |\n  +---------------------+"
+    "objectID": "assignments/week-02/index.html#d2l-submission-checklist-week-2-dropbox",
+    "href": "assignments/week-02/index.html#d2l-submission-checklist-week-2-dropbox",
+    "title": "Virtual Pet Submission Deliverables",
+    "section": "D2L submission checklist (Week 2 dropbox)",
+    "text": "D2L submission checklist (Week 2 dropbox)\nSubmit the following items:\n\nPython files (upload)\n\nlastname_main.py\nlastname_pet.py\n\n\n\nVideo submission\n\nUpload the video using to Kaltura Mediaspace\nName your video file link: lastname_Pet_video\nLink to the Kaltura video in the Assignment Dropbox",
+    "crumbs": [
+      "Home",
+      "Weekly Assignments",
+      "Week 2"
+    ]
   },
   {
     "objectID": "course/schedule.html",
     "href": "course/schedule.html",
     "title": "CMSC 1236 Course Schedule",
     "section": "",
-    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
+    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
     "crumbs": [
       "Home",
       "Course information",
@@ -525,7 +804,7 @@
     "href": "course/schedule.html#course-rhythm",
     "title": "CMSC 1236 Course Schedule",
     "section": "",
-    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice notebook\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
+    "text": "Weekly module opens: Monday 8:00 AM\nAssignments due: Sunday 11:30 PM\nWork cadence:\n\nMon–Thu: work through reading + practice\nSun: graded items due (when assigned)\n\nSpring break: Mar 9–13, 2026\nFinal project block: Apr 27–May 10, 2026\nFinal project due: May 11, 2026",
     "crumbs": [
       "Home",
       "Course information",
@@ -562,6 +841,55 @@
     "title": "Home",
     "section": "",
     "text": "Use this site as your course handbook. It stays up to date all semester.\n\nUse the left sidebar to find weekly materials and guides.\nD2L is the starting point for announcements, grades, and submissions.\nCourse information (syllabus, schedule, policies, office hours) is maintained here.\n\n\nCourse workflow\n\nCheck D2L for announcements, deadlines, and any updates.\nRead the Weekly Overview on this site (Week 1, Week 2, …) and follow the links provided.\nComplete the work (assignments) and submit in D2L.\n\n\n\nSupport\n\nOffice hours: see the Office Hours page.\nZoom: Office Zoom Link\n\nHow to get help:\n\nUse Discord/email for course questions.\nAdd troubleshooting policy.\n\n\n\n\nInstructor contact\n\nInstructor: Joseph Silman\n\nEmail: jsilman@sctcc.edu\nPhone Number: (320) 308 - 6595\n\n\n\nQuick links\n\nSyllabus\nSchedule"
+  },
+  {
+    "objectID": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html",
+    "href": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html",
+    "title": "Week 2: Chapter 2 Learning Videos (Supervised Learning + kNN)",
+    "section": "",
+    "text": "These are optional “extra help” videos for Week 2.\nWatch them when the reading feels abstract or when you want a second explanation of the same concept."
+  },
+  {
+    "objectID": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#how-to-use-these-videos",
+    "href": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#how-to-use-these-videos",
+    "title": "Week 2: Chapter 2 Learning Videos (Supervised Learning + kNN)",
+    "section": "",
+    "text": "These are optional “extra help” videos for Week 2.\nWatch them when the reading feels abstract or when you want a second explanation of the same concept."
+  },
+  {
+    "objectID": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#classification-vs-regression",
+    "href": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#classification-vs-regression",
+    "title": "Week 2: Chapter 2 Learning Videos (Supervised Learning + kNN)",
+    "section": "Classification vs Regression",
+    "text": "Classification vs Regression\nRegression vs. Classification — What’s the difference?\nby AWS Educate (2020s, ~5–10 min) — Beginner explanation of what changes when your target is a number vs a label."
+  },
+  {
+    "objectID": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#generalization-why-we-split-into-training-vs-test",
+    "href": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#generalization-why-we-split-into-training-vs-test",
+    "title": "Week 2: Chapter 2 Learning Videos (Supervised Learning + kNN)",
+    "section": "Generalization: why we split into training vs test",
+    "text": "Generalization: why we split into training vs test\nTrain/Test Split (and why training accuracy can mislead you)\nby StatQuest (Josh Starmer) (2018–2020s, ~10–15 min) — Why we don’t evaluate on the same rows we trained on.\n\nCross Validation (bonus idea for small datasets)\nby StatQuest (Josh Starmer) (2018–2020s, ~10–15 min) — Why results can be unstable when you don’t have many rows."
+  },
+  {
+    "objectID": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#underfitting-and-overfitting",
+    "href": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#underfitting-and-overfitting",
+    "title": "Week 2: Chapter 2 Learning Videos (Supervised Learning + kNN)",
+    "section": "Underfitting and Overfitting",
+    "text": "Underfitting and Overfitting\nOverfitting (video)\nby deeplizard (~4 min) — Explains what overfitting is and what it tends to look like when you compare training vs test performance.\n\nUnderfitting (video)\nby deeplizard (~3–4 min) — Explains underfitting (model too simple to learn the real pattern) and why it performs poorly."
+  },
+  {
+    "objectID": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#k-nearest-neighbors-knn",
+    "href": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#k-nearest-neighbors-knn",
+    "title": "Week 2: Chapter 2 Learning Videos (Supervised Learning + kNN)",
+    "section": "k-Nearest Neighbors (kNN)",
+    "text": "k-Nearest Neighbors (kNN)\nK-Nearest Neighbors (kNN) clearly explained\nby StatQuest (Josh Starmer) (2018–2020s, ~10–15 min) — Neighbors “vote” and how changing k changes behavior."
+  },
+  {
+    "objectID": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#accuracy-what-does-correct-mean",
+    "href": "shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html#accuracy-what-does-correct-mean",
+    "title": "Week 2: Chapter 2 Learning Videos (Supervised Learning + kNN)",
+    "section": "Accuracy: what does “correct” mean?",
+    "text": "Accuracy: what does “correct” mean?\nThe Confusion Matrix (what accuracy is measuring)\nby StatQuest (Josh Starmer) (2018–2020s, ~10–15 min) — What “correct vs incorrect” means in classification."
   },
   {
     "objectID": "shared/guides/setup/jupyter-learning-links.html",

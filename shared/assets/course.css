@@ -1,1 +1,21 @@
+/* Sidebar: make top-level section headers stand out */
+.sidebar .sidebar-item.sidebar-section > .sidebar-item-container > a,
+.sidebar .sidebar-item.sidebar-section > .sidebar-item-container > .sidebar-item-text {
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+/* Optional: add a little spacing above each section header */
+.sidebar .sidebar-item.sidebar-section {
+  margin-top: 0.75rem;
+}
+
+/* Optional: make nested items slightly lighter so headers pop */
+.sidebar .sidebar-item:not(.sidebar-section) > .sidebar-item-container > a {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
 

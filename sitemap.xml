@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/weekly-overview/week-02/index.html</loc>
-    <lastmod>2026-01-03T00:48:51.733Z</lastmod>
+    <lastmod>2026-01-18T04:18:01.677Z</lastmod>
   </url>
   <url>
     <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/shared/policies/office-hours.html</loc>
@@ -21,11 +21,27 @@
     <lastmod>2025-12-31T19:16:43.000Z</lastmod>
   </url>
   <url>
+    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/shared/guides/cmsc-1217/week-02/cmsc-1217-chap-03-learning-resoursces.html</loc>
+    <lastmod>2026-01-18T02:45:01.000Z</lastmod>
+  </url>
+  <url>
     <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/course/syllabus.html</loc>
     <lastmod>2026-01-07T21:51:27.500Z</lastmod>
   </url>
   <url>
-    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/assignments/week-02/index.html</loc>
+    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/assignments/week-03/CMSC1236_Week3_Demo_Containers_Files_v2.html</loc>
+    <lastmod>2026-01-19T05:12:12.676Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/assignments/week-01/week-1-and-2-assignment.html</loc>
+    <lastmod>2026-01-12T03:11:47.657Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/assignments/week-01/environment-setup.html</loc>
+    <lastmod>2026-01-08T00:47:37.641Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/about.html</loc>
     <lastmod>2026-01-03T00:48:51.731Z</lastmod>
   </url>
   <url>
@@ -33,24 +49,20 @@
     <lastmod>2026-01-12T03:38:23.012Z</lastmod>
   </url>
   <url>
-    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/about.html</loc>
-    <lastmod>2026-01-03T00:48:51.731Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/assignments/week-01/environment-setup.html</loc>
-    <lastmod>2026-01-08T00:47:37.641Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/assignments/week-01/week-1-and-2-assignment.html</loc>
-    <lastmod>2026-01-12T03:11:47.657Z</lastmod>
+    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/assignments/week-02/index.html</loc>
+    <lastmod>2026-01-17T02:53:35.326Z</lastmod>
   </url>
   <url>
     <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/course/schedule.html</loc>
-    <lastmod>2026-01-08T03:03:21.121Z</lastmod>
+    <lastmod>2026-01-18T23:05:29.755Z</lastmod>
   </url>
   <url>
     <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/index.html</loc>
     <lastmod>2026-01-03T00:48:51.732Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/shared/guides/cmsc-2208/week-02/cmsc-2208-chap-02-learning-resources.html</loc>
+    <lastmod>2026-01-18T03:41:28.000Z</lastmod>
   </url>
   <url>
     <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/shared/guides/setup/jupyter-learning-links.html</loc>
