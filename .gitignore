@@ -8,6 +8,11 @@ d2l/downloads/
 shared/**
 !shared/.keep
 .DS_Store
+downloads/**/.venv/
+downloads/**/*.html
+downloads/**/_site/
+downloads/**/downloads/
+
 
 /.quarto/
 **/*.quarto_ipynb

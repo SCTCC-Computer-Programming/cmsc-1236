@@ -13,7 +13,7 @@ format:
 
 - **Work cadence:**
 
-  - **Mon–Thu:** work through reading + practice notebook
+  - **Mon–Thu:** work through reading + practice
 
   - **Sun:** graded items due (when assigned)
 

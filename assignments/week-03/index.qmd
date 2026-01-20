@@ -1,0 +1,63 @@
+---
+title: "Week 3 Assignments"
+subtitle: "Chapters 8–9 Reading and D2L Quiz"
+format:
+  html:
+    toc: true
+    css:
+      - /styles.css
+---
+
+## Week 3 Assignments
+
+**Submission location:** No Dropbox submission this week. All work is completed in D2L.
+
+## Part 1: Reading
+
+Read **Learning Python (6e), Chapters 8–9**.
+
+As you read, focus on these ideas (these are also the ideas the quiz will test):
+
+- **Names and objects:** variables are names that refer to objects
+- **Identity vs equality:** what `is` tests vs what `==` tests
+- **Aliasing:** how two names can refer to the same object through assignment
+- **Mutability:** what it means for an object (such as a list or dictionary) to be mutable
+- **Rebinding vs mutation (lists):** the difference between assigning a name to a new list and changing an existing list in place
+- **List slicing and slice assignment:** what a slice means and how assigning to a slice changes a list
+- **Nested list construction:** why `*` repetition can create repeated references when building a list of lists
+- **Dictionaries as mappings:** key-based access, insertion order during iteration, and update patterns
+- **Safe dictionary access:** membership tests with `in` and default-returning access with `get`
+- **Sets:** uniqueness, membership testing, and the hashability requirement for set elements
+- **Tuples:** indexing like other sequences and immutability (item assignment fails)
+- **Copying nested structures:** what shallow copy and deep copy mean for nested lists
+
+## Part 2: Week 3 Examples
+
+Use the Week 3 examples notebook to make the Chapter 8–9 behaviors visible through short, print-based examples. The goal is to be able to predict and explain results when objects are reused, mutated, or nested.
+
+- Here is the link to the **[Week 3 examples](../../assignments/week-03/week-3-demo.html)**.
+- <a href="/downloads/week-03/week-3-demo.ipynb" download>Download Jupyter Notebook</a>
+
+
+## Part 3: D2L Quiz
+
+Complete the **Week 3 D2L quiz**.
+
+The quiz focuses on:
+
+- distinguishing **identity** and **equality** in code output (`is` vs `==`)
+- recognizing when two names refer to the **same object** (aliasing)
+- determining whether a list operation **creates a new list** (rebinding) or **changes an existing list** (mutation)
+- predicting outcomes of **slice assignment** and nested list construction using `*`
+- interpreting dictionary behaviors: **insertion order**, membership tests (`in`), and safe access with `get`
+- identifying controlled dictionary update patterns using `copy` and `update`
+- using sets for **uniqueness** and explaining why unhashable types (such as lists) cannot be set elements
+- identifying tuple behaviors: indexing works, but **item assignment fails**
+- distinguishing **shallow copy** from **deep copy** for nested lists
+- using `pathlib.Path` for basic text file read/write and identifying where the file is created (the working directory)
+
+## Completion checklist
+
+- Learning Python 6e Chapters 8–9 reading
+- Week 3 examples notebook (run and review)
+- Week 3 D2L quiz

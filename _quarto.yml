@@ -1,9 +1,14 @@
 project:
   type: website
+  output-dir: _site
   render:
     - "**/*.qmd"
     - "!shared/templates/**"
     - "!d2l/**"
+    - "!downloads/**"
+    - "!**/downloads/**"
+  resources:
+    - downloads/**
 
 
 website:
@@ -50,22 +55,26 @@ website:
 
       - section: "Weekly Overview"
         contents:
-          - href: weekly-overview/week-01/index.qmd
-            text: Week 1
+          #- href: weekly-overview/week-01/index.qmd
+            #text: Week 1
           - href: weekly-overview/week-02/index.qmd
             text: Week 2
+          - href: weekly-overview/week-03/index.qmd
+            text: Week 3 (Current Week)
 
       - section: "Weekly Assignments"
         contents:
-          - href: assignments/week-01/index.qmd
-            text: Week 1
+          #- href: assignments/week-01/index.qmd
+            #text: Week 1
           - href: assignments/week-02/index.qmd
             text: Week 2
+          - href: assignments/week-03/index.qmd
+            text: Week 3 (Current Week)
            
       
       
       - section: "Guides"
-        contents:
+        contents: []
           
 
 
