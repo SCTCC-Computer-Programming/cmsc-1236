@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Virtual Pet Submission Deliverables – CMSC 1236 : Advanced Python Programming</title>
+<title>Week 2: Chapter 3 Additional Reference Videos (Files, Parsing, Comprehensions, Lambda, Generators) – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,14 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-feb0c0ed7aac57d66ec8dce0f6a48183.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,169 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -273,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../assignments/week-01/index.html">Weekly Assignments</a></li><li class="breadcrumb-item"><a href="../../assignments/week-02/index.html">Week 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 2: Chapter 3 Additional Reference Videos (Files, Parsing, Comprehensions, Lambda, Generators)</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -384,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../assignments/week-02/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../assignments/week-02/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2</span></a>
   </div>
 </li>
@@ -403,35 +237,20 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#part-1-code-submission" id="toc-part-1-code-submission" class="nav-link active" data-scroll-target="#part-1-code-submission">Part 1: Code submission</a>
   <ul class="collapse">
-  <li><a href="#required-files" id="toc-required-files" class="nav-link" data-scroll-target="#required-files">Required files</a></li>
-  <li><a href="#implementation-requirements-read-carefully" id="toc-implementation-requirements-read-carefully" class="nav-link" data-scroll-target="#implementation-requirements-read-carefully">Implementation requirements (read carefully)</a></li>
-  <li><a href="#ai-generated-content" id="toc-ai-generated-content" class="nav-link" data-scroll-target="#ai-generated-content">AI-generated content</a></li>
-  </ul></li>
-  <li><a href="#part-2-video-explanation" id="toc-part-2-video-explanation" class="nav-link" data-scroll-target="#part-2-video-explanation">Part 2: Video explanation</a>
-  <ul class="collapse">
-  <li><a href="#video-submission-instructions" id="toc-video-submission-instructions" class="nav-link" data-scroll-target="#video-submission-instructions">Video Submission Instructions</a></li>
-  <li><a href="#what-to-include-in-the-video" id="toc-what-to-include-in-the-video" class="nav-link" data-scroll-target="#what-to-include-in-the-video">What to include in the video</a></li>
-  </ul></li>
-  <li><a href="#part-3-design-guide-requirement" id="toc-part-3-design-guide-requirement" class="nav-link" data-scroll-target="#part-3-design-guide-requirement">Part 3: Design guide requirement</a></li>
-  <li><a href="#d2l-submission-checklist-week-2-dropbox" id="toc-d2l-submission-checklist-week-2-dropbox" class="nav-link" data-scroll-target="#d2l-submission-checklist-week-2-dropbox">D2L submission checklist (Week 2 dropbox)</a>
-  <ul class="collapse">
-  <li><a href="#python-files-upload" id="toc-python-files-upload" class="nav-link" data-scroll-target="#python-files-upload">Python files (upload)</a></li>
-  <li><a href="#video-submission" id="toc-video-submission" class="nav-link" data-scroll-target="#video-submission">Video submission</a></li>
-  </ul></li>
+  <li><a href="#exceptions-and-safe-processing-tryexcept" id="toc-exceptions-and-safe-processing-tryexcept" class="nav-link active" data-scroll-target="#exceptions-and-safe-processing-tryexcept">Exceptions and safe processing (<code>try/except</code>)</a></li>
+  <li><a href="#list-comprehensions-compact-build-a-new-list-loops" id="toc-list-comprehensions-compact-build-a-new-list-loops" class="nav-link" data-scroll-target="#list-comprehensions-compact-build-a-new-list-loops">List comprehensions (compact “build a new list” loops)</a></li>
+  <li><a href="#lambda-a-small-function-used-inline" id="toc-lambda-a-small-function-used-inline" class="nav-link" data-scroll-target="#lambda-a-small-function-used-inline">Lambda (a small function used inline)</a></li>
+  <li><a href="#generators-and-iteration-yield-streaming-one-row-at-a-time" id="toc-generators-and-iteration-yield-streaming-one-row-at-a-time" class="nav-link" data-scroll-target="#generators-and-iteration-yield-streaming-one-row-at-a-time">Generators and iteration (<code>yield</code>, streaming one row at a time)</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../assignments/week-01/index.html">Weekly Assignments</a></li><li class="breadcrumb-item"><a href="../../assignments/week-02/index.html">Week 2</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Virtual Pet Submission Deliverables</h1>
-<p class="subtitle lead">Code + Video Explanation (Week 1–2 Project)</p>
+<h1 class="title">Week 2: Chapter 3 Additional Reference Videos (Files, Parsing, Comprehensions, Lambda, Generators)</h1>
 </div>
 
 
@@ -443,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 21, 2026</p>
+      <p class="date-modified">January 19, 2026</p>
     </div>
   </div>
     
@@ -454,130 +273,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Submission location:</strong> <strong>All items are submitted in D2L</strong> (Week 2 dropbox).</p>
-<section id="part-1-code-submission" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-code-submission">Part 1: Code submission</h2>
-<p>Submit your Python source files to the Week 2 Dropbox.</p>
-<section id="required-files" class="level3">
-<h3 class="anchored" data-anchor-id="required-files">Required files</h3>
-<p>Upload the following files:</p>
-<ol type="1">
-<li><p><strong>Main program</strong><br>
-Filename: <code>lastname_main.py</code></p></li>
-<li><p><strong>Pet class</strong><br>
-Filename: <code>lastname_pet.py</code><br>
-Contains:</p>
-<ul>
-<li>the <code>Pet</code> class and required methods</li>
-<li>class attributes and logic that control pet behavior</li>
-</ul></li>
-</ol>
+<section id="exceptions-and-safe-processing-tryexcept" class="level2">
+<h2 class="anchored" data-anchor-id="exceptions-and-safe-processing-tryexcept">Exceptions and safe processing (<code>try/except</code>)</h2>
+<p><strong>Try / Except | Python (Tutorial)</strong><br>
+<em>by Socratica</em> — A focused explanation of what <code>try</code> and <code>except</code> actually do, and why this pattern is useful when you want to keep processing after one failure.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nlCKrKGHSSk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="implementation-requirements-read-carefully" class="level3">
-<h3 class="anchored" data-anchor-id="implementation-requirements-read-carefully">Implementation requirements (read carefully)</h3>
-<p>Your code will be reviewed for adherence to the assignment’s required functions, method names, and behaviors. The code submission and video explanation are evaluated as a single submission: the video supports your assessment, but it does not replace the implementation requirements. Missing required features or incorrect function/method names will affect the overall score, even if the explanation is strong.</p>
-<ul>
-<li>You must implement the required <code>Pet</code> methods using the names specified in the assignment (<code>feed</code>, <code>play</code>, <code>rest</code>, <code>customize</code>, <code>status</code>, <code>is_happy</code>).</li>
-<li>Your <code>main()</code> workflow must include the required persistence functions named <code>save_pet</code> and <code>load_pet</code>.</li>
-<li>Names matter: method/function names, parameters, and expected behaviors must match the assignment instructions so your work can be evaluated consistently.</li>
-</ul>
-<p>This assignment is intended to assess core Python fundamentals. Use basic Python only.</p>
+<section id="list-comprehensions-compact-build-a-new-list-loops" class="level2">
+<h2 class="anchored" data-anchor-id="list-comprehensions-compact-build-a-new-list-loops">List comprehensions (compact “build a new list” loops)</h2>
+<p><strong>Learn Python LIST COMPREHENSIONS in 10 minutes!</strong><br>
+<em>by Bro Code</em> — Quick overview of list comprehension syntax, comparing them to regular for loops with many clear examples.<br>
+</p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/YlY2g2xrl6Q" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>List Comprehensions | Python (Tutorial)</strong><br>
+<em>by CS Dojo</em> — List comprehension basics in Python - let’s go!</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/5K08WcjGV6c" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Python Tutorial: List Comprehensions</strong><br>
+<em>by Corey Schafer</em> — A deeper walkthrough showing common patterns and how comprehensions relate to the equivalent loop form.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/3dt4OGnU5sM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="ai-generated-content" class="level3">
-<h3 class="anchored" data-anchor-id="ai-generated-content">AI-generated content</h3>
-<p>You may use AI tools for support, but you remain responsible for the final submission.</p>
+<section id="lambda-a-small-function-used-inline" class="level2">
+<h2 class="anchored" data-anchor-id="lambda-a-small-function-used-inline">Lambda (a small function used inline)</h2>
+<p><strong>Learn Python LAMBDA in 6 minutes!</strong><br>
+<em>by Bro Code</em> — Introduces lambda functions as short, anonymous functions and shows common use cases like sorting and mapping.<br>
+</p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/IljPHDyBRog" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Python Tutorial: Lambda Functions</strong><br>
+<em>by Corey Schafer</em> — Explains what a <code>lambda</code> is, when it’s useful, and how it connects to patterns like <code>sorted(..., key=...)</code> and <code>max(..., key=...)</code>.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Ob9rY6PQMfI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-</section>
-<section id="part-2-video-explanation" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-video-explanation">Part 2: Video explanation</h2>
-<section id="video-submission-instructions" class="level3">
-<h3 class="anchored" data-anchor-id="video-submission-instructions">Video Submission Instructions</h3>
-<p>Record a video of yourself explaining your code and design choices. The focus is your understanding of how the program works and why you implemented it the way you did. Use the rubric as a guide for what to cover.</p>
-<p><strong>Requirements</strong> - Clear video and audio quality - Introduce yourself, the assignment, and course at the beginning of the video</p>
-</section>
-<section id="what-to-include-in-the-video" class="level3">
-<h3 class="anchored" data-anchor-id="what-to-include-in-the-video">What to include in the video</h3>
-<p>Your video must include:</p>
-<ol type="1">
-<li><p><strong>Program demonstration</strong></p>
-<ul>
-<li><p>Start the program and create a new pet (name, color, type).</p></li>
-<li><p>Show the menu loop running and responding to user input.</p></li>
-<li><p>Demonstrate invalid input handling (enter an invalid choice and show the program displays an error and continues).</p></li>
-<li><p>Demonstrate each menu action at least once:</p>
-<ul>
-<li>Feed</li>
-<li>Play</li>
-<li>Rest</li>
-<li>Check Status</li>
-<li>Customize Pet</li>
-<li>Save and Exit (confirm a save message is shown)</li>
-</ul></li>
-</ul></li>
-<li><p><strong>Persistence demonstration (pickling)</strong></p>
-<ul>
-<li>Show saving the pet’s state using <strong>Save and Exit</strong>.</li>
-<li>Restart the program and demonstrate loading the saved pet state (program continues with the existing pet rather than creating a new one).</li>
-<li>Briefly explain where the data is stored and what gets saved.</li>
-</ul></li>
-<li><p><strong>Code walkthrough</strong></p>
-<ul>
-<li>Explain the <code>Pet</code> class attributes and why they represent the pet’s state (<code>name</code>, <code>hunger</code>, <code>happiness</code>, <code>energy</code>, <code>color</code>, <code>type</code>).</li>
-<li>Explain the logic in <code>feed</code>, <code>play</code>, and <code>rest</code>.</li>
-<li>Explain how the menu maps user choices to method calls.</li>
-<li>Explain how invalid input is handled (type and/or range).</li>
-</ul></li>
-<li><p><strong>Lessons Learned (required for credit)</strong> Discuss this at the end:</p>
-<ul>
-<li>What was most difficult</li>
-<li>What you changed after testing</li>
-<li>What you would improve next time</li>
-</ul></li>
-</ol>
-</section>
-</section>
-<section id="part-3-design-guide-requirement" class="level2">
-<h2 class="anchored" data-anchor-id="part-3-design-guide-requirement">Part 3: Design guide requirement</h2>
-<p>Ensure you follow the Design Guide: - <a href="../../assignments/week-02/cmsc-1203-design-guide.pdf" target="_blank">Design Guide (CMSC 1203)</a></p>
-</section>
-<section id="d2l-submission-checklist-week-2-dropbox" class="level2">
-<h2 class="anchored" data-anchor-id="d2l-submission-checklist-week-2-dropbox">D2L submission checklist (Week 2 dropbox)</h2>
-<p>Submit the following items:</p>
-<section id="python-files-upload" class="level3">
-<h3 class="anchored" data-anchor-id="python-files-upload">Python files (upload)</h3>
-<ol type="1">
-<li><code>lastname_main.py</code></li>
-<li><code>lastname_pet.py</code></li>
-</ol>
-</section>
-<section id="video-submission" class="level3">
-<h3 class="anchored" data-anchor-id="video-submission">Video submission</h3>
-<ul>
-<li>Upload the video using to Kaltura Mediaspace</li>
-<li>Name your video file link: <code>lastname_Pet_video</code></li>
-<li>Link to the Kaltura video in the Assignment Dropbox</li>
-</ul>
+<section id="generators-and-iteration-yield-streaming-one-row-at-a-time" class="level2">
+<h2 class="anchored" data-anchor-id="generators-and-iteration-yield-streaming-one-row-at-a-time">Generators and iteration (<code>yield</code>, streaming one row at a time)</h2>
+<p><strong>Python Generators Explained</strong><br>
+<em>by Programming with Mosh</em> — Clear, beginner-friendly explanation of generators, how they work, and why they’re useful for memory-efficient data processing.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/u3T7hmLthUU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Python Tutorial: Generators - How to use them and the benefits you receive</strong><br>
+<em>by Corey Schafer</em> — A practical explanation of <code>yield</code>, how generator functions behave differently from normal functions, and what changes when you iterate over a generator.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/bD05uGo_sVI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {

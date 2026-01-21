@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Virtual Pet Submission Deliverables – CMSC 1236 : Advanced Python Programming</title>
+<title>Week 3 Guide – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -273,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../assignments/week-01/index.html">Weekly Assignments</a></li><li class="breadcrumb-item"><a href="../../assignments/week-02/index.html">Week 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 3 Guide</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -384,7 +384,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../assignments/week-02/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../assignments/week-02/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2</span></a>
   </div>
 </li>
@@ -404,23 +404,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1-code-submission" id="toc-part-1-code-submission" class="nav-link active" data-scroll-target="#part-1-code-submission">Part 1: Code submission</a>
+  <li><a href="#chapters-89-concepts" id="toc-chapters-89-concepts" class="nav-link active" data-scroll-target="#chapters-89-concepts">Chapters 8–9 concepts</a>
   <ul class="collapse">
-  <li><a href="#required-files" id="toc-required-files" class="nav-link" data-scroll-target="#required-files">Required files</a></li>
-  <li><a href="#implementation-requirements-read-carefully" id="toc-implementation-requirements-read-carefully" class="nav-link" data-scroll-target="#implementation-requirements-read-carefully">Implementation requirements (read carefully)</a></li>
-  <li><a href="#ai-generated-content" id="toc-ai-generated-content" class="nav-link" data-scroll-target="#ai-generated-content">AI-generated content</a></li>
+  <li><a href="#names-objects-and-references" id="toc-names-objects-and-references" class="nav-link" data-scroll-target="#names-objects-and-references">Names, objects, and references</a></li>
+  <li><a href="#sequence-types-lists-and-tuples" id="toc-sequence-types-lists-and-tuples" class="nav-link" data-scroll-target="#sequence-types-lists-and-tuples">Sequence types (lists and tuples)</a></li>
+  <li><a href="#mapping-type-dictionaries" id="toc-mapping-type-dictionaries" class="nav-link" data-scroll-target="#mapping-type-dictionaries">Mapping type (dictionaries)</a></li>
+  <li><a href="#set-types" id="toc-set-types" class="nav-link" data-scroll-target="#set-types">Set types</a></li>
+  <li><a href="#copying-nested-structures-shallow-vs-deep" id="toc-copying-nested-structures-shallow-vs-deep" class="nav-link" data-scroll-target="#copying-nested-structures-shallow-vs-deep">Copying nested structures (shallow vs deep)</a></li>
+  <li><a href="#course-tool-note-file-access-with-pathlib.path" id="toc-course-tool-note-file-access-with-pathlib.path" class="nav-link" data-scroll-target="#course-tool-note-file-access-with-pathlib.path">Course tool note: file access with <code>pathlib.Path</code></a></li>
   </ul></li>
-  <li><a href="#part-2-video-explanation" id="toc-part-2-video-explanation" class="nav-link" data-scroll-target="#part-2-video-explanation">Part 2: Video explanation</a>
-  <ul class="collapse">
-  <li><a href="#video-submission-instructions" id="toc-video-submission-instructions" class="nav-link" data-scroll-target="#video-submission-instructions">Video Submission Instructions</a></li>
-  <li><a href="#what-to-include-in-the-video" id="toc-what-to-include-in-the-video" class="nav-link" data-scroll-target="#what-to-include-in-the-video">What to include in the video</a></li>
-  </ul></li>
-  <li><a href="#part-3-design-guide-requirement" id="toc-part-3-design-guide-requirement" class="nav-link" data-scroll-target="#part-3-design-guide-requirement">Part 3: Design guide requirement</a></li>
-  <li><a href="#d2l-submission-checklist-week-2-dropbox" id="toc-d2l-submission-checklist-week-2-dropbox" class="nav-link" data-scroll-target="#d2l-submission-checklist-week-2-dropbox">D2L submission checklist (Week 2 dropbox)</a>
-  <ul class="collapse">
-  <li><a href="#python-files-upload" id="toc-python-files-upload" class="nav-link" data-scroll-target="#python-files-upload">Python files (upload)</a></li>
-  <li><a href="#video-submission" id="toc-video-submission" class="nav-link" data-scroll-target="#video-submission">Video submission</a></li>
-  </ul></li>
+  <li><a href="#reading-expectations-for-week-3-quiz-preparation" id="toc-reading-expectations-for-week-3-quiz-preparation" class="nav-link" data-scroll-target="#reading-expectations-for-week-3-quiz-preparation">Reading expectations for Week 3 (quiz preparation)</a></li>
+  <li><a href="#week-3-tasks" id="toc-week-3-tasks" class="nav-link" data-scroll-target="#week-3-tasks">Week 3 tasks</a></li>
+  <li><a href="#knowledge-goals-for-week-3" id="toc-knowledge-goals-for-week-3" class="nav-link" data-scroll-target="#knowledge-goals-for-week-3">Knowledge goals for Week 3</a></li>
   </ul>
 </nav>
     </div>
@@ -428,10 +423,10 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../assignments/week-01/index.html">Weekly Assignments</a></li><li class="breadcrumb-item"><a href="../../assignments/week-02/index.html">Week 2</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Virtual Pet Submission Deliverables</h1>
-<p class="subtitle lead">Code + Video Explanation (Week 1–2 Project)</p>
+<h1 class="title">Week 3 Guide</h1>
+<p class="subtitle lead">Chapters 8–9 — Sequences, Mappings, Sets</p>
 </div>
 
 
@@ -443,7 +438,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 21, 2026</p>
+      <p class="date-modified">January 20, 2026</p>
     </div>
   </div>
     
@@ -454,112 +449,106 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Submission location:</strong> <strong>All items are submitted in D2L</strong> (Week 2 dropbox).</p>
-<section id="part-1-code-submission" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-code-submission">Part 1: Code submission</h2>
-<p>Submit your Python source files to the Week 2 Dropbox.</p>
-<section id="required-files" class="level3">
-<h3 class="anchored" data-anchor-id="required-files">Required files</h3>
-<p>Upload the following files:</p>
-<ol type="1">
-<li><p><strong>Main program</strong><br>
-Filename: <code>lastname_main.py</code></p></li>
-<li><p><strong>Pet class</strong><br>
-Filename: <code>lastname_pet.py</code><br>
-Contains:</p>
+<p>This week is a refresher of Python’s built-in types. You already know how to make lists and dictionaries and loop over them. Chapters 8–9 extend that foundation by showing how to predict what happens when the same object is reused, when a type is mutated in place, and when data structures are nested.</p>
+<p>In the Week 3 demo, the examples are designed to help you predict the behavior of Python’s built-in types. You will practice tracing what an operation does to an object (creates a new object vs changes an existing one), and you will learn how to explain the output you see in terms of identity, equality, and mutation.</p>
+<section id="chapters-89-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="chapters-89-concepts">Chapters 8–9 concepts</h2>
+<section id="names-objects-and-references" class="level3">
+<h3 class="anchored" data-anchor-id="names-objects-and-references">Names, objects, and references</h3>
+<p>Chapters 8–9 review Python’s object model: variables are names that refer to objects, and collection objects store references to other objects rather than copying them. This explains why two names can refer to the same object, and why an in-place change can appear in more than one place.</p>
+<p>The demo examples show:</p>
 <ul>
-<li>the <code>Pet</code> class and required methods</li>
-<li>class attributes and logic that control pet behavior</li>
-</ul></li>
-</ol>
-</section>
-<section id="implementation-requirements-read-carefully" class="level3">
-<h3 class="anchored" data-anchor-id="implementation-requirements-read-carefully">Implementation requirements (read carefully)</h3>
-<p>Your code will be reviewed for adherence to the assignment’s required functions, method names, and behaviors. The code submission and video explanation are evaluated as a single submission: the video supports your assessment, but it does not replace the implementation requirements. Missing required features or incorrect function/method names will affect the overall score, even if the explanation is strong.</p>
-<ul>
-<li>You must implement the required <code>Pet</code> methods using the names specified in the assignment (<code>feed</code>, <code>play</code>, <code>rest</code>, <code>customize</code>, <code>status</code>, <code>is_happy</code>).</li>
-<li>Your <code>main()</code> workflow must include the required persistence functions named <code>save_pet</code> and <code>load_pet</code>.</li>
-<li>Names matter: method/function names, parameters, and expected behaviors must match the assignment instructions so your work can be evaluated consistently.</li>
+<li>identity vs equality (<code>is</code> vs <code>==</code>)</li>
+<li>how aliasing can occur through assignment</li>
+<li>how mutation differs from rebinding for mutable objects</li>
 </ul>
-<p>This assignment is intended to assess core Python fundamentals. Use basic Python only.</p>
 </section>
-<section id="ai-generated-content" class="level3">
-<h3 class="anchored" data-anchor-id="ai-generated-content">AI-generated content</h3>
-<p>You may use AI tools for support, but you remain responsible for the final submission.</p>
+<section id="sequence-types-lists-and-tuples" class="level3">
+<h3 class="anchored" data-anchor-id="sequence-types-lists-and-tuples">Sequence types (lists and tuples)</h3>
+<p>Chapter 8 presents lists and tuples as sequence types. Lists support in-place change, while tuples do not. These differences matter most when programs reuse values, build nested structures, or attempt to modify sequence items.</p>
+<p>The demo examples show:</p>
+<ul>
+<li>lists as mutable sequences (operations that change an existing list)</li>
+<li>tuples as immutable sequences (item assignment fails)</li>
+<li>slice assignment as an in-place list operation</li>
+<li>correct and incorrect ways to construct nested lists</li>
+</ul>
+</section>
+<section id="mapping-type-dictionaries" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-type-dictionaries">Mapping type (dictionaries)</h3>
+<p>Dictionaries are the built-in mapping type: values are stored and retrieved by key rather than by position. Chapter 8 covers dictionary creation and core operations used in real programs.</p>
+<p>The demo examples show:</p>
+<ul>
+<li>insertion order during iteration (order of insertion, not sorting)</li>
+<li>safe access when a key may not exist (<code>in</code>, <code>get</code>)</li>
+<li>controlled updates using <code>copy</code> and <code>update</code></li>
+<li>comparing dictionaries by comparing their key collections</li>
+</ul>
+</section>
+<section id="set-types" class="level3">
+<h3 class="anchored" data-anchor-id="set-types">Set types</h3>
+<p>Sets represent an unordered collection of unique values. Chapter 8 introduces sets and the operations used to test membership and reason about distinct values.</p>
+<p>The demo examples show:</p>
+<ul>
+<li>constructing sets to remove duplicates</li>
+<li>membership testing with <code>in</code></li>
+<li>the hashability requirement for set elements (and why mutable types like lists cannot be elements)</li>
+</ul>
+</section>
+<section id="copying-nested-structures-shallow-vs-deep" class="level3">
+<h3 class="anchored" data-anchor-id="copying-nested-structures-shallow-vs-deep">Copying nested structures (shallow vs deep)</h3>
+<p>When a structure is nested (for example, a list of lists), “copy” can mean copying only the outer container or copying both outer and inner objects. Chapter 9 introduces this distinction and why it matters for program correctness.</p>
+<p>The demo examples show:</p>
+<ul>
+<li>shallow copy: new outer object with shared inner objects</li>
+<li>deep copy: new outer object with copied inner objects</li>
+</ul>
+</section>
+<section id="course-tool-note-file-access-with-pathlib.path" class="level3">
+<h3 class="anchored" data-anchor-id="course-tool-note-file-access-with-pathlib.path">Course tool note: file access with <code>pathlib.Path</code></h3>
+<p>The textbook uses <code>open()</code> as the standard and universal file interface. This week’s demo also introduces <code>pathlib.Path</code>, a modern alternative that is common in current Python code. <code>pathlib</code> is not covered in CMSC 1203 and it is not part of Chapters 8–9, but it builds directly on the same file concepts and simplifies common read/write tasks.</p>
 </section>
 </section>
-<section id="part-2-video-explanation" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-video-explanation">Part 2: Video explanation</h2>
-<section id="video-submission-instructions" class="level3">
-<h3 class="anchored" data-anchor-id="video-submission-instructions">Video Submission Instructions</h3>
-<p>Record a video of yourself explaining your code and design choices. The focus is your understanding of how the program works and why you implemented it the way you did. Use the rubric as a guide for what to cover.</p>
-<p><strong>Requirements</strong> - Clear video and audio quality - Introduce yourself, the assignment, and course at the beginning of the video</p>
-</section>
-<section id="what-to-include-in-the-video" class="level3">
-<h3 class="anchored" data-anchor-id="what-to-include-in-the-video">What to include in the video</h3>
-<p>Your video must include:</p>
+<section id="reading-expectations-for-week-3-quiz-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="reading-expectations-for-week-3-quiz-preparation">Reading expectations for Week 3 (quiz preparation)</h2>
+<p>As you read Chapters 8–9 and run the demo, check whether you can answer the following in your own words:</p>
 <ol type="1">
-<li><p><strong>Program demonstration</strong></p>
-<ul>
-<li><p>Start the program and create a new pet (name, color, type).</p></li>
-<li><p>Show the menu loop running and responding to user input.</p></li>
-<li><p>Demonstrate invalid input handling (enter an invalid choice and show the program displays an error and continues).</p></li>
-<li><p>Demonstrate each menu action at least once:</p>
-<ul>
-<li>Feed</li>
-<li>Play</li>
-<li>Rest</li>
-<li>Check Status</li>
-<li>Customize Pet</li>
-<li>Save and Exit (confirm a save message is shown)</li>
-</ul></li>
-</ul></li>
-<li><p><strong>Persistence demonstration (pickling)</strong></p>
-<ul>
-<li>Show saving the pet’s state using <strong>Save and Exit</strong>.</li>
-<li>Restart the program and demonstrate loading the saved pet state (program continues with the existing pet rather than creating a new one).</li>
-<li>Briefly explain where the data is stored and what gets saved.</li>
-</ul></li>
-<li><p><strong>Code walkthrough</strong></p>
-<ul>
-<li>Explain the <code>Pet</code> class attributes and why they represent the pet’s state (<code>name</code>, <code>hunger</code>, <code>happiness</code>, <code>energy</code>, <code>color</code>, <code>type</code>).</li>
-<li>Explain the logic in <code>feed</code>, <code>play</code>, and <code>rest</code>.</li>
-<li>Explain how the menu maps user choices to method calls.</li>
-<li>Explain how invalid input is handled (type and/or range).</li>
-</ul></li>
-<li><p><strong>Lessons Learned (required for credit)</strong> Discuss this at the end:</p>
-<ul>
-<li>What was most difficult</li>
-<li>What you changed after testing</li>
-<li>What you would improve next time</li>
-</ul></li>
+<li>What is the difference between identity and equality (<code>is</code> vs <code>==</code>)?</li>
+<li>How can two different lists be equal but not be the same object?</li>
+<li>What is the difference between rebinding a name and mutating a list in place?</li>
+<li>Why can list repetition with <code>*</code> produce surprising results for nested lists?</li>
+<li>What does slice assignment do to a list object?</li>
+<li>What does “insertion order” mean for dictionaries, and what does it not mean?</li>
+<li>When should you use <code>get</code> instead of direct indexing (<code>d[key]</code>)?</li>
+<li>Why do set elements have to be hashable, and what kinds of objects are not hashable?</li>
+<li>What is the difference between a shallow copy and a deep copy of a nested list?</li>
+<li>What does <code>Path.write_text()</code> do if the file does not exist yet, and where is that file created?</li>
 </ol>
 </section>
-</section>
-<section id="part-3-design-guide-requirement" class="level2">
-<h2 class="anchored" data-anchor-id="part-3-design-guide-requirement">Part 3: Design guide requirement</h2>
-<p>Ensure you follow the Design Guide: - <a href="../../assignments/week-02/cmsc-1203-design-guide.pdf" target="_blank">Design Guide (CMSC 1203)</a></p>
-</section>
-<section id="d2l-submission-checklist-week-2-dropbox" class="level2">
-<h2 class="anchored" data-anchor-id="d2l-submission-checklist-week-2-dropbox">D2L submission checklist (Week 2 dropbox)</h2>
-<p>Submit the following items:</p>
-<section id="python-files-upload" class="level3">
-<h3 class="anchored" data-anchor-id="python-files-upload">Python files (upload)</h3>
+<section id="week-3-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="week-3-tasks">Week 3 tasks</h2>
 <ol type="1">
-<li><code>lastname_main.py</code></li>
-<li><code>lastname_pet.py</code></li>
+<li>Watch the <strong>Week 3 demo walkthrough</strong> in your CMSC 1236 YouTube playlist.
+<ul>
+<li>Here is the link to the <strong><a href="../../assignments/week-03/week-3-demo.html">Week 3 examples</a></strong>.</li>
+<li><a href="../../downloads/week-03/week-3-demo.ipynb" download="">Download Jupyter Notebook</a></li>
+</ul></li>
+<li>Read <strong>Learning Python 6e, Chapters 8–9</strong> (complete).</li>
+<li>Complete the <strong>Week 3 D2L quiz</strong> (Chapter 8–9 concepts + demo examples).</li>
 </ol>
 </section>
-<section id="video-submission" class="level3">
-<h3 class="anchored" data-anchor-id="video-submission">Video submission</h3>
+<section id="knowledge-goals-for-week-3" class="level2">
+<h2 class="anchored" data-anchor-id="knowledge-goals-for-week-3">Knowledge goals for Week 3</h2>
+<p>By the end of the week, you should be able to:</p>
 <ul>
-<li>Upload the video using to Kaltura Mediaspace</li>
-<li>Name your video file link: <code>lastname_Pet_video</code></li>
-<li>Link to the Kaltura video in the Assignment Dropbox</li>
+<li>interpret and explain short code outputs involving Python’s built-in types from Chapters 8–9</li>
+<li>determine whether an operation creates a new object or mutates an existing object, and explain how that affects other names</li>
+<li>reason correctly about nested structures, copying, and when inner objects are shared</li>
+<li>apply core operations for sequences, mappings, and sets to solve small problems and explain your choices</li>
+<li>use <code>pathlib.Path</code> to write and read a text file in a notebook and describe where the file is created (the working directory)</li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
