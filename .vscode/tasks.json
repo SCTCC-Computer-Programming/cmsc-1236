@@ -4,7 +4,7 @@
     {
       "label": "Site: Start clean (sync + hard clean + export notebooks + preview)",
       "type": "shell",
-      "command": "set -e; rsync -a --delete \"/Volumes/Anger/work/courses/shared/\" \"${workspaceFolder}/shared/\" && rm -rf \"${workspaceFolder}/_site\" \"${workspaceFolder}/.quarto\" && mkdir -p \"${workspaceFolder}/downloads\" && find \"${workspaceFolder}/assignments\" -type f -name \"week-*-demo.qmd\" -print0 | while IFS= read -r -d '' f; do weekdir=\"$(basename \"$(dirname \"$f\")\")\"; mkdir -p \"${workspaceFolder}/downloads/$weekdir\"; out=\"$(basename \"$f\" .qmd).ipynb\"; quarto render \"$f\" --to ipynb --no-execute --output-dir \"${workspaceFolder}/downloads/$weekdir\" --output \"$out\"; done && cd \"${workspaceFolder}\" && quarto preview",
+      "command": "set -e; grep -qE '^[[:space:]]*type:[[:space:]]*website[[:space:]]*$' \"${workspaceFolder}/_quarto.yml\"; rsync -a --delete \"/Volumes/Anger/work/courses/shared/\" \"${workspaceFolder}/shared/\" && rm -rf \"${workspaceFolder}/_site\" \"${workspaceFolder}/.quarto\" && mkdir -p \"${workspaceFolder}/downloads\" && find \"${workspaceFolder}/assignments\" -type f -name \"week-*-demo.qmd\" -print0 2>/dev/null | while IFS= read -r -d '' f; do weekdir=\"$(basename \"$(dirname \"$f\")\")\"; mkdir -p \"${workspaceFolder}/downloads/$weekdir\"; out=\"$(basename \"$f\" .qmd).ipynb\"; quarto render \"$f\" --to ipynb --no-execute --output-dir \"${workspaceFolder}/downloads/$weekdir\" --output \"$out\"; done && cd \"${workspaceFolder}\" && quarto preview",
       "options": {
         "cwd": "${workspaceFolder}",
         "env": {
@@ -16,7 +16,7 @@
     {
       "label": "Site: Refresh (sync + export notebooks + preview)",
       "type": "shell",
-      "command": "set -e; rsync -a --delete \"/Volumes/Anger/work/courses/shared/\" \"${workspaceFolder}/shared/\" && mkdir -p \"${workspaceFolder}/downloads\" && find \"${workspaceFolder}/assignments\" -type f -name \"week-*-demo.qmd\" -print0 | while IFS= read -r -d '' f; do weekdir=\"$(basename \"$(dirname \"$f\")\")\"; mkdir -p \"${workspaceFolder}/downloads/$weekdir\"; out=\"$(basename \"$f\" .qmd).ipynb\"; quarto render \"$f\" --to ipynb --no-execute --output-dir \"${workspaceFolder}/downloads/$weekdir\" --output \"$out\"; done && cd \"${workspaceFolder}\" && quarto preview",
+      "command": "set -e; grep -qE '^[[:space:]]*type:[[:space:]]*website[[:space:]]*$' \"${workspaceFolder}/_quarto.yml\"; rsync -a --delete \"/Volumes/Anger/work/courses/shared/\" \"${workspaceFolder}/shared/\" && mkdir -p \"${workspaceFolder}/downloads\" && find \"${workspaceFolder}/assignments\" -type f -name \"week-*-demo.qmd\" -print0 2>/dev/null | while IFS= read -r -d '' f; do weekdir=\"$(basename \"$(dirname \"$f\")\")\"; mkdir -p \"${workspaceFolder}/downloads/$weekdir\"; out=\"$(basename \"$f\" .qmd).ipynb\"; quarto render \"$f\" --to ipynb --no-execute --output-dir \"${workspaceFolder}/downloads/$weekdir\" --output \"$out\"; done && cd \"${workspaceFolder}\" && quarto preview",
       "options": {
         "cwd": "${workspaceFolder}",
         "env": {
@@ -28,7 +28,7 @@
     {
       "label": "Site: Publish to GitHub (sync + hard clean + export notebooks + render + publish)",
       "type": "shell",
-      "command": "set -e; rsync -a --delete \"/Volumes/Anger/work/courses/shared/\" \"${workspaceFolder}/shared/\" && rm -rf \"${workspaceFolder}/_site\" \"${workspaceFolder}/.quarto\" && mkdir -p \"${workspaceFolder}/downloads\" && find \"${workspaceFolder}/assignments\" -type f -name \"week-*-demo.qmd\" -print0 | while IFS= read -r -d '' f; do weekdir=\"$(basename \"$(dirname \"$f\")\")\"; mkdir -p \"${workspaceFolder}/downloads/$weekdir\"; out=\"$(basename \"$f\" .qmd).ipynb\"; quarto render \"$f\" --to ipynb --no-execute --output-dir \"${workspaceFolder}/downloads/$weekdir\" --output \"$out\"; done && cd \"${workspaceFolder}\" && quarto render && quarto publish gh-pages --no-prompt",
+      "command": "set -e; grep -qE '^[[:space:]]*type:[[:space:]]*website[[:space:]]*$' \"${workspaceFolder}/_quarto.yml\"; rsync -a --delete \"/Volumes/Anger/work/courses/shared/\" \"${workspaceFolder}/shared/\" && rm -rf \"${workspaceFolder}/_site\" \"${workspaceFolder}/.quarto\" && mkdir -p \"${workspaceFolder}/downloads\" && find \"${workspaceFolder}/assignments\" -type f -name \"week-*-demo.qmd\" -print0 2>/dev/null | while IFS= read -r -d '' f; do weekdir=\"$(basename \"$(dirname \"$f\")\")\"; mkdir -p \"${workspaceFolder}/downloads/$weekdir\"; out=\"$(basename \"$f\" .qmd).ipynb\"; quarto render \"$f\" --to ipynb --no-execute --output-dir \"${workspaceFolder}/downloads/$weekdir\" --output \"$out\"; done && cd \"${workspaceFolder}\" && quarto render && quarto publish gh-pages --no-prompt",
       "options": {
         "cwd": "${workspaceFolder}",
         "env": {

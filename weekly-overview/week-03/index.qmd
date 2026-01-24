@@ -1,20 +1,25 @@
 ---
-title: Week 3 Guide
-subtitle: Chapters 8–9 — Sequences, Mappings, Sets
+title: "Week 3 Guide"
+subtitle: "Chapters 8–9—Sequences, Mappings, Sets"
 format:
   html:
     toc: true
 ---
 
-This week is a refresher of Python’s built-in types. You already know how to make lists and dictionaries and loop over them. Chapters 8–9 extend that foundation by showing how to predict what happens when the same object is reused, when a type is mutated in place, and when data structures are nested.
+This week is a refresher of Python's built-in types. You already know how to make lists and dictionaries and loop over them. Chapters 8–9 extend that foundation by showing how to predict what happens when the same object is reused, when a type is mutated in place, and when data structures are nested.
 
-In the Week 3 demo, the examples are designed to help you predict the behavior of Python’s built-in types. You will practice tracing what an operation does to an object (creates a new object vs changes an existing one), and you will learn how to explain the output you see in terms of identity, equality, and mutation.
+In the Week 3 demo, the examples are designed to help you predict the behavior of Python's built-in types. You will practice tracing what an operation does to an object (creates a new object vs changes an existing one), and you will learn how to explain the output you see in terms of identity, equality, and mutation.
+
+## Week 3 Demo
+
+- Here is the link to the **[Week 3 examples](../../assignments/week-03/week-3-demo.html)**.
+- <a href="/downloads/week-03/week-3-demo.ipynb" download>Download Jupyter Notebook</a>
 
 ## Chapters 8–9 concepts
 
 ### Names, objects, and references
 
-Chapters 8–9 review Python’s object model: variables are names that refer to objects, and collection objects store references to other objects rather than copying them. This explains why two names can refer to the same object, and why an in-place change can appear in more than one place.
+Chapters 8–9 review Python's object model: variables are names that refer to objects, and collection objects store references to other objects rather than copying them. This explains why two names can refer to the same object, and why an in-place change can appear in more than one place.
 
 The demo examples show:
 
@@ -56,7 +61,7 @@ The demo examples show:
 
 ### Copying nested structures (shallow vs deep)
 
-When a structure is nested (for example, a list of lists), “copy” can mean copying only the outer container or copying both outer and inner objects. Chapter 9 introduces this distinction and why it matters for program correctness.
+When a structure is nested (for example, a list of lists), "copy" can mean copying only the outer container or copying both outer and inner objects. Chapter 9 introduces this distinction and why it matters for program correctness.
 
 The demo examples show:
 
@@ -66,9 +71,9 @@ The demo examples show:
 
 ### Course tool note: file access with `pathlib.Path`
 
-The textbook uses `open()` as the standard and universal file interface. This week’s demo also introduces `pathlib.Path`, a modern alternative that is common in current Python code. `pathlib` is not covered in CMSC 1203 and it is not part of Chapters 8–9, but it builds directly on the same file concepts and simplifies common read/write tasks.
+The textbook uses `open()` as the standard and universal file interface. This week's demo also introduces `pathlib.Path`, a modern alternative that is common in current Python code. `pathlib` is not covered in CMSC 1203 and it is not part of Chapters 8–9, but it builds directly on the same file concepts and simplifies common read/write tasks.
 
-## Reading expectations for Week 3 (quiz preparation)
+## Reading expectations for Week 3
 
 As you read Chapters 8–9 and run the demo, check whether you can answer the following in your own words:
 
@@ -77,7 +82,7 @@ As you read Chapters 8–9 and run the demo, check whether you can answer the fo
 3. What is the difference between rebinding a name and mutating a list in place?
 4. Why can list repetition with `*` produce surprising results for nested lists?
 5. What does slice assignment do to a list object?
-6. What does “insertion order” mean for dictionaries, and what does it not mean?
+6. What does "insertion order" mean for dictionaries, and what does it not mean?
 7. When should you use `get` instead of direct indexing (`d[key]`)?
 8. Why do set elements have to be hashable, and what kinds of objects are not hashable?
 9. What is the difference between a shallow copy and a deep copy of a nested list?
@@ -85,19 +90,6 @@ As you read Chapters 8–9 and run the demo, check whether you can answer the fo
 
 ## Week 3 tasks
 
-1. Watch the **Week 3 demo walkthrough** in your CMSC 1236 YouTube playlist.
-   - Here is the link to the **[Week 3 examples](../../assignments/week-03/week-3-demo.html)**.
-   - <a href="/downloads/week-03/week-3-demo.ipynb" download>Download Jupyter Notebook</a>
-2. Read **Learning Python 6e, Chapters 8–9** (complete).
-3. Complete the **Week 3 D2L quiz** (Chapter 8–9 concepts + demo examples).
-
-## Knowledge goals for Week 3
-
-By the end of the week, you should be able to:
-
-* interpret and explain short code outputs involving Python’s built-in types from Chapters 8–9
-* determine whether an operation creates a new object or mutates an existing object, and explain how that affects other names
-* reason correctly about nested structures, copying, and when inner objects are shared
-* apply core operations for sequences, mappings, and sets to solve small problems and explain your choices
-* use `pathlib.Path` to write and read a text file in a notebook and describe where the file is created (the working directory)
-
+1. Read **Learning Python 6e, Chapters 8–9** (complete).
+2. Watch the **Week 3 demo walkthrough** in your CMSC 1236 YouTube playlist and work through the **[Week 3 examples](../../assignments/week-03/week-3-demo.html)** in your Jupyter environment.
+3. Complete the **Week 3 D2L quiz** (Chapters 8–9 concepts + demo examples).

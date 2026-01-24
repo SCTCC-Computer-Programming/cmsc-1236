@@ -89,7 +89,7 @@ Your video must include:
 ## Part 3: Design guide requirement
 
 Ensure you follow the Design Guide:
-- [Design Guide (CMSC 1203)](../cmsc-1203-design-guide.pdf){target="_blank"}
+- [Design Guide (CMSC 1203)](/assignments/week-02/cmsc-1203-design-guide.pdf){target="_blank"}
 
 ## D2L submission checklist (Week 2 dropbox)
 

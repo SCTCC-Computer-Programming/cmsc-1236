@@ -4,13 +4,10 @@ subtitle: "Chapters 8–9 Reading and D2L Quiz"
 format:
   html:
     toc: true
-    css:
-      - /styles.css
 ---
 
-## Week 3 Assignments
-
-**Submission location:** No Dropbox submission this week. All work is completed in D2L.
+- Here is the link to the **[Week 3 examples](../../assignments/week-03/week-3-demo.html)**.
+- <a href="/downloads/week-03/week-3-demo.ipynb" download>Download Jupyter Notebook</a>
 
 ## Part 1: Reading
 
@@ -31,13 +28,9 @@ As you read, focus on these ideas (these are also the ideas the quiz will test):
 - **Tuples:** indexing like other sequences and immutability (item assignment fails)
 - **Copying nested structures:** what shallow copy and deep copy mean for nested lists
 
-## Part 2: Week 3 Examples
+## Part 2: Work through the Week 3 Examples
 
 Use the Week 3 examples notebook to make the Chapter 8–9 behaviors visible through short, print-based examples. The goal is to be able to predict and explain results when objects are reused, mutated, or nested.
-
-- Here is the link to the **[Week 3 examples](../../assignments/week-03/week-3-demo.html)**.
-- <a href="/downloads/week-03/week-3-demo.ipynb" download>Download Jupyter Notebook</a>
-
 
 ## Part 3: D2L Quiz
 
@@ -56,8 +49,12 @@ The quiz focuses on:
 - distinguishing **shallow copy** from **deep copy** for nested lists
 - using `pathlib.Path` for basic text file read/write and identifying where the file is created (the working directory)
 
-## Completion checklist
+## D2L submission checklist
 
-- Learning Python 6e Chapters 8–9 reading
-- Week 3 examples notebook (run and review)
-- Week 3 D2L quiz
+Complete the following in D2L:
+
+* **Week 3 D2L quiz** (no file uploads required this week)
+
+**Submission location:** No Dropbox submission this week. All work is completed in D2L.
+
+**Note:** This week focuses on reading Chapters 8–9, understanding the examples, and demonstrating comprehension through the quiz. The emphasis is on building solid conceptual understanding of Python objects and references that will support everything that follows.

@@ -21,6 +21,11 @@ After completing these examples, you should be able to:
 * read and write a text file using `pathlib.Path` (`read_text()` and `write_text()`)
 
 
+In CMSC 1203, you learned how to use Python's built-in collections. You practiced calling list methods like `append()` and `pop()`, writing list comprehensions, using dictionary methods like `get()` and `update()`, and reading and writing files with `open()`. 
+
+This unit shifts focus to **how Python works internally**. The goal is to understand what happens when you assign one variable to another, why a change to one list sometimes affects another variable, and when copying a data structure actually matters. These concepts explain behavior that may have seemed unexpected in CMSC 1203 and will help you predict and debug your code as programs become larger and more complex.
+
+
 ## Part 1: Names, objects, and references
 
 In Python, a variable is a *name* that refers to an object. An object is a value stored in memory (for example, a list, a dictionary, an integer, or a string). When a name refers to an object, the name is said to be **bound** to that object.
@@ -84,7 +89,44 @@ Explanation:
 5. `print("x is y =", x is y)` prints the label `x is y =` followed by the result of the identity test `x is y`. This is `False` because `x` and `y` refer to different list objects in memory.
 6. `print("x == y =", x == y)` prints the label `x == y =` followed by the result of the equality test `x == y`. This is `True` because the two lists contain the same values in the same order.
 
-## Part 2) Rebinding vs in-place mutation (lists)
+### Example 3: Truth values of objects
+
+In Python, every object has an inherent truth value, which means any object can be used directly in a condition such as an `if` statement. This matters in practice because checking whether a collection is empty is one of the most common operations in everyday code. Instead of writing `if len(items) > 0:` to test whether a list has elements, Python programmers write `if items:` and rely on the object's truth value. Understanding which objects are considered true and which are considered false helps you read and write idiomatic Python code.
+
+The general rule is:
+- **False:** zero values (`0`, `0.0`), empty collections (`""`, `[]`, `{}`, `()`, `set()`), and `None`
+- **True:** everything else (non-zero numbers, non-empty collections)
+
+
+
+```{python}
+empty_list = []
+non_empty_list = [0, 0, 0]
+
+print("empty_list =", empty_list)
+print("non_empty_list =", non_empty_list)
+print()
+
+if empty_list:
+    print("empty_list is truthy")
+else:
+    print("empty_list is falsy")
+
+if non_empty_list:
+    print("non_empty_list is truthy")
+else:
+    print("non_empty_list is falsy")
+```
+
+Explanation:
+
+1. `empty_list = []` creates an empty list and assigns `empty_list` to refer to it.
+2. `non_empty_list = [0, 0, 0]` creates a list containing three zeros and assigns `non_empty_list` to refer to it. The list is non-empty even though all its elements are zero.
+3. The first two `print` statements display both lists so their contents are visible.
+4. `if empty_list:` tests the truth value of `empty_list`. Because the list is empty, it is considered false, so the `else` branch executes.
+5. `if non_empty_list:` tests the truth value of `non_empty_list`. Because the list contains items (even though those items are zeros), it is considered true, so the `if` branch executes.
+
+## Part 2: Rebinding vs in-place mutation (lists)
 
 Lists are mutable sequence objects, which means their contents can be changed after they are created. When lists are used in a program, two different kinds of changes are common:
 
@@ -99,7 +141,7 @@ The following examples use two names (`nums` and `alias`) that initially refer t
 
 In this example, `nums = nums + [40]` produces a new list object and assigns `nums` to refer to that new list. The name `alias` continues to refer to the original list.
 
-Beginner-friendly version:
+
 
 ```{python}
 nums = [10, 20, 30]
@@ -127,7 +169,7 @@ Explanation:
 
 In this example, `nums += [40]` changes the existing list object in place. Because `alias` refers to the same list object, `alias` reflects the change as well.
 
-Beginner-friendly version:
+
 
 ```{python}
 nums = [10, 20, 30]
@@ -150,7 +192,7 @@ Explanation:
 6. `print("nums is alias =", nums is alias)` prints whether `nums` and `alias` refer to the same list object. This is `True` because the list was mutated in place rather than replaced.
 
 
-## 3) Lists (sequence type): slice assignment and nested list construction
+## Part 3: Lists (sequence type): slice assignment and nested list construction
 
 This section focuses on two list operations that are easy to use correctly in small examples, but can cause confusion in larger programs if the effect on the existing list object is not understood.
 First, lists support slice assignment, which replaces part of a list by assigning to a slice. A slice is a range of positions written as start:stop (the stop position is not included). This matters because slice assignment changes the existing list in place rather than creating a new list, so the change is visible anywhere that same list is referenced.
@@ -163,7 +205,7 @@ The examples in this section demonstrate slice assignment as an in-place change,
 
 Slice assignment replaces part of a list without creating a new list object. The key observation is that the list referenced by `data` changes, but `data` continues to refer to the same list object.
 
-Beginner-friendly version:
+
 
 ```{python}
 data = [0, 1, 2, 3, 4, 5]
@@ -233,7 +275,7 @@ Explanation:
 4. `print("after: ", grid_ok)` prints the nested list structure after mutation to show that only one row changed.
 
 
-## 4) Dictionaries (mapping type): insertion order, safe access, and controlled updates
+## Part 4: Dictionaries (mapping type): insertion order, safe access, and controlled updates
 
 There are four dictionary behaviors in this unit that are important for writing predictable programs with mappings.
 
@@ -251,7 +293,7 @@ The examples that follow demonstrate:
 
 This example shows that dictionaries preserve the order in which keys were inserted. The key observation is that the dictionary’s key order matches insertion order, not alphabetical order.
 
-Beginner-friendly version:
+
 
 ```{python}
 d = {"b": 2, "a": 1, "c": 3}
@@ -270,7 +312,7 @@ Explanation:
 
 This example shows two standard ways to handle keys that may or may not exist. The key observation is that membership tests report whether a key is present, and `get` returns a default value instead of raising an error when a key is missing.
 
-Beginner-friendly version:
+
 
 ```{python}
 config = {"mode": "test"}
@@ -298,7 +340,7 @@ Explanation:
 
 This example shows how to combine a base dictionary with an override dictionary without modifying the original. The key observation is that `copy` creates a new dictionary object, and `update` mutates that new dictionary by applying key-value pairs from another dictionary.
 
-Beginner-friendly version:
+
 
 ```{python}
 base = {"host": "localhost", "port": 8000}
@@ -325,7 +367,7 @@ Explanation:
 
 This example shows that `keys()` returns a view of keys that can be used in set operations. The key observation is that intersection identifies keys present in both dictionaries, and difference identifies keys present in one dictionary but not the other.
 
-Beginner-friendly version:
+
 
 ```{python}
 a = {"x": 1, "y": 2, "z": 3}
@@ -348,8 +390,39 @@ Explanation:
 4. `only_in_a = a.keys() - b.keys()` computes the difference, producing the set of keys that appear in `a` but not in `b`.
 5. The `print` statements display the keys and the computed comparisons.
 
+### Example 5: Dictionary comprehensions
 
-## 5) Set types: uniqueness and hashability
+This example shows that dictionaries can be built using a comprehension, which follows the same pattern as the list comprehensions introduced in CMSC 1203.
+
+Dictionary comprehensions are useful when you need to transform existing data into a lookup table. A common situation is having two related lists—such as a list of names and a list of scores—where corresponding items share the same position. With two separate lists, looking up a specific person's score requires searching through the names list to find the position, then using that position to index into the scores list. This approach is tedious to write, easy to get wrong, and becomes a problem if the two lists ever get out of sync.
+
+A dictionary comprehension provides a concise way to build this structure in a single expression when the source data is already available in a pairable form.
+
+
+
+```{python}
+names = ["alice", "bob", "carol"]
+scores = [85, 92, 78]
+
+gradebook = {name: score for name, score in zip(names, scores)}
+
+print("names =", names)
+print("scores =", scores)
+print("gradebook =", gradebook)
+print("gradebook['bob'] =", gradebook["bob"])
+```
+
+Explanation:
+
+1. `names = ["alice", "bob", "carol"]` creates a list of student names.
+2. `scores = [85, 92, 78]` creates a list of corresponding scores, where each position matches the same position in `names`.
+3. `gradebook = {name: score for name, score in zip(names, scores)}` builds a dictionary by iterating over pairs of names and scores. The `zip()` function combines the two lists into pairs, and the comprehension creates a key-value pair for each. The result is a dictionary that maps each name to their score.
+4. `print("gradebook =", gradebook)` prints the dictionary so the structure is visible.
+5. `print("gradebook['bob'] =", gradebook["bob"])` retrieves Bob's score by name, demonstrating that the dictionary provides direct lookup without searching through a list.
+
+
+
+## Part 5: Set types: uniqueness and hashability
 
 A set is a built-in collection type used to represent a group of unique values. Unlike lists and tuples, sets do not keep items in a positional order, and duplicate values are automatically removed.
 
@@ -362,7 +435,7 @@ The examples that follow demonstrate two points: constructing a set removes dupl
 
 This example shows that building a set from a list removes duplicate values. The key observation is that repeated items from the list appear only once in the set.
 
-Beginner-friendly version:
+
 
 ```{python}
 items = ["apple", "apple", "pear", "banana", "banana"]
@@ -385,7 +458,7 @@ Explanation:
 
 This example shows that lists cannot be elements of a set. The key observation is that Python raises a `TypeError` because lists are mutable and therefore not hashable.
 
-Beginner-friendly version:
+
 
 ```{python}
 try:
@@ -400,7 +473,7 @@ Explanation:
 2. Python raises a `TypeError` because list objects are mutable and cannot be used as set elements.
 3. The `except TypeError as e` block catches the error and prints the message so the reason for the failure is visible.
 
-## 6) Tuples (sequence type, immutable): record-style grouping
+## Part 6: Tuples (sequence type, immutable): record-style grouping
 
 A tuple is a built-in sequence type, which means it holds an ordered collection of items that can be accessed by position (index). Tuples are similar to lists in how they are written and indexed, but they differ in one important way.
 
@@ -413,7 +486,7 @@ The examples that follow demonstrate two points: tuple items can be accessed by 
 
 This example shows that tuples support indexing. The key observation is that the first and last items can be accessed using `0` and `-1`, just as with lists.
 
-Beginner-friendly version:
+
 
 ```{python}
 record = ("Ada", "Lovelace", 1815)
@@ -435,7 +508,7 @@ Explanation:
 
 This example shows that tuple items cannot be reassigned. The key observation is that Python raises a `TypeError` when an assignment to a tuple element is attempted.
 
-Beginner-friendly version:
+
 
 ```{python}
 record = ("Ada", "Lovelace", 1815)
@@ -454,7 +527,7 @@ Explanation:
 4. The `except TypeError as e` block catches the error and prints the message.
 
 
-## 7) Copying nested collection objects (shallow vs deep)
+## Part 7: Copying nested collection objects (shallow vs deep)
 
 When a collection contains other collection objects, the structure is nested. A nested structure is one where an outer object (such as a list) contains inner objects (such as other lists). When the inner objects are mutable, changes to an inner object can affect more than one variable if those variables share references to the same inner object.
 
@@ -472,7 +545,7 @@ The examples that follow show the practical difference by mutating an inner list
 
 This example shows that slicing a nested list (`nested[:]`) creates a new outer list but does not copy the inner lists. The key observation is that changing an inner list through the shallow copy also changes the original.
 
-Beginner-friendly version:
+
 
 ```{python}
 nested = [[1, 2], [3, 4]]
@@ -505,7 +578,7 @@ Explanation:
 
 This example shows that a deep copy duplicates the nested structure. The key observation is that changing an inner list in the deep copy does not change the original.
 
-Beginner-friendly version:
+
 
 ```{python}
 import copy
@@ -536,13 +609,15 @@ Explanation:
 8. `print("nested[0] is deep[0] =", nested[0] is deep[0])` shows that the first inner list objects are different, confirming that the nested lists were copied.
 
 
-## 8) File access with `pathlib.Path` (modern interface)
+## Part 8: File access with `pathlib.Path` (modern interface)
 
 Basic file handling using `open()` and a `with` block was introduced in CMSC 1203, and the textbook’s Chapter 9 presents that same approach as the standard, universal way to work with files in Python. This section does not re-teach that baseline.
 
 Instead, the focus here is a modern alternative interface that is widely used in current Python code: the `pathlib` module. This module is not covered in CMSC 1203 and it is not a topic in Learning Python Chapters 8–9, but it is a practical tool that builds directly on the same underlying file concepts.
 
 A `pathlib.Path` object represents a file path as an object rather than as a plain string. It can simplify common tasks such as reading and writing text and helps keep file-related code consistent and readable as programs grow.
+
+The `pathlib` interface shown here provides a more concise alternative for common text operations: `read_text()` and `write_text()` handle opening, reading or writing, and closing in a single method call. Both approaches are valid; `pathlib` is often simpler when all you need is to read or write an entire file as a string.
 
 The examples that follow demonstrate how to:
 
