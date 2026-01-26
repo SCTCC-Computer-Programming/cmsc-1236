@@ -400,6 +400,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Week 2</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weekly-overview/week-03/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3 (Current Week)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -421,6 +427,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../assignments/week-02/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../assignments/week-03/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3 (Current Week)</span></a>
   </div>
 </li>
       </ul>
@@ -453,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 20, 2026</p>
+      <p class="date-modified">January 24, 2026</p>
     </div>
   </div>
     
@@ -479,6 +491,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>copy nested structures intentionally by choosing between a shallow copy and a deep copy</li>
 <li>read and write a text file using <code>pathlib.Path</code> (<code>read_text()</code> and <code>write_text()</code>)</li>
 </ul>
+<p>In CMSC 1203, you learned how to use Python’s built-in collections. You practiced calling list methods like <code>append()</code> and <code>pop()</code>, writing list comprehensions, using dictionary methods like <code>get()</code> and <code>update()</code>, and reading and writing files with <code>open()</code>.</p>
+<p>This unit shifts focus to <strong>how Python works internally</strong>. The goal is to understand what happens when you assign one variable to another, why a change to one list sometimes affects another variable, and when copying a data structure actually matters. These concepts explain behavior that may have seemed unexpected in CMSC 1203 and will help you predict and debug your code as programs become larger and more complex.</p>
 </section>
 <section id="part-1-names-objects-and-references" class="level2">
 <h2 class="anchored" data-anchor-id="part-1-names-objects-and-references">Part 1: Names, objects, and references</h2>
@@ -499,7 +513,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-1-two-names-referring-to-the-same-object" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-two-names-referring-to-the-same-object">Example 1: Two names referring to the same object</h3>
 <p>This first example shows what it means for two names to refer to the same object. The output will confirm that <code>a is b</code> is true (same object) and <code>a == b</code> is also true (same contents).</p>
-<div id="288e4614" class="cell" data-execution_count="1">
+<div id="926fb743" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a ="</span>, a)</span>
@@ -526,7 +540,7 @@ a == b = True</code></pre>
 <section id="example-2-different-objects-with-the-same-value" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-different-objects-with-the-same-value">Example 2: Different objects with the same value</h3>
 <p>This example shows that two different list objects can still be equal in value. The key observation is that <code>x is y</code> is false because two separate list objects are created, while <code>x == y</code> is true because the contents of the two lists match.</p>
-<div id="8af3bcd8" class="cell" data-execution_count="2">
+<div id="6bc1f7d7" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -551,9 +565,47 @@ x == y = True</code></pre>
 <li><code>print("x == y =", x == y)</code> prints the label <code>x == y =</code> followed by the result of the equality test <code>x == y</code>. This is <code>True</code> because the two lists contain the same values in the same order.</li>
 </ol>
 </section>
+<section id="example-3-truth-values-of-objects" class="level3">
+<h3 class="anchored" data-anchor-id="example-3-truth-values-of-objects">Example 3: Truth values of objects</h3>
+<p>In Python, every object has an inherent truth value, which means any object can be used directly in a condition such as an <code>if</code> statement. This matters in practice because checking whether a collection is empty is one of the most common operations in everyday code. Instead of writing <code>if len(items) &gt; 0:</code> to test whether a list has elements, Python programmers write <code>if items:</code> and rely on the object’s truth value. Understanding which objects are considered true and which are considered false helps you read and write idiomatic Python code.</p>
+<p>The general rule is: - <strong>False:</strong> zero values (<code>0</code>, <code>0.0</code>), empty collections (<code>""</code>, <code>[]</code>, <code>{}</code>, <code>()</code>, <code>set()</code>), and <code>None</code> - <strong>True:</strong> everything else (non-zero numbers, non-empty collections)</p>
+<div id="ab067337" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>empty_list <span class="op">=</span> []</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>non_empty_list <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"empty_list ="</span>, empty_list)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"non_empty_list ="</span>, non_empty_list)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> empty_list:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"empty_list is truthy"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"empty_list is falsy"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> non_empty_list:</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"non_empty_list is truthy"</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"non_empty_list is falsy"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>empty_list = []
+non_empty_list = [0, 0, 0]
+
+empty_list is falsy
+non_empty_list is truthy</code></pre>
+</div>
+</div>
+<p>Explanation:</p>
+<ol type="1">
+<li><code>empty_list = []</code> creates an empty list and assigns <code>empty_list</code> to refer to it.</li>
+<li><code>non_empty_list = [0, 0, 0]</code> creates a list containing three zeros and assigns <code>non_empty_list</code> to refer to it. The list is non-empty even though all its elements are zero.</li>
+<li>The first two <code>print</code> statements display both lists so their contents are visible.</li>
+<li><code>if empty_list:</code> tests the truth value of <code>empty_list</code>. Because the list is empty, it is considered false, so the <code>else</code> branch executes.</li>
+<li><code>if non_empty_list:</code> tests the truth value of <code>non_empty_list</code>. Because the list contains items (even though those items are zeros), it is considered true, so the <code>if</code> branch executes.</li>
+</ol>
+</section>
 </section>
 <section id="part-2-rebinding-vs-in-place-mutation-lists" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-rebinding-vs-in-place-mutation-lists">Part 2) Rebinding vs in-place mutation (lists)</h2>
+<h2 class="anchored" data-anchor-id="part-2-rebinding-vs-in-place-mutation-lists">Part 2: Rebinding vs in-place mutation (lists)</h2>
 <p>Lists are mutable sequence objects, which means their contents can be changed after they are created. When lists are used in a program, two different kinds of changes are common:</p>
 <ul>
 <li>a name can be reassigned to refer to a different list (rebinding)</li>
@@ -564,16 +616,15 @@ x == y = True</code></pre>
 <section id="example-1-rebinding-creates-a-new-list" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-rebinding-creates-a-new-list">Example 1: Rebinding creates a new list</h3>
 <p>In this example, <code>nums = nums + [40]</code> produces a new list object and assigns <code>nums</code> to refer to that new list. The name <code>alias</code> continues to refer to the original list.</p>
-<p>Beginner-friendly version:</p>
-<div id="246db3e4" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>alias <span class="op">=</span> nums</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> nums <span class="op">+</span> [<span class="dv">40</span>]</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nums ="</span>, nums)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"alias ="</span>, alias)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nums is alias ="</span>, nums <span class="kw">is</span> alias)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="f10970d5" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>alias <span class="op">=</span> nums</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> nums <span class="op">+</span> [<span class="dv">40</span>]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nums ="</span>, nums)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"alias ="</span>, alias)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nums is alias ="</span>, nums <span class="kw">is</span> alias)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>nums = [10, 20, 30, 40]
 alias = [10, 20, 30]
@@ -593,16 +644,15 @@ nums is alias = False</code></pre>
 <section id="example-2-in-place-mutation-changes-the-existing-list" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-in-place-mutation-changes-the-existing-list">Example 2: In-place mutation changes the existing list</h3>
 <p>In this example, <code>nums += [40]</code> changes the existing list object in place. Because <code>alias</code> refers to the same list object, <code>alias</code> reflects the change as well.</p>
-<p>Beginner-friendly version:</p>
-<div id="36234e5c" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>alias <span class="op">=</span> nums</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>nums <span class="op">+=</span> [<span class="dv">40</span>]</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nums ="</span>, nums)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"alias ="</span>, alias)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nums is alias ="</span>, nums <span class="kw">is</span> alias)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fb90d22a" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>alias <span class="op">=</span> nums</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>nums <span class="op">+=</span> [<span class="dv">40</span>]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nums ="</span>, nums)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"alias ="</span>, alias)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nums is alias ="</span>, nums <span class="kw">is</span> alias)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>nums = [10, 20, 30, 40]
 alias = [10, 20, 30, 40]
@@ -620,23 +670,22 @@ nums is alias = True</code></pre>
 </ol>
 </section>
 </section>
-<section id="lists-sequence-type-slice-assignment-and-nested-list-construction" class="level2">
-<h2 class="anchored" data-anchor-id="lists-sequence-type-slice-assignment-and-nested-list-construction">3) Lists (sequence type): slice assignment and nested list construction</h2>
+<section id="part-3-lists-sequence-type-slice-assignment-and-nested-list-construction" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-lists-sequence-type-slice-assignment-and-nested-list-construction">Part 3: Lists (sequence type): slice assignment and nested list construction</h2>
 <p>This section focuses on two list operations that are easy to use correctly in small examples, but can cause confusion in larger programs if the effect on the existing list object is not understood. First, lists support slice assignment, which replaces part of a list by assigning to a slice. A slice is a range of positions written as start:stop (the stop position is not included). This matters because slice assignment changes the existing list in place rather than creating a new list, so the change is visible anywhere that same list is referenced.</p>
 <p>Second, lists support repetition with *. When the repeated item is itself a mutable object (such as a list), repetition can produce a nested structure in which multiple positions refer to the same inner object. This matters because changing one inner list then appears to change multiple “rows” at once.</p>
 <p>The examples in this section demonstrate slice assignment as an in-place change, and they contrast two ways to build a list of lists: one that repeats references and one that creates independent inner lists.</p>
 <section id="example-1-slice-assignment-modifies-a-list-in-place" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-slice-assignment-modifies-a-list-in-place">Example 1: Slice assignment modifies a list in place</h3>
 <p>Slice assignment replaces part of a list without creating a new list object. The key observation is that the list referenced by <code>data</code> changes, but <code>data</code> continues to refer to the same list object.</p>
-<p>Beginner-friendly version:</p>
-<div id="887c51bb" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"before:"</span>, data)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>data[<span class="dv">2</span>:<span class="dv">5</span>] <span class="op">=</span> [<span class="st">"a"</span>, <span class="st">"b"</span>]</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"after: "</span>, data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e67fc5fe" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"before:"</span>, data)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>data[<span class="dv">2</span>:<span class="dv">5</span>] <span class="op">=</span> [<span class="st">"a"</span>, <span class="st">"b"</span>]</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"after: "</span>, data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>before: [0, 1, 2, 3, 4, 5]
 after:  [0, 1, 'a', 'b', 5]</code></pre>
@@ -654,15 +703,15 @@ after:  [0, 1, 'a', 'b', 5]</code></pre>
 <h3 class="anchored" data-anchor-id="example-2-nested-lists-and-repeated-references-repetition">Example 2: Nested lists and repeated references (<code>*</code> repetition)</h3>
 <p>List repetition with <code>*</code> repeats references when the repeated element is a mutable object (such as a list). The key observation is that changing one inner list changes every “row” when all rows refer to the same inner list object.</p>
 <p>Beginner-friendly version (repeated references):</p>
-<div id="c25887b7" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>]</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>grid_bad <span class="op">=</span> [row] <span class="op">*</span> <span class="dv">3</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"before:"</span>, grid_bad)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>grid_bad[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"after: "</span>, grid_bad)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="60f87c8a" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>grid_bad <span class="op">=</span> [row] <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"before:"</span>, grid_bad)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>grid_bad[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"after: "</span>, grid_bad)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>before: [[0, 0], [0, 0], [0, 0]]
 after:  [[99, 0], [99, 0], [99, 0]]</code></pre>
@@ -681,14 +730,14 @@ after:  [[99, 0], [99, 0], [99, 0]]</code></pre>
 <h3 class="anchored" data-anchor-id="example-3-nested-lists-created-as-independent-inner-lists-recommended-construction">Example 3: Nested lists created as independent inner lists (recommended construction)</h3>
 <p>A common pattern for building nested lists is to construct each inner list independently so that mutating one row does not affect the others.</p>
 <p>Beginner-friendly version (independent inner lists):</p>
-<div id="b867e086" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>grid_ok <span class="op">=</span> [[<span class="dv">0</span>, <span class="dv">0</span>] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>)]</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"before:"</span>, grid_ok)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>grid_ok[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"after: "</span>, grid_ok)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="d7fb17e3" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>grid_ok <span class="op">=</span> [[<span class="dv">0</span>, <span class="dv">0</span>] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>)]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"before:"</span>, grid_ok)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>grid_ok[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"after: "</span>, grid_ok)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>before: [[0, 0], [0, 0], [0, 0]]
 after:  [[99, 0], [0, 0], [0, 0]]</code></pre>
@@ -703,8 +752,8 @@ after:  [[99, 0], [0, 0], [0, 0]]</code></pre>
 </ol>
 </section>
 </section>
-<section id="dictionaries-mapping-type-insertion-order-safe-access-and-controlled-updates" class="level2">
-<h2 class="anchored" data-anchor-id="dictionaries-mapping-type-insertion-order-safe-access-and-controlled-updates">4) Dictionaries (mapping type): insertion order, safe access, and controlled updates</h2>
+<section id="part-4-dictionaries-mapping-type-insertion-order-safe-access-and-controlled-updates" class="level2">
+<h2 class="anchored" data-anchor-id="part-4-dictionaries-mapping-type-insertion-order-safe-access-and-controlled-updates">Part 4: Dictionaries (mapping type): insertion order, safe access, and controlled updates</h2>
 <p>There are four dictionary behaviors in this unit that are important for writing predictable programs with mappings.</p>
 <p>A dictionary is the built-in mapping type: it stores values by key rather than by position. Because dictionaries are used to represent configuration, lookup tables, and structured records, it is important to understand how key order behaves, how to access keys safely, and how to update dictionaries without accidentally changing an object that other parts of a program still rely on.</p>
 <p>The examples that follow demonstrate:</p>
@@ -717,12 +766,11 @@ after:  [[99, 0], [0, 0], [0, 0]]</code></pre>
 <section id="example-1-insertion-order-iteration-is-not-sorting" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-insertion-order-iteration-is-not-sorting">Example 1: Insertion order (iteration is not sorting)</h3>
 <p>This example shows that dictionaries preserve the order in which keys were inserted. The key observation is that the dictionary’s key order matches insertion order, not alphabetical order.</p>
-<p>Beginner-friendly version:</p>
-<div id="6d476e88" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> {<span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"dictionary ="</span>, d)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"keys in iteration order ="</span>, <span class="bu">list</span>(d.keys()))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b69236fd" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> {<span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"dictionary ="</span>, d)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"keys in iteration order ="</span>, <span class="bu">list</span>(d.keys()))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>dictionary = {'b': 2, 'a': 1, 'c': 3}
 keys in iteration order = ['b', 'a', 'c']</code></pre>
@@ -738,17 +786,16 @@ keys in iteration order = ['b', 'a', 'c']</code></pre>
 <section id="example-2-safe-access-with-membership-tests-and-get" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-safe-access-with-membership-tests-and-get">Example 2: Safe access with membership tests and <code>get</code></h3>
 <p>This example shows two standard ways to handle keys that may or may not exist. The key observation is that membership tests report whether a key is present, and <code>get</code> returns a default value instead of raising an error when a key is missing.</p>
-<p>Beginner-friendly version:</p>
-<div id="2dddf7e6" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>config <span class="op">=</span> {<span class="st">"mode"</span>: <span class="st">"test"</span>}</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"config ="</span>, config)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"'mode' in config ="</span>, <span class="st">"mode"</span> <span class="kw">in</span> config)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"'timeout' in config ="</span>, <span class="st">"timeout"</span> <span class="kw">in</span> config)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"config.get('mode') ="</span>, config.get(<span class="st">"mode"</span>))</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"config.get('timeout', 30) ="</span>, config.get(<span class="st">"timeout"</span>, <span class="dv">30</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="930627ca" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>config <span class="op">=</span> {<span class="st">"mode"</span>: <span class="st">"test"</span>}</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"config ="</span>, config)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"'mode' in config ="</span>, <span class="st">"mode"</span> <span class="kw">in</span> config)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"'timeout' in config ="</span>, <span class="st">"timeout"</span> <span class="kw">in</span> config)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"config.get('mode') ="</span>, config.get(<span class="st">"mode"</span>))</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"config.get('timeout', 30) ="</span>, config.get(<span class="st">"timeout"</span>, <span class="dv">30</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>config = {'mode': 'test'}
 'mode' in config = True
@@ -770,17 +817,16 @@ config.get('timeout', 30) = 30</code></pre>
 <section id="example-3-controlled-updates-using-copy-and-update" class="level3">
 <h3 class="anchored" data-anchor-id="example-3-controlled-updates-using-copy-and-update">Example 3: Controlled updates using <code>copy</code> and <code>update</code></h3>
 <p>This example shows how to combine a base dictionary with an override dictionary without modifying the original. The key observation is that <code>copy</code> creates a new dictionary object, and <code>update</code> mutates that new dictionary by applying key-value pairs from another dictionary.</p>
-<p>Beginner-friendly version:</p>
-<div id="d9889276" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> {<span class="st">"host"</span>: <span class="st">"localhost"</span>, <span class="st">"port"</span>: <span class="dv">8000</span>}</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>override <span class="op">=</span> {<span class="st">"port"</span>: <span class="dv">9000</span>}</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>merged <span class="op">=</span> base.copy()</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>merged.update(override)</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"base ="</span>, base)</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"override ="</span>, override)</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"merged ="</span>, merged)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="315c1d8a" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> {<span class="st">"host"</span>: <span class="st">"localhost"</span>, <span class="st">"port"</span>: <span class="dv">8000</span>}</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>override <span class="op">=</span> {<span class="st">"port"</span>: <span class="dv">9000</span>}</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>merged <span class="op">=</span> base.copy()</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>merged.update(override)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"base ="</span>, base)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"override ="</span>, override)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"merged ="</span>, merged)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>base = {'host': 'localhost', 'port': 8000}
 override = {'port': 9000}
@@ -799,22 +845,21 @@ merged = {'host': 'localhost', 'port': 9000}</code></pre>
 <section id="example-4-dictionary-key-views-for-comparisons" class="level3">
 <h3 class="anchored" data-anchor-id="example-4-dictionary-key-views-for-comparisons">Example 4: Dictionary key views for comparisons</h3>
 <p>This example shows that <code>keys()</code> returns a view of keys that can be used in set operations. The key observation is that intersection identifies keys present in both dictionaries, and difference identifies keys present in one dictionary but not the other.</p>
-<p>Beginner-friendly version:</p>
-<div id="990fb401" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> {<span class="st">"x"</span>: <span class="dv">1</span>, <span class="st">"y"</span>: <span class="dv">2</span>, <span class="st">"z"</span>: <span class="dv">3</span>}</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> {<span class="st">"y"</span>: <span class="dv">20</span>, <span class="st">"z"</span>: <span class="dv">30</span>, <span class="st">"w"</span>: <span class="dv">40</span>}</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>common <span class="op">=</span> a.keys() <span class="op">&amp;</span> b.keys()</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>only_in_a <span class="op">=</span> a.keys() <span class="op">-</span> b.keys()</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a keys ="</span>, <span class="bu">list</span>(a.keys()))</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"b keys ="</span>, <span class="bu">list</span>(b.keys()))</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"keys in both ="</span>, common)</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"keys only in a ="</span>, only_in_a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="082bf724" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> {<span class="st">"x"</span>: <span class="dv">1</span>, <span class="st">"y"</span>: <span class="dv">2</span>, <span class="st">"z"</span>: <span class="dv">3</span>}</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> {<span class="st">"y"</span>: <span class="dv">20</span>, <span class="st">"z"</span>: <span class="dv">30</span>, <span class="st">"w"</span>: <span class="dv">40</span>}</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>common <span class="op">=</span> a.keys() <span class="op">&amp;</span> b.keys()</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>only_in_a <span class="op">=</span> a.keys() <span class="op">-</span> b.keys()</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a keys ="</span>, <span class="bu">list</span>(a.keys()))</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"b keys ="</span>, <span class="bu">list</span>(b.keys()))</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"keys in both ="</span>, common)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"keys only in a ="</span>, only_in_a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a keys = ['x', 'y', 'z']
 b keys = ['y', 'z', 'w']
-keys in both = {'y', 'z'}
+keys in both = {'z', 'y'}
 keys only in a = {'x'}</code></pre>
 </div>
 </div>
@@ -827,23 +872,53 @@ keys only in a = {'x'}</code></pre>
 <li>The <code>print</code> statements display the keys and the computed comparisons.</li>
 </ol>
 </section>
+<section id="example-5-dictionary-comprehensions" class="level3">
+<h3 class="anchored" data-anchor-id="example-5-dictionary-comprehensions">Example 5: Dictionary comprehensions</h3>
+<p>This example shows that dictionaries can be built using a comprehension, which follows the same pattern as the list comprehensions introduced in CMSC 1203.</p>
+<p>Dictionary comprehensions are useful when you need to transform existing data into a lookup table. A common situation is having two related lists—such as a list of names and a list of scores—where corresponding items share the same position. With two separate lists, looking up a specific person’s score requires searching through the names list to find the position, then using that position to index into the scores list. This approach is tedious to write, easy to get wrong, and becomes a problem if the two lists ever get out of sync.</p>
+<p>A dictionary comprehension provides a concise way to build this structure in a single expression when the source data is already available in a pairable form.</p>
+<div id="f5c78e50" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"alice"</span>, <span class="st">"bob"</span>, <span class="st">"carol"</span>]</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>]</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>gradebook <span class="op">=</span> {name: score <span class="cf">for</span> name, score <span class="kw">in</span> <span class="bu">zip</span>(names, scores)}</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"names ="</span>, names)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"scores ="</span>, scores)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"gradebook ="</span>, gradebook)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"gradebook['bob'] ="</span>, gradebook[<span class="st">"bob"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>names = ['alice', 'bob', 'carol']
+scores = [85, 92, 78]
+gradebook = {'alice': 85, 'bob': 92, 'carol': 78}
+gradebook['bob'] = 92</code></pre>
+</div>
+</div>
+<p>Explanation:</p>
+<ol type="1">
+<li><code>names = ["alice", "bob", "carol"]</code> creates a list of student names.</li>
+<li><code>scores = [85, 92, 78]</code> creates a list of corresponding scores, where each position matches the same position in <code>names</code>.</li>
+<li><code>gradebook = {name: score for name, score in zip(names, scores)}</code> builds a dictionary by iterating over pairs of names and scores. The <code>zip()</code> function combines the two lists into pairs, and the comprehension creates a key-value pair for each. The result is a dictionary that maps each name to their score.</li>
+<li><code>print("gradebook =", gradebook)</code> prints the dictionary so the structure is visible.</li>
+<li><code>print("gradebook['bob'] =", gradebook["bob"])</code> retrieves Bob’s score by name, demonstrating that the dictionary provides direct lookup without searching through a list.</li>
+</ol>
 </section>
-<section id="set-types-uniqueness-and-hashability" class="level2">
-<h2 class="anchored" data-anchor-id="set-types-uniqueness-and-hashability">5) Set types: uniqueness and hashability</h2>
+</section>
+<section id="part-5-set-types-uniqueness-and-hashability" class="level2">
+<h2 class="anchored" data-anchor-id="part-5-set-types-uniqueness-and-hashability">Part 5: Set types: uniqueness and hashability</h2>
 <p>A set is a built-in collection type used to represent a group of unique values. Unlike lists and tuples, sets do not keep items in a positional order, and duplicate values are automatically removed.</p>
 <p>Sets are useful when the question is “is this value present?” or when a collection needs to be reduced to distinct values. To support fast membership testing, set elements must be hashable, which requires that an element’s value not change in a way that would affect its hash. For that reason, mutable objects such as lists cannot be set elements.</p>
 <p>The examples that follow demonstrate two points: constructing a set removes duplicates from an input sequence, and attempting to place an unhashable value (such as a list) into a set results in an error.</p>
 <section id="example-1-de-duplication-by-constructing-a-set" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-de-duplication-by-constructing-a-set">Example 1: De-duplication by constructing a set</h3>
 <p>This example shows that building a set from a list removes duplicate values. The key observation is that repeated items from the list appear only once in the set.</p>
-<p>Beginner-friendly version:</p>
-<div id="6051e18f" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>items <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"apple"</span>, <span class="st">"pear"</span>, <span class="st">"banana"</span>, <span class="st">"banana"</span>]</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>unique_items <span class="op">=</span> <span class="bu">set</span>(items)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"original list ="</span>, items)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"set (unique values) ="</span>, unique_items)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b888715d" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>items <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"apple"</span>, <span class="st">"pear"</span>, <span class="st">"banana"</span>, <span class="st">"banana"</span>]</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>unique_items <span class="op">=</span> <span class="bu">set</span>(items)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"original list ="</span>, items)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"set (unique values) ="</span>, unique_items)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>original list = ['apple', 'apple', 'pear', 'banana', 'banana']
 set (unique values) = {'pear', 'banana', 'apple'}</code></pre>
@@ -860,12 +935,11 @@ set (unique values) = {'pear', 'banana', 'apple'}</code></pre>
 <section id="example-2-hashability-requirement-what-can-be-an-element-of-a-set" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-hashability-requirement-what-can-be-an-element-of-a-set">Example 2: Hashability requirement (what can be an element of a set)</h3>
 <p>This example shows that lists cannot be elements of a set. The key observation is that Python raises a <code>TypeError</code> because lists are mutable and therefore not hashable.</p>
-<p>Beginner-friendly version:</p>
-<div id="00cbd12c" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    bad <span class="op">=</span> {[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]}</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> e:</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"error:"</span>, e)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="49edfebc" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    bad <span class="op">=</span> {[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]}</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> e:</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"error:"</span>, e)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>error: cannot use 'list' as a set element (unhashable type: 'list')</code></pre>
 </div>
@@ -878,21 +952,20 @@ set (unique values) = {'pear', 'banana', 'apple'}</code></pre>
 </ol>
 </section>
 </section>
-<section id="tuples-sequence-type-immutable-record-style-grouping" class="level2">
-<h2 class="anchored" data-anchor-id="tuples-sequence-type-immutable-record-style-grouping">6) Tuples (sequence type, immutable): record-style grouping</h2>
+<section id="part-6-tuples-sequence-type-immutable-record-style-grouping" class="level2">
+<h2 class="anchored" data-anchor-id="part-6-tuples-sequence-type-immutable-record-style-grouping">Part 6: Tuples (sequence type, immutable): record-style grouping</h2>
 <p>A tuple is a built-in sequence type, which means it holds an ordered collection of items that can be accessed by position (index). Tuples are similar to lists in how they are written and indexed, but they differ in one important way.</p>
 <p>A list is mutable, meaning its contents can be changed after it is created. A tuple is immutable, meaning that after a tuple is created, the individual items inside it cannot be replaced using assignment. This makes tuples useful for grouping a fixed set of related values into a single object, where each position has a stable meaning (for example, a first name, last name, and year).</p>
 <p>The examples that follow demonstrate two points: tuple items can be accessed by index like other sequences, and attempting to assign to a tuple element results in an error because tuples do not support item assignment.</p>
 <section id="example-1-accessing-tuple-items-by-index" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-accessing-tuple-items-by-index">Example 1: Accessing tuple items by index</h3>
 <p>This example shows that tuples support indexing. The key observation is that the first and last items can be accessed using <code>0</code> and <code>-1</code>, just as with lists.</p>
-<p>Beginner-friendly version:</p>
-<div id="4eaf1377" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>record <span class="op">=</span> (<span class="st">"Ada"</span>, <span class="st">"Lovelace"</span>, <span class="dv">1815</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"record ="</span>, record)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"first item ="</span>, record[<span class="dv">0</span>])</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"last item ="</span>, record[<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2fc7a6ba" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>record <span class="op">=</span> (<span class="st">"Ada"</span>, <span class="st">"Lovelace"</span>, <span class="dv">1815</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"record ="</span>, record)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"first item ="</span>, record[<span class="dv">0</span>])</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"last item ="</span>, record[<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>record = ('Ada', 'Lovelace', 1815)
 first item = Ada
@@ -910,14 +983,13 @@ last item = 1815</code></pre>
 <section id="example-2-tuples-do-not-allow-item-assignment-immutability" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-tuples-do-not-allow-item-assignment-immutability">Example 2: Tuples do not allow item assignment (immutability)</h3>
 <p>This example shows that tuple items cannot be reassigned. The key observation is that Python raises a <code>TypeError</code> when an assignment to a tuple element is attempted.</p>
-<p>Beginner-friendly version:</p>
-<div id="e1d7ab82" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>record <span class="op">=</span> (<span class="st">"Ada"</span>, <span class="st">"Lovelace"</span>, <span class="dv">1815</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    record[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"ADA"</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> e:</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"error:"</span>, e)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="7b6d5c71" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>record <span class="op">=</span> (<span class="st">"Ada"</span>, <span class="st">"Lovelace"</span>, <span class="dv">1815</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    record[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"ADA"</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> e:</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"error:"</span>, e)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>error: 'tuple' object does not support item assignment</code></pre>
 </div>
@@ -931,8 +1003,8 @@ last item = 1815</code></pre>
 </ol>
 </section>
 </section>
-<section id="copying-nested-collection-objects-shallow-vs-deep" class="level2">
-<h2 class="anchored" data-anchor-id="copying-nested-collection-objects-shallow-vs-deep">7) Copying nested collection objects (shallow vs deep)</h2>
+<section id="part-7-copying-nested-collection-objects-shallow-vs-deep" class="level2">
+<h2 class="anchored" data-anchor-id="part-7-copying-nested-collection-objects-shallow-vs-deep">Part 7: Copying nested collection objects (shallow vs deep)</h2>
 <p>When a collection contains other collection objects, the structure is nested. A nested structure is one where an outer object (such as a list) contains inner objects (such as other lists). When the inner objects are mutable, changes to an inner object can affect more than one variable if those variables share references to the same inner object.</p>
 <p>Copying matters because programs often need a “starting version” of data and a “working version” of data at the same time. For example, a program might keep an original configuration, menu, or table of values unchanged while also building a modified version for output or for the next step in a computation. If the copy shares inner objects with the original, then changing the working version can unexpectedly change the original as well.</p>
 <p>Two terms are used in this section:</p>
@@ -944,20 +1016,19 @@ last item = 1815</code></pre>
 <section id="example-1-shallow-copy-shares-inner-lists" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-shallow-copy-shares-inner-lists">Example 1: Shallow copy shares inner lists</h3>
 <p>This example shows that slicing a nested list (<code>nested[:]</code>) creates a new outer list but does not copy the inner lists. The key observation is that changing an inner list through the shallow copy also changes the original.</p>
-<p>Beginner-friendly version:</p>
-<div id="a27c8294" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>nested <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>shallow <span class="op">=</span> nested[:]</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested before ="</span>, nested)</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"shallow before ="</span>, shallow)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>shallow[<span class="dv">0</span>].append(<span class="dv">999</span>)</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested after  ="</span>, nested)</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"shallow after ="</span>, shallow)</span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested is shallow ="</span>, nested <span class="kw">is</span> shallow)</span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested[0] is shallow[0] ="</span>, nested[<span class="dv">0</span>] <span class="kw">is</span> shallow[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="be9b5158" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>nested <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>shallow <span class="op">=</span> nested[:]</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested before ="</span>, nested)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"shallow before ="</span>, shallow)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>shallow[<span class="dv">0</span>].append(<span class="dv">999</span>)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested after  ="</span>, nested)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"shallow after ="</span>, shallow)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested is shallow ="</span>, nested <span class="kw">is</span> shallow)</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested[0] is shallow[0] ="</span>, nested[<span class="dv">0</span>] <span class="kw">is</span> shallow[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>nested before = [[1, 2], [3, 4]]
 shallow before = [[1, 2], [3, 4]]
@@ -981,22 +1052,21 @@ nested[0] is shallow[0] = True</code></pre>
 <section id="example-2-deep-copy-creates-independent-nested-objects" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-deep-copy-creates-independent-nested-objects">Example 2: Deep copy creates independent nested objects</h3>
 <p>This example shows that a deep copy duplicates the nested structure. The key observation is that changing an inner list in the deep copy does not change the original.</p>
-<p>Beginner-friendly version:</p>
-<div id="0d333a60" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>nested <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>deep <span class="op">=</span> copy.deepcopy(nested)</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested before ="</span>, nested)</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"deep before   ="</span>, deep)</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>deep[<span class="dv">0</span>].append(<span class="dv">999</span>)</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested after  ="</span>, nested)</span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"deep after    ="</span>, deep)</span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested is deep ="</span>, nested <span class="kw">is</span> deep)</span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested[0] is deep[0] ="</span>, nested[<span class="dv">0</span>] <span class="kw">is</span> deep[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3f6ffd95" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>nested <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>deep <span class="op">=</span> copy.deepcopy(nested)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested before ="</span>, nested)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"deep before   ="</span>, deep)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>deep[<span class="dv">0</span>].append(<span class="dv">999</span>)</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested after  ="</span>, nested)</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"deep after    ="</span>, deep)</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested is deep ="</span>, nested <span class="kw">is</span> deep)</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nested[0] is deep[0] ="</span>, nested[<span class="dv">0</span>] <span class="kw">is</span> deep[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>nested before = [[1, 2], [3, 4]]
 deep before   = [[1, 2], [3, 4]]
@@ -1019,11 +1089,12 @@ nested[0] is deep[0] = False</code></pre>
 </ol>
 </section>
 </section>
-<section id="file-access-with-pathlib.path-modern-interface" class="level2">
-<h2 class="anchored" data-anchor-id="file-access-with-pathlib.path-modern-interface">8) File access with <code>pathlib.Path</code> (modern interface)</h2>
+<section id="part-8-file-access-with-pathlib.path-modern-interface" class="level2">
+<h2 class="anchored" data-anchor-id="part-8-file-access-with-pathlib.path-modern-interface">Part 8: File access with <code>pathlib.Path</code> (modern interface)</h2>
 <p>Basic file handling using <code>open()</code> and a <code>with</code> block was introduced in CMSC 1203, and the textbook’s Chapter 9 presents that same approach as the standard, universal way to work with files in Python. This section does not re-teach that baseline.</p>
 <p>Instead, the focus here is a modern alternative interface that is widely used in current Python code: the <code>pathlib</code> module. This module is not covered in CMSC 1203 and it is not a topic in Learning Python Chapters 8–9, but it is a practical tool that builds directly on the same underlying file concepts.</p>
 <p>A <code>pathlib.Path</code> object represents a file path as an object rather than as a plain string. It can simplify common tasks such as reading and writing text and helps keep file-related code consistent and readable as programs grow.</p>
+<p>The <code>pathlib</code> interface shown here provides a more concise alternative for common text operations: <code>read_text()</code> and <code>write_text()</code> handle opening, reading or writing, and closing in a single method call. Both approaches are valid; <code>pathlib</code> is often simpler when all you need is to read or write an entire file as a string.</p>
 <p>The examples that follow demonstrate how to:</p>
 <ul>
 <li>create a <code>Path</code> object for a file,</li>
@@ -1035,20 +1106,20 @@ nested[0] is deep[0] = False</code></pre>
 <h3 class="anchored" data-anchor-id="example-1-file-access-with-pathlib.path">Example 1: File access with <code>pathlib.Path</code></h3>
 <p>In a notebook, files are created in the notebook’s working directory. The working directory is the folder Python treats as the “current location” when you use a relative file name like <code>demo_text.txt</code>. If the file name does not include a folder path, it refers to a file in that current folder.</p>
 <p>This example writes a text file first (so the file always exists), then reads it back.</p>
-<div id="0f59cb49" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> Path(<span class="st">"demo_text.txt"</span>)</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>path.write_text(<span class="st">"first line</span><span class="ch">\n</span><span class="st">second line</span><span class="ch">\n</span><span class="st">third line</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> path.read_text()</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"file contents:</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> text)</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>path.write_text(<span class="st">"replacement line 1</span><span class="ch">\n</span><span class="st">replacement line 2</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>updated_text <span class="op">=</span> path.read_text()</span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"updated file contents:</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> updated_text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="f82849cd" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> Path(<span class="st">"demo_text.txt"</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>path.write_text(<span class="st">"first line</span><span class="ch">\n</span><span class="st">second line</span><span class="ch">\n</span><span class="st">third line</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> path.read_text()</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"file contents:</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> text)</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>path.write_text(<span class="st">"replacement line 1</span><span class="ch">\n</span><span class="st">replacement line 2</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>updated_text <span class="op">=</span> path.read_text()</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"updated file contents:</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> updated_text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>file contents:
 first line
