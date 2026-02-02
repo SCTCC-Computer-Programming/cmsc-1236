@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CMSC 1236 – Python Environment Setup (Windows) – CMSC 1236 : Advanced Python Programming</title>
+<title>Week 4 Assignments – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -308,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">CMSC 1236 – Python Environment Setup (Windows)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../assignments/week-03/index.html">Weekly Assignments</a></li><li class="breadcrumb-item"><a href="../../assignments/week-04/index.html">Week 4 (Current Week)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -419,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../assignments/week-04/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../assignments/week-04/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 4 (Current Week)</span></a>
   </div>
 </li>
@@ -439,36 +404,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-you-will-do" id="toc-what-you-will-do" class="nav-link active" data-scroll-target="#what-you-will-do">What you will do</a></li>
-  <li><a href="#required-tools" id="toc-required-tools" class="nav-link" data-scroll-target="#required-tools">Required tools</a></li>
-  <li><a href="#step-1-verify-vs-code-and-git" id="toc-step-1-verify-vs-code-and-git" class="nav-link" data-scroll-target="#step-1-verify-vs-code-and-git">Step 1 — Verify VS Code and Git</a></li>
-  <li><a href="#verify-vs-code" id="toc-verify-vs-code" class="nav-link" data-scroll-target="#verify-vs-code">Verify VS Code</a></li>
-  <li><a href="#step-2-create-your-course-folder-on-the-root-drive" id="toc-step-2-create-your-course-folder-on-the-root-drive" class="nav-link" data-scroll-target="#step-2-create-your-course-folder-on-the-root-drive">Step 2 — Create your course folder on the root drive</a>
+  <li><a href="#assignment-files" id="toc-assignment-files" class="nav-link active" data-scroll-target="#assignment-files">Assignment Files</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#part-1-d2l-quiz" id="toc-part-1-d2l-quiz" class="nav-link" data-scroll-target="#part-1-d2l-quiz">Part 1: D2L Quiz</a></li>
+  <li><a href="#part-2-debugging-exercise" id="toc-part-2-debugging-exercise" class="nav-link" data-scroll-target="#part-2-debugging-exercise">Part 2: Debugging Exercise</a>
   <ul class="collapse">
-  <li><a href="#verify-the-folder-structure" id="toc-verify-the-folder-structure" class="nav-link" data-scroll-target="#verify-the-folder-structure">Verify the folder structure</a></li>
+  <li><a href="#the-scenario" id="toc-the-scenario" class="nav-link" data-scroll-target="#the-scenario">The Scenario</a></li>
+  <li><a href="#about-the-program" id="toc-about-the-program" class="nav-link" data-scroll-target="#about-the-program">About the Program</a></li>
+  <li><a href="#your-task" id="toc-your-task" class="nav-link" data-scroll-target="#your-task">Your Task</a></li>
+  <li><a href="#how-to-find-the-bugs" id="toc-how-to-find-the-bugs" class="nav-link" data-scroll-target="#how-to-find-the-bugs">How to Find the Bugs</a></li>
   </ul></li>
-  <li><a href="#step-3-create-the-cmsc-1236-python-environment" id="toc-step-3-create-the-cmsc-1236-python-environment" class="nav-link" data-scroll-target="#step-3-create-the-cmsc-1236-python-environment">Step 3 — Create the CMSC 1236 Python environment</a>
+  <li><a href="#part-3-video-explanation" id="toc-part-3-video-explanation" class="nav-link" data-scroll-target="#part-3-video-explanation">Part 3: Video Explanation</a>
   <ul class="collapse">
-  <li><a href="#create-the-environment-command-prompt" id="toc-create-the-environment-command-prompt" class="nav-link" data-scroll-target="#create-the-environment-command-prompt">Create the environment (Command Prompt)</a></li>
-  <li><a href="#activate-the-environment-command-prompt" id="toc-activate-the-environment-command-prompt" class="nav-link" data-scroll-target="#activate-the-environment-command-prompt">Activate the environment (Command Prompt)</a></li>
-  <li><a href="#verify-the-environment-is-working" id="toc-verify-the-environment-is-working" class="nav-link" data-scroll-target="#verify-the-environment-is-working">Verify the environment is working</a></li>
-  <li><a href="#deactivate-the-environment" id="toc-deactivate-the-environment" class="nav-link" data-scroll-target="#deactivate-the-environment">Deactivate the environment</a></li>
+  <li><a href="#video-requirements" id="toc-video-requirements" class="nav-link" data-scroll-target="#video-requirements">Video Requirements</a></li>
+  <li><a href="#what-to-include" id="toc-what-to-include" class="nav-link" data-scroll-target="#what-to-include">What to Include</a></li>
+  <li><a href="#lessons-learned-required" id="toc-lessons-learned-required" class="nav-link" data-scroll-target="#lessons-learned-required">Lessons Learned (required)</a></li>
   </ul></li>
-  <li><a href="#step-4-initialize-git-in-your-course-folder" id="toc-step-4-initialize-git-in-your-course-folder" class="nav-link" data-scroll-target="#step-4-initialize-git-in-your-course-folder">Step 4 — Initialize Git in your course folder</a>
+  <li><a href="#d2l-submission-checklist" id="toc-d2l-submission-checklist" class="nav-link" data-scroll-target="#d2l-submission-checklist">D2L Submission Checklist</a>
   <ul class="collapse">
-  <li><a href="#initialize-the-repository" id="toc-initialize-the-repository" class="nav-link" data-scroll-target="#initialize-the-repository">Initialize the repository</a></li>
-  <li><a href="#create-a-.gitignore-file" id="toc-create-a-.gitignore-file" class="nav-link" data-scroll-target="#create-a-.gitignore-file">Create a <code>.gitignore</code> file</a></li>
+  <li><a href="#d2l-quiz" id="toc-d2l-quiz" class="nav-link" data-scroll-target="#d2l-quiz">D2L Quiz</a></li>
+  <li><a href="#dropbox-submission" id="toc-dropbox-submission" class="nav-link" data-scroll-target="#dropbox-submission">Dropbox Submission</a></li>
+  <li><a href="#video-submission" id="toc-video-submission" class="nav-link" data-scroll-target="#video-submission">Video Submission</a></li>
   </ul></li>
-  <li><a href="#step-5-set-vs-code-to-use-the-cmsc-1236-environment" id="toc-step-5-set-vs-code-to-use-the-cmsc-1236-environment" class="nav-link" data-scroll-target="#step-5-set-vs-code-to-use-the-cmsc-1236-environment">Step 5 — Set VS Code to use the CMSC 1236 environment</a></li>
-  <li><a href="#step-6-test-python-from-the-vs-code-terminal" id="toc-step-6-test-python-from-the-vs-code-terminal" class="nav-link" data-scroll-target="#step-6-test-python-from-the-vs-code-terminal">Step 6 — Test Python from the VS Code terminal</a></li>
-  <li><a href="#step-7-import-the-book-example-code" id="toc-step-7-import-the-book-example-code" class="nav-link" data-scroll-target="#step-7-import-the-book-example-code">Step 7 — Import the book example code</a>
-  <ul class="collapse">
-  <li><a href="#create-a-place-to-store-the-book-code" id="toc-create-a-place-to-store-the-book-code" class="nav-link" data-scroll-target="#create-a-place-to-store-the-book-code">Create a place to store the book code</a></li>
-  <li><a href="#fluent-python-2nd-edition-clone-the-official-github-repo" id="toc-fluent-python-2nd-edition-clone-the-official-github-repo" class="nav-link" data-scroll-target="#fluent-python-2nd-edition-clone-the-official-github-repo">Fluent Python (2nd Edition) — clone the official GitHub repo</a></li>
-  <li><a href="#learning-python-6th-edition-download-the-official-examples-zip" id="toc-learning-python-6th-edition-download-the-official-examples-zip" class="nav-link" data-scroll-target="#learning-python-6th-edition-download-the-official-examples-zip">Learning Python (6th Edition) — download the official examples ZIP</a></li>
-  <li><a href="#unzip-it" id="toc-unzip-it" class="nav-link" data-scroll-target="#unzip-it">Unzip it</a></li>
-  </ul></li>
-  <li><a href="#you-are-done" id="toc-you-are-done" class="nav-link" data-scroll-target="#you-are-done">You are done</a></li>
+  <li><a href="#expected-output-reference" id="toc-expected-output-reference" class="nav-link" data-scroll-target="#expected-output-reference">Expected Output Reference</a></li>
   </ul>
 </nav>
     </div>
@@ -476,9 +434,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../assignments/week-03/index.html">Weekly Assignments</a></li><li class="breadcrumb-item"><a href="../../assignments/week-04/index.html">Week 4 (Current Week)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">CMSC 1236 – Python Environment Setup (Windows)</h1>
+<h1 class="title">Week 4 Assignments</h1>
+<p class="subtitle lead">Chapters 8–9 Reflection and Debugging Exercise</p>
 </div>
 
 
@@ -490,7 +449,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 7, 2026</p>
+      <p class="date-modified">January 31, 2026</p>
     </div>
   </div>
     
@@ -501,311 +460,333 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>For CMSC 1236, we will create a separate Python environment so nothing conflicts with your other classes.</p>
-<section id="what-you-will-do" class="level3">
-<h3 class="anchored" data-anchor-id="what-you-will-do">What you will do</h3>
+<section id="assignment-files" class="level2">
+<h2 class="anchored" data-anchor-id="assignment-files">Assignment Files</h2>
+<ul>
+<li><a href="../../assignments/week-04/lastname-pet-shelter.py" download="">Download Pet Shelter Program (lastname-pet-shelter.py)</a></li>
+<li><a href="../../assignments/week-04/week-04-quiz-handout.pdf" download="">Download Quiz Handout (PDF)</a></li>
+</ul>
+</section>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This week is a reflection and consolidation week. You will demonstrate your understanding of Chapters 8–9 concepts by:</p>
 <ol type="1">
-<li>Verify required tools are installed (VS Code + Git)</li>
-<li>Create a course folder on your <strong>C:&nbsp;drive</strong></li>
-<li>Create and activate a <strong>CMSC 1236 Python environment</strong></li>
-<li>“Git” your course folder (initialize a repository)</li>
-<li>Open the folder in VS Code and verify VS Code is using the course environment</li>
-<li>Run a short test program from the VS Code terminal</li>
+<li>Completing a D2L quiz on debugging scenarios</li>
+<li>Finding and fixing bugs in a provided Python program</li>
+<li>Recording a video explanation of your debugging process</li>
 </ol>
 </section>
-<section id="required-tools" class="level3">
-<h3 class="anchored" data-anchor-id="required-tools">Required tools</h3>
-<ul>
-<li>VS Code</li>
-<li>Git</li>
-</ul>
-</section>
-<section id="step-1-verify-vs-code-and-git" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-verify-vs-code-and-git">Step 1 — Verify VS Code and Git</h3>
-<section id="verify-git" class="level4">
-<h4 class="anchored" data-anchor-id="verify-git">Verify Git</h4>
-<p>Open a <strong>CMD Prompt</strong> window and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see a version number (example: <code>git version 2.xx.x</code>).</p>
-</section>
-</section>
-<section id="verify-vs-code" class="level3">
-<h3 class="anchored" data-anchor-id="verify-vs-code">Verify VS Code</h3>
-<p>Open <strong>CMD Prompt</strong> and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>code -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see a version number (example: <code>1.107.1 994fd12f8d3a5aa16f17d42c041e5809167e845a</code>)</p>
-</section>
-<section id="step-2-create-your-course-folder-on-the-root-drive" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-create-your-course-folder-on-the-root-drive">Step 2 — Create your course folder on the root drive</h2>
-<p>Your CMSC 1236 directory must be created on the root of the <code>C:</code> drive:</p>
-<ul>
-<li><code>C:\cmsc-1236</code></li>
-</ul>
-<p>Inside it, create these folders:</p>
-<ul>
-<li><code>assignments</code></li>
-<li><code>notes</code></li>
-<li><code>projects</code></li>
-</ul>
-<p>Creating the course folder on the root drive helps avoid common Windows problems:</p>
-<ul>
-<li><strong>Short, predictable paths</strong> (fewer issues with tools that don’t like long file paths).</li>
-<li><strong>Avoids OneDrive syncing</strong> (Desktop/Documents are often synced; syncing can lock files and break builds/tools).</li>
-<li><strong>Makes Git + terminals simpler</strong> (easy to navigate, fewer permission surprises).</li>
-<li><strong>Keeps course work separate</strong> from other software setups (so you don’t accidentally mix files/tools between courses).</li>
-</ul>
-<section id="cmd-commands-command-prompt" class="level4">
-<h4 class="anchored" data-anchor-id="cmd-commands-command-prompt">CMD commands (Command Prompt)</h4>
+<section id="part-1-d2l-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-d2l-quiz">Part 1: D2L Quiz</h2>
+<p>Complete the <strong>Week 4 D2L Quiz</strong> using the quiz handout.</p>
 <ol type="1">
-<li><p>Open <strong>Command Prompt (cmd)</strong>.</p></li>
-<li><p>Go to the root of the C: drive:</p></li>
+<li>Download the <strong>Quiz Handout (PDF)</strong> using the link above</li>
+<li>Work through the 15 multiple-choice questions in the handout</li>
+<li>Submit your answers (A, B, C, or D) in the <strong>D2L Quiz</strong></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span><span class="sc">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
-<li>Create the course folder:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> cmsc<span class="at">-1236</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="4" type="1">
-<li>Move into the course folder:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> \cmsc-1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="5" type="1">
-<li>Create the three required subfolders:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> assignments</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> notes</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> projects</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="verify-the-folder-structure" class="level3">
-<h3 class="anchored" data-anchor-id="verify-the-folder-structure">Verify the folder structure</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Your folder structure should look like similar to the following:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode makefile code-with-copy"><code class="sourceCode makefile"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">C:</span><span class="dt">\cmsc-1236</span><span class="ch">\</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dt">  assignments</span><span class="ch">\</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dt">  notes</span><span class="ch">\</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="dt">  projects</span><span class="ch">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="step-3-create-the-cmsc-1236-python-environment" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-create-the-cmsc-1236-python-environment">Step 3 — Create the CMSC 1236 Python environment</h2>
-<p>We will create a dedicated environment named:</p>
+<p>The quiz tests your ability to:</p>
 <ul>
-<li><code>cmsc1236</code></li>
+<li>Predict output when aliasing causes unexpected mutations</li>
+<li>Recognize bugs caused by nested list construction with <code>*</code></li>
+<li>Distinguish shallow copy from deep copy behavior</li>
+<li>Identify mutable default argument problems</li>
+<li>Understand the difference between <code>is</code> and <code>==</code></li>
 </ul>
-<p>This environment is <strong>separate from any miniconda environments</strong> you may be using in other courses, so nothing conflicts.</p>
-<p>A dedicated environment ensures that we:</p>
-<ul>
-<li>Keep CMSC 1236 packages separate from other classes/tools</li>
-<li>Ensure the course runs on a consistent Python version</li>
-</ul>
-<section id="create-the-environment-command-prompt" class="level3">
-<h3 class="anchored" data-anchor-id="create-the-environment-command-prompt">Create the environment (Command Prompt)</h3>
+</section>
+<section id="part-2-debugging-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-debugging-exercise">Part 2: Debugging Exercise</h2>
+<section id="the-scenario" class="level3">
+<h3 class="anchored" data-anchor-id="the-scenario">The Scenario</h3>
+<p>You’ve been hired as a junior developer at <strong>Sunshine Animal Shelter</strong>. On your first day, several employees come to you with complaints about the shelter management program:</p>
+<p><strong>Maria (Event Coordinator):</strong> &gt; “I created a separate list for Saturday’s adoption event and added a new dog named Charlie to it. But now Charlie is showing up on the main shelter roster too! I didn’t add him there. The lists are supposed to be separate.”</p>
+<p><strong>James (Feeding Staff):</strong> &gt; “I updated Wednesday’s evening feeding to 10 portions for a special diet. But now EVERY day shows 10 portions in the evening! I only changed Wednesday!”</p>
+<p><strong>Dr.&nbsp;Patel (Veterinarian):</strong> &gt; “Before transferring Whiskers to a partner shelter, I made a backup of her profile. Then I added a transfer exam note to the backup. But somehow that note appeared on her original record too! The backup was supposed to be independent.”</p>
+<p><strong>Sarah (Adoption Specialist):</strong> &gt; “I processed three adoptions today — Hoppy, Max, and Luna. But when I looked at the records, they all have each other’s information mixed together! Hoppy’s record shows Max’s adopter name, and Luna’s record has everyone’s notes. Each adoption should have its own separate paperwork.”</p>
+<p><strong>Tom (Database Admin):</strong> &gt; “We have two entries for a dog named Bella — same name, same breed, same age. The duplicate checker says they’re different pets, but they’re clearly the same dog entered twice. Why isn’t it catching this?”</p>
+<p>Your supervisor says: &gt; “The weird thing is, the program runs fine — no error messages. But the output is clearly wrong. These are all experienced employees; they know how the system should work. Can you figure out what’s going on in the code?”</p>
+</section>
+<section id="about-the-program" class="level3">
+<h3 class="anchored" data-anchor-id="about-the-program">About the Program</h3>
+<p>This program simulates a full day of shelter operations automatically — there’s no user input or menu system. When you run it, it immediately executes all six sections and prints the results. This is by design, so you can focus on reading the output and finding bugs rather than navigating menus.</p>
+<p>The program is also longer than what you’ve written so far, and it uses a few Python features we haven’t covered yet. <strong>These features are only used in the display/helper functions — not in the buggy functions you need to fix.</strong> You don’t need to fully understand them to complete this assignment, but here’s what they do:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>enumerate(pets, 1)</code></td>
+<td>Loops through a list while also tracking a counter that starts at 1 (used for numbered lists)</td>
+</tr>
+<tr class="even">
+<td><code>f"{text:^50}"</code></td>
+<td>Centers text within 50 characters (used for headers)</td>
+</tr>
+<tr class="odd">
+<td><code>f"{text:&lt;12}"</code></td>
+<td>Left-aligns text within 12 characters (used for table columns)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Focus on the five short functions where the bugs live</strong> — each is only 2–5 lines of straightforward code using concepts from Chapters 8–9. The five functions you need to debug are:</p>
 <ol type="1">
-<li>Open <strong>Command Prompt (cmd)</strong><br>
-</li>
-<li>Go to your course folder (if not already there):</li>
+<li><code>copy_available_pets()</code></li>
+<li><code>create_feeding_schedule()</code></li>
+<li><code>backup_pet_profile()</code></li>
+<li><code>register_adoption()</code></li>
+<li><code>find_duplicate_profiles()</code></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> \cmsc-1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
-<li>Create the environment folder using Python’s built-in venv tool:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>py <span class="at">-m</span> venv cmsc1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The rest of the program (display functions, sample data setup, the <code>Pet</code> class, <code>main()</code>) is scaffolding that just works.</p>
+<p><strong>Important:</strong> Your fixes should only involve changing code <em>within</em> these five functions. Do not add new functions, delete existing functions, or modify the <code>main()</code> automation. Each bug can be fixed by changing 1–2 lines in its function.</p>
 </section>
-<section id="activate-the-environment-command-prompt" class="level3">
-<h3 class="anchored" data-anchor-id="activate-the-environment-command-prompt">Activate the environment (Command Prompt)</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cmsc1236\Scripts\activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>When it activates, your prompt will look like this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span>cmsc1236) C:\cmsc-1236<span class="kw">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="verify-the-environment-is-working" class="level3">
-<h3 class="anchored" data-anchor-id="verify-the-environment-is-working">Verify the environment is working</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>python -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see a Python version printed:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Python 3.xx.x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="deactivate-the-environment" class="level3">
-<h3 class="anchored" data-anchor-id="deactivate-the-environment">Deactivate the environment</h3>
-<p>When you are finished:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="step-4-initialize-git-in-your-course-folder" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-initialize-git-in-your-course-folder">Step 4 — Initialize Git in your course folder</h2>
-<p>We use Git to track your work over time and to make submitting or backing up your work easier.<br>
-This step creates a <code>.git</code> folder that stores your work history.</p>
-<section id="initialize-the-repository" class="level3">
-<h3 class="anchored" data-anchor-id="initialize-the-repository">Initialize the repository</h3>
-<p>Open <strong>Command Prompt (cmd)</strong> and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1236</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>git init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="create-a-.gitignore-file" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-.gitignore-file">Create a <code>.gitignore</code> file</h3>
-<p>Git does <strong>not</strong> create a <code>.gitignore</code> automatically. You will create it so that you don’t accidentally commit:</p>
-<ul>
-<li>Python cache files</li>
-<li>editor settings</li>
-<li>temporary files</li>
-</ul>
-<p>In <code>C:\cmsc-1236</code>, create a file named:</p>
-<p><code>.gitignore</code></p>
-<p>Paste the following into it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a># Python cache</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>__pycache__/</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>*.pyc</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a># Environment / OS clutter</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>.DS_Store</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>Thumbs.db</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a># VS Code</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>.vscode/</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a># Local environment folder </span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>cmsc1236/</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a># Common local files</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>*.log</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>*.tmp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="step-5-set-vs-code-to-use-the-cmsc-1236-environment" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-set-vs-code-to-use-the-cmsc-1236-environment">Step 5 — Set VS Code to use the CMSC 1236 environment</h2>
-<p>In this step, you will tell VS Code which Python interpreter to use for <strong>this course</strong> so that:</p>
-<ul>
-<li>Run/Debug uses the correct Python</li>
-<li>The integrated terminal runs the correct Python</li>
-<li>Your assignments behave consistently across machines</li>
-</ul>
-<blockquote class="blockquote">
-<p>Note: This environment is <strong>separate from the Miniconda environments</strong> you may be using in other courses, so nothing conflicts.</p>
-</blockquote>
+<section id="your-task" class="level3">
+<h3 class="anchored" data-anchor-id="your-task">Your Task</h3>
+<p>The program contains <strong>5 bugs</strong> — one causing each employee’s problem. Each bug relates to a concept from Chapters 8–9.</p>
 <ol type="1">
-<li>Open your course folder in VS Code</li>
-</ol>
+<li>Download the program using the link above</li>
+<li>Rename the file to include your last name (<code>smith-pet-shelter.py</code>)</li>
+<li>Run the program and observe the output</li>
+<li>Investigate each employee’s complaint by finding the responsible function</li>
+<li>For each bug:
 <ul>
-<li>VS Code stores interpreter settings <em>per folder/project</em></li>
-<li>Opening the correct folder ensures the interpreter you select is tied to CMSC 1236 only</li>
-</ul>
-<ol start="2" type="1">
-<li>Select the correct Python interpreter</li>
-</ol>
-<!-- -->
-<ol type="a">
-<li>Select View → Command Palette or Press: <code>Ctrl + Shift + P</code><br>
-</li>
-<li>Type: <code>Python: Select Interpreter</code></li>
-<li>Choose the interpreter that points to the course environment:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>C:\cmsc-1236\cmsc1236\Scripts\python.exe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you do not see it:</p>
-<ul>
-<li>Choose <strong>Enter interpreter path…</strong></li>
-<li>Then browse to: <code>C:\cmsc-1236\cmsc1236\Scripts\python.exe</code></li>
-</ul>
-<ol start="3" type="1">
-<li>Verify in the VS Code Terminal (Command Prompt)</li>
-</ol>
-<!-- -->
-<ol type="a">
-<li>In VS Code, open a CMD Prompt terminal:
-<ul>
-<li><strong>Terminal → New Terminal</strong></li>
+<li>Identify the function and line where the bug occurs</li>
+<li>Explain the concept being violated</li>
+<li>Fix the code</li>
 </ul></li>
-<li>Confirm you are in the course folder. If not, run:</li>
+<li>Run the corrected program to verify you’ve resolved all five complaints</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="a">
-<li>Activate the course environment:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cmsc1236\Scripts\activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="4" type="a">
-<li>Verify that Python is coming from the course environment:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>where python</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Expected output includes a path like:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>C:\cmsc-1236\cmsc1236\Scripts\python.exe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="5" type="a">
-<li>Confirm the Python version:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>python -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="how-to-find-the-bugs" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-find-the-bugs">How to Find the Bugs</h3>
 <ul>
-<li>If <code>where python</code> does NOT point into <code>C:\cmsc-1236\cmsc1236\...</code>, you are not using the course environment</li>
-<li>Fixing it here prevents “it works on my machine” problems later</li>
+<li><strong>Read the output carefully.</strong> Compare what you see to each employee’s complaint.</li>
+<li><strong>Trace the code.</strong> When you see unexpected output, find the function responsible and read it line by line.</li>
+<li><strong>Think about Chapters 8–9.</strong> Each bug involves one of these concepts: copying lists, creating nested lists, copying objects with nested data, function parameters, or comparing objects.</li>
 </ul>
 </section>
-<section id="step-6-test-python-from-the-vs-code-terminal" class="level2">
-<h2 class="anchored" data-anchor-id="step-6-test-python-from-the-vs-code-terminal">Step 6 — Test Python from the VS Code terminal</h2>
-<p>Create a new folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-1236\projects\week-01</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Create a new python file called:</p>
+</section>
+<section id="part-3-video-explanation" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-video-explanation">Part 3: Video Explanation</h2>
+<p>Record a video explaining your debugging process and submit it via Kaltura.</p>
+<section id="video-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="video-requirements">Video Requirements</h3>
 <ul>
-<li><code>test_env.py</code></li>
-</ul>
-<p>Paste this code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python version:"</span>, sys.version)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python executable:"</span>, sys.executable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Run it in the VS Code terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1236\projects\week-01\</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>python test_env.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<ul>
-<li>A Python <strong>3.xx.x</strong> version output</li>
-<li>A path showing it is running from the <code>cmsc1236</code> environment</li>
+<li>Clear video and audio quality</li>
+<li>Introduce yourself, the assignment, and course at the beginning</li>
 </ul>
 </section>
-<section id="step-7-import-the-book-example-code" class="level2">
-<h2 class="anchored" data-anchor-id="step-7-import-the-book-example-code">Step 7 — Import the book example code</h2>
-<p>You’ll keep the books’ example code in your course folder so you can quickly reference working examples while reading and while completing assignments.</p>
-<section id="create-a-place-to-store-the-book-code" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-place-to-store-the-book-code">Create a place to store the book code</h3>
-<p>Open <strong>Command Prompt (cmd)</strong> and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1236</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> book</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> book</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>After this step, you’ll have:</p>
-<p><code>C:\cmsc-1236\book\</code> (this is where both books’ code will live)</p>
-<hr>
-</section>
-<section id="fluent-python-2nd-edition-clone-the-official-github-repo" class="level3">
-<h3 class="anchored" data-anchor-id="fluent-python-2nd-edition-clone-the-official-github-repo">Fluent Python (2nd Edition) — clone the official GitHub repo</h3>
-<p>In the same cmd window (you should still be in <code>C:\cmsc-1236\book</code>), run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>git clone https:/<span class="at">/github</span>.com<span class="at">/fluentpython/example-code-2e</span>.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This creates:</p>
-<p><code>C:\cmsc-1236\book\fluent-python-2e\</code></p>
-</section>
-<section id="learning-python-6th-edition-download-the-official-examples-zip" class="level3">
-<h3 class="anchored" data-anchor-id="learning-python-6th-edition-download-the-official-examples-zip">Learning Python (6th Edition) — download the official examples ZIP</h3>
-<p>Learning Python’s official examples are provided as a ZIP download from the book’s site (not a GitHub repo).</p>
+<section id="what-to-include" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-include">What to Include</h3>
+<p>For <strong>each of the 5 bugs</strong>, demonstrate:</p>
 <ol type="1">
-<li>Open this page in your browser: https://learning-python.com/LP6E-code.html</li>
-<li>Click <strong>LP6E.zip ⇦ Fetch and unzip</strong> and download it.</li>
+<li><strong>The problem</strong> — show the incorrect output and explain what’s wrong</li>
+<li><strong>The bug location</strong> — identify the function and the specific line</li>
+<li><strong>Why it’s wrong</strong> — explain the concept being violated (use terms from Chapters 8–9)</li>
+<li><strong>Your fix</strong> — show the corrected code</li>
+</ol>
+<p>After fixing <strong>all 5 bugs</strong>, demonstrate:</p>
+<ol start="5" type="1">
+<li><strong>Verification</strong> — run your corrected program and compare the output to the <strong>Expected Output</strong> reference at the end of this document. Verbally confirm that each section now produces the correct results.</li>
 </ol>
 </section>
-<section id="unzip-it" class="level3">
-<h3 class="anchored" data-anchor-id="unzip-it">Unzip it</h3>
+<section id="lessons-learned-required" class="level3">
+<h3 class="anchored" data-anchor-id="lessons-learned-required">Lessons Learned (required)</h3>
+<p>At the end of your video, discuss:</p>
 <ul>
-<li>Right-click the ZIP → <strong>Extract All…</strong></li>
-<li>Extract into: <code>C:\cmsc-1236\book\</code></li>
+<li>Which bug was the hardest to find and why</li>
+<li>What surprised you about Python’s behavior</li>
+<li>How this connects to your Virtual Pet project (could any of these bugs have occurred there?)</li>
 </ul>
-<p>After unzipping, you should see an <code>LP6E\</code> folder in <code>C:\cmsc-1236\book\</code>.</p>
 </section>
 </section>
-<section id="you-are-done" class="level2">
-<h2 class="anchored" data-anchor-id="you-are-done">You are done</h2>
-<p>At this point:</p>
+<section id="d2l-submission-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="d2l-submission-checklist">D2L Submission Checklist</h2>
+<section id="d2l-quiz" class="level3">
+<h3 class="anchored" data-anchor-id="d2l-quiz">D2L Quiz</h3>
 <ul>
-<li>Your course folder exists at <code>C:\cmsc-1236</code></li>
-<li>Git is initialized</li>
-<li>Your <code>cmsc1236</code> Python environment is created and working</li>
-<li>VS Code is configured to use the course environment</li>
-<li>You can now work normally in VS Code and run programs from the terminal</li>
+<li>Complete the <strong>Week 4 Quiz</strong> (15 questions, see handout)</li>
 </ul>
+</section>
+<section id="dropbox-submission" class="level3">
+<h3 class="anchored" data-anchor-id="dropbox-submission">Dropbox Submission</h3>
+<p>Upload the following files to the <strong>Week 4 Dropbox</strong>:</p>
+<ol type="1">
+<li><strong>Corrected Python file</strong>: <code>lastname-pet-shelter.py</code> - Change <code>lastname</code> to your lastname. Not doing so will result in the assignment not being graded</li>
+</ol>
+</section>
+<section id="video-submission" class="level3">
+<h3 class="anchored" data-anchor-id="video-submission">Video Submission</h3>
+<ul>
+<li>Upload your video to <strong>Kaltura Mediaspace</strong></li>
+<li>Name your video: <code>lastname_Week4_Debugging</code></li>
+<li>Link to the Kaltura video in the Assignment Dropbox</li>
+</ul>
+<p><strong>Submission location:</strong> All items submitted in D2L (Week 4 Dropbox + Quiz).</p>
+</section>
+</section>
+<section id="expected-output-reference" class="level2">
+<h2 class="anchored" data-anchor-id="expected-output-reference">Expected Output Reference</h2>
+<p>When all 5 bugs are fixed, your program should produce output like this:</p>
+<pre class="text"><code>==================================================
+             Sunshine Animal Shelter              
+==================================================
+
+[1] INITIALIZING SHELTER
+--------------------------------------------------
+Loaded 5 pets into the system.
+
+[2] PREPARING ADOPTION EVENT
+--------------------------------------------------
+Creating pet list for weekend adoption event...
+Event coordinator received 5 pets.
+
+Event coordinator added new pet: Charlie (Dog, 2 yrs)
+
+Shelter roster (5 pets):
+  1. Buddy (Dog, 3 yrs)
+  2. Whiskers (Cat, 5 yrs)
+  3. Hoppy (Rabbit, 2 yrs)
+  4. Luna (Cat, 4 yrs)
+  5. Max (Dog, 6 yrs)
+
+Event roster (6 pets):
+  1. Buddy (Dog, 3 yrs)
+  2. Whiskers (Cat, 5 yrs)
+  3. Hoppy (Rabbit, 2 yrs)
+  4. Luna (Cat, 4 yrs)
+  5. Max (Dog, 6 yrs)
+  6. Charlie (Dog, 2 yrs)
+
+[3] CREATING FEEDING SCHEDULE
+--------------------------------------------------
+Created feeding schedule for 5 pets.
+
+             WEEKLY FEEDING SCHEDULE              
+--------------------------------------------------
+Day           Morning      Midday     Evening   
+--------------------------------------------------
+Monday           5           5           5      
+Tuesday          5           5           5      
+Wednesday        5           5           5      
+Thursday         5           5           5      
+Friday           5           5           5      
+Saturday         5           5           5      
+Sunday           5           5           5      
+
+
+Updating Wednesday evening for special dietary needs...
+Set Wednesday evening portions to 10.
+
+             WEEKLY FEEDING SCHEDULE              
+--------------------------------------------------
+Day           Morning      Midday     Evening   
+--------------------------------------------------
+Monday           5           5           5      
+Tuesday          5           5           5      
+Wednesday        5           5           10     
+Thursday         5           5           5      
+Friday           5           5           5      
+Saturday         5           5           5      
+Sunday           5           5           5      
+
+[4] BACKING UP PET PROFILE
+--------------------------------------------------
+Creating backup of Whiskers's profile before transfer...
+Backup created successfully.
+
+Original profile:
+
+  Name: Whiskers
+  Species: Cat
+  Age: 5 years
+  Traits: {'vaccinated': True, 'neutered': False, 'microchipped': False}
+  Medical History (2 records):
+    - Checkup: 2024-02-20 - Healthy
+    - Dental: 2024-03-10 - Cleaning performed
+
+Backup profile:
+
+  Name: Whiskers
+  Species: Cat
+  Age: 5 years
+  Traits: {'vaccinated': True, 'neutered': False, 'microchipped': False}
+  Medical History (2 records):
+    - Checkup: 2024-02-20 - Healthy
+    - Dental: 2024-03-10 - Cleaning performed
+
+
+Adding new medical record to BACKUP only...
+
+Original profile after backup modification:
+
+  Name: Whiskers
+  Species: Cat
+  Age: 5 years
+  Traits: {'vaccinated': True, 'neutered': False, 'microchipped': False}
+  Medical History (2 records):
+    - Checkup: 2024-02-20 - Healthy
+    - Dental: 2024-03-10 - Cleaning performed
+
+Backup profile after backup modification:
+
+  Name: Whiskers
+  Species: Cat
+  Age: 5 years
+  Traits: {'vaccinated': True, 'neutered': False, 'microchipped': False}
+  Medical History (3 records):
+    - Checkup: 2024-02-20 - Healthy
+    - Dental: 2024-03-10 - Cleaning performed
+    - Transfer exam: 2024-04-02 - Cleared for transfer
+
+[5] RECORDING ADOPTIONS
+--------------------------------------------------
+Recording adoption for Hoppy...
+  Record created: {'pet': 'Hoppy', 'adopter': 'Sarah Johnson', 'notes': ['Adopted by: Sarah Johnson', 'Date: 2024-04-01']}
+
+Recording adoption for Max...
+  Record created: {'pet': 'Max', 'adopter': 'Mike Chen', 'notes': ['Adopted by: Mike Chen', 'Date: 2024-04-01']}
+
+Recording adoption for Luna...
+  Record created: {'pet': 'Luna', 'adopter': 'Emily Davis', 'notes': ['Adopted by: Emily Davis', 'Date: 2024-04-01']}
+
+
+Final adoption records:
+
+  Adoption #1:
+    Pet: Hoppy
+    Adopter: Sarah Johnson
+    Notes: ['Adopted by: Sarah Johnson', 'Date: 2024-04-01']
+
+  Adoption #2:
+    Pet: Max
+    Adopter: Mike Chen
+    Notes: ['Adopted by: Mike Chen', 'Date: 2024-04-01']
+
+  Adoption #3:
+    Pet: Luna
+    Adopter: Emily Davis
+    Notes: ['Adopted by: Emily Davis', 'Date: 2024-04-01']
+
+[6] CHECKING FOR DUPLICATE PROFILES
+--------------------------------------------------
+Pet X: Bella (Dog, 3 yrs)
+Pet Y: Bella (Dog, 3 yrs)
+Same name? True
+Same species? True
+Same age? True
+
+Result: DUPLICATE FOUND - Profiles should be merged.
+
+==================================================
+END OF DAILY OPERATIONS REPORT
+==================================================</code></pre>
 
 
 </section>

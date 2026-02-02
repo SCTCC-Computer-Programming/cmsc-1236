@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CMSC 1236 – Python Environment Setup (Windows) – CMSC 1236 : Advanced Python Programming</title>
+<title>Week 4 Quiz – Debugging Python’s Object Model – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -308,7 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">CMSC 1236 – Python Environment Setup (Windows)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 4 Quiz – Debugging Python’s Object Model</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -439,36 +439,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-you-will-do" id="toc-what-you-will-do" class="nav-link active" data-scroll-target="#what-you-will-do">What you will do</a></li>
-  <li><a href="#required-tools" id="toc-required-tools" class="nav-link" data-scroll-target="#required-tools">Required tools</a></li>
-  <li><a href="#step-1-verify-vs-code-and-git" id="toc-step-1-verify-vs-code-and-git" class="nav-link" data-scroll-target="#step-1-verify-vs-code-and-git">Step 1 — Verify VS Code and Git</a></li>
-  <li><a href="#verify-vs-code" id="toc-verify-vs-code" class="nav-link" data-scroll-target="#verify-vs-code">Verify VS Code</a></li>
-  <li><a href="#step-2-create-your-course-folder-on-the-root-drive" id="toc-step-2-create-your-course-folder-on-the-root-drive" class="nav-link" data-scroll-target="#step-2-create-your-course-folder-on-the-root-drive">Step 2 — Create your course folder on the root drive</a>
-  <ul class="collapse">
-  <li><a href="#verify-the-folder-structure" id="toc-verify-the-folder-structure" class="nav-link" data-scroll-target="#verify-the-folder-structure">Verify the folder structure</a></li>
-  </ul></li>
-  <li><a href="#step-3-create-the-cmsc-1236-python-environment" id="toc-step-3-create-the-cmsc-1236-python-environment" class="nav-link" data-scroll-target="#step-3-create-the-cmsc-1236-python-environment">Step 3 — Create the CMSC 1236 Python environment</a>
-  <ul class="collapse">
-  <li><a href="#create-the-environment-command-prompt" id="toc-create-the-environment-command-prompt" class="nav-link" data-scroll-target="#create-the-environment-command-prompt">Create the environment (Command Prompt)</a></li>
-  <li><a href="#activate-the-environment-command-prompt" id="toc-activate-the-environment-command-prompt" class="nav-link" data-scroll-target="#activate-the-environment-command-prompt">Activate the environment (Command Prompt)</a></li>
-  <li><a href="#verify-the-environment-is-working" id="toc-verify-the-environment-is-working" class="nav-link" data-scroll-target="#verify-the-environment-is-working">Verify the environment is working</a></li>
-  <li><a href="#deactivate-the-environment" id="toc-deactivate-the-environment" class="nav-link" data-scroll-target="#deactivate-the-environment">Deactivate the environment</a></li>
-  </ul></li>
-  <li><a href="#step-4-initialize-git-in-your-course-folder" id="toc-step-4-initialize-git-in-your-course-folder" class="nav-link" data-scroll-target="#step-4-initialize-git-in-your-course-folder">Step 4 — Initialize Git in your course folder</a>
-  <ul class="collapse">
-  <li><a href="#initialize-the-repository" id="toc-initialize-the-repository" class="nav-link" data-scroll-target="#initialize-the-repository">Initialize the repository</a></li>
-  <li><a href="#create-a-.gitignore-file" id="toc-create-a-.gitignore-file" class="nav-link" data-scroll-target="#create-a-.gitignore-file">Create a <code>.gitignore</code> file</a></li>
-  </ul></li>
-  <li><a href="#step-5-set-vs-code-to-use-the-cmsc-1236-environment" id="toc-step-5-set-vs-code-to-use-the-cmsc-1236-environment" class="nav-link" data-scroll-target="#step-5-set-vs-code-to-use-the-cmsc-1236-environment">Step 5 — Set VS Code to use the CMSC 1236 environment</a></li>
-  <li><a href="#step-6-test-python-from-the-vs-code-terminal" id="toc-step-6-test-python-from-the-vs-code-terminal" class="nav-link" data-scroll-target="#step-6-test-python-from-the-vs-code-terminal">Step 6 — Test Python from the VS Code terminal</a></li>
-  <li><a href="#step-7-import-the-book-example-code" id="toc-step-7-import-the-book-example-code" class="nav-link" data-scroll-target="#step-7-import-the-book-example-code">Step 7 — Import the book example code</a>
-  <ul class="collapse">
-  <li><a href="#create-a-place-to-store-the-book-code" id="toc-create-a-place-to-store-the-book-code" class="nav-link" data-scroll-target="#create-a-place-to-store-the-book-code">Create a place to store the book code</a></li>
-  <li><a href="#fluent-python-2nd-edition-clone-the-official-github-repo" id="toc-fluent-python-2nd-edition-clone-the-official-github-repo" class="nav-link" data-scroll-target="#fluent-python-2nd-edition-clone-the-official-github-repo">Fluent Python (2nd Edition) — clone the official GitHub repo</a></li>
-  <li><a href="#learning-python-6th-edition-download-the-official-examples-zip" id="toc-learning-python-6th-edition-download-the-official-examples-zip" class="nav-link" data-scroll-target="#learning-python-6th-edition-download-the-official-examples-zip">Learning Python (6th Edition) — download the official examples ZIP</a></li>
-  <li><a href="#unzip-it" id="toc-unzip-it" class="nav-link" data-scroll-target="#unzip-it">Unzip it</a></li>
-  </ul></li>
-  <li><a href="#you-are-done" id="toc-you-are-done" class="nav-link" data-scroll-target="#you-are-done">You are done</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+  <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
+  <li><a href="#question-11" id="toc-question-11" class="nav-link" data-scroll-target="#question-11">Question 11</a></li>
+  <li><a href="#question-12" id="toc-question-12" class="nav-link" data-scroll-target="#question-12">Question 12</a></li>
+  <li><a href="#question-13" id="toc-question-13" class="nav-link" data-scroll-target="#question-13">Question 13</a></li>
+  <li><a href="#question-14" id="toc-question-14" class="nav-link" data-scroll-target="#question-14">Question 14</a></li>
+  <li><a href="#question-15" id="toc-question-15" class="nav-link" data-scroll-target="#question-15">Question 15</a></li>
   </ul>
 </nav>
     </div>
@@ -478,7 +464,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CMSC 1236 – Python Environment Setup (Windows)</h1>
+<h1 class="title">Week 4 Quiz – Debugging Python’s Object Model</h1>
+<p class="subtitle lead">CMSC 1236 – Advanced Programming in Python</p>
 </div>
 
 
@@ -490,7 +477,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 7, 2026</p>
+      <p class="date-modified">January 30, 2026</p>
     </div>
   </div>
     
@@ -501,311 +488,212 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>For CMSC 1236, we will create a separate Python environment so nothing conflicts with your other classes.</p>
-<section id="what-you-will-do" class="level3">
-<h3 class="anchored" data-anchor-id="what-you-will-do">What you will do</h3>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>This handout contains 15 multiple-choice questions about Python’s object model (Chapters 8–9 concepts).</p>
 <ol type="1">
-<li>Verify required tools are installed (VS Code + Git)</li>
-<li>Create a course folder on your <strong>C:&nbsp;drive</strong></li>
-<li>Create and activate a <strong>CMSC 1236 Python environment</strong></li>
-<li>“Git” your course folder (initialize a repository)</li>
-<li>Open the folder in VS Code and verify VS Code is using the course environment</li>
-<li>Run a short test program from the VS Code terminal</li>
+<li>Read each question carefully and study the code provided.</li>
+<li>Select your answer (A, B, C, or D).</li>
+<li>Submit your answers in the <strong>D2L Quiz</strong> by selecting the corresponding letter for each question number.</li>
 </ol>
-</section>
-<section id="required-tools" class="level3">
-<h3 class="anchored" data-anchor-id="required-tools">Required tools</h3>
-<ul>
-<li>VS Code</li>
-<li>Git</li>
-</ul>
-</section>
-<section id="step-1-verify-vs-code-and-git" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-verify-vs-code-and-git">Step 1 — Verify VS Code and Git</h3>
-<section id="verify-git" class="level4">
-<h4 class="anchored" data-anchor-id="verify-git">Verify Git</h4>
-<p>Open a <strong>CMD Prompt</strong> window and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see a version number (example: <code>git version 2.xx.x</code>).</p>
-</section>
-</section>
-<section id="verify-vs-code" class="level3">
-<h3 class="anchored" data-anchor-id="verify-vs-code">Verify VS Code</h3>
-<p>Open <strong>CMD Prompt</strong> and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>code -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see a version number (example: <code>1.107.1 994fd12f8d3a5aa16f17d42c041e5809167e845a</code>)</p>
-</section>
-<section id="step-2-create-your-course-folder-on-the-root-drive" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-create-your-course-folder-on-the-root-drive">Step 2 — Create your course folder on the root drive</h2>
-<p>Your CMSC 1236 directory must be created on the root of the <code>C:</code> drive:</p>
-<ul>
-<li><code>C:\cmsc-1236</code></li>
-</ul>
-<p>Inside it, create these folders:</p>
-<ul>
-<li><code>assignments</code></li>
-<li><code>notes</code></li>
-<li><code>projects</code></li>
-</ul>
-<p>Creating the course folder on the root drive helps avoid common Windows problems:</p>
-<ul>
-<li><strong>Short, predictable paths</strong> (fewer issues with tools that don’t like long file paths).</li>
-<li><strong>Avoids OneDrive syncing</strong> (Desktop/Documents are often synced; syncing can lock files and break builds/tools).</li>
-<li><strong>Makes Git + terminals simpler</strong> (easy to navigate, fewer permission surprises).</li>
-<li><strong>Keeps course work separate</strong> from other software setups (so you don’t accidentally mix files/tools between courses).</li>
-</ul>
-<section id="cmd-commands-command-prompt" class="level4">
-<h4 class="anchored" data-anchor-id="cmd-commands-command-prompt">CMD commands (Command Prompt)</h4>
-<ol type="1">
-<li><p>Open <strong>Command Prompt (cmd)</strong>.</p></li>
-<li><p>Go to the root of the C: drive:</p></li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span><span class="sc">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
-<li>Create the course folder:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> cmsc<span class="at">-1236</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="4" type="1">
-<li>Move into the course folder:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> \cmsc-1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="5" type="1">
-<li>Create the three required subfolders:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> assignments</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> notes</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> projects</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="verify-the-folder-structure" class="level3">
-<h3 class="anchored" data-anchor-id="verify-the-folder-structure">Verify the folder structure</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Your folder structure should look like similar to the following:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode makefile code-with-copy"><code class="sourceCode makefile"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">C:</span><span class="dt">\cmsc-1236</span><span class="ch">\</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dt">  assignments</span><span class="ch">\</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dt">  notes</span><span class="ch">\</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="dt">  projects</span><span class="ch">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="step-3-create-the-cmsc-1236-python-environment" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-create-the-cmsc-1236-python-environment">Step 3 — Create the CMSC 1236 Python environment</h2>
-<p>We will create a dedicated environment named:</p>
-<ul>
-<li><code>cmsc1236</code></li>
-</ul>
-<p>This environment is <strong>separate from any miniconda environments</strong> you may be using in other courses, so nothing conflicts.</p>
-<p>A dedicated environment ensures that we:</p>
-<ul>
-<li>Keep CMSC 1236 packages separate from other classes/tools</li>
-<li>Ensure the course runs on a consistent Python version</li>
-</ul>
-<section id="create-the-environment-command-prompt" class="level3">
-<h3 class="anchored" data-anchor-id="create-the-environment-command-prompt">Create the environment (Command Prompt)</h3>
-<ol type="1">
-<li>Open <strong>Command Prompt (cmd)</strong><br>
-</li>
-<li>Go to your course folder (if not already there):</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> \cmsc-1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
-<li>Create the environment folder using Python’s built-in venv tool:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>py <span class="at">-m</span> venv cmsc1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="activate-the-environment-command-prompt" class="level3">
-<h3 class="anchored" data-anchor-id="activate-the-environment-command-prompt">Activate the environment (Command Prompt)</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cmsc1236\Scripts\activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>When it activates, your prompt will look like this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span>cmsc1236) C:\cmsc-1236<span class="kw">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="verify-the-environment-is-working" class="level3">
-<h3 class="anchored" data-anchor-id="verify-the-environment-is-working">Verify the environment is working</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>python -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see a Python version printed:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Python 3.xx.x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="deactivate-the-environment" class="level3">
-<h3 class="anchored" data-anchor-id="deactivate-the-environment">Deactivate the environment</h3>
-<p>When you are finished:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="step-4-initialize-git-in-your-course-folder" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-initialize-git-in-your-course-folder">Step 4 — Initialize Git in your course folder</h2>
-<p>We use Git to track your work over time and to make submitting or backing up your work easier.<br>
-This step creates a <code>.git</code> folder that stores your work history.</p>
-<section id="initialize-the-repository" class="level3">
-<h3 class="anchored" data-anchor-id="initialize-the-repository">Initialize the repository</h3>
-<p>Open <strong>Command Prompt (cmd)</strong> and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1236</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>git init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="create-a-.gitignore-file" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-.gitignore-file">Create a <code>.gitignore</code> file</h3>
-<p>Git does <strong>not</strong> create a <code>.gitignore</code> automatically. You will create it so that you don’t accidentally commit:</p>
-<ul>
-<li>Python cache files</li>
-<li>editor settings</li>
-<li>temporary files</li>
-</ul>
-<p>In <code>C:\cmsc-1236</code>, create a file named:</p>
-<p><code>.gitignore</code></p>
-<p>Paste the following into it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a># Python cache</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>__pycache__/</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>*.pyc</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a># Environment / OS clutter</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>.DS_Store</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>Thumbs.db</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a># VS Code</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>.vscode/</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a># Local environment folder </span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>cmsc1236/</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a># Common local files</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>*.log</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>*.tmp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="step-5-set-vs-code-to-use-the-cmsc-1236-environment" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-set-vs-code-to-use-the-cmsc-1236-environment">Step 5 — Set VS Code to use the CMSC 1236 environment</h2>
-<p>In this step, you will tell VS Code which Python interpreter to use for <strong>this course</strong> so that:</p>
-<ul>
-<li>Run/Debug uses the correct Python</li>
-<li>The integrated terminal runs the correct Python</li>
-<li>Your assignments behave consistently across machines</li>
-</ul>
-<blockquote class="blockquote">
-<p>Note: This environment is <strong>separate from the Miniconda environments</strong> you may be using in other courses, so nothing conflicts.</p>
-</blockquote>
-<ol type="1">
-<li>Open your course folder in VS Code</li>
-</ol>
-<ul>
-<li>VS Code stores interpreter settings <em>per folder/project</em></li>
-<li>Opening the correct folder ensures the interpreter you select is tied to CMSC 1236 only</li>
-</ul>
-<ol start="2" type="1">
-<li>Select the correct Python interpreter</li>
-</ol>
-<!-- -->
-<ol type="a">
-<li>Select View → Command Palette or Press: <code>Ctrl + Shift + P</code><br>
-</li>
-<li>Type: <code>Python: Select Interpreter</code></li>
-<li>Choose the interpreter that points to the course environment:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>C:\cmsc-1236\cmsc1236\Scripts\python.exe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you do not see it:</p>
-<ul>
-<li>Choose <strong>Enter interpreter path…</strong></li>
-<li>Then browse to: <code>C:\cmsc-1236\cmsc1236\Scripts\python.exe</code></li>
-</ul>
-<ol start="3" type="1">
-<li>Verify in the VS Code Terminal (Command Prompt)</li>
-</ol>
-<!-- -->
-<ol type="a">
-<li>In VS Code, open a CMD Prompt terminal:
-<ul>
-<li><strong>Terminal → New Terminal</strong></li>
-</ul></li>
-<li>Confirm you are in the course folder. If not, run:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1236</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="a">
-<li>Activate the course environment:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cmsc1236\Scripts\activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="4" type="a">
-<li>Verify that Python is coming from the course environment:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>where python</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Expected output includes a path like:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>C:\cmsc-1236\cmsc1236\Scripts\python.exe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="5" type="a">
-<li>Confirm the Python version:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>python -<span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>If <code>where python</code> does NOT point into <code>C:\cmsc-1236\cmsc1236\...</code>, you are not using the course environment</li>
-<li>Fixing it here prevents “it works on my machine” problems later</li>
-</ul>
-</section>
-<section id="step-6-test-python-from-the-vs-code-terminal" class="level2">
-<h2 class="anchored" data-anchor-id="step-6-test-python-from-the-vs-code-terminal">Step 6 — Test Python from the VS Code terminal</h2>
-<p>Create a new folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> C:\cmsc-1236\projects\week-01</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Create a new python file called:</p>
-<ul>
-<li><code>test_env.py</code></li>
-</ul>
-<p>Paste this code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python version:"</span>, sys.version)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python executable:"</span>, sys.executable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Run it in the VS Code terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1236\projects\week-01\</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>python test_env.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<ul>
-<li>A Python <strong>3.xx.x</strong> version output</li>
-<li>A path showing it is running from the <code>cmsc1236</code> environment</li>
-</ul>
-</section>
-<section id="step-7-import-the-book-example-code" class="level2">
-<h2 class="anchored" data-anchor-id="step-7-import-the-book-example-code">Step 7 — Import the book example code</h2>
-<p>You’ll keep the books’ example code in your course folder so you can quickly reference working examples while reading and while completing assignments.</p>
-<section id="create-a-place-to-store-the-book-code" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-place-to-store-the-book-code">Create a place to store the book code</h3>
-<p>Open <strong>Command Prompt (cmd)</strong> and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:\cmsc-1236</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">mkdir</span> book</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> book</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>After this step, you’ll have:</p>
-<p><code>C:\cmsc-1236\book\</code> (this is where both books’ code will live)</p>
 <hr>
 </section>
-<section id="fluent-python-2nd-edition-clone-the-official-github-repo" class="level3">
-<h3 class="anchored" data-anchor-id="fluent-python-2nd-edition-clone-the-official-github-repo">Fluent Python (2nd Edition) — clone the official GitHub repo</h3>
-<p>In the same cmd window (you should still be in <code>C:\cmsc-1236\book</code>), run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>git clone https:/<span class="at">/github</span>.com<span class="at">/fluentpython/example-code-2e</span>.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This creates:</p>
-<p><code>C:\cmsc-1236\book\fluent-python-2e\</code></p>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p>Consider this code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_pet(name, pets<span class="op">=</span>[]):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    pets.append(name)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pets</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(add_pet(<span class="st">'Buddy'</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(add_pet(<span class="st">'Luna'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What is the <strong>complete output</strong> (both lines)?</p>
+<p>A. <code>['Buddy']</code> then <code>['Luna']</code></p>
+<p>B. Error: list index out of range</p>
+<p>C. <code>['Buddy']</code> then <code>['Buddy', 'Luna']</code></p>
+<p>D. <code>['Buddy', 'Luna']</code> then <code>['Buddy', 'Luna']</code></p>
+<hr>
 </section>
-<section id="learning-python-6th-edition-download-the-official-examples-zip" class="level3">
-<h3 class="anchored" data-anchor-id="learning-python-6th-edition-download-the-official-examples-zip">Learning Python (6th Edition) — download the official examples ZIP</h3>
-<p>Learning Python’s official examples are provided as a ZIP download from the book’s site (not a GitHub repo).</p>
-<ol type="1">
-<li>Open this page in your browser: https://learning-python.com/LP6E-code.html</li>
-<li>Click <strong>LP6E.zip ⇦ Fetch and unzip</strong> and download it.</li>
-</ol>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>Consider this code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>morning <span class="op">=</span> [<span class="st">'Buddy'</span>, <span class="st">'Luna'</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>afternoon <span class="op">=</span> morning</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>afternoon.append(<span class="st">'Charlie'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What does <code>morning</code> contain?</p>
+<p>A. <code>['Buddy', 'Luna']</code></p>
+<p>B. <code>['Charlie']</code></p>
+<p>C. <code>['Buddy', 'Luna', 'Luna', 'Charlie']</code></p>
+<p>D. <code>['Buddy', 'Luna', 'Charlie']</code></p>
+<hr>
 </section>
-<section id="unzip-it" class="level3">
-<h3 class="anchored" data-anchor-id="unzip-it">Unzip it</h3>
-<ul>
-<li>Right-click the ZIP → <strong>Extract All…</strong></li>
-<li>Extract into: <code>C:\cmsc-1236\book\</code></li>
-</ul>
-<p>After unzipping, you should see an <code>LP6E\</code> folder in <code>C:\cmsc-1236\book\</code>.</p>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<p>A programmer writes:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>schedule <span class="op">=</span> [[<span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">6</span>]] <span class="op">*</span> <span class="dv">7</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>schedule[<span class="dv">2</span>][<span class="dv">2</span>] <span class="op">=</span> <span class="dv">10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>They expected only Wednesday’s evening slot to change. What actually happens?</p>
+<p>A. The evening slot (index 2) of ALL seven days becomes 10</p>
+<p>B. Only <code>schedule[2][2]</code> becomes 10</p>
+<p>C. The entire schedule becomes 10</p>
+<p>D. Python raises an IndexError</p>
+<hr>
 </section>
+<section id="question-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<p>Consider this code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nested <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>backup <span class="op">=</span> copy.copy(nested)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>backup[<span class="dv">0</span>].append(<span class="dv">99</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What is <code>nested[0]</code>?</p>
+<p>A. <code>[1, 2]</code></p>
+<p>B. <code>[3, 4]</code></p>
+<p>C. <code>[99, 1, 2]</code></p>
+<p>D. <code>[1, 2, 99]</code></p>
+<hr>
 </section>
-<section id="you-are-done" class="level2">
-<h2 class="anchored" data-anchor-id="you-are-done">You are done</h2>
-<p>At this point:</p>
-<ul>
-<li>Your course folder exists at <code>C:\cmsc-1236</code></li>
-<li>Git is initialized</li>
-<li>Your <code>cmsc1236</code> Python environment is created and working</li>
-<li>VS Code is configured to use the course environment</li>
-<li>You can now work normally in VS Code and run programs from the terminal</li>
-</ul>
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+<p>Consider this code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pet_a <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'Buddy'</span>, <span class="st">'age'</span>: <span class="dv">3</span>}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pet_b <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'Buddy'</span>, <span class="st">'age'</span>: <span class="dv">3</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What is the result of <code>pet_a is pet_b</code>?</p>
+<p>A. <code>True</code></p>
+<p>B. <code>False</code></p>
+<p>C. Error: cannot compare dictionaries</p>
+<p>D. <code>None</code></p>
+<hr>
+</section>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<p>A programmer wants to copy a list without aliasing. The buggy code is:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>event_pets <span class="op">=</span> shelter_pets</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Which replacement correctly creates an independent copy?</p>
+<p>A. <code>event_pets = shelter_pets</code></p>
+<p>B. <code>event_pets = shelter_pets is shelter_pets</code></p>
+<p>C. <code>event_pets = shelter_pets.copy()</code></p>
+<p>D. <code>event_pets == shelter_pets</code></p>
+<hr>
+</section>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<p>Consider this code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>grid <span class="op">=</span> [[<span class="dv">0</span>] <span class="op">*</span> <span class="dv">3</span>] <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>grid[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What is <code>grid</code>?</p>
+<p>A. <code>[[5, 5, 5], [5, 5, 5]]</code></p>
+<p>B. <code>[[5, 0, 0], [0, 0, 0]]</code></p>
+<p>C. <code>[[0, 0, 0], [5, 0, 0]]</code></p>
+<p>D. <code>[[5, 0, 0], [5, 0, 0]]</code></p>
+<hr>
+</section>
+<section id="question-8" class="level2">
+<h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+<p>A function checks if two pets are the same using:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> pet1 <span class="kw">is</span> pet2:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="va">False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Two Pet objects have identical name, species, and age, but the function returns <code>False</code>. What is wrong?</p>
+<p>A. The function should compare <code>pet1.name</code> only</p>
+<p>B. Nothing is wrong; the function is correct</p>
+<p>C. The function should use <code>if pet1 = pet2</code></p>
+<p>D. The function should use <code>==</code> instead of <code>is</code> to compare values</p>
+<hr>
+</section>
+<section id="question-9" class="level2">
+<h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+<p>Consider this code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'Buddy'</span>, <span class="st">'stats'</span>: [<span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>]}</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>backup <span class="op">=</span> copy.copy(original)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>backup[<span class="st">'stats'</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What is <code>original['stats']</code>?</p>
+<p>A. <code>[5, 5, 5]</code></p>
+<p>B. <code>[10, 5, 5]</code></p>
+<p>C. <code>[10, 10, 10]</code></p>
+<p>D. <code>None</code></p>
+<hr>
+</section>
+<section id="question-10" class="level2">
+<h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
+<p>Consider this code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> register(pet, history<span class="op">=</span>[]):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    history.append(pet)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> history</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>register(<span class="st">'Buddy'</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>register(<span class="st">'Luna'</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>register(<span class="st">'Max'</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> register(<span class="st">'Bella'</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(result))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What is printed?</p>
+<p>A. 4</p>
+<p>B. 1</p>
+<p>C. 2</p>
+<p>D. 3</p>
+<hr>
+</section>
+<section id="question-11" class="level2">
+<h2 class="anchored" data-anchor-id="question-11">Question 11</h2>
+<p>A function has a mutable default argument bug:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_note(text, notes<span class="op">=</span>[]):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    notes.append(text)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> notes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Which fix is correct?</p>
+<p>A. Change <code>notes=[]</code> to <code>notes={}</code></p>
+<p>B. Remove the <code>notes</code> parameter entirely</p>
+<p>C. Change <code>notes=[]</code> to <code>notes=None</code>, then add <code>if notes is None: notes = []</code> inside the function</p>
+<p>D. Change <code>notes=[]</code> to <code>notes=()</code></p>
+<hr>
+</section>
+<section id="question-12" class="level2">
+<h2 class="anchored" data-anchor-id="question-12">Question 12</h2>
+<p>Consider this code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>backup <span class="op">=</span> copy.deepcopy(original)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>backup[<span class="dv">0</span>].append(<span class="dv">99</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What is <code>original</code>?</p>
+<p>A. <code>[[1, 2, 99], [3, 4]]</code></p>
+<p>B. <code>[[1, 2], [3, 4, 99]]</code></p>
+<p>C. <code>[[1, 2, 99], [3, 4, 99]]</code></p>
+<p>D. <code>[[1, 2], [3, 4]]</code></p>
+<hr>
+</section>
+<section id="question-13" class="level2">
+<h2 class="anchored" data-anchor-id="question-13">Question 13</h2>
+<p>Which code creates a 3x3 grid where each row is an <strong>independent</strong> list?</p>
+<p>A. <code>grid = [[0, 0, 0]] * 3</code></p>
+<p>B. <code>grid = [[0, 0, 0] for _ in range(3)]</code></p>
+<p>C. <code>row = [0, 0, 0]; grid = [row, row, row]</code></p>
+<p>D. <code>grid = [0, 0, 0] * 3</code></p>
+<hr>
+</section>
+<section id="question-14" class="level2">
+<h2 class="anchored" data-anchor-id="question-14">Question 14</h2>
+<p>Consider this code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x <span class="op">+</span> [<span class="dv">4</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What is <code>y</code>?</p>
+<p>A. <code>[1, 2, 3, 4]</code></p>
+<p>B. <code>[4, 1, 2, 3]</code></p>
+<p>C. <code>[1, 2, 3]</code></p>
+<p>D. Error: list concatenation failed</p>
+<hr>
+</section>
+<section id="question-15" class="level2">
+<h2 class="anchored" data-anchor-id="question-15">Question 15</h2>
+<p>Consider this code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">+=</span> [<span class="dv">4</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What is <code>y</code>?</p>
+<p>A. <code>[1, 2, 3]</code></p>
+<p>B. <code>[4, 1, 2, 3]</code></p>
+<p>C. <code>[1, 2, 3, 4]</code></p>
+<p>D. Error: cannot modify list</p>
 
 
 </section>
