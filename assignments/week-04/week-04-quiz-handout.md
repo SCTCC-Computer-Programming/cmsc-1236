@@ -1,0 +1,306 @@
+## Instructions
+
+This handout contains 15 multiple-choice questions about Python's object model (Chapters 8–9 concepts). 
+
+1. Read each question carefully and study the code provided.
+2. Select your answer (A, B, C, or D).
+3. Submit your answers in the **D2L Quiz** by selecting the corresponding letter for each question number.
+
+## Question 1
+
+Consider this code:
+
+```python
+def add_pet(name, pets=[]):
+    pets.append(name)
+    return pets
+
+print(add_pet('Buddy'))
+print(add_pet('Luna'))
+```
+
+What is the **complete output** (both lines)?
+
+A. `['Buddy']` then `['Luna']`
+
+B. Error: list index out of range
+
+C. `['Buddy']` then `['Buddy', 'Luna']`
+
+D. `['Buddy', 'Luna']` then `['Buddy', 'Luna']`
+
+## Question 2
+
+Consider this code:
+
+```python
+morning = ['Buddy', 'Luna']
+afternoon = morning
+afternoon.append('Charlie')
+```
+
+What does `morning` contain?
+
+A. `['Buddy', 'Luna']`
+
+B. `['Charlie']`
+
+C. `['Buddy', 'Luna', 'Luna', 'Charlie']`
+
+D. `['Buddy', 'Luna', 'Charlie']`
+
+## Question 3
+
+A programmer writes:
+
+```python
+schedule = [[6, 6, 6]] * 7
+schedule[2][2] = 10
+```
+
+They expected only Wednesday's evening slot to change. What actually happens?
+
+A. The evening slot (index 2) of ALL seven days becomes 10
+
+B. Only `schedule[2][2]` becomes 10
+
+C. The entire schedule becomes 10
+
+D. Python raises an IndexError
+
+## Question 4
+
+Consider this code:
+
+```python
+import copy
+nested = [[1, 2], [3, 4]]
+backup = copy.copy(nested)
+backup[0].append(99)
+```
+
+What is `nested[0]`?
+
+A. `[1, 2]`
+
+B. `[3, 4]`
+
+C. `[99, 1, 2]`
+
+D. `[1, 2, 99]`
+
+## Question 5
+
+Consider this code:
+
+```python
+pet_a = {'name': 'Buddy', 'age': 3}
+pet_b = {'name': 'Buddy', 'age': 3}
+```
+
+What is the result of `pet_a is pet_b`?
+
+A. `True`
+
+B. `False`
+
+C. Error: cannot compare dictionaries
+
+D. `None`
+
+## Question 6
+
+A programmer wants to copy a list without aliasing. The buggy code is:
+
+```python
+event_pets = shelter_pets
+```
+
+Which replacement correctly creates an independent copy?
+
+A. `event_pets = shelter_pets`
+
+B. `event_pets = shelter_pets is shelter_pets`
+
+C. `event_pets = shelter_pets.copy()`
+
+D. `event_pets == shelter_pets`
+
+## Question 7
+
+Consider this code:
+
+```python
+grid = [[0] * 3] * 2
+grid[0][0] = 5
+```
+
+What is `grid`?
+
+A. `[[5, 5, 5], [5, 5, 5]]`
+
+B. `[[5, 0, 0], [0, 0, 0]]`
+
+C. `[[0, 0, 0], [5, 0, 0]]`
+
+D. `[[5, 0, 0], [5, 0, 0]]`
+
+## Question 8
+
+A function checks if two pets are the same using:
+
+```python
+if pet1 is pet2:
+    return True
+return False
+```
+
+Two Pet objects have identical name, species, and age, but the function returns `False`. What is wrong?
+
+A. The function should compare `pet1.name` only
+
+B. Nothing is wrong; the function is correct
+
+C. The function should use `if pet1 = pet2`
+
+D. The function should use `==` instead of `is` to compare values
+
+## Question 9
+
+Consider this code:
+
+```python
+import copy
+original = {'name': 'Buddy', 'stats': [5, 5, 5]}
+backup = copy.copy(original)
+backup['stats'][0] = 10
+```
+
+What is `original['stats']`?
+
+A. `[5, 5, 5]`
+
+B. `[10, 5, 5]`
+
+C. `[10, 10, 10]`
+
+D. `None`
+
+## Question 10
+
+Consider this code:
+
+```python
+def register(pet, history=[]):
+    history.append(pet)
+    return history
+
+register('Buddy')
+register('Luna')
+register('Max')
+result = register('Bella')
+print(len(result))
+```
+
+What is printed?
+
+A. 4
+
+B. 1
+
+C. 2
+
+D. 3
+
+## Question 11
+
+A function has a mutable default argument bug:
+
+```python
+def add_note(text, notes=[]):
+    notes.append(text)
+    return notes
+```
+
+Which fix is correct?
+
+A. Change `notes=[]` to `notes={}`
+
+B. Remove the `notes` parameter entirely
+
+C. Change `notes=[]` to `notes=None`, then add `if notes is None: notes = []` inside the function
+
+D. Change `notes=[]` to `notes=()`
+
+## Question 12
+
+Consider this code:
+
+```python
+import copy
+original = [[1, 2], [3, 4]]
+backup = copy.deepcopy(original)
+backup[0].append(99)
+```
+
+What is `original`?
+
+A. `[[1, 2, 99], [3, 4]]`
+
+B. `[[1, 2], [3, 4, 99]]`
+
+C. `[[1, 2, 99], [3, 4, 99]]`
+
+D. `[[1, 2], [3, 4]]`
+
+## Question 13
+
+Which code creates a 3x3 grid where each row is an **independent** list?
+
+A. `grid = [[0, 0, 0]] * 3`
+
+B. `grid = [[0, 0, 0] for _ in range(3)]`
+
+C. `row = [0, 0, 0]; grid = [row, row, row]`
+
+D. `grid = [0, 0, 0] * 3`
+
+## Question 14
+
+Consider this code:
+
+```python
+x = [1, 2, 3]
+y = x
+x = x + [4]
+```
+
+What is `y`?
+
+A. `[1, 2, 3, 4]`
+
+B. `[4, 1, 2, 3]`
+
+C. `[1, 2, 3]`
+
+D. Error: list concatenation failed
+
+## Question 15
+
+Consider this code:
+
+```python
+x = [1, 2, 3]
+y = x
+x += [4]
+```
+
+What is `y`?
+
+A. `[1, 2, 3]`
+
+B. `[4, 1, 2, 3]`
+
+C. `[1, 2, 3, 4]`
+
+D. Error: cannot modify list

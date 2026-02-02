@@ -1,0 +1,195 @@
+NewQuestion,MC,
+QuestionText,"What does this code print?
+
+def add_pet(name, pets=[]):
+    pets.append(name)
+    return pets
+
+print(add_pet('Buddy'))
+print(add_pet('Luna'))",
+Option,0,"['Buddy']
+['Luna']",
+Option,100,"['Buddy']
+['Buddy', 'Luna']",
+Option,0,"['Buddy', 'Luna']
+['Buddy', 'Luna']",
+Option,0,"Error: list index out of range",
+
+NewQuestion,MC,
+QuestionText,"This code should create independent morning and afternoon rosters, but both end up with the same pets. Which line contains the bug?
+
+1: morning = ['Buddy', 'Luna']
+2: afternoon = morning
+3: afternoon.append('Charlie')
+4: print(morning)
+5: print(afternoon)",
+Option,0,"Line 1",
+Option,100,"Line 2",
+Option,0,"Line 3",
+Option,0,"Line 4",
+
+NewQuestion,MC,
+QuestionText,"The following code should update only Wednesday's evening feeding, but all days change. Which fix is correct?
+
+schedule = [[6, 6, 6]] * 7
+schedule[2][2] = 10",
+Option,0,"Change schedule[2][2] to schedule[2][2:3]",
+Option,0,"Change * 7 to + 7",
+Option,100,"Change [[6, 6, 6]] * 7 to [[6, 6, 6] for _ in range(7)]",
+Option,0,"Change 10 to [10]",
+
+NewQuestion,MC,
+QuestionText,"What is nested[0] after this code runs?
+
+import copy
+nested = [[1, 2], [3, 4]]
+backup = copy.copy(nested)
+backup[0].append(99)",
+Option,0,"[1, 2]",
+Option,100,"[1, 2, 99]",
+Option,0,"[99, 1, 2]",
+Option,0,"[3, 4]",
+
+NewQuestion,MC,
+QuestionText,"What does this code print?
+
+pet_a = {'name': 'Buddy', 'age': 3}
+pet_b = {'name': 'Buddy', 'age': 3}
+
+if pet_a is pet_b:
+    print('Same object')
+else:
+    print('Different objects')",
+Option,0,"Same object",
+Option,100,"Different objects",
+Option,0,"Error: cannot compare dictionaries",
+Option,0,"True",
+
+NewQuestion,MC,
+QuestionText,"A programmer wants to copy a list of pets. Which line fixes the aliasing bug?
+
+Original (buggy):
+shelter_pets = ['Buddy', 'Luna', 'Max']
+event_pets = shelter_pets",
+Option,0,"event_pets = shelter_pets.append([])",
+Option,0,"event_pets = shelter_pets is True",
+Option,100,"event_pets = shelter_pets.copy()",
+Option,0,"event_pets = shelter_pets + shelter_pets",
+
+NewQuestion,MC,
+QuestionText,"What does this code print?
+
+grid = [[0] * 3] * 2
+grid[0][0] = 5
+print(grid)",
+Option,0,"[[5, 0, 0], [0, 0, 0]]",
+Option,100,"[[5, 0, 0], [5, 0, 0]]",
+Option,0,"[[0, 0, 0], [5, 0, 0]]",
+Option,0,"[[5, 5, 5], [5, 5, 5]]",
+
+NewQuestion,MC,
+QuestionText,"This code should check if two pets have the same data. Which line contains the bug?
+
+1: def is_same_pet(pet1, pet2):
+2:     if pet1 is pet2:
+3:         return True
+4:     return False",
+Option,0,"Line 1",
+Option,100,"Line 2",
+Option,0,"Line 3",
+Option,0,"Line 4",
+
+NewQuestion,MC,
+QuestionText,"What is the value of original['stats'] after this code?
+
+import copy
+original = {'name': 'Buddy', 'stats': [5, 5, 5]}
+backup = copy.copy(original)
+backup['stats'][0] = 10",
+Option,0,"[5, 5, 5]",
+Option,100,"[10, 5, 5]",
+Option,0,"[10, 10, 10]",
+Option,0,"None",
+
+NewQuestion,MC,
+QuestionText,"What does this code print?
+
+def register(pet_name, history=[]):
+    history.append(pet_name)
+    return history
+
+reg1 = register('Buddy')
+reg2 = register('Luna')
+reg3 = register('Max')
+print(len(reg1))",
+Option,0,"1",
+Option,0,"2",
+Option,100,"3",
+Option,0,"0",
+
+NewQuestion,MC,
+QuestionText,"Which fix prevents the mutable default argument bug?
+
+Original (buggy):
+def add_note(text, notes=[]):
+    notes.append(text)
+    return notes",
+Option,100,"def add_note(text, notes=None):
+    if notes is None:
+        notes = []
+    notes.append(text)
+    return notes",
+Option,0,"def add_note(text, notes=[]):
+    notes = notes.copy()
+    notes.append(text)
+    return notes",
+Option,0,"def add_note(text, notes=[None]):
+    notes.append(text)
+    return notes",
+Option,0,"def add_note(text, notes=()):
+    notes.append(text)
+    return notes",
+
+NewQuestion,MC,
+QuestionText,"What does original equal after this code runs?
+
+import copy
+original = [[1, 2], [3, 4]]
+backup = copy.deepcopy(original)
+backup[0].append(99)",
+Option,100,"[[1, 2], [3, 4]]",
+Option,0,"[[1, 2, 99], [3, 4]]",
+Option,0,"[[1, 2], [3, 4, 99]]",
+Option,0,"[[1, 2, 99], [3, 4, 99]]",
+
+NewQuestion,MC,
+QuestionText,"This code should create a 3x3 grid of zeros where each row is independent. Which version is correct?",
+Option,0,"grid = [[0, 0, 0]] * 3",
+Option,0,"row = [0, 0, 0]; grid = [row, row, row]",
+Option,100,"grid = [[0, 0, 0] for _ in range(3)]",
+Option,0,"grid = [0, 0, 0] * 3",
+
+NewQuestion,MC,
+QuestionText,"What does this code print?
+
+x = [1, 2, 3]
+y = x
+x = x + [4]
+print(y)",
+Option,100,"[1, 2, 3]",
+Option,0,"[1, 2, 3, 4]",
+Option,0,"[4, 1, 2, 3]",
+Option,0,"Error: list concatenation failed",
+
+NewQuestion,MC,
+QuestionText,"What does this code print?
+
+x = [1, 2, 3]
+y = x
+x += [4]
+print(y)",
+Option,0,"[1, 2, 3]",
+Option,100,"[1, 2, 3, 4]",
+Option,0,"[4, 1, 2, 3]",
+Option,0,"Error: cannot modify list",
+
