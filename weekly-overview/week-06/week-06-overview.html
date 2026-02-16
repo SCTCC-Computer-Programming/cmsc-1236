@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 2: Chapter 3 Additional Reference Videos (Files, Parsing, Comprehensions, Lambda, Generators) – CMSC 1236 : Advanced Python Programming</title>
+<title>Week 6 Guide – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,10 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-feb0c0ed7aac57d66ec8dce0f6a48183.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,7 +78,169 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -107,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 2: Chapter 3 Additional Reference Videos (Files, Parsing, Comprehensions, Lambda, Generators)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 6 Guide</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -237,20 +403,28 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
+  <ul>
+  <li><a href="#week-6-focus" id="toc-week-6-focus" class="nav-link active" data-scroll-target="#week-6-focus">Week 6 focus</a></li>
+  <li><a href="#week-6-assignments" id="toc-week-6-assignments" class="nav-link" data-scroll-target="#week-6-assignments">Week 6 Assignments</a></li>
+  <li><a href="#concepts-being-reinforced" id="toc-concepts-being-reinforced" class="nav-link" data-scroll-target="#concepts-being-reinforced">Concepts being reinforced</a>
   <ul class="collapse">
-  <li><a href="#exceptions-and-safe-processing-tryexcept" id="toc-exceptions-and-safe-processing-tryexcept" class="nav-link active" data-scroll-target="#exceptions-and-safe-processing-tryexcept">Exceptions and safe processing (<code>try/except</code>)</a></li>
-  <li><a href="#list-comprehensions-compact-build-a-new-list-loops" id="toc-list-comprehensions-compact-build-a-new-list-loops" class="nav-link" data-scroll-target="#list-comprehensions-compact-build-a-new-list-loops">List comprehensions (compact “build a new list” loops)</a></li>
-  <li><a href="#lambda-a-small-function-used-inline" id="toc-lambda-a-small-function-used-inline" class="nav-link" data-scroll-target="#lambda-a-small-function-used-inline">Lambda (a small function used inline)</a></li>
-  <li><a href="#generators-and-iteration-yield-streaming-one-row-at-a-time" id="toc-generators-and-iteration-yield-streaming-one-row-at-a-time" class="nav-link" data-scroll-target="#generators-and-iteration-yield-streaming-one-row-at-a-time">Generators and iteration (<code>yield</code>, streaming one row at a time)</a></li>
+  <li><a href="#extended-sequence-unpacking" id="toc-extended-sequence-unpacking" class="nav-link" data-scroll-target="#extended-sequence-unpacking">Extended sequence unpacking</a></li>
+  <li><a href="#named-assignment-expressions-walrus-operator" id="toc-named-assignment-expressions-walrus-operator" class="nav-link" data-scroll-target="#named-assignment-expressions-walrus-operator">Named assignment expressions (walrus operator)</a></li>
+  <li><a href="#augmented-assignment-and-mutation" id="toc-augmented-assignment-and-mutation" class="nav-link" data-scroll-target="#augmented-assignment-and-mutation">Augmented assignment and mutation</a></li>
+  </ul></li>
+  <li><a href="#week-6-activities" id="toc-week-6-activities" class="nav-link" data-scroll-target="#week-6-activities">Week 6 activities</a></li>
+  <li><a href="#week-6-tasks" id="toc-week-6-tasks" class="nav-link" data-scroll-target="#week-6-tasks">Week 6 tasks</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 2: Chapter 3 Additional Reference Videos (Files, Parsing, Comprehensions, Lambda, Generators)</h1>
+<h1 class="title">Week 6 Guide</h1>
+<p class="subtitle lead">Chapters 10–11 Code Completion Exercise</p>
 </div>
 
 
@@ -262,7 +436,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 19, 2026</p>
+      <p class="date-modified">February 15, 2026</p>
     </div>
   </div>
     
@@ -273,41 +447,73 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="exceptions-and-safe-processing-tryexcept" class="level2">
-<h2 class="anchored" data-anchor-id="exceptions-and-safe-processing-tryexcept">Exceptions and safe processing (<code>try/except</code>)</h2>
-<p><strong>Try / Except | Python (Tutorial)</strong><br>
-<em>by Socratica</em> — A focused explanation of what <code>try</code> and <code>except</code> actually do, and why this pattern is useful when you want to keep processing after one failure.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nlCKrKGHSSk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="week-6-focus" class="level2">
+<h2 class="anchored" data-anchor-id="week-6-focus">Week 6 focus</h2>
+<p>Week 6 is a reflection and consolidation week. There is no new reading this week. Instead, you will demonstrate your understanding of the Chapters 10–11 concepts by implementing them in a code completion exercise.</p>
+<p>This week you move from predicting behavior to writing code that uses these features to solve practical problems. The submission format is the same code-and-video pattern you followed in Week 2, so the workflow should feel familiar.</p>
 </section>
-<section id="list-comprehensions-compact-build-a-new-list-loops" class="level2">
-<h2 class="anchored" data-anchor-id="list-comprehensions-compact-build-a-new-list-loops">List comprehensions (compact “build a new list” loops)</h2>
-<p><strong>Learn Python LIST COMPREHENSIONS in 10 minutes!</strong><br>
-<em>by Bro Code</em> — Quick overview of list comprehension syntax, comparing them to regular for loops with many clear examples.<br>
-</p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/YlY2g2xrl6Q" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
-<p><strong>List Comprehensions | Python (Tutorial)</strong><br>
-<em>by CS Dojo</em> — List comprehension basics in Python - let’s go!</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/5K08WcjGV6c" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p><strong>Python Tutorial: List Comprehensions</strong><br>
-<em>by Corey Schafer</em> — A deeper walkthrough showing common patterns and how comprehensions relate to the equivalent loop form.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/3dt4OGnU5sM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="week-6-assignments" class="level2">
+<h2 class="anchored" data-anchor-id="week-6-assignments">Week 6 Assignments</h2>
+<ul>
+<li>Here is the link to the <strong><a href="../../assignments/week-06/index.html">Week 6 Assignments</a></strong> page.</li>
+</ul>
 </section>
-<section id="lambda-a-small-function-used-inline" class="level2">
-<h2 class="anchored" data-anchor-id="lambda-a-small-function-used-inline">Lambda (a small function used inline)</h2>
-<p><strong>Learn Python LAMBDA in 6 minutes!</strong><br>
-<em>by Bro Code</em> — Introduces lambda functions as short, anonymous functions and shows common use cases like sorting and mapping.<br>
-</p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/IljPHDyBRog" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
-<p><strong>Python Tutorial: Lambda Functions</strong><br>
-<em>by Corey Schafer</em> — Explains what a <code>lambda</code> is, when it’s useful, and how it connects to patterns like <code>sorted(..., key=...)</code> and <code>max(..., key=...)</code>.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Ob9rY6PQMfI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="concepts-being-reinforced" class="level2">
+<h2 class="anchored" data-anchor-id="concepts-being-reinforced">Concepts being reinforced</h2>
+<p>This week’s work draws on the following concepts from Chapters 10–11:</p>
+<section id="extended-sequence-unpacking" class="level3">
+<h3 class="anchored" data-anchor-id="extended-sequence-unpacking">Extended sequence unpacking</h3>
+<p>Week 5 introduced the <code>*</code> operator in unpacking assignments, which collects remaining elements into a list. This week you’ll use two different unpacking patterns to process data with variable-length structures: one where the variable portion is in the middle and one where it’s at the end. The position of <code>*</code> determines which elements get collected, and the starred name always produces a list regardless of how many elements it collects.</p>
 </section>
-<section id="generators-and-iteration-yield-streaming-one-row-at-a-time" class="level2">
-<h2 class="anchored" data-anchor-id="generators-and-iteration-yield-streaming-one-row-at-a-time">Generators and iteration (<code>yield</code>, streaming one row at a time)</h2>
-<p><strong>Python Generators Explained</strong><br>
-<em>by Programming with Mosh</em> — Clear, beginner-friendly explanation of generators, how they work, and why they’re useful for memory-efficient data processing.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/u3T7hmLthUU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p><strong>Python Tutorial: Generators - How to use them and the benefits you receive</strong><br>
-<em>by Corey Schafer</em> — A practical explanation of <code>yield</code>, how generator functions behave differently from normal functions, and what changes when you iterate over a generator.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/bD05uGo_sVI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="named-assignment-expressions-walrus-operator" class="level3">
+<h3 class="anchored" data-anchor-id="named-assignment-expressions-walrus-operator">Named assignment expressions (walrus operator)</h3>
+<p>The walrus operator (<code>:=</code>) assigns a value to a name and returns that value as part of the expression. This week you’ll use <code>:=</code> inside a loop to compute a value, test whether it meets a condition, and keep the result, all in a single expression without redundant computation. Pay attention to where the parentheses go: they control what gets assigned versus what gets compared.</p>
+</section>
+<section id="augmented-assignment-and-mutation" class="level3">
+<h3 class="anchored" data-anchor-id="augmented-assignment-and-mutation">Augmented assignment and mutation</h3>
+<p>This concept connects directly to the aliasing and mutation work from Weeks 3–4. When <code>+=</code> is applied to a list, it mutates the list in place, so any other name referring to that list sees the change. When <code>+</code> is used instead, it creates a new list and rebinds the name, leaving other references unaffected. This week you’ll need to choose the right operator based on whether the original list should be preserved.</p>
+</section>
+</section>
+<section id="week-6-activities" class="level2">
+<h2 class="anchored" data-anchor-id="week-6-activities">Week 6 activities</h2>
+<p>This week has three components:</p>
+<ol type="1">
+<li><p><strong>D2L Quiz</strong> — 15 multiple-choice questions testing your ability to predict behavior of extended unpacking, the walrus operator, augmented assignment, and other Chapter 10–11 features. Use the quiz handout to work through the questions.</p></li>
+<li><p><strong>Code Completion Exercise</strong> — A provided Python program has five empty functions. Each function requires a specific Chapter 10–11 concept. You complete the function bodies so the program produces the correct output.</p></li>
+<li><p><strong>Video Explanation</strong> — Record a walkthrough demonstrating your completed program, explaining how your code works, and reflecting on what you learned.</p></li>
+</ol>
+</section>
+<section id="week-6-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="week-6-tasks">Week 6 tasks</h2>
+<p>Complete the following tasks during Week 6:</p>
+<ol type="1">
+<li><strong>Download the assignment files</strong>
+<ul>
+<li>Download the Realm of Pytha program and Quiz Handout from the Week 6 Assignments page.</li>
+</ul></li>
+<li><strong>Complete the D2L Quiz</strong>
+<ul>
+<li>Work through the 15 questions in the handout.</li>
+<li>Submit your answers (A, B, C, or D) in the D2L Quiz.</li>
+</ul></li>
+<li><strong>Complete the Realm of Pytha program</strong>
+<ul>
+<li>Read the assignment page for details on each function.</li>
+<li>Complete all 5 functions using Chapter 10–11 features.</li>
+<li>Verify your output matches the expected output on the assignment page.</li>
+</ul></li>
+<li><strong>Record your video explanation</strong>
+<ul>
+<li>Demonstrate your completed program.</li>
+<li>Walk through your code and explain your implementation choices.</li>
+<li>Discuss your lessons learned.</li>
+</ul></li>
+<li><strong>Submit your work</strong>
+<ul>
+<li>Upload your completed Python file to the D2L Dropbox.</li>
+<li>Upload your video to Kaltura and link it in the Dropbox.</li>
+</ul></li>
+</ol>
 
 
 </section>
@@ -315,6 +521,19 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {

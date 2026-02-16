@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/weekly-overview/week-06/week-06-overview.html</loc>
+    <lastmod>2026-02-15T06:59:48.838Z</lastmod>
+  </url>
+  <url>
     <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/weekly-overview/week-05/week-05-overview.html</loc>
     <lastmod>2026-02-05T03:09:31.036Z</lastmod>
   </url>
@@ -39,6 +43,10 @@
   <url>
     <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/course/schedule.html</loc>
     <lastmod>2026-01-18T23:05:29.755Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/assignments/week-06/index.html</loc>
+    <lastmod>2026-02-10T21:35:25.607Z</lastmod>
   </url>
   <url>
     <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/assignments/week-05/week-05-assignments.html</loc>
@@ -97,6 +105,10 @@
     <lastmod>2026-02-04T07:36:46.125Z</lastmod>
   </url>
   <url>
+    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/assignments/week-07/week-7-demo.html</loc>
+    <lastmod>2026-02-15T08:24:34.492Z</lastmod>
+  </url>
+  <url>
     <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/course/syllabus.html</loc>
     <lastmod>2026-01-07T21:51:27.500Z</lastmod>
   </url>
@@ -130,6 +142,10 @@
   </url>
   <url>
     <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/weekly-overview/week-05/index.html</loc>
-    <lastmod>2026-02-09T00:16:33.132Z</lastmod>
+    <lastmod>2026-02-13T02:58:51.393Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SCTCC-Computer-Programming.github.io/cmsc-1236/weekly-overview/week-06/index.html</loc>
+    <lastmod>2026-02-12T23:36:51.959Z</lastmod>
   </url>
 </urlset>

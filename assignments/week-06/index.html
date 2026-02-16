@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 2: Chapter 3 Additional Reference Videos (Files, Parsing, Comprehensions, Lambda, Generators) – CMSC 1236 : Advanced Python Programming</title>
+<title>Week 6 Assignments – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,10 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-feb0c0ed7aac57d66ec8dce0f6a48183.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,7 +78,169 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -107,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 2: Chapter 3 Additional Reference Videos (Files, Parsing, Comprehensions, Lambda, Generators)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../assignments/week-05/index.html">Weekly Assignments</a></li><li class="breadcrumb-item"><a href="../../assignments/week-06/index.html">Week 6 (Starts - 16 FEB)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -218,7 +384,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../assignments/week-06/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../assignments/week-06/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 6 (Starts - 16 FEB)</span></a>
   </div>
 </li>
@@ -237,20 +403,41 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
+  <ul>
+  <li><a href="#assignment-files" id="toc-assignment-files" class="nav-link active" data-scroll-target="#assignment-files">Assignment Files</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#part-1-d2l-quiz" id="toc-part-1-d2l-quiz" class="nav-link" data-scroll-target="#part-1-d2l-quiz">Part 1: D2L Quiz</a></li>
+  <li><a href="#part-2-code-completion-exercise" id="toc-part-2-code-completion-exercise" class="nav-link" data-scroll-target="#part-2-code-completion-exercise">Part 2: Code Completion Exercise</a>
   <ul class="collapse">
-  <li><a href="#exceptions-and-safe-processing-tryexcept" id="toc-exceptions-and-safe-processing-tryexcept" class="nav-link active" data-scroll-target="#exceptions-and-safe-processing-tryexcept">Exceptions and safe processing (<code>try/except</code>)</a></li>
-  <li><a href="#list-comprehensions-compact-build-a-new-list-loops" id="toc-list-comprehensions-compact-build-a-new-list-loops" class="nav-link" data-scroll-target="#list-comprehensions-compact-build-a-new-list-loops">List comprehensions (compact “build a new list” loops)</a></li>
-  <li><a href="#lambda-a-small-function-used-inline" id="toc-lambda-a-small-function-used-inline" class="nav-link" data-scroll-target="#lambda-a-small-function-used-inline">Lambda (a small function used inline)</a></li>
-  <li><a href="#generators-and-iteration-yield-streaming-one-row-at-a-time" id="toc-generators-and-iteration-yield-streaming-one-row-at-a-time" class="nav-link" data-scroll-target="#generators-and-iteration-yield-streaming-one-row-at-a-time">Generators and iteration (<code>yield</code>, streaming one row at a time)</a></li>
+  <li><a href="#the-scenario" id="toc-the-scenario" class="nav-link" data-scroll-target="#the-scenario">The Scenario</a></li>
+  <li><a href="#about-the-program" id="toc-about-the-program" class="nav-link" data-scroll-target="#about-the-program">About the Program</a></li>
+  <li><a href="#what-to-complete" id="toc-what-to-complete" class="nav-link" data-scroll-target="#what-to-complete">What to Complete</a></li>
+  <li><a href="#your-task" id="toc-your-task" class="nav-link" data-scroll-target="#your-task">Your Task</a></li>
+  <li><a href="#how-to-approach-this" id="toc-how-to-approach-this" class="nav-link" data-scroll-target="#how-to-approach-this">How to Approach This</a></li>
+  </ul></li>
+  <li><a href="#part-3-video-explanation" id="toc-part-3-video-explanation" class="nav-link" data-scroll-target="#part-3-video-explanation">Part 3: Video Explanation</a>
+  <ul class="collapse">
+  <li><a href="#video-requirements" id="toc-video-requirements" class="nav-link" data-scroll-target="#video-requirements">Video Requirements</a></li>
+  <li><a href="#what-to-include" id="toc-what-to-include" class="nav-link" data-scroll-target="#what-to-include">What to Include</a></li>
+  </ul></li>
+  <li><a href="#d2l-submission-checklist" id="toc-d2l-submission-checklist" class="nav-link" data-scroll-target="#d2l-submission-checklist">D2L Submission Checklist</a>
+  <ul class="collapse">
+  <li><a href="#d2l-quiz" id="toc-d2l-quiz" class="nav-link" data-scroll-target="#d2l-quiz">D2L Quiz</a></li>
+  <li><a href="#dropbox-submission" id="toc-dropbox-submission" class="nav-link" data-scroll-target="#dropbox-submission">Dropbox Submission</a></li>
+  <li><a href="#video-submission" id="toc-video-submission" class="nav-link" data-scroll-target="#video-submission">Video Submission</a></li>
+  </ul></li>
+  <li><a href="#expected-output-reference" id="toc-expected-output-reference" class="nav-link" data-scroll-target="#expected-output-reference">Expected Output Reference</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../assignments/week-05/index.html">Weekly Assignments</a></li><li class="breadcrumb-item"><a href="../../assignments/week-06/index.html">Week 6 (Starts - 16 FEB)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Week 2: Chapter 3 Additional Reference Videos (Files, Parsing, Comprehensions, Lambda, Generators)</h1>
+<h1 class="title">Week 6 Assignments</h1>
+<p class="subtitle lead">Chapters 10–11 Code Completion Exercise</p>
 </div>
 
 
@@ -262,7 +449,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 19, 2026</p>
+      <p class="date-modified">February 10, 2026</p>
     </div>
   </div>
     
@@ -273,41 +460,250 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="exceptions-and-safe-processing-tryexcept" class="level2">
-<h2 class="anchored" data-anchor-id="exceptions-and-safe-processing-tryexcept">Exceptions and safe processing (<code>try/except</code>)</h2>
-<p><strong>Try / Except | Python (Tutorial)</strong><br>
-<em>by Socratica</em> — A focused explanation of what <code>try</code> and <code>except</code> actually do, and why this pattern is useful when you want to keep processing after one failure.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nlCKrKGHSSk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="assignment-files" class="level2">
+<h2 class="anchored" data-anchor-id="assignment-files">Assignment Files</h2>
+<ul>
+<li><a href="../../assignments/week-06/lastname-realm-of-pytha.py" download="">Download Realm of Pytha Program (lastname-realm-of-pytha.py)</a></li>
+<li><a href="../../assignments/week-06/week-06-quiz-handout.pdf" download="">Download Quiz Handout (PDF)</a></li>
+</ul>
 </section>
-<section id="list-comprehensions-compact-build-a-new-list-loops" class="level2">
-<h2 class="anchored" data-anchor-id="list-comprehensions-compact-build-a-new-list-loops">List comprehensions (compact “build a new list” loops)</h2>
-<p><strong>Learn Python LIST COMPREHENSIONS in 10 minutes!</strong><br>
-<em>by Bro Code</em> — Quick overview of list comprehension syntax, comparing them to regular for loops with many clear examples.<br>
-</p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/YlY2g2xrl6Q" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
-<p><strong>List Comprehensions | Python (Tutorial)</strong><br>
-<em>by CS Dojo</em> — List comprehension basics in Python - let’s go!</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/5K08WcjGV6c" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p><strong>Python Tutorial: List Comprehensions</strong><br>
-<em>by Corey Schafer</em> — A deeper walkthrough showing common patterns and how comprehensions relate to the equivalent loop form.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/3dt4OGnU5sM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This week is an application and consolidation week. You will demonstrate your understanding of Chapters 10–11 concepts by:</p>
+<ol type="1">
+<li>Completing a D2L quiz on Chapters 10–11</li>
+<li>Completing functions in a provided Python program using Chapter 10–11 features</li>
+<li>Recording a video explanation of your code</li>
+</ol>
 </section>
-<section id="lambda-a-small-function-used-inline" class="level2">
-<h2 class="anchored" data-anchor-id="lambda-a-small-function-used-inline">Lambda (a small function used inline)</h2>
-<p><strong>Learn Python LAMBDA in 6 minutes!</strong><br>
-<em>by Bro Code</em> — Introduces lambda functions as short, anonymous functions and shows common use cases like sorting and mapping.<br>
-</p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/IljPHDyBRog" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
-<p><strong>Python Tutorial: Lambda Functions</strong><br>
-<em>by Corey Schafer</em> — Explains what a <code>lambda</code> is, when it’s useful, and how it connects to patterns like <code>sorted(..., key=...)</code> and <code>max(..., key=...)</code>.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Ob9rY6PQMfI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="part-1-d2l-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-d2l-quiz">Part 1: D2L Quiz</h2>
+<p>Complete the <strong>Week 6 D2L Quiz</strong> using the quiz handout.</p>
+<ol type="1">
+<li>Download the <strong>Quiz Handout (PDF)</strong> using the link above</li>
+<li>Work through the 15 multiple-choice questions in the handout</li>
+<li>Submit your answers (A, B, C, or D) in the <strong>D2L Quiz</strong></li>
+</ol>
+<p>The quiz tests your ability to:</p>
+<ul>
+<li>Predict results of extended unpacking with <code>*</code>, including patterns like <code>first, *rest</code>, <code>first, *middle, last</code>, and edge cases with minimum elements</li>
+<li>Predict what the walrus operator (<code>:=</code>) assigns with and without parentheses</li>
+<li>Recognize shared references created by multi-target assignment and predict mutation behavior</li>
+<li>Distinguish how <code>+=</code> and <code>+</code> behave differently on mutable objects like lists</li>
+<li>Predict output of <code>print()</code> with custom <code>sep</code> and <code>end</code> parameters</li>
+<li>Distinguish statements from expressions and describe Python’s program hierarchy</li>
+</ul>
 </section>
-<section id="generators-and-iteration-yield-streaming-one-row-at-a-time" class="level2">
-<h2 class="anchored" data-anchor-id="generators-and-iteration-yield-streaming-one-row-at-a-time">Generators and iteration (<code>yield</code>, streaming one row at a time)</h2>
-<p><strong>Python Generators Explained</strong><br>
-<em>by Programming with Mosh</em> — Clear, beginner-friendly explanation of generators, how they work, and why they’re useful for memory-efficient data processing.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/u3T7hmLthUU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p><strong>Python Tutorial: Generators - How to use them and the benefits you receive</strong><br>
-<em>by Corey Schafer</em> — A practical explanation of <code>yield</code>, how generator functions behave differently from normal functions, and what changes when you iterate over a generator.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/bD05uGo_sVI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="part-2-code-completion-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-code-completion-exercise">Part 2: Code Completion Exercise</h2>
+<section id="the-scenario" class="level3">
+<h3 class="anchored" data-anchor-id="the-scenario">The Scenario</h3>
+<p>You’ve joined the development team at a small game studio working on <strong>Realm of Pytha</strong>, a fantasy RPG. The team has divided the game into modules, and you’ve been assigned to the <strong>party management module</strong> — the part of the game that handles recruiting characters, cataloging loot, checking carry weight, and managing inventories.</p>
+<p>The previous developer on this module built the framework before moving to another project. The data, display functions, and <code>main()</code> are all in place and working. The core functions are defined but empty — they just have <code>pass</code> as a placeholder. Your job is to write the function bodies so the module produces the correct output.</p>
+</section>
+<section id="about-the-program" class="level3">
+<h3 class="anchored" data-anchor-id="about-the-program">About the Program</h3>
+<p>This program runs automatically — there’s no user input or menu system. When you run it, it executes all four sections and prints the results. With the placeholder functions in place, you’ll see messages like “No characters created” and “No results returned.” As you complete each function, its section will start producing real output.</p>
+<p>The program uses a few Python features in the display functions that you may not have written yourself yet. You don’t need to modify these functions, but here’s what they do:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>enumerate(items, 1)</code></td>
+<td>Loops through a list while also tracking a counter that starts at 1</td>
+</tr>
+<tr class="even">
+<td><code>f"{text:&lt;12}"</code></td>
+<td>Left-aligns text within 12 characters (used for table columns)</td>
+</tr>
+<tr class="odd">
+<td><code>", ".join(list)</code></td>
+<td>Combines list items into a single string with commas between them</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-to-complete" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-complete">What to Complete</h3>
+<p>The program has five empty functions for you to complete. Each one requires a specific concept from Chapters 10–11.</p>
+<p><strong>1. <code>Character</code> class</strong></p>
+<p>Write the <code>__init__</code> and <code>__str__</code> methods. A character has a name, class, level, a list of skills, and a health value.</p>
+<p>Look at <code>display_party()</code> to see what attribute names the display function expects.</p>
+<p>The <code>__str__</code> method should return a formatted string — look at the expected output to see what format <code>main()</code> produces when it prints each character.</p>
+<p><strong>2. <code>parse_characters(records)</code></strong></p>
+<p>Each record in <code>CHARACTER_RECORDS</code> is a tuple where the first few elements are fixed, the last element is fixed, and the middle contains a variable number of skill names. Look at the data to see this pattern.</p>
+<p>You need to separate the fixed parts from the variable-length middle. This is the <code>first, *middle, last</code> extended unpacking pattern from the Week 5 demo. Use the unpacked values to create <code>Character</code> instances and return them in a list.</p>
+<p><strong>3. <code>parse_loot_drops(drops)</code></strong></p>
+<p>Each tuple in <code>LOOT_DROPS</code> has fixed elements at the beginning followed by a variable number of tags. Look at the data to see how the tuples vary in length.</p>
+<p>This is a different unpacking pattern than function 2 — the variable-length portion is at the end. Review the extended unpacking patterns from the Week 5 demo. Return a list of dictionaries — look at <code>display_loot()</code> to see the expected keys.</p>
+<p><strong>4. <code>find_heavy_items(weights, limit)</code></strong></p>
+<p>Loop through the <code>weights</code> dictionary and find items that exceed the <code>limit</code>. For each heavy item, compute how much it exceeds the limit by and include that in the result.</p>
+<p>Use the walrus operator (<code>:=</code>) to compute the excess and check whether it’s greater than zero in a single expression. Review the walrus operator section of the Week 5 demo, and pay attention to where the parentheses go.</p>
+<p>Look at <code>display_heavy_items()</code> to see what the display function expects.</p>
+<p><strong>5. <code>combine_inventories(inv_a, inv_b)</code></strong></p>
+<p>Return a new list that combines both inventories. The key constraint is visible in the expected output: <code>main()</code> prints Aldric’s inventory <em>after</em> combining and expects it to be unchanged. Chapter 11 explains how <code>+=</code> and <code>+</code> behave differently when applied to mutable objects like lists.</p>
+</section>
+<section id="your-task" class="level3">
+<h3 class="anchored" data-anchor-id="your-task">Your Task</h3>
+<ol type="1">
+<li>Download the program using the link above</li>
+<li>Rename the file to include your last name (e.g., <code>smith-realm-of-pytha.py</code>)</li>
+<li>Run the program to see the current output with the placeholder functions</li>
+<li>Complete each of the five functions described above</li>
+<li>Run the completed program and verify your output matches the expected output at the end of this document</li>
+</ol>
+</section>
+<section id="how-to-approach-this" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-approach-this">How to Approach This</h3>
+<ul>
+<li><strong>Start with the class.</strong> Functions 2 and 3 depend on it, and you’ll be able to test Section 1 immediately.</li>
+<li><strong>Read the display functions.</strong> They show you exactly what attribute names and dictionary keys your code needs to produce.</li>
+<li><strong>Read the data.</strong> Look at <code>CHARACTER_RECORDS</code> and <code>LOOT_DROPS</code> to see the tuple structures your unpacking needs to handle.</li>
+<li><strong>Test after each function.</strong> Run the program after completing each function to see your progress.</li>
+</ul>
+</section>
+</section>
+<section id="part-3-video-explanation" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-video-explanation">Part 3: Video Explanation</h2>
+<p>Record a video explaining your code and submit it via Kaltura.</p>
+<section id="video-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="video-requirements">Video Requirements</h3>
+<ul>
+<li>Clear video and audio quality</li>
+<li>Introduce yourself, the assignment, and course at the beginning</li>
+</ul>
+</section>
+<section id="what-to-include" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-include">What to Include</h3>
+<ol type="1">
+<li><p><strong>Program demonstration</strong> — run your completed program and compare the output to the <strong>Expected Output</strong> reference at the end of this document. Verbally confirm that each section produces the correct results.</p></li>
+<li><p><strong>Code walkthrough</strong> — walk through the functions and class you wrote. Explain how your code works and why you implemented it the way you did.</p></li>
+<li><p><strong>Lessons Learned (required)</strong> — at the end of your video, discuss:</p>
+<ul>
+<li>Which function was the hardest to write and why</li>
+<li>What you learned about Python’s assignment features from implementing them</li>
+<li>How extended unpacking or the walrus operator could be useful in future projects</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="d2l-submission-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="d2l-submission-checklist">D2L Submission Checklist</h2>
+<section id="d2l-quiz" class="level3">
+<h3 class="anchored" data-anchor-id="d2l-quiz">D2L Quiz</h3>
+<ul>
+<li>Complete the <strong>Week 6 Quiz</strong> (15 questions, see handout)</li>
+</ul>
+</section>
+<section id="dropbox-submission" class="level3">
+<h3 class="anchored" data-anchor-id="dropbox-submission">Dropbox Submission</h3>
+<p>Upload the following files to the <strong>Week 6 Dropbox</strong>:</p>
+<ol type="1">
+<li><strong>Completed Python file</strong>: <code>lastname-realm-of-pytha.py</code> — Change <code>lastname</code> to your last name. Not doing so will result in the assignment not being graded.</li>
+</ol>
+</section>
+<section id="video-submission" class="level3">
+<h3 class="anchored" data-anchor-id="video-submission">Video Submission</h3>
+<ul>
+<li>Upload your video to <strong>Kaltura Mediaspace</strong></li>
+<li>Name your video: <code>lastname_Week6_CodeCompletion</code></li>
+<li>Link to the Kaltura video in the Assignment Dropbox</li>
+</ul>
+<p><strong>Submission location:</strong> All items submitted in D2L (Week 6 Dropbox + Quiz).</p>
+</section>
+</section>
+<section id="expected-output-reference" class="level2">
+<h2 class="anchored" data-anchor-id="expected-output-reference">Expected Output Reference</h2>
+<p>When all 5 functions are completed correctly, your program should produce output like this:</p>
+<pre class="text"><code>==========================================================
+         Realm of Pytha — Party Management Module         
+==========================================================
+
+[1] ASSEMBLING THE PARTY
+----------------------------------------------------------
+  Recruited 5 characters.
+
+  Name        Class       Level   Health    Skills
+  ------------------------------------------------------------
+  Aldric      Warrior     12      340       Slash, Shield Bash, War Cry
+  Lyra        Mage        10      180       Fireball, Ice Shard, Teleport, Mana Shield
+  Finn        Rogue       8       210       Backstab, Stealth
+  Sera        Cleric      11      250       Heal, Smite, Resurrect
+  Kael        Ranger      9       220       Arrow Shot, Trap, Eagle Eye, Camouflage, Volley
+
+  Aldric (Level 12 Warrior) — 340 HP
+  Lyra (Level 10 Mage) — 180 HP
+  Finn (Level 8 Rogue) — 210 HP
+  Sera (Level 11 Cleric) — 250 HP
+  Kael (Level 9 Ranger) — 220 HP
+
+[2] SORTING LOOT DROPS
+----------------------------------------------------------
+  Found 6 items.
+
+  Item                Rarity        Value     Tags
+  --------------------------------------------------------
+  Shadow Dagger       Rare          450       Enchanted, Lifesteal
+  Iron Helm           Common        80        (none)
+  Phoenix Staff       Legendary     1200      Fire Damage, Self-Repair, Soulbound
+  Leather Boots       Common        45        (none)
+  Emerald Amulet      Rare          600       Poison Resist
+  Obsidian Shield     Epic          870       Thorns
+
+[3] CHECKING ENCUMBRANCE
+----------------------------------------------------------
+  Weight limit: 5.0 lbs
+
+  Item                Weight      Excess
+  ----------------------------------------
+  Iron Helm           8.5         3.5
+  Phoenix Staff       6.1         1.1
+  Obsidian Shield     14.7        9.7
+  Iron Sword          7.3         2.3
+
+[4] COMBINING PARTY INVENTORY
+----------------------------------------------------------
+  Aldric's inventory before combining:
+  Aldric:
+    1. Iron Sword
+    2. Health Potion
+    3. Iron Helm
+    4. Travel Rations
+
+  Lyra's inventory before combining:
+  Lyra:
+    1. Phoenix Staff
+    2. Mana Potion
+    3. Emerald Amulet
+
+  Combined party inventory:
+    1. Iron Sword
+    2. Health Potion
+    3. Iron Helm
+    4. Travel Rations
+    5. Phoenix Staff
+    6. Mana Potion
+    7. Emerald Amulet
+
+  Aldric's inventory after combining:
+  Aldric:
+    1. Iron Sword
+    2. Health Potion
+    3. Iron Helm
+    4. Travel Rations
+
+==========================================================
+PARTY MANAGEMENT COMPLETE
+==========================================================</code></pre>
 
 
 </section>
@@ -315,6 +711,19 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
