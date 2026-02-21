@@ -1,0 +1,953 @@
+---
+title: "Week 5 Demo"
+subtitle: "Chapters 10–11: Python Statements and Assignment Features"
+format:
+  html:
+    toc: true
+    code-fold: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Introduction
+
+CMSC 1203 introduced Python's core syntax: variables, conditionals, loops, functions, and data structures. You learned to write correct Python code by following rules about indentation, colons, and assignment. Chapters 10–11 of Learning Python build on that foundation by explaining *why* Python works the way it does and introducing assignment features that go beyond what Gaddis covered.
+
+This unit shifts focus to **Python's design decisions**. The goal is to understand how Python organizes code internally, why the language uses indentation instead of braces, and what distinguishes a statement from an expression. These concepts explain behavior that may have seemed arbitrary in CMSC 1203 and prepare you for more advanced Python features.
+
+After completing these examples, you should be able to:
+
+* describe Python's program hierarchy (programs, modules, statements, expressions, objects) and use introspection to observe it
+* explain the difference between statements and expressions, and identify where each can appear in code
+* explain why Python uses indentation to define blocks rather than braces or keywords
+* use extended sequence unpacking (`*`) to capture variable-length portions of sequences
+* use named assignment expressions (`:=`) to assign and use a value in a single expression
+* use the `print()` function's advanced parameters (`sep`, `end`, `file`, `flush`) to control output formatting
+
+The examples in this demo are organized into four parts. Part 1 establishes the conceptual foundation that explains Python's structure. Parts 2–4 introduce specific syntax features that build on that foundation.
+
+
+## Part 1: Python's Building Blocks
+
+Python code is organized into a hierarchy of components. Understanding this hierarchy helps you predict how code behaves and debug problems when they occur. It also explains why certain syntax rules exist and why some code works in certain places but not others.
+
+The hierarchy has four levels:
+
+1. **Programs** are composed of modules
+2. **Modules** contain statements
+3. **Statements** contain expressions
+4. **Expressions** create and process objects
+
+At the bottom of this hierarchy are **objects**—the actual values your program works with (integers, strings, lists, dictionaries, etc.). Everything in Python is an object, and every piece of code you write either creates objects, processes objects, or both.
+
+This part demonstrates each level of the hierarchy using Python's introspection capabilities, then examines the critical distinction between statements and expressions.
+
+
+### 1.1 The Program Hierarchy
+
+A Python program consists of one or more modules. A module is simply a `.py` file containing Python code. When you write a script or import a library, you are working with modules.
+
+#### Example 1: Modules are objects
+
+Python treats modules as objects that can be inspected. This example shows that an imported module has a type and contains names defined by statements in that module.
+
+```{python}
+import math
+
+print("type(math) =", type(math))
+print()
+print("First 10 names in math module:")
+print(dir(math)[:10])
+```
+
+Explanation:
+
+1. `import math` loads the `math` module and makes it available under the name `math`. The `import` statement is how Python brings module objects into your program.
+2. `print("type(math) =", type(math))` displays the type of the `math` object. The output `<class 'module'>` confirms that modules are objects with their own type.
+3. `print(dir(math)[:10])` displays the first 10 names defined in the `math` module. The `dir()` function returns a list of names (functions, constants, etc.) that statements in the module created.
+
+The key insight is that a module is an object containing other objects. The statements inside `math.py` (assignment statements, function definitions, etc.) created the names you see in `dir(math)`.
+
+
+#### Example 2: Tracing the hierarchy in your own code
+
+Every line of code you write fits somewhere in the hierarchy. This example traces a single line through all four levels.
+
+```{python}
+x = 3 + 4
+
+print("x =", x)
+print("type(x) =", type(x))
+print("id(x) =", id(x))
+```
+
+Explanation:
+
+1. `x = 3 + 4` is a **statement** (specifically, an assignment statement). It performs an action: binding the name `x` to a value.
+2. The right side, `3 + 4`, is an **expression**. It produces a value by combining two objects using the `+` operator.
+3. The integers `3` and `4` are **objects**. The expression evaluates to produce another object: the integer `7`.
+4. `print("x =", x)` displays the value that `x` refers to: `7`.
+5. `print("type(x) =", type(x))` displays `<class 'int'>`, confirming that `x` refers to an integer object.
+6. `print("id(x) =", id(x))` displays the object's unique identity—its address in memory. This confirms that `x` refers to a specific object, not just an abstract value.
+
+One line of code involves all four levels: the assignment is a statement, it contains an expression (`3 + 4`), and that expression creates and processes objects.
+
+
+#### Example 3: Expressions evaluate to objects
+
+Expressions can appear anywhere Python expects a value. This example shows several expressions and confirms that each evaluates to an object.
+
+```{python}
+print("3 + 4 evaluates to:", 3 + 4)
+print("type(3 + 4) =", type(3 + 4))
+print()
+
+print("len('hello') evaluates to:", len("hello"))
+print("type(len('hello')) =", type(len("hello")))
+print()
+
+print("'hello'.upper() evaluates to:", "hello".upper())
+print("type('hello'.upper()) =", type("hello".upper()))
+```
+
+Explanation:
+
+1. `3 + 4` is an arithmetic expression that evaluates to the integer `7`.
+2. `len("hello")` is a function call expression that evaluates to the integer `5`.
+3. `"hello".upper()` is a method call expression that evaluates to the string `"HELLO"`.
+
+Each expression produces an object. The `type()` calls confirm this by showing the class of each resulting object. Because expressions produce objects, they can be used as arguments to functions, combined with other expressions, or assigned to names.
+
+
+### 1.2 Statements vs Expressions
+
+The distinction between statements and expressions is fundamental to understanding Python syntax. This distinction determines where certain code can and cannot appear.
+
+**Expressions** produce values. An expression evaluates to an object that can be used, stored, or passed to a function.
+
+**Statements** perform actions. A statement does something (assigns a name, imports a module, defines a function) but does not produce a value that can be used elsewhere.
+
+This difference has practical consequences: expressions can appear anywhere a value is expected, but statements cannot.
+
+
+#### Example 4: Expressions can appear where values are expected
+
+Expressions are flexible because they produce values. This example shows expressions used in several contexts.
+
+```{python}
+numbers = [1, 2, 3, 4, 5]
+
+total = sum(numbers)
+print("sum(numbers) =", total)
+
+average = sum(numbers) / len(numbers)
+print("average =", average)
+
+is_positive = total > 0
+print("is_positive =", is_positive)
+
+doubled = [x * 2 for x in numbers]
+print("doubled =", doubled)
+```
+
+Explanation:
+
+1. `sum(numbers)` is an expression that evaluates to `15`. It appears on the right side of an assignment.
+2. `sum(numbers) / len(numbers)` combines two function call expressions with the `/` operator. The entire thing is an expression that evaluates to `3.0`.
+3. `total > 0` is a comparison expression that evaluates to `True` or `False`.
+4. `x * 2` is an expression inside a list comprehension. It evaluates once for each element.
+
+In each case, the expression produces a value that gets used: assigned to a name, passed to `print()`, or collected into a list.
+
+
+#### Example 5: Statements cannot appear where values are expected
+
+Statements perform actions but do not produce values. This example shows what happens when you try to use a statement where an expression is required.
+
+```{python}
+# This code demonstrates the error - do not run it
+# Instead, observe what kind of error Python reports
+
+# Trying to use assignment (a statement) as an argument:
+# print(x = 10)
+
+# The error message would be:
+# TypeError: 'x' is an invalid keyword argument for print()
+
+# Python interprets x=10 as a keyword argument, not assignment.
+# If we try to use assignment in a context where it clearly 
+# can't be a keyword argument, we get a syntax error.
+
+# For example, this would cause a syntax error:
+# result = (x = 10) + 5
+# SyntaxError: invalid syntax
+```
+
+Explanation:
+
+1. Assignment (`x = 10`) is a statement. It binds the name `x` to the value `10`, but it does not produce a value itself.
+2. When you write `print(x = 10)`, Python does not see an assignment statement. It interprets `x=10` as a keyword argument (because `print()` accepts keyword arguments like `sep=` and `end=`).
+3. In contexts where keyword argument interpretation is not possible, using `=` where an expression is expected causes a `SyntaxError`.
+
+The key insight is that statements and expressions serve different purposes. Statements are for performing actions; expressions are for producing values. Python's syntax keeps these roles separate.
+
+
+#### Example 6: Why the distinction matters
+
+Understanding statements vs expressions helps you read Python code and explains why certain patterns exist. This example shows a common situation where you might want to assign and use a value in the same place.
+
+```{python}
+# Common pattern: check a condition and use the result
+
+data = [1, 2, 3, 4, 5]
+
+# Approach 1: Compute twice (wasteful if computation is expensive)
+if len(data) > 0:
+    print("Length is:", len(data))
+
+# Approach 2: Compute once, store, then check
+length = len(data)
+if length > 0:
+    print("Length is:", length)
+
+# What if you could assign AND check in one place?
+# This is exactly what the walrus operator (:=) provides.
+# We will cover := in Part 3.
+```
+
+Explanation:
+
+1. In Approach 1, `len(data)` is called twice: once in the condition and once in the body. For a simple operation like `len()`, this is fine. For expensive operations, it wastes time.
+2. In Approach 2, the result is stored in `length` first, then used twice. This requires an extra line and an extra name.
+3. The walrus operator (`:=`) solves this by making assignment an expression—you can assign a value and use it in the same place. Part 3 covers this in detail.
+
+The statement/expression distinction is why the walrus operator was added to Python 3.8. It fills a gap that the traditional assignment statement cannot fill.
+
+
+### 1.3 Why Python Uses Indentation
+
+You already write indented Python code because you learned to do so in CMSC 1203. This section explains *why* Python uses indentation as syntax, which helps you understand the language's design and appreciate what it prevents.
+
+
+#### The design decision
+
+Many programming languages use symbols to mark where blocks of code begin and end. Some languages use curly braces `{ }`. Others use keywords like `BEGIN` and `END`. In those languages, indentation is optional—it helps humans read the code, but the computer ignores it and uses only the symbols.
+
+This creates a potential problem: the code's appearance can disagree with its meaning. A programmer might indent code to show structure, but if the braces are wrong, the computer sees different structure. The code *looks* like it does one thing but *does* another.
+
+Python made a different choice: **indentation is the syntax**. The whitespace you use to organize your code is how Python determines block structure. There are no braces, no `BEGIN`/`END`—just indentation.
+
+This means your code's appearance always matches its meaning. What you see is what Python sees.
+
+
+#### What Python adds: the colon
+
+Python's compound statements (statements that contain other statements) follow a consistent pattern:
+
+```
+header line:
+    indented block
+    more statements in block
+```
+
+The colon (`:`) signals that an indented block follows. Every compound statement you know uses this pattern.
+
+
+#### Example 7: The compound statement pattern
+
+This example shows the consistent structure across different compound statements.
+
+```{python}
+# if statement
+x = 10
+if x > 0:
+    print("x is positive")
+    print("this is still in the if block")
+print("this is outside the if block")
+
+print()
+
+# for loop
+for i in range(3):
+    print("i =", i)
+    print("this is still in the loop")
+print("this is outside the loop")
+
+print()
+
+# function definition
+def greet(name):
+    message = "Hello, " + name
+    print(message)
+
+greet("Alice")
+```
+
+Explanation:
+
+1. The `if` statement header ends with a colon. The two `print()` calls are indented, so they belong to the `if` block. The third `print()` is not indented, so it runs regardless of the condition.
+2. The `for` loop follows the same pattern: header with colon, indented body.
+3. The function definition also follows this pattern: `def greet(name):` is the header, and the indented lines are the function body.
+
+Once you recognize this pattern, every compound statement in Python follows the same structure. When you learn new statements like `try/except`, `with`, or `match/case`, they all use header-colon-indent.
+
+
+#### Example 8: Indentation defines the block
+
+The level of indentation determines which statements belong to which block. This example shows how changing indentation changes program behavior.
+
+```{python}
+# Version 1: both prints are inside the if
+print("Version 1:")
+x = 5
+if x > 0:
+    print("  x is positive")
+    print("  done checking x")
+print("  program continues")
+
+print()
+
+# Version 2: second print is outside the if
+print("Version 2:")
+x = -5
+if x > 0:
+    print("  x is positive")
+print("  done checking x")  # This runs regardless of x
+print("  program continues")
+```
+
+Explanation:
+
+1. In Version 1, both "x is positive" and "done checking x" are indented under the `if`. They only run when `x > 0`.
+2. In Version 2, "done checking x" is not indented under the `if`. It runs regardless of the condition.
+3. The behavior difference comes entirely from indentation. There are no braces to get wrong—the visual structure *is* the logical structure.
+
+
+#### Example 9: Python enforces consistent indentation
+
+If statements within the same block have inconsistent indentation, Python raises an error. This prevents the appearance/meaning mismatch that can occur in other languages.
+
+```{python}
+# This code demonstrates the error structure
+# The actual error would prevent execution
+
+# Correct: consistent indentation
+if True:
+    a = 1
+    b = 2  # Same indentation as previous line
+
+# The following would cause IndentationError:
+# if True:
+#     a = 1
+#    b = 2  # IndentationError: unindent does not match
+
+print("Python requires consistent indentation within a block")
+```
+
+Explanation:
+
+1. Within a single block, all statements must have the same indentation.
+2. If indentation is inconsistent, Python raises `IndentationError` before the code runs.
+3. This enforcement ensures that the visual structure of your code always matches Python's interpretation.
+
+The benefit is that you cannot accidentally have code that looks structured but is not. The indentation you write for readability is the same indentation Python uses for execution.
+
+
+## Part 2: Extended Sequence Unpacking
+
+In CMSC 1203, you learned basic sequence unpacking: assigning multiple values from a sequence to multiple names in a single statement.
+
+```{python}
+point = (3, 4)
+x, y = point  # x = 3, y = 4
+```
+
+This works when you know exactly how many elements the sequence contains. But what if the sequence has a variable number of elements, or you only care about certain positions?
+
+Python's extended unpacking syntax uses `*` to capture "the rest" of a sequence into a list. This feature was added in Python 3 and is not covered in Gaddis.
+
+
+### 2.1 The * Operator in Unpacking
+
+The `*` operator, when used before a name in an unpacking assignment, collects any "leftover" elements into a list.
+
+
+#### Example 10: First and rest pattern
+
+A common need is to separate the first element from everything else. The `*` operator makes this simple.
+
+```{python}
+numbers = [1, 2, 3, 4, 5]
+
+first, *rest = numbers
+
+print("numbers =", numbers)
+print("first =", first)
+print("rest =", rest)
+print("type(rest) =", type(rest))
+```
+
+Explanation:
+
+1. `first, *rest = numbers` unpacks the list. The name `first` receives the first element (`1`).
+2. The `*rest` collects all remaining elements into a new list: `[2, 3, 4, 5]`.
+3. The result of `*` is always a list, even if it collects zero or one element.
+
+This pattern is useful when you need to process the first item differently from the rest.
+
+
+#### Example 11: Rest and last pattern
+
+You can also place `*` at the beginning to collect everything except the last element.
+
+```{python}
+numbers = [1, 2, 3, 4, 5]
+
+*init, last = numbers
+
+print("numbers =", numbers)
+print("init =", init)
+print("last =", last)
+```
+
+Explanation:
+
+1. `*init, last = numbers` unpacks the list. The name `last` receives the final element (`5`).
+2. The `*init` collects all preceding elements into a list: `[1, 2, 3, 4]`.
+
+This pattern is useful when the last element has special meaning, such as a total or summary value.
+
+
+#### Example 12: First, middle, and last pattern
+
+You can use `*` in the middle to capture everything between the first and last elements.
+
+```{python}
+numbers = [1, 2, 3, 4, 5]
+
+first, *middle, last = numbers
+
+print("numbers =", numbers)
+print("first =", first)
+print("middle =", middle)
+print("last =", last)
+```
+
+Explanation:
+
+1. `first, *middle, last = numbers` assigns `first = 1`, `last = 5`, and `middle = [2, 3, 4]`.
+2. The `*middle` collects whatever is left after assigning the first and last positions.
+
+This pattern is useful when sequences have a header, body, and footer structure.
+
+
+#### Example 13: The starred name can be empty
+
+If the sequence has exactly enough elements for the non-starred names, the starred name receives an empty list.
+
+```{python}
+pair = [1, 2]
+
+first, *middle, last = pair
+
+print("pair =", pair)
+print("first =", first)
+print("middle =", middle)
+print("last =", last)
+```
+
+Explanation:
+
+1. `pair` has exactly two elements. `first` gets `1`, `last` gets `2`.
+2. `*middle` collects whatever is left: nothing. It becomes an empty list `[]`.
+
+This is not an error. The `*` name simply collects zero elements when none remain.
+
+
+### 2.2 Practical Applications
+
+Extended unpacking is particularly useful in loops that process records with variable-length data.
+
+
+#### Example 14: Processing records with variable scores
+
+Suppose you have student records where each student has a name, a variable number of homework scores, and a final exam score. Extended unpacking handles this cleanly.
+
+```{python}
+# Each record: (name, hw1, hw2, ..., final_exam)
+records = [
+    ("Alice", 85, 90, 88, 92),
+    ("Bob", 78, 82, 95),
+    ("Carol", 90, 85, 88, 91, 87),
+]
+
+print("Student grade summaries:")
+print()
+
+for record in records:
+    name, *homework, final = record
+    hw_avg = sum(homework) / len(homework) if homework else 0
+    print(f"{name}:")
+    print(f"  Homework scores: {homework}")
+    print(f"  Homework average: {hw_avg:.1f}")
+    print(f"  Final exam: {final}")
+    print()
+```
+
+Explanation:
+
+1. Each record has a different number of homework scores, but all have a name at the start and a final exam at the end.
+2. `name, *homework, final = record` handles any record length. The `*homework` collects all middle elements.
+3. The loop processes each student uniformly despite the varying data lengths.
+
+
+#### Example 15: Splitting head and tail for recursive thinking
+
+Extended unpacking supports patterns common in functional programming and recursive algorithms.
+
+```{python}
+def print_elements(items, depth=0):
+    """Print each element with increasing indentation."""
+    if not items:
+        return
+    
+    first, *rest = items
+    indent = "  " * depth
+    print(f"{indent}{first}")
+    print_elements(rest, depth + 1)
+
+print("Recursive-style processing:")
+print_elements(["a", "b", "c", "d"])
+```
+
+Explanation:
+
+1. `first, *rest = items` separates the first element from the rest.
+2. The function processes `first`, then calls itself with `rest`.
+3. This "head and tail" pattern is natural for certain algorithms and data structures.
+
+
+## Part 3: Named Assignment Expressions (Walrus Operator)
+
+In Part 1, you learned that assignment (`=`) is a statement, not an expression. Statements perform actions but do not produce values. This means you cannot assign a value and use it in the same place.
+
+Python 3.8 introduced the **walrus operator** (`:=`), which creates a **named assignment expression**. Unlike regular assignment, `:=` both assigns a value to a name AND returns that value so it can be used immediately.
+
+The operator is called the "walrus operator" because `:=` resembles a walrus's eyes and tusks when viewed sideways.
+
+
+### 3.1 Basic Syntax and Purpose
+
+The walrus operator allows you to assign a value to a name within an expression. The syntax is:
+
+```
+(name := expression)
+```
+
+The parentheses are often required due to operator precedence, and using them consistently is good practice.
+
+
+#### Example 16: Assign and use in one expression
+
+This example shows the basic behavior of `:=`.
+
+```{python}
+# Without walrus: assign first, then use
+length = len("hello")
+print("Length is:", length)
+
+print()
+
+# With walrus: assign and use in one expression
+print("Length is:", (n := len("hello")))
+print("n is still available:", n)
+```
+
+Explanation:
+
+1. The traditional approach requires two separate steps: assign, then use.
+2. With `:=`, the assignment happens inside the `print()` call. The expression `(n := len("hello"))` assigns `5` to `n` AND evaluates to `5`.
+3. The name `n` remains available after the expression, just like a regular assignment.
+
+
+### 3.2 Avoiding Redundant Computation
+
+A primary use of `:=` is to compute a value once, check it, and use it—without calling the function twice or adding extra lines.
+
+
+#### Example 17: Compute once, use twice
+
+```{python}
+data = [10, 20, 30, 40, 50]
+
+# Without walrus: call len() twice
+if len(data) > 3:
+    print(f"Data has {len(data)} elements (more than 3)")
+
+print()
+
+# With walrus: call len() once
+if (n := len(data)) > 3:
+    print(f"Data has {n} elements (more than 3)")
+```
+
+Explanation:
+
+1. Without `:=`, the code calls `len(data)` twice. For `len()`, this is not expensive, but for slow operations it wastes time.
+2. With `:=`, the length is computed once, stored in `n`, and the value is immediately compared to `3`.
+3. Inside the `if` body, `n` is available without recomputing.
+
+
+#### Example 18: Filtering with an expensive operation
+
+When processing data, you often need to transform a value, check if the result is valid, and keep the result. The walrus operator handles this cleanly.
+
+```{python}
+def slow_transform(x):
+    """Simulate an expensive computation."""
+    print(f"  (computing transform of {x})")
+    return x * 2 if x > 0 else None
+
+data = [5, -3, 10, 0, 7, -1]
+
+print("Without walrus (wasteful - calls function twice):")
+results_wasteful = []
+for x in data:
+    if slow_transform(x) is not None:
+        results_wasteful.append(slow_transform(x))
+print("Results:", results_wasteful)
+
+print()
+
+print("With walrus (efficient - calls function once):")
+results_efficient = []
+for x in data:
+    if (result := slow_transform(x)) is not None:
+        results_efficient.append(result)
+print("Results:", results_efficient)
+```
+
+Explanation:
+
+1. Without `:=`, `slow_transform(x)` is called twice for each valid element: once to check, once to use.
+2. With `:=`, the result is computed once, stored in `result`, checked, and used if valid.
+3. The "computing transform" messages show how many times the function is actually called.
+
+
+### 3.3 While Loop Patterns
+
+The walrus operator is particularly useful in `while` loops that need to read input and check a condition.
+
+
+#### Example 19: Input validation loop
+
+```{python}
+# Simulated input for demonstration (would use input() in real code)
+simulated_inputs = iter(["", "abc", "42", "done"])
+
+def get_input(prompt):
+    """Simulate user input from a predefined sequence."""
+    value = next(simulated_inputs)
+    print(f"{prompt}{value}")
+    return value
+
+# Without walrus: awkward structure
+print("Without walrus:")
+response = get_input("Enter a number (or 'done'): ")
+while response != "done":
+    if response.isdigit():
+        print(f"  You entered the number {response}")
+    else:
+        print(f"  '{response}' is not a valid number")
+    response = get_input("Enter a number (or 'done'): ")
+print()
+
+# Reset simulated input
+simulated_inputs = iter(["", "abc", "42", "done"])
+
+# With walrus: cleaner structure
+print("With walrus:")
+while (response := get_input("Enter a number (or 'done'): ")) != "done":
+    if response.isdigit():
+        print(f"  You entered the number {response}")
+    else:
+        print(f"  '{response}' is not a valid number")
+```
+
+Explanation:
+
+1. Without `:=`, the input call appears twice: once before the loop and once at the end of each iteration. This pattern is error-prone if you change one call but not the other.
+2. With `:=`, the input call appears once in the `while` condition. It assigns the result to `response` and checks it in the same expression.
+3. The loop body can use `response` directly.
+
+
+### 3.4 List Comprehension Filtering
+
+The walrus operator allows efficient filtering in comprehensions when the filter condition involves a computation you also need in the result.
+
+
+#### Example 20: Transform and filter in one pass
+
+```{python}
+def process(x):
+    """Return transformed value, or None if invalid."""
+    return x.strip().upper() if x.strip() else None
+
+items = ["  hello  ", "", "  world  ", "   ", "python"]
+
+# Without walrus: process each item twice
+result_wasteful = [process(item) for item in items if process(item) is not None]
+print("Without walrus:", result_wasteful)
+
+# With walrus: process each item once
+result_efficient = [result for item in items if (result := process(item)) is not None]
+print("With walrus:", result_efficient)
+```
+
+Explanation:
+
+1. Without `:=`, `process(item)` is called twice for each item that passes the filter: once in the `if` clause and once for the result.
+2. With `:=`, `process(item)` is called once. The result is assigned to `result` in the `if` clause and used directly as the output.
+3. For expensive operations or large datasets, this efficiency matters.
+
+
+### 3.5 The Parentheses Requirement
+
+The walrus operator has lower precedence than most operators, so parentheses are often required to get the intended behavior.
+
+
+#### Example 21: Parentheses matter
+
+```{python}
+# With parentheses: assignment happens first, then comparison
+if (x := len("hello")) > 3:
+    print(f"Length {x} is greater than 3")
+
+# Safe pattern: always use parentheses around :=
+value = (y := 10) + 5
+print(f"y = {y}, value = {value}")
+
+# What the parentheses prevent:
+# Without parentheses, := binds very loosely.
+# The expression: x := len("hello") > 3
+# would be parsed as: x := (len("hello") > 3)
+# So x would be True (a boolean), not 5 (the length).
+```
+
+Explanation:
+
+1. `(x := len("hello"))` assigns `5` to `x` AND evaluates to `5`. Then `5 > 3` is evaluated.
+2. `(y := 10) + 5` assigns `10` to `y` AND evaluates to `10`. Then `10 + 5` produces `15`.
+3. Without parentheses, `:=` has lower precedence than most operators. The expression `x := len("hello") > 3` would assign the boolean result (`True`) to `x`, not the length.
+4. The safe practice is to always wrap `:=` expressions in parentheses when they appear within larger expressions.
+
+
+## Part 4: Print Function Advanced Features
+
+The `print()` function was introduced in CMSC 1203 for basic output. This section covers its optional parameters that control formatting, which were likely not emphasized in Gaddis.
+
+The full signature of `print()` is:
+
+```
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
+```
+
+The four keyword parameters control how output is formatted and where it goes.
+
+
+### 4.1 The sep Parameter
+
+By default, `print()` separates multiple arguments with a single space. The `sep` parameter lets you change this separator.
+
+
+#### Example 22: Custom separators
+
+```{python}
+# Default behavior: space separator
+print("apple", "banana", "cherry")
+
+# Custom separator: comma and space
+print("apple", "banana", "cherry", sep=", ")
+
+# Custom separator: newline (each item on its own line)
+print("apple", "banana", "cherry", sep="\n")
+
+# Custom separator: nothing (items run together)
+print("apple", "banana", "cherry", sep="")
+
+# Practical use: creating a formatted list
+fruits = ["apple", "banana", "cherry"]
+print("Fruits:", *fruits, sep=" | ")
+```
+
+Explanation:
+
+1. The default `sep=' '` puts a space between each argument.
+2. `sep=", "` creates comma-separated output.
+3. `sep="\n"` puts each argument on a new line.
+4. `sep=""` joins arguments with no separator.
+5. The `*fruits` syntax unpacks the list into separate arguments, which `sep` then joins.
+
+
+### 4.2 The end Parameter
+
+By default, `print()` adds a newline (`\n`) after the output. The `end` parameter lets you change what appears at the end.
+
+
+#### Example 23: Controlling line endings
+
+```{python}
+# Default behavior: each print ends with newline
+print("Line 1")
+print("Line 2")
+print("Line 3")
+
+print()
+
+# Custom end: no newline (outputs run together on same line)
+print("A", end="")
+print("B", end="")
+print("C", end="")
+print()  # Now add a newline
+
+print()
+
+# Custom end: custom suffix
+print("Loading", end="...")
+print("Done!")
+
+print()
+
+# Practical use: progress indicator
+import time
+print("Processing: ", end="")
+for i in range(5):
+    print(f"{i+1}", end=" ")
+    # time.sleep(0.5)  # Uncomment to see the delay
+print("Complete!")
+```
+
+Explanation:
+
+1. The default `end='\n'` causes each `print()` to end with a newline.
+2. `end=""` suppresses the newline, so the next `print()` continues on the same line.
+3. `end="..."` adds a custom suffix instead of a newline.
+4. This is useful for progress indicators or building output incrementally.
+
+
+### 4.3 The file Parameter
+
+By default, `print()` writes to `sys.stdout` (standard output, which appears in your console). The `file` parameter lets you redirect output to any file-like object.
+
+
+#### Example 24: Printing to a file
+
+```{python}
+# Writing to a file using print()
+with open("output.txt", "w") as f:
+    print("Line 1 of output", file=f)
+    print("Line 2 of output", file=f)
+    print("Line 3 of output", file=f)
+
+# Verify by reading the file
+with open("output.txt", "r") as f:
+    content = f.read()
+
+print("File contents:")
+print(content)
+
+# Clean up
+import os
+os.remove("output.txt")
+```
+
+Explanation:
+
+1. `file=f` redirects `print()` output to the file object `f` instead of the screen.
+2. Each `print()` call writes a line to the file, including the default newline.
+3. This can be more convenient than using `f.write()` when you want automatic newlines and the ability to print multiple arguments.
+
+
+### 4.4 The flush Parameter
+
+Output is normally buffered, meaning Python may wait before actually writing to the destination. The `flush` parameter forces immediate output.
+
+
+#### Example 25: Forcing immediate output
+
+```{python}
+import sys
+
+# Normal buffered output (may not appear immediately in some contexts)
+print("Starting process...")
+
+# Flushed output (appears immediately)
+print("Starting process (flushed)...", flush=True)
+
+# Practical use: progress updates in long-running operations
+print("Working: ", end="", flush=True)
+for i in range(5):
+    print(".", end="", flush=True)
+    # time.sleep(0.5)  # Uncomment to see the effect
+print(" Done!")
+```
+
+Explanation:
+
+1. Buffering means output may be held temporarily for efficiency. This is usually fine, but progress indicators may not appear until the buffer is flushed.
+2. `flush=True` forces Python to send the output immediately.
+3. This is most useful when combining `end=""` (no newline) with real-time feedback.
+
+
+## Conclusion
+
+This demo introduced Python's structural concepts and several assignment features not covered in CMSC 1203.
+
+### What You've Learned
+
+**Python's Building Blocks (Part 1):**
+- Programs are organized as modules → statements → expressions → objects
+- You can use introspection (`type()`, `dir()`, `id()`) to observe this hierarchy
+- Statements perform actions; expressions produce values
+- Python uses indentation as syntax, ensuring code appearance matches behavior
+
+**Extended Sequence Unpacking (Part 2):**
+- The `*` operator collects "remaining" elements into a list
+- Patterns: first/rest (`first, *rest`), rest/last (`*init, last`), first/middle/last (`first, *middle, last`)
+- Useful for processing variable-length records and recursive patterns
+
+**Named Assignment Expressions (Part 3):**
+- The walrus operator (`:=`) makes assignment an expression
+- Enables assigning and using a value in one place
+- Common uses: avoiding redundant computation, while loop conditions, comprehension filtering
+- Always use parentheses around `:=` in larger expressions
+
+**Print Function Features (Part 4):**
+- `sep` controls the separator between arguments
+- `end` controls what appears after all arguments (default is newline)
+- `file` redirects output to a file or other destination
+- `flush` forces immediate output
+
+### What the Textbook Covers in More Depth
+
+Chapters 10–11 of Learning Python provide additional detail on these topics:
+
+**Statement Syntax:**
+- Complete rules for line continuation and multi-line statements
+- All compound statement forms in detail
+- Special cases and edge cases for indentation
+
+**Assignment Forms:**
+- Augmented assignment (`+=`, `-=`, etc.) and how it differs from regular assignment
+- Multi-target assignment and its behavior with mutable objects
+- Sequence assignment variations beyond what this demo covered
+
+**Expression Statements:**
+- When expressions can stand alone as statements
+- The role of expression statements in Python's execution model
+
+**Print Function:**
+- The relationship between `print()` and `sys.stdout`
+- Stream redirection patterns
+- Differences from Python 2's `print` statement (historical context)

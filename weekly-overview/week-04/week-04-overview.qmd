@@ -1,0 +1,73 @@
+---
+title: "Week 4 Guide"
+subtitle: "Chapters 8–9 Reflection and Debugging"
+format:
+  html:
+    toc: true
+---
+
+## Week 4 focus
+
+Week 4 is a **reflection and consolidation week**. There is no new reading this week. Instead, you will demonstrate your understanding of the Chapters 8–9 concepts by applying them to a practical debugging exercise.
+
+The goal is to move from *recognizing* these concepts in isolation to *identifying* them when they cause real bugs in working code. This is a critical skill — these bugs don't crash your program, they silently produce wrong results.
+
+## Concepts being reinforced
+
+This week's work draws on the following concepts from Chapters 8–9:
+
+### Aliasing and copying
+
+When you assign a list to a new variable (`b = a`), both names refer to the same object. Changes through one name affect the other. To create an independent copy, you must explicitly copy the list.
+
+### Nested structures and the `*` operator
+
+Using `*` to repeat a list containing mutable objects (like `[[0]] * 3`) creates multiple references to the *same* inner object, not independent copies. This causes unexpected behavior when you modify one "row."
+
+### Shallow copy vs deep copy
+
+A shallow copy (`copy.copy()`) creates a new outer object but shares nested objects with the original. A deep copy (`copy.deepcopy()`) recursively copies all nested objects, making them fully independent.
+
+### Mutable default arguments
+
+When a mutable object (like a list) is used as a default parameter value, that object is created *once* at function definition time and shared across all calls. This causes values to accumulate unexpectedly.
+
+### Identity vs equality
+
+The `is` operator tests whether two names refer to the *same object* (identity). The `==` operator tests whether two objects have the *same value* (equality). Using the wrong one produces incorrect comparisons.
+
+## Week 4 activities
+
+This week has three components:
+
+1. **D2L Quiz** — 15 multiple-choice questions testing your ability to predict buggy behavior and identify correct fixes. Use the quiz handout to work through the questions.
+
+2. **Debugging Exercise** — A provided Python program contains 5 bugs, each caused by one of the concepts above. You will find, explain, and fix each bug.
+
+3. **Video Explanation** — Record a walkthrough demonstrating your debugging process, showing the fixes working, and reflecting on what you learned.
+
+## Week 4 tasks
+
+Complete the following tasks during Week 4:
+
+1. **Download the assignment files**
+   - Download the Pet Shelter program and Quiz Handout from the Week 4 Assignments page.
+
+2. **Complete the D2L Quiz**
+   - Work through the 15 questions in the handout.
+   - Submit your answers (A, B, C, or D) in the D2L Quiz.
+
+3. **Debug the Pet Shelter program**
+   - Run the program and observe the incorrect output.
+   - Find the 5 bugs (one in each of the identified functions).
+   - Fix each bug using the appropriate Chapter 8–9 concept.
+   - Verify your fixes produce the expected output.
+
+4. **Record your video explanation**
+   - Demonstrate each bug and its fix.
+   - Compare your corrected output to the expected output.
+   - Discuss your lessons learned.
+
+5. **Submit your work**
+   - Upload your corrected Python file to the D2L Dropbox.
+   - Upload your video to Kaltura and link it in the Dropbox.

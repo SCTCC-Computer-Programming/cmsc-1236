@@ -1,0 +1,314 @@
+---
+title: "Week 4 Assignments"
+subtitle: "Chapters 8–9 Reflection and Debugging Exercise"
+format:
+  html:
+    toc: true
+---
+
+## Assignment Files
+
+- <a href="/assignments/week-04/lastname-pet-shelter.py" download>Download Pet Shelter Program (lastname-pet-shelter.py)</a>
+- <a href="/assignments/week-04/week-04-quiz-handout.pdf" download>Download Quiz Handout (PDF)</a>
+
+## Overview
+
+This week is a reflection and consolidation week. You will demonstrate your understanding of Chapters 8–9 concepts by:
+
+1. Completing a D2L quiz on debugging scenarios
+2. Finding and fixing bugs in a provided Python program
+3. Recording a video explanation of your debugging process
+
+## Part 1: D2L Quiz
+
+Complete the **Week 4 D2L Quiz** using the quiz handout.
+
+1. Download the **Quiz Handout (PDF)** using the link above
+2. Work through the 15 multiple-choice questions in the handout
+3. Submit your answers (A, B, C, or D) in the **D2L Quiz**
+
+The quiz tests your ability to:
+
+- Predict output when aliasing causes unexpected mutations
+- Recognize bugs caused by nested list construction with `*`
+- Distinguish shallow copy from deep copy behavior
+- Identify mutable default argument problems
+- Understand the difference between `is` and `==`
+
+## Part 2: Debugging Exercise
+
+### The Scenario
+
+You've been hired as a junior developer at **Sunshine Animal Shelter**. On your first day, several employees come to you with complaints about the shelter management program:
+
+**Maria (Event Coordinator):**
+> "I created a separate list for Saturday's adoption event and added a new dog named Charlie to it. But now Charlie is showing up on the main shelter roster too! I didn't add him there. The lists are supposed to be separate."
+
+**James (Feeding Staff):**
+> "I updated Wednesday's evening feeding to 10 portions for a special diet. But now EVERY day shows 10 portions in the evening! I only changed Wednesday!"
+
+**Dr. Patel (Veterinarian):**
+> "Before transferring Whiskers to a partner shelter, I made a backup of her profile. Then I added a transfer exam note to the backup. But somehow that note appeared on her original record too! The backup was supposed to be independent."
+
+**Sarah (Adoption Specialist):**
+> "I processed three adoptions today — Hoppy, Max, and Luna. But when I looked at the records, they all have each other's information mixed together! Hoppy's record shows Max's adopter name, and Luna's record has everyone's notes. Each adoption should have its own separate paperwork."
+
+**Tom (Database Admin):**
+> "We have two entries for a dog named Bella — same name, same breed, same age. The duplicate checker says they're different pets, but they're clearly the same dog entered twice. Why isn't it catching this?"
+
+Your supervisor says:
+> "The weird thing is, the program runs fine — no error messages. But the output is clearly wrong. These are all experienced employees; they know how the system should work. Can you figure out what's going on in the code?"
+
+### About the Program
+
+This program simulates a full day of shelter operations automatically — there's no user input or menu system. When you run it, it immediately executes all six sections and prints the results. This is by design, so you can focus on reading the output and finding bugs rather than navigating menus.
+
+The program is also longer than what you've written so far, and it uses a few Python features we haven't covered yet. **These features are only used in the display/helper functions — not in the buggy functions you need to fix.** You don't need to fully  understand them to complete this assignment, but here's what they do:
+
+| Code | What It Does |
+|------|--------------|
+| `enumerate(pets, 1)` | Loops through a list while also tracking a counter that starts at 1 (used for numbered lists) |
+| `f"{text:^50}"` | Centers text within 50 characters (used for headers) |
+| `f"{text:<12}"` | Left-aligns text within 12 characters (used for table columns) |
+
+**Focus on the five short functions where the bugs live** — each is only 2–5 lines of straightforward code using concepts from Chapters 8–9. The five functions you need to debug are:
+
+1. `copy_available_pets()`
+2. `create_feeding_schedule()`
+3. `backup_pet_profile()`
+4. `register_adoption()`
+5. `find_duplicate_profiles()`
+
+The rest of the program (display functions, sample data setup, the `Pet` class, `main()`) is scaffolding that just works.
+
+**Important:** Your fixes should only involve changing code *within* these five functions. Do not add new functions, delete existing functions, or modify the `main()` automation. Each bug can be fixed by changing 1–2 lines in its function.
+
+### Your Task
+
+The program contains **5 bugs** — one causing each employee's problem. Each bug relates to a concept from Chapters 8–9.
+
+1. Download the program using the link above
+2. Rename the file to include your last name (`smith-pet-shelter.py`)
+3. Run the program and observe the output
+4. Investigate each employee's complaint by finding the responsible function
+5. For each bug:
+   - Identify the function and line where the bug occurs
+   - Explain the concept being violated
+   - Fix the code
+6. Run the corrected program to verify you've resolved all five complaints
+
+### How to Find the Bugs
+
+- **Read the output carefully.** Compare what you see to each employee's complaint.
+- **Trace the code.** When you see unexpected output, find the function responsible and read it line by line.
+- **Think about Chapters 8–9.** Each bug involves one of these concepts: copying lists, creating nested lists, copying objects with nested data, function parameters, or comparing objects.
+
+## Part 3: Video Explanation
+
+Record a video explaining your debugging process and submit it via Kaltura.
+
+### Video Requirements
+
+- Clear video and audio quality
+- Introduce yourself, the assignment, and course at the beginning
+
+### What to Include
+
+For **each of the 5 bugs**, demonstrate:
+
+1. **The problem** — show the incorrect output and explain what's wrong
+2. **The bug location** — identify the function and the specific line
+3. **Why it's wrong** — explain the concept being violated (use terms from Chapters 8–9)
+4. **Your fix** — show the corrected code
+
+After fixing **all 5 bugs**, demonstrate:
+
+5. **Verification** — run your corrected program and compare the output to the **Expected Output** reference at the end of this document. Verbally confirm that each section now produces the correct results.
+
+### Lessons Learned (required)
+
+At the end of your video, discuss:
+
+- Which bug was the hardest to find and why
+- What surprised you about Python's behavior
+- How this connects to your Virtual Pet project (could any of these bugs have occurred there?)
+
+## D2L Submission Checklist
+
+### D2L Quiz
+
+- Complete the **Week 4 Quiz** (15 questions, see handout)
+
+### Dropbox Submission
+
+Upload the following files to the **Week 4 Dropbox**:
+
+1. **Corrected Python file**: `lastname-pet-shelter.py` - Change `lastname` to your lastname. Not doing so will result in the assignment not being graded
+
+### Video Submission
+
+- Upload your video to **Kaltura Mediaspace**
+- Name your video: `lastname_Week4_Debugging`
+- Link to the Kaltura video in the Assignment Dropbox
+
+**Submission location:** All items submitted in D2L (Week 4 Dropbox + Quiz).
+
+## Expected Output Reference
+
+When all 5 bugs are fixed, your program should produce output like this:
+
+```text
+==================================================
+             Sunshine Animal Shelter              
+==================================================
+
+[1] INITIALIZING SHELTER
+--------------------------------------------------
+Loaded 5 pets into the system.
+
+[2] PREPARING ADOPTION EVENT
+--------------------------------------------------
+Creating pet list for weekend adoption event...
+Event coordinator received 5 pets.
+
+Event coordinator added new pet: Charlie (Dog, 2 yrs)
+
+Shelter roster (5 pets):
+  1. Buddy (Dog, 3 yrs)
+  2. Whiskers (Cat, 5 yrs)
+  3. Hoppy (Rabbit, 2 yrs)
+  4. Luna (Cat, 4 yrs)
+  5. Max (Dog, 6 yrs)
+
+Event roster (6 pets):
+  1. Buddy (Dog, 3 yrs)
+  2. Whiskers (Cat, 5 yrs)
+  3. Hoppy (Rabbit, 2 yrs)
+  4. Luna (Cat, 4 yrs)
+  5. Max (Dog, 6 yrs)
+  6. Charlie (Dog, 2 yrs)
+
+[3] CREATING FEEDING SCHEDULE
+--------------------------------------------------
+Created feeding schedule for 5 pets.
+
+             WEEKLY FEEDING SCHEDULE              
+--------------------------------------------------
+Day           Morning      Midday     Evening   
+--------------------------------------------------
+Monday           5           5           5      
+Tuesday          5           5           5      
+Wednesday        5           5           5      
+Thursday         5           5           5      
+Friday           5           5           5      
+Saturday         5           5           5      
+Sunday           5           5           5      
+
+
+Updating Wednesday evening for special dietary needs...
+Set Wednesday evening portions to 10.
+
+             WEEKLY FEEDING SCHEDULE              
+--------------------------------------------------
+Day           Morning      Midday     Evening   
+--------------------------------------------------
+Monday           5           5           5      
+Tuesday          5           5           5      
+Wednesday        5           5           10     
+Thursday         5           5           5      
+Friday           5           5           5      
+Saturday         5           5           5      
+Sunday           5           5           5      
+
+[4] BACKING UP PET PROFILE
+--------------------------------------------------
+Creating backup of Whiskers's profile before transfer...
+Backup created successfully.
+
+Original profile:
+
+  Name: Whiskers
+  Species: Cat
+  Age: 5 years
+  Traits: {'vaccinated': True, 'neutered': False, 'microchipped': False}
+  Medical History (2 records):
+    - Checkup: 2024-02-20 - Healthy
+    - Dental: 2024-03-10 - Cleaning performed
+
+Backup profile:
+
+  Name: Whiskers
+  Species: Cat
+  Age: 5 years
+  Traits: {'vaccinated': True, 'neutered': False, 'microchipped': False}
+  Medical History (2 records):
+    - Checkup: 2024-02-20 - Healthy
+    - Dental: 2024-03-10 - Cleaning performed
+
+
+Adding new medical record to BACKUP only...
+
+Original profile after backup modification:
+
+  Name: Whiskers
+  Species: Cat
+  Age: 5 years
+  Traits: {'vaccinated': True, 'neutered': False, 'microchipped': False}
+  Medical History (2 records):
+    - Checkup: 2024-02-20 - Healthy
+    - Dental: 2024-03-10 - Cleaning performed
+
+Backup profile after backup modification:
+
+  Name: Whiskers
+  Species: Cat
+  Age: 5 years
+  Traits: {'vaccinated': True, 'neutered': False, 'microchipped': False}
+  Medical History (3 records):
+    - Checkup: 2024-02-20 - Healthy
+    - Dental: 2024-03-10 - Cleaning performed
+    - Transfer exam: 2024-04-02 - Cleared for transfer
+
+[5] RECORDING ADOPTIONS
+--------------------------------------------------
+Recording adoption for Hoppy...
+  Record created: {'pet': 'Hoppy', 'adopter': 'Sarah Johnson', 'notes': ['Adopted by: Sarah Johnson', 'Date: 2024-04-01']}
+
+Recording adoption for Max...
+  Record created: {'pet': 'Max', 'adopter': 'Mike Chen', 'notes': ['Adopted by: Mike Chen', 'Date: 2024-04-01']}
+
+Recording adoption for Luna...
+  Record created: {'pet': 'Luna', 'adopter': 'Emily Davis', 'notes': ['Adopted by: Emily Davis', 'Date: 2024-04-01']}
+
+
+Final adoption records:
+
+  Adoption #1:
+    Pet: Hoppy
+    Adopter: Sarah Johnson
+    Notes: ['Adopted by: Sarah Johnson', 'Date: 2024-04-01']
+
+  Adoption #2:
+    Pet: Max
+    Adopter: Mike Chen
+    Notes: ['Adopted by: Mike Chen', 'Date: 2024-04-01']
+
+  Adoption #3:
+    Pet: Luna
+    Adopter: Emily Davis
+    Notes: ['Adopted by: Emily Davis', 'Date: 2024-04-01']
+
+[6] CHECKING FOR DUPLICATE PROFILES
+--------------------------------------------------
+Pet X: Bella (Dog, 3 yrs)
+Pet Y: Bella (Dog, 3 yrs)
+Same name? True
+Same species? True
+Same age? True
+
+Result: DUPLICATE FOUND - Profiles should be merged.
+
+==================================================
+END OF DAILY OPERATIONS REPORT
+==================================================
+```

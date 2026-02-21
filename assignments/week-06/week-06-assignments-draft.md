@@ -1,0 +1,215 @@
+## Assignment Files
+
+- <a href="/assignments/week-06/lastname-realm-of-pytha.py" download>Download Realm of Pytha Program (lastname-realm-of-pytha.py)</a>
+
+## Overview
+
+This week is an application and consolidation week. You will demonstrate your understanding of Chapters 10–11 concepts by:
+
+1. Completing a D2L quiz on Chapters 10–11
+2. Completing functions in a provided Python program using Chapter 10–11 features
+3. Recording a video explanation of your code
+
+## Part 1: D2L Quiz
+
+Complete the **Week 6 D2L Quiz**.
+
+The quiz tests your understanding of Chapters 10–11 concepts covered in Week 5.
+
+## Part 2: Code Completion Exercise
+
+### The Scenario
+
+You've joined the development team at a small game studio working on **Realm of Pytha**, a fantasy RPG. The team has divided the game into modules, and you've been assigned to the **party management module** — the part of the game that handles recruiting characters, cataloging loot, checking carry weight, and managing inventories.
+
+The previous developer on this module built the framework before moving to another project. The data, display functions, and `main()` are all in place and working. The core functions are defined but empty — they just have `pass` as a placeholder. Your job is to write the function bodies so the module produces the correct output.
+
+### About the Program
+
+This program runs automatically — there's no user input or menu system. When you run it, it executes all four sections and prints the results. With the placeholder functions in place, you'll see messages like "No characters created" and "No results returned." As you complete each function, its section will start producing real output.
+
+The program uses a few Python features in the display functions that you may not have written yourself yet. You don't need to modify these functions, but here's what they do:
+
+| Code | What It Does |
+|------|--------------|
+| `enumerate(items, 1)` | Loops through a list while also tracking a counter that starts at 1 |
+| `f"{text:<12}"` | Left-aligns text within 12 characters (used for table columns) |
+| `", ".join(list)` | Combines list items into a single string with commas between them |
+
+### What to Complete
+
+The program has five empty functions for you to complete. Each one requires a specific concept from Chapters 10–11.
+
+**1. `Character` class**
+
+Write the `__init__` and `__str__` methods. A character has a name, class, level, a list of skills, and a health value.
+
+Look at `display_party()` to see what attribute names the display function expects.
+
+The `__str__` method should return a formatted string — look at the expected output to see what format `main()` produces when it prints each character.
+
+**2. `parse_characters(records)`**
+
+Each record in `CHARACTER_RECORDS` is a tuple where the first few elements are fixed, the last element is fixed, and the middle contains a variable number of skill names. Look at the data to see this pattern.
+
+You need to separate the fixed parts from the variable-length middle. This is the `first, *middle, last` extended unpacking pattern from the Week 5 demo. Use the unpacked values to create `Character` instances and return them in a list.
+
+**3. `parse_loot_drops(drops)`**
+
+Each tuple in `LOOT_DROPS` has fixed elements at the beginning followed by a variable number of tags. Look at the data to see how the tuples vary in length.
+
+This is a different unpacking pattern than function 2 — the variable-length portion is at the end. Review the extended unpacking patterns from the Week 5 demo. Return a list of dictionaries — look at `display_loot()` to see the expected keys.
+
+**4. `find_heavy_items(weights, limit)`**
+
+Loop through the `weights` dictionary and find items that exceed the `limit`. For each heavy item, compute how much it exceeds the limit by and include that in the result.
+
+Use the walrus operator (`:=`) to compute the excess and check whether it's greater than zero in a single expression. Review the walrus operator section of the Week 5 demo, and pay attention to where the parentheses go.
+
+Look at `display_heavy_items()` to see what the display function expects.
+
+**5. `combine_inventories(inv_a, inv_b)`**
+
+Return a new list that combines both inventories. The key constraint is visible in the expected output: `main()` prints Aldric's inventory *after* combining and expects it to be unchanged. Chapter 11 explains how `+=` and `+` behave differently when applied to mutable objects like lists.
+
+### Your Task
+
+1. Download the program using the link above
+2. Rename the file to include your last name (e.g., `smith-realm-of-pytha.py`)
+3. Run the program to see the current output with the placeholder functions
+4. Complete each of the five functions described above
+5. Run the completed program and verify your output matches the expected output at the end of this document
+
+### How to Approach This
+
+- **Start with the class.** Functions 2 and 3 depend on it, and you'll be able to test Section 1 immediately.
+- **Read the display functions.** They show you exactly what attribute names and dictionary keys your code needs to produce.
+- **Read the data.** Look at `CHARACTER_RECORDS` and `LOOT_DROPS` to see the tuple structures your unpacking needs to handle.
+- **Test after each function.** Run the program after completing each function to see your progress.
+
+## Part 3: Video Explanation
+
+Record a video explaining your code and submit it via Kaltura.
+
+### Video Requirements
+
+- Clear video and audio quality
+- Introduce yourself, the assignment, and course at the beginning
+
+### What to Include
+
+1. **Program demonstration** — run your completed program and compare the output to the **Expected Output** reference at the end of this document. Verbally confirm that each section produces the correct results.
+
+2. **Code walkthrough** — walk through the functions and class you wrote. Explain how your code works and why you implemented it the way you did.
+
+3. **Lessons Learned (required)** — at the end of your video, discuss:
+   - Which function was the hardest to write and why
+   - What you learned about Python's assignment features from implementing them
+   - How extended unpacking or the walrus operator could be useful in future projects
+
+## D2L Submission Checklist
+
+### D2L Quiz
+
+- Complete the **Week 6 Quiz**
+
+### Dropbox Submission
+
+Upload the following files to the **Week 6 Dropbox**:
+
+1. **Completed Python file**: `lastname-realm-of-pytha.py` — Change `lastname` to your last name. Not doing so will result in the assignment not being graded.
+
+### Video Submission
+
+- Upload your video to **Kaltura Mediaspace**
+- Name your video: `lastname_Week6_CodeCompletion`
+- Link to the Kaltura video in the Assignment Dropbox
+
+**Submission location:** All items submitted in D2L (Week 6 Dropbox + Quiz).
+
+## Expected Output Reference
+
+When all 5 functions are completed correctly, your program should produce output like this:
+
+```text
+==========================================================
+         Realm of Pytha — Party Management Module         
+==========================================================
+
+[1] ASSEMBLING THE PARTY
+----------------------------------------------------------
+  Recruited 5 characters.
+
+  Name        Class       Level   Health    Skills
+  ------------------------------------------------------------
+  Aldric      Warrior     12      340       Slash, Shield Bash, War Cry
+  Lyra        Mage        10      180       Fireball, Ice Shard, Teleport, Mana Shield
+  Finn        Rogue       8       210       Backstab, Stealth
+  Sera        Cleric      11      250       Heal, Smite, Resurrect
+  Kael        Ranger      9       220       Arrow Shot, Trap, Eagle Eye, Camouflage, Volley
+
+  Aldric (Level 12 Warrior) — 340 HP
+  Lyra (Level 10 Mage) — 180 HP
+  Finn (Level 8 Rogue) — 210 HP
+  Sera (Level 11 Cleric) — 250 HP
+  Kael (Level 9 Ranger) — 220 HP
+
+[2] SORTING LOOT DROPS
+----------------------------------------------------------
+  Found 6 items.
+
+  Item                Rarity        Value     Tags
+  --------------------------------------------------------
+  Shadow Dagger       Rare          450       Enchanted, Lifesteal
+  Iron Helm           Common        80        (none)
+  Phoenix Staff       Legendary     1200      Fire Damage, Self-Repair, Soulbound
+  Leather Boots       Common        45        (none)
+  Emerald Amulet      Rare          600       Poison Resist
+  Obsidian Shield     Epic          870       Thorns
+
+[3] CHECKING ENCUMBRANCE
+----------------------------------------------------------
+  Weight limit: 5.0 lbs
+
+  Item                Weight      Excess
+  ----------------------------------------
+  Iron Helm           8.5         3.5
+  Phoenix Staff       6.1         1.1
+  Obsidian Shield     14.7        9.7
+  Iron Sword          7.3         2.3
+
+[4] COMBINING PARTY INVENTORY
+----------------------------------------------------------
+  Aldric's inventory before combining:
+  Aldric:
+    1. Iron Sword
+    2. Health Potion
+    3. Iron Helm
+    4. Travel Rations
+
+  Lyra's inventory before combining:
+  Lyra:
+    1. Phoenix Staff
+    2. Mana Potion
+    3. Emerald Amulet
+
+  Combined party inventory:
+    1. Iron Sword
+    2. Health Potion
+    3. Iron Helm
+    4. Travel Rations
+    5. Phoenix Staff
+    6. Mana Potion
+    7. Emerald Amulet
+
+  Aldric's inventory after combining:
+  Aldric:
+    1. Iron Sword
+    2. Health Potion
+    3. Iron Helm
+    4. Travel Rations
+
+==========================================================
+PARTY MANAGEMENT COMPLETE
+==========================================================
+```

@@ -1,0 +1,117 @@
+---
+title: "Week 7 Guide"
+subtitle: "Chapters 12–13 – if/match Selections and while/for Loops"
+format:
+  html:
+    toc: true
+---
+
+In Weeks 5 and 6, you focused on Python's code structure and assignment features: how programs are organized into statements and expressions, and how assignment forms like extended unpacking with `*` and the walrus operator (`:=`) go beyond what Gaddis covered. This week shifts from how code is structured to how Python handles decisions and repetition.
+
+Chapters 12–13 revisit `if` statements and loops that you already know from CMSC 1203, but they explain design decisions behind these tools and introduce features Gaddis didn't cover. This week has two main threads. The first is how Python evaluates truth. Not just `True` and `False`, but how every object carries its own truth value and how the Boolean operators `and` and `or` use that fact in ways that may surprise you. The second is how the `for` loop interacts with Python's reference model from Weeks 3–4, where the same rules about rebinding and mutation determine whether a loop can actually change the data it iterates over.
+
+## Week 7 Demo
+
+- Here is the link to the **[Week 7 demo](../../assignments/week-07/week-7-demo.html)**.
+- <a href="/downloads/week-07/week-7-demo.ipynb" download>Download Jupyter Notebook</a>
+
+## Chapters 12–13 concepts
+
+### Truth value testing and Boolean operators
+
+In CMSC 1203, Boolean expressions produced `True` or `False`. Python's truth value system is broader: every object has an inherent truth value, and the Boolean operators `and` and `or` return the operand object that determined the result, not a boolean. This enables common patterns for providing defaults and guarding against errors.
+
+The demo examples show:
+
+* how `bool()` reveals truth values: zero and empty mean false, nonzero and nonempty mean true
+* why `and` and `or` return operand objects rather than `True` or `False`
+* short-circuit evaluation: default values with `or`, guarded access with `and`
+
+### The ternary expression
+
+Week 5 introduced the distinction between statements and expressions. The ternary expression (`Y if X else Z`) brings selection into expression context, producing a value inline where an `if` statement cannot appear.
+
+The demo examples show:
+
+* ternary syntax compared to multi-line `if`/`else`
+* why the ternary expression is preferred over the older `and`/`or` trick
+
+### Basic match/case
+
+Python 3.10 introduced `match/case` as an alternative to long `if`/`elif` chains for matching a value against multiple options. The basic form handles simple value matching; the textbook covers advanced structural patterns that are beyond the scope of this course.
+
+The demo examples show:
+
+* matching specific values and using `_` as a wildcard default
+* combining multiple values in one case with `|`
+
+### Loop else and the search pattern
+
+Python's `for` and `while` loops support an `else` clause that runs only when the loop exits normally without hitting a `break`. This solves a specific problem: the search pattern, where you loop through a collection looking for an item and need to handle the not-found case without a flag variable.
+
+The demo examples show:
+
+* how `break` skips the `else` clause
+* the search pattern: `break` when found, `else` handles not-found
+* eliminating flag variables
+
+### for loop mechanics and the reference model
+
+This is the centerpiece of the week. The `for` loop assigns its variable through ordinary assignment on each iteration, the same rebinding operation from Weeks 3–4. This means modifying the loop variable does not change the list being iterated, a behavior that looks like a bug but follows directly from Python's reference model.
+
+The demo examples show:
+
+* why `for x in L: x += 1` leaves `L` unchanged
+* how `id()` confirms the loop variable is rebound to a new object
+* connecting this behavior to the aliasing and rebinding concepts from Weeks 3–4
+
+### Modifying lists during iteration
+
+Since the loop variable approach doesn't modify the list, Python provides two alternatives. Index assignment with `range(len())` mutates the list in place; list comprehensions build a new list. The choice depends on whether aliases to the original list should see the changes.
+
+The demo examples show:
+
+* `range(len())` with index assignment for in-place modification
+* list comprehensions for building a new list
+* when to use each approach (aliasing implications from Weeks 3–4)
+
+### Parallel traversal and enumeration
+
+Chapters 12–13 introduce built-in functions that make `for` loops more expressive. `zip()` pairs items from multiple sequences for parallel traversal, and `enumerate()` provides index-and-item access without manual counters. Both produce tuples that can be unpacked directly in the `for` loop target, including extended unpacking with `*` from Week 5.
+
+The demo examples show:
+
+* `zip()` for pairing sequences and `dict(zip())` for building dictionaries
+* `enumerate()` for replacing `range(len())` in read-only iteration
+* tuple unpacking in `for` targets with `zip()`, `enumerate()`, and `dict.items()`
+
+### Additional loop features in the reading
+
+Chapters 12–13 cover several additional features not demonstrated this week. These are worth reading for awareness, though they are not the focus of the quiz.
+
+The reading covers:
+
+* dictionary-based branching as an alternative to `if`/`elif` chains
+* advanced `match/case` structural patterns (beyond the basic form covered in the demo)
+* `pass` and ellipsis (`...`) as placeholder statements
+
+## Reading expectations for Week 7
+
+As you read Chapters 12–13 and run the demo, check whether you can answer the following in your own words:
+
+1. What types of objects does Python consider false in truth value testing, and what does everything else evaluate to?
+2. Why do `and` and `or` return an operand object rather than `True` or `False`?
+3. How does short-circuit evaluation determine which operand `or` returns, and why does this make `or` useful for providing default values?
+4. What does the ternary expression `Y if X else Z` do, and where can it appear that an `if` statement cannot?
+5. What does the `_` wildcard do in a `match/case` statement?
+6. When does the `else` clause of a `for` loop execute, and when is it skipped?
+7. Why doesn't modifying the loop variable inside a `for` loop change the list being iterated?
+8. How does index assignment with `range(len())` differ from the loop variable approach, and why does it successfully modify the list?
+9. What does `zip()` do when given sequences of different lengths?
+10. What does `enumerate()` produce, and how does tuple unpacking in the `for` target let you access both the index and the item?
+
+## Week 7 tasks
+
+1. Read **Learning Python 6e, Chapters 12–13** (complete).
+2. Work through the **[Week 7 demo](../../assignments/week-07/week-7-demo.html)** in your Jupyter environment.
+3. Complete the **Week 7 D2L quiz** (Chapters 12–13 concepts + demo examples, using the quiz handout).

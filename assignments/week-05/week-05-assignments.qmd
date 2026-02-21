@@ -1,0 +1,66 @@
+---
+title: "Week 5 Assignments"
+subtitle: "Chapters 10–11 Reading and D2L Quiz"
+format:
+  html:
+    toc: true
+---
+
+- Here is the link to the **[Week 5 demo](../../assignments/week-05/week-5-demo.html)**.
+- <a href="/downloads/week-05/week-5-demo.qmd" download>Download Quarto Notebook</a>
+
+## Part 1: Reading
+
+Read **Learning Python (6e), Chapters 10–11**.
+
+As you read, focus on these ideas (these are also the ideas the quiz will test):
+
+- **Program hierarchy:** programs are composed of modules, modules contain statements, statements contain expressions, and expressions create and process objects
+- **Statements vs expressions:** statements perform actions; expressions produce values — and each can appear only in certain places
+- **Indentation as syntax:** Python uses indentation to define blocks, the colon signals the start of an indented block, and inconsistent indentation causes an `IndentationError`
+- **Line continuation:** how to continue a long statement across lines using backslash or open brackets, and how to place multiple statements on one line with semicolons
+- **Extended sequence unpacking:** the `*` operator collects remaining elements into a list during unpacking (e.g., `first, *rest = [1, 2, 3, 4]`)
+- **Augmented assignment:** operators like `+=`, `-=`, and `//=`, and how `+=` can modify a mutable object in place rather than creating a new one
+- **Multi-target assignment:** `a = b = c = 0` creates a shared reference, and mutations through one name affect all names
+- **Named assignment expressions (walrus operator):** `:=` assigns a value and returns it in a single expression, useful in conditions and loops
+- **Expression statements:** expressions like `my_list.sort()` can stand alone as statements when called for their side effects
+- **Print parameters:** `sep`, `end`, `file`, and `flush` control how `print()` formats and delivers output
+
+## Part 2: Work through the Week 5 Demo
+
+There is no video walkthrough for this week's demo. Work through the examples carefully on your own — run each cell, read the explanations, and check whether you can predict the output before you see it.
+
+The Week 5 demo covers:
+
+1. Observing Python's program hierarchy using introspection (`type()`, `dir()`, `id()`) to confirm that modules, statements, expressions, and objects are real and inspectable
+2. Distinguishing statements from expressions and seeing where each can and cannot appear in code
+3. Understanding why Python uses indentation as syntax and how the colon-and-block pattern works
+4. Using extended sequence unpacking (`*`) to capture variable-length portions of sequences in patterns like `first, *rest`, `*init, last`, and `first, *middle, last`
+5. Using the walrus operator (`:=`) to assign and test a value in a single expression, including use in `if` conditions, `while` loops, and comprehensions
+6. Controlling `print()` output with `sep`, `end`, `file`, and `flush` parameters
+
+## Part 3: D2L Quiz
+
+Complete the **Week 5 D2L quiz**.
+
+The quiz focuses on:
+
+- describing Python's **program hierarchy** and identifying where code fits (programs, modules, statements, expressions, objects)
+- distinguishing **statements** (perform actions) from **expressions** (produce values) and recognizing where each can appear
+- explaining why Python uses **indentation** as syntax and predicting `IndentationError` from inconsistent code
+- using **line continuation** methods (backslash, open brackets) and writing multiple statements on one line with semicolons
+- predicting results of **extended unpacking** with `*`, including patterns like `first, *rest` and edge cases with minimum elements
+- identifying how **augmented assignment** (`+=`) differs from regular assignment for mutable objects
+- recognizing **shared references** created by multi-target assignment (`a = b = c = 0`) and predicting mutation behavior
+- using the **walrus operator** (`:=`) to assign and return a value, and identifying situations where it is most useful
+- predicting output of `print()` with custom **`sep`**, **`end`**, **`file`**, and **`flush`** parameters
+
+## D2L submission checklist
+
+Complete the following in D2L:
+
+* **Week 5 D2L quiz** (no file uploads required this week)
+
+**Submission location:** No Dropbox submission this week. All work is completed in D2L.
+
+**Note:** This week focuses on reading Chapters 10–11, working through the demo on your own, and demonstrating comprehension through the quiz. The emphasis is on understanding Python's statement and assignment features — especially extended unpacking and the walrus operator — that build on the fundamentals from CMSC 1203.

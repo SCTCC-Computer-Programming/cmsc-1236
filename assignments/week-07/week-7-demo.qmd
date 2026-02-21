@@ -1,0 +1,1064 @@
+---
+title: "Week 7 Demo"
+subtitle: "Chapters 12–13: if/match Selections and while/for Loops"
+format:
+  html:
+    toc: true
+    code-fold: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Introduction
+
+CMSC 1203 taught you to write decision structures and loops. You know how to use `if/elif/else`, `while`, `for`, `break`, and `continue` to control program flow. Chapters 12–13 of Learning Python revisit these tools to explain design decisions you may not have encountered before and introduce features that go beyond what Gaddis covered.
+
+This unit has two main threads. The first is how Python evaluates truth, not just `True` and `False`, but how every object carries its own truth value and how the Boolean operators `and` and `or` use that fact in ways that may surprise you. The second is how the `for` loop interacts with Python's reference model, the same model you studied in Weeks 3–4. Understanding this connection explains behaviors that look like bugs but are actually consistent with how Python handles names and objects.
+
+Along the way, you'll also meet the `match/case` statement (new in Python 3.10), the loop `else` clause and the problem it was designed to solve, and the built-in functions `zip` and `enumerate` that make `for` loops more powerful without adding complexity.
+
+After completing these examples, you should be able to:
+
+* explain why `and` and `or` return operand objects rather than `True` or `False`, and use `bool()` to observe truth values
+* use short-circuit evaluation intentionally, including for default values, guarded access, and understanding when expressions are skipped
+* write a basic `match/case` statement for multiple-choice selection
+* explain what the loop `else` clause does, how `break` interacts with it, and what search problem it solves
+* explain why modifying a `for` loop variable does not change the list being iterated, using the reference model from Weeks 3–4
+* use `zip()` for parallel traversal, `enumerate()` for offset+item access, and tuple unpacking in `for` loop targets
+
+
+The examples are organized into five parts. Part 1 examines truth value testing and Boolean operator behavior. Part 2 introduces the `match/case` statement. Part 3 explains the loop `else` clause. Part 4, the centerpiece, connects `for` loop mechanics to the reference model. Part 5 covers `zip`, `enumerate`, and unpacking techniques in loops.
+
+
+## Part 1: Truth Value Testing and Boolean Operators
+
+In CMSC 1203, you used Boolean expressions in `if` statements and loops. You know that comparisons like `x > 5` produce `True` or `False`, and that `and`, `or`, and `not` combine conditions. This section goes deeper: every Python object has a built-in truth value, and the Boolean operators `and` and `or` don't always return `True` or `False`. They return the actual object that determined the result. Understanding this behavior explains common Python patterns you'll encounter in real code.
+
+
+### 1.1 Every Object Has a Truth Value
+
+Python's truth value testing rules are simple: any object can be evaluated as true or false. This is not a special property of Booleans. It applies to every object in the language. The built-in `bool()` function lets you observe any object's truth value directly.
+
+The rules are:
+
+- False: zero numbers (`0`, `0.0`), empty collections (`[]`, `()`, `{}`, `set()`, `""`), `None`, and `False` itself
+- True: everything else, including any nonzero number, any nonempty collection, any object that isn't in the false category
+
+
+#### Example 1: Observing truth values with bool()
+
+This example uses `bool()` to reveal the truth value of different Python objects. The goal is to see the pattern: emptiness and zero mean false, content and nonzero mean true.
+
+```{python}
+# Numbers
+print("bool(0) =", bool(0))
+print("bool(0.0) =", bool(0.0))
+print("bool(42) =", bool(42))
+print("bool(-1) =", bool(-1))
+print()
+
+# Collections
+print("bool([]) =", bool([]))
+print("bool([1, 2]) =", bool([1, 2]))
+print("bool('') =", bool(''))
+print("bool('hello') =", bool('hello'))
+print("bool({}) =", bool({}))
+print("bool({'a': 1}) =", bool({'a': 1}))
+print()
+
+# Special values
+print("bool(None) =", bool(None))
+print("bool(True) =", bool(True))
+print("bool(False) =", bool(False))
+```
+
+Explanation:
+
+1. `bool(0)` and `bool(0.0)` both return `False`. Any numeric zero is false, regardless of type.
+2. `bool(42)` and `bool(-1)` both return `True`. Any nonzero number is true, including negative numbers.
+3. `bool([])` and `bool('')` return `False`. Empty collections and empty strings are false.
+4. `bool([1, 2])` and `bool('hello')` return `True`. Nonempty collections and strings are true.
+5. `bool(None)` returns `False`. `None` is always false.
+
+The key insight is that truth value is a property of the object itself, not something that only exists in comparisons. This is why Python lets you write `if my_list:` instead of `if len(my_list) > 0:` because the list's truth value already reflects whether it has content.
+
+
+#### Example 2: Testing objects directly vs explicit comparisons
+
+Because every object has a truth value, Python programmers typically test objects directly rather than comparing them to empty values. This example shows both approaches and why the direct test is preferred.
+
+```{python}
+data = [10, 20, 30]
+empty = []
+name = ""
+count = 0
+
+# Direct testing (Pythonic)
+if data:
+    print("data has content")
+
+if not empty:
+    print("empty has no content")
+
+if not name:
+    print("name is empty")
+
+if not count:
+    print("count is zero")
+
+print()
+
+# Explicit comparison (verbose, not wrong, but unnecessary)
+if data != []:
+    print("data != [] - same result, more code")
+
+if len(empty) == 0:
+    print("len(empty) == 0 - same result, more code")
+```
+
+Explanation:
+
+1. `if data:` succeeds because `data` is a nonempty list, which is true. No comparison operator is needed.
+2. `if not empty:` succeeds because `empty` is an empty list (false), and `not` inverts it to true.
+3. `if not name:` succeeds because an empty string is false.
+4. `if not count:` succeeds because `0` is false.
+5. The explicit comparisons (`data != []`, `len(empty) == 0`) produce the same results but use more code. The direct form is standard Python practice because it relies on the object's inherent truth value.
+
+This connects to the object model from Weeks 3–4: truth value is a property of the object, just like its type and identity. When you write `if data:`, Python evaluates the object's truth value. It doesn't create a Boolean comparison behind the scenes.
+
+
+### 1.2 Boolean Operators Return Objects
+
+This is where Python diverges from what you may expect. In many contexts, `and` and `or` seem to return `True` or `False`. But they actually return one of their operand objects, specifically the operand that determined the result. Understanding this behavior explains patterns that would otherwise look mysterious.
+
+The rules are:
+
+- `or` returns the first operand that is true (scanning left to right). If all operands are false, it returns the last one.
+- `and` returns the first operand that is false (scanning left to right). If all operands are true, it returns the last one.
+
+
+#### Example 3: What or actually returns
+
+This example shows that `or` does not return `True` or `False`. It returns the actual operand object.
+
+```{python}
+# or returns the first TRUE operand
+result1 = 2 or 3
+print("2 or 3 =", result1, "  type:", type(result1))
+
+result2 = 0 or 3
+print("0 or 3 =", result2, "  type:", type(result2))
+
+result3 = 0 or "" or [1, 2]
+print("0 or '' or [1, 2] =", result3, "  type:", type(result3))
+
+print()
+
+# If all operands are false, or returns the LAST one
+result4 = 0 or "" or []
+print("0 or '' or [] =", result4, "  type:", type(result4))
+
+result5 = 0 or None
+print("0 or None =", result5, "  type:", type(result5))
+```
+
+Explanation:
+
+1. `2 or 3` returns `2`, not `True`. The integer `2` is the first true operand, so `or` returns it immediately.
+2. `0 or 3` returns `3`. The integer `0` is false, so `or` moves to the next operand. `3` is true, so it gets returned.
+3. `0 or "" or [1, 2]` returns `[1, 2]`. Python skips `0` (false) and `""` (false), then returns `[1, 2]` (true).
+4. `0 or "" or []` returns `[]`. All operands are false, so `or` returns the last one evaluated.
+5. `0 or None` returns `None`. Both are false, so the last operand is returned.
+
+Notice that the return type matches the operand. `or` returns integers, strings, lists, or `None`, depending on which operand determined the result. It does not convert anything to a Boolean.
+
+
+#### Example 4: What and actually returns
+
+The same principle applies to `and`, but the logic is inverted: `and` looks for the first false operand because a single false value makes the entire expression false.
+
+```{python}
+# and returns the first FALSE operand
+result1 = 0 and 3
+print("0 and 3 =", result1, "  type:", type(result1))
+
+result2 = "" and [1, 2]
+print("'' and [1, 2] =", result2, "  type:", type(result2))
+
+print()
+
+# If all operands are true, and returns the LAST one
+result3 = 2 and 3
+print("2 and 3 =", result3, "  type:", type(result3))
+
+result4 = "hello" and [1, 2] and 42
+print("'hello' and [1, 2] and 42 =", result4, "  type:", type(result4))
+
+print()
+
+# Mixing types: and still returns the deciding operand
+result5 = [1, 2] and ""
+print("[1, 2] and '' =", repr(result5), "  type:", type(result5))
+```
+
+Explanation:
+
+1. `0 and 3` returns `0`. The `0` is false, and since false `and` anything is always false, Python returns `0` immediately without evaluating `3`.
+2. `"" and [1, 2]` returns `""`. Same principle: the empty string is false, so it determines the result.
+3. `2 and 3` returns `3`. Both are true, so `and` must evaluate both and returns the last one.
+4. `"hello" and [1, 2] and 42` returns `42`. All are true, so `and` evaluates all of them and returns the last.
+5. `[1, 2] and ""` returns `""`. The list is true, so `and` continues to the empty string, which is false and determines the result.
+
+When you use these results in an `if` statement, they still work correctly. The returned object gets evaluated for its truth value. But the fact that `and` and `or` return objects (not Booleans) is what makes the patterns in the next section possible.
+
+
+### 1.3 Short-Circuit Evaluation
+
+The behavior you just saw, `or` stopping at the first true operand, `and` stopping at the first false operand, is called short-circuit evaluation. Python stops evaluating as soon as the result is determined. This means the remaining operands are never evaluated at all.
+
+Short-circuiting isn't just an optimization detail. It has practical consequences: you can use it intentionally to set defaults, guard against errors, and control which code runs.
+
+
+#### Example 5: Setting defaults with or
+
+A common Python pattern uses `or` to provide a default value when a variable might be empty or zero. This works because `or` returns the first true operand.
+
+```{python}
+# Simulating a function that might return an empty string
+user_input = ""
+username = user_input or "Guest"
+print("username =", username)
+
+# When the input has content, it gets used
+user_input = "Alice"
+username = user_input or "Guest"
+print("username =", username)
+
+print()
+
+# This pattern works with any false value
+config_value = 0
+setting = config_value or 100
+print("setting =", setting)
+
+config_value = 75
+setting = config_value or 100
+print("setting =", setting)
+```
+
+Explanation:
+
+1. When `user_input` is `""` (false), `or` skips it and returns `"Guest"`. The effect is: use the input if it has content, otherwise fall back to a default.
+2. When `user_input` is `"Alice"` (true), `or` returns it immediately. `"Guest"` is never evaluated.
+3. The same pattern works with numbers: `0 or 100` returns `100` because `0` is false.
+4. `75 or 100` returns `75` because `75` is true, so short-circuit evaluation means `100` is never reached.
+
+This pattern appears frequently in Python code. It works because `or` returns the operand object itself, not a Boolean.
+
+
+#### Example 6: Guarded evaluation with and
+
+The `and` operator's short-circuit behavior lets you guard an expression. The right side only runs if the left side is true. This is useful for avoiding errors when a value might be `None` or empty.
+
+```{python}
+# data might be None or might be a list
+data = None
+result = data and len(data)
+print("data is None -> result =", result)
+
+data = [10, 20, 30]
+result = data and len(data)
+print("data is [10, 20, 30] -> result =", result)
+
+print()
+
+# Without the guard, None would cause an error
+data = None
+# len(data)  # This would raise: TypeError: object of type 'NoneType' has no len()
+
+# The and guard prevents the error
+safe_length = data and len(data)
+print("safe_length =", safe_length)
+```
+
+Explanation:
+
+1. When `data` is `None` (false), `and` returns `None` immediately. `len(data)` is never called, so no error occurs.
+2. When `data` is `[10, 20, 30]` (true), `and` continues to `len(data)` and returns `3`.
+3. The key insight is that short-circuiting prevents the right-side expression from executing. If `data` is `None`, calling `len(data)` would raise a `TypeError`, but the `and` guard means that call never happens.
+
+This is significant: expressions on the right side of `and` or `or` may never execute. If those expressions have side effects (function calls, file operations, anything beyond a simple value), short-circuiting determines whether they run at all.
+
+
+#### Example 7: Short-circuiting skips function calls
+
+This example makes the skipped-evaluation effect visible by using functions that print when called.
+
+```{python}
+def check_a():
+    print("  check_a() was called")
+    return True
+
+def check_b():
+    print("  check_b() was called")
+    return True
+
+def check_c():
+    print("  check_c() was called")
+    return False
+
+# or stops at the first true result
+print("Testing: check_a() or check_b()")
+result = check_a() or check_b()
+print("  result =", result)
+print()
+
+# and stops at the first false result
+print("Testing: check_c() and check_a()")
+result = check_c() and check_a()
+print("  result =", result)
+print()
+
+# Contrast: both run when and needs to evaluate both
+print("Testing: check_a() and check_b()")
+result = check_a() and check_b()
+print("  result =", result)
+```
+
+Explanation:
+
+1. In `check_a() or check_b()`, only `check_a()` is called. Since it returns `True` (a true value), `or` short-circuits and `check_b()` is never executed.
+2. In `check_c() and check_a()`, only `check_c()` is called. Since it returns `False` (a false value), `and` short-circuits and `check_a()` is never executed.
+3. In `check_a() and check_b()`, both functions are called. `check_a()` returns `True`, so `and` must continue to `check_b()` to determine the result.
+
+This matters in real code: if the right-side expression does something important (writes to a file, modifies a list, makes a network call), short-circuiting means that action may silently not happen.
+
+
+### 1.4 The Ternary if/else Expression
+
+Python provides an expression form of `if/else` that lets you choose between two values in a single line. You may have seen this in CMSC 1203 (Gaddis 6e introduces it). This section shows why this form is preferred over the `and`/`or` trick that some Python code uses for the same purpose.
+
+
+#### Example 8: The ternary expression
+
+The ternary expression has the form `Y if X else Z`. It evaluates to `Y` when `X` is true, and `Z` when `X` is false.
+
+```{python}
+score = 85
+
+# Four-line if statement
+if score >= 70:
+    result = "pass"
+else:
+    result = "fail"
+print("if statement result:", result)
+
+# Same logic in one expression
+result = "pass" if score >= 70 else "fail"
+print("ternary result:", result)
+
+print()
+
+# The ternary is an expression: it produces a value
+# so it can be used anywhere a value is expected
+score = 55
+print("Status:", "pass" if score >= 70 else "fail")
+```
+
+Explanation:
+
+1. The four-line `if` statement and the ternary expression produce the same result. The ternary form is shorter when the logic and values are simple.
+2. `"pass" if score >= 70 else "fail"` reads as: "pass" if the score is at least 70, else "fail." The true value comes first, then the condition, then the false value.
+3. Because the ternary is an expression (it produces a value), it can appear inside a `print()` call, on the right side of an assignment, or anywhere else a value is expected. A regular `if` statement cannot appear in these positions. This is the statement vs expression distinction from Week 5.
+
+
+#### Example 9: Why the ternary is preferred over and/or
+
+Before the ternary expression existed in Python, programmers used `and`/`or` combinations to achieve the same effect. Now that you understand how `and` and `or` return objects, you can see how this trick works, and why it has a flaw.
+
+```{python}
+x = True
+
+# The ternary: clear and reliable
+result = "yes" if x else "no"
+print("ternary:", result)
+
+# The and/or trick: same result here
+result = (x and "yes") or "no"
+print("and/or trick:", result)
+
+print()
+
+# But the and/or trick has a flaw:
+# What if the "true" value is itself false?
+x = True
+true_value = 0  # zero is a valid result, but it's false!
+
+result_ternary = true_value if x else "default"
+print("ternary with 0:", result_ternary)
+
+result_andor = (x and true_value) or "default"
+print("and/or with 0:", result_andor)
+```
+
+Explanation:
+
+1. When `x` is `True` and the true-branch value is `"yes"` (a true object), both the ternary and the `and`/`or` form return `"yes"`.
+2. But when the true-branch value is `0`: the ternary correctly returns `0` (because `x` is true, so it returns the true-branch value regardless). The `and`/`or` trick returns `"default"` instead, because `x and 0` evaluates to `0` (false), and then `0 or "default"` returns `"default"`.
+3. The `and`/`or` trick fails whenever the intended true-branch value happens to be a false object (`0`, `""`, `[]`, `None`). The ternary expression does not have this problem. It evaluates the condition and returns the correct branch regardless of the branch values' truth values.
+
+The guideline is straightforward: use the `if/else` ternary expression when you need a conditional value in an expression context. Avoid the `and`/`or` trick.
+
+
+## Part 2: Basic match/case
+
+Python 3.10 introduced the `match/case` statement for multiple-choice selection. At its basic level, `match` provides a clean way to select an action based on a value, similar to "switch" in other languages and an alternative to long `if/elif/else` chains.
+
+This section covers only the basic form of `match`: matching a value against literal options and selecting an action. The `match` statement also supports advanced structural pattern matching (sequence patterns, mapping patterns, class patterns, guard expressions) that can handle much more complex logic. Those advanced features are covered in your textbook reading and are worth being aware of, but they go well beyond what most `match` statements need to do. The basic form shown here handles the most common use case: choosing between known options based on a single value.
+
+What it is: A statement that compares one value against multiple possible matches and runs the code under the first match found.
+
+Why it exists: Long `if/elif/else` chains that test the same variable against different values are common. `match/case` makes this pattern explicit and readable.
+
+When to use it: When you're selecting an action based on a single variable's value among several known options. When the logic involves complex conditions or combinations, `if/elif/else` is still the better tool.
+
+
+### 2.1 match as Multiple-Choice Selection
+
+
+#### Example 10: Basic match/case syntax
+
+This example shows the basic form: `match` evaluates an expression, then compares its value to each `case` from top to bottom. The first match wins.
+
+```{python}
+command = "save"
+
+match command:
+    case "new":
+        print("Creating new file")
+    case "open":
+        print("Opening file")
+    case "save":
+        print("Saving file")
+    case _:
+        print("Unknown command:", command)
+```
+
+Explanation:
+
+1. `match command:` evaluates `command` and prepares to compare its value against the `case` headers below.
+2. Python checks each `case` from top to bottom. `"new"` doesn't match `"save"`, `"open"` doesn't match `"save"`, but `"save"` matches `"save"`, so the code under that `case` runs.
+3. `case _:` is the wildcard default. The underscore `_` matches any value. If no other `case` matches, the `_` case runs. It must appear last. If no `_` case is present and nothing matches, the `match` statement does nothing.
+4. Only the first matching `case` runs. There is no "fall-through" to subsequent cases.
+
+
+#### Example 11: Multiple values and variable capture with match
+
+A single `case` can match multiple values using `|` (read as "or"). Cases can also assign the matched value to a variable using `as`.
+
+```{python}
+status_codes = [200, 301, 404, 500, 418]
+
+for code in status_codes:
+    match code:
+        case 200:
+            print(f"{code}: OK")
+        case 301 | 302 | 307:
+            print(f"{code}: Redirect")
+        case 400 | 403 | 404:
+            print(f"{code}: Client error")
+        case 500 | 502 | 503 as server_err:
+            print(f"{server_err}: Server error")
+        case other:
+            print(f"{other}: Unrecognized status")
+```
+
+Explanation:
+
+1. `case 301 | 302 | 307:` matches if `code` is any one of those three values. The `|` acts as "or" within a case. It checks multiple values in a single case header.
+2. `case 500 | 502 | 503 as server_err:` matches any of those values and assigns the matched value to `server_err`. The `as` keyword captures what was matched. The variable `server_err` can be used in the code block and continues to exist after the `match` exits.
+3. `case other:` uses a plain variable name instead of `_`. A bare name in a `case` header matches anything (just like `_`) but also assigns the value to that variable. This is useful when you need to reference the unmatched value. It must appear last, since it matches everything.
+4. The code `418` doesn't match any of the specific numeric cases, so it falls through to `case other:`.
+
+
+## Part 3: Loop else and the Search Pattern
+
+You may have encountered the loop `else` clause in CMSC 1203 (Gaddis 6e introduces it). This section explains the problem `else` was designed to solve and why it interacts with `break` the way it does. Understanding the *purpose* makes the behavior predictable rather than something you need to memorize.
+
+
+### 3.1 What Loop else Actually Does
+
+The `else` clause on a loop runs if and only if the loop exits normally, meaning it finishes without hitting a `break` statement. If `break` runs, the `else` is skipped entirely.
+
+
+#### Example 12: Loop else with and without break
+
+This example makes the break/else interaction visible by running the same loop structure with different data.
+
+```{python}
+# Case 1: Loop finishes normally, else runs
+print("Searching for 99 in [1, 2, 3]:")
+for item in [1, 2, 3]:
+    if item == 99:
+        print("  Found it!")
+        break
+else:
+    print("  Not found - else clause ran")
+
+print()
+
+# Case 2: break is hit, else is skipped
+print("Searching for 2 in [1, 2, 3]:")
+for item in [1, 2, 3]:
+    if item == 2:
+        print("  Found it!")
+        break
+else:
+    print("  Not found - else clause ran")
+```
+
+Explanation:
+
+1. In Case 1, the loop runs through all items without finding `99`. No `break` is executed. The loop exits normally, so the `else` clause runs and prints "Not found."
+2. In Case 2, the loop finds `2` on the second iteration and executes `break`. The `break` exits the loop immediately and skips the `else` clause entirely. "Not found" is never printed.
+3. The `else` clause is indented to the same level as the `for` keyword. This associates it with the loop, not with the `if` inside the loop.
+
+The same behavior works identically with `while` loops: the `else` runs when the `while` condition becomes false naturally, but is skipped if `break` exits the loop early.
+
+
+### 3.2 The Search Pattern
+
+The loop `else` exists to eliminate a common coding pattern: using a flag variable to track whether a search found its target. Without `else`, you need to set a flag before the loop, update it when found, and check it after the loop. With `else`, the loop structure handles this directly.
+
+
+#### Example 13: Search with a flag variable (without loop else)
+
+This example shows the traditional approach: a Boolean flag tracks whether the target was found.
+
+```{python}
+numbers = [14, 7, 23, 42, 9, 31]
+target = 42
+
+found = False
+for num in numbers:
+    if num == target:
+        found = True
+        break
+
+if found:
+    print(f"{target} is in the list")
+else:
+    print(f"{target} is not in the list")
+```
+
+Explanation:
+
+1. `found = False` initializes the flag before the loop.
+2. When `num == target`, the flag is set to `True` and `break` exits the loop.
+3. After the loop, a separate `if` statement checks the flag to determine which message to print.
+4. This works, but it requires three pieces of coordinated code: the initialization, the update inside the loop, and the check after the loop. The flag variable exists only to communicate between the loop and the post-loop test.
+
+
+#### Example 14: Search with loop else (same logic, no flag)
+
+This example solves the same problem using the loop `else` to eliminate the flag entirely.
+
+```{python}
+numbers = [14, 7, 23, 42, 9, 31]
+target = 42
+
+for num in numbers:
+    if num == target:
+        print(f"{target} is in the list")
+        break
+else:
+    print(f"{target} is not in the list")
+
+print()
+
+# Same structure, target not present
+target = 99
+
+for num in numbers:
+    if num == target:
+        print(f"{target} is in the list")
+        break
+else:
+    print(f"{target} is not in the list")
+```
+
+Explanation:
+
+1. When `target` is `42`, the loop finds it, prints the success message, and executes `break`. The `break` skips the `else` clause, so the "not found" message is never printed.
+2. When `target` is `99`, the loop runs through all items without finding it. No `break` executes. The loop exits normally, and the `else` clause runs, printing the "not found" message.
+3. The flag variable is gone. The loop structure itself communicates whether the search succeeded: `break` means found (skip `else`), normal exit means not found (run `else`).
+4. This is the pattern `else` was designed for. Read it as: "if the loop didn't `break` out early, do this." The name `else` can be confusing. Thinking of it as `nobreak` may be more intuitive.
+
+Note: for simple membership testing, `if target in numbers:` is the more Pythonic approach. The loop `else` pattern becomes valuable in searches with more complex conditions that `in` can't express, for example, when you need to check a computed property of each item.
+
+
+## Part 4: for Loop Mechanics and the Reference Model
+
+This is where the concepts from Weeks 3–4 connect directly to loop behavior. In Weeks 3–4, you learned that Python variables are names that refer to objects, that assignment binds a name to a new object (rebinding), and that in-place operations like `list.append()` modify the existing object (mutation). The `for` loop follows these same rules, and understanding that connection explains a behavior that trips up many programmers.
+
+
+### 4.1 The for Loop Variable Is a Reference
+
+Each time through a `for` loop, Python assigns the next item from the sequence to the loop variable. This is ordinary assignment, the same operation you've been studying since Week 3. The loop variable is a name that gets rebound on each iteration.
+
+
+#### Example 15: Tracing the loop variable with id()
+
+This example uses `id()` to observe what happens to the loop variable on each iteration. You'll see the same assignment mechanics you observed in Weeks 3–4.
+
+```{python}
+colors = ["red", "green", "blue"]
+
+print("List object IDs:")
+for i in range(len(colors)):
+    print(f"  colors[{i}] = {colors[i]!r:8s}  id = {id(colors[i])}")
+
+print()
+
+print("Loop variable IDs:")
+for color in colors:
+    print(f"  color = {color!r:8s}  id = {id(color)}")
+```
+
+Explanation:
+
+1. The first loop prints the `id()` of each object stored in the list at each index position.
+2. The second loop prints the `id()` of the loop variable `color` on each iteration.
+3. The IDs match: on iteration 1, `color` refers to the same object as `colors[0]`. On iteration 2, `color` refers to the same object as `colors[1]`. And so on.
+4. Each iteration is an assignment statement: `color = colors[0]`, then `color = colors[1]`, then `color = colors[2]`. The loop variable `color` is rebound to a different object on each pass, exactly the same as writing `color = "red"` followed by `color = "green"`.
+
+
+#### Example 16: The loop variable is independent of the list
+
+Once the loop variable is assigned, it's an independent name. Changing the loop variable does not affect the list, just as changing one name doesn't affect another name that happens to refer to the same object.
+
+```{python}
+numbers = [10, 20, 30]
+
+print("Before loop:")
+print("  numbers =", numbers)
+print("  id(numbers) =", id(numbers))
+print()
+
+for x in numbers:
+    print(f"  Start of iteration: x = {x}, id(x) = {id(x)}")
+    x = x + 1  # Rebind x to a new object
+    print(f"  After x = x + 1:   x = {x}, id(x) = {id(x)}")
+    print()
+
+print("After loop:")
+print("  numbers =", numbers)
+print("  id(numbers) =", id(numbers))
+```
+
+Explanation:
+
+1. At the start of each iteration, `x` is assigned the next item from `numbers`. At this point, `x` and `numbers[i]` refer to the same integer object.
+2. `x = x + 1` creates a new integer object and rebinds `x` to it. The `id()` changes, and `x` now refers to a different object.
+3. This rebinding affects only the name `x`. The list `numbers` still contains its original objects. The list has no way to know that `x` was rebound.
+4. After the loop, `numbers` is unchanged: `[10, 20, 30]`.
+
+This is the same rebinding behavior from Weeks 3–4. Recall that integers are immutable, so `x = x + 1` always creates a new object. The assignment `x = ...` changes what `x` refers to. It does not reach back into the list to change anything.
+
+
+### 4.2 Why Modifying the Loop Variable Doesn't Change the List
+
+The previous example showed the mechanism. This section makes the practical consequence explicit: `for x in L: x += 1` is a common mistake that silently does nothing to the list.
+
+
+#### Example 17: The failed modification attempt
+
+This example shows the mistake, traces why it fails, and connects the explanation to the reference model.
+
+```{python}
+scores = [85, 92, 78, 95, 88]
+print("Before: scores =", scores)
+print()
+
+# Attempt to add 5 bonus points to each score
+for score in scores:
+    score += 5  # This rebinds score, not scores[i]
+
+print("After:  scores =", scores)
+print("scores is unchanged!")
+print()
+
+# Why? Let's trace one iteration
+scores = [85, 92, 78, 95, 88]
+score = scores[0]  # This is what the for loop does internally
+print(f"score = scores[0] = {score}")
+print(f"  id(score) = {id(score)}, id(scores[0]) = {id(scores[0])}")
+print(f"  Same object: {score is scores[0]}")
+
+score += 5  # Rebinds score to a NEW integer object
+print(f"After score += 5: score = {score}")
+print(f"  id(score) = {id(score)}, id(scores[0]) = {id(scores[0])}")
+print(f"  Same object: {score is scores[0]}")
+print(f"  scores[0] is still: {scores[0]}")
+```
+
+Explanation:
+
+1. The `for` loop iterates through `scores`, assigning each integer to `score`. Then `score += 5` rebinds the name `score` to a new integer. The list `scores` is never modified.
+2. The trace below makes this visible: after `score = scores[0]`, both names refer to the same object (same `id()`). After `score += 5`, `score` refers to a new object (different `id()`), but `scores[0]` still refers to the original.
+3. This is rebinding, not mutation. Integers are immutable, so `+= 5` cannot change the integer object `85` into `90`. It creates a new object `90` and rebinds `score` to it.
+4. The critical insight: the loop variable is a separate name. Rebinding it never reaches back into the collection. This is the same behavior you'd see with any assignment: `a = L[0]; a = 99` does not change `L[0]`.
+
+
+### 4.3 How to Actually Modify a List During Iteration
+
+When you need to update a list's contents, you must assign to the list's index positions directly. This modifies the list object itself, because index assignment (`L[i] = value`) is an in-place operation on the list. It changes what the list stores at that position.
+
+
+#### Example 18: Modifying a list with range and index assignment
+
+This example shows the correct approach: iterate by index and assign back to the list.
+
+```{python}
+scores = [85, 92, 78, 95, 88]
+print("Before:", scores)
+
+for i in range(len(scores)):
+    scores[i] += 5
+
+print("After: ", scores)
+```
+
+Explanation:
+
+1. `range(len(scores))` generates the indices `0, 1, 2, 3, 4`.
+2. On each iteration, `scores[i] += 5` reads the value at position `i`, creates a new integer (the old value plus 5), and assigns it back to `scores[i]`.
+3. `scores[i] = ...` is index assignment. It changes the list object itself. This is mutation of the list, not rebinding of a loop variable.
+4. After the loop, `scores` contains the updated values.
+
+The `range(len())` pattern is necessary here because we need the index to assign back to the list. A simple `for score in scores` loop gives us the values but no way to write them back.
+
+
+#### Example 19: List comprehension as a non-mutating alternative
+
+When you don't need to change the original list in place, a list comprehension can build a new list with modified values.
+
+```{python}
+scores = [85, 92, 78, 95, 88]
+print("Original:", scores)
+
+# Build a new list (original is unchanged)
+boosted = [s + 5 for s in scores]
+print("Boosted: ", boosted)
+print("Original:", scores)
+
+print()
+
+# If you want to replace the original, assign back
+scores = [s + 5 for s in scores]
+print("After reassignment:", scores)
+```
+
+Explanation:
+
+1. `[s + 5 for s in scores]` creates a new list where each element is the original plus 5. The original list `scores` is not modified.
+2. Assigning the comprehension result back to `scores` rebinds the name `scores` to the new list. The original list object still exists in memory (unless nothing else refers to it).
+3. This approach is different from the `range(len())` approach: the comprehension creates a new list, while `range(len())` modifies the existing list in place. The distinction matters when other names refer to the same list (aliasing from Weeks 3–4).
+
+When to use which: Use `range(len())` with index assignment when you need to modify the list in place and other references to it should see the changes. Use a list comprehension when you want a new list and the original should remain unchanged.
+
+
+## Part 5: Loop Coding Techniques: zip and enumerate
+
+Python provides built-in functions that make `for` loops more powerful without requiring manual index management. Two of the most common are `zip()` (for traversing multiple sequences in parallel) and `enumerate()` (for getting both an index and the item). Neither of these is covered in Gaddis Chapters 1–10.
+
+Both `zip` and `enumerate` work naturally with tuple unpacking in the `for` loop header. This is the same unpacking syntax you studied in Week 5, applied in a new context.
+
+
+### 5.1 Parallel Traversal with zip
+
+What it is: `zip()` takes two or more sequences and pairs up their items by position, producing a series of tuples.
+
+Why it exists: Iterating over multiple sequences in parallel with a `while` loop and manual indexing is error-prone and verbose. `zip()` handles the pairing and the length management.
+
+When to use it: Whenever you have two or more sequences whose items are related by position and you need to process corresponding items together.
+
+
+#### Example 20: What zip produces
+
+This example shows `zip()`'s output: a series of tuples pairing items from two lists.
+
+```{python}
+names = ["Alice", "Bob", "Charlie"]
+scores = [92, 87, 95]
+
+# zip is an iterable, so wrap in list() to see all results at once
+paired = list(zip(names, scores))
+print("zip result:", paired)
+print("type:", type(paired[0]))
+```
+
+Explanation:
+
+1. `zip(names, scores)` pairs `names[0]` with `scores[0]`, `names[1]` with `scores[1]`, and so on.
+2. Each pair is a tuple: `("Alice", 92)`, `("Bob", 87)`, `("Charlie", 95)`.
+3. `zip()` itself returns an iterable (not a list), so we wrap it in `list()` to display all results. In a `for` loop, this wrapping isn't needed. The loop pulls items one at a time.
+
+
+#### Example 21: zip in a for loop with tuple unpacking
+
+Combining `zip()` with tuple unpacking in the `for` header lets you work with corresponding items from multiple sequences cleanly.
+
+```{python}
+names = ["Alice", "Bob", "Charlie"]
+scores = [92, 87, 95]
+
+for name, score in zip(names, scores):
+    print(f"{name}: {score}")
+
+print()
+
+# zip works with more than two sequences
+subjects = ["Math", "English", "Science"]
+
+for name, score, subject in zip(names, scores, subjects):
+    print(f"{name} scored {score} in {subject}")
+```
+
+Explanation:
+
+1. `for name, score in zip(names, scores):` does two things each iteration: `zip` produces the next tuple (e.g., `("Alice", 92)`), and the tuple is unpacked into `name` and `score` through the same sequence unpacking you studied in Week 5.
+2. The loop body can use `name` and `score` as separate variables, with no index arithmetic needed.
+3. `zip()` accepts any number of sequences. With three sequences, each tuple has three elements, and the `for` header unpacks three variables.
+
+
+#### Example 22: zip truncates to the shortest sequence and builds dictionaries
+
+Two practical details: `zip` stops at the shortest input sequence, and the paired tuples it produces can be passed directly to `dict()` to build a dictionary.
+
+```{python}
+# Truncation: zip stops at the shortest sequence
+keys = ["a", "b", "c", "d", "e"]
+values = [1, 2, 3]
+
+print("zip truncates to shortest:")
+print(list(zip(keys, values)))
+
+print()
+
+# Building a dictionary from parallel lists
+names = ["Alice", "Bob", "Charlie"]
+scores = [92, 87, 95]
+
+grade_book = dict(zip(names, scores))
+print("grade_book:", grade_book)
+```
+
+Explanation:
+
+1. `keys` has 5 elements and `values` has 3. `zip` produces only 3 tuples. It stops when the shorter sequence runs out. No error is raised; the extra elements in `keys` are simply ignored.
+2. `dict(zip(names, scores))` creates a dictionary directly from the paired tuples. Each tuple becomes a key-value pair. This is a common Python pattern for constructing dictionaries when keys and values are in separate lists.
+
+
+### 5.2 Offsets and Items with enumerate
+
+What it is: `enumerate()` takes a sequence and produces `(index, item)` pairs: the position number alongside each item.
+
+Why it exists: Programmers frequently need both the item and its index. Before `enumerate`, this required either a manual counter variable or the `range(len())` pattern, both of which add code without adding clarity.
+
+When to use it: Whenever you need to know the position of an item during iteration, not just the item itself.
+
+
+#### Example 23: Manual counter vs enumerate
+
+This example shows the manual approach and how `enumerate` replaces it.
+
+```{python}
+fruits = ["apple", "banana", "cherry", "date"]
+
+# Manual counter: works, but more code to manage
+print("Manual counter:")
+index = 0
+for fruit in fruits:
+    print(f"  {index}: {fruit}")
+    index += 1
+
+print()
+
+# enumerate: same result, no counter management
+print("With enumerate:")
+for index, fruit in enumerate(fruits):
+    print(f"  {index}: {fruit}")
+```
+
+Explanation:
+
+1. The manual approach requires initializing `index` before the loop and incrementing it at the end of each iteration. This is extra code that's easy to get wrong (forget to increment, increment in the wrong place).
+2. `enumerate(fruits)` produces `(0, "apple")`, `(1, "banana")`, and so on. The tuple is unpacked into `index` and `fruit` in the `for` header.
+3. The results are identical, but `enumerate` eliminates the manual counter. There's nothing to initialize, nothing to increment, and no risk of the counter getting out of sync with the iteration.
+
+
+#### Example 24: enumerate vs range(len()) for when you need both index and item
+
+When you need both the index and the item, `enumerate` is cleaner than `range(len())` because you don't have to index back into the list manually.
+
+```{python}
+temps = [72, 68, 75, 80, 77]
+
+# range(len()): requires indexing back into the list
+print("With range(len()):")
+for i in range(len(temps)):
+    print(f"  Day {i + 1}: {temps[i]}°F")
+
+print()
+
+# enumerate: provides both directly
+print("With enumerate:")
+for i, temp in enumerate(temps):
+    print(f"  Day {i + 1}: {temp}°F")
+```
+
+Explanation:
+
+1. With `range(len(temps))`, the loop variable `i` is an index. To get the actual temperature, you must write `temps[i]`, indexing back into the list.
+2. With `enumerate(temps)`, the loop gives you both `i` (the index) and `temp` (the item) directly. No indexing needed.
+3. Both approaches work, but `enumerate` is more readable and less error-prone. The `range(len())` pattern still has its place, specifically when you need the index to *modify* the list (as shown in Part 4), but for read-only access, `enumerate` is preferred.
+
+
+### 5.3 Tuple and Extended Unpacking in for Loops
+
+The `for` loop header supports all the unpacking forms you learned in Week 5. Because `for` assigns the next item to its target on each iteration, any valid assignment target works, including tuple unpacking and extended unpacking with `*`.
+
+
+#### Example 25: Unpacking dictionary items
+
+Iterating over a dictionary's `.items()` method produces `(key, value)` tuples. Tuple unpacking in the `for` header lets you work with keys and values directly.
+
+```{python}
+inventory = {"apples": 30, "bananas": 12, "cherries": 45, "dates": 8}
+
+# Without unpacking: have to index into the tuple
+print("Without unpacking:")
+for item in inventory.items():
+    print(f"  {item[0]}: {item[1]} in stock")
+
+print()
+
+# With unpacking: cleaner and more readable
+print("With unpacking:")
+for fruit, count in inventory.items():
+    print(f"  {fruit}: {count} in stock")
+```
+
+Explanation:
+
+1. `inventory.items()` produces tuples: `("apples", 30)`, `("bananas", 12)`, and so on.
+2. Without unpacking, each tuple is assigned to `item`, and you access elements by index (`item[0]`, `item[1]`).
+3. With unpacking, the tuple is split into `fruit` and `count` automatically. The code reads more clearly and you don't need to remember which index is the key vs the value.
+4. This is the same tuple unpacking from Week 5, applied in a `for` loop context. The `for` loop simply performs the assignment `fruit, count = ("apples", 30)` on each iteration.
+
+
+#### Example 26: Extended unpacking with * in for loops
+
+The extended unpacking operator `*` from Week 5 works in `for` loop targets. This is useful when iterating over sequences whose elements have variable-length structure.
+
+```{python}
+# Student records: first element is name, rest are test scores
+records = [
+    ("Alice", 92, 88, 95),
+    ("Bob", 78, 82),
+    ("Charlie", 90, 85, 88, 93),
+]
+
+for name, *scores in records:
+    average = sum(scores) / len(scores)
+    print(f"{name}: scores = {scores}, average = {average:.1f}")
+```
+
+Explanation:
+
+1. Each record is a tuple with a name followed by a variable number of scores. `("Alice", 92, 88, 95)` has three scores; `("Bob", 78, 82)` has two.
+2. `for name, *scores in records:` unpacks each record: `name` gets the first element, and `*scores` collects all remaining elements into a list.
+3. This is extended sequence unpacking, the same `first, *rest` pattern from Week 5, now applied automatically on each iteration of the loop.
+4. Without `*`, you would need to know the exact length of each record, or manually slice each tuple. The `*` handles variable-length records cleanly.
+
+
+#### Example 27: Nested unpacking in for loops
+
+When iterating over sequences whose elements are themselves structured, the `for` header can unpack at multiple levels, matching the structure of the data.
+
+```{python}
+# Each entry: ((x, y), label)
+points = [
+    ((0, 0), "origin"),
+    ((3, 4), "point A"),
+    ((1, 7), "point B"),
+]
+
+for (x, y), label in points:
+    distance = (x**2 + y**2) ** 0.5
+    print(f"{label} at ({x}, {y}): distance from origin = {distance:.2f}")
+```
+
+Explanation:
+
+1. Each element in `points` is a tuple containing a coordinate pair and a label: `((0, 0), "origin")`.
+2. `for (x, y), label in points:` unpacks both levels: the outer tuple splits into the coordinate pair and the label, and the coordinate pair splits into `x` and `y`.
+3. This is the same nested unpacking from Chapter 11 and Week 5: `(x, y), label = ((0, 0), "origin")`. The `for` loop performs this assignment automatically on each iteration.
+4. The unpacking target must match the structure of the data. If the nesting doesn't match, Python raises a `ValueError`.
+
+
+## Conclusion
+
+This demo connected Python's control-flow tools to the design decisions and reference model concepts you've been studying throughout the course.
+
+### What You've Learned
+
+Truth Value Testing and Boolean Operators (Part 1):
+- Every Python object has an inherent truth value: empty and zero are false, everything else is true
+- `and` and `or` return the operand object that determined the result, not `True` or `False`
+- Short-circuit evaluation means right-side expressions may never execute, and this enables default-value patterns with `or` and guarded evaluation with `and`
+- The ternary `if/else` expression is preferred over the `and`/`or` trick because it works correctly regardless of the branch values' truth values
+
+Basic match/case (Part 2):
+- `match/case` provides explicit syntax for multiple-choice selection based on a value
+- `_` is the wildcard default; `|` matches multiple values in one case; `as` captures the matched value
+- Use `match` for simple value selection; use `if/elif/else` when the logic involves complex conditions
+
+Loop else and the Search Pattern (Part 3):
+- The loop `else` runs only when the loop exits normally (no `break`)
+- It eliminates the need for flag variables in search patterns: `break` on success, `else` handles failure
+- Read `else` on a loop as "if the loop didn't break"
+
+for Loop Mechanics and the Reference Model (Part 4):
+- The `for` loop variable is assigned the next item on each iteration, and this is ordinary assignment (rebinding)
+- Modifying the loop variable (e.g., `x += 1`) rebinds the variable to a new object without affecting the list
+- To modify a list during iteration, use `range(len())` with index assignment, which writes back to the list object
+- List comprehensions build a new list instead of modifying the original, and the choice depends on whether aliased references should see the change
+
+Loop Coding Techniques (Part 5):
+- `zip()` pairs items from multiple sequences by position, combined with tuple unpacking for clean parallel traversal
+- `enumerate()` provides `(index, item)` pairs, replacing manual counters and the `range(len())` pattern for read-only access
+- All unpacking forms from Week 5 (tuple unpacking, nested unpacking, and extended unpacking with `*`) work in `for` loop targets
+
+### What the Textbook Covers in More Depth
+
+Chapters 12–13 of Learning Python provide additional detail on these topics:
+
+Dictionary-Based Multiple Choice:
+- Using dictionary indexing as an alternative to `if/elif/else` chains
+- Storing callable functions as dictionary values for dispatch tables (connects to Part IV of the book, on functions)
+
+Advanced match/case:
+- Structural pattern matching: sequence patterns, mapping patterns, attribute patterns, instance patterns
+- Guard expressions with `if` in case headers
+- The full pattern language (well beyond basic value matching)
+
+Loop Mechanics:
+- `pass` and ellipsis (`...`) as placeholder statements
+- `continue` for skipping to the next iteration (review from Gaddis, with additional context)
+- Nested `for` loop examples for cross-product iteration
+- `range()` with three arguments for step-based iteration and sequence shuffling
+- File scanning patterns with `while` and `for` loops
+- When `range(len())` is vs isn't the appropriate choice

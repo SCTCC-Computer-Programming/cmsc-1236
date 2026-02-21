@@ -1,0 +1,68 @@
+---
+title: "Week 6 Guide"
+subtitle: "Chapters 10–11 Code Completion Exercise"
+format:
+  html:
+    toc: true
+---
+
+## Week 6 focus
+
+Week 6 is a reflection and consolidation week. There is no new reading this week. Instead, you will demonstrate your understanding of the Chapters 10–11 concepts by implementing them in a code completion exercise.
+
+This week you move from predicting behavior to writing code that uses these features to solve practical problems. The submission format is the same code-and-video pattern you followed in Week 2, so the workflow should feel familiar.
+
+## Week 6 Assignments
+
+- Here is the link to the **[Week 6 Assignments](../../assignments/week-06/index.qmd)** page.
+
+## Concepts being reinforced
+
+This week's work draws on the following concepts from Chapters 10–11:
+
+### Extended sequence unpacking
+
+Week 5 introduced the `*` operator in unpacking assignments, which collects remaining elements into a list. This week you'll use two different unpacking patterns to process data with variable-length structures: one where the variable portion is in the middle and one where it's at the end. The position of `*` determines which elements get collected, and the starred name always produces a list regardless of how many elements it collects.
+
+### Named assignment expressions (walrus operator)
+
+The walrus operator (`:=`) assigns a value to a name and returns that value as part of the expression. This week you'll use `:=` inside a loop to compute a value, test whether it meets a condition, and keep the result, all in a single expression without redundant computation. Pay attention to where the parentheses go: they control what gets assigned versus what gets compared.
+
+### Augmented assignment and mutation
+
+This concept connects directly to the aliasing and mutation work from Weeks 3–4. When `+=` is applied to a list, it mutates the list in place, so any other name referring to that list sees the change. When `+` is used instead, it creates a new list and rebinds the name, leaving other references unaffected. This week you'll need to choose the right operator based on whether the original list should be preserved.
+
+## Week 6 activities
+
+This week has three components:
+
+1. **D2L Quiz** — 15 multiple-choice questions testing your ability to predict behavior of extended unpacking, the walrus operator, augmented assignment, and other Chapter 10–11 features. Use the quiz handout to work through the questions.
+
+2. **Code Completion Exercise** — A provided Python program has five empty functions. Each function requires a specific Chapter 10–11 concept. You complete the function bodies so the program produces the correct output.
+
+3. **Video Explanation** — Record a walkthrough demonstrating your completed program, explaining how your code works, and reflecting on what you learned.
+
+## Week 6 tasks
+
+Complete the following tasks during Week 6:
+
+1. **Download the assignment files**
+   - Download the Realm of Pytha program and Quiz Handout from the Week 6 Assignments page.
+
+2. **Complete the D2L Quiz**
+   - Work through the 15 questions in the handout.
+   - Submit your answers (A, B, C, or D) in the D2L Quiz.
+
+3. **Complete the Realm of Pytha program**
+   - Read the assignment page for details on each function.
+   - Complete all 5 functions using Chapter 10–11 features.
+   - Verify your output matches the expected output on the assignment page.
+
+4. **Record your video explanation**
+   - Demonstrate your completed program.
+   - Walk through your code and explain your implementation choices.
+   - Discuss your lessons learned.
+
+5. **Submit your work**
+   - Upload your completed Python file to the D2L Dropbox.
+   - Upload your video to Kaltura and link it in the Dropbox.

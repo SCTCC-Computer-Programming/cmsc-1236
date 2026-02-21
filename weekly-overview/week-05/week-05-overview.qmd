@@ -1,0 +1,117 @@
+---
+title: "Week 5 Guide"
+subtitle: "Chapters 10–11 — Statements and Assignment Features"
+format:
+  html:
+    toc: true
+---
+
+In Weeks 3 and 4, you focused on Python's object model — how names refer to objects, how mutation differs from rebinding, and why aliasing produces bugs that silently give wrong results. This week shifts focus from what objects do to how Python organizes the code that works with them.
+
+Chapters 10–11 of Learning Python explain **Python's design decisions** about code structure. You already follow rules about indentation, colons, and assignment from CMSC 1203. These chapters explain *why* those rules exist, introduce the distinction between **statements** and **expressions**, and cover assignment features that go beyond what Gaddis covered — including extended sequence unpacking with `*`, the walrus operator (`:=`), and augmented assignment behavior with mutable objects.
+
+## Week 5 Demo
+
+- Here is the link to the **[Week 5 examples](../../assignments/week-05/week-5-demo.html)**.
+- <a href="/downloads/week-05/week-5-demo.qmd" download>Download Quarto Notebook</a>
+
+## Chapters 10–11 concepts
+
+### Program hierarchy
+
+Python code is organized into a hierarchy: **programs** are composed of **modules**, modules contain **statements**, statements contain **expressions**, and expressions create and process **objects**. Understanding where code fits in this hierarchy helps you predict behavior and explains why certain syntax rules exist.
+
+The demo examples show:
+
+* using `type()`, `dir()`, and `id()` to inspect modules and objects
+* tracing a single line of code through all four levels of the hierarchy
+* confirming that expressions evaluate to objects with types and identities
+
+### Statements vs expressions
+
+Statements perform actions; expressions produce values. This distinction determines where code can and cannot appear — expressions can be used wherever a value is expected, but statements cannot.
+
+The demo examples show:
+
+* expressions used in several contexts (assignment, function arguments, comprehensions)
+* what happens when a statement appears where an expression is expected
+* why this distinction motivates the walrus operator (covered below)
+
+### Indentation as syntax
+
+Python uses indentation to define block structure rather than braces or keywords. The colon signals that an indented block follows, and `IndentationError` enforces consistency. This design means the code's visual structure always matches its logical structure.
+
+The demo examples show:
+
+* the colon-and-block pattern across `if`, `for`, and `def`
+* how changing indentation changes program behavior
+* how `IndentationError` prevents inconsistent blocks
+
+### Extended sequence unpacking
+
+Basic unpacking from CMSC 1203 requires the number of targets to match the sequence length exactly. Extended unpacking uses `*` to collect remaining elements into a list, handling variable-length sequences cleanly.
+
+The demo examples show:
+
+* the three common patterns: `first, *rest` / `*init, last` / `first, *middle, last`
+* what happens when the starred name collects zero elements
+* practical use with variable-length records
+
+### Line continuation and multiple statements
+
+Chapter 10 covers how to write statements that span multiple lines and how to place multiple statements on one line. These are syntax details not covered in the demo but tested on the quiz.
+
+The reading covers:
+
+* continuing a long statement with backslash or open brackets
+* placing multiple statements on one line with semicolons
+* why open brackets are the preferred continuation method
+
+### Augmented assignment and multi-target assignment
+
+Chapter 11 covers assignment forms that connect directly to the aliasing and mutation concepts from Weeks 3–4.
+
+The reading covers:
+
+* augmented operators (`+=`, `-=`, `//=`) and how `+=` modifies a mutable object in place rather than creating a new one
+* multi-target assignment (`a = b = c = 0`) and the shared-reference behavior when the object is mutable
+
+### Named assignment expressions (walrus operator)
+
+The walrus operator (`:=`) makes assignment an expression — it assigns a value to a name and returns that value so it can be used immediately. This fills the gap created by the statement/expression distinction.
+
+The demo examples show:
+
+* basic `:=` syntax compared to two-step alternatives
+* `:=` in `if` conditions, `while` loops, and comprehensions
+* why parentheses are needed around `:=` in larger expressions
+
+### Expression statements and print parameters
+
+An expression statement is an expression executed for its side effect rather than its return value — for example, calling `my_list.sort()` on its own line. Chapter 11 also covers the `print()` function's keyword parameters (`sep`, `end`, `file`, `flush`) for controlling output formatting and destination.
+
+The demo examples show:
+
+* custom separators and line endings with `sep` and `end`
+* redirecting output to a file with `file`
+* forcing immediate output with `flush`
+
+## Reading expectations for Week 5
+
+As you read Chapters 10–11 and run the demo, check whether you can answer the following in your own words:
+
+1. What are the four levels of Python's program hierarchy, and how do they relate to each other?
+2. What is the difference between a statement and an expression, and where can each appear in code?
+3. Why does Python use indentation to define blocks instead of braces or keywords?
+4. What does the colon signal in a compound statement like `if`, `for`, or `def`?
+5. How does extended unpacking with `*` differ from the basic unpacking you learned in CMSC 1203?
+6. What happens to the starred name when the sequence has exactly enough elements for the other targets?
+7. How does `+=` behave differently from `x = x + value` when `x` refers to a mutable object like a list?
+8. What problem does the walrus operator (`:=`) solve that regular assignment (`=`) cannot?
+9. What do the `sep` and `end` parameters of `print()` control, and what are their default values?
+
+## Week 5 tasks
+
+1. Read **Learning Python 6e, Chapters 10–11** (complete).
+2. Work through the **[Week 5 examples](../../assignments/week-05/week-5-demo.html)** in your Quarto environment.
+3. Complete the **Week 5 D2L quiz** (Chapters 10–11 concepts + demo examples).

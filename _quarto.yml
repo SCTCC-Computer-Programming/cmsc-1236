@@ -59,10 +59,14 @@ website:
             #text: Week 1
           #- href: weekly-overview/week-02/index.qmd
             #text: Week 2
-          - href: weekly-overview/week-03/index.qmd
-            text: Week 3
-          - href: weekly-overview/week-04/index.qmd
-            text: Week 4 (Current Week)
+          #- href: weekly-overview/week-03/index.qmd
+            #text: Week 3
+          #- href: weekly-overview/week-04/index.qmd
+            #text: Week 4
+          - href: weekly-overview/week-05/index.qmd
+            text: Week 5 (Starts - 9 FEB)
+          - href: weekly-overview/week-06/index.qmd
+            text: Week 6 (Starts - 16 FEB)
 
       - section: "Weekly Assignments"
         contents:
@@ -70,13 +74,15 @@ website:
             #text: Week 1
           #- href: assignments/week-02/index.qmd
             #text: Week 2
-          - href: assignments/week-03/index.qmd
-            text: Week 3
-          - href: assignments/week-04/index.qmd
-            text: Week 4 (Current Week)
-           
-      
-      
+          #- href: assignments/week-03/index.qmd
+            #text: Week 3
+          #- href: assignments/week-04/index.qmd
+            #text: Week 4
+          - href: assignments/week-05/index.qmd
+            text: Week 5 (Starts - 9 FEB)
+          - href: assignments/week-06/index.qmd
+            text: Week 6 (Starts - 16 FEB)
+
       - section: "Guides"
         contents: []
           
