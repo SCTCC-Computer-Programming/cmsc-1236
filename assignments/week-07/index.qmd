@@ -1,0 +1,72 @@
+---
+title: "Week 7 Assignments"
+subtitle: "Chapters 12–13 Reading and D2L Quiz"
+format:
+  html:
+    toc: true
+---
+
+- Here is the link to the **[Week 7 demo](../../assignments/week-07/week-7-demo.html)**.
+- <a href="/downloads/week-07/week-7-demo.ipynb" download>Download Jupyter Notebook</a>
+- <a href="/assignments/week-07/week7-quiz-handout.pdf" download>Download Quiz Handout (PDF)</a>
+
+## Part 1: Reading
+
+Read **Learning Python (6e), Chapters 12–13**.
+
+As you read, focus on these ideas (these are also the ideas the quiz will test):
+
+- **Truth value testing:** every object has a truth value; zero numbers, empty collections, `None`, and `False` are false; everything else is true
+- **Boolean operators return objects:** `and` and `or` return the operand that determined the result, not `True` or `False`
+- **Short-circuit evaluation:** `or` stops at the first true operand, `and` stops at the first false operand; the remaining expression is never evaluated
+- **Ternary expression:** `Y if X else Z` produces a value inline, unlike an `if` statement
+- **match/case statement:** selects a branch by matching a value against multiple cases, with `_` as a wildcard default
+- **Loop else clause:** the `else` block on a `for` or `while` loop runs only when the loop completes without hitting `break`
+- **for loop variable assignment:** the loop variable is assigned via ordinary assignment each iteration; modifying it does not change the list
+- **Modifying lists during iteration:** index assignment with `range(len())` mutates the list; list comprehensions build a new list
+- **zip() for parallel traversal:** pairs items from multiple sequences by position, truncating to the shortest
+- **enumerate() for indexed iteration:** produces `(index, item)` pairs, replacing manual counters and `range(len())` for read-only access
+
+## Part 2: Work through the Week 7 Demo
+
+There is no video walkthrough for this week's demo. Work through the examples carefully on your own -- run each cell, read the explanations, and check whether you can predict the output before you see it.
+
+The Week 7 demo covers:
+
+1. Observing truth values with `bool()` and understanding how `and` and `or` return operand objects rather than booleans, including short-circuit evaluation patterns for defaults and guarded access
+2. Writing a basic `match/case` statement for multiple-choice selection, including the `_` wildcard default
+3. Understanding the loop `else` clause, how `break` skips it, and using the search pattern to eliminate flag variables
+4. Tracing why modifying a `for` loop variable does not change the list, connecting to the reference model from Weeks 3–4, and using `range(len())` with index assignment or list comprehensions to actually modify values
+5. Using `zip()` for parallel traversal, `dict(zip())` for building dictionaries, and `enumerate()` for offset-and-item access
+6. Unpacking tuples in `for` loop targets with `zip()`, `enumerate()`, and `dict.items()`, including extended unpacking with `*` (connecting to Week 5)
+
+## Part 3: D2L Quiz
+
+Complete the **Week 7 D2L quiz** using the quiz handout.
+
+1. Download the **Quiz Handout (PDF)** using the link at the top of this page
+2. Work through the 30 multiple-choice questions in the handout
+3. Submit your answers (A, B, C, or D) in the **D2L Quiz**
+
+The quiz focuses on:
+
+- predicting the **truth value** of Python objects using the rules for zero, empty, `None`, and `False`
+- predicting what `and` and `or` **return** when given non-Boolean operands
+- tracing **short-circuit evaluation** to determine which expressions are evaluated and which are skipped
+- predicting results of the **ternary expression** (`Y if X else Z`) and recognizing when the `and`/`or` trick fails
+- tracing a **match/case** statement to determine which branch executes
+- determining when a **loop else** clause runs and when `break` skips it
+- predicting whether a `for` loop that modifies its **loop variable** changes the list (connecting to the **reference model**)
+- distinguishing **index assignment** (`L[i] = value`) from **loop variable rebinding** and predicting when each modifies the list
+- predicting results of `zip()` with **unequal-length** sequences and `dict(zip())` for dictionary construction
+- using `enumerate()` to predict **(index, item)** output and unpacking tuples in `for` loop targets
+
+## D2L submission checklist
+
+Complete the following in D2L:
+
+* **Week 7 D2L quiz** (no file uploads required this week)
+
+**Submission location:** No Dropbox submission this week. All work is completed in D2L.
+
+**Note:** This week focuses on reading Chapters 12–13, working through the demo on your own, and demonstrating comprehension through the quiz. The emphasis is on understanding Python's selection and loop design decisions -- especially how truth value testing, Boolean operators, and for loop mechanics connect to the reference model from earlier weeks.

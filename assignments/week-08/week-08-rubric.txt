@@ -1,0 +1,93 @@
+Week 8 Assignment Rubric
+Course: Sp26 CMSC 1236-22 Advanced Python Programming
+Total: 10 points
+
+---
+
+Criterion 1: VIDEO INTRO + FORMAT (1 point)
+
+Pass (0.7-1.0): Video includes required intro (name, assignment, course), clear audio, and conversational delivery.
+Needs Improvement (0.1-0.6): Intro present but incomplete, or audio quality issues that don't prevent understanding.
+Fail (0.0): Assignment-level fail: YES. Intro missing, audio unintelligible, or clearly reading a script verbatim.
+
+---
+
+Criterion 2: CARGOPOD CLASS (1 point)
+
+Pass (0.7-1.0): Class creates correct attributes, __str__ produces correct format, total_weight returns correct value, and student explains the implementation.
+Needs Improvement (0.1-0.6): Class works but explanation is vague or incomplete, or one method has minor issues.
+Fail (0.0): Assignment-level fail: YES. Class not implemented, attributes missing or incorrect, or __str__ format wrong.
+
+---
+
+Criterion 3: FUNCTION: load_cargo() (1 point)
+
+Pass (0.7-1.0): Function produces correct output and student explains the implementation.
+Needs Improvement (0.1-0.6): Function works but explanation is vague or incomplete.
+Fail (0.0): Function not implemented, output incorrect, or explanation fundamentally wrong.
+
+---
+
+Criterion 4: FUNCTION: classify_cargo() (1 point)
+
+Pass (0.7-1.0): Function produces correct output and student explains the implementation.
+Needs Improvement (0.1-0.6): Function works but explanation is vague or incomplete.
+Fail (0.0): Function not implemented, output incorrect, or explanation fundamentally wrong.
+
+---
+
+Criterion 5: FUNCTION: scan_for_contraband() (1 point)
+
+Pass (0.7-1.0): Function produces correct output and student explains the implementation.
+Needs Improvement (0.1-0.6): Function works but explanation is vague or incomplete.
+Fail (0.0): Function not implemented, output incorrect, or explanation fundamentally wrong.
+
+---
+
+Criterion 6: FUNCTION: apply_tariffs() (1 point)
+
+Pass (0.7-1.0): Function produces correct output and student explains the implementation.
+Needs Improvement (0.1-0.6): Function works but explanation is vague or incomplete.
+Fail (0.0): Function not implemented, output incorrect, or explanation fundamentally wrong.
+
+---
+
+Criterion 7: FUNCTION: generate_manifest() (1 point)
+
+Pass (0.7-1.0): Function produces correct output and student explains the implementation.
+Needs Improvement (0.1-0.6): Function works but explanation is vague or incomplete.
+Fail (0.0): Function not implemented, output incorrect, or explanation fundamentally wrong.
+
+---
+
+Criterion 8: FUNCTION: filter_cargo_by_destination() (1 point)
+
+Pass (0.7-1.0): Function produces correct output and student explains the implementation.
+Needs Improvement (0.1-0.6): Function works but explanation is vague or incomplete.
+Fail (0.0): Function not implemented, output incorrect, or explanation fundamentally wrong.
+
+---
+
+Criterion 9: OUTPUT VERIFICATION (1 point)
+
+Pass (0.7-1.0): Runs completed program in video and verbally compares output to expected results for all sections.
+Needs Improvement (0.1-0.6): Shows output but comparison is rushed or doesn't address all sections.
+Fail (0.0): Assignment-level fail: YES. No output shown, or output still contains incomplete functions.
+
+---
+
+Criterion 10: LESSONS LEARNED (1 point)
+
+Pass (0.7-1.0): Discusses which function was hardest and why, how writing a module from scratch compared to Week 6, and one concept from Chapters 12-13 that makes more sense after implementing it.
+Needs Improvement (0.1-0.6): Addresses some reflection points but responses are surface-level or one topic is missing.
+Fail (0.0): Assignment-level fail: YES. No reflection attempted, or responses show no genuine engagement with the material.
+
+---
+
+Overall Score
+
+A: 9.0 points minimum
+B: 8.0 points minimum
+C: 7.0 points minimum
+D: 6.0 points minimum
+F: 5.0 points minimum
