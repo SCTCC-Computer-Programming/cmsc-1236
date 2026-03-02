@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 6 Guide – CMSC 1236 : Advanced Python Programming</title>
+<title>Week 8 Guide – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -273,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 6 Guide</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 8 Guide</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -428,16 +428,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-6-focus" id="toc-week-6-focus" class="nav-link active" data-scroll-target="#week-6-focus">Week 6 focus</a></li>
-  <li><a href="#week-6-assignments" id="toc-week-6-assignments" class="nav-link" data-scroll-target="#week-6-assignments">Week 6 Assignments</a></li>
-  <li><a href="#concepts-being-reinforced" id="toc-concepts-being-reinforced" class="nav-link" data-scroll-target="#concepts-being-reinforced">Concepts being reinforced</a>
-  <ul class="collapse">
-  <li><a href="#extended-sequence-unpacking" id="toc-extended-sequence-unpacking" class="nav-link" data-scroll-target="#extended-sequence-unpacking">Extended sequence unpacking</a></li>
-  <li><a href="#named-assignment-expressions-walrus-operator" id="toc-named-assignment-expressions-walrus-operator" class="nav-link" data-scroll-target="#named-assignment-expressions-walrus-operator">Named assignment expressions (walrus operator)</a></li>
-  <li><a href="#augmented-assignment-and-mutation" id="toc-augmented-assignment-and-mutation" class="nav-link" data-scroll-target="#augmented-assignment-and-mutation">Augmented assignment and mutation</a></li>
-  </ul></li>
-  <li><a href="#week-6-activities" id="toc-week-6-activities" class="nav-link" data-scroll-target="#week-6-activities">Week 6 activities</a></li>
-  <li><a href="#week-6-tasks" id="toc-week-6-tasks" class="nav-link" data-scroll-target="#week-6-tasks">Week 6 tasks</a></li>
+  <li><a href="#week-8-focus" id="toc-week-8-focus" class="nav-link active" data-scroll-target="#week-8-focus">Week 8 focus</a></li>
+  <li><a href="#week-8-assignments" id="toc-week-8-assignments" class="nav-link" data-scroll-target="#week-8-assignments">Week 8 Assignments</a></li>
+  <li><a href="#concepts-being-reinforced" id="toc-concepts-being-reinforced" class="nav-link" data-scroll-target="#concepts-being-reinforced">Concepts being reinforced</a></li>
+  <li><a href="#week-8-activities" id="toc-week-8-activities" class="nav-link" data-scroll-target="#week-8-activities">Week 8 activities</a></li>
+  <li><a href="#week-8-tasks" id="toc-week-8-tasks" class="nav-link" data-scroll-target="#week-8-tasks">Week 8 tasks</a></li>
   </ul>
 </nav>
     </div>
@@ -447,8 +442,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 6 Guide</h1>
-<p class="subtitle lead">Chapters 10–11 Code Completion Exercise</p>
+<h1 class="title">Week 8 Guide</h1>
+<p class="subtitle lead">Chapters 12–13 Module Creation Exercise</p>
 </div>
 
 
@@ -460,7 +455,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 15, 2026</p>
+      <p class="date-modified">February 28, 2026</p>
     </div>
   </div>
     
@@ -471,59 +466,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="week-6-focus" class="level2">
-<h2 class="anchored" data-anchor-id="week-6-focus">Week 6 focus</h2>
-<p>Week 6 is a reflection and consolidation week. There is no new reading this week. Instead, you will demonstrate your understanding of the Chapters 10–11 concepts by implementing them in a code completion exercise.</p>
-<p>This week you move from predicting behavior to writing code that uses these features to solve practical problems. The submission format is the same code-and-video pattern you followed in Week 2, so the workflow should feel familiar.</p>
+<section id="week-8-focus" class="level2">
+<h2 class="anchored" data-anchor-id="week-8-focus">Week 8 focus</h2>
+<p>Week 8 is a consolidation week. There is no new reading. Instead, you will demonstrate your understanding of Chapters 12–13 concepts by writing a Python module from scratch that plugs into an existing program.</p>
+<p>You receive a main program that imports a module, and you write that module. The function names, parameters, and return values need to match what the main program expects, but how you write each function is up to you.</p>
 </section>
-<section id="week-6-assignments" class="level2">
-<h2 class="anchored" data-anchor-id="week-6-assignments">Week 6 Assignments</h2>
+<section id="week-8-assignments" class="level2">
+<h2 class="anchored" data-anchor-id="week-8-assignments">Week 8 Assignments</h2>
 <ul>
-<li>Here is the link to the <strong><a href="../../assignments/week-06/index.html">Week 6 Assignments</a></strong> page.</li>
+<li>Here is the link to the <strong><a href="../../assignments/week-08/index.html">Week 8 Assignments</a></strong> page.</li>
 </ul>
 </section>
 <section id="concepts-being-reinforced" class="level2">
 <h2 class="anchored" data-anchor-id="concepts-being-reinforced">Concepts being reinforced</h2>
-<p>This week’s work draws on the following concepts from Chapters 10–11:</p>
-<section id="extended-sequence-unpacking" class="level3">
-<h3 class="anchored" data-anchor-id="extended-sequence-unpacking">Extended sequence unpacking</h3>
-<p>Week 5 introduced the <code>*</code> operator in unpacking assignments, which collects remaining elements into a list. This week you’ll use two different unpacking patterns to process data with variable-length structures: one where the variable portion is in the middle and one where it’s at the end. The position of <code>*</code> determines which elements get collected, and the starred name always produces a list regardless of how many elements it collects.</p>
+<p>This week’s work draws primarily on Chapters 12–13: truth value testing, <code>match/case</code>, loop <code>else</code>, in-place list modification with <code>range(len())</code>, list comprehensions, the ternary expression, <code>zip()</code>, <code>enumerate()</code>, and tuple unpacking in <code>for</code> targets.</p>
+<p>It also connects back to earlier weeks. Extended unpacking with <code>*</code> from Week 5 returns for handling variable-length data, and you’ll write another class with <code>__init__</code>, <code>__str__</code>, and a custom method, building on the class work from Week 6. The contrast between modifying a list in place and building a new one ties back to the reference model from Weeks 3–4.</p>
 </section>
-<section id="named-assignment-expressions-walrus-operator" class="level3">
-<h3 class="anchored" data-anchor-id="named-assignment-expressions-walrus-operator">Named assignment expressions (walrus operator)</h3>
-<p>The walrus operator (<code>:=</code>) assigns a value to a name and returns that value as part of the expression. This week you’ll use <code>:=</code> inside a loop to compute a value, test whether it meets a condition, and keep the result, all in a single expression without redundant computation. Pay attention to where the parentheses go: they control what gets assigned versus what gets compared.</p>
-</section>
-<section id="augmented-assignment-and-mutation" class="level3">
-<h3 class="anchored" data-anchor-id="augmented-assignment-and-mutation">Augmented assignment and mutation</h3>
-<p>This concept connects directly to the aliasing and mutation work from Weeks 3–4. When <code>+=</code> is applied to a list, it mutates the list in place, so any other name referring to that list sees the change. When <code>+</code> is used instead, it creates a new list and rebinds the name, leaving other references unaffected. This week you’ll need to choose the right operator based on whether the original list should be preserved.</p>
-</section>
-</section>
-<section id="week-6-activities" class="level2">
-<h2 class="anchored" data-anchor-id="week-6-activities">Week 6 activities</h2>
-<p>This week has three components:</p>
+<section id="week-8-activities" class="level2">
+<h2 class="anchored" data-anchor-id="week-8-activities">Week 8 activities</h2>
+<p>This week has two components:</p>
 <ol type="1">
-<li><p><strong>D2L Quiz</strong> — 15 multiple-choice questions testing your ability to predict behavior of extended unpacking, the walrus operator, augmented assignment, and other Chapter 10–11 features. Use the quiz handout to work through the questions.</p></li>
-<li><p><strong>Code Completion Exercise</strong> — A provided Python program has five empty functions. Each function requires a specific Chapter 10–11 concept. You complete the function bodies so the program produces the correct output.</p></li>
-<li><p><strong>Video Explanation</strong> — Record a walkthrough demonstrating your completed program, explaining how your code works, and reflecting on what you learned.</p></li>
+<li><p><strong>Module creation exercise.</strong> You receive a main program that runs an automated game sequence. You write the module it imports, containing one class and six functions. Each function handles a different part of the game logic. The assignment page describes what each function should do and what concepts are relevant.</p></li>
+<li><p><strong>Video explanation.</strong> Record a walkthrough demonstrating your completed program, explaining how your code works, and reflecting on what you learned.</p></li>
 </ol>
 </section>
-<section id="week-6-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="week-6-tasks">Week 6 tasks</h2>
-<p>Complete the following tasks during Week 6:</p>
+<section id="week-8-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="week-8-tasks">Week 8 tasks</h2>
+<p>Complete the following tasks during Week 8:</p>
 <ol type="1">
-<li><strong>Download the assignment files</strong>
+<li><strong>Download the main program</strong>
 <ul>
-<li>Download the Realm of Pytha program and Quiz Handout from the Week 6 Assignments page.</li>
+<li>Download the Space Trader main program from the Week 8 Assignments page.</li>
 </ul></li>
-<li><strong>Complete the D2L Quiz</strong>
+<li><strong>Write the cargo module</strong>
 <ul>
-<li>Work through the 15 questions in the handout.</li>
-<li>Submit your answers (A, B, C, or D) in the D2L Quiz.</li>
-</ul></li>
-<li><strong>Complete the Realm of Pytha program</strong>
-<ul>
-<li>Read the assignment page for details on each function.</li>
-<li>Complete all 5 functions using Chapter 10–11 features.</li>
+<li>Create a new Python file for your module.</li>
+<li>Read the assignment page for the class and function specifications.</li>
 <li>Verify your output matches the expected output on the assignment page.</li>
 </ul></li>
 <li><strong>Record your video explanation</strong>
@@ -534,7 +512,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><strong>Submit your work</strong>
 <ul>
-<li>Upload your completed Python file to the D2L Dropbox.</li>
+<li>Upload your completed module file to the D2L Dropbox.</li>
 <li>Upload your video to Kaltura and link it in the Dropbox.</li>
 </ul></li>
 </ol>
