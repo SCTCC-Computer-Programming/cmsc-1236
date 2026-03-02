@@ -1,0 +1,284 @@
+---
+title: "Week 8 Assignments"
+subtitle: "Chapters 12–13 Module Creation Exercise"
+format:
+  html:
+    toc: true
+---
+
+## Assignment Files
+
+- <a href="/assignments/week-08/space-trader.py" download>Download Space Trader Main Program (space-trader.py)</a>
+
+## Overview
+
+This week is an application and consolidation week. You will demonstrate your understanding of Chapters 12–13 concepts by:
+
+1. Writing a Python module from scratch that plugs into an existing program
+2. Recording a video explanation of your code
+
+Unlike Week 6 where you completed functions inside a provided file, this week you are creating a new file entirely. The main program imports your module and calls your functions. If the names, parameters, and return values match the spec below, the program will run and produce the correct output.
+
+## Part 1: Module Creation Exercise
+
+### The Scenario
+
+The development team behind **Space Trader**, a space trading simulation, needs a new module. The team lead has already written the main docking sequence program that handles display and program flow. Your job is to write the cargo module, which handles loading cargo, classifying it, scanning for contraband, applying tariffs, and generating a docking manifest.
+
+The main program imports your module and calls each function with prepared data. You don't modify the main program. You write the module it expects.
+
+### About the Program
+
+The main program (`space-trader.py`) runs an automated docking sequence with no user input or menu system. When you run it, it executes all six sections and prints the results. With your module in place and working, each section will produce output that you can compare against the expected output at the end of this document.
+
+The main program uses a few Python features in the display functions that you may not have written yourself yet. You don't need to modify these functions, but here's what they do:
+
+| Code | What It Does |
+|------|--------------|
+| `f"{text:<22}"` | Left-aligns text within 22 characters (used for table columns) |
+| `f"{text:^58}"` | Centers text within 58 characters (used for headers) |
+| `f"{price:.2f}"` | Formats a number with 2 decimal places (used for prices) |
+| `f"{rate:.0%}"` | Formats a decimal as a percentage (e.g., 0.15 becomes 15%) |
+| `", ".join(list)` | Combines list items into a single string with commas between them |
+
+### Module Requirements
+
+Your module file must be named `lastname-cargo-module.py` (replace `lastname` with your last name). It must contain one class and six functions.
+
+Before you can run the program with your module, you need to update the import statement at the top of `space-trader.py` to match your filename. Change `from cargo_module import` to `from lastname_cargo_module import` (note: Python uses underscores in import statements, so the hyphens in your filename become underscores). This is the only change you should make to the main program.
+
+#### Constraints
+
+- Use only concepts covered in CMSC 1203 and Weeks 1–7 of this course
+- Do not import any external libraries
+- Do not use `try`/`except` or error handling. Assume all inputs are valid
+- Each function should do one thing and return the specified result
+
+---
+
+**1. `CargoPod` class**
+
+Write a class with `__init__`, `__str__`, and `total_weight` methods.
+
+A `CargoPod` has six attributes: name, category, quantity, unit_weight, destination, and tags (a list of strings).
+
+Look at the Cargo log section of the expected output to see what format `__str__` should produce. Look at the Priority Unloading section to see `total_weight()` in action. It returns the quantity multiplied by the unit weight.
+
+**2. `load_cargo(records)`**
+
+Parse incoming cargo transmissions into `CargoPod` objects. Each record is a tuple, but the tuples vary in length. The first five elements are always `(name, category, quantity, unit_weight, destination)`, and any remaining elements are optional tags.
+
+Some transmissions are corrupted: they have an empty name or a zero quantity. Skip those records. Only create `CargoPod` instances for records with a truthy name and a truthy quantity.
+
+Look at `CARGO_RECORDS` in the main program to see the tuple structures your code needs to handle. The variable-length tags are the same kind of pattern you saw with extended unpacking in the Week 5 demo.
+
+Return a list of valid `CargoPod` instances.
+
+**3. `classify_cargo(pods)`**
+
+Assign handling instructions to each pod based on its category:
+
+- `"weapons"` → `"Restricted - Secure Hold"`
+- `"food"` → `"Perishable - Cold Storage"`
+- `"tech"` → `"Fragile - Padded Bay"`
+- `"minerals"` → `"Heavy - Lower Deck"`
+- anything else → `"Standard Storage"`
+
+This is a value-matching problem. Review the `match/case` section of the Week 7 demo.
+
+Return a list of `(name, instruction)` tuples.
+
+**4. `scan_for_contraband(pods, banned_items)`**
+
+Scan all cargo pods and report the first banned item found. If a pod's name appears in the `banned_items` list, stop scanning immediately and return `(True, "Contraband detected: {name}")`. If no banned items are found after checking every pod, return `(False, "Cargo scan clear")`.
+
+The key behavior here is stopping at the first match and handling the not-found case separately. Review the loop `else` clause and search pattern from the Week 7 demo.
+
+Return a tuple of `(bool, str)`.
+
+**5. `apply_tariffs(prices, rate, threshold)`**
+
+Apply import tariffs to cargo prices by modifying the price list directly. For each price: if the price is greater than the threshold, replace it with the price multiplied by `(1 + rate)`, rounded to 2 decimal places. If the price is at or below the threshold, leave it unchanged.
+
+The main program passes a list and expects that same list to be modified. This is the in-place modification pattern using `range(len())` with index assignment from the Week 7 demo. The conditional replacement is a natural fit for the ternary expression (`Y if X else Z`).
+
+Return the modified list.
+
+**6. `generate_manifest(names, prices, destinations)`**
+
+Produce a numbered docking manifest from three parallel lists. Pair each name with its corresponding price and destination, and number the entries starting at 1.
+
+This requires combining multiple sequences by position and adding an index. Review the `zip()`, `enumerate()`, and tuple unpacking sections of the Week 7 demo.
+
+Return a list of `(index, name, price, destination)` tuples, 1-indexed.
+
+**7. `filter_cargo_by_destination(pods, destination)`**
+
+Build a new list containing only the pods whose destination matches the given destination string.
+
+This is a filtering task that builds a new list from an existing one based on a condition. A list comprehension is the natural tool for this. Note how this contrasts with `apply_tariffs`, which modifies a list in place.
+
+Return a new list of `CargoPod` instances.
+
+### Your Task
+
+1. Download the main program using the link above
+2. Create a new file named `lastname-cargo-module.py` (replace `lastname` with your last name)
+3. Update the import statement in `space-trader.py` to match your module filename (hyphens become underscores)
+4. Write the class and six functions described above
+5. Run `space-trader.py` and verify your output matches the expected output at the end of this document
+
+### How to Approach This
+
+- **Start with the `CargoPod` class.** Several functions depend on it, and Section 1 will show you immediately whether your class works.
+- **Read the main program.** The display functions show you exactly what attribute names, method signatures, and return structures your code needs to produce.
+- **Read the data.** Look at `CARGO_RECORDS` to see how the tuples vary in length. This tells you what your unpacking needs to handle.
+- **Test after each function.** Run the program after completing each function to see your progress. Sections that depend on unfinished functions may produce errors, and that's expected until those functions are in place.
+- **Compare against the expected output.** Each section has distinct, verifiable results.
+
+## Part 2: Video Explanation
+
+Record a video explaining your code and submit it via Kaltura.
+
+### Video Requirements
+
+- Clear video and audio quality
+- Introduce yourself, the assignment, and course at the beginning
+
+### What to Include
+
+1. **Program demonstration.** Run your completed program and compare the output to the Expected Output reference at the end of this document. Verbally confirm that each section produces the correct results.
+
+2. **Code walkthrough.** Walk through the class and functions you wrote. Explain how your code works and why you chose the approach you did.
+
+3. **Lessons learned.** At the end of your video, discuss:
+   - Which function was the hardest to write and why
+   - How writing a module from scratch compared to completing functions in Week 6
+   - One concept from Chapters 12–13 that makes more sense to you now after implementing it
+
+## D2L Submission Checklist
+
+### Dropbox Submission
+
+Upload the following files to the **Week 8 Dropbox**:
+
+1. **Cargo module file**: `lastname-cargo-module.py`. Change `lastname` to your last name. Not doing so will result in the assignment not being graded.
+
+### Video Submission
+
+- Upload your video to **Kaltura Mediaspace**
+- Name your video: `lastname_Week8_ModuleCreation`
+- Link to the Kaltura video in the Assignment Dropbox
+
+**Submission location:** All items submitted in D2L (Week 8 Dropbox).
+
+## Expected Output Reference
+
+When your module is complete and correct, running `space-trader.py` should produce output like this:
+
+```text
+==========================================================
+             Space Trader — Docking Sequence              
+==========================================================
+
+[1] LOADING CARGO
+----------------------------------------------------------
+  Loaded 7 cargo pods.
+
+  Name                  Category    Qty   Weight    Destination
+  ------------------------------------------------------------------
+  Plasma Coils          tech        4     2.5       Nexus Station
+  Iron Ore              minerals    20    8.0       Forge World
+  Dried Rations         food        15    0.5       Nexus Station
+  Blaster Rifles        weapons     6     3.5       Nexus Station
+  Crystal Shards        luxury      8     0.3       Velaris Hub
+  Titanium Plates       minerals    12    6.0       Forge World
+  Freeze-Dried Fruit    food        25    0.4       Velaris Hub
+
+  Cargo flags:
+    Plasma Coils: fragile, high-value
+    Iron Ore: bulk
+    Dried Rations: (none)
+    Blaster Rifles: restricted
+    Crystal Shards: fragile, rare, insured
+    Titanium Plates: bulk, heavy
+    Freeze-Dried Fruit: (none)
+
+  Cargo log:
+    Plasma Coils: 4x tech (2.5 lbs each) -> Nexus Station
+    Iron Ore: 20x minerals (8.0 lbs each) -> Forge World
+    Dried Rations: 15x food (0.5 lbs each) -> Nexus Station
+    Blaster Rifles: 6x weapons (3.5 lbs each) -> Nexus Station
+    Crystal Shards: 8x luxury (0.3 lbs each) -> Velaris Hub
+    Titanium Plates: 12x minerals (6.0 lbs each) -> Forge World
+    Freeze-Dried Fruit: 25x food (0.4 lbs each) -> Velaris Hub
+
+[2] CLASSIFYING CARGO
+----------------------------------------------------------
+
+  Cargo                 Handling Instructions
+  --------------------------------------------------
+  Plasma Coils          Fragile - Padded Bay
+  Iron Ore              Heavy - Lower Deck
+  Dried Rations         Perishable - Cold Storage
+  Blaster Rifles        Restricted - Secure Hold
+  Crystal Shards        Standard Storage
+  Titanium Plates       Heavy - Lower Deck
+  Freeze-Dried Fruit    Perishable - Cold Storage
+
+[3] CONTRABAND SCAN
+----------------------------------------------------------
+  WARNING: Contraband detected: Blaster Rifles
+
+[4] APPLYING STATION TARIFFS
+----------------------------------------------------------
+  Tariff rate: 15%
+  Threshold: $50.00 (items at or below are exempt)
+
+  Prices before tariff:
+    1. $120.00
+    2. $480.00
+    3. $45.50
+    4. $288.00
+    5. $36.00
+    6. $432.00
+    7. $75.00
+
+  Prices after tariff:
+    1. $138.00
+    2. $552.00
+    3. $45.50
+    4. $331.20
+    5. $36.00
+    6. $496.80
+    7. $86.25
+
+[5] GENERATING DOCKING MANIFEST
+----------------------------------------------------------
+
+  #   Item                  Price       Destination
+  ------------------------------------------------------
+  1   Plasma Coils          $138.00     Nexus Station
+  2   Iron Ore              $552.00     Forge World
+  3   Dried Rations         $45.50      Nexus Station
+  4   Blaster Rifles        $331.20     Nexus Station
+  5   Crystal Shards        $36.00      Velaris Hub
+  6   Titanium Plates       $496.80     Forge World
+  7   Freeze-Dried Fruit    $86.25      Velaris Hub
+
+[6] PRIORITY UNLOADING
+----------------------------------------------------------
+
+  Cargo bound for Nexus Station (3 pods):
+    - Plasma Coils (4x tech, 10.0 lbs total)
+    - Dried Rations (15x food, 7.5 lbs total)
+    - Blaster Rifles (6x weapons, 21.0 lbs total)
+
+  Cargo bound for Forge World (2 pods):
+    - Iron Ore (20x minerals, 160.0 lbs total)
+    - Titanium Plates (12x minerals, 72.0 lbs total)
+
+==========================================================
+DOCKING SEQUENCE COMPLETE
+==========================================================
+```

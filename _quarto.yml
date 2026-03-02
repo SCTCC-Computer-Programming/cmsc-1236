@@ -69,6 +69,8 @@ website:
             text: Week 6 (Starts - 16 FEB)
           - href: weekly-overview/week-07/index.qmd
             text: Week 7 (Starts - 23 FEB)
+          - href: weekly-overview/week-08/index.qmd
+            text: Week 8 (Starts - 2 MAR)
       
       - section: "Weekly Assignments"
         contents:
@@ -86,6 +88,8 @@ website:
             text: Week 6 (Starts - 16 FEB)
           - href: assignments/week-07/index.qmd
             text: Week 7 (Starts - 23 FEB)
+          - href: assignments/week-08/index.qmd
+            text: Week 8 (Starts - 2 MAR)
 
       - section: "Guides"
         contents: []

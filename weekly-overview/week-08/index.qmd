@@ -1,0 +1,52 @@
+---
+title: "Week 8 Guide"
+subtitle: "Chapters 12–13 Module Creation Exercise"
+format:
+  html:
+    toc: true
+---
+
+## Week 8 focus
+
+Week 8 is a consolidation week. There is no new reading. Instead, you will demonstrate your understanding of Chapters 12–13 concepts by writing a Python module from scratch that plugs into an existing program.
+
+You receive a main program that imports a module, and you write that module. The function names, parameters, and return values need to match what the main program expects, but how you write each function is up to you.
+
+## Week 8 Assignments
+
+- Here is the link to the **[Week 8 Assignments](../../assignments/week-08/index.qmd)** page.
+
+## Concepts being reinforced
+
+This week's work draws primarily on Chapters 12–13: truth value testing, `match/case`, loop `else`, in-place list modification with `range(len())`, list comprehensions, the ternary expression, `zip()`, `enumerate()`, and tuple unpacking in `for` targets.
+
+It also connects back to earlier weeks. Extended unpacking with `*` from Week 5 returns for handling variable-length data, and you'll write another class with `__init__`, `__str__`, and a custom method, building on the class work from Week 6. The contrast between modifying a list in place and building a new one ties back to the reference model from Weeks 3–4.
+
+## Week 8 activities
+
+This week has two components:
+
+1. **Module creation exercise.** You receive a main program that runs an automated game sequence. You write the module it imports, containing one class and six functions. Each function handles a different part of the game logic. The assignment page describes what each function should do and what concepts are relevant.
+
+2. **Video explanation.** Record a walkthrough demonstrating your completed program, explaining how your code works, and reflecting on what you learned.
+
+## Week 8 tasks
+
+Complete the following tasks during Week 8:
+
+1. **Download the main program**
+   - Download the Space Trader main program from the Week 8 Assignments page.
+
+2. **Write the cargo module**
+   - Create a new Python file for your module.
+   - Read the assignment page for the class and function specifications.
+   - Verify your output matches the expected output on the assignment page.
+
+3. **Record your video explanation**
+   - Demonstrate your completed program.
+   - Walk through your code and explain your implementation choices.
+   - Discuss your lessons learned.
+
+4. **Submit your work**
+   - Upload your completed module file to the D2L Dropbox.
+   - Upload your video to Kaltura and link it in the Dropbox.
