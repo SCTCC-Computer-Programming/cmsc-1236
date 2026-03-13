@@ -1,0 +1,576 @@
+---
+title: "Week 10 Demo"
+subtitle: "Chapter 19: Recursive Functions and Functional Programming Tools"
+format:
+  html:
+    toc: true
+    code-fold: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Introduction
+
+In CMSC 1203, you learned to write functions using `def`, pass arguments, and return values. You used loops to process collections, and you built programs where functions called other functions in a straightforward sequence. Chapter 19 of Learning Python introduces a set of tools that extend what you know about functions in two important directions.
+
+The first is recursion: functions that call themselves. You already have the building blocks to understand this. You know how functions work, how local variables are scoped, and how return values pass data back to the caller. Recursion puts those pieces together in a new way.
+
+The second direction is functional programming tools: a style of working with collections where instead of writing a loop yourself, you pass a function to a built-in that applies it for you. To use these tools effectively, you first need to understand something about functions that Gaddis didn't cover explicitly: functions in Python are objects, just like lists and integers, and can be passed around as values.
+
+After completing these examples, you should be able to:
+
+* explain what a base case and recursive case are, and why both are required
+* trace a recursive function's execution by following each call level
+* explain what it means for functions to be first-class objects in Python
+* write a lambda expression and explain how it relates to an equivalent `def`
+* use `map()` to apply a function to every item in an iterable
+* use `filter()` to select items from an iterable based on a condition
+
+The examples are organized into five parts. Part 1 introduces recursive functions with two examples that build from simple to practical. Part 2 establishes that functions are first-class objects. Part 3 introduces lambda expressions as a natural extension of Part 2. Parts 4 and 5 cover `map()` and `filter()`, the two functional programming tools that most directly benefit from lambda.
+
+
+## Part 1: Recursive Functions
+
+A recursive function is a function that calls itself as part of solving a problem. This sounds circular, and it would be, if not for one critical requirement: every recursive function must have a base case, a condition under which it stops calling itself and returns a result directly. Without a base case, a recursive function calls itself forever (or until Python raises a `RecursionError`).
+
+Recursion tends to fit two kinds of problems well.
+
+The first is problems where the solution is defined in terms of a smaller version of itself. The sum of a list, for example, is just the first item plus the sum of everything else. That "everything else" is the same problem, just smaller. Recursion maps directly onto this kind of definition.
+
+The second is problems where the data has unknown or unpredictable depth. A nested list might have one level of nesting or five. A loop can handle one level at a time, but it needs to know how many levels there are. A recursive function handles one level and passes everything below it to the next call, so the depth does not matter.
+
+The examples in this section demonstrate both. The countdown and sum examples show the first kind. The nested list example at the end shows the second.
+
+The pattern looks like this every time:
+
+- If the problem is small enough to solve directly, solve it and return (base case)
+- Otherwise, solve a smaller version of the same problem by calling yourself, then combine that result with the current step (recursive case)
+
+The key mental shift is that you don't need to understand the entire chain of calls to write a recursive function. You only need to answer two questions: what is the simplest version of this problem (base case), and how do I reduce a larger version into a smaller version plus one step (recursive case)?
+
+
+### 1.1 Seeing How It Works
+
+The first example uses a simple countdown so you can watch what Python does when a function calls itself, before adding any real complexity.
+
+
+#### Example 1: Countdown - tracing a recursive call chain
+
+This example prints a countdown from a starting number to zero. The countdown itself is not the point. The goal is to watch what actually happens when `countdown` calls itself: how each call gets its own separate copy of `n`, how the function knows when to stop, and what happens after it stops.
+
+```{python}
+def countdown(n):
+    print(f"countdown called with n = {n}")
+    
+    if n <= 0:                  # Base case: stop here
+        print("Base case reached - returning")
+        return
+    else:                       # Recursive case: do one step, then call again
+        print(f"  Counting: {n}")
+        countdown(n - 1)        # Call ourselves with a smaller problem
+        print(f"countdown({n}) returning")
+
+countdown(3)
+```
+
+Explanation:
+
+1. Each call to `countdown` gets its own separate copy of `n`. When `countdown(3)` calls `countdown(2)`, the `n = 3` version is paused and waiting; it does not disappear.
+2. The base case `if n <= 0` is what tells the function to stop. When `countdown(0)` runs, it hits the base case, returns, and makes no further calls.
+3. After `countdown(0)` returns, `countdown(1)` picks back up where it left off, finishes, and returns. Then `countdown(2)` does the same, then `countdown(3)`. Each call finishes in the reverse order it started.
+4. The `print` after the recursive call only runs on the way back out. That is what you are seeing in the output: the calls go deeper first, then each one finishes as the results come back.
+
+Notice that `countdown(3)` makes four total function calls: `countdown(3)`, `countdown(2)`, `countdown(1)`, and `countdown(0)`. Each one is a separate, independent call with its own local variable `n`.
+
+
+#### Example 2: Summing a list - a recursive function that produces a value
+
+The countdown example returns `None`. This example returns a computed value, which means each call needs to do something with the result it gets back from the call below it.
+
+```{python}
+def recursive_sum(numbers):
+    print(f"  recursive_sum called with: {numbers}")
+    
+    if not numbers:             # Base case: empty list sums to zero
+        print("  Base case: empty list, returning 0")
+        return 0
+    else:                       # Recursive case: first item + sum of the rest
+        first = numbers[0]
+        rest = numbers[1:]
+        result = first + recursive_sum(rest)
+        print(f"  recursive_sum({numbers}) returning {result}")
+        return result
+
+total = recursive_sum([4, 2, 7, 1])
+print(f"\nFinal total: {total}")
+```
+
+Explanation:
+
+1. The base case is an empty list: `if not numbers` is `True` when `numbers` is `[]`. An empty list has a sum of zero, so we return `0` directly without making another call.
+2. The recursive case splits the list: `numbers[0]` is the first item, `numbers[1:]` is everything else. We add the first item to the result of summing everything else.
+3. On each call, the list gets one item shorter. `[4, 2, 7, 1]` becomes `[2, 7, 1]`, then `[7, 1]`, then `[1]`, then `[]`. That last call hits the base case and returns `0`.
+4. The return values work their way back: `0` goes back to the call that had `[1]`, which returns `1 + 0 = 1`. That goes back to the call that had `[7, 1]`, which returns `7 + 1 = 8`. This continues until the final result `14` comes back to the original caller.
+5. Watch the printed output as you run this. The calls print progressively shorter lists on the way in, then print their return values on the way back out. That pattern is what recursion looks like in practice.
+
+
+### 1.2 Why Recursion Exists: Arbitrary Depth
+
+The examples above can both be done easily with a loop. So why use recursion at all? The answer becomes clear when the structure you are working with has unpredictable depth: when you do not know in advance how deeply nested the data is.
+
+A loop iterates over one level. A recursive function can follow a structure as deep as it goes, because each call handles one level and delegates everything below it to a recursive call.
+
+
+#### Example 3: Flattening a nested list
+
+A nested list is a list that may contain other lists as elements, to any depth. This structure comes up in real data more often than you might expect. A file system is one example: a folder contains files and other folders, each of which may contain more files and folders. JSON data from a web API often has the same shape, with values that are themselves objects containing more values. Any time data has a hierarchy where the depth varies, you are dealing with this kind of structure.
+
+`[1, [2, 3], [4, [5, 6]]]` is a simple version of that idea: a list where some elements are plain values and others are lists that contain more values. Flattening it means collecting all the plain values into a single flat list, no matter how deep they are buried. Writing a loop to do this is difficult because you do not know how many levels deep the nesting goes. Recursion handles it naturally.
+
+Before the code, one new built-in appears here: `isinstance(item, list)` checks whether an object is a particular type. `isinstance(item, list)` returns `True` if `item` is a list and `False` otherwise. It is the way the function decides at each step whether to dig deeper or add the item directly to the result.
+
+```{python}
+def flatten(items):
+    result = []
+    
+    for item in items:
+        if isinstance(item, list):      # If this item is itself a list...
+            result += flatten(item)     # ...flatten it recursively and add the results
+        else:
+            result.append(item)         # Otherwise, it's a plain value - add it directly
+    
+    return result
+
+# A list with nesting at different depths
+nested = [1, [2, 3], [4, [5, 6]], [[7], 8]]
+
+flat = flatten(nested)
+print("Original:", nested)
+print("Flattened:", flat)
+```
+
+Explanation:
+
+1. `flatten` loops through the items at the current level. For each item, it asks: is this a list, or is it a plain value?
+2. If it is a plain value, it goes directly into `result`.
+3. If it is itself a list, `flatten` calls itself on that inner list. This call handles the inner list's items the same way: some may be plain values, others may be deeper lists. Recursion follows the structure however deep it goes.
+4. The base case here is implicit: when a list contains no nested lists, the `isinstance` check is always `False` and no recursive call happens. The function just appends items and returns.
+
+Try tracing what happens with `[4, [5, 6]]`. `flatten([4, [5, 6]])` processes `4` first (plain value, appended), then `[5, 6]` (a list, so calls `flatten([5, 6])`). That call processes `5` and `6` as plain values and returns `[5, 6]`. The outer call adds those to its result, producing `[4, 5, 6]`.
+
+A loop-based approach would need to know the maximum depth in advance or use manual stack management to simulate what recursion does automatically. Recursion is the natural fit for data where the depth is variable and unknown.
+
+
+## Part 2: Functions as First-Class Objects
+
+Before introducing the functional programming tools in Parts 3-5, there is a foundational idea to establish. In Python, functions are objects: the same kind of thing as integers, strings, and lists. This is not just a technicality. It has direct practical consequences for how you can use functions.
+
+You already know that you can store an integer in a variable, pass an integer to a function, and put integers in a list. In Python, you can do all of those things with functions too. A function defined with `def` creates a function object and binds a name to it. The function object itself exists independently of its name.
+
+
+#### Example 4: Functions are objects - observing with type() and id()
+
+This example uses `type()` and `id()` to inspect a function the same way you can inspect any Python object. `type()` tells you what kind of object something is. `id()` returns a number that uniquely identifies the object in memory. Both work on any Python object, including functions.
+
+```{python}
+def greet(name):
+    return f"Hello, {name}!"
+
+# A function is an object - we can observe it like any other object
+print(type(greet))          # What type is it?
+print(id(greet))            # It has an identity in memory
+print(greet)                # It has a representation
+
+# greet is a name that refers to the function object
+# We can bind another name to the same object
+say_hello = greet
+
+print(type(say_hello))      # Same type
+print(id(say_hello))        # Same identity - same object
+print(say_hello("Alice"))   # Can call it through either name
+print(greet("Alice"))       # Both names reach the same function
+```
+
+Explanation:
+
+1. `type(greet)` returns `<class 'function'>`. A function is an instance of the `function` type, just as `42` is an instance of `int` and `"hello"` is an instance of `str`.
+2. `id(greet)` returns a memory address. The function object lives in memory and has an identity.
+3. `say_hello = greet` does not copy the function. It creates a second name that refers to the same function object. `id(say_hello) == id(greet)` confirms they are the same object. This is the same reference behavior you studied in Weeks 3-4.
+4. Because `say_hello` and `greet` refer to the same function object, calling either one produces the same result.
+
+
+#### Example 5: Passing a function as an argument
+
+If functions are objects, they can be passed as arguments to other functions. This example shows what that looks like and why it is useful.
+
+```{python}
+def apply_twice(func, value):
+    """Call func on value, then call func on the result."""
+    first_result = func(value)
+    second_result = func(first_result)
+    return second_result
+
+def double(x):
+    return x * 2
+
+def add_ten(x):
+    return x + 10
+
+# Pass the double function as an argument
+result1 = apply_twice(double, 3)
+print(f"apply_twice(double, 3) = {result1}")    # double(3) = 6, double(6) = 12
+
+# Pass the add_ten function as an argument
+result2 = apply_twice(add_ten, 5)
+print(f"apply_twice(add_ten, 5) = {result2}")   # add_ten(5) = 15, add_ten(15) = 25
+
+# apply_twice works with any single-argument function
+def exclaim(text):
+    return text + "!"
+
+result3 = apply_twice(exclaim, "hello")
+print(f"apply_twice(exclaim, 'hello') = {result3}")
+```
+
+Explanation:
+
+1. `apply_twice` accepts `func` as a parameter. Inside the function, `func` is just a name that refers to whatever function object was passed in.
+2. `func(value)` calls that function. The parentheses trigger the call, the same way calling `greet("Alice")` works.
+3. When we call `apply_twice(double, 3)`, we pass the `double` function object as the first argument. `func` inside `apply_twice` becomes another name for `double`.
+4. The same `apply_twice` function works with `double`, `add_ten`, and `exclaim` because it does not care what the function does, only that it accepts one argument and returns a value.
+
+Writing a function that accepts another function as an argument is a pattern Python uses throughout its standard library. `map()` and `filter()`, which you will use in Parts 4 and 5, are built on exactly this idea.
+
+
+## Part 3: Lambda Expressions
+
+Part 2 established that functions are objects and can be passed as arguments. In the examples there, we defined `double`, `add_ten`, and `exclaim` with `def` before using them. For short, one-time functions, defining them with a name feels like more ceremony than the function warrants.
+
+Lambda expressions solve this. A `lambda` creates a function object the same way `def` does, but as an expression rather than a statement. This means a lambda can appear anywhere an expression is valid, including directly inside a function call as an argument. The tradeoff is that a lambda body must be a single expression. Anything that requires multiple statements or complex logic belongs in a `def`.
+
+The syntax is:
+
+```
+lambda parameters: expression
+```
+
+The `expression` is evaluated and its value is returned automatically. There is no `return` keyword.
+
+
+#### Example 6: Lambda vs def - the same function, two forms
+
+This example shows a lambda and an equivalent `def` side by side. The goal is to see that they produce the same kind of object, not two different things.
+
+```{python}
+# A function defined with def
+def square_def(x):
+    return x ** 2
+
+# The same function defined with lambda
+square_lambda = lambda x: x ** 2
+
+# Both produce function objects
+print(type(square_def))             # <class 'function'>
+print(type(square_lambda))          # <class 'function'>
+
+# Both work the same way
+print(square_def(5))                # 25
+print(square_lambda(5))             # 25
+
+# A lambda with two parameters
+add = lambda x, y: x + y
+print(add(3, 4))                    # 7
+```
+
+Explanation:
+
+1. `lambda x: x ** 2` creates a function object and assigns it to `square_lambda`. The name is optional. The function object exists either way.
+2. `type(square_lambda)` returns `<class 'function'>`, the same type as `square_def`. A lambda is not a different kind of thing; it is a function.
+3. The `lambda` body `x ** 2` is evaluated and its value returned automatically. No `return` keyword is written.
+4. `lambda x, y: x + y` shows that lambdas can accept multiple parameters, separated by commas just like `def` parameters.
+
+
+#### Example 7: Lambda as an inline argument
+
+The real purpose of lambda is to define a function right where it is needed, without giving it a name. This example shows the pattern that appears most commonly in practice.
+
+```{python}
+def apply_to_list(func, items):
+    """Apply func to each item and return results as a list."""
+    results = []
+    for item in items:
+        results.append(func(item))
+    return results
+
+numbers = [1, 2, 3, 4, 5]
+
+# Without lambda: define a function first, then pass it
+def triple(x):
+    return x * 3
+
+result1 = apply_to_list(triple, numbers)
+print("Using def:", result1)
+
+# With lambda: define the function inline where it is used
+result2 = apply_to_list(lambda x: x * 3, numbers)
+print("Using lambda:", result2)
+
+# Lambda is useful when the function is simple and used only once
+result3 = apply_to_list(lambda x: x ** 2 + 1, numbers)
+print("Squares plus one:", result3)
+```
+
+Explanation:
+
+1. In the `triple` version, we define a function with `def`, bind it to the name `triple`, and then pass `triple` to `apply_to_list`. The name `triple` is only used in one place.
+2. In the lambda version, `lambda x: x * 3` creates the same function object and passes it directly as an argument, with no separate definition and no name.
+3. Both calls produce identical results. The difference is only in how much code is written and whether the function gets a name.
+4. Lambda is most appropriate when the function body is a single simple expression and the function will not be used anywhere else. If you find yourself writing a complex lambda or reusing it in multiple places, a named `def` is the better choice.
+
+
+#### Example 8: Where lambda does not fit
+
+Lambda's single-expression constraint is a real limitation. This example illustrates the boundary.
+
+```{python}
+# Lambda works for simple expressions
+classify = lambda x: "positive" if x > 0 else ("negative" if x < 0 else "zero")
+print(classify(5))      # positive
+print(classify(-3))     # negative
+print(classify(0))      # zero
+
+# Lambda does NOT work when you need multiple statements
+# This would be a SyntaxError - you cannot put statements in a lambda body:
+#   invalid_lambda = lambda x: if x > 0: return "pos" else: return "neg"
+
+# For anything requiring multiple steps, use def
+def categorize(value):
+    if value > 100:
+        return "large"
+    elif value > 10:
+        return "medium"
+    else:
+        return "small"
+
+print(categorize(150))  # large
+print(categorize(50))   # medium
+print(categorize(5))    # small
+```
+
+Explanation:
+
+1. A ternary expression (`"positive" if x > 0 else ...`) is a single expression, so it fits in a lambda body. This works, though deeply nested ternaries reduce readability quickly.
+2. `if` statements, `for` loops, and multi-line logic cannot appear in a lambda body. They are statements, not expressions. Trying to use them produces a `SyntaxError`.
+3. The rule is practical: if you can write the logic as a single expression, lambda is an option. If you need multiple steps, write a `def`.
+
+
+## Part 4: map()
+
+`map()` is a built-in function that applies another function to every item in an iterable and returns the results. It represents a common pattern in a more direct form: instead of writing a loop that processes each item and builds a result list, you hand the processing function to `map()` and it does the iteration for you.
+
+`map()` returns a map object, which is an iterable but not a list. Wrapping it in `list()` produces the result list. You will see why this design choice exists when the course covers generators in a later week.
+
+
+#### Example 9: map() vs the equivalent for loop
+
+This example shows the for loop pattern that `map()` replaces, so you can see exactly what it is doing.
+
+```{python}
+temperatures_c = [0, 20, 37, 100]
+
+# The for loop version - manual iteration and collection
+fahrenheit_loop = []
+for temp in temperatures_c:
+    fahrenheit_loop.append(temp * 9/5 + 32)
+
+print("For loop result:", fahrenheit_loop)
+
+# The map() version - same operation, no manual loop
+fahrenheit_map = list(map(lambda c: c * 9/5 + 32, temperatures_c))
+
+print("map() result:", fahrenheit_map)
+```
+
+Explanation:
+
+1. The for loop version follows a pattern you have written many times: create an empty list, loop through the source, compute a value, append it. This works, but the structure is always the same regardless of what the computation is.
+2. `map(lambda c: c * 9/5 + 32, temperatures_c)` applies the lambda to every item in `temperatures_c` and produces the results. `list()` collects them.
+3. Both produce the same output. The difference is that `map()` makes the intent explicit: "apply this function to every item in this collection." The for loop version buries that intent inside the loop structure.
+4. `map()` takes two arguments: the function to apply and the iterable to apply it to. The function must accept one argument (the item from the iterable).
+
+
+#### Example 10: map() with a named function
+
+Lambda is the common pairing with `map()`, but any function works. This example shows `map()` with named functions to reinforce that `map()` is not limited to lambdas.
+
+```{python}
+def format_name(name):
+    """Capitalize first letter of each word."""
+    return name.title()
+
+def word_count(sentence):
+    """Return the number of words in a sentence."""
+    return len(sentence.split())
+
+names = ["alice johnson", "bob smith", "carol white"]
+sentences = ["the quick brown fox", "hello", "one two three four five"]
+
+# map() with a named function
+formatted = list(map(format_name, names))
+print("Formatted names:", formatted)
+
+counts = list(map(word_count, sentences))
+print("Word counts:", counts)
+
+# map() with a built-in function - built-ins are functions too
+numbers = ["1", "2", "3", "4", "5"]
+as_ints = list(map(int, numbers))
+print("Converted to int:", as_ints)
+```
+
+Explanation:
+
+1. `map(format_name, names)` passes each name in the list to `format_name` and collects the return values. The result is a list of formatted name strings.
+2. `map(word_count, sentences)` passes each sentence to `word_count`. The result is a list of integers.
+3. `map(int, numbers)` uses `int`, a built-in type, as the function. `int("3")` converts a string to an integer. This works because `int` is callable: calling it with a string argument converts that string to an integer. Built-in types and functions are objects in Python, just like the functions you define with `def`.
+4. The pattern is always: `map(some_function, some_iterable)`. The function gets applied to each item, and the results come back in the same order.
+
+
+## Part 5: filter()
+
+`filter()` selects items from an iterable based on a test function. Where `map()` transforms every item, `filter()` keeps some items and discards others. The test function returns `True` to keep an item and `False` to discard it.
+
+Like `map()`, `filter()` returns an iterable object rather than a list. Wrapping it in `list()` collects the results.
+
+
+#### Example 11: filter() vs the equivalent for loop
+
+This example shows the for-loop-with-if pattern that `filter()` replaces.
+
+```{python}
+scores = [88, 42, 95, 61, 73, 55, 90, 38, 82]
+
+# The for loop version - loop through and keep matching items
+passing_loop = []
+for score in scores:
+    if score >= 70:
+        passing_loop.append(score)
+
+print("For loop result:", passing_loop)
+
+# The filter() version - same selection, no manual loop
+passing_filter = list(filter(lambda score: score >= 70, scores))
+
+print("filter() result:", passing_filter)
+```
+
+Explanation:
+
+1. The for loop version checks each score with `if` and appends matching scores to the result list. This is the pattern `filter()` replaces.
+2. `filter(lambda score: score >= 70, scores)` applies the lambda to each item. Items for which the lambda returns `True` are kept; items for which it returns `False` are discarded.
+3. Both produce the same output. `filter()` makes the intent direct: "keep the items that satisfy this condition."
+4. `filter()` takes two arguments: the test function and the iterable. The test function must accept one argument and return a value that Python can evaluate as true or false.
+
+
+#### Example 12: filter() with multiple conditions and named functions
+
+This example shows `filter()` with more realistic selection logic, including a named function where the logic is too complex for a clean lambda.
+
+The data here is a list of dictionaries, where each dictionary represents one product with several fields. This is a common way to work with structured records in Python: a list where each item is a dictionary with the same keys, each key holding a different piece of information about that item.
+
+```{python}
+products = [
+    {"name": "Widget", "price": 12.99, "in_stock": True},
+    {"name": "Gadget", "price": 89.99, "in_stock": False},
+    {"name": "Doohickey", "price": 4.99, "in_stock": True},
+    {"name": "Thingamajig", "price": 34.99, "in_stock": True},
+    {"name": "Whatchamacallit", "price": 199.99, "in_stock": False},
+]
+
+# Simple condition: in stock only
+in_stock = list(filter(lambda p: p["in_stock"], products))
+print("In stock:")
+for p in in_stock:
+    print(f"  {p['name']} - ${p['price']}")
+
+print()
+
+# Complex condition: in stock AND under $50 - named function is clearer here
+def is_affordable_and_available(product):
+    return product["in_stock"] and product["price"] < 50.0
+
+affordable = list(filter(is_affordable_and_available, products))
+print("In stock and under $50:")
+for p in affordable:
+    print(f"  {p['name']} - ${p['price']}")
+```
+
+Explanation:
+
+1. `lambda p: p["in_stock"]` returns the value of `p["in_stock"]`, which is `True` or `False`. Items with `True` are kept.
+2. `is_affordable_and_available` combines two conditions with `and`. Either condition alone would be simple enough for a lambda, but combining them with readable variable names benefits from a `def`.
+3. Both approaches are valid. The practical question when choosing between lambda and `def` for a filter condition is the same as always: is the logic a single readable expression, or does it benefit from structure and a name?
+4. The output contains only the products that pass the test. `filter()` does not transform the items - it returns the original objects unchanged, just the ones that passed.
+
+
+## Conclusion
+
+This demo introduced four related tools that extend how you think about and use functions in Python.
+
+### What You've Learned
+
+Recursive Functions (Part 1):
+- A recursive function calls itself to solve a problem by reducing it to a smaller version of the same problem
+- Every recursive function requires a base case (the stopping condition) and a recursive case (the self-call with a smaller input)
+- Recursion works in two directions: calls go deeper until the base case is reached, then each call finishes and returns on the way back out. This is what makes it different from a loop.
+- Recursion's practical advantage over loops is handling structures of arbitrary and unknown depth, such as nested lists, where a loop would need to know the depth in advance
+
+Functions as First-Class Objects (Part 2):
+- Functions in Python are objects: they have a type, an identity, and can be assigned to variables
+- A name defined by `def` is just one name referring to the function object. You can bind other names to the same object
+- Functions can be passed as arguments to other functions, which is the foundation of `map()` and `filter()`
+
+Lambda Expressions (Part 3):
+- A `lambda` creates a function object as an expression, without a statement or a name
+- Lambda syntax: `lambda parameters: expression`, where the expression's value is returned automatically
+- Lambdas are appropriate when the function body is a single expression and the function is used only once
+- When logic requires multiple steps or will be reused, `def` is the right choice
+
+map() (Part 4):
+- `map(func, iterable)` applies `func` to every item in `iterable` and returns the results as an iterable
+- It replaces the for-loop-and-append pattern when every item in a collection needs the same transformation
+- Wrap in `list()` to get a concrete list of results
+- Works with lambda, named functions, and built-in functions like `int` and `str`
+
+filter() (Part 5):
+- `filter(func, iterable)` keeps items for which `func` returns true and discards the rest
+- It replaces the for-loop-with-if pattern when you need to select a subset of a collection
+- The test function returns a truth value; items that pass are returned unchanged
+- Wrap in `list()` to get a concrete list of results
+
+### What the Textbook Covers in More Depth
+
+Chapter 19 of Learning Python provides additional detail on these topics:
+
+Function Design Principles:
+- Cohesion and coupling: guidelines for how functions should be structured and how they should communicate with the rest of a program
+- Why global variables create coupling problems and when they are and are not appropriate
+
+Recursion Variations:
+- Alternative implementations of recursive functions using ternary expressions and extended unpacking
+- Discussion of when recursion is and is not the right tool compared to Python's built-in loop structures
+
+reduce():
+- `functools.reduce()` applies a function to pairs of items to collapse a collection into a single value
+- It was removed from the built-ins in Python 3 and moved to the `functools` module
+- The book covers it alongside `map()` and `filter()` as the third member of the functional programming trio
+
+Function Attributes and Annotations:
+- Functions can have user-defined attributes attached to them as objects
+- Annotations provide a syntax for attaching metadata to function parameters and return values
+- Python does not enforce annotations - they are informational only
+
+Decorators:
+- Chapter 19 previews decorators, which are functions that wrap other functions to add behavior
+- The full treatment of decorators is deferred to Part VI of Learning Python, when the course covers classes

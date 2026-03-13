@@ -123,8 +123,8 @@ Return a new list of `CargoPod` instances.
 ### Your Task
 
 1. Download the main program using the link above
-2. Create a new file named `lastname-cargo-module.py` (replace `lastname` with your last name)
-3. Update the import statement in `space-trader.py` to match your module filename (hyphens become underscores)
+2. Create a new file named `lastname_cargo_module.py` (replace `lastname` with your last name)
+3. Update the import statement in `space-trader.py` to match your module filename.
 4. Write the class and six functions described above
 5. Run `space-trader.py` and verify your output matches the expected output at the end of this document
 
@@ -162,7 +162,7 @@ Record a video explaining your code and submit it via Kaltura.
 
 Upload the following files to the **Week 8 Dropbox**:
 
-1. **Cargo module file**: `lastname-cargo-module.py`. Change `lastname` to your last name. Not doing so will result in the assignment not being graded.
+1. **Cargo module file**: `lastname_cargo_module.py`. Change `lastname` to your last name. Not doing so will result in the assignment not being graded.
 
 ### Video Submission
 

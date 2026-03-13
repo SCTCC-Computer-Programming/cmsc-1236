@@ -1,0 +1,97 @@
+---
+title: "Week 10 Guide"
+subtitle: "Chapter 19 – Recursive Functions and Functional Programming Tools"
+format:
+  html:
+    toc: true
+---
+
+In Weeks 7 and 8, you worked with Python's control flow tools: how truth value testing, Boolean operators, and loop mechanics interact with the reference model from earlier weeks. This week shifts focus back to functions. You have been writing functions since CMSC 1203, and the last several weeks have deepened how Python handles objects, assignment, and iteration. Chapter 19 uses that foundation to extend what functions can do.
+
+The chapter moves in two directions. The first is recursion: functions that call themselves to solve problems. You already know how function calls work, how local variables are scoped, and how return values pass data back to the caller. Recursion puts those pieces together in a new way. The second direction is functional programming tools: passing functions as arguments to built-ins like `map()` and `filter()` rather than writing loops manually. To use these tools effectively, you first need to understand something Gaddis didn't cover: functions in Python are objects, just like lists and integers, and can be passed around as values.
+
+## Week 10 Assignments
+
+- Here is the link to the **[Week 10 Assignments](../../assignments/week-10/index.qmd)** page.
+
+## Chapter 19 concepts
+
+### Recursive functions
+
+A recursive function calls itself as part of solving a problem. The key requirement is a base case: a condition under which the function stops calling itself and returns directly. Without one, the function calls itself forever. The recursive case reduces the problem to a smaller version of the same problem and combines the result with the current step.
+
+The demo examples show:
+
+* how each recursive call gets its own separate copy of local variables, and what happens to the paused calls while deeper calls run
+* a recursive function that returns `None` (countdown) and one that returns a computed value (summing a list)
+* the base case and recursive case pattern applied to both examples
+
+### Recursion for variable-depth structures
+
+The countdown and sum examples from the first section can both be written as loops. Recursion's practical advantage appears when data has unknown or unpredictable depth. A loop can process one level of nesting; a recursive function follows the structure however deep it goes, because each call handles one level and passes everything below it to the next call.
+
+The demo examples show:
+
+* flattening a nested list where items may themselves be lists, to any depth
+* using `isinstance()` to decide at each step whether an item needs further processing or can be added directly
+* why a loop-based approach would need to know the depth in advance
+
+### Functions as first-class objects
+
+Gaddis taught functions as tools you define and call. Python goes further: a function defined with `def` is an object, the same kind of thing as an integer or a list. It has a type, an identity in memory, and can be assigned to a variable or passed as an argument. The name a `def` statement creates is just one name pointing to that object.
+
+The demo examples show:
+
+* using `type()` and `id()` to confirm a function is an object with a type and identity
+* binding a second name to the same function object and calling through either name
+* passing a function as an argument and calling it inside the receiving function
+
+### Lambda expressions
+
+Once functions can be passed as arguments, defining a short function just to pass it somewhere feels like more ceremony than it warrants. Lambda expressions solve this: `lambda parameters: expression` creates a function object as an expression rather than a statement, so it can appear directly inside a function call. The tradeoff is that the body must be a single expression. Anything requiring multiple steps belongs in a `def`.
+
+The demo examples show:
+
+* a lambda and an equivalent `def` side by side, confirming they produce the same type of object
+* passing a lambda directly as an argument without a separate definition
+* where the single-expression constraint is a real limit and `def` is the right choice
+
+### map() and filter()
+
+`map()` and `filter()` are the practical payoff for Parts 2 and 3. Both accept a function and an iterable. `map()` applies the function to every item and returns the results. `filter()` applies the function as a test and keeps only the items for which it returns true. Both replace common loop patterns with a more direct statement of intent.
+
+The demo examples show:
+
+* `map()` and `filter()` next to their equivalent `for` loop versions, making the replacement pattern explicit
+* using lambda as the inline function argument for simple cases
+* using named functions with `map()` and `filter()` when the logic is too complex for a lambda
+
+### Additional features in the reading
+
+Chapter 19 covers several topics not demonstrated this week. These are worth reading for awareness but are not the focus of the quiz.
+
+The reading covers:
+
+* `functools.reduce()`: applies a function to pairs of items to collapse a collection to a single value; moved from built-ins to `functools` in Python 3
+* function annotations: syntax for attaching metadata to parameters and return values; Python does not enforce them
+* decorators: functions that wrap other functions to add behavior; the full treatment is deferred to Part VI of the textbook
+
+## Reading expectations for Week 10
+
+As you read Chapter 19 and run the demo, check whether you can answer the following in your own words:
+
+1. What is the base case of a recursive function, and what happens if one is not provided?
+2. How many total calls does `countdown(3)` make, and in what order do they complete?
+3. Why does recursion handle variable-depth structures better than a loop?
+4. What does `isinstance(item, list)` return, and how does `flatten` use it to decide what to do with each item?
+5. What does `type()` return when applied to a function, and what does `say_hello = greet` do to the function object?
+6. What is the syntax for a lambda expression, and why is there no `return` keyword?
+7. What kind of logic cannot appear in a lambda body, and what should you use instead?
+8. What does `map()` do with a function and an iterable, and what type does it return before wrapping in `list()`?
+9. How does `filter()` decide which items to keep, and how does it differ from `map()`?
+
+## Week 10 tasks
+
+1. Read **Learning Python 6e, Chapter 19** (complete).
+2. Work through the **Week 10 demo** (linked from the Week 10 Assignments page).
+3. Complete the **Week 10 D2L quiz** (Chapter 19 concepts + demo examples, using the quiz handout).

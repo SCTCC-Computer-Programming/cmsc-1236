@@ -1,0 +1,69 @@
+---
+title: "Week 10 Assignments"
+subtitle: "Chapter 19 Reading and D2L Quiz"
+format:
+  html:
+    toc: true
+---
+
+- Here is the link to the **[Week 10 demo](../../assignments/week-10/week-10-demo.html)**.
+- <a href="/downloads/week-10/week-10-demo.qmd" download>Download Quarto Notebook</a>
+- <a href="/assignments/week-10/week10quizhandout.pdf" download>Download Quiz Handout (PDF)</a>
+
+## Part 1: Reading
+
+Read **Learning Python (6e), Chapter 19**.
+
+As you read, focus on these ideas (these are also the ideas the quiz will test):
+
+- **Recursive functions:** a function that calls itself to solve a problem by reducing it to a smaller version of the same problem
+- **Base case:** the condition under which a recursive function stops calling itself and returns directly; every recursive function requires one
+- **Recursive case:** the step where the function calls itself with a smaller input and combines the result with the current step
+- **Variable-depth structures:** recursion handles data of unknown or unpredictable depth, such as nested lists, where a loop would need to know the depth in advance
+- **Functions as first-class objects:** functions have a type, an identity, and can be assigned to variables and passed as arguments, just like any other object
+- **Lambda expressions:** a function defined as an expression using `lambda parameters: expression`; the expression's value is returned automatically with no `return` keyword
+- **When to use lambda vs def:** lambda fits single-expression, single-use functions; `def` is appropriate when logic requires multiple steps or the function will be reused
+- **map():** applies a function to every item in an iterable and returns the results
+- **filter():** keeps items from an iterable for which a test function returns true and discards the rest
+
+## Part 2: Work through the Week 10 Demo
+
+There is no video walkthrough for this week's demo. Work through the examples carefully on your own -- run each cell, read the explanations, and check whether you can predict the output before you see it.
+
+The Week 10 demo covers:
+
+1. Writing recursive functions with explicit base cases and recursive cases, tracing how each call gets its own copy of local variables and how return values work their way back up through the calls
+2. Applying recursion to structures with variable depth, using `isinstance()` to distinguish plain values from nested lists that require further processing
+3. Observing functions as objects using `type()` and `id()`, and binding multiple names to the same function object
+4. Passing functions as arguments to other functions, which is the foundation of `map()` and `filter()`
+5. Writing lambda expressions and comparing them to equivalent `def` functions, including where the single-expression constraint makes lambda unsuitable
+6. Using `map()` to replace the for-loop-and-append pattern when every item needs the same transformation
+7. Using `filter()` to replace the for-loop-with-if pattern when selecting a subset of a collection, with both lambda and named function approaches
+
+## Part 3: D2L Quiz
+
+Complete the **Week 10 D2L quiz** using the quiz handout.
+
+1. Download the **Quiz Handout (PDF)** using the link at the top of this page
+2. Work through the 30 multiple-choice questions in the handout
+3. Submit your answers (A, B, C, or D) in the **D2L Quiz**
+
+The quiz focuses on:
+
+- identifying the **base case** and **recursive case** in a recursive function and explaining why both are required
+- tracing a **recursive call chain** to predict how many calls are made and what order they complete in
+- predicting what a **recursive function returns** for a given input by following return values back up through the calls
+- using **`isinstance()`** to predict how `flatten` processes a given item, and predicting what `flatten` returns for a given nested list
+- predicting what **`type()`** and **`id()`** return when applied to function objects and aliases
+- reading and writing **lambda expressions**, identifying when a lambda body is valid or invalid, and tracing the result of a lambda for a given input
+- predicting what **`map()`** and **`filter()`** return for a given function and iterable
+
+## D2L submission checklist
+
+Complete the following in D2L:
+
+* **Week 10 D2L quiz** (no file uploads required this week)
+
+**Submission location:** No Dropbox submission this week. All work is completed in D2L.
+
+**Note:** This week focuses on reading Chapter 19, working through the demo on your own, and demonstrating comprehension through the quiz. The emphasis is on understanding recursion as a problem-solving approach and lambda, `map()`, and `filter()` as cleaner alternatives to common loop patterns.
