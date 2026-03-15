@@ -412,6 +412,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Week 8 (Starts - 2 MAR)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weekly-overview/week-10/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10 (Starts - 16 MAR)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -445,6 +451,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../assignments/week-08/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 8 (Starts - 2 MAR)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../assignments/week-10/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10 (Starts - 16 MAR)</span></a>
   </div>
 </li>
       </ul>
@@ -525,7 +537,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-1-two-names-referring-to-the-same-object" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-two-names-referring-to-the-same-object">Example 1: Two names referring to the same object</h3>
 <p>This first example shows what it means for two names to refer to the same object. The output will confirm that <code>a is b</code> is true (same object) and <code>a == b</code> is also true (same contents).</p>
-<div id="edb8d57a" class="cell" data-execution_count="1">
+<div id="b1afa272" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a ="</span>, a)</span>
@@ -552,7 +564,7 @@ a == b = True</code></pre>
 <section id="example-2-different-objects-with-the-same-value" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-different-objects-with-the-same-value">Example 2: Different objects with the same value</h3>
 <p>This example shows that two different list objects can still be equal in value. The key observation is that <code>x is y</code> is false because two separate list objects are created, while <code>x == y</code> is true because the contents of the two lists match.</p>
-<div id="514de628" class="cell" data-execution_count="2">
+<div id="be6e9c2a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -581,7 +593,7 @@ x == y = True</code></pre>
 <h3 class="anchored" data-anchor-id="example-3-truth-values-of-objects">Example 3: Truth values of objects</h3>
 <p>In Python, every object has an inherent truth value, which means any object can be used directly in a condition such as an <code>if</code> statement. This matters in practice because checking whether a collection is empty is one of the most common operations in everyday code. Instead of writing <code>if len(items) &gt; 0:</code> to test whether a list has elements, Python programmers write <code>if items:</code> and rely on the object’s truth value. Understanding which objects are considered true and which are considered false helps you read and write idiomatic Python code.</p>
 <p>The general rule is: - <strong>False:</strong> zero values (<code>0</code>, <code>0.0</code>), empty collections (<code>""</code>, <code>[]</code>, <code>{}</code>, <code>()</code>, <code>set()</code>), and <code>None</code> - <strong>True:</strong> everything else (non-zero numbers, non-empty collections)</p>
-<div id="e99e30db" class="cell" data-execution_count="3">
+<div id="3ffbe7f1" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>empty_list <span class="op">=</span> []</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>non_empty_list <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -628,7 +640,7 @@ non_empty_list is truthy</code></pre>
 <section id="example-1-rebinding-creates-a-new-list" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-rebinding-creates-a-new-list">Example 1: Rebinding creates a new list</h3>
 <p>In this example, <code>nums = nums + [40]</code> produces a new list object and assigns <code>nums</code> to refer to that new list. The name <code>alias</code> continues to refer to the original list.</p>
-<div id="8a304b28" class="cell" data-execution_count="4">
+<div id="22f9d3d2" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>alias <span class="op">=</span> nums</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -656,7 +668,7 @@ nums is alias = False</code></pre>
 <section id="example-2-in-place-mutation-changes-the-existing-list" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-in-place-mutation-changes-the-existing-list">Example 2: In-place mutation changes the existing list</h3>
 <p>In this example, <code>nums += [40]</code> changes the existing list object in place. Because <code>alias</code> refers to the same list object, <code>alias</code> reflects the change as well.</p>
-<div id="73e40b85" class="cell" data-execution_count="5">
+<div id="864bfae3" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>alias <span class="op">=</span> nums</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -690,7 +702,7 @@ nums is alias = True</code></pre>
 <section id="example-1-slice-assignment-modifies-a-list-in-place" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-slice-assignment-modifies-a-list-in-place">Example 1: Slice assignment modifies a list in place</h3>
 <p>Slice assignment replaces part of a list without creating a new list object. The key observation is that the list referenced by <code>data</code> changes, but <code>data</code> continues to refer to the same list object.</p>
-<div id="417b9fc7" class="cell" data-execution_count="6">
+<div id="6fa35977" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"before:"</span>, data)</span>
@@ -715,7 +727,7 @@ after:  [0, 1, 'a', 'b', 5]</code></pre>
 <h3 class="anchored" data-anchor-id="example-2-nested-lists-and-repeated-references-repetition">Example 2: Nested lists and repeated references (<code>*</code> repetition)</h3>
 <p>List repetition with <code>*</code> repeats references when the repeated element is a mutable object (such as a list). The key observation is that changing one inner list changes every “row” when all rows refer to the same inner list object.</p>
 <p>Beginner-friendly version (repeated references):</p>
-<div id="7afd9693" class="cell" data-execution_count="7">
+<div id="0b322f35" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>]</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>grid_bad <span class="op">=</span> [row] <span class="op">*</span> <span class="dv">3</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -742,7 +754,7 @@ after:  [[99, 0], [99, 0], [99, 0]]</code></pre>
 <h3 class="anchored" data-anchor-id="example-3-nested-lists-created-as-independent-inner-lists-recommended-construction">Example 3: Nested lists created as independent inner lists (recommended construction)</h3>
 <p>A common pattern for building nested lists is to construct each inner list independently so that mutating one row does not affect the others.</p>
 <p>Beginner-friendly version (independent inner lists):</p>
-<div id="254c0e50" class="cell" data-execution_count="8">
+<div id="ce7ad8ce" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>grid_ok <span class="op">=</span> [[<span class="dv">0</span>, <span class="dv">0</span>] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>)]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"before:"</span>, grid_ok)</span>
@@ -778,7 +790,7 @@ after:  [[99, 0], [0, 0], [0, 0]]</code></pre>
 <section id="example-1-insertion-order-iteration-is-not-sorting" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-insertion-order-iteration-is-not-sorting">Example 1: Insertion order (iteration is not sorting)</h3>
 <p>This example shows that dictionaries preserve the order in which keys were inserted. The key observation is that the dictionary’s key order matches insertion order, not alphabetical order.</p>
-<div id="9b743580" class="cell" data-execution_count="9">
+<div id="a9eaf624" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> {<span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"dictionary ="</span>, d)</span>
@@ -798,7 +810,7 @@ keys in iteration order = ['b', 'a', 'c']</code></pre>
 <section id="example-2-safe-access-with-membership-tests-and-get" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-safe-access-with-membership-tests-and-get">Example 2: Safe access with membership tests and <code>get</code></h3>
 <p>This example shows two standard ways to handle keys that may or may not exist. The key observation is that membership tests report whether a key is present, and <code>get</code> returns a default value instead of raising an error when a key is missing.</p>
-<div id="5935523e" class="cell" data-execution_count="10">
+<div id="ddb2a667" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>config <span class="op">=</span> {<span class="st">"mode"</span>: <span class="st">"test"</span>}</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"config ="</span>, config)</span>
@@ -829,7 +841,7 @@ config.get('timeout', 30) = 30</code></pre>
 <section id="example-3-controlled-updates-using-copy-and-update" class="level3">
 <h3 class="anchored" data-anchor-id="example-3-controlled-updates-using-copy-and-update">Example 3: Controlled updates using <code>copy</code> and <code>update</code></h3>
 <p>This example shows how to combine a base dictionary with an override dictionary without modifying the original. The key observation is that <code>copy</code> creates a new dictionary object, and <code>update</code> mutates that new dictionary by applying key-value pairs from another dictionary.</p>
-<div id="b13f9a0e" class="cell" data-execution_count="11">
+<div id="3cb68bcb" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> {<span class="st">"host"</span>: <span class="st">"localhost"</span>, <span class="st">"port"</span>: <span class="dv">8000</span>}</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>override <span class="op">=</span> {<span class="st">"port"</span>: <span class="dv">9000</span>}</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -857,7 +869,7 @@ merged = {'host': 'localhost', 'port': 9000}</code></pre>
 <section id="example-4-dictionary-key-views-for-comparisons" class="level3">
 <h3 class="anchored" data-anchor-id="example-4-dictionary-key-views-for-comparisons">Example 4: Dictionary key views for comparisons</h3>
 <p>This example shows that <code>keys()</code> returns a view of keys that can be used in set operations. The key observation is that intersection identifies keys present in both dictionaries, and difference identifies keys present in one dictionary but not the other.</p>
-<div id="25dfec69" class="cell" data-execution_count="12">
+<div id="4ba7d56e" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> {<span class="st">"x"</span>: <span class="dv">1</span>, <span class="st">"y"</span>: <span class="dv">2</span>, <span class="st">"z"</span>: <span class="dv">3</span>}</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> {<span class="st">"y"</span>: <span class="dv">20</span>, <span class="st">"z"</span>: <span class="dv">30</span>, <span class="st">"w"</span>: <span class="dv">40</span>}</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -889,7 +901,7 @@ keys only in a = {'x'}</code></pre>
 <p>This example shows that dictionaries can be built using a comprehension, which follows the same pattern as the list comprehensions introduced in CMSC 1203.</p>
 <p>Dictionary comprehensions are useful when you need to transform existing data into a lookup table. A common situation is having two related lists—such as a list of names and a list of scores—where corresponding items share the same position. With two separate lists, looking up a specific person’s score requires searching through the names list to find the position, then using that position to index into the scores list. This approach is tedious to write, easy to get wrong, and becomes a problem if the two lists ever get out of sync.</p>
 <p>A dictionary comprehension provides a concise way to build this structure in a single expression when the source data is already available in a pairable form.</p>
-<div id="2e543c8b" class="cell" data-execution_count="13">
+<div id="ca822e9c" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"alice"</span>, <span class="st">"bob"</span>, <span class="st">"carol"</span>]</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>]</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -924,7 +936,7 @@ gradebook['bob'] = 92</code></pre>
 <section id="example-1-de-duplication-by-constructing-a-set" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-de-duplication-by-constructing-a-set">Example 1: De-duplication by constructing a set</h3>
 <p>This example shows that building a set from a list removes duplicate values. The key observation is that repeated items from the list appear only once in the set.</p>
-<div id="8dff0753" class="cell" data-execution_count="14">
+<div id="548e292a" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>items <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"apple"</span>, <span class="st">"pear"</span>, <span class="st">"banana"</span>, <span class="st">"banana"</span>]</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>unique_items <span class="op">=</span> <span class="bu">set</span>(items)</span>
@@ -933,7 +945,7 @@ gradebook['bob'] = 92</code></pre>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"set (unique values) ="</span>, unique_items)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>original list = ['apple', 'apple', 'pear', 'banana', 'banana']
-set (unique values) = {'pear', 'apple', 'banana'}</code></pre>
+set (unique values) = {'banana', 'apple', 'pear'}</code></pre>
 </div>
 </div>
 <p>Explanation:</p>
@@ -947,7 +959,7 @@ set (unique values) = {'pear', 'apple', 'banana'}</code></pre>
 <section id="example-2-hashability-requirement-what-can-be-an-element-of-a-set" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-hashability-requirement-what-can-be-an-element-of-a-set">Example 2: Hashability requirement (what can be an element of a set)</h3>
 <p>This example shows that lists cannot be elements of a set. The key observation is that Python raises a <code>TypeError</code> because lists are mutable and therefore not hashable.</p>
-<div id="7ac34721" class="cell" data-execution_count="15">
+<div id="5aa5a4cd" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    bad <span class="op">=</span> {[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]}</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> e:</span>
@@ -972,7 +984,7 @@ set (unique values) = {'pear', 'apple', 'banana'}</code></pre>
 <section id="example-1-accessing-tuple-items-by-index" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-accessing-tuple-items-by-index">Example 1: Accessing tuple items by index</h3>
 <p>This example shows that tuples support indexing. The key observation is that the first and last items can be accessed using <code>0</code> and <code>-1</code>, just as with lists.</p>
-<div id="5bad295d" class="cell" data-execution_count="16">
+<div id="fb43056a" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>record <span class="op">=</span> (<span class="st">"Ada"</span>, <span class="st">"Lovelace"</span>, <span class="dv">1815</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"record ="</span>, record)</span>
@@ -995,7 +1007,7 @@ last item = 1815</code></pre>
 <section id="example-2-tuples-do-not-allow-item-assignment-immutability" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-tuples-do-not-allow-item-assignment-immutability">Example 2: Tuples do not allow item assignment (immutability)</h3>
 <p>This example shows that tuple items cannot be reassigned. The key observation is that Python raises a <code>TypeError</code> when an assignment to a tuple element is attempted.</p>
-<div id="4a9ccedd" class="cell" data-execution_count="17">
+<div id="3d3a1a6a" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>record <span class="op">=</span> (<span class="st">"Ada"</span>, <span class="st">"Lovelace"</span>, <span class="dv">1815</span>)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
@@ -1028,7 +1040,7 @@ last item = 1815</code></pre>
 <section id="example-1-shallow-copy-shares-inner-lists" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-shallow-copy-shares-inner-lists">Example 1: Shallow copy shares inner lists</h3>
 <p>This example shows that slicing a nested list (<code>nested[:]</code>) creates a new outer list but does not copy the inner lists. The key observation is that changing an inner list through the shallow copy also changes the original.</p>
-<div id="3c8a2d33" class="cell" data-execution_count="18">
+<div id="ded535f4" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>nested <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>shallow <span class="op">=</span> nested[:]</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1064,7 +1076,7 @@ nested[0] is shallow[0] = True</code></pre>
 <section id="example-2-deep-copy-creates-independent-nested-objects" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-deep-copy-creates-independent-nested-objects">Example 2: Deep copy creates independent nested objects</h3>
 <p>This example shows that a deep copy duplicates the nested structure. The key observation is that changing an inner list in the deep copy does not change the original.</p>
-<div id="3be3e16b" class="cell" data-execution_count="19">
+<div id="634f7035" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>nested <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
@@ -1118,7 +1130,7 @@ nested[0] is deep[0] = False</code></pre>
 <h3 class="anchored" data-anchor-id="example-1-file-access-with-pathlib.path">Example 1: File access with <code>pathlib.Path</code></h3>
 <p>In a notebook, files are created in the notebook’s working directory. The working directory is the folder Python treats as the “current location” when you use a relative file name like <code>demo_text.txt</code>. If the file name does not include a folder path, it refers to a file in that current folder.</p>
 <p>This example writes a text file first (so the file always exists), then reads it back.</p>
-<div id="b2a62cec" class="cell" data-execution_count="20">
+<div id="04b46645" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> Path(<span class="st">"demo_text.txt"</span>)</span>
