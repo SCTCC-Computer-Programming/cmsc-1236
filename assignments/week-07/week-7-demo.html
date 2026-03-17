@@ -572,7 +572,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-1-observing-truth-values-with-bool" class="level4">
 <h4 class="anchored" data-anchor-id="example-1-observing-truth-values-with-bool">Example 1: Observing truth values with bool()</h4>
 <p>This example uses <code>bool()</code> to reveal the truth value of different Python objects. The goal is to see the pattern: emptiness and zero mean false, content and nonzero mean true.</p>
-<div id="f3acaec1" class="cell" data-execution_count="1">
+<div id="a8c7e0c8" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Numbers</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"bool(0) ="</span>, <span class="bu">bool</span>(<span class="dv">0</span>))</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"bool(0.0) ="</span>, <span class="bu">bool</span>(<span class="fl">0.0</span>))</span>
@@ -624,7 +624,7 @@ bool(False) = False</code></pre>
 <section id="example-2-testing-objects-directly-vs-explicit-comparisons" class="level4">
 <h4 class="anchored" data-anchor-id="example-2-testing-objects-directly-vs-explicit-comparisons">Example 2: Testing objects directly vs explicit comparisons</h4>
 <p>Because every object has a truth value, Python programmers typically test objects directly rather than comparing them to empty values. This example shows both approaches and why the direct test is preferred.</p>
-<div id="7d89b8c1" class="cell" data-execution_count="2">
+<div id="3b487f1a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>empty <span class="op">=</span> []</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">""</span></span>
@@ -683,7 +683,7 @@ len(empty) == 0 - same result, more code</code></pre>
 <section id="example-3-what-or-actually-returns" class="level4">
 <h4 class="anchored" data-anchor-id="example-3-what-or-actually-returns">Example 3: What or actually returns</h4>
 <p>This example shows that <code>or</code> does not return <code>True</code> or <code>False</code>. It returns the actual operand object.</p>
-<div id="77c1a87c" class="cell" data-execution_count="3">
+<div id="cc0d8758" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># or returns the first TRUE operand</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>result1 <span class="op">=</span> <span class="dv">2</span> <span class="kw">or</span> <span class="dv">3</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"2 or 3 ="</span>, result1, <span class="st">"  type:"</span>, <span class="bu">type</span>(result1))</span>
@@ -724,7 +724,7 @@ len(empty) == 0 - same result, more code</code></pre>
 <section id="example-4-what-and-actually-returns" class="level4">
 <h4 class="anchored" data-anchor-id="example-4-what-and-actually-returns">Example 4: What and actually returns</h4>
 <p>The same principle applies to <code>and</code>, but the logic is inverted: <code>and</code> looks for the first false operand because a single false value makes the entire expression false.</p>
-<div id="3f92e70a" class="cell" data-execution_count="4">
+<div id="25115f50" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># and returns the first FALSE operand</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>result1 <span class="op">=</span> <span class="dv">0</span> <span class="kw">and</span> <span class="dv">3</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"0 and 3 ="</span>, result1, <span class="st">"  type:"</span>, <span class="bu">type</span>(result1))</span>
@@ -774,7 +774,7 @@ len(empty) == 0 - same result, more code</code></pre>
 <section id="example-5-setting-defaults-with-or" class="level4">
 <h4 class="anchored" data-anchor-id="example-5-setting-defaults-with-or">Example 5: Setting defaults with or</h4>
 <p>A common Python pattern uses <code>or</code> to provide a default value when a variable might be empty or zero. This works because <code>or</code> returns the first true operand.</p>
-<div id="514d2302" class="cell" data-execution_count="5">
+<div id="a536ff2c" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulating a function that might return an empty string</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>user_input <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>username <span class="op">=</span> user_input <span class="kw">or</span> <span class="st">"Guest"</span></span>
@@ -815,7 +815,7 @@ setting = 75</code></pre>
 <section id="example-6-guarded-evaluation-with-and" class="level4">
 <h4 class="anchored" data-anchor-id="example-6-guarded-evaluation-with-and">Example 6: Guarded evaluation with and</h4>
 <p>The <code>and</code> operator’s short-circuit behavior lets you guard an expression. The right side only runs if the left side is true. This is useful for avoiding errors when a value might be <code>None</code> or empty.</p>
-<div id="8b7fd3c1" class="cell" data-execution_count="6">
+<div id="7a7a3f2b" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data might be None or might be a list</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="va">None</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> data <span class="kw">and</span> <span class="bu">len</span>(data)</span>
@@ -852,7 +852,7 @@ safe_length = None</code></pre>
 <section id="example-7-short-circuiting-skips-function-calls" class="level4">
 <h4 class="anchored" data-anchor-id="example-7-short-circuiting-skips-function-calls">Example 7: Short-circuiting skips function calls</h4>
 <p>This example makes the skipped-evaluation effect visible by using functions that print when called.</p>
-<div id="3ac98403" class="cell" data-execution_count="7">
+<div id="9d4640a4" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> check_a():</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  check_a() was called"</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span>
@@ -911,7 +911,7 @@ Testing: check_a() and check_b()
 <section id="example-8-the-ternary-expression" class="level4">
 <h4 class="anchored" data-anchor-id="example-8-the-ternary-expression">Example 8: The ternary expression</h4>
 <p>The ternary expression has the form <code>Y if X else Z</code>. It evaluates to <code>Y</code> when <code>X</code> is true, and <code>Z</code> when <code>X</code> is false.</p>
-<div id="45ee5a6f" class="cell" data-execution_count="8">
+<div id="c94d68d1" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">85</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Four-line if statement</span></span>
@@ -948,7 +948,7 @@ Status: fail</code></pre>
 <section id="example-9-why-the-ternary-is-preferred-over-andor" class="level4">
 <h4 class="anchored" data-anchor-id="example-9-why-the-ternary-is-preferred-over-andor">Example 9: Why the ternary is preferred over and/or</h4>
 <p>Before the ternary expression existed in Python, programmers used <code>and</code>/<code>or</code> combinations to achieve the same effect. Now that you understand how <code>and</code> and <code>or</code> return objects, you can see how this trick works, and why it has a flaw.</p>
-<div id="8ac0cb6d" class="cell" data-execution_count="9">
+<div id="95dbb968" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The ternary: clear and reliable</span></span>
@@ -1001,7 +1001,7 @@ and/or with 0: default</code></pre>
 <section id="example-10-basic-matchcase-syntax" class="level4">
 <h4 class="anchored" data-anchor-id="example-10-basic-matchcase-syntax">Example 10: Basic match/case syntax</h4>
 <p>This example shows the basic form: <code>match</code> evaluates an expression, then compares its value to each <code>case</code> from top to bottom. The first match wins.</p>
-<div id="4f47b49c" class="cell" data-execution_count="10">
+<div id="a011f4d4" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>command <span class="op">=</span> <span class="st">"save"</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">match</span> command:</span>
@@ -1028,7 +1028,7 @@ and/or with 0: default</code></pre>
 <section id="example-11-multiple-values-and-variable-capture-with-match" class="level4">
 <h4 class="anchored" data-anchor-id="example-11-multiple-values-and-variable-capture-with-match">Example 11: Multiple values and variable capture with match</h4>
 <p>A single <code>case</code> can match multiple values using <code>|</code> (read as “or”). Cases can also assign the matched value to a variable using <code>as</code>.</p>
-<div id="c02e4d2d" class="cell" data-execution_count="11">
+<div id="7d0360a6" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>status_codes <span class="op">=</span> [<span class="dv">200</span>, <span class="dv">301</span>, <span class="dv">404</span>, <span class="dv">500</span>, <span class="dv">418</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> code <span class="kw">in</span> status_codes:</span>
@@ -1070,7 +1070,7 @@ and/or with 0: default</code></pre>
 <section id="example-12-loop-else-with-and-without-break" class="level4">
 <h4 class="anchored" data-anchor-id="example-12-loop-else-with-and-without-break">Example 12: Loop else with and without break</h4>
 <p>This example makes the break/else interaction visible by running the same loop structure with different data.</p>
-<div id="b8fad604" class="cell" data-execution_count="12">
+<div id="136ddbcf" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Case 1: Loop finishes normally, else runs</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Searching for 99 in [1, 2, 3]:"</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]:</span>
@@ -1113,7 +1113,7 @@ Searching for 2 in [1, 2, 3]:
 <section id="example-13-search-with-a-flag-variable-without-loop-else" class="level4">
 <h4 class="anchored" data-anchor-id="example-13-search-with-a-flag-variable-without-loop-else">Example 13: Search with a flag variable (without loop else)</h4>
 <p>This example shows the traditional approach: a Boolean flag tracks whether the target was found.</p>
-<div id="5df908f4" class="cell" data-execution_count="13">
+<div id="c5221891" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">14</span>, <span class="dv">7</span>, <span class="dv">23</span>, <span class="dv">42</span>, <span class="dv">9</span>, <span class="dv">31</span>]</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="dv">42</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1142,7 +1142,7 @@ Searching for 2 in [1, 2, 3]:
 <section id="example-14-search-with-loop-else-same-logic-no-flag" class="level4">
 <h4 class="anchored" data-anchor-id="example-14-search-with-loop-else-same-logic-no-flag">Example 14: Search with loop else (same logic, no flag)</h4>
 <p>This example solves the same problem using the loop <code>else</code> to eliminate the flag entirely.</p>
-<div id="7470de19" class="cell" data-execution_count="14">
+<div id="8e99c8d9" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">14</span>, <span class="dv">7</span>, <span class="dv">23</span>, <span class="dv">42</span>, <span class="dv">9</span>, <span class="dv">31</span>]</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="dv">42</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1190,7 +1190,7 @@ Searching for 2 in [1, 2, 3]:
 <section id="example-15-tracing-the-loop-variable-with-id" class="level4">
 <h4 class="anchored" data-anchor-id="example-15-tracing-the-loop-variable-with-id">Example 15: Tracing the loop variable with id()</h4>
 <p>This example uses <code>id()</code> to observe what happens to the loop variable on each iteration. You’ll see the same assignment mechanics you observed in Weeks 3–4.</p>
-<div id="8fb89b8f" class="cell" data-execution_count="15">
+<div id="947a69d6" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>]</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"List object IDs:"</span>)</span>
@@ -1204,14 +1204,14 @@ Searching for 2 in [1, 2, 3]:
 <span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  color = </span><span class="sc">{</span>color<span class="sc">!r:8s}</span><span class="ss">  id = </span><span class="sc">{</span><span class="bu">id</span>(color)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List object IDs:
-  colors[0] = 'red'     id = 4389573024
-  colors[1] = 'green'   id = 4389573072
-  colors[2] = 'blue'    id = 4389573168
+  colors[0] = 'red'     id = 4399780400
+  colors[1] = 'green'   id = 4399780448
+  colors[2] = 'blue'    id = 4399780544
 
 Loop variable IDs:
-  color = 'red'     id = 4389573024
-  color = 'green'   id = 4389573072
-  color = 'blue'    id = 4389573168</code></pre>
+  color = 'red'     id = 4399780400
+  color = 'green'   id = 4399780448
+  color = 'blue'    id = 4399780544</code></pre>
 </div>
 </div>
 <p>Explanation:</p>
@@ -1225,7 +1225,7 @@ Loop variable IDs:
 <section id="example-16-the-loop-variable-is-independent-of-the-list" class="level4">
 <h4 class="anchored" data-anchor-id="example-16-the-loop-variable-is-independent-of-the-list">Example 16: The loop variable is independent of the list</h4>
 <p>Once the loop variable is assigned, it’s an independent name. Changing the loop variable does not affect the list, just as changing one name doesn’t affect another name that happens to refer to the same object.</p>
-<div id="629dde21" class="cell" data-execution_count="16">
+<div id="27faa5be" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Before loop:"</span>)</span>
@@ -1245,20 +1245,20 @@ Loop variable IDs:
 <div class="cell-output cell-output-stdout">
 <pre><code>Before loop:
   numbers = [10, 20, 30]
-  id(numbers) = 4420453440
+  id(numbers) = 4426567872
 
-  Start of iteration: x = 10, id(x) = 4357415992
-  After x = x + 1:   x = 11, id(x) = 4357416024
+  Start of iteration: x = 10, id(x) = 4376093752
+  After x = x + 1:   x = 11, id(x) = 4376093784
 
-  Start of iteration: x = 20, id(x) = 4357416312
-  After x = x + 1:   x = 21, id(x) = 4357416344
+  Start of iteration: x = 20, id(x) = 4376094072
+  After x = x + 1:   x = 21, id(x) = 4376094104
 
-  Start of iteration: x = 30, id(x) = 4357416632
-  After x = x + 1:   x = 31, id(x) = 4357416664
+  Start of iteration: x = 30, id(x) = 4376094392
+  After x = x + 1:   x = 31, id(x) = 4376094424
 
 After loop:
   numbers = [10, 20, 30]
-  id(numbers) = 4420453440</code></pre>
+  id(numbers) = 4426567872</code></pre>
 </div>
 </div>
 <p>Explanation:</p>
@@ -1277,7 +1277,7 @@ After loop:
 <section id="example-17-the-failed-modification-attempt" class="level4">
 <h4 class="anchored" data-anchor-id="example-17-the-failed-modification-attempt">Example 17: The failed modification attempt</h4>
 <p>This example shows the mistake, traces why it fails, and connects the explanation to the reference model.</p>
-<div id="eb51d87f" class="cell" data-execution_count="17">
+<div id="fb12a690" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">95</span>, <span class="dv">88</span>]</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Before: scores ="</span>, scores)</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
@@ -1309,10 +1309,10 @@ After:  scores = [85, 92, 78, 95, 88]
 scores is unchanged!
 
 score = scores[0] = 85
-  id(score) = 4357418392, id(scores[0]) = 4357418392
+  id(score) = 4376096152, id(scores[0]) = 4376096152
   Same object: True
 After score += 5: score = 90
-  id(score) = 4357418552, id(scores[0]) = 4357418392
+  id(score) = 4376096312, id(scores[0]) = 4376096152
   Same object: False
   scores[0] is still: 85</code></pre>
 </div>
@@ -1332,7 +1332,7 @@ After score += 5: score = 90
 <section id="example-18-modifying-a-list-with-range-and-index-assignment" class="level4">
 <h4 class="anchored" data-anchor-id="example-18-modifying-a-list-with-range-and-index-assignment">Example 18: Modifying a list with range and index assignment</h4>
 <p>This example shows the correct approach: iterate by index and assign back to the list.</p>
-<div id="d1d8cff5" class="cell" data-execution_count="18">
+<div id="6068d45e" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">95</span>, <span class="dv">88</span>]</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Before:"</span>, scores)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1357,7 +1357,7 @@ After:  [90, 97, 83, 100, 93]</code></pre>
 <section id="example-19-list-comprehension-as-a-non-mutating-alternative" class="level4">
 <h4 class="anchored" data-anchor-id="example-19-list-comprehension-as-a-non-mutating-alternative">Example 19: List comprehension as a non-mutating alternative</h4>
 <p>When you don’t need to change the original list in place, a list comprehension can build a new list with modified values.</p>
-<div id="402de5bc" class="cell" data-execution_count="19">
+<div id="dacb71e3" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">95</span>, <span class="dv">88</span>]</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original:"</span>, scores)</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1401,7 +1401,7 @@ After reassignment: [90, 97, 83, 100, 93]</code></pre>
 <section id="example-20-what-zip-produces" class="level4">
 <h4 class="anchored" data-anchor-id="example-20-what-zip-produces">Example 20: What zip produces</h4>
 <p>This example shows <code>zip()</code>’s output: a series of tuples pairing items from two lists.</p>
-<div id="993a4d7e" class="cell" data-execution_count="20">
+<div id="b0882725" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>]</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> [<span class="dv">92</span>, <span class="dv">87</span>, <span class="dv">95</span>]</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1424,7 +1424,7 @@ type: &lt;class 'tuple'&gt;</code></pre>
 <section id="example-21-zip-in-a-for-loop-with-tuple-unpacking" class="level4">
 <h4 class="anchored" data-anchor-id="example-21-zip-in-a-for-loop-with-tuple-unpacking">Example 21: zip in a for loop with tuple unpacking</h4>
 <p>Combining <code>zip()</code> with tuple unpacking in the <code>for</code> header lets you work with corresponding items from multiple sequences cleanly.</p>
-<div id="b063b5d1" class="cell" data-execution_count="21">
+<div id="8be249ba" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>]</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> [<span class="dv">92</span>, <span class="dv">87</span>, <span class="dv">95</span>]</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1458,7 +1458,7 @@ Charlie scored 95 in Science</code></pre>
 <section id="example-22-zip-truncates-to-the-shortest-sequence-and-builds-dictionaries" class="level4">
 <h4 class="anchored" data-anchor-id="example-22-zip-truncates-to-the-shortest-sequence-and-builds-dictionaries">Example 22: zip truncates to the shortest sequence and builds dictionaries</h4>
 <p>Two practical details: <code>zip</code> stops at the shortest input sequence, and the paired tuples it produces can be passed directly to <code>dict()</code> to build a dictionary.</p>
-<div id="3d264712" class="cell" data-execution_count="22">
+<div id="299feefd" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Truncation: zip stops at the shortest sequence</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>keys <span class="op">=</span> [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span>]</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
@@ -1496,7 +1496,7 @@ grade_book: {'Alice': 92, 'Bob': 87, 'Charlie': 95}</code></pre>
 <section id="example-23-manual-counter-vs-enumerate" class="level4">
 <h4 class="anchored" data-anchor-id="example-23-manual-counter-vs-enumerate">Example 23: Manual counter vs enumerate</h4>
 <p>This example shows the manual approach and how <code>enumerate</code> replaces it.</p>
-<div id="07b8a676" class="cell" data-execution_count="23">
+<div id="c5522626" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"date"</span>]</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Manual counter: works, but more code to manage</span></span>
@@ -1536,7 +1536,7 @@ With enumerate:
 <section id="example-24-enumerate-vs-rangelen-for-when-you-need-both-index-and-item" class="level4">
 <h4 class="anchored" data-anchor-id="example-24-enumerate-vs-rangelen-for-when-you-need-both-index-and-item">Example 24: enumerate vs range(len()) for when you need both index and item</h4>
 <p>When you need both the index and the item, <code>enumerate</code> is cleaner than <code>range(len())</code> because you don’t have to index back into the list manually.</p>
-<div id="bb377d2f" class="cell" data-execution_count="24">
+<div id="96771868" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>temps <span class="op">=</span> [<span class="dv">72</span>, <span class="dv">68</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">77</span>]</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># range(len()): requires indexing back into the list</span></span>
@@ -1580,7 +1580,7 @@ With enumerate:
 <section id="example-25-unpacking-dictionary-items" class="level4">
 <h4 class="anchored" data-anchor-id="example-25-unpacking-dictionary-items">Example 25: Unpacking dictionary items</h4>
 <p>Iterating over a dictionary’s <code>.items()</code> method produces <code>(key, value)</code> tuples. Tuple unpacking in the <code>for</code> header lets you work with keys and values directly.</p>
-<div id="57cf5844" class="cell" data-execution_count="25">
+<div id="7d8a5e2a" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>inventory <span class="op">=</span> {<span class="st">"apples"</span>: <span class="dv">30</span>, <span class="st">"bananas"</span>: <span class="dv">12</span>, <span class="st">"cherries"</span>: <span class="dv">45</span>, <span class="st">"dates"</span>: <span class="dv">8</span>}</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Without unpacking: have to index into the tuple</span></span>
@@ -1619,7 +1619,7 @@ With unpacking:
 <section id="example-26-extended-unpacking-with-in-for-loops" class="level4">
 <h4 class="anchored" data-anchor-id="example-26-extended-unpacking-with-in-for-loops">Example 26: Extended unpacking with * in for loops</h4>
 <p>The extended unpacking operator <code>*</code> from Week 5 works in <code>for</code> loop targets. This is useful when iterating over sequences whose elements have variable-length structure.</p>
-<div id="63a1e7be" class="cell" data-execution_count="26">
+<div id="130ef357" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Student records: first element is name, rest are test scores</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>records <span class="op">=</span> [</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Alice"</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">95</span>),</span>
@@ -1647,7 +1647,7 @@ Charlie: scores = [90, 85, 88, 93], average = 89.0</code></pre>
 <section id="example-27-nested-unpacking-in-for-loops" class="level4">
 <h4 class="anchored" data-anchor-id="example-27-nested-unpacking-in-for-loops">Example 27: Nested unpacking in for loops</h4>
 <p>When iterating over sequences whose elements are themselves structured, the <code>for</code> header can unpack at multiple levels, matching the structure of the data.</p>
-<div id="b79e66d3" class="cell" data-execution_count="27">
+<div id="47fbcbeb" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Each entry: ((x, y), label)</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> [</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    ((<span class="dv">0</span>, <span class="dv">0</span>), <span class="st">"origin"</span>),</span>
