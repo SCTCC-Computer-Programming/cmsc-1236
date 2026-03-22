@@ -390,12 +390,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weekly-overview/week-05/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 5 (Starts - 9 FEB)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../weekly-overview/week-06/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 6 (Starts - 16 FEB)</span></a>
   </div>
@@ -418,6 +412,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Week 10 (Starts - 16 MAR)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weekly-overview/week-11/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11 (Starts - 23 MAR)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -429,12 +429,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../assignments/week-05/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 5 (Starts - 9 FEB)</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../assignments/week-06/index.html" class="sidebar-item-text sidebar-link">
@@ -457,6 +451,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../assignments/week-10/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 10 (Starts - 16 MAR)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../assignments/week-11/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11 (Starts - 23 MAR)</span></a>
   </div>
 </li>
       </ul>
@@ -558,7 +558,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-1-countdown---tracing-a-recursive-call-chain" class="level4">
 <h4 class="anchored" data-anchor-id="example-1-countdown---tracing-a-recursive-call-chain">Example 1: Countdown - tracing a recursive call chain</h4>
 <p>This example prints a countdown from a starting number to zero. The countdown itself is not the point. The goal is to watch what actually happens when <code>countdown</code> calls itself: how each call gets its own separate copy of <code>n</code>, how the function knows when to stop, and what happens after it stops.</p>
-<div id="3527c8ab" class="cell" data-execution_count="1">
+<div id="226ccf9b" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> countdown(n):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"countdown called with n = </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -597,7 +597,7 @@ countdown(3) returning</code></pre>
 <section id="example-2-summing-a-list---a-recursive-function-that-produces-a-value" class="level4">
 <h4 class="anchored" data-anchor-id="example-2-summing-a-list---a-recursive-function-that-produces-a-value">Example 2: Summing a list - a recursive function that produces a value</h4>
 <p>The countdown example returns <code>None</code>. This example returns a computed value, which means each call needs to do something with the result it gets back from the call below it.</p>
-<div id="8bc34d89" class="cell" data-execution_count="2">
+<div id="44a85678" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> recursive_sum(numbers):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  recursive_sum called with: </span><span class="sc">{</span>numbers<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -647,7 +647,7 @@ Final total: 14</code></pre>
 <p>A nested list is a list that may contain other lists as elements, to any depth. This structure comes up in real data more often than you might expect. A file system is one example: a folder contains files and other folders, each of which may contain more files and folders. JSON data from a web API often has the same shape, with values that are themselves objects containing more values. Any time data has a hierarchy where the depth varies, you are dealing with this kind of structure.</p>
 <p><code>[1, [2, 3], [4, [5, 6]]]</code> is a simple version of that idea: a list where some elements are plain values and others are lists that contain more values. Flattening it means collecting all the plain values into a single flat list, no matter how deep they are buried. Writing a loop to do this is difficult because you do not know how many levels deep the nesting goes. Recursion handles it naturally.</p>
 <p>Before the code, one new built-in appears here: <code>isinstance(item, list)</code> checks whether an object is a particular type. <code>isinstance(item, list)</code> returns <code>True</code> if <code>item</code> is a list and <code>False</code> otherwise. It is the way the function decides at each step whether to dig deeper or add the item directly to the result.</p>
-<div id="98cab463" class="cell" data-execution_count="3">
+<div id="2f06446d" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> flatten(items):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> []</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -689,7 +689,7 @@ Flattened: [1, 2, 3, 4, 5, 6, 7, 8]</code></pre>
 <section id="example-4-functions-are-objects---observing-with-type-and-id" class="level4">
 <h4 class="anchored" data-anchor-id="example-4-functions-are-objects---observing-with-type-and-id">Example 4: Functions are objects - observing with type() and id()</h4>
 <p>This example uses <code>type()</code> and <code>id()</code> to inspect a function the same way you can inspect any Python object. <code>type()</code> tells you what kind of object something is. <code>id()</code> returns a number that uniquely identifies the object in memory. Both work on any Python object, including functions.</p>
-<div id="710bfc69" class="cell" data-execution_count="4">
+<div id="affd85f5" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -708,10 +708,10 @@ Flattened: [1, 2, 3, 4, 5, 6, 7, 8]</code></pre>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greet(<span class="st">"Alice"</span>))       <span class="co"># Both names reach the same function</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'function'&gt;
-4424694624
-&lt;function greet at 0x107bb7b60&gt;
+4358241120
+&lt;function greet at 0x103c57b60&gt;
 &lt;class 'function'&gt;
-4424694624
+4358241120
 Hello, Alice!
 Hello, Alice!</code></pre>
 </div>
@@ -727,7 +727,7 @@ Hello, Alice!</code></pre>
 <section id="example-5-passing-a-function-as-an-argument" class="level4">
 <h4 class="anchored" data-anchor-id="example-5-passing-a-function-as-an-argument">Example 5: Passing a function as an argument</h4>
 <p>If functions are objects, they can be passed as arguments to other functions. This example shows what that looks like and why it is useful.</p>
-<div id="079b20cc" class="cell" data-execution_count="5">
+<div id="2f5e492a" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> apply_twice(func, value):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Call func on value, then call func on the result."""</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    first_result <span class="op">=</span> func(value)</span>
@@ -780,7 +780,7 @@ apply_twice(exclaim, 'hello') = hello!!</code></pre>
 <section id="example-6-lambda-vs-def---the-same-function-two-forms" class="level4">
 <h4 class="anchored" data-anchor-id="example-6-lambda-vs-def---the-same-function-two-forms">Example 6: Lambda vs def - the same function, two forms</h4>
 <p>This example shows a lambda and an equivalent <code>def</code> side by side. The goal is to see that they produce the same kind of object, not two different things.</p>
-<div id="2bf852c2" class="cell" data-execution_count="6">
+<div id="c27b46f8" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A function defined with def</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square_def(x):</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">**</span> <span class="dv">2</span></span>
@@ -818,7 +818,7 @@ apply_twice(exclaim, 'hello') = hello!!</code></pre>
 <section id="example-7-lambda-as-an-inline-argument" class="level4">
 <h4 class="anchored" data-anchor-id="example-7-lambda-as-an-inline-argument">Example 7: Lambda as an inline argument</h4>
 <p>The real purpose of lambda is to define a function right where it is needed, without giving it a name. This example shows the pattern that appears most commonly in practice.</p>
-<div id="e324136d" class="cell" data-execution_count="7">
+<div id="57a00a71" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> apply_to_list(func, items):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Apply func to each item and return results as a list."""</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> []</span>
@@ -859,7 +859,7 @@ Squares plus one: [2, 5, 10, 17, 26]</code></pre>
 <section id="example-8-where-lambda-does-not-fit" class="level4">
 <h4 class="anchored" data-anchor-id="example-8-where-lambda-does-not-fit">Example 8: Where lambda does not fit</h4>
 <p>Lambda’s single-expression constraint is a real limitation. This example illustrates the boundary.</p>
-<div id="0f7a0d7e" class="cell" data-execution_count="8">
+<div id="25fc1a0f" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lambda works for simple expressions</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>classify <span class="op">=</span> <span class="kw">lambda</span> x: <span class="st">"positive"</span> <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> (<span class="st">"negative"</span> <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">"zero"</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classify(<span class="dv">5</span>))      <span class="co"># positive</span></span>
@@ -906,7 +906,7 @@ small</code></pre>
 <section id="example-9-map-vs-the-equivalent-for-loop" class="level4">
 <h4 class="anchored" data-anchor-id="example-9-map-vs-the-equivalent-for-loop">Example 9: map() vs the equivalent for loop</h4>
 <p>This example shows the for loop pattern that <code>map()</code> replaces, so you can see exactly what it is doing.</p>
-<div id="91984674" class="cell" data-execution_count="9">
+<div id="6b0a0ada" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>temperatures_c <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">37</span>, <span class="dv">100</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The for loop version - manual iteration and collection</span></span>
@@ -936,7 +936,7 @@ map() result: [32.0, 68.0, 98.6, 212.0]</code></pre>
 <section id="example-10-map-with-a-named-function" class="level4">
 <h4 class="anchored" data-anchor-id="example-10-map-with-a-named-function">Example 10: map() with a named function</h4>
 <p>Lambda is the common pairing with <code>map()</code>, but any function works. This example shows <code>map()</code> with named functions to reinforce that <code>map()</code> is not limited to lambdas.</p>
-<div id="af0a8869" class="cell" data-execution_count="10">
+<div id="43746dfa" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_name(name):</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Capitalize first letter of each word."""</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> name.title()</span>
@@ -981,7 +981,7 @@ Converted to int: [1, 2, 3, 4, 5]</code></pre>
 <section id="example-11-filter-vs-the-equivalent-for-loop" class="level4">
 <h4 class="anchored" data-anchor-id="example-11-filter-vs-the-equivalent-for-loop">Example 11: filter() vs the equivalent for loop</h4>
 <p>This example shows the for-loop-with-if pattern that <code>filter()</code> replaces.</p>
-<div id="203297bf" class="cell" data-execution_count="11">
+<div id="1fecad75" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> [<span class="dv">88</span>, <span class="dv">42</span>, <span class="dv">95</span>, <span class="dv">61</span>, <span class="dv">73</span>, <span class="dv">55</span>, <span class="dv">90</span>, <span class="dv">38</span>, <span class="dv">82</span>]</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The for loop version - loop through and keep matching items</span></span>
@@ -1013,7 +1013,7 @@ filter() result: [88, 95, 73, 90, 82]</code></pre>
 <h4 class="anchored" data-anchor-id="example-12-filter-with-multiple-conditions-and-named-functions">Example 12: filter() with multiple conditions and named functions</h4>
 <p>This example shows <code>filter()</code> with more realistic selection logic, including a named function where the logic is too complex for a clean lambda.</p>
 <p>The data here is a list of dictionaries, where each dictionary represents one product with several fields. This is a common way to work with structured records in Python: a list where each item is a dictionary with the same keys, each key holding a different piece of information about that item.</p>
-<div id="a86be10d" class="cell" data-execution_count="12">
+<div id="1ab37d86" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>products <span class="op">=</span> [</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Widget"</span>, <span class="st">"price"</span>: <span class="fl">12.99</span>, <span class="st">"in_stock"</span>: <span class="va">True</span>},</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Gadget"</span>, <span class="st">"price"</span>: <span class="fl">89.99</span>, <span class="st">"in_stock"</span>: <span class="va">False</span>},</span>

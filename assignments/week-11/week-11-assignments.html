@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 10 Guide – CMSC 1236 : Advanced Python Programming</title>
+<title>Week 11 Assignments – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -273,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 10 Guide</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 11 Assignments</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -440,18 +440,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-10-assignments" id="toc-week-10-assignments" class="nav-link active" data-scroll-target="#week-10-assignments">Week 10 Assignments</a></li>
-  <li><a href="#chapter-19-concepts" id="toc-chapter-19-concepts" class="nav-link" data-scroll-target="#chapter-19-concepts">Chapter 19 concepts</a>
+  <li><a href="#assignment-files" id="toc-assignment-files" class="nav-link active" data-scroll-target="#assignment-files">Assignment Files</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#part-1-code-completion-exercise" id="toc-part-1-code-completion-exercise" class="nav-link" data-scroll-target="#part-1-code-completion-exercise">Part 1: Code Completion Exercise</a>
   <ul class="collapse">
-  <li><a href="#recursive-functions" id="toc-recursive-functions" class="nav-link" data-scroll-target="#recursive-functions">Recursive functions</a></li>
-  <li><a href="#recursion-for-variable-depth-structures" id="toc-recursion-for-variable-depth-structures" class="nav-link" data-scroll-target="#recursion-for-variable-depth-structures">Recursion for variable-depth structures</a></li>
-  <li><a href="#functions-as-first-class-objects" id="toc-functions-as-first-class-objects" class="nav-link" data-scroll-target="#functions-as-first-class-objects">Functions as first-class objects</a></li>
-  <li><a href="#lambda-expressions" id="toc-lambda-expressions" class="nav-link" data-scroll-target="#lambda-expressions">Lambda expressions</a></li>
-  <li><a href="#map-and-filter" id="toc-map-and-filter" class="nav-link" data-scroll-target="#map-and-filter">map() and filter()</a></li>
-  <li><a href="#additional-features-in-the-reading" id="toc-additional-features-in-the-reading" class="nav-link" data-scroll-target="#additional-features-in-the-reading">Additional features in the reading</a></li>
+  <li><a href="#the-scenario" id="toc-the-scenario" class="nav-link" data-scroll-target="#the-scenario">The Scenario</a></li>
+  <li><a href="#about-the-program" id="toc-about-the-program" class="nav-link" data-scroll-target="#about-the-program">About the Program</a></li>
+  <li><a href="#what-to-complete" id="toc-what-to-complete" class="nav-link" data-scroll-target="#what-to-complete">What to Complete</a></li>
+  <li><a href="#your-task" id="toc-your-task" class="nav-link" data-scroll-target="#your-task">Your Task</a></li>
+  <li><a href="#how-to-approach-this" id="toc-how-to-approach-this" class="nav-link" data-scroll-target="#how-to-approach-this">How to Approach This</a></li>
   </ul></li>
-  <li><a href="#reading-expectations-for-week-10" id="toc-reading-expectations-for-week-10" class="nav-link" data-scroll-target="#reading-expectations-for-week-10">Reading expectations for Week 10</a></li>
-  <li><a href="#week-10-tasks" id="toc-week-10-tasks" class="nav-link" data-scroll-target="#week-10-tasks">Week 10 tasks</a></li>
+  <li><a href="#part-2-video-explanation" id="toc-part-2-video-explanation" class="nav-link" data-scroll-target="#part-2-video-explanation">Part 2: Video Explanation</a>
+  <ul class="collapse">
+  <li><a href="#video-requirements" id="toc-video-requirements" class="nav-link" data-scroll-target="#video-requirements">Video Requirements</a></li>
+  <li><a href="#what-to-include" id="toc-what-to-include" class="nav-link" data-scroll-target="#what-to-include">What to Include</a></li>
+  </ul></li>
+  <li><a href="#d2l-submission-checklist" id="toc-d2l-submission-checklist" class="nav-link" data-scroll-target="#d2l-submission-checklist">D2L Submission Checklist</a>
+  <ul class="collapse">
+  <li><a href="#dropbox-submission" id="toc-dropbox-submission" class="nav-link" data-scroll-target="#dropbox-submission">Dropbox Submission</a></li>
+  <li><a href="#video-submission" id="toc-video-submission" class="nav-link" data-scroll-target="#video-submission">Video Submission</a></li>
+  </ul></li>
+  <li><a href="#expected-output-reference" id="toc-expected-output-reference" class="nav-link" data-scroll-target="#expected-output-reference">Expected Output Reference</a></li>
   </ul>
 </nav>
     </div>
@@ -461,8 +470,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 10 Guide</h1>
-<p class="subtitle lead">Chapter 19 – Recursive Functions and Functional Programming Tools</p>
+<h1 class="title">Week 11 Assignments</h1>
+<p class="subtitle lead">Chapter 19 Code Completion Exercise</p>
 </div>
 
 
@@ -474,7 +483,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 12, 2026</p>
+      <p class="date-modified">March 21, 2026</p>
     </div>
   </div>
     
@@ -485,99 +494,200 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In Weeks 7 and 8, you worked with Python’s control flow tools: how truth value testing, Boolean operators, and loop mechanics interact with the reference model from earlier weeks. This week shifts focus back to functions. You have been writing functions since CMSC 1203, and the last several weeks have deepened how Python handles objects, assignment, and iteration. Chapter 19 uses that foundation to extend what functions can do.</p>
-<p>The chapter moves in two directions. The first is recursion: functions that call themselves to solve problems. You already know how function calls work, how local variables are scoped, and how return values pass data back to the caller. Recursion puts those pieces together in a new way. The second direction is functional programming tools: passing functions as arguments to built-ins like <code>map()</code> and <code>filter()</code> rather than writing loops manually. To use these tools effectively, you first need to understand something Gaddis didn’t cover: functions in Python are objects, just like lists and integers, and can be passed around as values.</p>
-<section id="week-10-assignments" class="level2">
-<h2 class="anchored" data-anchor-id="week-10-assignments">Week 10 Assignments</h2>
+<section id="assignment-files" class="level2">
+<h2 class="anchored" data-anchor-id="assignment-files">Assignment Files</h2>
 <ul>
-<li>Here is the link to the <strong><a href="../../assignments/week-10/index.html">Week 10 Assignments</a></strong> page.</li>
+<li><a href="../../assignments/week-11/lastname_wildlife_survey.py" download="">Download Wildlife Survey Skeleton (lastname_wildlife_survey.py)</a></li>
+<li><a href="../../assignments/week-11/wildlife-survey-main.py" download="">Download Main Program (wildlife-survey-main.py)</a></li>
 </ul>
 </section>
-<section id="chapter-19-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="chapter-19-concepts">Chapter 19 concepts</h2>
-<section id="recursive-functions" class="level3">
-<h3 class="anchored" data-anchor-id="recursive-functions">Recursive functions</h3>
-<p>A recursive function calls itself as part of solving a problem. The key requirement is a base case: a condition under which the function stops calling itself and returns directly. Without one, the function calls itself forever. The recursive case reduces the problem to a smaller version of the same problem and combines the result with the current step.</p>
-<p>The demo examples show:</p>
-<ul>
-<li>how each recursive call gets its own separate copy of local variables, and what happens to the paused calls while deeper calls run</li>
-<li>a recursive function that returns <code>None</code> (countdown) and one that returns a computed value (summing a list)</li>
-<li>the base case and recursive case pattern applied to both examples</li>
-</ul>
-</section>
-<section id="recursion-for-variable-depth-structures" class="level3">
-<h3 class="anchored" data-anchor-id="recursion-for-variable-depth-structures">Recursion for variable-depth structures</h3>
-<p>The countdown and sum examples from the first section can both be written as loops. Recursion’s practical advantage appears when data has unknown or unpredictable depth. A loop can process one level of nesting; a recursive function follows the structure however deep it goes, because each call handles one level and passes everything below it to the next call.</p>
-<p>The demo examples show:</p>
-<ul>
-<li>flattening a nested list where items may themselves be lists, to any depth</li>
-<li>using <code>isinstance()</code> to decide at each step whether an item needs further processing or can be added directly</li>
-<li>why a loop-based approach would need to know the depth in advance</li>
-</ul>
-</section>
-<section id="functions-as-first-class-objects" class="level3">
-<h3 class="anchored" data-anchor-id="functions-as-first-class-objects">Functions as first-class objects</h3>
-<p>Gaddis taught functions as tools you define and call. Python goes further: a function defined with <code>def</code> is an object, the same kind of thing as an integer or a list. It has a type, an identity in memory, and can be assigned to a variable or passed as an argument. The name a <code>def</code> statement creates is just one name pointing to that object.</p>
-<p>The demo examples show:</p>
-<ul>
-<li>using <code>type()</code> and <code>id()</code> to confirm a function is an object with a type and identity</li>
-<li>binding a second name to the same function object and calling through either name</li>
-<li>passing a function as an argument and calling it inside the receiving function</li>
-</ul>
-</section>
-<section id="lambda-expressions" class="level3">
-<h3 class="anchored" data-anchor-id="lambda-expressions">Lambda expressions</h3>
-<p>Once functions can be passed as arguments, defining a short function just to pass it somewhere feels like more ceremony than it warrants. Lambda expressions solve this: <code>lambda parameters: expression</code> creates a function object as an expression rather than a statement, so it can appear directly inside a function call. The tradeoff is that the body must be a single expression. Anything requiring multiple steps belongs in a <code>def</code>.</p>
-<p>The demo examples show:</p>
-<ul>
-<li>a lambda and an equivalent <code>def</code> side by side, confirming they produce the same type of object</li>
-<li>passing a lambda directly as an argument without a separate definition</li>
-<li>where the single-expression constraint is a real limit and <code>def</code> is the right choice</li>
-</ul>
-</section>
-<section id="map-and-filter" class="level3">
-<h3 class="anchored" data-anchor-id="map-and-filter">map() and filter()</h3>
-<p><code>map()</code> and <code>filter()</code> are the practical payoff for Parts 2 and 3. Both accept a function and an iterable. <code>map()</code> applies the function to every item and returns the results. <code>filter()</code> applies the function as a test and keeps only the items for which it returns true. Both replace common loop patterns with a more direct statement of intent.</p>
-<p>The demo examples show:</p>
-<ul>
-<li><code>map()</code> and <code>filter()</code> next to their equivalent <code>for</code> loop versions, making the replacement pattern explicit</li>
-<li>using lambda as the inline function argument for simple cases</li>
-<li>using named functions with <code>map()</code> and <code>filter()</code> when the logic is too complex for a lambda</li>
-</ul>
-</section>
-<section id="additional-features-in-the-reading" class="level3">
-<h3 class="anchored" data-anchor-id="additional-features-in-the-reading">Additional features in the reading</h3>
-<p>Chapter 19 covers several topics not demonstrated this week. These are worth reading for awareness but are not the focus of the quiz.</p>
-<p>The reading covers:</p>
-<ul>
-<li><code>functools.reduce()</code>: applies a function to pairs of items to collapse a collection to a single value; moved from built-ins to <code>functools</code> in Python 3</li>
-<li>function annotations: syntax for attaching metadata to parameters and return values; Python does not enforce them</li>
-<li>decorators: functions that wrap other functions to add behavior; the full treatment is deferred to Part VI of the textbook</li>
-</ul>
-</section>
-</section>
-<section id="reading-expectations-for-week-10" class="level2">
-<h2 class="anchored" data-anchor-id="reading-expectations-for-week-10">Reading expectations for Week 10</h2>
-<p>As you read Chapter 19 and run the demo, check whether you can answer the following in your own words:</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This week applies the Chapter 19 concepts directly. A data analyst has built the main program and display functions for a wildlife survey analyzer. The core analysis functions are defined but empty. Your job is to write the function bodies so the program produces the correct output.</p>
+<p>This week has two components:</p>
 <ol type="1">
-<li>What is the base case of a recursive function, and what happens if one is not provided?</li>
-<li>How many total calls does <code>countdown(3)</code> make, and in what order do they complete?</li>
-<li>Why does recursion handle variable-depth structures better than a loop?</li>
-<li>What does <code>isinstance(item, list)</code> return, and how does <code>flatten</code> use it to decide what to do with each item?</li>
-<li>What does <code>type()</code> return when applied to a function, and what does <code>say_hello = greet</code> do to the function object?</li>
-<li>What is the syntax for a lambda expression, and why is there no <code>return</code> keyword?</li>
-<li>What kind of logic cannot appear in a lambda body, and what should you use instead?</li>
-<li>What does <code>map()</code> do with a function and an iterable, and what type does it return before wrapping in <code>list()</code>?</li>
-<li>How does <code>filter()</code> decide which items to keep, and how does it differ from <code>map()</code>?</li>
+<li>Complete six functions in the provided skeleton file</li>
+<li>Record a video explanation of your code</li>
 </ol>
 </section>
-<section id="week-10-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="week-10-tasks">Week 10 tasks</h2>
+<section id="part-1-code-completion-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-code-completion-exercise">Part 1: Code Completion Exercise</h2>
+<section id="the-scenario" class="level3">
+<h3 class="anchored" data-anchor-id="the-scenario">The Scenario</h3>
+<p>A conservation research team monitors bird populations across a network of survey regions in the Upper Midwest. The regions are divided into zones and sub-zones that follow natural geographic boundaries: river corridors, forest reserves, and wetlands. The nesting depth varies depending on the terrain. Field researchers submit observation data as it comes in, which means the data arrives in irregular, nested structures rather than a flat format.</p>
+<p>The team is preparing a habitat assessment report for a state wildlife agency that will use the findings to prioritize land protection efforts this season. Before the report can be written, the raw survey data needs to be processed: total observations counted, specific species located across all zones, the nested data flattened for downstream tools, temperature readings converted for the agency’s records, and notable species filtered for the summary table.</p>
+<p>The team’s data analyst built the main program and display functions but ran out of time before completing the analysis functions. You are picking up where they left off.</p>
+</section>
+<section id="about-the-program" class="level3">
+<h3 class="anchored" data-anchor-id="about-the-program">About the Program</h3>
+<p>The main program (<code>wildlife-survey-main.py</code>) runs an automated analysis with no user input. When you run it, it executes all five sections and prints the results. With the placeholder functions in place, sections will produce no output or return <code>None</code>. As you complete each function, its section will start producing real output.</p>
+<p>The main program uses a few formatting patterns in the display functions that you may not have written yourself yet. You do not need to modify these functions, but here is what they do:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f"{text:&lt;22}"</code></td>
+<td>Left-aligns text within 22 characters (used for table columns)</td>
+</tr>
+<tr class="even">
+<td><code>f"{value:&lt;8}"</code></td>
+<td>Left-aligns a value within 8 characters</td>
+</tr>
+<tr class="odd">
+<td><code>zip(original, converted)</code></td>
+<td>Pairs items from two lists by position for side-by-side display</td>
+</tr>
+</tbody>
+</table>
+<p>Before you can run the program, rename your skeleton file to include your last name (e.g., <code>smith_wildlife_survey.py</code>) and update the import at the top of <code>wildlife-survey-main.py</code> to match. This is the only change you should make to the main program.</p>
+</section>
+<section id="what-to-complete" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-complete">What to Complete</h3>
+<p>The skeleton file contains six functions. Each one requires a specific concept from Chapter 19.</p>
+<p><strong>1. <code>count_observations(data)</code></strong></p>
+<p>Recursively count all integer observation values in the survey data. The data is a nested list that mixes integers (observation counts) and strings (species sightings) at any depth. Count only the integers.</p>
+<p>This is the recursive sum pattern from the Week 10 demo, applied to a structure that also contains strings. Use <code>isinstance()</code> to distinguish integers from other items. Your base case handles a single integer; your recursive case processes a sub-list.</p>
+<p><strong>2. <code>find_species(data, target)</code></strong></p>
+<p>Recursively search the nested survey data for all occurrences of a target species name. Return a flat list with one copy of the target for each time it appears, at any depth.</p>
+<p>Use <code>isinstance()</code> to decide at each step whether an item needs further searching or can be compared directly to the target. The return type is a flat list regardless of how deeply nested the matches are.</p>
+<p><strong>3. <code>flatten_survey(data)</code></strong></p>
+<p>Recursively flatten the nested survey data to a single level. Non-list items are added directly; lists are processed recursively. The Week 10 demo covers this pattern directly.</p>
+<p><strong>4. <code>apply_formula(func, measurements)</code></strong></p>
+<p>Apply a function to every item in a list and return the results. Do not use <code>map()</code> here. Implement the transformation manually using a loop.</p>
+<p><code>func</code> is a function object passed as an argument and can be called like any other function. The Week 10 demo covers this pattern.</p>
+<p><strong>5. <code>get_notable_species(species_list, threshold)</code></strong></p>
+<p>Return only species records where the observation count exceeds a threshold. Each record in the list is a tuple of <code>(name, count, region)</code>. Use <code>filter()</code> with a lambda expression.</p>
+<p>The tuple structure is <code>(name, count, region)</code>. The Week 10 demo covers this pattern.</p>
+<p><strong>6. <code>format_report_lines(records)</code></strong></p>
+<p>Format each <code>(name, count, region)</code> tuple as a display string for the report. Use <code>map()</code> with a lambda expression.</p>
+<p>The expected format is shown in the docstring in the skeleton file. The Week 10 demo covers this pattern.</p>
+</section>
+<section id="your-task" class="level3">
+<h3 class="anchored" data-anchor-id="your-task">Your Task</h3>
 <ol type="1">
-<li>Read <strong>Learning Python 6e, Chapter 19</strong> (complete).</li>
-<li>Work through the <strong>Week 10 demo</strong> (linked from the Week 10 Assignments page).</li>
-<li>Complete the <strong>Week 10 D2L quiz</strong> (Chapter 19 concepts + demo examples, using the quiz handout).</li>
+<li>Download both files using the links at the top of this page</li>
+<li>Rename the skeleton file to include your last name (e.g., <code>smith_wildlife_survey.py</code>)</li>
+<li>Update the import at the top of <code>wildlife-survey-main.py</code> to match your filename</li>
+<li>Run <code>wildlife-survey-main.py</code> to see the current output with placeholder functions</li>
+<li>Complete each of the six functions described above</li>
+<li>Run the completed program and verify your output matches the Expected Output at the end of this document</li>
 </ol>
+</section>
+<section id="how-to-approach-this" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-approach-this">How to Approach This</h3>
+<ul>
+<li><strong>Read the data.</strong> Look at <code>SURVEY_DATA</code> in the main program to understand the nesting structure your recursive functions need to handle.</li>
+<li><strong>Start with <code>flatten_survey</code>.</strong> It is the closest to the demo example and will confirm your recursive pattern works before you apply it to the more complex functions.</li>
+<li><strong>Think through the base case first.</strong> Before writing any recursive function, decide: what is the simplest input this function could receive, and what should it return?</li>
+<li><strong>Test after each function.</strong> Run the program after completing each function to see your progress.</li>
+<li><strong>Compare <code>apply_formula</code> to <code>map()</code>.</strong> After writing <code>apply_formula</code> manually, look at how <code>get_notable_species</code> uses <code>filter()</code> and notice the structural similarity.</li>
+</ul>
+</section>
+</section>
+<section id="part-2-video-explanation" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-video-explanation">Part 2: Video Explanation</h2>
+<p>Record a video explaining your code and submit it via Kaltura.</p>
+<section id="video-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="video-requirements">Video Requirements</h3>
+<ul>
+<li>Clear video and audio quality</li>
+<li>Introduce yourself, the assignment, and the course at the beginning</li>
+</ul>
+</section>
+<section id="what-to-include" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-include">What to Include</h3>
+<ol type="1">
+<li><p><strong>Program demonstration.</strong> Run your completed program and compare the output to the Expected Output reference at the end of this document. Verbally confirm that each section produces the correct results.</p></li>
+<li><p><strong>Code walkthrough.</strong> Walk through each function you wrote. Explain how your implementation works and why you made the choices you did. For the recursive functions, trace through at least one example call and explain what happens at each level.</p></li>
+<li><p><strong>Lessons learned.</strong> At the end of your video, discuss:</p>
+<ul>
+<li>Which function was the hardest to write and why</li>
+<li>How thinking recursively required a different approach than writing a loop</li>
+<li>What writing <code>apply_formula</code> by hand revealed about how <code>map()</code> works</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="d2l-submission-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="d2l-submission-checklist">D2L Submission Checklist</h2>
+<section id="dropbox-submission" class="level3">
+<h3 class="anchored" data-anchor-id="dropbox-submission">Dropbox Submission</h3>
+<p>Upload the following file to the <strong>Week 11 Dropbox</strong>:</p>
+<ol type="1">
+<li><strong>Completed skeleton file</strong>: <code>lastname_wildlife_survey.py</code>. Change <code>lastname</code> to your last name. Not doing so will result in the assignment not being graded.</li>
+</ol>
+</section>
+<section id="video-submission" class="level3">
+<h3 class="anchored" data-anchor-id="video-submission">Video Submission</h3>
+<ul>
+<li>Upload your video to <strong>Kaltura Mediaspace</strong></li>
+<li>Name your video: <code>lastname_Week11_CodeCompletion</code></li>
+<li>Link to the Kaltura video in the Assignment Dropbox</li>
+</ul>
+<p><strong>Submission location:</strong> All items submitted in D2L (Week 11 Dropbox).</p>
+</section>
+</section>
+<section id="expected-output-reference" class="level2">
+<h2 class="anchored" data-anchor-id="expected-output-reference">Expected Output Reference</h2>
+<p>When all six functions are completed correctly, running <code>wildlife-survey-main.py</code> should produce output like this:</p>
+<pre class="text"><code>==========================================================
+  Wildlife Survey Analyzer
+==========================================================
+
+[1] TOTAL OBSERVATION COUNT
+----------------------------------------------------------
+  Total observations recorded: 91
+
+[2] SPECIES SEARCH
+----------------------------------------------------------
+  Search target: 'Red-tailed Hawk'
+  Found 2 occurrence(s) across all survey zones.
+
+  Search target: 'Bald Eagle'
+  Found 2 occurrence(s) across all survey zones.
+
+  Search target: 'Golden Eagle'
+  No occurrences found.
+
+[3] FLATTENED SURVEY DATA
+----------------------------------------------------------
+  Flattened survey contains 23 entries:
+    Observation counts : [12, 5, 3, 8, 2, 6, 4, 9, 3, 7, 5, 2, 3, 11, 4, 6, 1]
+    Species sightings  : ['Red-tailed Hawk', 'Sandhill Crane', 'Red-tailed Hawk', 'Bald Eagle', 'Sandhill Crane', 'Bald Eagle']
+
+[4] TEMPERATURE CONVERSION
+----------------------------------------------------------
+  Reading (C)      Converted (F)
+  ------------------------------
+  32.0             89.6
+  18.5             65.3
+  25.0             77.0
+  41.2             106.2
+  15.8             60.4
+  30.0             86.0
+
+[5] NOTABLE SPECIES (threshold: 25)
+----------------------------------------------------------
+  Species with more than 25 observations:
+  Species                Count    Region
+  --------------------------------------------------
+  Red-tailed Hawk        47       Northern Region
+  Bald Eagle             31       River Corridor
+  Peregrine Falcon       53       Coastal Strip
+  Cooper's Hawk          28       Forest Reserve
+
+==========================================================
+  SURVEY ANALYSIS COMPLETE
+==========================================================</code></pre>
 
 
 </section>
