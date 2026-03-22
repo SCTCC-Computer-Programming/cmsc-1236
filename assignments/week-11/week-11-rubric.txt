@@ -1,0 +1,34 @@
+
+---
+
+Criterion 9: OUTPUT VERIFICATION (1 point)
+
+Pass (0.7-1.0): Runs completed program in video and verbally compares output to expected results for all sections.
+Needs Improvement (0.1-0.6): Shows output but comparison is rushed or doesn't address all sections.
+Fail (0.0): Assignment-level fail: YES. No output shown, or output still contains incomplete functions.
+
+---
+
+Criterion 10: LESSONS LEARNED (1 point)
+
+Pass (0.7-1.0): Discusses which function was hardest and why, how thinking recursively required a different approach than writing a loop, and what writing apply_formula() by hand revealed about how map() works.
+Needs Improvement (0.1-0.6): Addresses some reflection points but responses are surface-level or one topic is missing.
+Fail (0.0): Assignment-level fail: YES. No reflection attempted, or responses show no genuine engagement with the material.
+
+---
+
+Criterion 11: SUBMISSION REQUIREMENTS (1 point)
+
+Pass (0.7-1.0): Python file correctly named (lastname_wildlife_survey.py) and submitted to Week 11 Dropbox. Kaltura video linked in Dropbox.
+Needs Improvement (0.1-0.6): File submitted but naming convention not followed, or video link missing from Dropbox.
+Fail (0.0): Assignment-level fail: YES. No file submitted, or video not uploaded to Kaltura.
+
+---
+
+Overall Score
+
+A: 10.0 points minimum
+B: 9.0 points minimum
+C: 8.0 points minimum
+D: 7.0 points minimum
+F: 6.0 points minimum

@@ -1,0 +1,32 @@
+---
+title: "Week 11 Guide"
+subtitle: "Chapter 19 Code Completion Exercise"
+format:
+  html:
+    toc: true
+---
+
+This week applies the Chapter 19 concepts to a realistic data analysis problem. The assignment gives you a working main program and asks you to complete the analysis functions that drive it. The scenario involves nested survey data of variable depth, which means the solutions are not just exercises in syntax. The structure of the problem determines which tools fit.
+
+## Week 11 Assignments
+
+- Here is the link to the **[Week 11 Assignments](../../assignments/week-11/index.qmd)** page.
+
+## Concepts being reinforced
+
+Three of the six functions require recursion with `isinstance()` to navigate nested lists of unknown depth. These build directly on the flatten and search patterns from the Week 10 demo. The fourth function implements the map pattern manually using a loop and a passed function object, which reinforces how first-class functions work before you apply the same idea through `map()` and `filter()` in the remaining two functions. The progression across the six functions is intentional: by the end, the connection between passing functions as arguments, writing lambdas inline, and using `map()` and `filter()` should feel like variations on the same idea rather than separate topics.
+
+## Week 11 activities
+
+This week has two components:
+
+1. **Code completion exercise.** Complete six functions in the provided skeleton file. Each function targets a specific Chapter 19 concept. The main program calls your functions and produces verifiable output you can compare against the expected output on the assignment page.
+
+2. **Video explanation.** Record a walkthrough demonstrating your completed program, explaining how each function works, and reflecting on what you learned.
+
+## Week 11 tasks
+
+1. Download the skeleton file and main program from the **Week 11 Assignments** page.
+2. Complete the six functions in `lastname_wildlife_survey.py`.
+3. Record your video explanation and upload it to Kaltura.
+4. Submit your completed Python file and Kaltura link to the **Week 11 Dropbox**.

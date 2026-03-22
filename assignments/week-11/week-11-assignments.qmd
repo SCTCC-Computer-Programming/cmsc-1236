@@ -1,0 +1,192 @@
+---
+title: "Week 11 Assignments"
+subtitle: "Chapter 19 Code Completion Exercise"
+format:
+  html:
+    toc: true
+---
+
+## Assignment Files
+
+- <a href="/assignments/week-11/lastname_wildlife_survey.py" download>Download Wildlife Survey Skeleton (lastname_wildlife_survey.py)</a>
+- <a href="/assignments/week-11/wildlife-survey-main.py" download>Download Main Program (wildlife-survey-main.py)</a>
+
+## Overview
+
+This week applies the Chapter 19 concepts directly. A data analyst has built the main program and display functions for a wildlife survey analyzer. The core analysis functions are defined but empty. Your job is to write the function bodies so the program produces the correct output.
+
+This week has two components:
+
+1. Complete six functions in the provided skeleton file
+2. Record a video explanation of your code
+
+## Part 1: Code Completion Exercise
+
+### The Scenario
+
+A conservation research team monitors bird populations across a network of survey regions in the Upper Midwest. The regions are divided into zones and sub-zones that follow natural geographic boundaries: river corridors, forest reserves, and wetlands. The nesting depth varies depending on the terrain. Field researchers submit observation data as it comes in, which means the data arrives in irregular, nested structures rather than a flat format.
+
+The team is preparing a habitat assessment report for a state wildlife agency that will use the findings to prioritize land protection efforts this season. Before the report can be written, the raw survey data needs to be processed: total observations counted, specific species located across all zones, the nested data flattened for downstream tools, temperature readings converted for the agency's records, and notable species filtered for the summary table.
+
+The team's data analyst built the main program and display functions but ran out of time before completing the analysis functions. You are picking up where they left off.
+
+### About the Program
+
+The main program (`wildlife-survey-main.py`) runs an automated analysis with no user input. When you run it, it executes all five sections and prints the results. With the placeholder functions in place, sections will produce no output or return `None`. As you complete each function, its section will start producing real output.
+
+The main program uses a few formatting patterns in the display functions that you may not have written yourself yet. You do not need to modify these functions, but here is what they do:
+
+| Code | What It Does |
+|------|--------------|
+| `f"{text:<22}"` | Left-aligns text within 22 characters (used for table columns) |
+| `f"{value:<8}"` | Left-aligns a value within 8 characters |
+| `zip(original, converted)` | Pairs items from two lists by position for side-by-side display |
+
+Before you can run the program, rename your skeleton file to include your last name (e.g., `smith_wildlife_survey.py`) and update the import at the top of `wildlife-survey-main.py` to match. This is the only change you should make to the main program.
+
+### What to Complete
+
+The skeleton file contains six functions. Each one requires a specific concept from Chapter 19.
+
+**1. `count_observations(data)`**
+
+Recursively count all integer observation values in the survey data. The data is a nested list that mixes integers (observation counts) and strings (species sightings) at any depth. Count only the integers.
+
+This is the recursive sum pattern from the Week 10 demo, applied to a structure that also contains strings. Use `isinstance()` to distinguish integers from other items. Your base case handles a single integer; your recursive case processes a sub-list.
+
+**2. `find_species(data, target)`**
+
+Recursively search the nested survey data for all occurrences of a target species name. Return a flat list with one copy of the target for each time it appears, at any depth.
+
+Use `isinstance()` to decide at each step whether an item needs further searching or can be compared directly to the target. The return type is a flat list regardless of how deeply nested the matches are.
+
+**3. `flatten_survey(data)`**
+
+Recursively flatten the nested survey data to a single level. Non-list items are added directly; lists are processed recursively. The Week 10 demo covers this pattern directly.
+
+**4. `apply_formula(func, measurements)`**
+
+Apply a function to every item in a list and return the results. Do not use `map()` here. Implement the transformation manually using a loop.
+
+`func` is a function object passed as an argument and can be called like any other function. The Week 10 demo covers this pattern.
+
+**5. `get_notable_species(species_list, threshold)`**
+
+Return only species records where the observation count exceeds a threshold. Each record in the list is a tuple of `(name, count, region)`. Use `filter()` with a lambda expression.
+
+The tuple structure is `(name, count, region)`. The Week 10 demo covers this pattern.
+
+**6. `format_report_lines(records)`**
+
+Format each `(name, count, region)` tuple as a display string for the report. Use `map()` with a lambda expression.
+
+The expected format is shown in the docstring in the skeleton file. The Week 10 demo covers this pattern.
+
+### Your Task
+
+1. Download both files using the links at the top of this page
+2. Rename the skeleton file to include your last name (e.g., `smith_wildlife_survey.py`)
+3. Update the import at the top of `wildlife-survey-main.py` to match your filename
+4. Run `wildlife-survey-main.py` to see the current output with placeholder functions
+5. Complete each of the six functions described above
+6. Run the completed program and verify your output matches the Expected Output at the end of this document
+
+### How to Approach This
+
+- **Read the data.** Look at `SURVEY_DATA` in the main program to understand the nesting structure your recursive functions need to handle.
+- **Start with `flatten_survey`.** It is the closest to the demo example and will confirm your recursive pattern works before you apply it to the more complex functions.
+- **Think through the base case first.** Before writing any recursive function, decide: what is the simplest input this function could receive, and what should it return?
+- **Test after each function.** Run the program after completing each function to see your progress.
+- **Compare `apply_formula` to `map()`.** After writing `apply_formula` manually, look at how `get_notable_species` uses `filter()` and notice the structural similarity.
+
+## Part 2: Video Explanation
+
+Record a video explaining your code and submit it via Kaltura.
+
+### Video Requirements
+
+- Clear video and audio quality
+- Introduce yourself, the assignment, and the course at the beginning
+
+### What to Include
+
+1. **Program demonstration.** Run your completed program and compare the output to the Expected Output reference at the end of this document. Verbally confirm that each section produces the correct results.
+
+2. **Code walkthrough.** Walk through each function you wrote. Explain how your implementation works and why you made the choices you did. For the recursive functions, trace through at least one example call and explain what happens at each level.
+
+3. **Lessons learned.** At the end of your video, discuss:
+   - Which function was the hardest to write and why
+   - How thinking recursively required a different approach than writing a loop
+   - What writing `apply_formula` by hand revealed about how `map()` works
+
+## D2L Submission Checklist
+
+### Dropbox Submission
+
+Upload the following file to the **Week 11 Dropbox**:
+
+1. **Completed skeleton file**: `lastname_wildlife_survey.py`. Change `lastname` to your last name. Not doing so will result in the assignment not being graded.
+
+### Video Submission
+
+- Upload your video to **Kaltura Mediaspace**
+- Name your video: `lastname_Week11_CodeCompletion`
+- Link to the Kaltura video in the Assignment Dropbox
+
+**Submission location:** All items submitted in D2L (Week 11 Dropbox).
+
+## Expected Output Reference
+
+When all six functions are completed correctly, running `wildlife-survey-main.py` should produce output like this:
+
+```text
+==========================================================
+  Wildlife Survey Analyzer
+==========================================================
+
+[1] TOTAL OBSERVATION COUNT
+----------------------------------------------------------
+  Total observations recorded: 91
+
+[2] SPECIES SEARCH
+----------------------------------------------------------
+  Search target: 'Red-tailed Hawk'
+  Found 2 occurrence(s) across all survey zones.
+
+  Search target: 'Bald Eagle'
+  Found 2 occurrence(s) across all survey zones.
+
+  Search target: 'Golden Eagle'
+  No occurrences found.
+
+[3] FLATTENED SURVEY DATA
+----------------------------------------------------------
+  Flattened survey contains 23 entries:
+    Observation counts : [12, 5, 3, 8, 2, 6, 4, 9, 3, 7, 5, 2, 3, 11, 4, 6, 1]
+    Species sightings  : ['Red-tailed Hawk', 'Sandhill Crane', 'Red-tailed Hawk', 'Bald Eagle', 'Sandhill Crane', 'Bald Eagle']
+
+[4] TEMPERATURE CONVERSION
+----------------------------------------------------------
+  Reading (C)      Converted (F)
+  ------------------------------
+  32.0             89.6
+  18.5             65.3
+  25.0             77.0
+  41.2             106.2
+  15.8             60.4
+  30.0             86.0
+
+[5] NOTABLE SPECIES (threshold: 25)
+----------------------------------------------------------
+  Species with more than 25 observations:
+  Species                Count    Region
+  --------------------------------------------------
+  Red-tailed Hawk        47       Northern Region
+  Bald Eagle             31       River Corridor
+  Peregrine Falcon       53       Coastal Strip
+  Cooper's Hawk          28       Forest Reserve
+
+==========================================================
+  SURVEY ANALYSIS COMPLETE
+==========================================================
+```
