@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 8 Assignments – CMSC 1236 : Advanced Python Programming</title>
+<title>Week 12 Guide – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -273,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../assignments/week-06/index.html">Weekly Assignments</a></li><li class="breadcrumb-item"><a href="../../assignments/week-08/index.html">Week 8 (Starts - 2 MAR)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 12 Guide</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -414,7 +414,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../assignments/week-08/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../assignments/week-08/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 8 (Starts - 2 MAR)</span></a>
   </div>
 </li>
@@ -452,27 +452,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#assignment-files" id="toc-assignment-files" class="nav-link active" data-scroll-target="#assignment-files">Assignment Files</a></li>
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#part-1-module-creation-exercise" id="toc-part-1-module-creation-exercise" class="nav-link" data-scroll-target="#part-1-module-creation-exercise">Part 1: Module Creation Exercise</a>
+  <li><a href="#week-12-assignments" id="toc-week-12-assignments" class="nav-link active" data-scroll-target="#week-12-assignments">Week 12 Assignments</a></li>
+  <li><a href="#chapter-20-concepts" id="toc-chapter-20-concepts" class="nav-link" data-scroll-target="#chapter-20-concepts">Chapter 20 concepts</a>
   <ul class="collapse">
-  <li><a href="#the-scenario" id="toc-the-scenario" class="nav-link" data-scroll-target="#the-scenario">The Scenario</a></li>
-  <li><a href="#about-the-program" id="toc-about-the-program" class="nav-link" data-scroll-target="#about-the-program">About the Program</a></li>
-  <li><a href="#module-requirements" id="toc-module-requirements" class="nav-link" data-scroll-target="#module-requirements">Module Requirements</a></li>
-  <li><a href="#your-task" id="toc-your-task" class="nav-link" data-scroll-target="#your-task">Your Task</a></li>
-  <li><a href="#how-to-approach-this" id="toc-how-to-approach-this" class="nav-link" data-scroll-target="#how-to-approach-this">How to Approach This</a></li>
+  <li><a href="#list-comprehension-full-syntax" id="toc-list-comprehension-full-syntax" class="nav-link" data-scroll-target="#list-comprehension-full-syntax">List comprehension full syntax</a></li>
+  <li><a href="#set-and-dictionary-comprehensions" id="toc-set-and-dictionary-comprehensions" class="nav-link" data-scroll-target="#set-and-dictionary-comprehensions">Set and dictionary comprehensions</a></li>
+  <li><a href="#generator-functions" id="toc-generator-functions" class="nav-link" data-scroll-target="#generator-functions">Generator functions</a></li>
+  <li><a href="#generator-expressions" id="toc-generator-expressions" class="nav-link" data-scroll-target="#generator-expressions">Generator expressions</a></li>
+  <li><a href="#single-pass-behavior-and-comprehension-variable-scoping" id="toc-single-pass-behavior-and-comprehension-variable-scoping" class="nav-link" data-scroll-target="#single-pass-behavior-and-comprehension-variable-scoping">Single-pass behavior and comprehension variable scoping</a></li>
+  <li><a href="#additional-features-in-the-reading" id="toc-additional-features-in-the-reading" class="nav-link" data-scroll-target="#additional-features-in-the-reading">Additional features in the reading</a></li>
   </ul></li>
-  <li><a href="#part-2-video-explanation" id="toc-part-2-video-explanation" class="nav-link" data-scroll-target="#part-2-video-explanation">Part 2: Video Explanation</a>
-  <ul class="collapse">
-  <li><a href="#video-requirements" id="toc-video-requirements" class="nav-link" data-scroll-target="#video-requirements">Video Requirements</a></li>
-  <li><a href="#what-to-include" id="toc-what-to-include" class="nav-link" data-scroll-target="#what-to-include">What to Include</a></li>
-  </ul></li>
-  <li><a href="#d2l-submission-checklist" id="toc-d2l-submission-checklist" class="nav-link" data-scroll-target="#d2l-submission-checklist">D2L Submission Checklist</a>
-  <ul class="collapse">
-  <li><a href="#dropbox-submission" id="toc-dropbox-submission" class="nav-link" data-scroll-target="#dropbox-submission">Dropbox Submission</a></li>
-  <li><a href="#video-submission" id="toc-video-submission" class="nav-link" data-scroll-target="#video-submission">Video Submission</a></li>
-  </ul></li>
-  <li><a href="#expected-output-reference" id="toc-expected-output-reference" class="nav-link" data-scroll-target="#expected-output-reference">Expected Output Reference</a></li>
+  <li><a href="#reading-expectations-for-week-12" id="toc-reading-expectations-for-week-12" class="nav-link" data-scroll-target="#reading-expectations-for-week-12">Reading expectations for Week 12</a></li>
+  <li><a href="#week-12-tasks" id="toc-week-12-tasks" class="nav-link" data-scroll-target="#week-12-tasks">Week 12 tasks</a></li>
   </ul>
 </nav>
     </div>
@@ -480,10 +471,10 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../assignments/week-06/index.html">Weekly Assignments</a></li><li class="breadcrumb-item"><a href="../../assignments/week-08/index.html">Week 8 (Starts - 2 MAR)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 8 Assignments</h1>
-<p class="subtitle lead">Chapters 12–13 Module Creation Exercise</p>
+<h1 class="title">Week 12 Guide</h1>
+<p class="subtitle lead">Chapter 20 – Comprehensions and Generators</p>
 </div>
 
 
@@ -495,7 +486,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 3, 2026</p>
+      <p class="date-modified">March 26, 2026</p>
     </div>
   </div>
     
@@ -506,289 +497,98 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="assignment-files" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-files">Assignment Files</h2>
+<p>In Week 10, the demo introduced <code>map()</code> and <code>filter()</code> as functional programming tools, and noted that both return objects rather than lists. Week 11 put those tools to work directly in code. Chapter 20 picks up both threads. On the comprehension side, it completes the syntax you have been using since Week 7, adding <code>if</code> filter clauses, nested loops, and set and dictionary forms. On the generator side, it explains the execution model behind <code>map()</code>, <code>filter()</code>, <code>range()</code>, <code>zip()</code>, and <code>enumerate()</code>, and makes that model available in your own functions and expressions.</p>
+<p>The chapter moves in two directions. The first is comprehension syntax: what you can express in a single comprehension goes well beyond the basic <code>[expr for x in iterable]</code> form. The second is generators: a different way for functions and expressions to produce values one at a time, on demand, without building a complete result in memory first. These two directions connect because generator expressions reuse comprehension syntax, and because understanding generators explains design decisions in Python’s built-ins that have appeared in every week of this course.</p>
+<section id="week-12-assignments" class="level2">
+<h2 class="anchored" data-anchor-id="week-12-assignments">Week 12 Assignments</h2>
 <ul>
-<li><a href="../../assignments/week-08/space-trader.py" download="">Download Space Trader Main Program (space-trader.py)</a></li>
+<li>Here is the link to the <strong><a href="../../assignments/week-12/index.html">Week 12 Assignments</a></strong> page.</li>
 </ul>
 </section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This week is an application and consolidation week. You will demonstrate your understanding of Chapters 12–13 concepts by:</p>
+<section id="chapter-20-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-20-concepts">Chapter 20 concepts</h2>
+<section id="list-comprehension-full-syntax" class="level3">
+<h3 class="anchored" data-anchor-id="list-comprehension-full-syntax">List comprehension full syntax</h3>
+<p>You have been writing list comprehensions since Week 7, but only in their basic form. Chapter 20 introduces the <code>if</code> clause, which filters items before the expression on the left is evaluated. A comprehension with both an expression and an <code>if</code> clause combines the effect of <code>map()</code> and <code>filter()</code> in a single expression. Nested <code>for</code> clauses are also possible, producing one item for every combination of values across all loops, the comprehension equivalent of nested <code>for</code> statements.</p>
+<p>The demo examples show:</p>
+<ul>
+<li>the <code>if</code> filter clause and a side-by-side comparison with the equivalent <code>map()</code>/<code>filter()</code> combination</li>
+<li>nested <code>for</code> clauses with and without <code>if</code> filters</li>
+<li>a practical application: flattening a list of lists using nested clauses</li>
+<li>when comprehension complexity becomes a readability problem</li>
+</ul>
+</section>
+<section id="set-and-dictionary-comprehensions" class="level3">
+<h3 class="anchored" data-anchor-id="set-and-dictionary-comprehensions">Set and dictionary comprehensions</h3>
+<p>The same <code>for</code> and <code>if</code> syntax used in list comprehensions applies to sets and dictionaries. Set comprehensions use <code>{}</code> instead of <code>[]</code> and automatically remove duplicates. Dictionary comprehensions use a <code>key: value</code> expression before the <code>for</code> clause and build a dictionary directly from any iterable. The enclosing characters are the only syntactic difference between all three forms.</p>
+<p>The demo examples show:</p>
+<ul>
+<li>set comprehensions for collecting unique values from a sequence with duplicates</li>
+<li>dictionary comprehensions for building and filtering dictionaries, including iterating over <code>.items()</code> to swap keys and values</li>
+</ul>
+</section>
+<section id="generator-functions" class="level3">
+<h3 class="anchored" data-anchor-id="generator-functions">Generator functions</h3>
+<p>A generator function is written like a normal function but uses <code>yield</code> instead of <code>return</code>. Each <code>yield</code> sends a value back to the caller and pauses the function, keeping all local variables intact. The function resumes from where it paused the next time a value is requested. Calling a generator function does not run its code immediately. It returns a generator object. This is the same model used by <code>map()</code>, <code>filter()</code>, <code>range()</code>, <code>zip()</code>, and <code>enumerate()</code>, which is why those functions return objects rather than lists and why wrapping them in <code>list()</code> is needed to force all results out at once.</p>
+<p>The demo examples show:</p>
+<ul>
+<li>a generator function stepped through manually with <code>next()</code> to make the pause-and-resume behavior visible</li>
+<li>a generator that retains a running total across yields, demonstrating local variable state preservation</li>
+<li><code>map()</code> called with <code>next()</code> directly, confirming it behaves the same way as a generator</li>
+</ul>
+</section>
+<section id="generator-expressions" class="level3">
+<h3 class="anchored" data-anchor-id="generator-expressions">Generator expressions</h3>
+<p>A generator expression is a comprehension in parentheses instead of square brackets. It returns a generator object rather than a list, producing values one at a time when iterated. The practical advantage is memory: a generator expression holds only the state needed to produce the next value, while a list comprehension builds the entire result immediately. For results that will be consumed once and discarded, there is no reason to build the list at all.</p>
+<p>The demo examples show:</p>
+<ul>
+<li>a list comprehension and a generator expression side by side, confirming they produce the same values but different object types</li>
+<li>a memory size comparison that makes the difference concrete</li>
+<li>all three approaches (list comprehension, generator expression, and <code>map()</code>/<code>filter()</code>) producing identical results, with guidance on when to use each</li>
+</ul>
+</section>
+<section id="single-pass-behavior-and-comprehension-variable-scoping" class="level3">
+<h3 class="anchored" data-anchor-id="single-pass-behavior-and-comprehension-variable-scoping">Single-pass behavior and comprehension variable scoping</h3>
+<p>Two practical points about generators and comprehensions that affect real code. First, generators are single-pass iterables: once all values have been produced, the generator is exhausted and a second iteration produces nothing. Unlike a list, a generator does not store its values. Producing each one consumes it. Second, the loop variable in a comprehension is local to that expression. A comprehension’s <code>for</code> variable does not affect a variable of the same name in the surrounding code, unlike a regular <code>for</code> loop whose variable persists after the loop ends.</p>
+<p>The demo examples show:</p>
+<ul>
+<li>a generator expression iterated twice, showing the empty result on the second pass</li>
+<li>a list iterated twice, showing that lists support multiple passes</li>
+<li>a comprehension variable and an outer variable with the same name, confirming they are independent</li>
+<li>a regular <code>for</code> loop variable, confirming it modifies the outer scope</li>
+</ul>
+</section>
+<section id="additional-features-in-the-reading" class="level3">
+<h3 class="anchored" data-anchor-id="additional-features-in-the-reading">Additional features in the reading</h3>
+<p>Chapter 20 covers several topics not demonstrated this week. These are worth reading for awareness but are not the focus of the quiz.</p>
+<p>The reading covers:</p>
+<ul>
+<li><code>yield from</code>: allows a generator function to delegate to another generator, forwarding values through a chain; useful for building generator pipelines</li>
+<li>async basics: Python’s <code>async</code>/<code>await</code> syntax builds on generators to support concurrent programming; this is outside the scope of the course</li>
+<li>user-defined iterator classes: Chapter 30 shows how to implement the iteration protocol directly in a class; the generator model covered this week is the simpler alternative</li>
+</ul>
+</section>
+</section>
+<section id="reading-expectations-for-week-12" class="level2">
+<h2 class="anchored" data-anchor-id="reading-expectations-for-week-12">Reading expectations for Week 12</h2>
+<p>As you read Chapter 20 and run the demo, check whether you can answer the following in your own words:</p>
 <ol type="1">
-<li>Writing a Python module from scratch that plugs into an existing program</li>
-<li>Recording a video explanation of your code</li>
-</ol>
-<p>Unlike Week 6 where you completed functions inside a provided file, this week you are creating a new file entirely. The main program imports your module and calls your functions. If the names, parameters, and return values match the spec below, the program will run and produce the correct output.</p>
-</section>
-<section id="part-1-module-creation-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-module-creation-exercise">Part 1: Module Creation Exercise</h2>
-<section id="the-scenario" class="level3">
-<h3 class="anchored" data-anchor-id="the-scenario">The Scenario</h3>
-<p>The development team behind <strong>Space Trader</strong>, a space trading simulation, needs a new module. The team lead has already written the main docking sequence program that handles display and program flow. Your job is to write the cargo module, which handles loading cargo, classifying it, scanning for contraband, applying tariffs, and generating a docking manifest.</p>
-<p>The main program imports your module and calls each function with prepared data. You don’t modify the main program. You write the module it expects.</p>
-</section>
-<section id="about-the-program" class="level3">
-<h3 class="anchored" data-anchor-id="about-the-program">About the Program</h3>
-<p>The main program (<code>space-trader.py</code>) runs an automated docking sequence with no user input or menu system. When you run it, it executes all six sections and prints the results. With your module in place and working, each section will produce output that you can compare against the expected output at the end of this document.</p>
-<p>The main program uses a few Python features in the display functions that you may not have written yourself yet. You don’t need to modify these functions, but here’s what they do:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 70%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Code</th>
-<th>What It Does</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>f"{text:&lt;22}"</code></td>
-<td>Left-aligns text within 22 characters (used for table columns)</td>
-</tr>
-<tr class="even">
-<td><code>f"{text:^58}"</code></td>
-<td>Centers text within 58 characters (used for headers)</td>
-</tr>
-<tr class="odd">
-<td><code>f"{price:.2f}"</code></td>
-<td>Formats a number with 2 decimal places (used for prices)</td>
-</tr>
-<tr class="even">
-<td><code>f"{rate:.0%}"</code></td>
-<td>Formats a decimal as a percentage (e.g., 0.15 becomes 15%)</td>
-</tr>
-<tr class="odd">
-<td><code>", ".join(list)</code></td>
-<td>Combines list items into a single string with commas between them</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="module-requirements" class="level3">
-<h3 class="anchored" data-anchor-id="module-requirements">Module Requirements</h3>
-<p>Your module file must be named <code>lastname-cargo-module.py</code> (replace <code>lastname</code> with your last name). It must contain one class and six functions.</p>
-<p>Before you can run the program with your module, you need to update the import statement at the top of <code>space-trader.py</code> to match your filename. Change <code>from cargo_module import</code> to <code>from lastname_cargo_module import</code> (note: Python uses underscores in import statements, so the hyphens in your filename become underscores). This is the only change you should make to the main program.</p>
-<section id="constraints" class="level4">
-<h4 class="anchored" data-anchor-id="constraints">Constraints</h4>
-<ul>
-<li>Use only concepts covered in CMSC 1203 and Weeks 1–7 of this course</li>
-<li>Do not import any external libraries</li>
-<li>Do not use <code>try</code>/<code>except</code> or error handling. Assume all inputs are valid</li>
-<li>Each function should do one thing and return the specified result</li>
-</ul>
-<hr>
-<p><strong>1. <code>CargoPod</code> class</strong></p>
-<p>Write a class with <code>__init__</code>, <code>__str__</code>, and <code>total_weight</code> methods.</p>
-<p>A <code>CargoPod</code> has six attributes: name, category, quantity, unit_weight, destination, and tags (a list of strings).</p>
-<p>Look at the Cargo log section of the expected output to see what format <code>__str__</code> should produce. Look at the Priority Unloading section to see <code>total_weight()</code> in action. It returns the quantity multiplied by the unit weight.</p>
-<p><strong>2. <code>load_cargo(records)</code></strong></p>
-<p>Parse incoming cargo transmissions into <code>CargoPod</code> objects. Each record is a tuple, but the tuples vary in length. The first five elements are always <code>(name, category, quantity, unit_weight, destination)</code>, and any remaining elements are optional tags.</p>
-<p>Some transmissions are corrupted: they have an empty name or a zero quantity. Skip those records. Only create <code>CargoPod</code> instances for records with a truthy name and a truthy quantity.</p>
-<p>Look at <code>CARGO_RECORDS</code> in the main program to see the tuple structures your code needs to handle. The variable-length tags are the same kind of pattern you saw with extended unpacking in the Week 5 demo.</p>
-<p>Return a list of valid <code>CargoPod</code> instances.</p>
-<p><strong>3. <code>classify_cargo(pods)</code></strong></p>
-<p>Assign handling instructions to each pod based on its category:</p>
-<ul>
-<li><code>"weapons"</code> → <code>"Restricted - Secure Hold"</code></li>
-<li><code>"food"</code> → <code>"Perishable - Cold Storage"</code></li>
-<li><code>"tech"</code> → <code>"Fragile - Padded Bay"</code></li>
-<li><code>"minerals"</code> → <code>"Heavy - Lower Deck"</code></li>
-<li>anything else → <code>"Standard Storage"</code></li>
-</ul>
-<p>This is a value-matching problem. Review the <code>match/case</code> section of the Week 7 demo.</p>
-<p>Return a list of <code>(name, instruction)</code> tuples.</p>
-<p><strong>4. <code>scan_for_contraband(pods, banned_items)</code></strong></p>
-<p>Scan all cargo pods and report the first banned item found. If a pod’s name appears in the <code>banned_items</code> list, stop scanning immediately and return <code>(True, "Contraband detected: {name}")</code>. If no banned items are found after checking every pod, return <code>(False, "Cargo scan clear")</code>.</p>
-<p>The key behavior here is stopping at the first match and handling the not-found case separately. Review the loop <code>else</code> clause and search pattern from the Week 7 demo.</p>
-<p>Return a tuple of <code>(bool, str)</code>.</p>
-<p><strong>5. <code>apply_tariffs(prices, rate, threshold)</code></strong></p>
-<p>Apply import tariffs to cargo prices by modifying the price list directly. For each price: if the price is greater than the threshold, replace it with the price multiplied by <code>(1 + rate)</code>, rounded to 2 decimal places. If the price is at or below the threshold, leave it unchanged.</p>
-<p>The main program passes a list and expects that same list to be modified. This is the in-place modification pattern using <code>range(len())</code> with index assignment from the Week 7 demo. The conditional replacement is a natural fit for the ternary expression (<code>Y if X else Z</code>).</p>
-<p>Return the modified list.</p>
-<p><strong>6. <code>generate_manifest(names, prices, destinations)</code></strong></p>
-<p>Produce a numbered docking manifest from three parallel lists. Pair each name with its corresponding price and destination, and number the entries starting at 1.</p>
-<p>This requires combining multiple sequences by position and adding an index. Review the <code>zip()</code>, <code>enumerate()</code>, and tuple unpacking sections of the Week 7 demo.</p>
-<p>Return a list of <code>(index, name, price, destination)</code> tuples, 1-indexed.</p>
-<p><strong>7. <code>filter_cargo_by_destination(pods, destination)</code></strong></p>
-<p>Build a new list containing only the pods whose destination matches the given destination string.</p>
-<p>This is a filtering task that builds a new list from an existing one based on a condition. A list comprehension is the natural tool for this. Note how this contrasts with <code>apply_tariffs</code>, which modifies a list in place.</p>
-<p>Return a new list of <code>CargoPod</code> instances.</p>
-</section>
-</section>
-<section id="your-task" class="level3">
-<h3 class="anchored" data-anchor-id="your-task">Your Task</h3>
-<ol type="1">
-<li>Download the main program using the link above</li>
-<li>Create a new file named <code>lastname_cargo_module.py</code> (replace <code>lastname</code> with your last name)</li>
-<li>Update the import statement in <code>space-trader.py</code> to match your module filename.</li>
-<li>Write the class and six functions described above</li>
-<li>Run <code>space-trader.py</code> and verify your output matches the expected output at the end of this document</li>
+<li>What does the <code>if</code> clause in a list comprehension do, and how does a comprehension with both an expression and an <code>if</code> clause relate to using <code>map()</code> and <code>filter()</code> together?</li>
+<li>How many items does a comprehension with two <code>for</code> clauses produce, and how does this relate to equivalent nested <code>for</code> statements?</li>
+<li>What does <code>yield</code> do inside a generator function, and what happens to the function’s local variables when it yields?</li>
+<li>What does calling a generator function return, and why does that explain why <code>map()</code> and <code>filter()</code> require wrapping in <code>list()</code>?</li>
+<li>What is the difference between a list comprehension and a generator expression in terms of what they return and how they use memory?</li>
+<li>What does it mean for a generator to be exhausted, and what does iterating an exhausted generator produce?</li>
+<li>How does a comprehension loop variable differ from a <code>for</code> loop variable in terms of scope?</li>
 </ol>
 </section>
-<section id="how-to-approach-this" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-approach-this">How to Approach This</h3>
-<ul>
-<li><strong>Start with the <code>CargoPod</code> class.</strong> Several functions depend on it, and Section 1 will show you immediately whether your class works.</li>
-<li><strong>Read the main program.</strong> The display functions show you exactly what attribute names, method signatures, and return structures your code needs to produce.</li>
-<li><strong>Read the data.</strong> Look at <code>CARGO_RECORDS</code> to see how the tuples vary in length. This tells you what your unpacking needs to handle.</li>
-<li><strong>Test after each function.</strong> Run the program after completing each function to see your progress. Sections that depend on unfinished functions may produce errors, and that’s expected until those functions are in place.</li>
-<li><strong>Compare against the expected output.</strong> Each section has distinct, verifiable results.</li>
-</ul>
-</section>
-</section>
-<section id="part-2-video-explanation" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-video-explanation">Part 2: Video Explanation</h2>
-<p>Record a video explaining your code and submit it via Kaltura.</p>
-<section id="video-requirements" class="level3">
-<h3 class="anchored" data-anchor-id="video-requirements">Video Requirements</h3>
-<ul>
-<li>Clear video and audio quality</li>
-<li>Introduce yourself, the assignment, and course at the beginning</li>
-</ul>
-</section>
-<section id="what-to-include" class="level3">
-<h3 class="anchored" data-anchor-id="what-to-include">What to Include</h3>
+<section id="week-12-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="week-12-tasks">Week 12 tasks</h2>
 <ol type="1">
-<li><p><strong>Program demonstration.</strong> Run your completed program and compare the output to the Expected Output reference at the end of this document. Verbally confirm that each section produces the correct results.</p></li>
-<li><p><strong>Code walkthrough.</strong> Walk through the class and functions you wrote. Explain how your code works and why you chose the approach you did.</p></li>
-<li><p><strong>Lessons learned.</strong> At the end of your video, discuss:</p>
-<ul>
-<li>Which function was the hardest to write and why</li>
-<li>How writing a module from scratch compared to completing functions in Week 6</li>
-<li>One concept from Chapters 12–13 that makes more sense to you now after implementing it</li>
-</ul></li>
+<li>Read <strong>Learning Python 6e, Chapter 20</strong> (complete).</li>
+<li>Work through the <strong>Week 12 demo</strong> (linked from the Week 12 Assignments page).</li>
+<li>Complete the <strong>Week 12 D2L quiz</strong> (Chapter 20 concepts + demo examples, using the quiz handout).</li>
 </ol>
-</section>
-</section>
-<section id="d2l-submission-checklist" class="level2">
-<h2 class="anchored" data-anchor-id="d2l-submission-checklist">D2L Submission Checklist</h2>
-<section id="dropbox-submission" class="level3">
-<h3 class="anchored" data-anchor-id="dropbox-submission">Dropbox Submission</h3>
-<p>Upload the following files to the <strong>Week 8 Dropbox</strong>:</p>
-<ol type="1">
-<li><strong>Cargo module file</strong>: <code>lastname_cargo_module.py</code>. Change <code>lastname</code> to your last name. Not doing so will result in the assignment not being graded.</li>
-</ol>
-</section>
-<section id="video-submission" class="level3">
-<h3 class="anchored" data-anchor-id="video-submission">Video Submission</h3>
-<ul>
-<li>Upload your video to <strong>Kaltura Mediaspace</strong></li>
-<li>Name your video: <code>lastname_Week8_ModuleCreation</code></li>
-<li>Link to the Kaltura video in the Assignment Dropbox</li>
-</ul>
-<p><strong>Submission location:</strong> All items submitted in D2L (Week 8 Dropbox).</p>
-</section>
-</section>
-<section id="expected-output-reference" class="level2">
-<h2 class="anchored" data-anchor-id="expected-output-reference">Expected Output Reference</h2>
-<p>When your module is complete and correct, running <code>space-trader.py</code> should produce output like this:</p>
-<pre class="text"><code>==========================================================
-             Space Trader — Docking Sequence              
-==========================================================
-
-[1] LOADING CARGO
-----------------------------------------------------------
-  Loaded 7 cargo pods.
-
-  Name                  Category    Qty   Weight    Destination
-  ------------------------------------------------------------------
-  Plasma Coils          tech        4     2.5       Nexus Station
-  Iron Ore              minerals    20    8.0       Forge World
-  Dried Rations         food        15    0.5       Nexus Station
-  Blaster Rifles        weapons     6     3.5       Nexus Station
-  Crystal Shards        luxury      8     0.3       Velaris Hub
-  Titanium Plates       minerals    12    6.0       Forge World
-  Freeze-Dried Fruit    food        25    0.4       Velaris Hub
-
-  Cargo flags:
-    Plasma Coils: fragile, high-value
-    Iron Ore: bulk
-    Dried Rations: (none)
-    Blaster Rifles: restricted
-    Crystal Shards: fragile, rare, insured
-    Titanium Plates: bulk, heavy
-    Freeze-Dried Fruit: (none)
-
-  Cargo log:
-    Plasma Coils: 4x tech (2.5 lbs each) -&gt; Nexus Station
-    Iron Ore: 20x minerals (8.0 lbs each) -&gt; Forge World
-    Dried Rations: 15x food (0.5 lbs each) -&gt; Nexus Station
-    Blaster Rifles: 6x weapons (3.5 lbs each) -&gt; Nexus Station
-    Crystal Shards: 8x luxury (0.3 lbs each) -&gt; Velaris Hub
-    Titanium Plates: 12x minerals (6.0 lbs each) -&gt; Forge World
-    Freeze-Dried Fruit: 25x food (0.4 lbs each) -&gt; Velaris Hub
-
-[2] CLASSIFYING CARGO
-----------------------------------------------------------
-
-  Cargo                 Handling Instructions
-  --------------------------------------------------
-  Plasma Coils          Fragile - Padded Bay
-  Iron Ore              Heavy - Lower Deck
-  Dried Rations         Perishable - Cold Storage
-  Blaster Rifles        Restricted - Secure Hold
-  Crystal Shards        Standard Storage
-  Titanium Plates       Heavy - Lower Deck
-  Freeze-Dried Fruit    Perishable - Cold Storage
-
-[3] CONTRABAND SCAN
-----------------------------------------------------------
-  WARNING: Contraband detected: Blaster Rifles
-
-[4] APPLYING STATION TARIFFS
-----------------------------------------------------------
-  Tariff rate: 15%
-  Threshold: $50.00 (items at or below are exempt)
-
-  Prices before tariff:
-    1. $120.00
-    2. $480.00
-    3. $45.50
-    4. $288.00
-    5. $36.00
-    6. $432.00
-    7. $75.00
-
-  Prices after tariff:
-    1. $138.00
-    2. $552.00
-    3. $45.50
-    4. $331.20
-    5. $36.00
-    6. $496.80
-    7. $86.25
-
-[5] GENERATING DOCKING MANIFEST
-----------------------------------------------------------
-
-  #   Item                  Price       Destination
-  ------------------------------------------------------
-  1   Plasma Coils          $138.00     Nexus Station
-  2   Iron Ore              $552.00     Forge World
-  3   Dried Rations         $45.50      Nexus Station
-  4   Blaster Rifles        $331.20     Nexus Station
-  5   Crystal Shards        $36.00      Velaris Hub
-  6   Titanium Plates       $496.80     Forge World
-  7   Freeze-Dried Fruit    $86.25      Velaris Hub
-
-[6] PRIORITY UNLOADING
-----------------------------------------------------------
-
-  Cargo bound for Nexus Station (3 pods):
-    - Plasma Coils (4x tech, 10.0 lbs total)
-    - Dried Rations (15x food, 7.5 lbs total)
-    - Blaster Rifles (6x weapons, 21.0 lbs total)
-
-  Cargo bound for Forge World (2 pods):
-    - Iron Ore (20x minerals, 160.0 lbs total)
-    - Titanium Plates (12x minerals, 72.0 lbs total)
-
-==========================================================
-DOCKING SEQUENCE COMPLETE
-==========================================================</code></pre>
 
 
 </section>
