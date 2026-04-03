@@ -75,6 +75,10 @@ website:
             text: Week 10 (Starts - 16 MAR)
           - href: weekly-overview/week-11/index.qmd
             text: Week 11 (Starts - 23 MAR)
+          - href: weekly-overview/week-12/index.qmd
+            text: Week 12 (Starts - 30 MAR)
+          - href: weekly-overview/week-13/index.qmd
+            text: Week 13 (Starts - 6 APR) 
       
       - section: "Weekly Assignments"
         contents:
@@ -98,6 +102,10 @@ website:
             text: Week 10 (Starts - 16 MAR)
           - href: assignments/week-11/index.qmd
             text: Week 11 (Starts - 23 MAR)
+          - href: assignments/week-12/index.qmd
+            text: Week 12 (Starts - 30 MAR)
+          - href: assignments/week-13/index.qmd
+            text: Week 13 (Starts - 6 APR)
 
       - section: "Guides"
         contents: []

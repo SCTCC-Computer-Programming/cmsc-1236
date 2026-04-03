@@ -1,0 +1,101 @@
+Week 13 Assignment Rubric
+Course: Sp26 CMSC 1236-22 Advanced Python Programming
+Total: 12 points
+
+---
+
+Criterion 1: VIDEO INTRO + FORMAT (1 point)
+
+Pass (0.7-1.0): Video includes required intro (name, assignment, course), clear audio, and conversational delivery.
+Needs Improvement (0.1-0.6): Intro present but incomplete, or audio quality issues that don't prevent understanding.
+Fail (0.0): Assignment-level fail: YES. Intro missing, audio unintelligible, or clearly reading a script verbatim.
+
+---
+
+Criterion 2: FUNCTION: get_unique_afflictions() (1 point)
+
+Pass (0.7-1.0): Function produces correct output and student explains why a set comprehension fits the problem.
+Needs Improvement (0.1-0.6): Function works but explanation is vague or does not address the set comprehension concept.
+Fail (0.0): Function not implemented, output incorrect, or explanation fundamentally wrong.
+
+---
+
+Criterion 3: FUNCTION: build_hero_profiles() (1 point)
+
+Pass (0.7-1.0): Function produces correct output and student explains the dict comprehension and the tuple value expression.
+Needs Improvement (0.1-0.6): Function works but explanation is vague or does not address how the value expression is constructed.
+Fail (0.0): Function not implemented, output incorrect, or explanation fundamentally wrong.
+
+---
+
+Criterion 4: FUNCTION: get_hero_skills() (1.5 points)
+
+Pass (1.1-1.5): Function produces correct output and student explains how the nested for clause and if filter work together, including why the clause order matters.
+Needs Improvement (0.1-1.0): Function works but explanation does not address nested comprehension syntax, or student cannot explain why the if clause is positioned where it is.
+Fail (0.0): Function not implemented, output incorrect, or explanation fundamentally wrong.
+
+---
+
+Criterion 5: FUNCTION: search_dungeon() (1.5 points)
+
+Pass (1.1-1.5): Function produces correct output for all three search targets. Student explains the base case, the recursive case, and traces through at least one example call to show what happens at each level.
+Needs Improvement (0.1-1.0): Function works but explanation is surface-level, or student cannot trace through the recursion, or only some search targets produce correct output.
+Fail (0.0): Function not implemented, output incorrect for all targets, or explanation fundamentally wrong.
+
+---
+
+Criterion 6: FUNCTION: generate_drops() (1.5 points)
+
+Pass (1.1-1.5): Function produces correct output and student explains what yield does differently from return, including what the caller receives when the function is called.
+Needs Improvement (0.1-1.0): Function works but student cannot explain yield vs return, or explanation describes the function as if it were a regular function.
+Fail (0.0): Function not implemented, output incorrect, or explanation fundamentally wrong.
+
+---
+
+Criterion 7: FUNCTION: format_drop_display() (1.5 points)
+
+Pass (1.1-1.5): Function produces correct output and student explains why the expression returns a generator object rather than a list, and how the if clause filters within the expression.
+Needs Improvement (0.1-1.0): Function works but explanation does not address the generator expression concept, or student cannot explain the difference from a list comprehension.
+Fail (0.0): Function not implemented, output incorrect, or explanation fundamentally wrong.
+
+---
+
+Criterion 8: OUTPUT VERIFICATION (1 point)
+
+Pass (0.7-1.0): Runs completed program in video and verbally confirms that each of the six sections produces the correct results.
+Needs Improvement (0.1-0.6): Shows output but comparison is rushed or does not address all six sections.
+Fail (0.0): Assignment-level fail: YES. No output shown, or output still contains incomplete functions.
+
+---
+
+Criterion 9: GENERAL UNDERSTANDING (1 point)
+
+Pass (0.7-1.0): Across the walkthrough, student demonstrates that their functions handle input generally, not just the specific data in the main program. Explanations reflect understanding of how the concept works, not just what the output looks like.
+Needs Improvement (0.1-0.6): Explanations are mostly output-focused or closely tied to the specific data values without demonstrating general understanding.
+Fail (0.0): Student cannot explain any function beyond describing its output.
+
+---
+
+Criterion 10: LESSONS LEARNED (1 point)
+
+Pass (0.7-1.0): Discusses which function was hardest and why, how generator functions differ from regular functions in terms of how they produce values, and what search_dungeon has in common with find_species from Week 11.
+Needs Improvement (0.1-0.6): Addresses some reflection points but responses are surface-level or one topic is missing.
+Fail (0.0): Assignment-level fail: YES. No reflection attempted, or responses show no genuine engagement with the material.
+
+---
+
+Criterion 11: SUBMISSION REQUIREMENTS (1 point)
+
+Pass (0.7-1.0): Python file correctly named (lastname_darkest_dungeon.py) and submitted to Week 13 Dropbox. Kaltura video linked in Dropbox.
+Needs Improvement (0.1-0.6): File submitted but naming convention not followed, or video link missing from Dropbox.
+Fail (0.0): Assignment-level fail: YES. No file submitted, or video not uploaded to Kaltura.
+
+---
+
+Overall Score
+
+A: 11.0 points minimum
+B: 10.0 points minimum
+C:  9.0 points minimum
+D:  8.0 points minimum
+F:  7.0 points minimum

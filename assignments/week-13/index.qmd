@@ -1,0 +1,210 @@
+---
+title: "Week 13 Assignments"
+subtitle: "Chapter 20 Code Completion Exercise"
+format:
+  html:
+    toc: true
+---
+
+## Assignment Files
+
+- <a href="/assignments/week-13/lastname_darkest_dungeon.py" download>Download Darkest Dungeon Skeleton (lastname_darkest_dungeon.py)</a>
+- <a href="/assignments/week-13/darkest-dungeon-main.py" download>Download Main Program (darkest-dungeon-main.py)</a>
+
+## Overview
+
+This week applies the Chapter 20 concepts directly. A guild manager application for a Darkest Dungeon expedition has been built with all display and program flow in place. The core analysis functions are defined but empty. Your job is to write the function bodies so the program produces the correct output.
+
+This week has two components:
+
+1. Complete six functions in the provided skeleton file
+2. Record a video explanation of your code
+
+## Part 1: Code Completion Exercise
+
+### The Scenario
+
+Your guild is preparing for an expedition into the Darkest Dungeon. Before the party descends, the guild manager needs to assess the heroes available for duty, catalog their skills and afflictions, scout the dungeon layout for valuable items, and process the loot recovered from a discovered chest.
+
+A developer built the main program and display functions, but the analysis functions are empty. You are completing the guild management system so the expedition can proceed.
+
+### About the Program
+
+The main program (`darkest-dungeon-main.py`) runs automatically with no user input. When you run it, it executes all six sections and prints the results. With placeholder functions in place, each section displays "(not yet implemented)" until you complete the corresponding function.
+
+The main program uses a few formatting patterns in the display functions. You do not need to modify these functions, but here is what they do:
+
+| Code | What It Does |
+|------|--------------|
+| `f"{name:<22}"` | Left-aligns text within 22 characters (used for table columns) |
+| `f"{stress:<10}"` | Left-aligns a value within 10 characters |
+| `sorted(afflictions)` | Sorts a set alphabetically for consistent display |
+
+Before you can run the program, rename your skeleton file to include your last name (e.g., `smith_darkest_dungeon.py`) and update the import at the top of `darkest-dungeon-main.py` to match. This is the only change you should make to the main program.
+
+#### Constraints
+
+- Use only concepts from CMSC 1203 and Weeks 1-12
+- Do not import any external libraries
+- Do not use try/except or error handling
+- Your functions must work correctly for any valid input, not just the data provided in the main program
+
+### What to Complete
+
+**1. `get_hero_skills(roster, max_stress)`**
+
+Return a flat list of all skills belonging to heroes whose stress is at or below `max_stress`. Heroes under the threshold may each contribute multiple skills to the result. The Week 12 demo covers the full comprehension syntax needed here.
+
+**2. `get_unique_afflictions(roster)`**
+
+Return a set containing every unique affliction present across the roster. Heroes with no affliction have the value `"None"` for their affliction field.
+
+This is a set comprehension. Because sets do not allow duplicates, repeated afflictions appear only once in the result.
+
+**3. `build_hero_profiles(roster)`**
+
+Return a dictionary mapping each hero's name to a tuple of `(stress, affliction)`. The Week 12 demo covers dictionary comprehensions with compound value expressions.
+
+**4. `search_dungeon(area, target)`**
+
+Recursively search a nested dungeon structure for all occurrences of `target`. Return a flat list of all matches found at any depth.
+
+`area` is a list that may contain strings or nested lists. Use `isinstance()` to determine whether each item needs further searching or can be compared directly to `target`. The Week 11 demo covered this pattern, and the Week 11 `find_species` function used the same approach.
+
+**5. `generate_drops(chest_contents)`**
+
+Yield loot drop names one at a time from `chest_contents`. Each entry in `chest_contents` is a `(name, gold_value)` tuple. Skip entries where the name is falsy.
+
+**6. `format_drop_display(chest_contents, gold_threshold)`**
+
+Return a generator expression that formats loot entries for display, keeping only entries whose gold value exceeds `gold_threshold`. Format each as `f"  {name:<30} {value} gp"`. Each entry in `chest_contents` is a `(name, gold_value)` tuple.
+
+### Your Task
+
+1. Download both files using the links at the top of this page
+2. Rename the skeleton file to include your last name (e.g., `smith_darkest_dungeon.py`)
+3. Update the import at the top of `darkest-dungeon-main.py` to match your filename
+4. Run `darkest-dungeon-main.py` to see the current output with placeholder functions
+5. Complete each of the six functions described above
+6. Run the completed program and verify your output matches the Expected Output at the end of this document
+
+### How to Approach This
+
+- **Start with `get_unique_afflictions`.** It is the most direct application of a new syntax and will confirm your comprehension pattern works before tackling the more complex functions.
+- **Read the data.** Look at `ROSTER` and `CHEST_CONTENTS` in the main program to understand the structure your functions need to handle.
+- **Test after each function.** Run the program after completing each function to see your progress.
+- **For `get_hero_skills`, pay attention to how the data is structured.** Look at `ROSTER` in the main program to understand what each hero contains.
+
+## Part 2: Video Explanation
+
+Record a video explaining your code and submit it via Kaltura.
+
+### Video Requirements
+
+- Clear video and audio quality
+- Introduce yourself, the assignment, and the course at the beginning
+
+### What to Include
+
+1. **Program demonstration.** Run your completed program and compare the output to the Expected Output reference at the end of this document. Verbally confirm that each section produces the correct results.
+
+2. **Code walkthrough.** For each function, explain the concept it uses and why that concept fits the problem. Go beyond describing what the code does and explain why it works. Be prepared to explain how your function would behave with different input data.
+
+3. **Lessons learned.** At the end of your video, discuss:
+   - Which function was the hardest to write and why
+   - How generator functions differ from regular functions in terms of how they produce values
+   - What `search_dungeon` has in common with `find_species` from Week 11
+
+## D2L Submission Checklist
+
+### Dropbox Submission
+
+Upload the following file to the **Week 13 Dropbox**:
+
+1. **Completed skeleton file**: `lastname_darkest_dungeon.py`. Change `lastname` to your last name. Not doing so will result in the assignment not being graded.
+
+### Video Submission
+
+- Upload your video to **Kaltura Mediaspace**
+- Name your video: `lastname_Week13_CodeCompletion`
+- Link to the Kaltura video in the Assignment Dropbox
+
+**Submission location:** All items submitted in D2L (Week 13 Dropbox).
+
+## Expected Output Reference
+
+When all six functions are completed correctly, running `darkest-dungeon-main.py` should produce output like this:
+
+```text
+==========================================================
+  Darkest Dungeon — Guild Management
+==========================================================
+
+[1] AVAILABLE SKILLS (stress <= 55)
+----------------------------------------------------------
+  12 available skill(s):
+    - Battlefield Medicine
+    - Blinding Gas
+    - Disorienting Blast
+    - Smite
+    - Stunning Blow
+    - Inspiring Cry
+    - Lunge
+    - Shadow Fade
+    - Thrown Dagger
+    - If It Bleeds
+    - Iron Swan
+    - Barbaric YAWP!
+
+[2] PARTY AFFLICTIONS
+----------------------------------------------------------
+  Active afflictions across the party:
+    Hopeless
+    Masochistic
+    None
+    Paranoid
+
+[3] HERO PROFILES
+----------------------------------------------------------
+  Hero                   Stress     Affliction
+  --------------------------------------------------
+  Plague Doctor          45         None
+  Highwayman             72         Masochistic
+  Crusader               30         None
+  Vestal                 85         Paranoid
+  Grave Robber           55         None
+  Hellion                20         Hopeless
+
+[4] DUNGEON SEARCH
+----------------------------------------------------------
+  Searching for: 'Gold Coins'
+  Found 2 occurrence(s).
+
+  Searching for: "Ancestor's Memento"
+  Found 1 occurrence(s).
+
+  Searching for: 'Holy Water'
+  Not found.
+
+[5] CHEST DROPS
+----------------------------------------------------------
+  5 item(s) collected:
+    Gold Coins
+    Ancestral Portrait
+    Medical Supplies
+    Crimson Court Invitation
+    Bust
+
+[6] VALUABLE LOOT (gold > 100)
+----------------------------------------------------------
+  Item                           Value
+  ------------------------------------------
+  Gold Coins                     150 gp
+  Ancestral Portrait             300 gp
+  Crimson Court Invitation       500 gp
+  Bust                           200 gp
+
+==========================================================
+  EXPEDITION COMPLETE
+==========================================================
+```

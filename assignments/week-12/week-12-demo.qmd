@@ -1,0 +1,418 @@
+---
+title: "Week 12 Demo"
+subtitle: "Chapter 20: Comprehensions and Generators"
+format:
+  html:
+    toc: true
+    code-fold: false
+execute:
+  echo: true
+  eval: true
+---
+## Chapter 20: Comprehensions and Generators
+
+## Introduction
+
+In Week 10, the demo showed that `map()` and `filter()` return map and filter objects rather than lists, and that wrapping them in `list()` forces the results out. The explanation ended with a promise: you will see why this design choice exists when the course covers generators. That week is now.
+
+This demo covers two related topics that build directly on what you already know. The first is the full syntax of comprehensions. You have been using list comprehensions since Week 7, but only in their simplest form. The filter clause and nested loops open up much more expressive patterns. The second is generators: a way for functions and expressions to produce values one at a time on demand, rather than computing everything up front and returning a complete list. By the end of this demo, the behavior of `map()`, `filter()`, `range()`, `zip()`, and `enumerate()` will all make sense at a deeper level. They are all generators.
+
+After completing these examples, you should be able to:
+
+* write list comprehensions with `if` filter clauses and nested loops
+* write set and dictionary comprehensions
+* write a generator function using `yield` and explain how state suspension works
+* explain the difference between a generator object and a list
+* write a generator expression and explain when to use one instead of a list comprehension
+* explain why generators are single-pass iterables and what that means in practice
+* explain why comprehension loop variables do not affect variables in the surrounding code
+
+---
+
+## Part 1: List Comprehensions — Full Syntax
+
+You have been using list comprehensions since Week 7, where they appeared as an alternative to the `range(len())` pattern for modifying lists. The form you have seen looks like this:
+
+```python
+squares = [x ** 2 for x in range(1, 6)]
+```
+
+This is the basic form: an expression on the left, a `for` clause on the right. Chapter 20 introduces two additional features that make comprehensions considerably more powerful: an `if` filter clause, and the ability to nest multiple `for` clauses.
+
+### Example 1: The `if` filter clause
+
+The `if` clause, when present, acts as a gate: only items for which the condition is true are included in the result. This gives a comprehension the combined effect of both transforming and selecting.
+
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Basic form: transform every item
+squares = [x ** 2 for x in numbers]
+
+# With if clause: transform only items that pass the test
+even_squares = [x ** 2 for x in numbers if x % 2 == 0]
+```
+
+Read the second line from left to right: for each `x` in `numbers`, if `x` is even, include `x ** 2` in the result. The `if` clause filters before the expression is evaluated. Items that fail the test are discarded entirely.
+
+This is the same logic as `filter()` from Week 10, but expressed as a single comprehension rather than a separate function call. When the transformation itself is simple, the comprehension form is usually cleaner:
+
+```python
+# These produce the same result
+even_squares_comp = [x ** 2 for x in numbers if x % 2 == 0]
+even_squares_func = list(map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, numbers)))
+```
+
+Notice that the comprehension combines what required both `map()` and `filter()` into one expression. This is one of the practical advantages of comprehensions for cases where the logic fits a single expression.
+
+### Example 2: Nested `for` clauses
+
+A comprehension can contain more than one `for` clause. Each additional `for` clause adds a loop, and the result contains one item for every combination of values across all the loops. This is equivalent to nested `for` loops in statement form.
+
+```python
+# Pair every number with every letter
+pairs = [(x, y) for x in [1, 2, 3] for y in ['a', 'b']]
+
+# Equivalent statement form:
+result = []
+for x in [1, 2, 3]:
+    for y in ['a', 'b']:
+        result.append((x, y))
+```
+
+Each `for` clause can also have its own `if` filter. In the following example, all pairs where both values are equal are excluded:
+
+```python
+filtered_pairs = [(x, y) for x in range(1, 4) for y in range(1, 4) if x != y]
+```
+
+A practical use of nested comprehensions is flattening a list of lists by one level, iterating over each sublist and then over each item within it:
+
+```python
+rows = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flat = [item for row in rows for item in row]
+```
+
+Notice the order: the outer `for` clause (`for row in rows`) comes first, and the inner `for` clause (`for item in row`) comes second, which is the same order you would write nested loops in statement form.
+
+### A note on complexity
+
+Comprehensions with multiple `for` clauses and `if` filters can become difficult to read quickly. The principle from the textbook applies here: if you have to translate a comprehension to its statement form to understand it, it should probably be written as statements in the first place. Use comprehensions when they make the intent clearer, not to demonstrate cleverness.
+
+---
+
+## Part 2: Set and Dictionary Comprehensions
+
+The comprehension syntax is not limited to lists. Python supports the same `for` and `if` structure for building sets and dictionaries, using different enclosing characters.
+
+### Example 3: Set comprehensions
+
+A set comprehension uses curly braces `{}` instead of square brackets `[]`. Because sets do not allow duplicates, a set comprehension automatically deduplicates its results.
+
+```python
+words = ["hello", "world", "hello", "python", "world"]
+
+# Collect unique word lengths
+unique_lengths = {len(w) for w in words}
+
+# Only words longer than four characters (still deduplicated)
+long_words = {w for w in words if len(w) > 4}
+```
+
+The first example collects the length of every word, but because it builds a set, repeated lengths appear only once. The second example filters and deduplicates in one expression.
+
+### Example 4: Dictionary comprehensions
+
+A dictionary comprehension uses curly braces with a `key: value` expression before the `for` clause. This builds a dictionary directly from any iterable.
+
+```python
+names = ["alice", "bob", "carol"]
+
+# Map each name to its length
+name_lengths = {name: len(name) for name in names}
+
+# Invert a dictionary: swap keys and values
+original = {"a": 1, "b": 2, "c": 3}
+inverted = {v: k for k, v in original.items()}
+
+# Filter: keep only students with passing scores
+scores = {"alice": 88, "bob": 72, "carol": 95, "dave": 65}
+passing = {name: score for name, score in scores.items() if score >= 75}
+```
+
+The third example iterates over `.items()` to get key-value pairs and filters on the value, which is a common and practical pattern. Without a dict comprehension, this would require a loop and explicit assignment.
+
+The relationship between all comprehension forms is consistent: the same `for` and `if` structure applies to all of them. Only the enclosing characters and the expression form change.
+
+| Form | Syntax | Returns |
+|------|--------|---------|
+| List | `[expr for x in iterable]` | `list` |
+| Set | `{expr for x in iterable}` | `set` |
+| Dict | `{k: v for x in iterable}` | `dict` |
+| Generator | `(expr for x in iterable)` | generator object |
+
+The last row, generator expressions, is the subject of Part 4. The generator expression row in the table may not fully make sense yet. Set it aside for now and return to it after completing Parts 3 and 4.
+
+---
+
+## Part 3: Generator Functions
+
+Everything you have seen so far, including list comprehensions, `map()`, `filter()`, `range()`, `zip()`, and `enumerate()`, either produces all its results at once or appears to produce them on demand without you thinking about it. Generator functions make the on-demand behavior explicit and available in your own code.
+
+### The problem generators solve
+
+When you call `list(range(1000000))`, Python builds a list of one million integers in memory before doing anything with them. For many programs this is fine. But when the result set is large, or when producing each value requires significant computation, it would be better to produce values one at a time as they are needed, rather than computing everything up front.
+
+This is exactly what generators do. A generator function produces one value each time it is asked, pauses, and resumes from where it left off the next time it is asked.
+
+### Example 5: A generator function with `yield`
+
+A generator function looks like a normal function, with one key difference: it uses `yield` instead of `return`. When a generator function `yield`s a value, it sends that value back to the caller and pauses, keeping all of its local variables exactly as they are. When the caller asks for the next value, the function resumes from the line immediately after the `yield`.
+
+```python
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+```
+
+Calling this function does not run any of its code. It returns a generator object:
+
+```python
+gen = countdown(3)
+print(type(gen))   # <class 'generator'>
+```
+
+The generator object supports the iteration protocol. Note that `gen` above has already started. Calling `type()` did not consume any values, so you can now step through it manually using `next()`:
+
+```python
+print(next(gen))   # runs until the first yield, returns 3
+print(next(gen))   # resumes, runs until the next yield, returns 2
+print(next(gen))   # resumes again, returns 1
+# next(gen) here would raise StopIteration -- no more values
+```
+
+Each call to `next()` resumes the function from where it paused. The local variable `n` retains its value between calls. This is state suspension.
+
+In practice, you rarely call `next()` manually. Any iteration tool, including `for` loops, `list()`, `sum()`, `zip()`, and `map()`, calls `next()` for you automatically until `StopIteration` is raised:
+
+```python
+for value in countdown(3):
+    print(value, end=" ")
+```
+
+### Example 6: A generator that produces values from a loop
+
+Here is a generator that yields the squares of the first `n` integers:
+
+```python
+def squares_gen(n):
+    for i in range(1, n + 1):
+        yield i ** 2
+```
+
+Notice that calling the function returns a generator object, not a list:
+
+```python
+result = squares_gen(5)
+print(type(result))    # <class 'generator'>
+print(list(result))    # [1, 4, 9, 16, 25]
+```
+
+Wrapping the generator in `list()` forces all values out at once. This is exactly the same pattern as `list(map(...))` and `list(filter(...))` from Week 10. Now you know why: `map()` and `filter()` are implemented as generators. They return objects that produce values on demand. Wrapping in `list()` forces the iteration to completion.
+
+### Example 7: A generator that accumulates state
+
+This example shows state retention more concretely. The generator keeps a running total across yields. The local variable `total` persists between calls:
+
+```python
+def running_total(numbers):
+    total = 0
+    for n in numbers:
+        total += n
+        yield total
+```
+
+Each call to `next()` adds the next number to the running total and yields the current sum. The variable `total` is not reset between calls. It remains intact while the generator is paused.
+
+```python
+for t in running_total([10, 20, 5, 30]):
+    print(t, end=" ")
+# 10 30 35 65
+```
+
+### Why this explains `map()`, `filter()`, `range()`, `zip()`, and `enumerate()`
+
+These built-in functions all return generator-like objects rather than lists. Now that you understand generators, the design makes sense: there is no reason to build a complete list in memory if the caller might only need the first few values, or if the values will be processed one at a time anyway. Producing values on demand is more efficient, and wrapping in `list()` is always available when you need all the results at once.
+
+```python
+# map() returns a map object - a generator-like iterable
+m = map(lambda x: x ** 2, [1, 2, 3, 4, 5])
+print(type(m))         # <class 'map'>
+print(next(m))         # 1
+print(next(m))         # 4
+print(list(m))         # [9, 16, 25] -- remaining values
+```
+
+After calling `next()` twice, those two values are consumed. `list(m)` produces only the remaining three. This is the same single-pass behavior you will see in Part 5 for all generators.
+
+---
+
+## Part 4: Generator Expressions
+
+A generator expression is a comprehension in parentheses instead of square brackets. It produces a generator object rather than a list, combining the readable syntax of comprehensions with the on-demand evaluation of generator functions.
+
+### Example 8: List comprehension vs generator expression
+
+The syntax difference is one character: `[]` versus `()`.
+
+```python
+numbers = range(1, 11)
+
+list_comp = [x ** 2 for x in numbers]   # builds entire list immediately
+gen_expr  = (x ** 2 for x in numbers)   # returns a generator object
+
+print(type(list_comp))   # <class 'list'>
+print(type(gen_expr))    # <class 'generator'>
+```
+
+Both produce the same values, but the list comprehension builds the entire result in memory immediately. The generator expression builds nothing yet. It will produce one value at a time when iterated.
+
+### Example 9: The memory difference
+
+For large data sets, the difference in memory use is significant. This example uses `sys`, a standard library module that is always available. In a script you would import it at the top; here it appears just before it is used:
+
+```python
+import sys
+
+list_version = [x ** 2 for x in range(1000)]
+gen_version  = (x ** 2 for x in range(1000))
+
+print(f"List size:      {sys.getsizeof(list_version)} bytes")
+print(f"Generator size: {sys.getsizeof(gen_version)} bytes")
+```
+
+The generator object holds only enough state to produce the next value: the current position and the code to execute. The list holds all 1000 values. For results that are immediately consumed by another operation (like `sum()` or a `for` loop), there is no need for the list to exist at all.
+
+### Example 10: Comparing the three approaches
+
+The following three expressions all produce the same result. Each doubles every number greater than 2, using a different approach: a list comprehension, a generator expression, and `map()`/`filter()`:
+
+```python
+data = [1, 2, 3, 4, 5]
+
+result_list = [x * 2 for x in data if x > 2]
+result_gen  = (x * 2 for x in data if x > 2)
+result_map  = map(lambda x: x * 2, filter(lambda x: x > 2, data))
+
+print(list(result_list))   # [6, 8, 10]
+print(list(result_gen))    # [6, 8, 10]
+print(list(result_map))    # [6, 8, 10]
+```
+
+All three approaches produce identical values. The choice between them depends on context:
+
+- **List comprehension** when you need a list and the result fits comfortably in memory
+- **Generator expression** when memory matters, or when the result will be consumed once and discarded
+- **`map()`/`filter()`** when you are applying an existing named function rather than writing an inline expression
+
+The generator expression is often the cleanest replacement for `map()`/`filter()` when no separate function definition is needed, because the intent reads more directly from left to right.
+
+---
+
+## Part 5: Generator Odds and Ends
+
+### Example 11: Generators are single-pass iterables
+
+Unlike lists, generators support only one iteration. Once a generator has produced all its values, it is exhausted. Iterating it again produces nothing.
+
+```python
+gen = (x ** 2 for x in range(5))
+print("First pass:",  list(gen))   # [0, 1, 4, 9, 16]
+print("Second pass:", list(gen))   # [] -- exhausted
+```
+
+A list supports multiple passes because all its values are stored in memory. A generator does not store its values. Once a value has been yielded, it is gone. To iterate again, you need a new generator:
+
+```python
+# Must create a new generator for a second pass
+gen2 = (x ** 2 for x in range(5))
+print(list(gen2))   # [0, 1, 4, 9, 16]
+```
+
+This is the same behavior shown at the end of Part 3, where `list(m)` only produced the remaining values of `m` after two `next()` calls had already consumed the first two. Any generator, whether from a generator expression, a generator function, `map()`, `filter()`, `zip()`, or `enumerate()`, is exhausted after a single complete iteration.
+
+This means: if you need to iterate over the same data more than once, either keep it as a list, or create a new generator each time.
+
+### Example 12: Comprehension variable scoping
+
+This is a subtle point worth knowing, even though the full rules of Python scoping (the LEGB rule) are covered in Chapter 17. The short version: the loop variable in a comprehension is local to that comprehension. It does not affect any variable with the same name in the surrounding code.
+
+```python
+x = 100   # outer variable
+
+result = [x for x in range(5)]   # x is local to this comprehension
+
+print("result:", result)   # [0, 1, 2, 3, 4]
+print("outer x:", x)       # 100 -- unchanged
+```
+
+This is different from a regular `for` loop, where the loop variable is assigned in the surrounding scope and remains there after the loop finishes:
+
+```python
+y = 100
+
+for y in range(5):
+    pass
+
+print("after for loop, y is:", y)   # 4 -- modified by the loop
+```
+
+The practical takeaway: you can use any variable name inside a comprehension without worrying about clobbering a variable of the same name outside it. The comprehension's loop variable lives in its own scope.
+
+---
+
+## Conclusion
+
+### What You've Learned
+
+**List comprehensions — full syntax:**
+- The `if` filter clause selects items before the expression is evaluated
+- A comprehension with `if` combines the behavior of `map()` and `filter()` in one expression
+- Nested `for` clauses produce one item for every combination across all loops, equivalent to nested `for` statements
+- Readability matters: if a comprehension requires translation to understand, statements are the better choice
+
+**Set and dictionary comprehensions:**
+- Set comprehensions `{expr for x in iterable}` produce sets, with automatic deduplication
+- Dictionary comprehensions `{k: v for x in iterable}` build dictionaries directly from iterables
+- All comprehension forms share the same `for` and `if` syntax. Only the enclosing characters and expression form differ
+
+**Generator functions:**
+- A generator function uses `yield` instead of `return`
+- `yield` sends a value to the caller and pauses the function, retaining all local variable state
+- Calling a generator function returns a generator object. No code runs until iteration begins
+- `next()` manually advances the generator; `for` loops and other iteration tools do this automatically
+- `map()`, `filter()`, `range()`, `zip()`, and `enumerate()` all behave as generators. They produce values on demand, which is why `list()` is needed to force all results at once
+
+**Generator expressions:**
+- A comprehension in parentheses `(expr for x in iterable)` returns a generator object instead of a list
+- Generator expressions produce values on demand and use significantly less memory than list comprehensions for large data
+- For most purposes, a generator expression is a concise, readable replacement for `map()`/`filter()` when no separate function is needed
+
+**Generator odds and ends:**
+- Generators are single-pass iterables. Once exhausted, they produce nothing on further iteration
+- Comprehension loop variables are local to the comprehension and do not affect variables with the same name in surrounding code
+
+### What the Textbook Covers in More Depth
+
+Chapter 20 of Learning Python covers several topics not demonstrated here:
+
+**`yield from`:** Python 3.3 added `yield from` to allow a generator function to delegate to another generator, forwarding values through the chain. Useful for building pipelines of generators, but uncommon in most code.
+
+**`send()`, `throw()`, and `close()`:** Advanced generator methods that allow the caller to communicate values back into a running generator, raise exceptions inside it, or terminate it explicitly. These are the foundation of coroutines.
+
+**Async basics:** Python's `async`/`await` syntax builds on generators to support concurrent programming. This is outside the scope of the course.
+
+**User-defined iterator classes:** Chapter 30 shows how to implement the iteration protocol directly in a class using `__iter__` and `__next__` methods. This is the class-based counterpart to generator functions.
+
+**Performance comparisons:** Chapter 21 benchmarks list comprehensions, generator expressions, `map()`, and `for` loops against each other. The short answer is that comprehensions and `map()` are often faster than equivalent loops, and generator expressions trade some speed for memory efficiency.

@@ -1,0 +1,96 @@
+---
+title: "Week 12 Guide"
+subtitle: "Chapter 20 – Comprehensions and Generators"
+format:
+  html:
+    toc: true
+---
+
+In Week 10, the demo introduced `map()` and `filter()` as functional programming tools, and noted that both return objects rather than lists. Week 11 put those tools to work directly in code. Chapter 20 picks up both threads. On the comprehension side, it completes the syntax you have been using since Week 7, adding `if` filter clauses, nested loops, and set and dictionary forms. On the generator side, it explains the execution model behind `map()`, `filter()`, `range()`, `zip()`, and `enumerate()`, and makes that model available in your own functions and expressions.
+
+The chapter moves in two directions. The first is comprehension syntax: what you can express in a single comprehension goes well beyond the basic `[expr for x in iterable]` form. The second is generators: a different way for functions and expressions to produce values one at a time, on demand, without building a complete result in memory first. These two directions connect because generator expressions reuse comprehension syntax, and because understanding generators explains design decisions in Python's built-ins that have appeared in every week of this course.
+
+## Week 12 Assignments
+
+- Here is the link to the **[Week 12 Assignments](../../assignments/week-12/index.qmd)** page.
+
+## Chapter 20 concepts
+
+### List comprehension full syntax
+
+You have been writing list comprehensions since Week 7, but only in their basic form. Chapter 20 introduces the `if` clause, which filters items before the expression on the left is evaluated. A comprehension with both an expression and an `if` clause combines the effect of `map()` and `filter()` in a single expression. Nested `for` clauses are also possible, producing one item for every combination of values across all loops, the comprehension equivalent of nested `for` statements.
+
+The demo examples show:
+
+* the `if` filter clause and a side-by-side comparison with the equivalent `map()`/`filter()` combination
+* nested `for` clauses with and without `if` filters
+* a practical application: flattening a list of lists using nested clauses
+* when comprehension complexity becomes a readability problem
+
+### Set and dictionary comprehensions
+
+The same `for` and `if` syntax used in list comprehensions applies to sets and dictionaries. Set comprehensions use `{}` instead of `[]` and automatically remove duplicates. Dictionary comprehensions use a `key: value` expression before the `for` clause and build a dictionary directly from any iterable. The enclosing characters are the only syntactic difference between all three forms.
+
+The demo examples show:
+
+* set comprehensions for collecting unique values from a sequence with duplicates
+* dictionary comprehensions for building and filtering dictionaries, including iterating over `.items()` to swap keys and values
+
+### Generator functions
+
+A generator function is written like a normal function but uses `yield` instead of `return`. Each `yield` sends a value back to the caller and pauses the function, keeping all local variables intact. The function resumes from where it paused the next time a value is requested. Calling a generator function does not run its code immediately. It returns a generator object. This is the same model used by `map()`, `filter()`, `range()`, `zip()`, and `enumerate()`, which is why those functions return objects rather than lists and why wrapping them in `list()` is needed to force all results out at once.
+
+The demo examples show:
+
+* a generator function stepped through manually with `next()` to make the pause-and-resume behavior visible
+* a generator that retains a running total across yields, demonstrating local variable state preservation
+* `map()` called with `next()` directly, confirming it behaves the same way as a generator
+
+### Generator expressions
+
+A generator expression is a comprehension in parentheses instead of square brackets. It returns a generator object rather than a list, producing values one at a time when iterated. The practical advantage is memory: a generator expression holds only the state needed to produce the next value, while a list comprehension builds the entire result immediately. For results that will be consumed once and discarded, there is no reason to build the list at all.
+
+The demo examples show:
+
+* a list comprehension and a generator expression side by side, confirming they produce the same values but different object types
+* a memory size comparison that makes the difference concrete
+* all three approaches (list comprehension, generator expression, and `map()`/`filter()`) producing identical results, with guidance on when to use each
+
+### Single-pass behavior and comprehension variable scoping
+
+Two practical points about generators and comprehensions that affect real code. First, generators are single-pass iterables: once all values have been produced, the generator is exhausted and a second iteration produces nothing. Unlike a list, a generator does not store its values. Producing each one consumes it. Second, the loop variable in a comprehension is local to that expression. A comprehension's `for` variable does not affect a variable of the same name in the surrounding code, unlike a regular `for` loop whose variable persists after the loop ends.
+
+The demo examples show:
+
+* a generator expression iterated twice, showing the empty result on the second pass
+* a list iterated twice, showing that lists support multiple passes
+* a comprehension variable and an outer variable with the same name, confirming they are independent
+* a regular `for` loop variable, confirming it modifies the outer scope
+
+### Additional features in the reading
+
+Chapter 20 covers several topics not demonstrated this week. These are worth reading for awareness but are not the focus of the quiz.
+
+The reading covers:
+
+* `yield from`: allows a generator function to delegate to another generator, forwarding values through a chain; useful for building generator pipelines
+* async basics: Python's `async`/`await` syntax builds on generators to support concurrent programming; this is outside the scope of the course
+* user-defined iterator classes: Chapter 30 shows how to implement the iteration protocol directly in a class; the generator model covered this week is the simpler alternative
+
+## Reading expectations for Week 12
+
+As you read Chapter 20 and run the demo, check whether you can answer the following in your own words:
+
+1. What does the `if` clause in a list comprehension do, and how does a comprehension with both an expression and an `if` clause relate to using `map()` and `filter()` together?
+2. How many items does a comprehension with two `for` clauses produce, and how does this relate to equivalent nested `for` statements?
+3. What does `yield` do inside a generator function, and what happens to the function's local variables when it yields?
+4. What does calling a generator function return, and why does that explain why `map()` and `filter()` require wrapping in `list()`?
+5. What is the difference between a list comprehension and a generator expression in terms of what they return and how they use memory?
+6. What does it mean for a generator to be exhausted, and what does iterating an exhausted generator produce?
+7. How does a comprehension loop variable differ from a `for` loop variable in terms of scope?
+
+## Week 12 tasks
+
+1. Read **Learning Python 6e, Chapter 20** (complete).
+2. Work through the **Week 12 demo** (linked from the Week 12 Assignments page).
+3. Complete the **Week 12 D2L quiz** (Chapter 20 concepts + demo examples, using the quiz handout).

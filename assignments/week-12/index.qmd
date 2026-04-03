@@ -1,0 +1,67 @@
+---
+title: "Week 12 Assignments"
+subtitle: "Chapter 20 Reading and D2L Quiz"
+format:
+  html:
+    toc: true
+---
+
+- Here is the link to the **[Week 12 demo](../../assignments/week-12/week-12-demo.html)**.
+- <a href="/downloads/week-12/week-12-demo.ipynb" download>Download Jupyter Notebook</a>
+- <a href="/assignments/week-12/week12quizhandout.pdf" download>Download Quiz Handout (PDF)</a>
+
+## Part 1: Reading
+
+Read **Learning Python (6e), Chapter 20**.
+
+Key concepts from this chapter:
+
+- **List comprehension `if` clause:** adding `if condition` after the `for` clause filters items before the expression is evaluated, combining the effect of `map()` and `filter()` in a single expression
+- **Nested `for` clauses:** a comprehension can contain more than one `for` clause, producing one item for every combination of values across all loops, equivalent to nested `for` statements
+- **Set comprehensions:** use `{}` instead of `[]`; the result is a set, so duplicate values are automatically removed
+- **Dictionary comprehensions:** use `{key: value for ...}` to build a dictionary directly from any iterable, including with `if` filtering
+- **Generator functions:** a function containing `yield` produces values one at a time rather than all at once; each `yield` sends a value to the caller and pauses the function, retaining all local variable state until the next call; calling a generator function does not run its code immediately — it returns a generator object that produces values when iterated
+- **Generator expressions:** a comprehension in parentheses `(expr for x in iterable)` returns a generator object instead of a list, using far less memory for large data sets
+- **Single-pass behavior:** generators are exhausted after one complete iteration and cannot be iterated again without creating a new generator
+- **Comprehension variable scoping:** the loop variable in a comprehension is local to that expression and does not affect variables with the same name in the surrounding code
+
+## Part 2: Work through the Week 12 Demo
+
+There is no video walkthrough for this week's demo.
+
+The Week 12 demo covers:
+
+1. List comprehensions with `if` filter clauses and nested `for` clauses, including a side-by-side comparison with equivalent `map()` and `filter()` calls
+2. Set and dictionary comprehensions, including filtering with `if` and inverting a dictionary
+3. Generator functions using `yield`, stepping through a generator manually with `next()`, and understanding why `map()`, `filter()`, `range()`, `zip()`, and `enumerate()` all return generator-like objects
+4. Generator expressions compared side-by-side with list comprehensions, including a demonstration of the memory difference between the two
+5. Single-pass exhaustion behavior and comprehension variable scoping compared to regular `for` loop variable behavior
+
+## Part 3: D2L Quiz
+
+Complete the **Week 12 D2L quiz** using the quiz handout.
+
+1. Download the **Quiz Handout (PDF)** using the link at the top of this page
+2. Work through the 30 multiple-choice questions in the handout
+3. Submit your answers (A, B, C, or D) in the **D2L Quiz**
+
+The quiz focuses on:
+
+- predicting the result of a list comprehension with an `if` filter clause
+- predicting the result of a comprehension with nested `for` clauses
+- distinguishing set and dictionary comprehension syntax from list comprehension syntax
+- identifying what `yield` does and how it differs from `return`
+- predicting what calling a generator function returns
+- tracing a generator function's execution using `next()` calls
+- predicting what a generator expression returns and how it differs from a list comprehension
+- recognizing single-pass behavior and predicting what happens after a generator is exhausted
+
+## D2L submission checklist
+
+Complete the following in D2L:
+
+* **Week 12 D2L quiz** (no file uploads required this week)
+
+**Submission location:** No Dropbox submission this week. All work is completed in D2L.
+
+**Note:** This week focuses on reading Chapter 20 and demonstrating understanding through the quiz. The emphasis is on understanding how comprehensions and generators extend the functional programming tools from Week 10, and why built-ins like `map()`, `filter()`, `range()`, `zip()`, and `enumerate()` return iterables rather than lists.

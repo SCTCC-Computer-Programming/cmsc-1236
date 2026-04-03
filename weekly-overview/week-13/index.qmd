@@ -1,0 +1,32 @@
+---
+title: "Week 13 Guide"
+subtitle: "Chapter 20 Code Completion Exercise"
+format:
+  html:
+    toc: true
+---
+
+This week you are completing a code completion exercise. A Darkest Dungeon guild management system has been partially built. The main program and display functions are in place, and your job is to write the six analysis functions that drive it. Each function applies a concept from Chapter 20 or earlier: list, set, and dictionary comprehensions, generator functions, generator expressions, and recursive search.
+
+## Week 13 Assignments
+
+- Here is the link to the **[Week 13 Assignments](../../assignments/week-13/index.qmd)** page.
+
+## Concepts being reinforced
+
+This week's assignment draws on the comprehension and generator concepts from Chapter 20. You will use list, set, and dictionary comprehensions to process hero roster data, write a generator function that produces loot drops on demand, and write a generator expression that filters and formats results. The assignment also revisits the recursive search pattern from Week 11, applied to a nested dungeon structure.
+
+## Week 13 activities
+
+This week has two components:
+
+1. **Code completion exercise.** Complete six functions in the provided skeleton file. Each function targets a specific Chapter 20 concept.
+
+2. **Video explanation.** Record a walkthrough demonstrating your completed program, explaining the concept behind each function, and reflecting on what you learned.
+
+## Week 13 tasks
+
+1. Download the skeleton file and main program from the **Week 13 Assignments** page.
+2. Complete the six functions in `lastname_darkest_dungeon.py`.
+3. Record your video explanation and upload it to Kaltura.
+4. Submit your completed Python file and Kaltura link to the **Week 13 Dropbox**.
