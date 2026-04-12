@@ -1,0 +1,77 @@
+---
+title: "Week 14 Assignments"
+subtitle: "Chapters 22–25 Reading and D2L Quiz"
+format:
+  html:
+    toc: true
+---
+
+## Demo Files
+
+This week's demo is a pair of Python files rather than a Jupyter notebook. Both files must be saved in the same folder on your computer before you run anything.
+
+- Here is the link to the **[Week 14 demo](../../assignments/week-14/week-14-demo.html)**.
+- <a href="/assignments/week-14/week14_demo.py" download>Download Demo Script (week14_demo.py)</a>
+- <a href="/assignments/week-14/week14_module.py" download>Download Demo Module (week14_module.py)</a>
+
+The demo link above is a rendered, readable version of the demo for reference. The two `.py` files are what you actually run in VS Code. Download both, save them in the same folder, and follow the setup instructions at the top of `week14_demo.py`.
+
+## Part 1: Reading
+
+Read **Learning Python (6e), Chapters 22–25**.
+
+Key concepts from these chapters:
+
+- **How import works:** Python performs three steps when executing an import statement: find the module file on the file system, compile the source to bytecode (saved in `__pycache__`), and run the module's top-level code once; subsequent imports of the same module retrieve the already-loaded object from `sys.modules` without re-running the file
+- **`sys.path`:** the list of directories Python searches when looking for a module; the directory containing the running script is always first, which is why modules saved in the same folder are found without any additional configuration
+- **Module namespaces:** every name assigned at the top level of a module file becomes an attribute of that module object; those attributes are stored in a plain dictionary called `__dict__`, meaning attribute access (`module.name`) and dictionary lookup (`module.__dict__['name']`) return the same object
+- **`_X` naming convention:** a leading underscore signals that a name is intended for internal use and is not part of the module's public interface; Python does not enforce this, but `from module import *` respects it by skipping underscore-prefixed names
+- **`__all__`:** a list of name strings defined at the top level of a module that explicitly declares which names are exported by `from module import *`; it also serves as documentation of the module's intended public interface
+- **`__name__`:** a built-in attribute Python sets automatically on every file: to the string `'__main__'` when the file is run directly, and to the module's name string when the file is imported
+- **`if __name__ == '__main__':` guard:** a block of code under this condition runs only when the file is executed directly, not when it is imported; this allows a single file to serve as both an importable module and a standalone script
+
+## Part 2: Work through the Week 14 Demo
+
+There is no video walkthrough for this week's demo.
+
+**Before opening the demo**, read the setup instructions carefully. This week's demo works differently from previous weeks:
+
+- Previous demos were Jupyter notebooks, a single `.ipynb` file you opened and ran cell by cell
+- This week's demo is two plain Python files that work together
+- You run `week14_demo.py` using the Run button or `python week14_demo.py` in the VS Code terminal
+- The demo is designed to be read in the editor and run in the terminal at the same time; the comments in the source explain what you are seeing in the output
+
+The demo covers:
+
+1. `sys.path` and the module search: what Python is searching through on every import, and why `week14_module.py` is found without any configuration
+2. One-time execution: importing the same module three different ways and observing that its top-level code runs exactly once; `__pycache__` and what the `.pyc` file inside it contains
+3. Module namespaces: using `dir()` and `__dict__` to inspect a module's names and their objects directly; confirming with `id()` that attribute access and dictionary lookup return the same object in memory
+4. The `_X` convention and `__all__`: accessing a private name by qualification, observing what `from module import *` includes and excludes, and reading `__all__` as a declaration of the module's public interface
+5. `__name__`: comparing its value in the running script versus an imported module, tracing the `if __name__ == '__main__':` guard in `week14_module.py`, and connecting the pattern back to `space_trader.py` and `cargo_module.py` from Week 8
+
+## Part 3: D2L Quiz
+
+Complete the **Week 14 D2L quiz** directly in D2L.
+
+There is no quiz handout this week. All 30 questions are presented directly in the D2L quiz interface.
+
+The quiz focuses on:
+
+- identifying what `sys.path` is and why the current directory appears first
+- explaining the three steps Python performs on every import
+- explaining why a module's top-level code runs once and does not run again on repeated imports
+- identifying what `__pycache__` contains and why Python creates it
+- explaining the relationship between module attributes and the underlying `__dict__` dictionary
+- predicting which names `from module import *` includes and excludes based on `_X` naming and `__all__`
+- explaining what `__name__` contains depending on how a file is being used
+- tracing the behavior of the `if __name__ == '__main__':` guard in both the run-directly and imported scenarios
+
+## D2L Submission Checklist
+
+Complete the following in D2L:
+
+* **Week 14 D2L quiz** (no file uploads required this week)
+
+**Submission location:** No Dropbox submission this week. All work is completed in D2L.
+
+**Note:** This week focuses on reading Chapters 22–25 and demonstrating understanding through the quiz. The emphasis is on understanding what Python does underneath every import statement: the machinery that has been running silently since Week 1.

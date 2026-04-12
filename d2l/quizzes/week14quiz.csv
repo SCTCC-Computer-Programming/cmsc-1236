@@ -1,0 +1,209 @@
+NewQuestion,MC,
+QuestionText,What is sys.path?,
+Option,0,A string containing the location of the Python interpreter
+Option,100,A list of directories Python searches when looking for a module to import
+Option,0,A dictionary mapping module names to their file paths
+Option,0,A setting that controls where Python installs packages
+
+NewQuestion,MC,
+QuestionText,Why does the current directory appear first in sys.path?,
+Option,100,Python always searches the directory containing the running script before anywhere else
+Option,0,The current directory is the only place Python looks for user-defined modules
+Option,0,Python adds the current directory last but searches it first as a special case
+Option,0,The current directory is only searched if no other match is found
+
+NewQuestion,MC,
+QuestionText,Which of the following correctly lists the three steps Python performs when executing an import statement?,
+Option,0,Search execute cache
+Option,0,Load link initialize
+Option,100,Find compile run
+Option,0,Parse bind store
+
+NewQuestion,MC,
+QuestionText,What happens to a module's top-level code the first time the module is imported?,
+Option,0,It is stored but not executed until the module is explicitly called
+Option,0,Only function and class definitions are executed; other statements are skipped
+Option,0,It is compiled to bytecode but not run until a name from the module is used
+Option,100,It is executed from top to bottom defining names in the module's namespace
+
+NewQuestion,MC,
+QuestionText,What happens when the same module is imported a second time in the same program run?,
+Option,100,Python retrieves the already-loaded module object without re-running the file
+Option,0,Python re-runs the module file to ensure names are up to date
+Option,0,Python raises an ImportError because the module is already loaded
+Option,0,Python creates a second independent copy of the module
+
+NewQuestion,MC,
+QuestionText,Where does Python store module objects after they are loaded for the first time?,
+Option,0,In the module's __dict__ attribute
+Option,0,In a file named modules.cache in the current directory
+Option,100,In sys.modules a dictionary keyed by module name
+Option,0,In sys.path alongside the directory entries
+
+NewQuestion,MC,
+QuestionText,What does the __pycache__ folder contain?,
+Option,0,Backup copies of source files created before each import
+Option,100,Compiled bytecode versions of imported modules
+Option,0,Log files recording each import operation
+Option,0,Temporary files deleted after the program finishes
+
+NewQuestion,MC,
+QuestionText,What does the .pyc extension on a file in __pycache__ indicate?,
+Option,0,The file is a Python configuration file
+Option,0,The file is a compressed archive of source code
+Option,0,The file is a plain-text cache of recent function calls
+Option,100,The file contains compiled bytecode not source code
+
+NewQuestion,MC,
+QuestionText,What makes a name become an attribute of a module object?,
+Option,100,Being assigned a value at the top level of the module file
+Option,0,Being defined inside a function that is called during import
+Option,0,Being listed in the module's __all__ variable
+Option,0,Being passed as an argument to a function defined in the module
+
+NewQuestion,MC,
+QuestionText,What does dir() return when called on a module?,
+Option,0,A dictionary mapping each name to its type
+Option,0,Only the names that were defined by the programmer excluding dunder names
+Option,100,A sorted list of all names defined in the module including dunder names Python added automatically
+Option,0,A list of the file paths searched before the module was found
+
+NewQuestion,MC,
+QuestionText,What is a module's __dict__ attribute?,
+Option,0,A list of all names the module exports via from *
+Option,100,A dictionary that holds the module's namespace — its names as keys and their objects as values
+Option,0,A string containing the module's docstring and metadata
+Option,0,A set of all names imported into the module from other modules
+
+NewQuestion,MC,
+QuestionText,In a module's __dict__ what are the keys and what are the values?,
+Option,100,Keys are name strings; values are the objects those names refer to
+Option,0,Keys are memory addresses; values are name strings
+Option,0,Keys are type names; values are lists of names with that type
+Option,0,Keys are line numbers; values are the statements on those lines
+
+NewQuestion,MC,
+QuestionText,"What is the relationship between module.greet and module.__dict__['greet']?",
+Option,0,They are equal in value but refer to different copies of the function
+Option,0,module.greet is faster because it bypasses the dictionary
+Option,0,module.__dict__['greet'] returns the source code; module.greet returns the function
+Option,100,They refer to the exact same object — attribute access is dictionary lookup with dot notation
+
+NewQuestion,MC,
+QuestionText,"What does comparing id(module.greet) to id(module.__dict__['greet']) confirm?",
+Option,0,That the function has two separate representations in memory
+Option,100,That attribute access and dictionary lookup return the same object in memory
+Option,0,That id() cannot be used reliably on function objects
+Option,0,That __dict__ stores a copy of each attribute rather than a reference
+
+NewQuestion,MC,
+QuestionText,How long does a module's namespace persist after the module is imported?,
+Option,0,Only until the importing script finishes executing the import statement
+Option,0,Only until the function that called the import statement returns
+Option,100,For the duration of the program run — module namespaces outlive the import itself and remain accessible as long as the program is running
+Option,0,Only until the module is garbage collected which happens immediately after import
+
+NewQuestion,MC,
+QuestionText,What does a leading underscore on a module-level name signal?,
+Option,0,The name is a built-in provided by Python not the programmer
+Option,0,The name will raise an AttributeError if accessed from outside the module
+Option,100,The name is intended for internal use and is not part of the module's public interface
+Option,0,The name is deprecated and will be removed in a future version
+
+NewQuestion,MC,
+QuestionText,Can a name like _format_header be accessed from outside the module by a client?,
+Option,100,Yes — the underscore is a convention not a restriction; qualification still works
+Option,0,No — Python enforces the underscore convention and raises an AttributeError
+Option,0,Only if the name is also listed in __all__
+Option,0,Only if the client uses import module rather than from module import name
+
+NewQuestion,MC,
+QuestionText,What does from module import * do with names that begin with an underscore?,
+Option,0,It imports them along with all other names
+Option,100,It skips them — underscore-prefixed names are not exported by from *
+Option,0,It imports them but renames them by removing the underscore
+Option,0,It raises a NameError for each underscore-prefixed name it encounters
+
+NewQuestion,MC,
+QuestionText,What does the __all__ list in a module control?,
+Option,0,The order in which names are defined during import
+Option,0,Which names dir() displays when called on the module
+Option,0,Which names can be accessed by attribute qualification
+Option,100,Which names are exported when a client uses from module import *
+
+NewQuestion,MC,
+QuestionText,What happens to a name that is not listed in __all__ when a client runs from module import *?,
+Option,100,It is not imported into the client's namespace
+Option,0,It is imported but marked as read-only
+Option,0,It raises an ImportError
+Option,0,It is imported with a warning
+
+NewQuestion,MC,
+QuestionText,"If _format_header is listed in a module's __all__ can a client still access it directly using module._format_header?",
+Option,0,No — listing it in __all__ makes it public which removes direct access
+Option,0,No — __all__ overrides the underscore convention and hides the name
+Option,100,Yes — __all__ controls from * exports but direct attribute access is always available regardless
+Option,0,Yes but only if the client imported the module using import module not from module import *
+
+NewQuestion,MC,
+QuestionText,Beyond controlling from * exports what secondary purpose does __all__ serve?,
+Option,0,It speeds up import by telling Python which names to define first
+Option,100,It documents the module's intended public interface for other programmers
+Option,0,It prevents the module from being reloaded during the same program run
+Option,0,It registers the module's names with Python's built-in help system
+
+NewQuestion,MC,
+QuestionText,When is using import module required instead of from module import name?,
+Option,0,Whenever the module contains more than ten names
+Option,0,Whenever the module is in a subdirectory rather than the current folder
+Option,0,Whenever the module contains underscore-prefixed names
+Option,100,When two different modules define the same name and both are needed in the same script
+
+NewQuestion,MC,
+QuestionText,What value does Python assign to __name__ when a file is run directly from the command line or the VS Code Run button?,
+Option,0,The name of the file without its .py extension
+Option,0,The full path to the file
+Option,100,The string '__main__'
+Option,0,None until the script defines it explicitly
+
+NewQuestion,MC,
+QuestionText,What value does Python assign to __name__ when a file is imported by another script?,
+Option,100,The module's name as a string — the filename without the .py extension
+Option,0,The string '__main__'
+Option,0,The string '__import__'
+Option,0,The full path to the module file
+
+NewQuestion,MC,
+QuestionText,"What does the if __name__ == '__main__': guard prevent?",
+Option,0,The module from being imported more than once in a single program run
+Option,100,Code inside the block from running when the file is imported rather than run directly
+Option,0,Other modules from accessing names defined in the guarded block
+Option,0,The module's top-level code from executing during import
+
+NewQuestion,MC,
+QuestionText,"A file contains an if __name__ == '__main__': block at the bottom. Another script imports this file. Which statement is true?",
+Option,0,The block runs because the imported file's __name__ is '__main__'
+Option,0,The block runs but its output is suppressed
+Option,0,Python raises a SyntaxError because the guard is not allowed in imported files
+Option,100,The block does not run because the imported file's __name__ is its module name not '__main__'
+
+NewQuestion,MC,
+QuestionText,"A file contains an if __name__ == '__main__': block. A student runs the file directly using python myfile.py. Which statement is true?",
+Option,0,The block does not run because __name__ is set to 'myfile' when run directly
+Option,0,The block does not run because only imported modules can trigger the guard
+Option,100,The block runs because __name__ is '__main__' when the file is run directly
+Option,0,The block runs only if myfile.py does not import any other modules
+
+NewQuestion,MC,
+QuestionText,"What dual role does the if __name__ == '__main__': pattern allow a single file to serve?",
+Option,100,It can function as both an importable module and a standalone runnable script
+Option,0,It can run on both Python 2 and Python 3 without modification
+Option,0,It can be used as both a synchronous and an asynchronous module
+Option,0,It can serve as both a module definition and a package initializer
+
+NewQuestion,MC,
+QuestionText,"In the Week 8 assignment cargo_module.py was imported by space_trader.py. If cargo_module.py had contained an if __name__ == '__main__': self-test block why would that block not have run during normal program use?",
+Option,0,Because space_trader.py explicitly suppressed output from imported modules
+Option,100,Because when cargo_module.py is imported its __name__ is 'cargo_module' not '__main__' so the condition is False
+Option,0,Because __name__ is only defined in files that are run directly not in imported modules
+Option,0,Because space_trader.py used from cargo_module import * which skips the guard block
