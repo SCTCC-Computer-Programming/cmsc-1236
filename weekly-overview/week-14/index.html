@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 12 Assignments – CMSC 1236 : Advanced Python Programming</title>
+<title>Week 14 Guide – CMSC 1236 : Advanced Python Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -273,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 12 Assignments</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weekly-overview/week-07/index.html">Weekly Overview</a></li><li class="breadcrumb-item"><a href="../../weekly-overview/week-14/index.html">Week 14 (Starts - 13 APR)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -391,7 +391,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weekly-overview/week-14/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weekly-overview/week-14/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 14 (Starts - 13 APR)</span></a>
   </div>
 </li>
@@ -464,10 +464,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1-reading" id="toc-part-1-reading" class="nav-link active" data-scroll-target="#part-1-reading">Part 1: Reading</a></li>
-  <li><a href="#part-2-work-through-the-week-12-demo" id="toc-part-2-work-through-the-week-12-demo" class="nav-link" data-scroll-target="#part-2-work-through-the-week-12-demo">Part 2: Work through the Week 12 Demo</a></li>
-  <li><a href="#part-3-d2l-quiz" id="toc-part-3-d2l-quiz" class="nav-link" data-scroll-target="#part-3-d2l-quiz">Part 3: D2L Quiz</a></li>
-  <li><a href="#d2l-submission-checklist" id="toc-d2l-submission-checklist" class="nav-link" data-scroll-target="#d2l-submission-checklist">D2L submission checklist</a></li>
+  <li><a href="#week-14-assignments" id="toc-week-14-assignments" class="nav-link active" data-scroll-target="#week-14-assignments">Week 14 Assignments</a></li>
+  <li><a href="#chapters-2225-concepts" id="toc-chapters-2225-concepts" class="nav-link" data-scroll-target="#chapters-2225-concepts">Chapters 22–25 concepts</a>
+  <ul class="collapse">
+  <li><a href="#how-import-works" id="toc-how-import-works" class="nav-link" data-scroll-target="#how-import-works">How import works</a></li>
+  <li><a href="#module-namespaces" id="toc-module-namespaces" class="nav-link" data-scroll-target="#module-namespaces">Module namespaces</a></li>
+  <li><a href="#controlling-what-a-module-exports" id="toc-controlling-what-a-module-exports" class="nav-link" data-scroll-target="#controlling-what-a-module-exports">Controlling what a module exports</a></li>
+  <li><a href="#name__-and-the-guard-pattern" id="toc-name__-and-the-guard-pattern" class="nav-link" data-scroll-target="#name__-and-the-guard-pattern"><code>__name__</code> and the guard pattern</a></li>
+  <li><a href="#additional-features-in-the-reading" id="toc-additional-features-in-the-reading" class="nav-link" data-scroll-target="#additional-features-in-the-reading">Additional features in the reading</a></li>
+  </ul></li>
+  <li><a href="#reading-expectations-for-week-14" id="toc-reading-expectations-for-week-14" class="nav-link" data-scroll-target="#reading-expectations-for-week-14">Reading expectations for Week 14</a></li>
+  <li><a href="#week-14-tasks" id="toc-week-14-tasks" class="nav-link" data-scroll-target="#week-14-tasks">Week 14 tasks</a></li>
   </ul>
 </nav>
     </div>
@@ -475,10 +482,10 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weekly-overview/week-07/index.html">Weekly Overview</a></li><li class="breadcrumb-item"><a href="../../weekly-overview/week-14/index.html">Week 14 (Starts - 13 APR)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Week 12 Assignments</h1>
-<p class="subtitle lead">Chapter 20 Reading and D2L Quiz</p>
+<h1 class="title">Week 14 Guide</h1>
+<p class="subtitle lead">Chapters 22–25 – Modules and Packages</p>
 </div>
 
 
@@ -490,7 +497,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 29, 2026</p>
+      <p class="date-modified">April 9, 2026</p>
     </div>
   </div>
     
@@ -501,66 +508,92 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>You have been using <code>import</code> statements since Week 1 and writing modules since Week 8, when <code>cargo_module.py</code> became a separate file that <code>space_trader.py</code> depended on. This week explains what has been happening underneath that entire time. Chapters 22–25 cover the module system in full: how Python finds a file when you import it, what it does with that file once found, how a module’s names are organized into a namespace, and how a module signals which parts of itself are public.</p>
+<p>Chapters 22–25 also revisit two patterns that have been present in the course without full explanation. Module namespaces connect directly to the object model from Week 3: every module’s names are stored in a plain dictionary called <strong>dict</strong>, so accessing module.name is dictionary lookup. The if <strong>name</strong> == ‘<strong>main</strong>’: main() line at the bottom of space_trader.py has been in your code since Week 8. This week explains what <strong>name</strong> contains and why that guard works.</p>
+<section id="week-14-assignments" class="level2">
+<h2 class="anchored" data-anchor-id="week-14-assignments">Week 14 Assignments</h2>
 <ul>
-<li>Here is the link to the <strong><a href="../../assignments/week-12/week-12-demo.html">Week 12 demo</a></strong>.</li>
-<li><a href="../../downloads/week-12/week-12-demo.ipynb" download="">Download Jupyter Notebook</a></li>
-<li><a href="../../assignments/week-12/week12quizhandout.pdf" download="">Download Quiz Handout (PDF)</a></li>
-</ul>
-<section id="part-1-reading" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-reading">Part 1: Reading</h2>
-<p>Read <strong>Learning Python (6e), Chapter 20</strong>.</p>
-<p>Key concepts from this chapter:</p>
-<ul>
-<li><strong>List comprehension <code>if</code> clause:</strong> adding <code>if condition</code> after the <code>for</code> clause filters items before the expression is evaluated, combining the effect of <code>map()</code> and <code>filter()</code> in a single expression</li>
-<li><strong>Nested <code>for</code> clauses:</strong> a comprehension can contain more than one <code>for</code> clause, producing one item for every combination of values across all loops, equivalent to nested <code>for</code> statements</li>
-<li><strong>Set comprehensions:</strong> use <code>{}</code> instead of <code>[]</code>; the result is a set, so duplicate values are automatically removed</li>
-<li><strong>Dictionary comprehensions:</strong> use <code>{key: value for ...}</code> to build a dictionary directly from any iterable, including with <code>if</code> filtering</li>
-<li><strong>Generator functions:</strong> a function containing <code>yield</code> produces values one at a time rather than all at once; each <code>yield</code> sends a value to the caller and pauses the function, retaining all local variable state until the next call; calling a generator function does not run its code immediately — it returns a generator object that produces values when iterated</li>
-<li><strong>Generator expressions:</strong> a comprehension in parentheses <code>(expr for x in iterable)</code> returns a generator object instead of a list, using far less memory for large data sets</li>
-<li><strong>Single-pass behavior:</strong> generators are exhausted after one complete iteration and cannot be iterated again without creating a new generator</li>
-<li><strong>Comprehension variable scoping:</strong> the loop variable in a comprehension is local to that expression and does not affect variables with the same name in the surrounding code</li>
+<li>Here is the link to the <strong><a href="../../assignments/week-14/index.html">Week 14 Assignments</a></strong> page.</li>
 </ul>
 </section>
-<section id="part-2-work-through-the-week-12-demo" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-work-through-the-week-12-demo">Part 2: Work through the Week 12 Demo</h2>
-<p>There is no video walkthrough for this week’s demo.</p>
-<p>The Week 12 demo covers:</p>
+<section id="chapters-2225-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="chapters-2225-concepts">Chapters 22–25 concepts</h2>
+<section id="how-import-works" class="level3">
+<h3 class="anchored" data-anchor-id="how-import-works">How import works</h3>
+<p>Every <code>import</code> statement triggers three steps in order: Python finds the module file by walking a list of directories called <code>sys.path</code>, compiles the source to bytecode if needed, and runs the module’s top-level code once. After the first import, Python stores the loaded module object in <code>sys.modules</code>. Subsequent imports retrieve that cached object without re-running the file. This is why a module’s top-level code, including any <code>print()</code> calls or variable assignments, executes exactly once per program run regardless of how many times it is imported.</p>
+<p>The demo examples show:</p>
+<ul>
+<li><code>sys.path</code> printed and enumerated, confirming that the current folder appears first and explaining why <code>week14_module.py</code> is found without configuration</li>
+<li>the same module imported three different ways (<code>import</code>, <code>import as</code>, and <code>from import</code>), with the module’s top-level <code>print()</code> appearing exactly once across all three</li>
+<li><code>__pycache__</code> located in the VS Code Explorer panel and its contents listed from code, with an explanation of what the <code>.pyc</code> file contains and why Python creates it</li>
+</ul>
+</section>
+<section id="module-namespaces" class="level3">
+<h3 class="anchored" data-anchor-id="module-namespaces">Module namespaces</h3>
+<p>A module is a namespace: a container that maps names to objects. Every name assigned at the top level of a module file becomes an attribute of the module object, stored in a plain Python dictionary called <code>__dict__</code>. This is the same principle from Week 3: objects have attributes, and those attributes are entries in an underlying dictionary. <code>dir()</code> lists all names in a module’s namespace. <code>__dict__</code> exposes the namespace directly as a dictionary whose keys are name strings and whose values are the objects those names refer to. Attribute access and dictionary lookup are the same operation.</p>
+<p>The demo examples show:</p>
+<ul>
+<li><code>dir()</code> called on the imported module, listing all names including dunder attributes Python added automatically</li>
+<li><code>__dict__</code> iterated to display the module’s user-defined names and their objects</li>
+<li><code>id()</code> used to confirm that <code>module.greet</code> and <code>module.__dict__['greet']</code> return the same object in memory, connecting back to Week 3’s use of <code>id()</code> and <code>is</code> for identity testing</li>
+</ul>
+</section>
+<section id="controlling-what-a-module-exports" class="level3">
+<h3 class="anchored" data-anchor-id="controlling-what-a-module-exports">Controlling what a module exports</h3>
+<p>Python modules have no private keyword. Any name defined in a module can be accessed from outside it. Two conventions let a module signal its intent without enforcing it by force. A leading underscore (<code>_name</code>) marks a name as internal: the underscore is a message to other programmers, not a lock. Python enforces this convention in one specific place: <code>from module import *</code> skips names that begin with <code>_</code>. The <code>__all__</code> list makes the public interface explicit: when present, only names listed in <code>__all__</code> are exported by <code>from *</code>. <code>__all__</code> also serves as documentation, giving any programmer reading the module an immediate answer to the question of what it is designed to provide.</p>
+<p>The demo examples show:</p>
+<ul>
+<li>a public function and a <code>_</code>-prefixed private helper called side by side, confirming both are reachable by qualification</li>
+<li><code>from module import *</code> run before and after, confirming the private name is absent from what was imported</li>
+<li><code>__all__</code> printed directly, showing it as a plain list that controls <code>from *</code> and declares the public interface</li>
+</ul>
+</section>
+<section id="name__-and-the-guard-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="name__-and-the-guard-pattern"><code>__name__</code> and the guard pattern</h3>
+<p>Every Python file has a built-in attribute called <code>__name__</code>. When a file is run directly using the Run button or <code>python filename.py</code>, Python sets <code>__name__</code> to the string <code>'__main__'</code>. When a file is imported by another script, Python sets <code>__name__</code> to the module’s name. This difference is the foundation of the <code>if __name__ == '__main__':</code> pattern. Code inside that block runs only when the file is executed directly. When the file is imported, <code>__name__</code> is not <code>'__main__'</code>, the condition is false, and the block is skipped. The pattern allows a single file to serve two roles: importable module and standalone script.</p>
+<p>The demo examples show:</p>
+<ul>
+<li><code>__name__</code> printed inside the running script, confirming it is <code>'__main__'</code></li>
+<li><code>week14_module.__name__</code> printed after import, confirming it is <code>'week14_module'</code></li>
+<li>the guard block in <code>week14_module.py</code> traced: why it was skipped during import, and how to trigger it by running the module file directly from the terminal</li>
+<li>the connection to <code>space_trader.py</code> and <code>cargo_module.py</code> from Week 8: the <code>if __name__ == '__main__': main()</code> pattern has been in the course since Week 8; this week explains exactly what it does and why</li>
+</ul>
+</section>
+<section id="additional-features-in-the-reading" class="level3">
+<h3 class="anchored" data-anchor-id="additional-features-in-the-reading">Additional features in the reading</h3>
+<p>Chapters 22–25 cover several topics not demonstrated this week. These are worth reading for awareness but are not the focus of the quiz.</p>
+<p>The reading covers:</p>
+<ul>
+<li><code>reload()</code>: forces Python to re-run a module’s code in a running process, useful in long-running programs and REPL sessions; not relevant to the VS Code run-button workflow</li>
+<li>package-relative imports (<code>from . import module</code>): used inside packages to import sibling modules; relevant when writing larger multi-directory projects</li>
+<li>namespace packages: packages without <code>__init__.py</code> that can span multiple directories; an advanced import system feature outside the scope of this course</li>
+</ul>
+</section>
+</section>
+<section id="reading-expectations-for-week-14" class="level2">
+<h2 class="anchored" data-anchor-id="reading-expectations-for-week-14">Reading expectations for Week 14</h2>
+<p>As you read Chapters 22–25 and work through the demo, check whether you can answer the following in your own words:</p>
 <ol type="1">
-<li>List comprehensions with <code>if</code> filter clauses and nested <code>for</code> clauses, including a side-by-side comparison with equivalent <code>map()</code> and <code>filter()</code> calls</li>
-<li>Set and dictionary comprehensions, including filtering with <code>if</code> and inverting a dictionary</li>
-<li>Generator functions using <code>yield</code>, stepping through a generator manually with <code>next()</code>, and understanding why <code>map()</code>, <code>filter()</code>, <code>range()</code>, <code>zip()</code>, and <code>enumerate()</code> all return generator-like objects</li>
-<li>Generator expressions compared side-by-side with list comprehensions, including a demonstration of the memory difference between the two</li>
-<li>Single-pass exhaustion behavior and comprehension variable scoping compared to regular <code>for</code> loop variable behavior</li>
+<li>What are the three steps Python performs when executing an import statement, and in what order?</li>
+<li>What is <code>sys.path</code>, and why does the directory containing the running script appear first?</li>
+<li>Why does a module’s top-level code run only once, even when the module is imported multiple times in the same program?</li>
+<li>What does <code>__pycache__</code> contain, and what triggers Python to create it?</li>
+<li>How does a name at the top level of a module file become an attribute of the module object?</li>
+<li>What is <code>__dict__</code> on a module object, and what are its keys and values?</li>
+<li>What does <code>id()</code> confirm when comparing <code>module.name</code> to <code>module.__dict__['name']</code>?</li>
+<li>What does a leading underscore on a module-level name signal, and what is the one place Python enforces this convention?</li>
+<li>What does <code>__all__</code> control, and what purpose does it serve beyond that?</li>
+<li>What value does <code>__name__</code> hold when a file is run directly, and what value does it hold when a file is imported?</li>
+<li>What does the <code>if __name__ == '__main__':</code> guard prevent, and what dual role does it allow a file to serve?</li>
 </ol>
 </section>
-<section id="part-3-d2l-quiz" class="level2">
-<h2 class="anchored" data-anchor-id="part-3-d2l-quiz">Part 3: D2L Quiz</h2>
-<p>Complete the <strong>Week 12 D2L quiz</strong> using the quiz handout.</p>
+<section id="week-14-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="week-14-tasks">Week 14 tasks</h2>
 <ol type="1">
-<li>Download the <strong>Quiz Handout (PDF)</strong> using the link at the top of this page</li>
-<li>Work through the 30 multiple-choice questions in the handout</li>
-<li>Submit your answers (A, B, C, or D) in the <strong>D2L Quiz</strong></li>
+<li>Read <strong>Learning Python 6e, Chapters 22–25</strong> (complete).</li>
+<li>Download both demo files from the Week 14 Assignments page and work through <strong>week14_demo.py</strong> in VS Code.</li>
+<li>Complete the <strong>Week 14 D2L quiz</strong> (Chapters 22–25 concepts, completed directly in D2L; no handout this week).</li>
 </ol>
-<p>The quiz focuses on:</p>
-<ul>
-<li>predicting the result of a list comprehension with an <code>if</code> filter clause</li>
-<li>predicting the result of a comprehension with nested <code>for</code> clauses</li>
-<li>distinguishing set and dictionary comprehension syntax from list comprehension syntax</li>
-<li>identifying what <code>yield</code> does and how it differs from <code>return</code></li>
-<li>predicting what calling a generator function returns</li>
-<li>tracing a generator function’s execution using <code>next()</code> calls</li>
-<li>predicting what a generator expression returns and how it differs from a list comprehension</li>
-<li>recognizing single-pass behavior and predicting what happens after a generator is exhausted</li>
-</ul>
-</section>
-<section id="d2l-submission-checklist" class="level2">
-<h2 class="anchored" data-anchor-id="d2l-submission-checklist">D2L submission checklist</h2>
-<p>Complete the following in D2L:</p>
-<ul>
-<li><strong>Week 12 D2L quiz</strong> (no file uploads required this week)</li>
-</ul>
-<p><strong>Submission location:</strong> No Dropbox submission this week. All work is completed in D2L.</p>
-<p><strong>Note:</strong> This week focuses on reading Chapter 20 and demonstrating understanding through the quiz. The emphasis is on understanding how comprehensions and generators extend the functional programming tools from Week 10, and why built-ins like <code>map()</code>, <code>filter()</code>, <code>range()</code>, <code>zip()</code>, and <code>enumerate()</code> return iterables rather than lists.</p>
 
 
 </section>
