@@ -1,0 +1,347 @@
+---
+title: "Week 15 Demo"
+subtitle: "Chapters 26-27: Classes and Inheritance"
+format:
+  html:
+    toc: true
+    code-fold: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Introduction
+
+Chapters 26–27 cover the class tree model and inheritance. In Python, classes and instances are namespace objects connected by links, and attribute lookup walks those links from the instance upward through the class hierarchy. This model explains how inheritance, method overriding, `self`, and `super()` work.
+
+The demo uses a single `.py` file you download and run in VS Code. Work through it with the source code open in the editor and the terminal output visible below. The examples build on each other, so reading the comments alongside the output is essential.
+
+After completing these examples, you should be able to:
+
+* explain what a class object is and how it differs from an instance object
+* describe how Python searches a class tree when looking up an attribute
+* explain what `self` is and why it is always the first argument in a method
+* write a subclass that inherits from a parent class
+* override a method in a subclass
+* use `super()` to extend a parent method rather than replace it entirely
+* read the `__mro__` of a class and explain what it means
+
+---
+
+## Part 1: The Class Tree and How Inheritance Works
+
+Before writing any subclasses, it helps to understand what Python is actually doing when you define a class and create instances from it. The class model is simpler than it looks: it is a tree of objects connected by links, and Python walks that tree whenever you access an attribute.
+
+### Example 1: A class is an object
+
+A `class` statement creates a class object and assigns it to a name. The class object exists before any instances are created. Like everything else in Python, it has a type, an identity in memory, and attributes stored in a dictionary.
+
+This connects directly to Week 14: module namespaces are plain `__dict__` dictionaries, and so are class namespaces. The names assigned at the top level of a class body become entries in that dictionary, exactly like module attributes.
+
+```python
+class Animal:
+    species = "unknown"
+
+    def speak(self):
+        return "..."
+
+print(f"type(Animal)  = {type(Animal)}")
+print(f"id(Animal)    = {id(Animal)}")
+
+print("Animal.__dict__ (class-level names):")
+for key, value in Animal.__dict__.items():
+    if not key.startswith('__'):
+        print(f"  {key!r:15} -> {value}")
+```
+
+### Example 2: Instances are linked to their class
+
+Calling a class creates a new instance object. Each instance is a separate namespace but holds a reference back to the class it came from. Two instances of the same class are independent objects with independent data.
+
+```python
+a1 = Animal()
+a1.name = "Rex"
+
+a2 = Animal()
+a2.name = "Luna"
+
+print(f"a1 is a2:           {a1 is a2}")
+print(f"type(a1) is Animal: {type(a1) is Animal}")
+print(f"a1.__dict__: {a1.__dict__}")
+print(f"a2.__dict__: {a2.__dict__}")
+```
+
+The instances have different `__dict__` dictionaries because their data is stored on the instance, not the class. The `speak` method is not in either instance's `__dict__`; it lives in the class. Example 3 makes this explicit.
+
+### Example 3: The namespace underneath
+
+An instance's `__dict__` contains only the names assigned directly to that instance. The class's `__dict__` contains the names defined in the class body. When Python looks up an attribute, it checks the instance first, then the class.
+
+This is the same lookup model from Week 3 (identity and attributes) and Week 14 (module namespaces). OOP in Python is the same mechanism applied to a tree of linked objects.
+
+```python
+print("a1.__dict__ (instance namespace):")
+print(f"  {a1.__dict__}")
+
+print("Animal.__dict__ (class namespace, user-defined names only):")
+for key, value in Animal.__dict__.items():
+    if not key.startswith('__'):
+        print(f"  {key!r:15} -> {value}")
+
+print("'name' is in a1.__dict__:", 'name' in a1.__dict__)
+print("'speak' is in a1.__dict__:", 'speak' in a1.__dict__)
+print("'speak' is in Animal.__dict__:", 'speak' in Animal.__dict__)
+```
+
+### Example 4: Attribute lookup walks up the tree
+
+The lookup chain is not just one level deep. Every class in Python implicitly inherits from a built-in class called `object`. This is the root of every class tree and provides default behaviors that all classes inherit automatically.
+
+`__mro__` is the Method Resolution Order: the exact sequence Python follows when searching for a name. For `Animal`, it is `[Animal, object]`. For a subclass, the subclass appears first so its definitions take precedence over the parent's.
+
+```python
+print("Animal.__mro__:")
+for cls in Animal.__mro__:
+    print(f"  {cls}")
+
+print("'speak' found at:", end=" ")
+for cls in Animal.__mro__:
+    if 'speak' in cls.__dict__:
+        print(cls)
+        break
+
+print("'__repr__' found at:", end=" ")
+for cls in Animal.__mro__:
+    if '__repr__' in cls.__dict__:
+        print(cls)
+        break
+```
+
+`__repr__` is not defined in `Animal`, so Python finds it in `object`. This is why every Python object has a default string representation even if you never define one.
+
+---
+
+## Part 2: Writing a Base Class
+
+Now that the class tree model is visible, this part builds a proper base class and examines what each piece does.
+
+### Example 5: The Animal class
+
+The three methods below do three different things. `__init__` runs automatically when an instance is created and stores data on `self`. `__str__` runs automatically when an instance is passed to `print()` or `str()`. `speak()` and `description()` are regular methods called explicitly by name.
+
+This is the same structure written in Weeks 2, 6, and 8. The difference is that now we can explain why it works: `__init__` and `__str__` are operator-overloading hooks, and Python calls them automatically because their names appear in the class tree at the right moment.
+
+```python
+class Animal:
+    """A shelter animal with a name, species, and age."""
+
+    def __init__(self, name, species, age):
+        self.name    = name
+        self.species = species
+        self.age     = age
+
+    def __str__(self):
+        return f"{self.name} ({self.species}, {self.age} yrs)"
+
+    def speak(self):
+        return f"{self.name} makes a sound."
+
+    def description(self):
+        return (f"  Name:    {self.name}\n"
+                f"  Species: {self.species}\n"
+                f"  Age:     {self.age} years")
+
+print("Animal.__dict__ (methods and class-level names):")
+show = {'__init__', '__str__'}
+for key, value in Animal.__dict__.items():
+    if not key.startswith('__') or key in show:
+        print(f"  {key!r:15} -> {value}")
+```
+
+### Example 6: Creating instances and calling methods
+
+```python
+cat    = Animal("Whiskers", "Cat",    4)
+rabbit = Animal("Biscuit",  "Rabbit", 2)
+
+print(f"str(cat):    {str(cat)}")
+print(f"str(rabbit): {str(rabbit)}")
+
+print(f"cat.speak():    {cat.speak()}")
+print(f"rabbit.speak(): {rabbit.speak()}")
+
+print("cat.description():")
+print(cat.description())
+```
+
+`str(cat)` and `str(rabbit)` produce different output even though the same `__str__` method is called for both. The difference is `self`: each call receives a different instance object, so `self.name` resolves to a different value.
+
+### Example 7: What `self` is
+
+`self` is not a keyword. It is simply the name given by convention to the first argument of every method. Python fills it in automatically with the instance that the method is called on. Using `id()` makes this concrete: the `id` of `self` inside the method and the `id` of the instance variable outside the method are identical. They refer to the same object.
+
+```python
+def show_self_id(self):
+    print(f"  id(self) inside the method  = {id(self)}")
+
+dog = Animal("Rex", "Dog", 3)
+print(f"  id(dog) outside the method  = {id(dog)}")
+dog.show_self_id()
+```
+
+Calling `dog.show_self_id()` is equivalent to `Animal.show_self_id(dog)`. Python prepends the instance as the first argument automatically.
+
+---
+
+## Part 3: Writing a Subclass and Overriding Methods
+
+Inheritance means that a subclass automatically receives all of the attributes defined in its parent class. When a subclass defines a method with the same name as one in the parent, the subclass version takes precedence because Python finds it first during the tree search.
+
+### Example 8: The Dog subclass
+
+`Dog` lists `Animal` in its header: `class Dog(Animal)`. This creates a link in the class tree from `Dog` up to `Animal`. `Dog` defines `speak()` and `fetch()`. It does not define `__init__`, `__str__`, or `description()`. Those are inherited from `Animal` and work without any additional code in `Dog`.
+
+```python
+class Dog(Animal):
+    """A dog in the shelter. Inherits from Animal."""
+
+    def speak(self):
+        return f"{self.name} barks."
+
+    def fetch(self, item):
+        return f"{self.name} fetches the {item}!"
+
+print("Dog.__mro__:")
+for cls in Dog.__mro__:
+    print(f"  {cls}")
+
+print("Names defined directly in Dog (not inherited):")
+for key in Dog.__dict__:
+    if not key.startswith('__'):
+        print(f"  {key}")
+```
+
+### Example 9: Inheritance in action
+
+A `Dog` instance calls `speak()` and gets the `Dog` version. A `Dog` instance calls `__str__()` and gets the `Animal` version because `Dog` does not define its own. The tree search stops at the first match found walking upward from the instance.
+
+```python
+buddy = Dog("Buddy", "Dog", 5)
+
+print(f"str(buddy):          {str(buddy)}")
+print(f"buddy.speak():       {buddy.speak()}")
+print(f"buddy.fetch('ball'): {buddy.fetch('ball')}")
+
+print("Where does Python find each method?")
+for method_name in ('speak', '__str__', 'description', 'fetch'):
+    for cls in Dog.__mro__:
+        if method_name in cls.__dict__:
+            print(f"  {method_name!r:15} found in {cls.__name__}")
+            break
+```
+
+### Example 10: Polymorphism
+
+When different classes define the same method name, the same call produces different behavior depending on which object it is called on. The loop below calls `speak()` on every animal in the list without knowing or caring which class each object belongs to. Python selects the correct `speak()` based on the actual type of each object at runtime.
+
+```python
+shelter = [
+    Animal("Mittens", "Cat",    2),
+    Dog("Rex",        "Dog",    4),
+    Animal("Nibbles", "Rabbit", 1),
+    Dog("Sadie",      "Dog",    6),
+]
+
+print("Morning roll call:")
+for animal in shelter:
+    print(f"  {animal.speak()}")
+```
+
+No `if/elif` is needed to check the type. The class tree handles the dispatch automatically.
+
+---
+
+## Part 4: `super()`: Extending Rather Than Replacing
+
+When a subclass needs to add to a parent method rather than replace it entirely, `super()` provides a way to call the parent's version of the method from inside the subclass. This is most commonly needed in `__init__`, where the parent sets up shared attributes and the subclass adds its own.
+
+### Example 11: The problem: rewriting `__init__` from scratch
+
+A `ServiceDog` needs everything a `Dog` needs plus a `task`. The tempting approach is to rewrite `__init__` from scratch. This works, but it duplicates every line from `Animal.__init__` and creates a maintenance problem: if `Animal.__init__` ever changes, `ServiceDog` must be updated separately.
+
+```python
+class ServiceDogWithoutSuper(Dog):
+
+    def __init__(self, name, species, age, task):
+        # Duplicating Animal.__init__:
+        self.name    = name
+        self.species = species
+        self.age     = age
+        # Then adding what is new:
+        self.task    = task
+
+    def __str__(self):
+        return (f"{self.name} ({self.species}, {self.age} yrs)"
+                f" [Service: {self.task}]")
+```
+
+### Example 12: The solution: `super()`
+
+`super()` returns an object that routes attribute lookups to the next class in the MRO. Inside `__init__`, `super().__init__(...)` calls the parent's constructor with the shared arguments, then the subclass adds only what is new. No duplication.
+
+```python
+class ServiceDog(Dog):
+    """A service dog with a specific task. Extends Dog with super()."""
+
+    def __init__(self, name, species, age, task):
+        super().__init__(name, species, age)  # Animal.__init__
+        self.task = task                       # new attribute
+
+    def __str__(self):
+        base = super().__str__()               # Animal.__str__
+        return f"{base} [Service: {self.task}]"
+
+    def speak(self):
+        return f"{self.name} is focused on duty."
+
+apollo = ServiceDog("Apollo", "Dog", 3, "mobility assistance")
+print(f"str(apollo):    {apollo}")
+print(f"apollo.speak(): {apollo.speak()}")
+print(f"apollo.fetch(): {apollo.fetch('harness')}")
+```
+
+`fetch()` is not defined in `ServiceDog` at all. It is inherited from `Dog` without any extra code. `super().__str__()` calls `Animal.__str__` to build the base string, then `ServiceDog` adds the task bracket on top.
+
+### Example 13: Connecting back to prior weeks
+
+Every class the course has written, `Pet`, `Character`, and `CargoPod`, was already a subclass. They inherited from `object` implicitly. `object` is the built-in root class that sits at the top of every class tree in Python and provides the default `__repr__`, `__eq__`, and other behaviors that all classes share unless they override them.
+
+```python
+print("ServiceDog.__mro__:")
+for cls in ServiceDog.__mro__:
+    print(f"  {cls}")
+```
+
+When you wrote `__str__` in `CargoPod`, you were overriding the version inherited from `object`. The class tree was always there. This week makes it visible.
+
+---
+
+## Conclusion
+
+**The class tree:** A class is an object. Instances are linked to the class that created them. Attribute lookup walks up the tree: Python checks the instance first, then the class, then each superclass in MRO order, stopping at the first match. Module namespaces and class namespaces are both plain dictionaries (`__dict__`) connected by links.
+
+**`self`:** `self` is the first argument of every method. Python fills it in automatically with the instance the method is called on. Calling `dog.speak()` is equivalent to `Animal.speak(dog)`. The name `self` is a convention, not a keyword. Its position in the method header is what matters.
+
+**Subclasses and method overriding:** A subclass lists its parent in parentheses: `class Dog(Animal)`. This places `Dog` below `Animal` in the tree. Any method defined in `Dog` overrides the same-named method in `Animal` for `Dog` instances, because the tree search finds `Dog`'s version first. Methods not defined in `Dog` are inherited from `Animal` without any additional code.
+
+**`super()`:** `super()` calls the next class in the MRO. In `__init__`, it allows a subclass to extend the parent constructor rather than rewrite it. This avoids duplication and keeps the subclass synchronized with the parent automatically.
+
+**`object`:** Every class in Python inherits from `object`. `Pet`, `Character`, `CargoPod`, `Animal`, `Dog`, and `ServiceDog` all have `object` at the top of their tree. The `__repr__`, `__eq__`, and other default behaviors you get without defining them come from `object`.
+
+### What the reading covers in more depth
+
+**Multiple inheritance:** a class can list more than one superclass in its header. Python uses MRO to determine the lookup order when the same name appears in multiple branches. This is covered in Chapter 31.
+
+**Operator overloading:** classes can intercept expressions like `+`, `len()`, and `==` by defining `__add__`, `__len__`, and `__eq__`. This is the subject of Week 16.
+
+**Abstract superclasses:** a class that defines a method stub that subclasses are required to override. Python provides the `abc` module for enforcing this pattern formally.

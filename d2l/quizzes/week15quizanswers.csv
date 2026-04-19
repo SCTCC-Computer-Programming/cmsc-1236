@@ -1,0 +1,209 @@
+NewQuestion,MC,
+QuestionText,What does type(Animal) return when Animal is a user-defined class?,
+Option,0,<class 'Animal'>
+Option,100,<class 'type'>
+Option,0,<class 'object'>
+Option,0,<class 'instance'>
+
+NewQuestion,MC,
+QuestionText,What does a class object's __dict__ contain?,
+Option,100,The names and values assigned at the top level of the class body
+Option,0,Only the names assigned to instances created from the class
+Option,0,A list of all superclasses in the class tree
+Option,0,Only the names explicitly exported with __all__
+
+NewQuestion,MC,
+QuestionText,"In the demo, id(Animal) is printed before any instances are created. What does this confirm?",
+Option,0,That Animal is stored in the same location as its instances
+Option,0,That Animal's id changes every time an instance is created
+Option,100,That a class object exists in memory before any instances are made from it
+Option,0,That id() cannot be used on class objects
+
+NewQuestion,MC,
+QuestionText,"A student creates two instances: a1 = Animal() and a2 = Animal(), then assigns a1.name = 'Rex' and a2.name = 'Luna'. Which statement is true about their __dict__ attributes?",
+Option,0,Both instances share the same __dict__ because they come from the same class
+Option,0,"a1.__dict__ contains name and speak; a2.__dict__ contains only name"
+Option,0,Neither instance has a __dict__; all attributes live in the class
+Option,100,Each instance has its own __dict__ containing only the names assigned directly to it
+
+NewQuestion,MC,
+QuestionText,"When Python resolves an attribute reference on an instance, where does it look first?",
+Option,100,The instance's own __dict__
+Option,0,The class's __dict__
+Option,0,The object built-in class
+Option,0,The module where the class is defined
+
+NewQuestion,MC,
+QuestionText,What does __mro__ stand for and what does it describe?,
+Option,0,Method Return Object; the value returned by each method in the class
+Option,0,Module Resolution Order; the order in which Python searches imported modules
+Option,100,Method Resolution Order; the sequence Python follows when searching for an attribute in a class tree
+Option,0,Method Registration Object; a registry of all methods defined in a class
+
+NewQuestion,MC,
+QuestionText,What class sits at the top of every Python class tree?,
+Option,0,type
+Option,100,object
+Option,0,Animal
+Option,0,base
+
+NewQuestion,MC,
+QuestionText,"In the demo, __repr__ is searched for in Animal.__mro__ and found in object not in Animal. What does this demonstrate?",
+Option,0,That __repr__ must be explicitly imported before it can be used
+Option,0,That Animal has no string representation unless one is defined
+Option,0,That object overrides any __repr__ defined in subclasses
+Option,100,That classes inherit default behaviors from object when they do not define their own
+
+NewQuestion,MC,
+QuestionText,When does __init__ run?,
+Option,0,Only when explicitly called by the programmer
+Option,0,Once when the class is defined not when instances are created
+Option,0,Only when the instance is printed or converted to a string
+Option,100,Automatically each time an instance is created from the class
+
+NewQuestion,MC,
+QuestionText,What is self in a method definition?,
+Option,100,The first argument of a method filled in automatically by Python with the instance the method is called on
+Option,0,A keyword that Python reserves for the class itself
+Option,0,A reference to the class object not the instance
+Option,0,A copy of the instance created at the start of each method call
+
+NewQuestion,MC,
+QuestionText,"In the demo, id(dog) is printed outside a method and id(self) is printed inside a method called on dog. The two values are identical. What does this confirm?",
+Option,0,That id() always returns the same value for objects of the same class
+Option,0,That self and dog are two separate copies of the same data
+Option,100,That self inside the method is the same object as dog outside — Python passes the instance automatically
+Option,0,That id() returns the name of the variable not a memory address
+
+NewQuestion,MC,
+QuestionText,"cat = Animal('Whiskers', 'Cat', 4) and rabbit = Animal('Biscuit', 'Rabbit', 2) are both instances of Animal. When str(cat) and str(rabbit) are called they produce different output even though the same __str__ method runs for both. Why?",
+Option,0,Python selects a different version of __str__ based on the arguments passed to Animal()
+Option,100,self is different for each call so self.name resolves to a different value each time
+Option,0,Each instance has its own copy of __str__ with different code
+Option,0,__str__ runs twice — once for the class and once for the instance
+
+NewQuestion,MC,
+QuestionText,What triggers __str__ to run automatically?,
+Option,100,Passing an instance to print() or str()
+Option,0,Calling the instance like a function
+Option,0,Assigning a new value to an instance attribute
+Option,0,Importing the module that contains the class
+
+NewQuestion,MC,
+QuestionText,What is the difference between __init__ and a regular method like speak()?,
+Option,0,__init__ can only be defined once per class; speak() can be defined multiple times
+Option,0,__init__ does not take self as its first argument; regular methods do
+Option,0,__init__ stores data permanently on the instance; regular methods only process it temporarily
+Option,100,__init__ is called automatically by Python at instance creation; speak() is called explicitly by name
+
+NewQuestion,MC,
+QuestionText,What is the name self in a method definition?,
+Option,0,A reserved keyword that Python enforces
+Option,0,A special variable automatically created by Python that cannot be renamed
+Option,100,A convention — any name could be used in its position but self is the strong standard
+Option,0,An alias for the class object
+
+NewQuestion,MC,
+QuestionText,How does a Python class declaration specify that a class inherits from another?,
+Option,0,Using the extends keyword: class Dog extends Animal
+Option,100,By listing the parent class in parentheses: class Dog(Animal)
+Option,0,Using an @inherit decorator above the class definition
+Option,0,Using a super statement inside the class body
+
+NewQuestion,MC,
+QuestionText,What does a subclass receive automatically from its parent without any additional code?,
+Option,0,Only the methods that begin with double underscores
+Option,0,Only the attributes assigned in __init__
+Option,0,Only methods that are explicitly listed in the parent's __all__
+Option,100,All attributes and methods defined in the parent class
+
+NewQuestion,MC,
+QuestionText,When a subclass defines a method with the same name as a method in the parent class what happens?,
+Option,100,The subclass version overrides the parent version for instances of the subclass
+Option,0,Python runs both methods and combines their return values
+Option,0,The parent version takes precedence because it was defined first
+Option,0,Python raises a NameError because two methods cannot share the same name
+
+NewQuestion,MC,
+QuestionText,"Dog defines its own speak() method. Animal also defines speak(). When buddy.speak() is called on a Dog instance, why does Python use Dog.speak() rather than Animal.speak()?",
+Option,0,Because Dog.speak() is explicitly registered as the default
+Option,100,Because the MRO search starts at the instance and moves upward finding Dog before Animal
+Option,0,Because Animal.speak() is automatically disabled when a subclass is created
+Option,0,Because Dog is further from object in the class tree
+
+NewQuestion,MC,
+QuestionText,"Dog does not define __str__. When str(buddy) is called on a Dog instance, where does Python find __str__?",
+Option,0,Python generates a default string from the instance's memory address
+Option,0,Python raises an AttributeError because Dog has no __str__
+Option,100,Python finds it in Animal the next class up the MRO from Dog
+Option,0,Python finds it in Dog.__dict__ because all inherited methods are copied there
+
+NewQuestion,MC,
+QuestionText,"The demo loops over a list containing both Animal and Dog instances and calls speak() on each. Animal instances produce one result and Dog instances produce another. What does this demonstrate?",
+Option,100,Polymorphism: the same method call produces different behavior depending on the actual type of the object
+Option,0,Overloading: Python selects the correct method based on the number of arguments
+Option,0,Encapsulation: each object hides its internal data from the loop
+Option,0,Abstraction: speak() is hidden inside the class so it cannot be called from outside
+
+NewQuestion,MC,
+QuestionText,What does Dog.__mro__ show?,
+Option,0,A list of all methods defined directly in Dog
+Option,0,A dictionary mapping method names to their implementations
+Option,0,The list of instances currently created from Dog
+Option,100,The sequence of classes Python searches when looking up an attribute on a Dog instance
+
+NewQuestion,MC,
+QuestionText,What does Dog.__dict__ contain?,
+Option,0,The same entries as Animal.__dict__ plus the names defined in Dog
+Option,0,"All names accessible on a Dog instance, including those inherited from Animal"
+Option,100,Only the names defined directly in Dog — speak and fetch — not inherited names
+Option,0,Only the instance attributes assigned in __init__
+
+NewQuestion,MC,
+QuestionText,What is the maintenance problem with rewriting __init__ from scratch in a subclass rather than using super()?,
+Option,0,The subclass __init__ runs before the parent __init__ causing attribute errors
+Option,100,"Every attribute from the parent __init__ must be duplicated, so if the parent changes, the subclass must be updated separately"
+Option,0,Python raises a TypeError when __init__ is defined in more than one class
+Option,0,The subclass cannot access any attributes set by the parent __init__
+
+NewQuestion,MC,
+QuestionText,What does super() do inside a method?,
+Option,0,It copies all attributes from the parent class into the current instance
+Option,0,It creates a new instance of the parent class
+Option,100,It returns an object that routes attribute lookups to the next class in the MRO allowing the subclass to call the parent's version of a method
+Option,0,It prevents the subclass from overriding the parent method
+
+NewQuestion,MC,
+QuestionText,"ServiceDog inherits from Dog, and Dog inherits from Animal. Dog defines no __init__. When super().__init__(...) is called inside ServiceDog.__init__, which class's __init__ actually runs?",
+Option,100,Animal.__init__ because Dog has no __init__ so the MRO search continues to Animal
+Option,0,ServiceDog.__init__ because super() calls the current class
+Option,0,object.__init__ because object is the root of the tree
+Option,0,Dog.__init__ because Dog is the immediate parent of ServiceDog
+
+NewQuestion,MC,
+QuestionText,"In ServiceDog.__init__, the call is super().__init__(name, species, age) followed by self.task = task. What does this division represent?",
+Option,0,super().__init__() runs the parent's validation; self.task stores the result
+Option,0,super().__init__() handles display; self.task handles storage
+Option,0,super().__init__() creates the instance; self.task initializes it
+Option,100,super().__init__() sets up the attributes shared with Animal; self.task adds only what is new to ServiceDog
+
+NewQuestion,MC,
+QuestionText,"ServiceDog.__str__ is written as: base = super().__str__() then return f'{base} [Service: {self.task}]'. What does this pattern accomplish?",
+Option,0,It calls __str__ twice and concatenates both results
+Option,100,It reuses the parent's string output as a foundation and adds the service task on top
+Option,0,It replaces the parent __str__ entirely with a new implementation
+Option,0,It prevents Animal.__str__ from running when a ServiceDog is printed
+
+NewQuestion,MC,
+QuestionText,"ServiceDog does not define fetch(), but apollo.fetch('harness') works correctly. What does this demonstrate?",
+Option,0,Composition: ServiceDog contains a Dog object that provides fetch()
+Option,0,Polymorphism: Python selects fetch() based on the argument type
+Option,100,Inheritance: ServiceDog inherits fetch() from Dog through the class tree without needing to define it
+Option,0,Overriding: ServiceDog silently overrides fetch() with a default version
+
+NewQuestion,MC,
+QuestionText,"ServiceDog.__mro__ shows: [ServiceDog, Dog, Animal, object]. What does this sequence tell you about how Python resolves attributes for a ServiceDog instance?",
+Option,100,"Python searches in the order shown — ServiceDog first, then Dog, then Animal, then object — stopping at the first match found"
+Option,0,Python searches object first because it is the most general class
+Option,0,Python searches all four classes simultaneously and uses the most specific match
+Option,0,Python searches Animal first because it defines the most attributes

@@ -80,7 +80,9 @@ website:
           - href: weekly-overview/week-13/index.qmd
             text: Week 13 (Starts - 6 APR)
           - href: weekly-overview/week-14/index.qmd
-            text: Week 14 (Starts - 13 APR) 
+            text: Week 14 (Starts - 13 APR)
+          - href: weekly-overview/week-15/index.qmd
+            text: Week 15 (Starts - 20 APR) 
       
       - section: "Weekly Assignments"
         contents:
@@ -110,6 +112,8 @@ website:
             text: Week 13 (Starts - 6 APR)
           - href: assignments/week-14/index.qmd
             text: Week 14 (Starts - 13 APR)
+          - href: assignments/week-15/index.qmd
+            text: Week 15 (Starts - 20 APR)
       
       - section: "Guides"
         contents: []

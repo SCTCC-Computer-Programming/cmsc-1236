@@ -1,0 +1,90 @@
+---
+title: "Week 15 Guide"
+subtitle: "Chapters 26–27 – Classes and Inheritance"
+format:
+  html:
+    toc: true
+---
+
+Chapters 26–27 cover the class tree model and inheritance. In Python, classes and instances are namespace objects connected by links, and attribute lookup walks those links from the instance upward through the class hierarchy. This model explains how inheritance, method overriding, `self`, and `super()` work.
+
+These chapters also connect directly to Week 3 and Week 14. The object model from Week 3 showed that every Python object has attributes stored in a plain `__dict__` dictionary. Classes are objects too, and their namespaces follow the same model. Week 14 showed the same principle for modules. This week shows it for class trees.
+
+## Week 15 Assignments
+
+- Here is the link to the **[Week 15 Assignments](../../assignments/week-15/index.qmd)** page.
+
+## Chapters 26–27 concepts
+
+### The class tree
+
+A class statement creates a class object and assigns it to a name. The class object exists in memory before any instances are created. When a class is called, Python creates a new instance object and links it back to the class. Attribute lookup on an instance walks that link: Python checks the instance's `__dict__` first, then the class's `__dict__`, then each superclass in the MRO (Method Resolution Order), stopping at the first match. This tree of linked namespaces is the class tree.
+
+Every Python class implicitly inherits from a built-in class called `object`, which sits at the top of every class tree. `object` provides default behaviors, including `__repr__` and `__eq__`, that all classes share unless they override them.
+
+The demo examples show:
+
+* `type()`, `id()`, and `__dict__` used on a class object before any instances exist, confirming a class has its own identity and namespace
+* two instances created from the same class, each with an independent `__dict__`, demonstrating that instance data is stored per instance rather than in the class
+* `__mro__` printed and walked to show where `speak` and `__repr__` are found in the lookup chain
+
+### `self`
+
+`self` is the first argument of every method. Python fills it in automatically with the instance the method is called on. It is not a keyword; it is a convention. Any name could occupy that position, but `self` is the strong standard. Calling `dog.speak()` is equivalent to `Animal.speak(dog)`: Python looks up `speak` in the class tree and passes `dog` as the first argument.
+
+The demo examples show:
+
+* `__init__`, `__str__`, and regular methods listed in `Animal.__dict__`, distinguishing methods Python calls automatically from methods called explicitly by name
+* `id(dog)` compared to `id(self)` inside a method call on `dog`, confirming they refer to the same object in memory
+
+### Subclasses and method overriding
+
+A subclass lists its parent in parentheses in the class header: `class Dog(Animal)`. This places `Dog` below `Animal` in the class tree. A `Dog` instance inherits all attributes and methods from `Animal` without any additional code. When `Dog` defines a method with the same name as one in `Animal`, the MRO search finds `Dog`'s version first, so it takes precedence for `Dog` instances. This is method overriding.
+
+When different classes define the same method name, the same call produces different behavior depending on the actual type of the object being called. This is polymorphism: one interface, multiple implementations.
+
+The demo examples show:
+
+* `Dog.__mro__` listing the full lookup chain: `Dog`, `Animal`, `object`
+* `Dog.__dict__` showing only the names defined directly in `Dog`, not inherited names
+* inherited methods traced to their source class using `__mro__` and `__dict__` membership checks
+* a mixed list of `Animal` and `Dog` instances called with `speak()` in a loop, producing different output depending on the actual type of each object
+
+### `super()`
+
+When a subclass needs to extend a parent method rather than replace it, `super()` provides access to the next class in the MRO. This is most common in `__init__`: the parent sets up shared attributes, then the subclass adds only what is new. Without `super()`, a subclass that redefines `__init__` must duplicate every line from the parent constructor, creating a maintenance problem: if the parent changes, the subclass must be updated separately.
+
+`super()` also works in `__str__` and other methods: `super().__str__()` calls the parent's version and returns its result, which the subclass can then extend.
+
+The demo examples show:
+
+* `ServiceDogWithoutSuper` rewriting `__init__` from scratch, showing the duplication problem directly
+* `ServiceDog` using `super().__init__()` to set up shared attributes and `self.task` to add only what is new
+* `super().__str__()` used to build on the parent's string output rather than replace it
+* `ServiceDog.__mro__` confirming the full lookup chain: `ServiceDog`, `Dog`, `Animal`, `object`
+
+### Additional features in the reading
+
+Chapters 26–27 introduce operator overloading as a concept. `__init__` and `__str__` are the two overloading methods used throughout this week's demo. The full treatment of operator overloading, including `__add__`, `__len__`, and `__eq__`, is in Chapter 30 and is the subject of Week 16. Chapters 26–27 also cover multiple inheritance and abstract superclasses; those topics are not part of the demo or quiz for either week.
+
+## Reading expectations for Week 15
+
+As you read Chapters 26–27 and work through the demo, check whether you can answer the following in your own words:
+
+1. What is a class object, and how does it differ from an instance object?
+2. What does Python search when resolving an attribute on an instance, and in what order?
+3. What is `__mro__`, and what does the sequence it shows mean in practice?
+4. What class sits at the top of every Python class tree, and what does it provide?
+5. What is `self`, and what does `id()` confirm about the relationship between `self` and the instance variable used to call the method?
+6. What is the difference between `__init__` and a regular method like `speak()`?
+7. How is a subclass declared in Python, and what does the subclass receive automatically?
+8. What happens when a subclass defines a method with the same name as a method in the parent?
+9. What is the difference between what a subclass defines directly and what it inherits from the parent?
+10. What is the maintenance problem with rewriting `__init__` from scratch in a subclass?
+11. What does `super().__init__()` do, and how does it differ from rewriting the parent constructor?
+
+## Week 15 tasks
+
+1. Read **Learning Python 6e, Chapters 26–27** (complete).
+2. Download the demo file from the Week 15 Assignments page and work through **week15_demo.py** in VS Code.
+3. Complete the **Week 15 D2L quiz** (Chapters 26–27 concepts, completed directly in D2L).

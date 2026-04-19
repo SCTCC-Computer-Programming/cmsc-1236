@@ -1,0 +1,69 @@
+---
+title: "Week 15 Assignments"
+subtitle: "Chapters 26–27 Reading and D2L Quiz"
+format:
+  html:
+    toc: true
+---
+
+## Demo
+
+- Here is the link to the **[Week 15 demo](../../assignments/week-15/week-15-demo.html)**.
+- <a href="/assignments/week-15/week15_demo.py" download>Download Demo (week15_demo.py)</a>
+
+The demo link above is a rendered, readable version for reference. The `.py` file is what you run in VS Code. Setup instructions are at the top of the file.
+
+## Part 1: Reading
+
+Read **Learning Python (6e), Chapters 26–27**.
+
+Key concepts from these chapters:
+
+- **The class tree:** classes and instances are namespace objects connected by links; when Python looks up an attribute, it searches the instance first, then the class, then each superclass in order, stopping at the first match found
+- **`__mro__`:** the Method Resolution Order; a tuple listing the exact sequence of classes Python searches when resolving an attribute on an instance
+- **`object`:** the built-in root class at the top of every Python class tree; all classes inherit from it implicitly, including every class written in this course
+- **`self`:** the first argument of every method, filled in automatically by Python with the instance the method is called on; the name `self` is a convention, not a keyword
+- **Subclasses:** a class that inherits from another is declared by listing the parent in parentheses: `class Dog(Animal)`; the subclass inherits all attributes and methods from the parent without any additional code
+- **Method overriding:** when a subclass defines a method with the same name as a method in the parent, the subclass version takes precedence for instances of the subclass, because the MRO search finds it first
+- **`super()`:** returns an object that routes attribute lookups to the next class in the MRO; used in `__init__` to call the parent constructor and set up shared attributes before adding what is new in the subclass
+
+## Part 2: Work through the Week 15 Demo
+
+There is no video walkthrough for this week's demo.
+
+The demo is a single Python file. Open `week15_demo.py` in VS Code, run it, and work through it with the source code in the editor and the terminal output visible below. The comments in the source explain what you are seeing in the output. **Complete the demo before attempting the quiz.** Two quiz questions require having run the demo and observed specific output.
+
+The demo covers:
+
+1. The class tree: using `type()`, `id()`, and `__dict__` to confirm that a class is an object with its own identity and namespace, and that instances hold references back to the class that created them
+2. Attribute lookup: demonstrating with `__mro__` and `__dict__` membership tests that Python finds `speak` in the class, not the instance, and finds `__repr__` in `object` when it is not defined in `Animal`
+3. The `Animal` base class: `__init__`, `__str__`, and regular methods shown in `__dict__`; the role of `self` confirmed with `id()` inside and outside a method call
+4. The `Dog` subclass: `Dog.__mro__` showing the full lookup chain, and `Dog.__dict__` showing only the names defined directly in `Dog`; inherited methods traced to their source class
+5. Polymorphism: a loop over a mixed list of `Animal` and `Dog` instances calling `speak()` on each; the same call producing different output depending on the actual type of the object
+6. `super()`: the duplication problem demonstrated with `ServiceDogWithoutSuper`; the solution demonstrated with `ServiceDog` using `super().__init__()` and `super().__str__()`
+
+## Part 3: D2L Quiz
+
+Complete the **Week 15 D2L quiz** directly in D2L.
+
+There is no quiz handout this week. All 30 questions are presented directly in the D2L quiz interface.
+
+The quiz focuses on:
+
+- identifying what a class object's `__dict__` contains and how it differs from an instance's `__dict__`
+- explaining the MRO search order and what `__mro__` shows
+- explaining what `object` is and what it provides to all classes
+- explaining what `self` is and how `id()` confirms its identity
+- predicting where Python finds a method when a subclass does or does not define it
+- explaining what happens when a subclass overrides a parent method
+- distinguishing what `super()` does from what rewriting `__init__` from scratch does
+
+## D2L Submission Checklist
+
+Complete the following in D2L:
+
+* **Week 15 D2L quiz** (no file uploads required this week)
+
+**Submission location:** No Dropbox submission this week. All work is completed in D2L.
+
+**Note:** This week focuses on reading Chapters 26–27 and demonstrating understanding through the quiz. The emphasis is on the class tree model: how Python resolves attributes, how inheritance and method overriding follow from that model, and how `super()` allows a subclass to extend a parent without duplicating it.
